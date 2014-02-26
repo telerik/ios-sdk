@@ -2,7 +2,6 @@
 //  CustomAnimationAreaChart.m
 //  TelerikUIExamples
 //
-//  Created by Svetlin Ralchev on 10/21/13.
 //  Copyright (c) 2013 Telerik. All rights reserved.
 //
 
@@ -33,9 +32,15 @@
         [points addObject:[[TKChartDataPoint alloc] initWithX:@(i) Y:@(arc4random() % 100)]];
     }
     
-    TKChartAreaSeries *areaSeries = [[TKChartAreaSeries alloc] init];
+    TKChartAreaSeries *areaSeries = [[TKChartAreaSeries alloc] initWithItems:points];
     areaSeries.selectionMode = TKChartSeriesSelectionModeSeries;
-    [_chart addSeries:areaSeries withItems:points];
+    [_chart addSeries:areaSeries];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark TKChartDelegate

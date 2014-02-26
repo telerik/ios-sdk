@@ -30,6 +30,13 @@
 #import "BindWithCustomObject.h"
 #import "BindWithDelegate.h"
 #import "Customize.h"
+#import "BandAndLineAnnotations.h"
+#import "BalloonAnnotation.h"
+#import "LayerAnnotation.h"
+#import "ViewAnnotation.h"
+#import "CrossLineAnnotation.h"
+#import "CustomAnnotation.h"
+#import "Trackball.h"
 
 @implementation AppDelegate
 
@@ -110,7 +117,15 @@
                                
                                @"5.Pan/Zoom": [PanZoom class],
                                @"6.Customize": [Customize class],
-                               
+                               @"7.Annotations": @{
+                                       @"1.Band and line annotations": [BandAndLineAnnotations class],
+                                       @"2.Balloon annotation": [BalloonAnnotation class],
+                                       @"3.Layer annotation": [LayerAnnotation class],
+                                       @"4.View annotation": [ViewAnnotation class],
+                                       @"5.Cross line annotation": [CrossLineAnnotation class],
+                                       @"6.Custom annotation": [CustomAnnotation class],
+                                       @"7.Trackball": [Trackball class]
+                                       },
                                };
     
     NSArray *examplesArray = [self createExamplesRecursively:examples];

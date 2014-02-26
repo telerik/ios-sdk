@@ -32,11 +32,22 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = _example.title;
     
-    _table = [[UITableView alloc] initWithFrame:self.view.bounds];
+    _table = [UITableView new];
     _table.delegate = self;
     _table.dataSource = self;
-    _table.autoresizingMask = ~UIViewAutoresizingNone;
     [self.view addSubview:_table];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    _table.frame = self.view.bounds;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

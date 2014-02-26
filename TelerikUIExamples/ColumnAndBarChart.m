@@ -33,6 +33,12 @@
     [self columnSelected];
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 - (void)columnSelected
 {
    [_chart removeAllData];

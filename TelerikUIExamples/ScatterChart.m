@@ -28,7 +28,7 @@
         for (int i = 0; i < 20; i++) {
             [points addObject:[[TKChartDataPoint alloc] initWithX:@(arc4random() % 1450) Y:@(arc4random()%150)]];
         }
-        TKChartScatterSeries *series = [[TKChartScatterSeries alloc] init];
+        TKChartScatterSeries *series = [[TKChartScatterSeries alloc] initWithItems:points];
         series.title = [NSString stringWithFormat:@"Series %d", (i+1)];
         if (2 == i) {
             // the last series data can be selected individually
@@ -37,9 +37,15 @@
         else {
             series.selectionMode = TKChartSeriesSelectionModeSeries;
         }
-        [_chart addSeries:series withItems:points];
+        [_chart addSeries:series];
     }
     [_chart endUpdates];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

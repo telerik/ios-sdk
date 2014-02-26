@@ -42,12 +42,18 @@
         [points addObject:[[TKChartDataPoint alloc] initWithX:@(i) Y:@(arc4random() % 100)]];
     }
     
-    TKChartLineSeries *lineSeries = [[TKChartLineSeries alloc] init];
+    TKChartLineSeries *lineSeries = [[TKChartLineSeries alloc] initWithItems:points];
     CGFloat shapeSize = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) ? 14 : 17;
     lineSeries.style.pointShape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeCircle andSize:CGSizeMake(shapeSize, shapeSize)];
     lineSeries.style.shapeMode = TKChartSeriesStyleShapeModeAlwaysShow;
     lineSeries.selectionMode = TKChartSeriesSelectionModeDataPoint;
-    [_chart addSeries:lineSeries withItems:points];
+    [_chart addSeries:lineSeries];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)applySequential

@@ -28,7 +28,7 @@
         for (int i = 0; i < 100; i++) {
             [points addObject:[[TKChartDataPoint alloc] initWithX:@(arc4random() % 2000) Y:@(arc4random()%500)]];
         }
-        TKChartScatterSeries *series = [[TKChartScatterSeries alloc] init];
+        TKChartScatterSeries *series = [[TKChartScatterSeries alloc] initWithItems:points];
         series.selectionMode = TKChartSeriesSelectionModeDataPoint;
         
         series.title = [NSString stringWithFormat:@"Series %d", (i+1)];
@@ -39,12 +39,19 @@
         else {
             series.selectionMode = TKChartSeriesSelectionModeSeries;
         }
-        [_chart addSeries:series withItems:points];
+        [_chart addSeries:series];
     }
     [_chart endUpdates];
     
+    
     _chart.xAxis.allowZoom = YES;
     _chart.yAxis.allowZoom = YES;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

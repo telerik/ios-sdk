@@ -42,9 +42,15 @@
     [array addObject:[[TKChartDataPoint alloc] initWithValue:@5 name:@"IBM" ]];
     [array addObject:[[TKChartDataPoint alloc] initWithValue:@8 name:@"Oracle" ]];
     
-    TKChartPieSeries *series = [[TKChartPieSeries alloc] init];
+    TKChartPieSeries *series = [[TKChartPieSeries alloc] initWithItems:array];
     series.selectionMode = TKChartSeriesSelectionModeDataPoint;
-    [_chart addSeries:series withItems:array];
+    [_chart addSeries:series];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)animate

@@ -39,16 +39,22 @@
     yAxis.majorTickInterval = @20;
     yAxis.minorTickInterval = @1;
     yAxis.offset = @0;
+    yAxis.baseline = @0;
     yAxis.style.labelStyle.fitMode = TKChartAxisLabelFitModeRotate;
     yAxis.style.labelStyle.firstLabelTextAlignment = TKChartAxisLabelAlignmentLeft;
     _chart.yAxis = yAxis;
     
-    TKChartAreaSeries *series = [[TKChartAreaSeries alloc] initWithItems:dataPoints];
-    series.spline = YES;
+    TKChartSplineAreaSeries *series = [[TKChartSplineAreaSeries alloc] initWithItems:dataPoints];
     CGFloat shapeSize = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) ? 10 : 17;
     series.style.pointShape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeCircle andSize:CGSizeMake(shapeSize, shapeSize)];
     series.selectionMode = TKChartSeriesSelectionModeSeries;
     [_chart addSeries:series];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

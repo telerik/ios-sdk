@@ -23,7 +23,7 @@
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
     for (int i = 0; i < 12; i++) {
-        [array addObject:[[TKChartDataPoint alloc] initWithX:@(i) Y:@(arc4random() % 1500)]];
+        [array addObject:[[TKChartDataPoint alloc] initWithX:@(i) Y:@(arc4random()%2000)]];
     }
     TKChartLineSeries *series = [[TKChartLineSeries alloc] initWithItems:array];
     series.selectionMode = TKChartSeriesSelectionModeSeries;
@@ -34,12 +34,18 @@
     _chart.xAxis = xAxis;
     
     TKChartNumericAxis *yAxis = [[TKChartNumericAxis alloc] initWithMinimum:@(0) andMaximum:@(2000)];
-    yAxis.majorTickInterval = @300;
-    yAxis.minorTickInterval = @100;
+
+    yAxis.majorTickInterval = @400;
     yAxis.position = TKChartAxisPositionLeft;
     _chart.yAxis = yAxis;
     
     [_chart addSeries:series];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -130,7 +130,13 @@
     
     [_chart reloadData];
 }
-    
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 - (void)setStyles:(TKChartSeries*)series
 {
     TKChartPaletteItem *item = [series.style.palette paletteItemAtIndex:series.index];

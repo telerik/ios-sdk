@@ -34,9 +34,8 @@
         NSDate *date = [gregorian dateFromComponents:comps];
         [array addObject:[[TKChartDataPoint alloc] initWithX:date Y:@(arc4random() % 100)]];
     }
-    TKChartAreaSeries *series = [[TKChartAreaSeries alloc] initWithItems:array];
+    TKChartSplineAreaSeries *series = [[TKChartSplineAreaSeries alloc] initWithItems:array];
     series.selectionMode = TKChartSeriesSelectionModeSeries;
-    series.spline = YES;
     
     [comps setMonth:1];
     NSDate *minDate = [gregorian dateFromComponents:comps];
@@ -52,6 +51,12 @@
     _chart.yAxis = yAxis;
     
     [_chart addSeries:series];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -43,7 +43,7 @@
         [data addObject:obj];
     }
     
-    [_chart addSeries:[[TKChartAreaSeries alloc] init] withItems:data forKeys:@{ @"dataXValue": @"objectID", @"dataYValue": @"value1"}];
+    [_chart addSeries:[[TKChartAreaSeries alloc] initWithItems:data forKeys:@{ @"dataXValue": @"objectID", @"dataYValue": @"value1"}]];
     [_chart addSeries:[[TKChartAreaSeries alloc] initWithItems:data forKeys:@{ @"dataXValue": @"objectID", @"dataYValue": @"value2" }]];
     [_chart addSeries:[[TKChartAreaSeries alloc] initWithItems:data xValueKey:@"objectID" yValueKey:@"value3"]];
     
@@ -55,6 +55,12 @@
     }
 
     [_chart reloadData];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

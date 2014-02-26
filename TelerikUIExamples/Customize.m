@@ -51,6 +51,12 @@
     _chart.gridStyle.horizontalAlternateFill = [[TKSolidFill alloc] initWithColor:[UIColor colorWithWhite:0.9 alpha:0.8]];
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 -(TKChartPaletteItem *)chart:(TKChart *)chart paletteItemForSeries:(TKChartSeries *)series atIndex:(NSUInteger)index
 {
     TKChartPaletteItem *item = nil;

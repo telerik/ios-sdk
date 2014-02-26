@@ -57,10 +57,16 @@
         TKChartSeries *series = [[TKChartAreaSeries alloc] initWithItems:array];
         series.selectionMode = TKChartSeriesSelectionModeSeries;
         series.stackInfo = stackInfo;
-        [_chart addSeries:series withItems:array];
+        [_chart addSeries:series];
     }
     
     [_chart reloadData];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

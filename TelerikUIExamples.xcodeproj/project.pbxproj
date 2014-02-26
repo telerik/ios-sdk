@@ -10,13 +10,22 @@
 		0113350118151E47008E6477 /* CustomAnimationAreaChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0113350018151E47008E6477 /* CustomAnimationAreaChart.m */; };
 		7ABD7164180C1823009C726F /* DowJonesData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABD7163180C1823009C726F /* DowJonesData.m */; };
 		7ABD7167180C1841009C726F /* DowJonesData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 7ABD7166180C1841009C726F /* DowJonesData.csv */; };
-		FE2AAA24189162AD00D94E86 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2AAA23189162AD00D94E86 /* TelerikUI.framework */; };
 		FE3CF5841807F6E900461E57 /* NumericAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF5831807F6E900461E57 /* NumericAxis.m */; };
 		FE3CF5871807F6F700461E57 /* CategoricalAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF5861807F6F700461E57 /* CategoricalAxis.m */; };
 		FE3CF58A1807F70800461E57 /* DateTimeAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF5891807F70800461E57 /* DateTimeAxis.m */; };
 		FE3CF58D1807F71800461E57 /* MultipleAxes.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF58C1807F71800461E57 /* MultipleAxes.m */; };
 		FE3CF5901807F74C00461E57 /* NegativeValues.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF58F1807F74C00461E57 /* NegativeValues.m */; };
 		FE3CF593180802D000461E57 /* PanZoom.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF592180802D000461E57 /* PanZoom.m */; };
+		FE5A3E0D18BE1B8700DA3F2B /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5A3E0C18BE1B8700DA3F2B /* TelerikUI.framework */; };
+		FE8A36CF18A3E4AE0081EECA /* BalloonAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36CE18A3E4AE0081EECA /* BalloonAnnotation.m */; };
+		FE8A36D218A3E4BA0081EECA /* Trackball.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36D118A3E4BA0081EECA /* Trackball.m */; };
+		FE8A36D518A3E65B0081EECA /* LayerAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36D418A3E65B0081EECA /* LayerAnnotation.m */; };
+		FE8A36D818A3E6690081EECA /* ViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36D718A3E6690081EECA /* ViewAnnotation.m */; };
+		FE8A36DB18A3E6780081EECA /* CrossLineAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36DA18A3E6780081EECA /* CrossLineAnnotation.m */; };
+		FE8A36DE18A3E68A0081EECA /* BandAndLineAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36DD18A3E68A0081EECA /* BandAndLineAnnotations.m */; };
+		FE8A36E118A4009A0081EECA /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36E018A4009A0081EECA /* CustomAnnotation.m */; };
+		FE8A36E518A401590081EECA /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36E418A401590081EECA /* MyAnnotation.m */; };
+		FEAAF7E118BE012E0064CB6A /* EasyBindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF7E018BE012E0064CB6A /* EasyBindingViewController.m */; };
 		FEE2697B1806DBA300E52C37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE2697A1806DBA300E52C37 /* Foundation.framework */; };
 		FEE2697D1806DBA300E52C37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE2697C1806DBA300E52C37 /* CoreGraphics.framework */; };
 		FEE2697F1806DBA300E52C37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE2697E1806DBA300E52C37 /* UIKit.framework */; };
@@ -51,7 +60,6 @@
 		7ABD7162180C1823009C726F /* DowJonesData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DowJonesData.h; sourceTree = "<group>"; };
 		7ABD7163180C1823009C726F /* DowJonesData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DowJonesData.m; sourceTree = "<group>"; };
 		7ABD7166180C1841009C726F /* DowJonesData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DowJonesData.csv; sourceTree = "<group>"; };
-		FE2AAA23189162AD00D94E86 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FE3CF5821807F6E900461E57 /* NumericAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumericAxis.h; sourceTree = "<group>"; };
 		FE3CF5831807F6E900461E57 /* NumericAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumericAxis.m; sourceTree = "<group>"; };
 		FE3CF5851807F6F700461E57 /* CategoricalAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoricalAxis.h; sourceTree = "<group>"; };
@@ -64,6 +72,25 @@
 		FE3CF58F1807F74C00461E57 /* NegativeValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NegativeValues.m; sourceTree = "<group>"; };
 		FE3CF591180802D000461E57 /* PanZoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanZoom.h; sourceTree = "<group>"; };
 		FE3CF592180802D000461E57 /* PanZoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanZoom.m; sourceTree = "<group>"; };
+		FE5A3E0C18BE1B8700DA3F2B /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
+		FE8A36CD18A3E4AE0081EECA /* BalloonAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalloonAnnotation.h; sourceTree = "<group>"; };
+		FE8A36CE18A3E4AE0081EECA /* BalloonAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalloonAnnotation.m; sourceTree = "<group>"; };
+		FE8A36D018A3E4BA0081EECA /* Trackball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trackball.h; sourceTree = "<group>"; };
+		FE8A36D118A3E4BA0081EECA /* Trackball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trackball.m; sourceTree = "<group>"; };
+		FE8A36D318A3E65B0081EECA /* LayerAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerAnnotation.h; sourceTree = "<group>"; };
+		FE8A36D418A3E65B0081EECA /* LayerAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerAnnotation.m; sourceTree = "<group>"; };
+		FE8A36D618A3E6690081EECA /* ViewAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewAnnotation.h; sourceTree = "<group>"; };
+		FE8A36D718A3E6690081EECA /* ViewAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAnnotation.m; sourceTree = "<group>"; };
+		FE8A36D918A3E6780081EECA /* CrossLineAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrossLineAnnotation.h; sourceTree = "<group>"; };
+		FE8A36DA18A3E6780081EECA /* CrossLineAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrossLineAnnotation.m; sourceTree = "<group>"; };
+		FE8A36DC18A3E68A0081EECA /* BandAndLineAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BandAndLineAnnotations.h; sourceTree = "<group>"; };
+		FE8A36DD18A3E68A0081EECA /* BandAndLineAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandAndLineAnnotations.m; sourceTree = "<group>"; };
+		FE8A36DF18A4009A0081EECA /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
+		FE8A36E018A4009A0081EECA /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
+		FE8A36E318A401590081EECA /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
+		FE8A36E418A401590081EECA /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
+		FEAAF7DF18BE012E0064CB6A /* EasyBindingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyBindingViewController.h; sourceTree = "<group>"; };
+		FEAAF7E018BE012E0064CB6A /* EasyBindingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyBindingViewController.m; sourceTree = "<group>"; };
 		FEE269771806DBA300E52C37 /* TelerikUIExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelerikUIExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE2697A1806DBA300E52C37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FEE2697C1806DBA300E52C37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,7 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE2AAA24189162AD00D94E86 /* TelerikUI.framework in Frameworks */,
+				FE5A3E0D18BE1B8700DA3F2B /* TelerikUI.framework in Frameworks */,
 				FEE2697D1806DBA300E52C37 /* CoreGraphics.framework in Frameworks */,
 				FEE2697F1806DBA300E52C37 /* UIKit.framework in Frameworks */,
 				FEE2697B1806DBA300E52C37 /* Foundation.framework in Frameworks */,
@@ -137,6 +164,29 @@
 				7ABD7163180C1823009C726F /* DowJonesData.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		FE8A36CC18A3E4970081EECA /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				FE8A36DC18A3E68A0081EECA /* BandAndLineAnnotations.h */,
+				FE8A36DD18A3E68A0081EECA /* BandAndLineAnnotations.m */,
+				FE8A36CD18A3E4AE0081EECA /* BalloonAnnotation.h */,
+				FE8A36CE18A3E4AE0081EECA /* BalloonAnnotation.m */,
+				FE8A36D318A3E65B0081EECA /* LayerAnnotation.h */,
+				FE8A36D418A3E65B0081EECA /* LayerAnnotation.m */,
+				FE8A36D618A3E6690081EECA /* ViewAnnotation.h */,
+				FE8A36D718A3E6690081EECA /* ViewAnnotation.m */,
+				FE8A36D918A3E6780081EECA /* CrossLineAnnotation.h */,
+				FE8A36DA18A3E6780081EECA /* CrossLineAnnotation.m */,
+				FE8A36D018A3E4BA0081EECA /* Trackball.h */,
+				FE8A36D118A3E4BA0081EECA /* Trackball.m */,
+				FE8A36DF18A4009A0081EECA /* CustomAnnotation.h */,
+				FE8A36E018A4009A0081EECA /* CustomAnnotation.m */,
+				FE8A36E318A401590081EECA /* MyAnnotation.h */,
+				FE8A36E418A401590081EECA /* MyAnnotation.m */,
+			);
+			name = Annotations;
 			sourceTree = "<group>";
 		};
 		FEE2696E1806DBA300E52C37 = {
@@ -159,7 +209,7 @@
 		FEE269791806DBA300E52C37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FE2AAA23189162AD00D94E86 /* TelerikUI.framework */,
+				FE5A3E0C18BE1B8700DA3F2B /* TelerikUI.framework */,
 				FEE2697A1806DBA300E52C37 /* Foundation.framework */,
 				FEE2697C1806DBA300E52C37 /* CoreGraphics.framework */,
 				FEE2697E1806DBA300E52C37 /* UIKit.framework */,
@@ -177,6 +227,8 @@
 				FEE269951806DBA300E52C37 /* Images.xcassets */,
 				FEE269811806DBA300E52C37 /* Supporting Files */,
 				FEEAEBEA18082B1D00D75A5C /* Resources */,
+				FEAAF7DF18BE012E0064CB6A /* EasyBindingViewController.h */,
+				FEAAF7E018BE012E0064CB6A /* EasyBindingViewController.m */,
 			);
 			path = TelerikUIExamples;
 			sourceTree = "<group>";
@@ -195,6 +247,7 @@
 		FEE269B21806DC7500E52C37 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				FE8A36CC18A3E4970081EECA /* Annotations */,
 				7ABD7161180C17FC009C726F /* Models */,
 				FEEAEBDD180815CD00D75A5C /* Binding */,
 				FEE269C81806FE8A00E52C37 /* ChartTypes */,
@@ -335,11 +388,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Telerik;
-				TargetAttributes = {
-					FEE269761806DBA300E52C37 = {
-						DevelopmentTeam = CHSQ3M3P37;
-					};
-				};
 			};
 			buildConfigurationList = FEE269721806DBA300E52C37 /* Build configuration list for PBXProject "TelerikUIExamples" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -377,9 +425,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE8A36CF18A3E4AE0081EECA /* BalloonAnnotation.m in Sources */,
 				FE3CF5901807F74C00461E57 /* NegativeValues.m in Sources */,
 				FEE269BA1806E17D00E52C37 /* ColumnAndBarChart.m in Sources */,
 				FE3CF593180802D000461E57 /* PanZoom.m in Sources */,
+				FE8A36D518A3E65B0081EECA /* LayerAnnotation.m in Sources */,
 				FEEAEBDC18080AAC00D75A5C /* UIKitDynamicsAnimation.m in Sources */,
 				7ABD7164180C1823009C726F /* DowJonesData.m in Sources */,
 				FEE269B51806DC9000E52C37 /* ExampleInfo.m in Sources */,
@@ -389,6 +439,7 @@
 				FEEAEBD918080A9A00D75A5C /* CustomAnimationPieChart.m in Sources */,
 				FE3CF5841807F6E900461E57 /* NumericAxis.m in Sources */,
 				FEEAEBD618080A8900D75A5C /* CustomAnimationLineChart.m in Sources */,
+				FEAAF7E118BE012E0064CB6A /* EasyBindingViewController.m in Sources */,
 				FEE269941806DBA300E52C37 /* ViewController.m in Sources */,
 				FEE269C61806F3BC00E52C37 /* SettingsViewController.m in Sources */,
 				FEEAEBD318080A7600D75A5C /* DefaultAnimation.m in Sources */,
@@ -398,12 +449,18 @@
 				FEE2698B1806DBA300E52C37 /* AppDelegate.m in Sources */,
 				FE3CF58D1807F71800461E57 /* MultipleAxes.m in Sources */,
 				FE3CF58A1807F70800461E57 /* DateTimeAxis.m in Sources */,
+				FE8A36E518A401590081EECA /* MyAnnotation.m in Sources */,
+				FE8A36DE18A3E68A0081EECA /* BandAndLineAnnotations.m in Sources */,
+				FE8A36DB18A3E6780081EECA /* CrossLineAnnotation.m in Sources */,
 				FEEAEBE01808160000D75A5C /* BindWithDataPoint.m in Sources */,
 				FEE269C01806E28500E52C37 /* OptionInfo.m in Sources */,
+				FE8A36E118A4009A0081EECA /* CustomAnnotation.m in Sources */,
 				FEE269D11807066700E52C37 /* PieDonut.m in Sources */,
 				FEE269CB1806FE9E00E52C37 /* LineAreaSpline.m in Sources */,
 				FEEAEBE61808162600D75A5C /* BindWithDelegate.m in Sources */,
+				FE8A36D818A3E6690081EECA /* ViewAnnotation.m in Sources */,
 				FEE269871806DBA300E52C37 /* main.m in Sources */,
+				FE8A36D218A3E4BA0081EECA /* Trackball.m in Sources */,
 				FEEAEBE918081E5400D75A5C /* Customize.m in Sources */,
 				FEEAEBE31808161000D75A5C /* BindWithCustomObject.m in Sources */,
 			);

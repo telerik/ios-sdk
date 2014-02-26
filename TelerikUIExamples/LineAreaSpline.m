@@ -36,6 +36,12 @@
     [self reloadChart];
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 - (void)reloadChart
 {
     [_chart removeAllData];
@@ -53,8 +59,7 @@
                 break;
                 
             case 1:
-                series = [[TKChartLineSeries alloc] initWithItems:array];
-                ((TKChartLineSeries*)series).spline = YES;
+                series = [[TKChartSplineSeries alloc] initWithItems:array];
                 break;
                 
             case 2:
@@ -62,13 +67,12 @@
                 break;
                 
             case 3:
-                series = [[TKChartAreaSeries alloc] initWithItems:array];
-                ((TKChartAreaSeries*)series).spline = YES;
+                series = [[TKChartSplineAreaSeries alloc] initWithItems:array];
                 break;
         }
         series.selectionMode = TKChartSeriesSelectionModeSeries;
         
-        [_chart addSeries:series withItems:array];
+        [_chart addSeries:series];
     }
     
     [_chart reloadData];

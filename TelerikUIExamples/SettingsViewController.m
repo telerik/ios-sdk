@@ -36,11 +36,22 @@
     _table = [[UITableView alloc] initWithFrame:self.view.bounds];
     _table.dataSource = self;
     _table.delegate = self;
-    _table.autoresizingMask = ~UIViewAutoresizingNone;
     [self.view addSubview:_table];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.selectedOption inSection:0];
     [_table selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    _table.frame = self.view.bounds;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

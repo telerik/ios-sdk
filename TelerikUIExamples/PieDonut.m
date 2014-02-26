@@ -43,25 +43,31 @@
     [array addObject:[[TKChartDataPoint alloc] initWithValue:@5 name:@"IBM"]];
     [array addObject:[[TKChartDataPoint alloc] initWithValue:@8 name:@"Oracle"]];
     
-    TKChartPieSeries *series = [[TKChartPieSeries alloc] init];
+    TKChartPieSeries *series = [[TKChartPieSeries alloc] initWithItems:array];
     series.selectionMode = TKChartSeriesSelectionModeDataPoint;
     series.selectionAngle = @(-M_PI_2);
     series.expandRadius = 1.2;
     series.labelDisplayMode = TKChartPieSeriesLabelDisplayModeNone;
-    [_pieChart addSeries:series withItems:array];
+    [_pieChart addSeries:series];
     
-    series = [[TKChartPieSeries alloc] init];
-    series.selectionMode = TKChartSeriesSelectionModeDataPoint;
-    series.innerRadius = 0.6;
-    series.expandRadius = 1.1;
-    series.labelDisplayMode = TKChartPieSeriesLabelDisplayModeNone;
-    [_donutChart addSeries:series withItems:array];
+    TKChartDonutSeries *donutSeries = [[TKChartDonutSeries alloc] initWithItems:array];
+    donutSeries.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    donutSeries.innerRadius = 0.6;
+    donutSeries.expandRadius = 1.1;
+    donutSeries.labelDisplayMode = TKChartPieSeriesLabelDisplayModeNone;
+    [_donutChart addSeries:donutSeries];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [_pieChart select:[[TKChartSelectionInfo alloc] initWithSeries:_pieChart.series[0] dataPointIndex:0]];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

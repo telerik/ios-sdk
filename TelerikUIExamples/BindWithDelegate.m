@@ -20,14 +20,11 @@
 
 - (TKChartSeries *)seriesForChart:(TKChart *)chart atIndex:(NSUInteger)index
 {
-    TKChartLineSeries *series = [[TKChartLineSeries alloc] init];
+    TKChartLineSeries *series = index == 2 ? [[TKChartSplineSeries alloc] init]: [[TKChartLineSeries alloc] init];
     series.selectionMode = TKChartSeriesSelectionModeDataPoint;
     series.style.pointShape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeCircle andSize:CGSizeMake(10, 10)];
     series.selectionMode = TKChartSeriesSelectionModeSeries;
     series.title = [NSString stringWithFormat:@"Series %u", index+1];
-    if (index == 2) {
-        series.spline = YES;
-    }
     return series;
 }
 
@@ -67,6 +64,12 @@
     _chart.legend.style.position = TKChartLegendPositionTop;
     _chart.legend.container.stack.orientation = TKStackLayoutOrientationHorizontal;
     [self.view addSubview:_chart];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

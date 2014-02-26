@@ -64,6 +64,12 @@
     point.animator = animator;
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 - (CAAnimation *)chart:(TKChart *)chart animationForSeries:(TKChartSeries *)series withState:(TKChartSeriesRenderState *)state inRect:(CGRect)rect
 {
     return nil;
@@ -99,12 +105,12 @@
         [_points addObject:point];
     }
     
-    TKChartLineSeries *lineSeries = [[TKChartLineSeries alloc] init];
+    TKChartLineSeries *lineSeries = [[TKChartLineSeries alloc] initWithItems:_points];
     CGFloat shapeSize = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) ? 14 : 17;
     lineSeries.selectionMode = TKChartSeriesSelectionModeDataPoint;
     lineSeries.style.pointShape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeRhombus andSize:CGSizeMake(shapeSize, shapeSize)];
     lineSeries.style.shapeMode = TKChartSeriesStyleShapeModeAlwaysShow;
-    [_chart addSeries:lineSeries withItems:_points];
+    [_chart addSeries:lineSeries];
     _chart.yAxis.style.labelStyle.textHidden = YES;
     
     [_chart reloadData];

@@ -2,7 +2,6 @@
 //  CustomAnimationAreaChart.h
 //  TelerikUIExamples
 //
-//  Created by Svetlin Ralchev on 10/21/13.
 //  Copyright (c) 2013 Telerik. All rights reserved.
 //
 
