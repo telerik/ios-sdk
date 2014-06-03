@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FEA3FA62193DAF0E00A4E962 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA3FA61193DAF0E00A4E962 /* AppDelegate.swift */; };
+		FEA3FA64193DAF0E00A4E962 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA3FA63193DAF0E00A4E962 /* ViewController.swift */; };
+		FEA3FA67193DAF0E00A4E962 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEA3FA65193DAF0E00A4E962 /* Main.storyboard */; };
+		FEA3FA69193DAF0E00A4E962 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEA3FA68193DAF0E00A4E962 /* Images.xcassets */; };
+		FEA3FA75193DAF0E00A4E962 /* TestChartWithSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA3FA74193DAF0E00A4E962 /* TestChartWithSwiftTests.swift */; };
+		FEA3FA82193DB58200A4E962 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA3FA81193DB58200A4E962 /* Bridge.m */; };
+		FEDB9B5E193DDC23004AC1EE /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDB9B5D193DDC23004AC1EE /* TelerikUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FEA3FA6F193DAF0E00A4E962 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEA3FA54193DAF0E00A4E962 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEA3FA5B193DAF0E00A4E962;
+			remoteInfo = TestChartWithSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FEA3FA5C193DAF0E00A4E962 /* TestChartWithSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestChartWithSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEA3FA60193DAF0E00A4E962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEA3FA61193DAF0E00A4E962 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FEA3FA63193DAF0E00A4E962 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FEA3FA66193DAF0E00A4E962 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FEA3FA68193DAF0E00A4E962 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FEA3FA6E193DAF0E00A4E962 /* TestChartWithSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestChartWithSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEA3FA73193DAF0E00A4E962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEA3FA74193DAF0E00A4E962 /* TestChartWithSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestChartWithSwiftTests.swift; sourceTree = "<group>"; };
+		FEA3FA80193DB58200A4E962 /* TestChartWithSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestChartWithSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		FEA3FA81193DB58200A4E962 /* Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
+		FEDB9B5D193DDC23004AC1EE /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../../Telerik/UI for iOS Beta 2/TelerikUI.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FEA3FA59193DAF0E00A4E962 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEDB9B5E193DDC23004AC1EE /* TelerikUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEA3FA6B193DAF0E00A4E962 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FEA3FA53193DAF0E00A4E962 = {
+			isa = PBXGroup;
+			children = (
+				FEDB9B5D193DDC23004AC1EE /* TelerikUI.framework */,
+				FEA3FA81193DB58200A4E962 /* Bridge.m */,
+				FEA3FA5E193DAF0E00A4E962 /* TestChartWithSwift */,
+				FEA3FA71193DAF0E00A4E962 /* TestChartWithSwiftTests */,
+				FEA3FA5D193DAF0E00A4E962 /* Products */,
+				FEA3FA80193DB58200A4E962 /* TestChartWithSwift-Bridging-Header.h */,
+			);
+			sourceTree = "<group>";
+		};
+		FEA3FA5D193DAF0E00A4E962 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FEA3FA5C193DAF0E00A4E962 /* TestChartWithSwift.app */,
+				FEA3FA6E193DAF0E00A4E962 /* TestChartWithSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FEA3FA5E193DAF0E00A4E962 /* TestChartWithSwift */ = {
+			isa = PBXGroup;
+			children = (
+				FEA3FA61193DAF0E00A4E962 /* AppDelegate.swift */,
+				FEA3FA63193DAF0E00A4E962 /* ViewController.swift */,
+				FEA3FA65193DAF0E00A4E962 /* Main.storyboard */,
+				FEA3FA68193DAF0E00A4E962 /* Images.xcassets */,
+				FEA3FA5F193DAF0E00A4E962 /* Supporting Files */,
+			);
+			path = TestChartWithSwift;
+			sourceTree = "<group>";
+		};
+		FEA3FA5F193DAF0E00A4E962 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEA3FA60193DAF0E00A4E962 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FEA3FA71193DAF0E00A4E962 /* TestChartWithSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				FEA3FA74193DAF0E00A4E962 /* TestChartWithSwiftTests.swift */,
+				FEA3FA72193DAF0E00A4E962 /* Supporting Files */,
+			);
+			path = TestChartWithSwiftTests;
+			sourceTree = "<group>";
+		};
+		FEA3FA72193DAF0E00A4E962 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEA3FA73193DAF0E00A4E962 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FEA3FA5B193DAF0E00A4E962 /* TestChartWithSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEA3FA78193DAF0E00A4E962 /* Build configuration list for PBXNativeTarget "TestChartWithSwift" */;
+			buildPhases = (
+				FEA3FA58193DAF0E00A4E962 /* Sources */,
+				FEA3FA59193DAF0E00A4E962 /* Frameworks */,
+				FEA3FA5A193DAF0E00A4E962 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestChartWithSwift;
+			productName = TestChartWithSwift;
+			productReference = FEA3FA5C193DAF0E00A4E962 /* TestChartWithSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FEA3FA6D193DAF0E00A4E962 /* TestChartWithSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEA3FA7B193DAF0E00A4E962 /* Build configuration list for PBXNativeTarget "TestChartWithSwiftTests" */;
+			buildPhases = (
+				FEA3FA6A193DAF0E00A4E962 /* Sources */,
+				FEA3FA6B193DAF0E00A4E962 /* Frameworks */,
+				FEA3FA6C193DAF0E00A4E962 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEA3FA70193DAF0E00A4E962 /* PBXTargetDependency */,
+			);
+			name = TestChartWithSwiftTests;
+			productName = TestChartWithSwiftTests;
+			productReference = FEA3FA6E193DAF0E00A4E962 /* TestChartWithSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FEA3FA54193DAF0E00A4E962 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Telerik;
+				TargetAttributes = {
+					FEA3FA5B193DAF0E00A4E962 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					FEA3FA6D193DAF0E00A4E962 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = FEA3FA5B193DAF0E00A4E962;
+					};
+				};
+			};
+			buildConfigurationList = FEA3FA57193DAF0E00A4E962 /* Build configuration list for PBXProject "TestChartWithSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FEA3FA53193DAF0E00A4E962;
+			productRefGroup = FEA3FA5D193DAF0E00A4E962 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FEA3FA5B193DAF0E00A4E962 /* TestChartWithSwift */,
+				FEA3FA6D193DAF0E00A4E962 /* TestChartWithSwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FEA3FA5A193DAF0E00A4E962 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEA3FA67193DAF0E00A4E962 /* Main.storyboard in Resources */,
+				FEA3FA69193DAF0E00A4E962 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEA3FA6C193DAF0E00A4E962 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FEA3FA58193DAF0E00A4E962 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEA3FA64193DAF0E00A4E962 /* ViewController.swift in Sources */,
+				FEA3FA82193DB58200A4E962 /* Bridge.m in Sources */,
+				FEA3FA62193DAF0E00A4E962 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEA3FA6A193DAF0E00A4E962 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEA3FA75193DAF0E00A4E962 /* TestChartWithSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FEA3FA70193DAF0E00A4E962 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEA3FA5B193DAF0E00A4E962 /* TestChartWithSwift */;
+			targetProxy = FEA3FA6F193DAF0E00A4E962 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FEA3FA65193DAF0E00A4E962 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEA3FA66193DAF0E00A4E962 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FEA3FA76193DAF0E00A4E962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FEA3FA77193DAF0E00A4E962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FEA3FA79193DAF0E00A4E962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/raikov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Beta,
+					2,
+					/Users/raikov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Beta,
+					2,
+					/Users/raikov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Beta,
+					2,
+				);
+				INFOPLIST_FILE = TestChartWithSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestChartWithSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FEA3FA7A193DAF0E00A4E962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/raikov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Beta,
+					2,
+					/Users/raikov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Beta,
+					2,
+					/Users/raikov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Beta,
+					2,
+				);
+				INFOPLIST_FILE = TestChartWithSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestChartWithSwift-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		FEA3FA7C193DAF0E00A4E962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TestChartWithSwift.app/TestChartWithSwift";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TestChartWithSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		FEA3FA7D193DAF0E00A4E962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TestChartWithSwift.app/TestChartWithSwift";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TestChartWithSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FEA3FA57193DAF0E00A4E962 /* Build configuration list for PBXProject "TestChartWithSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEA3FA76193DAF0E00A4E962 /* Debug */,
+				FEA3FA77193DAF0E00A4E962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEA3FA78193DAF0E00A4E962 /* Build configuration list for PBXNativeTarget "TestChartWithSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEA3FA79193DAF0E00A4E962 /* Debug */,
+				FEA3FA7A193DAF0E00A4E962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEA3FA7B193DAF0E00A4E962 /* Build configuration list for PBXNativeTarget "TestChartWithSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEA3FA7C193DAF0E00A4E962 /* Debug */,
+				FEA3FA7D193DAF0E00A4E962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FEA3FA54193DAF0E00A4E962 /* Project object */;
+}
