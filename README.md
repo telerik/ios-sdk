@@ -7,6 +7,5 @@ Telerik UI for iOS features:
 - Chart
 - Calendar
 - AppFeedback
-- DataSync (Beta)
 - Easy to use API
 - Maintenance and Support
