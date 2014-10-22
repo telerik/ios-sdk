@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{093ED2D0-900D-4384-BA27-496A278BA603}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Examples</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Examples</AssemblyName>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>i386</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <IpaPackageName>
+    </IpaPackageName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <BuildIpa>true</BuildIpa>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="Telerik.Xamarin.iOS">
+      <HintPath>..\..\..\..\Desktop\TelerikUI.Xamarin_for_iOS.Dev\Telerik.Xamarin.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\menu.png" />
+    <BundleResource Include="Resources\menu%402x.png" />
+    <BundleResource Include="AppleStockPrices.json" />
+    <BundleResource Include="Resources\pattern1.png" />
+    <BundleResource Include="Resources\pattern1%402x.png" />
+    <BundleResource Include="Resources\logo.png" />
+    <BundleResource Include="Resources\logo%402x.png" />
+    <BundleResource Include="Resources\calendar_header.png" />
+    <BundleResource Include="Resources\calendar_cell.png" />
+    <BundleResource Include="Resources\calendar_current_cell.png" />
+    <BundleResource Include="Resources\calendar_selected_cell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="Infrastructure\ExampleInfo.cs" />
+    <Compile Include="Infrastructure\ViewController.cs" />
+    <Compile Include="Infrastructure\ExamplesViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\AppDelegate.cs" />
+    <Compile Include="Examples\PanZoom.cs" />
+    <Compile Include="Examples\Customize.cs" />
+    <Compile Include="Infrastructure\OptionInfo.cs" />
+    <Compile Include="Infrastructure\ExampleViewController.cs" />
+    <Compile Include="Infrastructure\SettingsViewController.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\ColumnAndBarChart.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\LineAreaSpline.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\ScatterChart.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\BubbleChart.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\PieDonut.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\FinancialChart.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\StockDataPoint.cs" />
+    <Compile Include="Examples\Chart\StackedCharts\StackedColumnChart.cs" />
+    <Compile Include="Examples\Chart\StackedCharts\StackedAreaChart.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\IndicatorsChart.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\IndicatorsTableView.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\NumericAxis.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\CategoricalAxis.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\DateTimeAxis.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\MultipleAxes.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\NegativeValues.cs" />
+    <Compile Include="Examples\Chart\Annotations\BandAndLineAnnotations.cs" />
+    <Compile Include="Examples\Chart\Annotations\BalloonAnnotation.cs" />
+    <Compile Include="Examples\Chart\Annotations\LayerAnnotation.cs" />
+    <Compile Include="Examples\Chart\Annotations\ViewAnnotation.cs" />
+    <Compile Include="Examples\Chart\Annotations\CrossLineAnnotation.cs" />
+    <Compile Include="Examples\Chart\Annotations\Trackball.cs" />
+    <Compile Include="Examples\Chart\Annotations\CustomAnnotation.cs" />
+    <Compile Include="Examples\Chart\Annotations\MyAnnotation.cs" />
+    <Compile Include="Examples\Chart\Animations\DefaultAnimation.cs" />
+    <Compile Include="Examples\Chart\Animations\CustomAnimationAreaChart.cs" />
+    <Compile Include="Examples\Chart\Animations\CustomAnimationLineChart.cs" />
+    <Compile Include="Examples\Chart\Animations\CustomAnimationPieChart.cs" />
+    <Compile Include="Examples\Chart\Animations\UIKitDynamicsAnimation.cs" />
+    <Compile Include="Examples\Chart\Binding\BindWithDelegate.cs" />
+    <Compile Include="Examples\Chart\Binding\BindWithCustomObject.cs" />
+    <Compile Include="Examples\Chart\Binding\BindWithDataPoint.cs" />
+    <Compile Include="Examples\Chart\PointLabels\PointLabels.cs" />
+    <Compile Include="Examples\Chart\PointLabels\CustomPointLabel\CustomPointLabels.cs" />
+    <Compile Include="Examples\Chart\PointLabels\CustomPointLabel\MyPointLabel.cs" />
+    <Compile Include="Examples\Chart\PointLabels\CustomLabelRender\SelectedPointLabel.cs" />
+    <Compile Include="Examples\Chart\PointLabels\CustomLabelRender\MyPointLabelRender.cs" />
+    <Compile Include="Examples\Chart\PointLabels\CustomLabelRender\CustomPointLabelRender.cs" />
+    <Compile Include="Examples\Calendar\CalendarWithEvents.cs" />
+    <Compile Include="Examples\Calendar\CalendarTransitionEffects.cs" />
+    <Compile Include="Examples\Calendar\CalendarSelection.cs" />
+    <Compile Include="Examples\Calendar\iOS7StyleCalendar.cs" />
+    <Compile Include="Examples\Calendar\CalendarViewModes.cs" />
+    <Compile Include="Examples\Calendar\CalendarCustomization.cs" />
+    <Compile Include="Examples\Calendar\CustomCell.cs" />
+    <Compile Include="Examples\Calendar\CalendarEventKitDataBinding.cs" />
+    <Compile Include="Examples\Calendar\LocalizedCalendar.cs" />
+    <Compile Include="Examples\Chart\LiveData.cs" />
+    <Compile Include="Examples\Feedback\FeedbackExampleController.cs" />
+    <Compile Include="Examples\Feedback\FeedbackExampleController.designer.cs">
+      <DependentUpon>FeedbackExampleController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Examples\" />
+    <Folder Include="Examples\Chart\" />
+    <Folder Include="Examples\Chart\Annotations\" />
+    <Folder Include="Examples\Chart\Binding\" />
+    <Folder Include="Examples\Chart\ChartTypes\" />
+    <Folder Include="Examples\Chart\AxisTypes\" />
+    <Folder Include="Examples\Chart\StackedCharts\" />
+    <Folder Include="Examples\Chart\Animations\" />
+    <Folder Include="Examples\Chart\PointLabels\" />
+    <Folder Include="Examples\Chart\PointLabels\CustomPointLabel\" />
+    <Folder Include="Examples\Chart\PointLabels\CustomLabelRender\" />
+    <Folder Include="Examples\Calendar\" />
+    <Folder Include="Examples\Feedback\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainStoryboard.storyboard" />
+    <InterfaceDefinition Include="Examples\Feedback\FeedbackExampleController.xib" />
+  </ItemGroup>
+</Project>

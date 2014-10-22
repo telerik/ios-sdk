@@ -47,14 +47,12 @@
     series.selectionMode = TKChartSeriesSelectionModeDataPoint;
     series.selectionAngle = @(-M_PI_2);
     series.expandRadius = 1.2;
-    series.labelDisplayMode = TKChartPieSeriesLabelDisplayModeNone;
     [_pieChart addSeries:series];
     
     TKChartDonutSeries *donutSeries = [[TKChartDonutSeries alloc] initWithItems:array];
     donutSeries.selectionMode = TKChartSeriesSelectionModeDataPoint;
     donutSeries.innerRadius = 0.6;
     donutSeries.expandRadius = 1.1;
-    donutSeries.labelDisplayMode = TKChartPieSeriesLabelDisplayModeNone;
     [_donutChart addSeries:donutSeries];
 }
 

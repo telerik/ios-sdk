@@ -59,14 +59,12 @@
 - (void)applySequential
 {
     _grow = NO;
-    _chart.delegate = self;
     [_chart animate];
 }
 
 - (void)applyGrow
 {
     _grow = YES;
-    _chart.delegate = self;
     [_chart animate];
 }
 

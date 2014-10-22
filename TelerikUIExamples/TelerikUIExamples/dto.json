@@ -1,0 +1,11 @@
+{
+	"class":"Product",
+	"props":[
+             {"name":"productID", "type":"string"},
+             {"name":"name", "type":"string"},
+             {"name":"manufacturer", "type":"string"},
+             {"name":"price", "type":"float"},
+             {"name":"quantity", "type":"int"},
+             {"name":"dateOfPurchase", "type":"date"}
+             ]
+}

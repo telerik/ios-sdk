@@ -34,7 +34,6 @@
     _chart.xAxis = xAxis;
     
     TKChartNumericAxis *yAxis = [[TKChartNumericAxis alloc] initWithMinimum:@(0) andMaximum:@(2000)];
-
     yAxis.majorTickInterval = @400;
     yAxis.position = TKChartAxisPositionLeft;
     _chart.yAxis = yAxis;

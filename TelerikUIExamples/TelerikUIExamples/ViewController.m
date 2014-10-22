@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "ExampleInfo.h"
+#import <TelerikUI/TelerikUI.h>
 
 @implementation ViewController
 {
@@ -21,6 +22,7 @@
     if (self) {
         _example = example;
         _selectedRow = -1;
+        self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     }
     return self;
 }

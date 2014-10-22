@@ -7,7 +7,6 @@
 
 #import <TelerikUI/TelerikUI.h>
 #import "PanZoom.h"
-#import "DowJonesData.h"
 
 @implementation PanZoom
 {

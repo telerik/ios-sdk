@@ -19,6 +19,7 @@
     TKChartVisualPoint *_selectedPoint;
     CGPoint _originalLocation;
     CGPoint _originalPosition;
+    CGPoint _location;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -50,6 +51,8 @@
     NSArray *points = [_chart visualPointsForSeries:_chart.series[0]];
     TKChartVisualPoint *point = points[4];
     
+    _location = point.center;
+    
     UISnapBehavior *snap = [[UISnapBehavior alloc] initWithItem:point snapToPoint:point.center];
     snap.damping = 0.2f;
     
@@ -80,6 +83,11 @@
     _animator = [[UIDynamicAnimator alloc] initWithReferenceView:_chart.plotView];
     
     NSArray *points = [_chart visualPointsForSeries:_chart.series[0]];
+    TKChartVisualPoint *point = points[4];
+    
+    [point.animator removeAllBehaviors];
+    point.animator = nil;
+    point.center = CGPointMake(_location.x, 0);
     
     UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:points];
     collision.translatesReferenceBoundsIntoBoundary = YES;

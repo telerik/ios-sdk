@@ -170,12 +170,12 @@
         
         if (!self.popover) {
             self.popover = [[UIPopoverController alloc] initWithContentViewController:_settings];
-            CGSize size = CGSizeMake(self.popover.popoverContentSize.width, _settings.table.contentSize.height);
+            CGRect settingsBounds = _settings.view.bounds;
+            CGSize size = CGSizeMake(MIN(settingsBounds.size.width, settingsBounds.size.height) / 2.0, settingsBounds.size.height);
             self.popover.popoverContentSize = size;
         }
         
         [self.popover presentPopoverFromBarButtonItem:self.settingsButton permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
-        _settings.table.frame = CGRectMake(0, 0, self.popover.popoverContentSize.width, _settings.table.frame.size.height);
     }
     else {
         [self.navigationController pushViewController:_settings animated:YES];

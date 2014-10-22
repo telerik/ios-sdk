@@ -190,7 +190,8 @@ static NSString* const cellID = @"tableCell";
 
 /*!
  Get access token from Auth request's response body for registered user.
- Additional information for request can be found here: http://docs.telerik.com/platform/backend-services/development/rest-api/users/authenticate-user
+ Additional information for request can be found here: 
+ http://docs.telerik.com/platform/backend-services/development/rest-api/users/authenticate-user
  HINT: you can create a dummy user and use its access token value for all app users.
 */
 -(void)obtainAccessTokenForApiKey:(NSString*) apiKey
@@ -206,8 +207,7 @@ static NSString* const cellID = @"tableCell";
     NSURL* url = [NSURL URLWithString:strUrl];
     
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url
-                                                              cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                                        timeoutInterval:30];
     
     [request setHTTPMethod:@"POST"];

@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+
+using MonoTouch.Foundation;
+using MonoTouch.UIKit;
+
+using TelerikUI;
+
+namespace Examples
+{
+	public class DateTimeAxis: ExampleViewController
+	{
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+
+			TKChart chart = new TKChart (this.ExampleBounds);
+			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
+			this.View.AddSubview (chart);
+
+			NSCalendar calendar = new NSCalendar (NSCalendarType.Gregorian);
+			NSDateComponents dateTimeComponents = new NSDateComponents ();
+			dateTimeComponents.Year = 2013;
+			dateTimeComponents.Day = 1;
+
+			Random r = new Random ();
+			List<TKChartDataPoint> list = new List<TKChartDataPoint> ();
+			for (int i = 1; i <= 6; i++) {
+				dateTimeComponents.Month = i;
+				list.Add(new TKChartDataPoint(calendar.DateFromComponents(dateTimeComponents), new NSNumber(r.Next() % 100)));
+			}
+
+			TKChartSplineAreaSeries series = new TKChartSplineAreaSeries (list.ToArray());
+			series.SelectionMode = TKChartSeriesSelectionMode.Series;
+
+			dateTimeComponents.Month = 1;
+			NSDate minDate = new NSDate ();
+			NSDate maxDate = new NSDate ();
+			minDate = calendar.DateFromComponents (dateTimeComponents);
+			dateTimeComponents.Month = 6;
+			maxDate = calendar.DateFromComponents (dateTimeComponents);
+
+			TKChartDateTimeAxis xAxis = new TKChartDateTimeAxis (minDate, maxDate);
+			xAxis.MajorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Months;
+			xAxis.MajorTickInterval = 1;
+			chart.XAxis = xAxis;
+
+			chart.AddSeries (series);
+		}
+	}
+}
+

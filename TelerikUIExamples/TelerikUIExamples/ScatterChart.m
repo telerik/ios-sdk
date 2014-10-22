@@ -19,8 +19,8 @@
     
     _chart = [[TKChart alloc] initWithFrame:[self exampleBounds]];
     _chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:_chart];
     
+    [self.view addSubview:_chart];
     
     [_chart beginUpdates];
     for (int i = 0; i < 2; i++) {
@@ -37,6 +37,7 @@
         else {
             series.selectionMode = TKChartSeriesSelectionModeSeries;
         }
+        
         series.style.paletteMode = TKChartSeriesStylePaletteModeUseItemIndex;
         series.marginForHitDetection = 300;
         [_chart addSeries:series];

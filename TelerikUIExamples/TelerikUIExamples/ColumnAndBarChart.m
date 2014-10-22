@@ -50,6 +50,7 @@
     TKChartSeries *series = [[TKChartColumnSeries alloc] initWithItems:array];
     series.style.paletteMode = TKChartSeriesStylePaletteModeUseItemIndex;
     series.selectionMode = TKChartSeriesSelectionModeDataPoint;
+
     [_chart addSeries:series];
     
     [_chart reloadData];

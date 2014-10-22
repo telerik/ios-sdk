@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedbackExampleController">
+            <connections>
+                <outlet property="DescriptionLabel" destination="q8e-5l-cuz" id="hiI-a5-NxP"/>
+                <outlet property="view" destination="iN0-l3-epB" id="kCW-yf-GMq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="404" height="506"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CE-z1-NGy">
+                    <rect key="frame" x="148" y="110" width="108" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Send Feedback">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="SendFeedback:" destination="-1" eventType="touchUpInside" id="msa-CN-uHX"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="364" translatesAutoresizingMaskIntoConstraints="NO" id="q8e-5l-cuz">
+                    <rect key="frame" x="20" y="148" width="364" height="338"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <string key="text">TKFeedbackController enables your end-users to quickly provide feedback inside the app and directly to you by simply shaking their device or navigating to the feedback option. Once invoked, the component will automatically take a screenshot and prompt users to point to their issue and provide a comment. The users can then track the feedback they've submitted, viewing its status or supplying additional comments. </string>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="KpI-VS-ZlP">
+                    <rect key="frame" x="164" y="20" width="76" height="76"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="KpI-VS-ZlP" secondAttribute="centerX" id="Ns8-dr-C9I"/>
+                <constraint firstAttribute="centerX" secondItem="4CE-z1-NGy" secondAttribute="centerX" id="VCV-bM-dkO"/>
+                <constraint firstAttribute="trailing" secondItem="q8e-5l-cuz" secondAttribute="trailing" constant="20" id="jAu-jw-esy"/>
+                <constraint firstItem="4CE-z1-NGy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="110" id="lND-3l-YhM"/>
+                <constraint firstItem="q8e-5l-cuz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="148" id="u8q-Kx-O0z"/>
+                <constraint firstItem="q8e-5l-cuz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="uVd-JI-vus"/>
+                <constraint firstAttribute="bottom" secondItem="q8e-5l-cuz" secondAttribute="bottom" constant="20" id="y5l-0s-sPm"/>
+                <constraint firstItem="KpI-VS-ZlP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="zjZ-Sf-tZW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="logo.png" width="76" height="76"/>
+    </resources>
+</document>

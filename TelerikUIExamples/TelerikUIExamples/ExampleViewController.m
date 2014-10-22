@@ -147,7 +147,9 @@
         }
         
         _popover = [[UIPopoverController alloc] initWithContentViewController:settings];
-        CGSize size = CGSizeMake(_popover.popoverContentSize.width, settings.table.contentSize.height);
+        CGRect settingsRect = settings.view.bounds;
+        [settings.table sizeToFit];
+        CGSize size = CGSizeMake(MIN(settingsRect.size.width, settingsRect.size.height) / 2., settings.table.contentSize.height);
         _popover.popoverContentSize = size;
         [_popover presentPopoverFromBarButtonItem:_settingsButton permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
     }

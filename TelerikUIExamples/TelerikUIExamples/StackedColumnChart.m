@@ -17,8 +17,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self addOption:@"Stack" selector:@selector(reloadData)];
-        [self addOption:@"Stack 100" selector:@selector(reloadData)];
+        [self addOption:@"Stacked" selector:@selector(reloadData)];
+        [self addOption:@"Stacked 100" selector:@selector(reloadData)];
         [self addOption:@"Clustered" selector:@selector(reloadData)];
     }
     return self;
@@ -30,6 +30,7 @@
     
     _chart = [[TKChart alloc] initWithFrame:[self exampleBounds]];
     _chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    _chart.allowAnimations = YES;
     [self.view addSubview:_chart];
     
     [self reloadData];
@@ -38,7 +39,6 @@
 - (void)reloadData
 {
     [_chart removeAllData];
-    
     TKChartStackInfo *stackInfo = nil;
     if (self.selectedOption < 2) {
         TKChartStackMode stackMode = self.selectedOption == 0 ? TKChartStackModeStack : TKChartStackModeStack100;
@@ -58,7 +58,6 @@
         series.selectionMode = TKChartSeriesSelectionModeSeries;
         [_chart addSeries:series];
     }
-    
     [_chart reloadData];
 }
 

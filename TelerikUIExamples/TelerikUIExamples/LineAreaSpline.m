@@ -48,7 +48,7 @@
     
     for (int i = 0; i<3; i++) {
         NSMutableArray *array = [[NSMutableArray alloc] init];
-        for (int i = 0; i<8; i++) {
+        for (int i = 0; i<7; i++) {
             [array addObject:[[TKChartDataPoint alloc] initWithX:@(i+1) Y:@(arc4random() % 100)]];
         }
         
@@ -71,10 +71,11 @@
                 break;
         }
         series.selectionMode = TKChartSeriesSelectionModeSeries;
-        
         [_chart addSeries:series];
     }
-    
+
+    _chart.xAxis.allowZoom = YES;
+    _chart.yAxis.allowZoom = YES;
     [_chart reloadData];
 }
 

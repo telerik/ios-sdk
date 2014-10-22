@@ -58,6 +58,7 @@
     }
     
     series.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    
     TKChartNumericAxis *yAxis = [[TKChartNumericAxis alloc] initWithMinimum:@300 andMaximum:@380];
     yAxis.majorTickInterval = @20;
     financialChart.yAxis = yAxis;

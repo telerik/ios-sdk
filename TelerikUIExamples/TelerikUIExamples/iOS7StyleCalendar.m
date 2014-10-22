@@ -8,10 +8,6 @@
 #import "iOS7StyleCalendar.h"
 #import <TelerikUI/TelerikUI.h>
 
-@interface iOS7StyleCalendar ()
-
-@end
-
 @implementation iOS7StyleCalendar
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

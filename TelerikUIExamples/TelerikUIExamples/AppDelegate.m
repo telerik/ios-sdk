@@ -5,6 +5,8 @@
 //  Copyright (c) 2013 Telerik. All rights reserved.
 //
 
+#import <TelerikAppFeedback/AppFeedback.h>
+
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "ExampleInfo.h"
@@ -52,28 +54,33 @@
 #import "LocalizedCalendar.h"
 #import "FeedbackExampleController.h"
 
-#import "DataPersistence.h"
-#import "DataSynchronization.h"
+#import "PointLabels.h"
+#import "CustomPointLabels.h"
+#import "CustomPointLabelRender.h"
 
-#import "DataPersistence.h"
-#import "DataSynchronization.h"
+#import "LiveData.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //api key used to work with Telerik AppFeedback service
+    static NSString *apiKey = @"58cb0070-f612-11e3-b9fc-55b0b983d3be";
+    
+    //user id used to send feedback to Telerik AppFeedback service
+    static NSString *uID = @"iosteam@telerik.com";
+    
     ViewController *mainViewController = [[ViewController alloc] initWithExample:[self createExamples]];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     navigationController.navigationBar.translucent = NO;
     
     TKFeedbackController *feedbackController = [[TKFeedbackController alloc] init];
-    feedbackController.dataSource = [[TKPlatformFeedbackSource alloc] initWithKey:@"58cb0070-f612-11e3-b9fc-55b0b983d3be" uid:@"iosteam@telerik.com"];
+    feedbackController.dataSource = [[TKPlatformFeedbackSource alloc] initWithKey:apiKey uid:uID];
     feedbackController.contentController = navigationController;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = feedbackController;
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 
@@ -85,7 +92,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -108,70 +115,72 @@
 {
     NSDictionary *examples = @{
                                
-        @"1.Chart": @{
-               @"1.Chart Types": @{
-                       @"1.Column / Bar chart": [ColumnAndBarChart class],
-                       @"2.Line / Area / Spline chart": [LineAreaSpline class],
-                       @"3.Scatter chart": [ScatterChart class],
-                       @"4.Bubble chart": [BubbleChart class],
-                       @"5.Pie chart": [PieDonut class],
-                       @"6.Stacked Column chart": [StackedColumnChart class],
-                       @"7.Stacked Area chart": [StackedAreaChart class],
-                       @"8.Financial chart": [FinancialChart class],
-                       @"9.Indicators": [IndicatorsViewController class]
-                       },
-               
-               @"2.Axis Types": @{
-                       @"1.Numeric axis": [NumericAxis class],
-                       @"2.Categorical axis": [CategoricalAxis class],
-                       @"3.Date/Time axis": [DateTimeAxis class],
-                       @"4.Multiple axes": [MultipleAxes class],
-                       @"5.Negative values": [NegativeValues class]
-                       },
-               
-               @"3.Animations": @{
-                       @"1.Default animations": [DefaultAnimation class],
-                       @"2.Custom animation - line chart": [CustomAnimationLineChart class],
-                       @"3.Custom animation - area chart": [CustomAnimationAreaChart class],
-                       @"4.Custom animation - pie chart": [CustomAnimationPieChart class],
-                       @"5.UIKit dynamics animation": [UIKitDynamicsAnimation class]
-                       },
-               
-               @"4.Binding": @{
-                       @"1.Bind with data point": [BindWithDataPoint class],
-                       @"2.Bind with custom object": [BindWithCustomObject class],
-                       @"3.Bind with delegate": [BindWithDelegate class]
-                       },
-               
-               @"5.Pan/Zoom": [PanZoom class],
-               @"6.Customize": [Customize class],
-               @"7.Annotations": @{
-                       @"1.Band and line annotations": [BandAndLineAnnotations class],
-                       @"2.Balloon annotation": [BalloonAnnotation class],
-                       @"3.Layer annotation": [LayerAnnotation class],
-                       @"4.View annotation": [ViewAnnotation class],
-                       @"5.Cross line annotation": [CrossLineAnnotation class],
-                       @"6.Custom annotation": [CustomAnnotation class],
-                       @"7.Trackball": [Trackball class]
-                       },
-        },
-                                  
-        @"2.Calendar": @{
-                  @"1. Calendar with events": [CalendarWithEvents class],
-                  @"2. View modes": [CalendarViewModes class],
-                  @"3. Transition effects": [CalendarTransitionEffects class],
-                  @"4. Selection": [CalendarSelection class],
-                  @"5. iOS 7 style calendar": [iOS7StyleCalendar class],
-                  @"6. Customization": [CalendarCustomization class],
-                  @"7. EventKit data binding": [CalendarEventKitDataBinding class],
-                  @"8. Localized calendar": [LocalizedCalendar class]
-          },
-        @"3.Feedback": [FeedbackExampleController class],
-        @"4.DataSync": @{
-                @"1. Data Persistence": [DataPersistence class],
-                @"2. Synchronize Data": [DataSynchronization class]
-                }
-        };
+                               @"1.Chart": @{
+                                       @"1.Chart Types": @{
+                                               @"1.Column / Bar chart": [ColumnAndBarChart class],
+                                               @"2.Line / Area / Spline chart": [LineAreaSpline class],
+                                               @"3.Scatter chart": [ScatterChart class],
+                                               @"4.Bubble chart": [BubbleChart class],
+                                               @"5.Pie chart": [PieDonut class],
+                                               @"6.Stacked Column chart": [StackedColumnChart class],
+                                               @"7.Stacked Area chart": [StackedAreaChart class],
+                                               @"8.Financial chart": [FinancialChart class],
+                                               @"9.Indicators": [IndicatorsViewController class]
+                                               },
+                                       
+                                       @"2.Axis Types": @{
+                                               @"1.Numeric axis": [NumericAxis class],
+                                               @"2.Categorical axis": [CategoricalAxis class],
+                                               @"3.Date/Time axis": [DateTimeAxis class],
+                                               @"4.Multiple axes": [MultipleAxes class],
+                                               @"5.Negative values": [NegativeValues class]
+                                               },
+                                       
+                                       @"3.Animations": @{
+                                               @"1.Default animations": [DefaultAnimation class],
+                                               @"2.Custom animation - line chart": [CustomAnimationLineChart class],
+                                               @"3.Custom animation - area chart": [CustomAnimationAreaChart class],
+                                               @"4.Custom animation - pie chart": [CustomAnimationPieChart class],
+                                               @"5.UIKit dynamics animation": [UIKitDynamicsAnimation class]
+                                               },
+                                       
+                                       @"4.Binding": @{
+                                               @"1.Bind with data point": [BindWithDataPoint class],
+                                               @"2.Bind with custom object": [BindWithCustomObject class],
+                                               @"3.Bind with delegate": [BindWithDelegate class]
+                                               },
+                                       
+                                       @"5.Pan/Zoom": [PanZoom class],
+                                       @"6.Customize": [Customize class],
+                                       @"7.Annotations": @{
+                                               @"1.Band and line annotations": [BandAndLineAnnotations class],
+                                               @"2.Balloon annotation": [BalloonAnnotation class],
+                                               @"3.Layer annotation": [LayerAnnotation class],
+                                               @"4.View annotation": [ViewAnnotation class],
+                                               @"5.Cross line annotation": [CrossLineAnnotation class],
+                                               @"6.Custom annotation": [CustomAnnotation class],
+                                               @"7.Trackball": [Trackball class]
+                                               },
+                                       @"8.Point Labels" : @{
+                                               @"1.Point Labels" : [PointLabels class],
+                                               @"2.Custom Label" : [CustomPointLabels class],
+                                               @"3.Custom Label Render" : [CustomPointLabelRender class]
+                                               },
+                                       @"9.Live Data" : [LiveData class]
+                                       },
+                               
+                               @"2.Calendar": @{
+                                       @"1. Calendar with events": [CalendarWithEvents class],
+                                       @"2. View modes": [CalendarViewModes class],
+                                       @"3. Transition effects": [CalendarTransitionEffects class],
+                                       @"4. Selection": [CalendarSelection class],
+                                       @"5. iOS 7 style calendar": [iOS7StyleCalendar class],
+                                       @"6. Customization": [CalendarCustomization class],
+                                       @"7. EventKit data binding": [CalendarEventKitDataBinding class],
+                                       @"8. Localized calendar": [LocalizedCalendar class]
+                                       },
+                               @"3.Feedback": [FeedbackExampleController class],
+                               };
     
     NSArray *examplesArray = [self createExamplesRecursively:examples];
     return [[ExampleInfo alloc] initWithExamples:examplesArray withTitle:@"Examples"];
