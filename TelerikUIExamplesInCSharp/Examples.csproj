@@ -125,8 +125,6 @@
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\AppDelegate.cs" />
-    <Compile Include="Examples\PanZoom.cs" />
-    <Compile Include="Examples\Customize.cs" />
     <Compile Include="Infrastructure\OptionInfo.cs" />
     <Compile Include="Infrastructure\ExampleViewController.cs" />
     <Compile Include="Infrastructure\SettingsViewController.cs" />
@@ -182,6 +180,8 @@
     <Compile Include="Examples\Feedback\FeedbackExampleController.designer.cs">
       <DependentUpon>FeedbackExampleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Examples\Chart\PanZoom.cs" />
+    <Compile Include="Examples\Chart\Customize.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
