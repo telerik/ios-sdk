@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB48BD461A44661300811155 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48BD451A44661300811155 /* AppDelegate.swift */; };
+		EB48BD481A44661300811155 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48BD471A44661300811155 /* ViewController.swift */; };
+		EB48BD4B1A44661300811155 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB48BD491A44661300811155 /* Main.storyboard */; };
+		EB48BD4D1A44661300811155 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB48BD4C1A44661300811155 /* Images.xcassets */; };
+		EB48BD5C1A44661300811155 /* SeismographSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48BD5B1A44661300811155 /* SeismographSwiftTests.swift */; };
+		EB48BD671A44667000811155 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB48BD651A44666000811155 /* CoreGraphics.framework */; };
+		EB48BD691A44667800811155 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB48BD681A44667800811155 /* CoreMotion.framework */; };
+		EB48BD6E1A44724200811155 /* TelerikBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = EB48BD6D1A44724200811155 /* TelerikBridge.m */; };
+		EB48BD701A4822E500811155 /* NeedleAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48BD6F1A4822E500811155 /* NeedleAnnotation.swift */; };
+		FE46D0C21A497B73000C2A3B /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE46D0C11A497B73000C2A3B /* TelerikUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB48BD561A44661300811155 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB48BD381A44661300811155 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB48BD3F1A44661300811155;
+			remoteInfo = SeismographSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EB48BD401A44661300811155 /* SeismographSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeismographSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB48BD441A44661300811155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB48BD451A44661300811155 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EB48BD471A44661300811155 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EB48BD4A1A44661300811155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EB48BD4C1A44661300811155 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EB48BD551A44661300811155 /* SeismographSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeismographSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB48BD5A1A44661300811155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB48BD5B1A44661300811155 /* SeismographSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeismographSwiftTests.swift; sourceTree = "<group>"; };
+		EB48BD651A44666000811155 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EB48BD681A44667800811155 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		EB48BD6C1A44724100811155 /* SeismographSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SeismographSwift-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		EB48BD6D1A44724200811155 /* TelerikBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TelerikBridge.m; path = ../TelerikBridge.m; sourceTree = "<group>"; };
+		EB48BD6F1A4822E500811155 /* NeedleAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleAnnotation.swift; sourceTree = "<group>"; };
+		FE46D0C11A497B73000C2A3B /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB48BD3D1A44661300811155 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE46D0C21A497B73000C2A3B /* TelerikUI.framework in Frameworks */,
+				EB48BD691A44667800811155 /* CoreMotion.framework in Frameworks */,
+				EB48BD671A44667000811155 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB48BD521A44661300811155 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB48BD371A44661300811155 = {
+			isa = PBXGroup;
+			children = (
+				FE46D0C11A497B73000C2A3B /* TelerikUI.framework */,
+				EB48BD681A44667800811155 /* CoreMotion.framework */,
+				EB48BD651A44666000811155 /* CoreGraphics.framework */,
+				EB48BD421A44661300811155 /* SeismographSwift */,
+				EB48BD581A44661300811155 /* SeismographSwiftTests */,
+				EB48BD411A44661300811155 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB48BD411A44661300811155 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB48BD401A44661300811155 /* SeismographSwift.app */,
+				EB48BD551A44661300811155 /* SeismographSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB48BD421A44661300811155 /* SeismographSwift */ = {
+			isa = PBXGroup;
+			children = (
+				EB48BD451A44661300811155 /* AppDelegate.swift */,
+				EB48BD471A44661300811155 /* ViewController.swift */,
+				EB48BD6F1A4822E500811155 /* NeedleAnnotation.swift */,
+				EB48BD491A44661300811155 /* Main.storyboard */,
+				EB48BD4C1A44661300811155 /* Images.xcassets */,
+				EB48BD6D1A44724200811155 /* TelerikBridge.m */,
+				EB48BD6C1A44724100811155 /* SeismographSwift-Bridging-Header.h */,
+				EB48BD431A44661300811155 /* Supporting Files */,
+			);
+			path = SeismographSwift;
+			sourceTree = "<group>";
+		};
+		EB48BD431A44661300811155 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB48BD441A44661300811155 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB48BD581A44661300811155 /* SeismographSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				EB48BD5B1A44661300811155 /* SeismographSwiftTests.swift */,
+				EB48BD591A44661300811155 /* Supporting Files */,
+			);
+			path = SeismographSwiftTests;
+			sourceTree = "<group>";
+		};
+		EB48BD591A44661300811155 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB48BD5A1A44661300811155 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB48BD3F1A44661300811155 /* SeismographSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB48BD5F1A44661300811155 /* Build configuration list for PBXNativeTarget "SeismographSwift" */;
+			buildPhases = (
+				EB48BD3C1A44661300811155 /* Sources */,
+				EB48BD3D1A44661300811155 /* Frameworks */,
+				EB48BD3E1A44661300811155 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SeismographSwift;
+			productName = SeismographSwift;
+			productReference = EB48BD401A44661300811155 /* SeismographSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EB48BD541A44661300811155 /* SeismographSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB48BD621A44661300811155 /* Build configuration list for PBXNativeTarget "SeismographSwiftTests" */;
+			buildPhases = (
+				EB48BD511A44661300811155 /* Sources */,
+				EB48BD521A44661300811155 /* Frameworks */,
+				EB48BD531A44661300811155 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB48BD571A44661300811155 /* PBXTargetDependency */,
+			);
+			name = SeismographSwiftTests;
+			productName = SeismographSwiftTests;
+			productReference = EB48BD551A44661300811155 /* SeismographSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB48BD381A44661300811155 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Telerik;
+				TargetAttributes = {
+					EB48BD3F1A44661300811155 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					EB48BD541A44661300811155 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = EB48BD3F1A44661300811155;
+					};
+				};
+			};
+			buildConfigurationList = EB48BD3B1A44661300811155 /* Build configuration list for PBXProject "SeismographSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB48BD371A44661300811155;
+			productRefGroup = EB48BD411A44661300811155 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB48BD3F1A44661300811155 /* SeismographSwift */,
+				EB48BD541A44661300811155 /* SeismographSwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB48BD3E1A44661300811155 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB48BD4B1A44661300811155 /* Main.storyboard in Resources */,
+				EB48BD4D1A44661300811155 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB48BD531A44661300811155 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB48BD3C1A44661300811155 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB48BD6E1A44724200811155 /* TelerikBridge.m in Sources */,
+				EB48BD701A4822E500811155 /* NeedleAnnotation.swift in Sources */,
+				EB48BD481A44661300811155 /* ViewController.swift in Sources */,
+				EB48BD461A44661300811155 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB48BD511A44661300811155 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB48BD5C1A44661300811155 /* SeismographSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB48BD571A44661300811155 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB48BD3F1A44661300811155 /* SeismographSwift */;
+			targetProxy = EB48BD561A44661300811155 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EB48BD491A44661300811155 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB48BD4A1A44661300811155 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB48BD5D1A44661300811155 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB48BD5E1A44661300811155 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB48BD601A44661300811155 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				INFOPLIST_FILE = SeismographSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SeismographSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EB48BD611A44661300811155 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				INFOPLIST_FILE = SeismographSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SeismographSwift-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		EB48BD631A44661300811155 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SeismographSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SeismographSwift.app/SeismographSwift";
+			};
+			name = Debug;
+		};
+		EB48BD641A44661300811155 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SeismographSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SeismographSwift.app/SeismographSwift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB48BD3B1A44661300811155 /* Build configuration list for PBXProject "SeismographSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB48BD5D1A44661300811155 /* Debug */,
+				EB48BD5E1A44661300811155 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB48BD5F1A44661300811155 /* Build configuration list for PBXNativeTarget "SeismographSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB48BD601A44661300811155 /* Debug */,
+				EB48BD611A44661300811155 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB48BD621A44661300811155 /* Build configuration list for PBXNativeTarget "SeismographSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB48BD631A44661300811155 /* Debug */,
+				EB48BD641A44661300811155 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB48BD381A44661300811155 /* Project object */;
+}

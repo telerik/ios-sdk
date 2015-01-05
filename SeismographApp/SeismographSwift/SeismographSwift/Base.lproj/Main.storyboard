@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SeismographSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jy9-mY-jcK">
+                                <rect key="frame" x="426" y="20" width="158" height="29"/>
+                                <segments>
+                                    <segment title="X-axis"/>
+                                    <segment title="Y-axis"/>
+                                    <segment title="Z-axis"/>
+                                </segments>
+                                <connections>
+                                    <action selector="axesButtonsValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ka4-sG-rHB"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qe-ZR-FxE" customClass="TKChart">
+                                <rect key="frame" x="26" y="64" width="558" height="526"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EVZ-zD-X3a">
+                                <rect key="frame" x="26" y="20" width="149" height="29"/>
+                                <segments>
+                                    <segment title="Start"/>
+                                    <segment title="Stop"/>
+                                    <segment title="Reset"/>
+                                </segments>
+                                <connections>
+                                    <action selector="controlButtonsValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="tEU-rb-FiT"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9qe-ZR-FxE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Let-kq-0zo"/>
+                            <constraint firstItem="9qe-ZR-FxE" firstAttribute="top" secondItem="jy9-mY-jcK" secondAttribute="bottom" constant="16" id="Nyn-7D-g0P"/>
+                            <constraint firstItem="9qe-ZR-FxE" firstAttribute="leading" secondItem="EVZ-zD-X3a" secondAttribute="leading" id="bCq-wq-NOu"/>
+                            <constraint firstItem="9qe-ZR-FxE" firstAttribute="trailing" secondItem="jy9-mY-jcK" secondAttribute="trailing" id="fDX-Gv-wZa"/>
+                            <constraint firstItem="9qe-ZR-FxE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="iSh-8Z-Muj"/>
+                            <constraint firstItem="9qe-ZR-FxE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="lFr-UG-K4f"/>
+                            <constraint firstItem="9qe-ZR-FxE" firstAttribute="top" secondItem="EVZ-zD-X3a" secondAttribute="bottom" constant="16" id="obN-3U-Ocm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9qe-ZR-FxE" secondAttribute="bottom" constant="10" id="xFf-Yp-Exm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="axesButtons" destination="jy9-mY-jcK" id="4rr-Z3-CoS"/>
+                        <outlet property="chart" destination="9qe-ZR-FxE" id="dhy-ku-Z6Q"/>
+                        <outlet property="controlButtons" destination="EVZ-zD-X3a" id="1pt-uP-3gn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
