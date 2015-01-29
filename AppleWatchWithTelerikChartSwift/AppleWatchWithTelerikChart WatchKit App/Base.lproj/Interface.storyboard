@@ -10,12 +10,12 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="AppleWatchWithTelerikChart_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="Label" id="xHn-WP-fnl">
-                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <label alignment="left" text="Label" lineHeight="1" numberOfLines="2" minimumScaleFactor="0.30000000000000016" id="xHn-WP-fnl">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
                         </label>
                         <imageView width="136" height="122" alignment="left" id="VgY-UW-TUT"/>
                     </items>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="chartImageView" destination="VgY-UW-TUT" id="Dqj-6O-y4R"/>
                         <outlet property="titleLabel" destination="xHn-WP-fnl" id="Kc6-Vg-dAf"/>
