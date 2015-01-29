@@ -1,0 +1,1089 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB66F0B81A790A320090FB04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66F0B71A790A320090FB04 /* AppDelegate.swift */; };
+		EB66F0BA1A790A320090FB04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66F0B91A790A320090FB04 /* ViewController.swift */; };
+		EB66F0BD1A790A320090FB04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB66F0BB1A790A320090FB04 /* Main.storyboard */; };
+		EB66F0BF1A790A320090FB04 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB66F0BE1A790A320090FB04 /* Images.xcassets */; };
+		EB66F0C21A790A320090FB04 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB66F0C01A790A320090FB04 /* LaunchScreen.xib */; };
+		EB66F0CE1A790A320090FB04 /* AppleWatchWithTelerikChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66F0CD1A790A320090FB04 /* AppleWatchWithTelerikChartTests.swift */; };
+		EB66F0E61A7934640090FB04 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66F0E51A7934640090FB04 /* InterfaceController.swift */; };
+		EB66F0E81A7934640090FB04 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66F0E71A7934640090FB04 /* NotificationController.swift */; };
+		EB66F0EA1A7934640090FB04 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66F0E91A7934640090FB04 /* GlanceController.swift */; };
+		EB66F0EC1A7934640090FB04 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB66F0EB1A7934640090FB04 /* Images.xcassets */; };
+		EB66F0F01A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = EB66F0EF1A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit App.app */; };
+		EB66F0F81A7934640090FB04 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB66F0F61A7934640090FB04 /* Interface.storyboard */; };
+		EB66F0FA1A7934640090FB04 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB66F0F91A7934640090FB04 /* Images.xcassets */; };
+		EB66F0FD1A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EB66F0E01A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EB66F10F1A79364B0090FB04 /* WatchCoreDataProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = EB66F10E1A79364B0090FB04 /* WatchCoreDataProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB66F1151A79364C0090FB04 /* WatchCoreDataProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB66F10A1A79364B0090FB04 /* WatchCoreDataProxy.framework */; };
+		EB66F11E1A79364C0090FB04 /* WatchCoreDataProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66F11D1A79364C0090FB04 /* WatchCoreDataProxyTests.swift */; };
+		EB66F1211A79364C0090FB04 /* WatchCoreDataProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB66F10A1A79364B0090FB04 /* WatchCoreDataProxy.framework */; };
+		EB66F1221A79364C0090FB04 /* WatchCoreDataProxy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EB66F10A1A79364B0090FB04 /* WatchCoreDataProxy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EB66F12C1A7936840090FB04 /* WatchModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB66F12A1A7936840090FB04 /* WatchModel.xcdatamodeld */; };
+		EB66F1521A7937DA0090FB04 /* WatchCoreDataProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66F1511A7937DA0090FB04 /* WatchCoreDataProxy.swift */; };
+		EBA4CB091A7A61290076D4BB /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB66F0D71A790A4F0090FB04 /* TelerikUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB66F0C81A790A320090FB04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB66F0AA1A790A310090FB04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB66F0B11A790A310090FB04;
+			remoteInfo = AppleWatchWithTelerikChart;
+		};
+		EB66F0F11A7934640090FB04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB66F0AA1A790A310090FB04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB66F0EE1A7934640090FB04;
+			remoteInfo = "AppleWatchWithTelerikChart WatchKit App";
+		};
+		EB66F0FB1A7934640090FB04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB66F0AA1A790A310090FB04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB66F0DF1A7934640090FB04;
+			remoteInfo = "AppleWatchWithTelerikChart WatchKit Extension";
+		};
+		EB66F1161A79364C0090FB04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB66F0AA1A790A310090FB04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB66F1091A79364B0090FB04;
+			remoteInfo = WatchCoreDataProxy;
+		};
+		EB66F1181A79364C0090FB04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB66F0AA1A790A310090FB04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB66F0B11A790A310090FB04;
+			remoteInfo = AppleWatchWithTelerikChart;
+		};
+		EB66F11F1A79364C0090FB04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB66F0AA1A790A310090FB04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB66F1091A79364B0090FB04;
+			remoteInfo = WatchCoreDataProxy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EB66F1041A7934640090FB04 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EB66F0FD1A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB66F1261A79364C0090FB04 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EB66F1221A79364C0090FB04 /* WatchCoreDataProxy.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EB66F0B21A790A310090FB04 /* AppleWatchWithTelerikChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchWithTelerikChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB66F0B61A790A310090FB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB66F0B71A790A320090FB04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EB66F0B91A790A320090FB04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EB66F0BC1A790A320090FB04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EB66F0BE1A790A320090FB04 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EB66F0C11A790A320090FB04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EB66F0C71A790A320090FB04 /* AppleWatchWithTelerikChartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleWatchWithTelerikChartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB66F0CC1A790A320090FB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB66F0CD1A790A320090FB04 /* AppleWatchWithTelerikChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWatchWithTelerikChartTests.swift; sourceTree = "<group>"; };
+		EB66F0D71A790A4F0090FB04 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../../Documents/Telerik/UI for iOS Q3 2014/TelerikUI.framework"; sourceTree = "<group>"; };
+		EB66F0D91A790BC70090FB04 /* AppleWatchWithTelerikChart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppleWatchWithTelerikChart-Bridging-Header.h"; sourceTree = "<group>"; };
+		EB66F0E01A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AppleWatchWithTelerikChart WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB66F0E31A7934640090FB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB66F0E41A7934640090FB04 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		EB66F0E51A7934640090FB04 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		EB66F0E71A7934640090FB04 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		EB66F0E91A7934640090FB04 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		EB66F0EB1A7934640090FB04 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EB66F0EF1A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppleWatchWithTelerikChart WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB66F0F51A7934640090FB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB66F0F71A7934640090FB04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		EB66F0F91A7934640090FB04 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EB66F10A1A79364B0090FB04 /* WatchCoreDataProxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WatchCoreDataProxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB66F10D1A79364B0090FB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB66F10E1A79364B0090FB04 /* WatchCoreDataProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatchCoreDataProxy.h; sourceTree = "<group>"; };
+		EB66F1141A79364C0090FB04 /* WatchCoreDataProxyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchCoreDataProxyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB66F11C1A79364C0090FB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB66F11D1A79364C0090FB04 /* WatchCoreDataProxyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCoreDataProxyTests.swift; sourceTree = "<group>"; };
+		EB66F12B1A7936840090FB04 /* WatchModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WatchModel.xcdatamodel; sourceTree = "<group>"; };
+		EB66F1511A7937DA0090FB04 /* WatchCoreDataProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchCoreDataProxy.swift; sourceTree = "<group>"; };
+		EB66F1541A793A190090FB04 /* AppleWatchWithTelerikChart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppleWatchWithTelerikChart.entitlements; sourceTree = "<group>"; };
+		EB66F1551A793B970090FB04 /* AppleWatchWithTelerikChart WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "AppleWatchWithTelerikChart WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB66F0AF1A790A310090FB04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBA4CB091A7A61290076D4BB /* TelerikUI.framework in Frameworks */,
+				EB66F1211A79364C0090FB04 /* WatchCoreDataProxy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB66F0C41A790A320090FB04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB66F0DD1A7934640090FB04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB66F1061A79364B0090FB04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB66F1111A79364C0090FB04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB66F1151A79364C0090FB04 /* WatchCoreDataProxy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB66F0A91A790A310090FB04 = {
+			isa = PBXGroup;
+			children = (
+				EB66F0D71A790A4F0090FB04 /* TelerikUI.framework */,
+				EB66F0B41A790A310090FB04 /* AppleWatchWithTelerikChart */,
+				EB66F0CA1A790A320090FB04 /* AppleWatchWithTelerikChartTests */,
+				EB66F0E11A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit Extension */,
+				EB66F0F31A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit App */,
+				EB66F10B1A79364B0090FB04 /* WatchCoreDataProxy */,
+				EB66F11A1A79364C0090FB04 /* WatchCoreDataProxyTests */,
+				EB66F0B31A790A310090FB04 /* Products */,
+				EB66F0D91A790BC70090FB04 /* AppleWatchWithTelerikChart-Bridging-Header.h */,
+			);
+			sourceTree = "<group>";
+		};
+		EB66F0B31A790A310090FB04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB66F0B21A790A310090FB04 /* AppleWatchWithTelerikChart.app */,
+				EB66F0C71A790A320090FB04 /* AppleWatchWithTelerikChartTests.xctest */,
+				EB66F0E01A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit Extension.appex */,
+				EB66F0EF1A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit App.app */,
+				EB66F10A1A79364B0090FB04 /* WatchCoreDataProxy.framework */,
+				EB66F1141A79364C0090FB04 /* WatchCoreDataProxyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB66F0B41A790A310090FB04 /* AppleWatchWithTelerikChart */ = {
+			isa = PBXGroup;
+			children = (
+				EB66F1541A793A190090FB04 /* AppleWatchWithTelerikChart.entitlements */,
+				EB66F0B71A790A320090FB04 /* AppDelegate.swift */,
+				EB66F0B91A790A320090FB04 /* ViewController.swift */,
+				EB66F0BB1A790A320090FB04 /* Main.storyboard */,
+				EB66F0BE1A790A320090FB04 /* Images.xcassets */,
+				EB66F0C01A790A320090FB04 /* LaunchScreen.xib */,
+				EB66F0B51A790A310090FB04 /* Supporting Files */,
+			);
+			path = AppleWatchWithTelerikChart;
+			sourceTree = "<group>";
+		};
+		EB66F0B51A790A310090FB04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB66F0B61A790A310090FB04 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB66F0CA1A790A320090FB04 /* AppleWatchWithTelerikChartTests */ = {
+			isa = PBXGroup;
+			children = (
+				EB66F0CD1A790A320090FB04 /* AppleWatchWithTelerikChartTests.swift */,
+				EB66F0CB1A790A320090FB04 /* Supporting Files */,
+			);
+			path = AppleWatchWithTelerikChartTests;
+			sourceTree = "<group>";
+		};
+		EB66F0CB1A790A320090FB04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB66F0CC1A790A320090FB04 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB66F0E11A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EB66F1551A793B970090FB04 /* AppleWatchWithTelerikChart WatchKit Extension.entitlements */,
+				EB66F0E51A7934640090FB04 /* InterfaceController.swift */,
+				EB66F0E71A7934640090FB04 /* NotificationController.swift */,
+				EB66F0E91A7934640090FB04 /* GlanceController.swift */,
+				EB66F0EB1A7934640090FB04 /* Images.xcassets */,
+				EB66F0E21A7934640090FB04 /* Supporting Files */,
+			);
+			path = "AppleWatchWithTelerikChart WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		EB66F0E21A7934640090FB04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB66F0E31A7934640090FB04 /* Info.plist */,
+				EB66F0E41A7934640090FB04 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB66F0F31A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				EB66F0F61A7934640090FB04 /* Interface.storyboard */,
+				EB66F0F91A7934640090FB04 /* Images.xcassets */,
+				EB66F0F41A7934640090FB04 /* Supporting Files */,
+			);
+			path = "AppleWatchWithTelerikChart WatchKit App";
+			sourceTree = "<group>";
+		};
+		EB66F0F41A7934640090FB04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB66F0F51A7934640090FB04 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB66F10B1A79364B0090FB04 /* WatchCoreDataProxy */ = {
+			isa = PBXGroup;
+			children = (
+				EB66F10E1A79364B0090FB04 /* WatchCoreDataProxy.h */,
+				EB66F10C1A79364B0090FB04 /* Supporting Files */,
+				EB66F12A1A7936840090FB04 /* WatchModel.xcdatamodeld */,
+				EB66F1511A7937DA0090FB04 /* WatchCoreDataProxy.swift */,
+			);
+			path = WatchCoreDataProxy;
+			sourceTree = "<group>";
+		};
+		EB66F10C1A79364B0090FB04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB66F10D1A79364B0090FB04 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB66F11A1A79364C0090FB04 /* WatchCoreDataProxyTests */ = {
+			isa = PBXGroup;
+			children = (
+				EB66F11D1A79364C0090FB04 /* WatchCoreDataProxyTests.swift */,
+				EB66F11B1A79364C0090FB04 /* Supporting Files */,
+			);
+			path = WatchCoreDataProxyTests;
+			sourceTree = "<group>";
+		};
+		EB66F11B1A79364C0090FB04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB66F11C1A79364C0090FB04 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EB66F1071A79364B0090FB04 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB66F10F1A79364B0090FB04 /* WatchCoreDataProxy.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EB66F0B11A790A310090FB04 /* AppleWatchWithTelerikChart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB66F0D11A790A320090FB04 /* Build configuration list for PBXNativeTarget "AppleWatchWithTelerikChart" */;
+			buildPhases = (
+				EB66F0AE1A790A310090FB04 /* Sources */,
+				EB66F0AF1A790A310090FB04 /* Frameworks */,
+				EB66F0B01A790A310090FB04 /* Resources */,
+				EB66F1041A7934640090FB04 /* Embed App Extensions */,
+				EB66F1261A79364C0090FB04 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB66F0FC1A7934640090FB04 /* PBXTargetDependency */,
+				EB66F1201A79364C0090FB04 /* PBXTargetDependency */,
+			);
+			name = AppleWatchWithTelerikChart;
+			productName = AppleWatchWithTelerikChart;
+			productReference = EB66F0B21A790A310090FB04 /* AppleWatchWithTelerikChart.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EB66F0C61A790A320090FB04 /* AppleWatchWithTelerikChartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB66F0D41A790A320090FB04 /* Build configuration list for PBXNativeTarget "AppleWatchWithTelerikChartTests" */;
+			buildPhases = (
+				EB66F0C31A790A320090FB04 /* Sources */,
+				EB66F0C41A790A320090FB04 /* Frameworks */,
+				EB66F0C51A790A320090FB04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB66F0C91A790A320090FB04 /* PBXTargetDependency */,
+			);
+			name = AppleWatchWithTelerikChartTests;
+			productName = AppleWatchWithTelerikChartTests;
+			productReference = EB66F0C71A790A320090FB04 /* AppleWatchWithTelerikChartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EB66F0DF1A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB66F1011A7934640090FB04 /* Build configuration list for PBXNativeTarget "AppleWatchWithTelerikChart WatchKit Extension" */;
+			buildPhases = (
+				EB66F0DC1A7934640090FB04 /* Sources */,
+				EB66F0DD1A7934640090FB04 /* Frameworks */,
+				EB66F0DE1A7934640090FB04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB66F0F21A7934640090FB04 /* PBXTargetDependency */,
+			);
+			name = "AppleWatchWithTelerikChart WatchKit Extension";
+			productName = "AppleWatchWithTelerikChart WatchKit Extension";
+			productReference = EB66F0E01A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		EB66F0EE1A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB66F0FE1A7934640090FB04 /* Build configuration list for PBXNativeTarget "AppleWatchWithTelerikChart WatchKit App" */;
+			buildPhases = (
+				EB66F0ED1A7934640090FB04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AppleWatchWithTelerikChart WatchKit App";
+			productName = "AppleWatchWithTelerikChart WatchKit App";
+			productReference = EB66F0EF1A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
+		EB66F1091A79364B0090FB04 /* WatchCoreDataProxy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB66F1231A79364C0090FB04 /* Build configuration list for PBXNativeTarget "WatchCoreDataProxy" */;
+			buildPhases = (
+				EB66F1051A79364B0090FB04 /* Sources */,
+				EB66F1061A79364B0090FB04 /* Frameworks */,
+				EB66F1071A79364B0090FB04 /* Headers */,
+				EB66F1081A79364B0090FB04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WatchCoreDataProxy;
+			productName = WatchCoreDataProxy;
+			productReference = EB66F10A1A79364B0090FB04 /* WatchCoreDataProxy.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EB66F1131A79364C0090FB04 /* WatchCoreDataProxyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB66F1271A79364C0090FB04 /* Build configuration list for PBXNativeTarget "WatchCoreDataProxyTests" */;
+			buildPhases = (
+				EB66F1101A79364C0090FB04 /* Sources */,
+				EB66F1111A79364C0090FB04 /* Frameworks */,
+				EB66F1121A79364C0090FB04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB66F1171A79364C0090FB04 /* PBXTargetDependency */,
+				EB66F1191A79364C0090FB04 /* PBXTargetDependency */,
+			);
+			name = WatchCoreDataProxyTests;
+			productName = WatchCoreDataProxyTests;
+			productReference = EB66F1141A79364C0090FB04 /* WatchCoreDataProxyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB66F0AA1A790A310090FB04 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Telerik;
+				TargetAttributes = {
+					EB66F0B11A790A310090FB04 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = CHSQ3M3P37;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					EB66F0C61A790A320090FB04 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = EB66F0B11A790A310090FB04;
+					};
+					EB66F0DF1A7934640090FB04 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = CHSQ3M3P37;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					EB66F0EE1A7934640090FB04 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					EB66F1091A79364B0090FB04 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					EB66F1131A79364C0090FB04 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = EB66F0B11A790A310090FB04;
+					};
+				};
+			};
+			buildConfigurationList = EB66F0AD1A790A310090FB04 /* Build configuration list for PBXProject "AppleWatchWithTelerikChart" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB66F0A91A790A310090FB04;
+			productRefGroup = EB66F0B31A790A310090FB04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB66F0B11A790A310090FB04 /* AppleWatchWithTelerikChart */,
+				EB66F0C61A790A320090FB04 /* AppleWatchWithTelerikChartTests */,
+				EB66F0DF1A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit Extension */,
+				EB66F0EE1A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit App */,
+				EB66F1091A79364B0090FB04 /* WatchCoreDataProxy */,
+				EB66F1131A79364C0090FB04 /* WatchCoreDataProxyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB66F0B01A790A310090FB04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB66F0BD1A790A320090FB04 /* Main.storyboard in Resources */,
+				EB66F0C21A790A320090FB04 /* LaunchScreen.xib in Resources */,
+				EB66F0BF1A790A320090FB04 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB66F0C51A790A320090FB04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB66F0DE1A7934640090FB04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB66F0EC1A7934640090FB04 /* Images.xcassets in Resources */,
+				EB66F0F01A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB66F0ED1A7934640090FB04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB66F0F81A7934640090FB04 /* Interface.storyboard in Resources */,
+				EB66F0FA1A7934640090FB04 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB66F1081A79364B0090FB04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB66F1121A79364C0090FB04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB66F0AE1A790A310090FB04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB66F0BA1A790A320090FB04 /* ViewController.swift in Sources */,
+				EB66F0B81A790A320090FB04 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB66F0C31A790A320090FB04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB66F0CE1A790A320090FB04 /* AppleWatchWithTelerikChartTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB66F0DC1A7934640090FB04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB66F0E81A7934640090FB04 /* NotificationController.swift in Sources */,
+				EB66F0E61A7934640090FB04 /* InterfaceController.swift in Sources */,
+				EB66F0EA1A7934640090FB04 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB66F1051A79364B0090FB04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB66F12C1A7936840090FB04 /* WatchModel.xcdatamodeld in Sources */,
+				EB66F1521A7937DA0090FB04 /* WatchCoreDataProxy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB66F1101A79364C0090FB04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB66F11E1A79364C0090FB04 /* WatchCoreDataProxyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB66F0C91A790A320090FB04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB66F0B11A790A310090FB04 /* AppleWatchWithTelerikChart */;
+			targetProxy = EB66F0C81A790A320090FB04 /* PBXContainerItemProxy */;
+		};
+		EB66F0F21A7934640090FB04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB66F0EE1A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit App */;
+			targetProxy = EB66F0F11A7934640090FB04 /* PBXContainerItemProxy */;
+		};
+		EB66F0FC1A7934640090FB04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB66F0DF1A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit Extension */;
+			targetProxy = EB66F0FB1A7934640090FB04 /* PBXContainerItemProxy */;
+		};
+		EB66F1171A79364C0090FB04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB66F1091A79364B0090FB04 /* WatchCoreDataProxy */;
+			targetProxy = EB66F1161A79364C0090FB04 /* PBXContainerItemProxy */;
+		};
+		EB66F1191A79364C0090FB04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB66F0B11A790A310090FB04 /* AppleWatchWithTelerikChart */;
+			targetProxy = EB66F1181A79364C0090FB04 /* PBXContainerItemProxy */;
+		};
+		EB66F1201A79364C0090FB04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB66F1091A79364B0090FB04 /* WatchCoreDataProxy */;
+			targetProxy = EB66F11F1A79364C0090FB04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EB66F0BB1A790A320090FB04 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB66F0BC1A790A320090FB04 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EB66F0C01A790A320090FB04 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB66F0C11A790A320090FB04 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		EB66F0F61A7934640090FB04 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB66F0F71A7934640090FB04 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB66F0CF1A790A320090FB04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB66F0D01A790A320090FB04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB66F0D21A790A320090FB04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AppleWatchWithTelerikChart/AppleWatchWithTelerikChart.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/diyanov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Q3,
+					2014,
+					/Users/diyanov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Q3,
+					2014,
+					/Users/diyanov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Q3,
+					2014,
+					/Users/diyanov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Q3,
+					2014,
+				);
+				INFOPLIST_FILE = AppleWatchWithTelerikChart/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "AppleWatchWithTelerikChart-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EB66F0D31A790A320090FB04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AppleWatchWithTelerikChart/AppleWatchWithTelerikChart.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/diyanov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Q3,
+					2014,
+					/Users/diyanov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Q3,
+					2014,
+					/Users/diyanov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Q3,
+					2014,
+					/Users/diyanov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Q3,
+					2014,
+				);
+				INFOPLIST_FILE = AppleWatchWithTelerikChart/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "AppleWatchWithTelerikChart-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		EB66F0D51A790A320090FB04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AppleWatchWithTelerikChartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppleWatchWithTelerikChart.app/AppleWatchWithTelerikChart";
+			};
+			name = Debug;
+		};
+		EB66F0D61A790A320090FB04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AppleWatchWithTelerikChartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppleWatchWithTelerikChart.app/AppleWatchWithTelerikChart";
+			};
+			name = Release;
+		};
+		EB66F0FF1A7934640090FB04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = AppleWatchWithTelerikChart_WatchKit_Extension;
+				INFOPLIST_FILE = "AppleWatchWithTelerikChart WatchKit App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		EB66F1001A7934640090FB04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				IBSC_MODULE = AppleWatchWithTelerikChart_WatchKit_Extension;
+				INFOPLIST_FILE = "AppleWatchWithTelerikChart WatchKit App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		EB66F1021A7934640090FB04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "AppleWatchWithTelerikChart WatchKit Extension/AppleWatchWithTelerikChart WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "AppleWatchWithTelerikChart WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EB66F1031A7934640090FB04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "AppleWatchWithTelerikChart WatchKit Extension/AppleWatchWithTelerikChart WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "AppleWatchWithTelerikChart WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		EB66F1241A79364C0090FB04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WatchCoreDataProxy/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EB66F1251A79364C0090FB04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = WatchCoreDataProxy/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EB66F1281A79364C0090FB04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WatchCoreDataProxyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppleWatchWithTelerikChart.app/AppleWatchWithTelerikChart";
+			};
+			name = Debug;
+		};
+		EB66F1291A79364C0090FB04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WatchCoreDataProxyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppleWatchWithTelerikChart.app/AppleWatchWithTelerikChart";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB66F0AD1A790A310090FB04 /* Build configuration list for PBXProject "AppleWatchWithTelerikChart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB66F0CF1A790A320090FB04 /* Debug */,
+				EB66F0D01A790A320090FB04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB66F0D11A790A320090FB04 /* Build configuration list for PBXNativeTarget "AppleWatchWithTelerikChart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB66F0D21A790A320090FB04 /* Debug */,
+				EB66F0D31A790A320090FB04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB66F0D41A790A320090FB04 /* Build configuration list for PBXNativeTarget "AppleWatchWithTelerikChartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB66F0D51A790A320090FB04 /* Debug */,
+				EB66F0D61A790A320090FB04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB66F0FE1A7934640090FB04 /* Build configuration list for PBXNativeTarget "AppleWatchWithTelerikChart WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB66F0FF1A7934640090FB04 /* Debug */,
+				EB66F1001A7934640090FB04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB66F1011A7934640090FB04 /* Build configuration list for PBXNativeTarget "AppleWatchWithTelerikChart WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB66F1021A7934640090FB04 /* Debug */,
+				EB66F1031A7934640090FB04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB66F1231A79364C0090FB04 /* Build configuration list for PBXNativeTarget "WatchCoreDataProxy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB66F1241A79364C0090FB04 /* Debug */,
+				EB66F1251A79364C0090FB04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB66F1271A79364C0090FB04 /* Build configuration list for PBXNativeTarget "WatchCoreDataProxyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB66F1281A79364C0090FB04 /* Debug */,
+				EB66F1291A79364C0090FB04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EB66F12A1A7936840090FB04 /* WatchModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EB66F12B1A7936840090FB04 /* WatchModel.xcdatamodel */,
+			);
+			currentVersion = EB66F12B1A7936840090FB04 /* WatchModel.xcdatamodel */;
+			path = WatchModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EB66F0AA1A790A310090FB04 /* Project object */;
+}
