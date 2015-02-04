@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBA66C361A824B2700883279 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA66C351A824B2700883279 /* AppDelegate.swift */; };
+		EBA66C381A824B2700883279 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA66C371A824B2700883279 /* ViewController.swift */; };
+		EBA66C3B1A824B2700883279 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA66C391A824B2700883279 /* Main.storyboard */; };
+		EBA66C3D1A824B2700883279 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA66C3C1A824B2700883279 /* Images.xcassets */; };
+		EBA66C401A824B2700883279 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBA66C3E1A824B2700883279 /* LaunchScreen.xib */; };
+		EBA66C4C1A824B2700883279 /* TelerikChartInSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA66C4B1A824B2700883279 /* TelerikChartInSwiftTests.swift */; };
+		EBA66C571A824B3800883279 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA66C561A824B3800883279 /* Bridge.m */; };
+		EBA66C591A824B4C00883279 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA66C581A824B4C00883279 /* TelerikUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EBA66C461A824B2700883279 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBA66C281A824B2700883279 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBA66C2F1A824B2700883279;
+			remoteInfo = TelerikChartInSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EBA66C301A824B2700883279 /* TelerikChartInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelerikChartInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBA66C341A824B2700883279 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBA66C351A824B2700883279 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EBA66C371A824B2700883279 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EBA66C3A1A824B2700883279 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EBA66C3C1A824B2700883279 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EBA66C3F1A824B2700883279 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EBA66C451A824B2700883279 /* TelerikChartInSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TelerikChartInSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBA66C4A1A824B2700883279 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBA66C4B1A824B2700883279 /* TelerikChartInSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelerikChartInSwiftTests.swift; sourceTree = "<group>"; };
+		EBA66C551A824B3800883279 /* TelerikChartInSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TelerikChartInSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		EBA66C561A824B3800883279 /* Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
+		EBA66C581A824B4C00883279 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../../Documents/Telerik/UI for iOS Q3 2014/TelerikUI.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBA66C2D1A824B2700883279 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBA66C591A824B4C00883279 /* TelerikUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBA66C421A824B2700883279 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EBA66C271A824B2700883279 = {
+			isa = PBXGroup;
+			children = (
+				EBA66C581A824B4C00883279 /* TelerikUI.framework */,
+				EBA66C561A824B3800883279 /* Bridge.m */,
+				EBA66C321A824B2700883279 /* TelerikChartInSwift */,
+				EBA66C481A824B2700883279 /* TelerikChartInSwiftTests */,
+				EBA66C311A824B2700883279 /* Products */,
+				EBA66C551A824B3800883279 /* TelerikChartInSwift-Bridging-Header.h */,
+			);
+			sourceTree = "<group>";
+		};
+		EBA66C311A824B2700883279 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBA66C301A824B2700883279 /* TelerikChartInSwift.app */,
+				EBA66C451A824B2700883279 /* TelerikChartInSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBA66C321A824B2700883279 /* TelerikChartInSwift */ = {
+			isa = PBXGroup;
+			children = (
+				EBA66C351A824B2700883279 /* AppDelegate.swift */,
+				EBA66C371A824B2700883279 /* ViewController.swift */,
+				EBA66C391A824B2700883279 /* Main.storyboard */,
+				EBA66C3C1A824B2700883279 /* Images.xcassets */,
+				EBA66C3E1A824B2700883279 /* LaunchScreen.xib */,
+				EBA66C331A824B2700883279 /* Supporting Files */,
+			);
+			path = TelerikChartInSwift;
+			sourceTree = "<group>";
+		};
+		EBA66C331A824B2700883279 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EBA66C341A824B2700883279 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBA66C481A824B2700883279 /* TelerikChartInSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBA66C4B1A824B2700883279 /* TelerikChartInSwiftTests.swift */,
+				EBA66C491A824B2700883279 /* Supporting Files */,
+			);
+			path = TelerikChartInSwiftTests;
+			sourceTree = "<group>";
+		};
+		EBA66C491A824B2700883279 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EBA66C4A1A824B2700883279 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBA66C2F1A824B2700883279 /* TelerikChartInSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBA66C4F1A824B2700883279 /* Build configuration list for PBXNativeTarget "TelerikChartInSwift" */;
+			buildPhases = (
+				EBA66C2C1A824B2700883279 /* Sources */,
+				EBA66C2D1A824B2700883279 /* Frameworks */,
+				EBA66C2E1A824B2700883279 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TelerikChartInSwift;
+			productName = TelerikChartInSwift;
+			productReference = EBA66C301A824B2700883279 /* TelerikChartInSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EBA66C441A824B2700883279 /* TelerikChartInSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBA66C521A824B2700883279 /* Build configuration list for PBXNativeTarget "TelerikChartInSwiftTests" */;
+			buildPhases = (
+				EBA66C411A824B2700883279 /* Sources */,
+				EBA66C421A824B2700883279 /* Frameworks */,
+				EBA66C431A824B2700883279 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBA66C471A824B2700883279 /* PBXTargetDependency */,
+			);
+			name = TelerikChartInSwiftTests;
+			productName = TelerikChartInSwiftTests;
+			productReference = EBA66C451A824B2700883279 /* TelerikChartInSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBA66C281A824B2700883279 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Telerik;
+				TargetAttributes = {
+					EBA66C2F1A824B2700883279 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					EBA66C441A824B2700883279 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = EBA66C2F1A824B2700883279;
+					};
+				};
+			};
+			buildConfigurationList = EBA66C2B1A824B2700883279 /* Build configuration list for PBXProject "TelerikChartInSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBA66C271A824B2700883279;
+			productRefGroup = EBA66C311A824B2700883279 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBA66C2F1A824B2700883279 /* TelerikChartInSwift */,
+				EBA66C441A824B2700883279 /* TelerikChartInSwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EBA66C2E1A824B2700883279 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBA66C3B1A824B2700883279 /* Main.storyboard in Resources */,
+				EBA66C401A824B2700883279 /* LaunchScreen.xib in Resources */,
+				EBA66C3D1A824B2700883279 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBA66C431A824B2700883279 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBA66C2C1A824B2700883279 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBA66C381A824B2700883279 /* ViewController.swift in Sources */,
+				EBA66C571A824B3800883279 /* Bridge.m in Sources */,
+				EBA66C361A824B2700883279 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBA66C411A824B2700883279 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBA66C4C1A824B2700883279 /* TelerikChartInSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EBA66C471A824B2700883279 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBA66C2F1A824B2700883279 /* TelerikChartInSwift */;
+			targetProxy = EBA66C461A824B2700883279 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EBA66C391A824B2700883279 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBA66C3A1A824B2700883279 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EBA66C3E1A824B2700883279 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBA66C3F1A824B2700883279 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EBA66C4D1A824B2700883279 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBA66C4E1A824B2700883279 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EBA66C501A824B2700883279 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/diyanov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Q3,
+					2014,
+				);
+				INFOPLIST_FILE = TelerikChartInSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TelerikChartInSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EBA66C511A824B2700883279 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/diyanov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Q3,
+					2014,
+				);
+				INFOPLIST_FILE = TelerikChartInSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TelerikChartInSwift-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		EBA66C531A824B2700883279 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TelerikChartInSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TelerikChartInSwift.app/TelerikChartInSwift";
+			};
+			name = Debug;
+		};
+		EBA66C541A824B2700883279 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TelerikChartInSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TelerikChartInSwift.app/TelerikChartInSwift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBA66C2B1A824B2700883279 /* Build configuration list for PBXProject "TelerikChartInSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBA66C4D1A824B2700883279 /* Debug */,
+				EBA66C4E1A824B2700883279 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBA66C4F1A824B2700883279 /* Build configuration list for PBXNativeTarget "TelerikChartInSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBA66C501A824B2700883279 /* Debug */,
+				EBA66C511A824B2700883279 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EBA66C521A824B2700883279 /* Build configuration list for PBXNativeTarget "TelerikChartInSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBA66C531A824B2700883279 /* Debug */,
+				EBA66C541A824B2700883279 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBA66C281A824B2700883279 /* Project object */;
+}
