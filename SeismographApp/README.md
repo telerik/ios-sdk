@@ -298,7 +298,9 @@ Objective-C
 	    }
 	}
 
-Chart Seismograph with Needle Annotation by Telerik
+
+![Chart Seismograph with Needle Annotation by Telerik](http://blogs.telerik.com/images/default-source/ui-for-ios-team/chart-seismograph-needle.png?sfvrsn=2 "Chart Seismograph with Needle Annotation by Telerik")
+
 This is all you need to achieve a nice looking seismograph app. Of course, using the simulator will not allow you to simulate the device movement, so you will end up with a blank screen. The image at the beginning of this article was made with the help of a real device, and the new Mac OS X Yosemite’s QuickTime feature that allows you to cast your phone screen.
 
 Feel free to get the Seismograph project from GitHub. Note that the project will require UI for iOS to be installed. Download UI for iOS here if you have not done so already.
