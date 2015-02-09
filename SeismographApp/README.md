@@ -11,74 +11,56 @@ The Chart will visualize the changes in phone acceleration in all three directio
 
 Let’s start with utilizing what Core Motion gives us. To do that, we create an instance of the CMMotionManager and let it send its data to an NSOperationQueue. The time interval by which the manager will send data to the queue will be 0.2 seconds. From there, we get the measured data, and depending on the currently selected direction, we pass the appropriate value to the chart.
 
-<script src="https://gist.github.com/nikolay-diyanov/99e60539cb20ca35bc77.js"></script>
+Swift 
 
-func startOperations() {
-    motionManager.accelerometerUpdateInterval = 0.2
-    if motionManager.accelerometerAvailable {
-        motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue(), withHandler: { accelerometerData, error in
-            
-            let acceleration = accelerometerData.acceleration
-            
-            switch self.aType {
-            case .X:
-                self.buildChartWithPoint(coefficient * acceleration.x)
-            case .Y:
-                self.buildChartWithPoint(coefficient * acceleration.y)
-            case .Z:
-                self.buildChartWithPoint(coefficient * acceleration.z)
-            default:
-                break
-            }
-        })
-    }
-}
-view rawViewControllerCoreMotion.swift hosted with ❤ by GitHub
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
--(void)startOperations {
-    motionManager.accelerometerUpdateInterval = 0.2;
-    if(motionManager.accelerometerAvailable) {
-        [motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-            CMAcceleration acceleration = accelerometerData.acceleration;
-         
-            switch (aType) {
-                case AxisTypeX:
-                    [self buildChartWithPoint:acceleration.x*coefficient];
-                    break;
-                case AxisTypeY:
-                    [self buildChartWithPoint:acceleration.y*coefficient];
-                    break;
-                case AxisTypeZ:
-                    [self buildChartWithPoint:acceleration.z*coefficient];
-                    break;
-                default:
-                    break;
-            }
-        }];
-    }
-}
-view rawViewControllerCoreMotion.m hosted with ❤ by GitHub
+
+	func startOperations() {
+	    motionManager.accelerometerUpdateInterval = 0.2
+	    if motionManager.accelerometerAvailable {
+	        motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue(), withHandler: { accelerometerData, error in
+	            
+	            let acceleration = accelerometerData.acceleration
+	            
+	            switch self.aType {
+	            case .X:
+	                self.buildChartWithPoint(coefficient * acceleration.x)
+	            case .Y:
+	                self.buildChartWithPoint(coefficient * acceleration.y)
+	            case .Z:
+	                self.buildChartWithPoint(coefficient * acceleration.z)
+	            default:
+	                break
+	            }
+	        })
+	    }
+	}
+
+Objective-C
+
+	-(void)startOperations {
+	    motionManager.accelerometerUpdateInterval = 0.2;
+	    if(motionManager.accelerometerAvailable) {
+	        [motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+	            CMAcceleration acceleration = accelerometerData.acceleration;
+	         
+	            switch (aType) {
+	                case AxisTypeX:
+	                    [self buildChartWithPoint:acceleration.x*coefficient];
+	                    break;
+	                case AxisTypeY:
+	                    [self buildChartWithPoint:acceleration.y*coefficient];
+	                    break;
+	                case AxisTypeZ:
+	                    [self buildChartWithPoint:acceleration.z*coefficient];
+	                    break;
+	                default:
+	                    break;
+	            }
+	        }];
+	    }
+	}
+
+
 
 Note we are multiplying the measured data by some coefficient, in this case 1,000, so that we have nicely plotted data even for some serious shaking gestures.
 Setting Up the Chart
@@ -87,358 +69,234 @@ This is an example of a chart with data that's dynamically added and changed. Fi
 
 Now, let’s analyze the implementation of the buildChartWithPoint method in detail:
 First, for the reasons I mentioned above, we should remove all data and annotations from the chart:
-1
-2
-self.chart.removeAllData()
-self.chart.removeAllAnnotations()
-view rawViewControllerResetChart.swift hosted with ❤ by GitHub
-1
-2
-[_chart removeAllData];
-[_chart removeAllAnnotations];
-view rawViewControllerResetChart.m hosted with ❤ by GitHub
+
+Swift
+
+	self.chart.removeAllData()
+	self.chart.removeAllAnnotations()
+
+Objective-C
+	
+	[_chart removeAllData];
+	[_chart removeAllAnnotations];
+
 Further, we should create a new data point for the new value measure by the accelerometer. A Chart with too many points may be difficult to read, so we will stick with up to 25 points in the chart. 
-1
-2
-3
-4
-5
-6
-let lastPoint = TKChartDataPoint(x: NSDate(), y: point)
-dataPoints.append(lastPoint)
-        
-if dataPoints.count > 25 {
-  dataPoints.removeAtIndex(0)
-}
-view rawViewControllerDataPoints.swift hosted with ❤ by GitHub
-1
-2
-3
-4
-5
-6
-TKChartDataPoint *dataPoint = [[TKChartDataPoint alloc] initWithX:[NSDate date] Y:@(point)];
-[dataPoints addObject:dataPoint];
- 
-if (dataPoints.count > 25) {
-    [dataPoints removeObjectAtIndex:0];
-}
-view rawViewControllerDataPoints.m hosted with ❤ by GitHub
+
+Swift
+
+	let lastPoint = TKChartDataPoint(x: NSDate(), y: point)
+	dataPoints.append(lastPoint)
+	        
+	if dataPoints.count > 25 {
+	  dataPoints.removeAtIndex(0)
+	}
+
+Objective-C
+
+	TKChartDataPoint *dataPoint = [[TKChartDataPoint alloc] initWithX:[NSDate date] Y:@(point)];
+	[dataPoints addObject:dataPoint];
+	 
+	if (dataPoints.count > 25) {
+	    [dataPoints removeObjectAtIndex:0];
+	}
+
 Now, we’ll create the YAxis. For the numeric values that we measure, the YAxis will be of type TKChartNumericAxis. And, because we want a nice, symmetrical Chart (symmetrical around the line where iPhone is in peace), we are going to place the XAxis in the middle of the Chart by setting the offset and baseline properties: 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-let yAxis = TKChartNumericAxis(minimum: -coefficient, andMaximum: coefficient)
-yAxis.position = TKChartAxisPosition.Left
-yAxis.majorTickInterval = 200
-yAxis.minorTickInterval = 1
-yAxis.offset = 0
-yAxis.baseline = 0
-yAxis.style.labelStyle.fitMode = TKChartAxisLabelFitMode.Rotate
-yAxis.style.labelStyle.firstLabelTextAlignment = TKChartAxisLabelAlignment.Left
-self.chart.yAxis = yAxis
-view rawViewControllerNumericAxis.swift hosted with ❤ by GitHub
-1
-2
-3
-4
-5
-6
-7
-8
-9
-TKChartNumericAxis *yAxis = [[TKChartNumericAxis alloc] initWithMinimum:@(-coefficient) andMaximum:@(coefficient)];
-yAxis.position = TKChartAxisPositionLeft;
-yAxis.majorTickInterval = @200;
-yAxis.minorTickInterval = @1;
-yAxis.offset = @0;
-yAxis.baseline = @0;
-yAxis.style.labelStyle.fitMode = TKChartAxisLabelFitModeRotate;
-yAxis.style.labelStyle.firstLabelTextAlignment = TKChartAxisLabelAlignmentLeft;
-_chart.yAxis = yAxis;
-view rawViewControllerNumericAxis.m hosted with ❤ by GitHub
+
+Swift
+
+	let yAxis = TKChartNumericAxis(minimum: -coefficient, andMaximum: coefficient)
+	yAxis.position = TKChartAxisPosition.Left
+	yAxis.majorTickInterval = 200
+	yAxis.minorTickInterval = 1
+	yAxis.offset = 0
+	yAxis.baseline = 0
+	yAxis.style.labelStyle.fitMode = TKChartAxisLabelFitMode.Rotate
+	yAxis.style.labelStyle.firstLabelTextAlignment = TKChartAxisLabelAlignment.Left
+	self.chart.yAxis = yAxis
+
+Objective-C
+
+	TKChartNumericAxis *yAxis = [[TKChartNumericAxis alloc] initWithMinimum:@(-coefficient) andMaximum:@(coefficient)];
+	yAxis.position = TKChartAxisPositionLeft;
+	yAxis.majorTickInterval = @200;
+	yAxis.minorTickInterval = @1;
+	yAxis.offset = @0;
+	yAxis.baseline = @0;
+	yAxis.style.labelStyle.fitMode = TKChartAxisLabelFitModeRotate;
+	yAxis.style.labelStyle.firstLabelTextAlignment = TKChartAxisLabelAlignmentLeft;
+	_chart.yAxis = yAxis;
+
 Let’s now set the series that will visualize the measured data. This series will be a line series of type TKChartLineSeries: 
-1
-2
-3
-4
-5
-let lineSeries = TKChartLineSeries(items: dataPoints)
-lineSeries.style.palette = TKChartPalette()
-let strokeRed = TKStroke(color: UIColor.redColor(), width: 1.5)
-lineSeries.style.palette.addPaletteItem(TKChartPaletteItem(stroke: strokeRed))
-chart.addSeries(lineSeries)
-view rawViewControllerLineSeries.swift hosted with ❤ by GitHub
-1
-2
-3
-4
-5
-6
-lineSeries = [[TKChartLineSeries alloc] initWithItems:dataPoints];
-lineSeries.style.palette = [TKChartPalette new];
-TKStroke *strokeRed = [TKStroke strokeWithColor:[UIColor colorWithRed:1 green:0 blue:0 alpha:1]];
-strokeRed.width = 1.5;
-[lineSeries.style.palette addPaletteItem:[TKChartPaletteItem paletteItemWithDrawables:@[strokeRed]]];
-[_chart addSeries:lineSeries];
-view rawViewControllerLineSeries.m hosted with ❤ by GitHub
+
+Swift 
+
+	let lineSeries = TKChartLineSeries(items: dataPoints)
+	lineSeries.style.palette = TKChartPalette()
+	let strokeRed = TKStroke(color: UIColor.redColor(), width: 1.5)
+	lineSeries.style.palette.addPaletteItem(TKChartPaletteItem(stroke: strokeRed))
+	chart.addSeries(lineSeries)
+
+Objective-C
+
+	lineSeries = [[TKChartLineSeries alloc] initWithItems:dataPoints];
+	lineSeries.style.palette = [TKChartPalette new];
+	TKStroke *strokeRed = [TKStroke strokeWithColor:[UIColor colorWithRed:1 green:0 blue:0 alpha:1]];
+	strokeRed.width = 1.5;
+	[lineSeries.style.palette addPaletteItem:[TKChartPaletteItem paletteItemWithDrawables:@[strokeRed]]];
+	[_chart addSeries:lineSeries];
+
 Based and the data-points we add, the Chart is smart enough to create a TKChartDateTimeAxis for us and set it as an XAxis. We are not really interested in the exact moment of time a measurement is shown, so let’s hide the ticks and the labels. For better visibility, the XAxis are black: 
-1
-2
-3
-4
-let axisColor = TKStroke(color: UIColor.blackColor(), width: 1)
-chart.xAxis.style.lineStroke = axisColor
-chart.xAxis.style.majorTickStyle.ticksHidden = true
-chart.xAxis.style.labelStyle.textHidden = true
-view rawViewControllerBlackAxis.swift hosted with ❤ by GitHub
-1
-2
-3
-4
-5
-TKStroke *axisColor = [TKStroke strokeWithColor:[UIColor blackColor]];
-axisColor.width = 1;
-_chart.xAxis.style.lineStroke = axisColor;
-_chart.xAxis.style.majorTickStyle.ticksHidden = YES;
-_chart.xAxis.style.labelStyle.textHidden = YES;
-view rawViewControllerBlackAxis.m hosted with ❤ by GitHub
+
+Swift
+
+	let axisColor = TKStroke(color: UIColor.blackColor(), width: 1)
+	chart.xAxis.style.lineStroke = axisColor
+	chart.xAxis.style.majorTickStyle.ticksHidden = true
+	chart.xAxis.style.labelStyle.textHidden = true
+
+Objective-C
+
+	TKStroke *axisColor = [TKStroke strokeWithColor:[UIColor blackColor]];
+	axisColor.width = 1;
+	_chart.xAxis.style.lineStroke = axisColor;
+	_chart.xAxis.style.majorTickStyle.ticksHidden = YES;
+	_chart.xAxis.style.labelStyle.textHidden = YES;
+
 
 Chart Seismograph by Telerik
 
 ![Chart Seismograph by Telerik](http://blogs.telerik.com/images/default-source/ui-for-ios-team/chart-seismograph21DCD07E4482.png?sfvrsn=2 "Chart Seismograph by Telerik")
 
-
-
-
-
-
 To beautify the chart and outline the critical vs. normal deviations from the still iPhone state, let’s add several line and band annotations. The band annotations are green, yellow and red, and the line annotations are set with a dash pattern: 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-let dashStroke = TKStroke(color: UIColor(red: 0, green: 0, blue: 0, alpha: 0.5), width: 0.5)
-dashStroke.dashPattern = [6, 1]
- 
-let annotationBandRed = TKChartBandAnnotation(range: TKRange(minimum: -1000, andMaximum: 1000), forAxis: chart.yAxis)
-annotationBandRed.style.fill = TKSolidFill(color: UIColor(red: 255/255, green: 149/255, blue: 149/255, alpha: 0.7))
-chart.addAnnotation(annotationBandRed)
- 
-let annotationBandYellow = TKChartBandAnnotation(range: TKRange(minimum: -500, andMaximum: 500), forAxis: chart.yAxis)
-annotationBandYellow.style.fill = TKSolidFill(color: UIColor(red: 255/255, green: 255/255, blue: 138/255, alpha: 0.7))
-chart.addAnnotation(annotationBandYellow)
- 
-let annotationBandGreen = TKChartBandAnnotation(range: TKRange(minimum: -300, andMaximum: 300), forAxis: chart.yAxis)
-annotationBandGreen.style.fill = TKSolidFill(color: UIColor(red: 152/255, green: 255/255, blue: 149/255, alpha: 1))
-chart.addAnnotation(annotationBandGreen)
- 
-let positiveDashAnnotation = TKChartGridLineAnnotation(value: 150, forAxis: chart.yAxis)
-positiveDashAnnotation.style.stroke = dashStroke
-chart.addAnnotation(positiveDashAnnotation)
- 
-let negativeDashAnnotation = TKChartGridLineAnnotation(value: -150, forAxis: chart.yAxis)
-negativeDashAnnotation.style.stroke = dashStroke
-chart.addAnnotation(negativeDashAnnotation
-view rawViewControllerAnnotations.swift hosted with ❤ by GitHub
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-TKStroke *dashStroke = [TKStroke strokeWithColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]];
-dashStroke.dashPattern = @[@6, @1];
-dashStroke.width = 0.5;
-    
-TKChartBandAnnotation *annotationBandRed = [[TKChartBandAnnotation alloc] initWithRange:[[TKRange alloc] initWithMinimum:@(-1000) andMaximum:@(1000)] forAxis:_chart.yAxis];
-annotationBandRed.style.fill = [TKSolidFill solidFillWithColor:[UIColor colorWithRed:255/255.0 green:149/255.0 blue:149/255.0 alpha:0.7]];
-[_chart addAnnotation:annotationBandRed];
-    
-TKChartBandAnnotation *annotationBandYellow = [[TKChartBandAnnotation alloc] initWithRange:[[TKRange alloc] initWithMinimum:@-500 andMaximum:@500] forAxis:_chart.yAxis];
-annotationBandYellow.style.fill = [TKSolidFill solidFillWithColor:[UIColor colorWithRed:252/255.0 green:255/255.0 blue:138/255.0 alpha:0.7]];
-[_chart addAnnotation:annotationBandYellow];
-    
-TKChartBandAnnotation *annotationBandGreen = [[TKChartBandAnnotation alloc] initWithRange:[[TKRange alloc] initWithMinimum:@-300 andMaximum:@300] forAxis:_chart.yAxis];
-annotationBandGreen.style.fill = [TKSolidFill solidFillWithColor:[UIColor colorWithRed:152/255.0 green:255/255.0 blue:149/255.0 alpha:1]];
-[_chart addAnnotation:annotationBandGreen];
-    
-TKChartGridLineAnnotation *positiveDashAnnotation = [[TKChartGridLineAnnotation alloc] initWithValue:@150 forAxis:_chart.yAxis];
-positiveDashAnnotation.style.stroke = dashStroke;
-[_chart addAnnotation:positiveDashAnnotation];
- 
-TKChartGridLineAnnotation *negativeDashAnnotation = [[TKChartGridLineAnnotation alloc] initWithValue:@-150 forAxis:_chart.yAxis];
-negativeDashAnnotation.style.stroke = dashStroke;
-[_chart addAnnotation:negativeDashAnnotation]
-view rawViewControllerAnnotations.m hosted with ❤ by GitHub
+
+Swift
+
+	let dashStroke = TKStroke(color: UIColor(red: 0, green: 0, blue: 0, alpha: 0.5), width: 0.5)
+	dashStroke.dashPattern = [6, 1]
+	 
+	let annotationBandRed = TKChartBandAnnotation(range: TKRange(minimum: -1000, andMaximum: 1000), forAxis: chart.yAxis)
+	annotationBandRed.style.fill = TKSolidFill(color: UIColor(red: 255/255, green: 149/255, blue: 149/255, alpha: 0.7))
+	chart.addAnnotation(annotationBandRed)
+	 
+	let annotationBandYellow = TKChartBandAnnotation(range: TKRange(minimum: -500, andMaximum: 500), forAxis: chart.yAxis)
+	annotationBandYellow.style.fill = TKSolidFill(color: UIColor(red: 255/255, green: 255/255, blue: 138/255, alpha: 0.7))
+	chart.addAnnotation(annotationBandYellow)
+	 
+	let annotationBandGreen = TKChartBandAnnotation(range: TKRange(minimum: -300, andMaximum: 300), forAxis: chart.yAxis)
+	annotationBandGreen.style.fill = TKSolidFill(color: UIColor(red: 152/255, green: 255/255, blue: 149/255, alpha: 1))
+	chart.addAnnotation(annotationBandGreen)
+	 
+	let positiveDashAnnotation = TKChartGridLineAnnotation(value: 150, forAxis: chart.yAxis)
+	positiveDashAnnotation.style.stroke = dashStroke
+	chart.addAnnotation(positiveDashAnnotation)
+	 
+	let negativeDashAnnotation = TKChartGridLineAnnotation(value: -150, forAxis: chart.yAxis)
+	negativeDashAnnotation.style.stroke = dashStroke
+	chart.addAnnotation(negativeDashAnnotation)
+
+Objective-C
+
+	TKStroke *dashStroke = [TKStroke strokeWithColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]];
+	dashStroke.dashPattern = @[@6, @1];
+	dashStroke.width = 0.5;
+	    
+	TKChartBandAnnotation *annotationBandRed = [[TKChartBandAnnotation alloc] initWithRange:[[TKRange alloc] initWithMinimum:@(-1000) andMaximum:@(1000)] forAxis:_chart.yAxis];
+	annotationBandRed.style.fill = [TKSolidFill solidFillWithColor:[UIColor colorWithRed:255/255.0 green:149/255.0 blue:149/255.0 alpha:0.7]];
+	[_chart addAnnotation:annotationBandRed];
+	    
+	TKChartBandAnnotation *annotationBandYellow = [[TKChartBandAnnotation alloc] initWithRange:[[TKRange alloc] initWithMinimum:@-500 andMaximum:@500] forAxis:_chart.yAxis];
+	annotationBandYellow.style.fill = [TKSolidFill solidFillWithColor:[UIColor colorWithRed:252/255.0 green:255/255.0 blue:138/255.0 alpha:0.7]];
+	[_chart addAnnotation:annotationBandYellow];
+	    
+	TKChartBandAnnotation *annotationBandGreen = [[TKChartBandAnnotation alloc] initWithRange:[[TKRange alloc] initWithMinimum:@-300 andMaximum:@300] forAxis:_chart.yAxis];
+	annotationBandGreen.style.fill = [TKSolidFill solidFillWithColor:[UIColor colorWithRed:152/255.0 green:255/255.0 blue:149/255.0 alpha:1]];
+	[_chart addAnnotation:annotationBandGreen];
+	    
+	TKChartGridLineAnnotation *positiveDashAnnotation = [[TKChartGridLineAnnotation alloc] initWithValue:@150 forAxis:_chart.yAxis];
+	positiveDashAnnotation.style.stroke = dashStroke;
+	[_chart addAnnotation:positiveDashAnnotation];
+	 
+	TKChartGridLineAnnotation *negativeDashAnnotation = [[TKChartGridLineAnnotation alloc] initWithValue:@-150 forAxis:_chart.yAxis];
+	negativeDashAnnotation.style.stroke = dashStroke;
+	[_chart addAnnotation:negativeDashAnnotation]
 
 ![Chart Seismograph with Annotations by Telerik](http://blogs.telerik.com/images/default-source/ui-for-ios-team/chart-seismograph-annotations.png?sfvrsn=2 "Chart Seismograph with Annotations by Telerik")
 
 Finally, let’s add the needle. It’s actually a custom annotation and it’s an example of the flexibility you can achieve with the annotations in TKChart. Note that we are adding the needle when there are more than one point. This is needed by TKChart to create appropriate data range, so that the needle can be displayed at the desired place: 
-1
-2
-3
-4
-5
-if dataPoints.count > 1 {
-    let needle = NeedleAnnotation(point:lastPoint, forSeries: lineSeries)
-    needle.zPosition = TKChartAnnotationZPosition.AboveSeries
-    chart.addAnnotation(needle)
-}
-view rawViewControllerAddNeedle.swift hosted with ❤ by GitHub
-1
-2
-3
-4
-5
-if(dataPoints.count > 1) {
-    NeedleAnnotation *needle = [[NeedleAnnotation alloc] initWithX:dataPoint.dataXValue Y:dataPoint.dataYValue forSeries:lineSeries];
-    needle.zPosition = TKChartAnnotationZPositionAboveSeries;
-    [_chart addAnnotation:needle];
-}
-view rawViewControllerAddNeedle.m hosted with ❤ by GitHub
+
+Swift 
+
+	if dataPoints.count > 1 {
+	    let needle = NeedleAnnotation(point:lastPoint, forSeries: lineSeries)
+	    needle.zPosition = TKChartAnnotationZPosition.AboveSeries
+	    chart.addAnnotation(needle)
+	}
+
+Objective-C
+
+	if(dataPoints.count > 1) {
+	    NeedleAnnotation *needle = [[NeedleAnnotation alloc] initWithX:dataPoint.dataXValue Y:dataPoint.dataYValue forSeries:lineSeries];
+	    needle.zPosition = TKChartAnnotationZPositionAboveSeries;
+	    [_chart addAnnotation:needle];
+	}
+
 
 
 Here is the NeedleAnnotation implementation: 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-@implementation NeedleAnnotation
-{
-    CGPoint center;
-}
- 
-- (void)layoutInRect:(CGRect)bounds
-{
-    double xval = [self.series.xAxis numericValue:[self.position dataXValue]];
-    double x = [TKChartSeriesRender locationOfValue:xval forAxis:self.series.xAxis inRect:bounds];
-    double yval = [self.series.yAxis numericValue:[self.position dataYValue]];
-    double y = [TKChartSeriesRender locationOfValue:yval forAxis: self.series.yAxis inRect: bounds];
-    center = CGPointMake(x, y);
-}
- 
-- (void)drawInContext:(CGContextRef)context
-{
-    CGContextBeginPath(context);
-    CGContextMoveToPoint(context, center.x-20, center.y);
-    CGContextAddLineToPoint(context, center.x+20, center.y+20);
-    CGContextAddLineToPoint(context, center.x+20, center.y-20);
-        
-    CGContextSetRGBFillColor(context, 0, 0, 0, 1);
-    CGContextFillPath(context);
-}
- 
-@end
-view rawNeedleAnnotation.m hosted with ❤ by GitHub
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-class NeedleAnnotation : TKChartPointAnnotation {
-    
-    var center: CGPoint = CGPoint.zeroPoint
-    
-    override func layoutInRect(bounds: CGRect) {
-        let xval = self.series.xAxis.numericValue(self.position.dataXValue())
-        let x = TKChartSeriesRender.locationOfValue(xval, forAxis: self.series.xAxis, inRect: bounds)
-        let yval = self.series.yAxis.numericValue(self.position.dataYValue())
-        let y = TKChartSeriesRender.locationOfValue(yval, forAxis: self.series.yAxis, inRect: bounds)
-        center = CGPointMake(x, y)
-    }
-    
-    override func drawInContext(context: CGContextRef) {
-        CGContextBeginPath(context)
-        CGContextMoveToPoint(context, center.x-20, center.y)
-        CGContextAddLineToPoint(context, center.x+20, center.y+20)
-        CGContextAddLineToPoint(context, center.x+20, center.y-20)
-        
-        CGContextSetRGBFillColor(context, 0, 0, 0, 1)
-        CGContextFillPath(context)
-    }
-}
-view rawNeedleAnnotation.swift hosted with ❤ by GitHub
+
+Swift
+
+	@implementation NeedleAnnotation
+	{
+	    CGPoint center;
+	}
+	 
+	- (void)layoutInRect:(CGRect)bounds
+	{
+	    double xval = [self.series.xAxis numericValue:[self.position dataXValue]];
+	    double x = [TKChartSeriesRender locationOfValue:xval forAxis:self.series.xAxis inRect:bounds];
+	    double yval = [self.series.yAxis numericValue:[self.position dataYValue]];
+	    double y = [TKChartSeriesRender locationOfValue:yval forAxis: self.series.yAxis inRect: bounds];
+	    center = CGPointMake(x, y);
+	}
+	 
+	- (void)drawInContext:(CGContextRef)context
+	{
+	    CGContextBeginPath(context);
+	    CGContextMoveToPoint(context, center.x-20, center.y);
+	    CGContextAddLineToPoint(context, center.x+20, center.y+20);
+	    CGContextAddLineToPoint(context, center.x+20, center.y-20);
+	        
+	    CGContextSetRGBFillColor(context, 0, 0, 0, 1);
+	    CGContextFillPath(context);
+	}
+	 
+	@end
+
+Objective-C
+
+	class NeedleAnnotation : TKChartPointAnnotation {
+	    
+	    var center: CGPoint = CGPoint.zeroPoint
+	    
+	    override func layoutInRect(bounds: CGRect) {
+	        let xval = self.series.xAxis.numericValue(self.position.dataXValue())
+	        let x = TKChartSeriesRender.locationOfValue(xval, forAxis: self.series.xAxis, inRect: bounds)
+	        let yval = self.series.yAxis.numericValue(self.position.dataYValue())
+	        let y = TKChartSeriesRender.locationOfValue(yval, forAxis: self.series.yAxis, inRect: bounds)
+	        center = CGPointMake(x, y)
+	    }
+	    
+	    override func drawInContext(context: CGContextRef) {
+	        CGContextBeginPath(context)
+	        CGContextMoveToPoint(context, center.x-20, center.y)
+	        CGContextAddLineToPoint(context, center.x+20, center.y+20)
+	        CGContextAddLineToPoint(context, center.x+20, center.y-20)
+	        
+	        CGContextSetRGBFillColor(context, 0, 0, 0, 1)
+	        CGContextFillPath(context)
+	    }
+	}
 
 Chart Seismograph with Needle Annotation by Telerik
 This is all you need to achieve a nice looking seismograph app. Of course, using the simulator will not allow you to simulate the device movement, so you will end up with a blank screen. The image at the beginning of this article was made with the help of a real device, and the new Mac OS X Yosemite’s QuickTime feature that allows you to cast your phone screen.
