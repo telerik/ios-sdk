@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB763E461A88D59000066A66 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB763E451A88D59000066A66 /* TelerikUI.framework */; };
 		EBA66C361A824B2700883279 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA66C351A824B2700883279 /* AppDelegate.swift */; };
 		EBA66C381A824B2700883279 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA66C371A824B2700883279 /* ViewController.swift */; };
 		EBA66C3B1A824B2700883279 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA66C391A824B2700883279 /* Main.storyboard */; };
@@ -14,7 +15,6 @@
 		EBA66C401A824B2700883279 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBA66C3E1A824B2700883279 /* LaunchScreen.xib */; };
 		EBA66C4C1A824B2700883279 /* TelerikChartInSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA66C4B1A824B2700883279 /* TelerikChartInSwiftTests.swift */; };
 		EBA66C571A824B3800883279 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA66C561A824B3800883279 /* Bridge.m */; };
-		EBA66C591A824B4C00883279 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA66C581A824B4C00883279 /* TelerikUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB763E451A88D59000066A66 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		EBA66C301A824B2700883279 /* TelerikChartInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelerikChartInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA66C341A824B2700883279 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBA66C351A824B2700883279 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		EBA66C4B1A824B2700883279 /* TelerikChartInSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelerikChartInSwiftTests.swift; sourceTree = "<group>"; };
 		EBA66C551A824B3800883279 /* TelerikChartInSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TelerikChartInSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		EBA66C561A824B3800883279 /* Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
-		EBA66C581A824B4C00883279 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../../Documents/Telerik/UI for iOS Q3 2014/TelerikUI.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBA66C591A824B4C00883279 /* TelerikUI.framework in Frameworks */,
+				EB763E461A88D59000066A66 /* TelerikUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +65,7 @@
 		EBA66C271A824B2700883279 = {
 			isa = PBXGroup;
 			children = (
-				EBA66C581A824B4C00883279 /* TelerikUI.framework */,
+				EB763E451A88D59000066A66 /* TelerikUI.framework */,
 				EBA66C561A824B3800883279 /* Bridge.m */,
 				EBA66C321A824B2700883279 /* TelerikChartInSwift */,
 				EBA66C481A824B2700883279 /* TelerikChartInSwiftTests */,
@@ -356,8 +356,10 @@
 					iOS,
 					Q3,
 					2014,
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = TelerikChartInSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TelerikChartInSwift-Bridging-Header.h";
@@ -377,8 +379,10 @@
 					iOS,
 					Q3,
 					2014,
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = TelerikChartInSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TelerikChartInSwift-Bridging-Header.h";
@@ -438,6 +442,7 @@
 				EBA66C511A824B2700883279 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBA66C521A824B2700883279 /* Build configuration list for PBXNativeTarget "TelerikChartInSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +451,7 @@
 				EBA66C541A824B2700883279 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
