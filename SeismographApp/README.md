@@ -1,5 +1,6 @@
-Data visualizations are important, especially on small screen areas, where Excel files or other tables are difficult to read and comprehend. Visualizations are even more important when you add the various sensors that an iPhone device offers, not to mention the different certified third-party devices. Today, I will show you how you can set up the Telerik Chart for iOS to live-stream the data coming from the accelerometer sensor using the CoreMotion API.
+##Building a Seismograph App with CoreMotion, Swift and Telerik UI for iOS
 
+Data visualizations are important, especially on small screen areas, where Excel files or other tables are difficult to read and comprehend. Visualizations are even more important when you add the various sensors that an iPhone device offers, not to mention the different certified third-party devices. Today, I will show you how you can set up the Telerik Chart for iOS to live-stream the data coming from the accelerometer sensor using the CoreMotion API.
 
 ![Animated Chart Seismograph by Telerik](http://blogs.telerik.com/images/default-source/ui-for-ios-team/chart-seismograph.gif?sfvrsn=2 "Animated Chart Seismograph by Telerik")
 
@@ -68,6 +69,7 @@ Setting Up the Chart
 This is an example of a chart with data that's dynamically added and changed. First, I should mention that for performance optimization purposes, the chart does not refresh its UI automatically when the data is changed. We should take care about that. Therefore, the code that you see below is executed on every occurrence of a new data point added to the Chart.
 
 Now, let’s analyze the implementation of the buildChartWithPoint method in detail:
+
 First, for the reasons I mentioned above, we should remove all data and annotations from the chart:
 
 Swift
@@ -161,9 +163,6 @@ Objective-C
 	_chart.xAxis.style.lineStroke = axisColor;
 	_chart.xAxis.style.majorTickStyle.ticksHidden = YES;
 	_chart.xAxis.style.labelStyle.textHidden = YES;
-
-
-Chart Seismograph by Telerik
 
 ![Chart Seismograph by Telerik](http://blogs.telerik.com/images/default-source/ui-for-ios-team/chart-seismograph21DCD07E4482.png?sfvrsn=2 "Chart Seismograph by Telerik")
 
@@ -303,6 +302,6 @@ Objective-C
 
 This is all you need to achieve a nice looking seismograph app. Of course, using the simulator will not allow you to simulate the device movement, so you will end up with a blank screen. The image at the beginning of this article was made with the help of a real device, and the new Mac OS X Yosemite’s QuickTime feature that allows you to cast your phone screen.
 
-Feel free to get the Seismograph project from GitHub. Note that the project will require UI for iOS to be installed. Download UI for iOS here if you have not done so already.
+Note that this project will require UI for iOS to be installed. [Download UI for iOS here](http://www.telerik.com/download/ios-ui) if you have not done so already.
 
 Happy coding!

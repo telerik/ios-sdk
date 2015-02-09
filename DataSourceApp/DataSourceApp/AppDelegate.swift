@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  DataSourceApp
 //
-//  Copyright (c) 2015 Telerik. All rights reserved.
+//  Copyright (c) 2014-2015 Telerik. All rights reserved.
 //
 
 import UIKit
