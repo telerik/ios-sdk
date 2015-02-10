@@ -28,7 +28,7 @@
 		EB66F1221A79364C0090FB04 /* WatchCoreDataProxy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EB66F10A1A79364B0090FB04 /* WatchCoreDataProxy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EB66F12C1A7936840090FB04 /* WatchModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB66F12A1A7936840090FB04 /* WatchModel.xcdatamodeld */; };
 		EB66F1521A7937DA0090FB04 /* WatchCoreDataProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66F1511A7937DA0090FB04 /* WatchCoreDataProxy.swift */; };
-		EB78535C1A7A9EC6002EE851 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB78535B1A7A9EC6002EE851 /* TelerikUI.framework */; };
+		EB70DE921A8A385F0096B71A /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB78535B1A7A9EC6002EE851 /* TelerikUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB78535C1A7A9EC6002EE851 /* TelerikUI.framework in Frameworks */,
+				EB70DE921A8A385F0096B71A /* TelerikUI.framework in Frameworks */,
 				EB66F1211A79364C0090FB04 /* WatchCoreDataProxy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -753,6 +753,7 @@
 		EB66F0D21A790A320090FB04 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AppleWatchWithTelerikChart/AppleWatchWithTelerikChart.entitlements;
@@ -761,6 +762,11 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					/Users/diyanov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Q3,
+					2014,
 					/Users/diyanov/Documents/Telerik/UI,
 					for,
 					iOS,
@@ -809,6 +815,7 @@
 		EB66F0D31A790A320090FB04 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AppleWatchWithTelerikChart/AppleWatchWithTelerikChart.entitlements;
@@ -817,6 +824,11 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					/Users/diyanov/Documents/Telerik/UI,
+					for,
+					iOS,
+					Q3,
+					2014,
 					/Users/diyanov/Documents/Telerik/UI,
 					for,
 					iOS,
@@ -962,6 +974,7 @@
 		EB66F1241A79364C0090FB04 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -986,6 +999,7 @@
 		EB66F1251A79364C0090FB04 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
