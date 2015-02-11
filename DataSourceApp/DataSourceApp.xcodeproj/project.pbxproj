@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB989B2E1A84C80100C56E63 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB989B2D1A84C80100C56E63 /* TelerikUI.framework */; };
+		EB5981081A8BB3C8000F0E50 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5981071A8BB3C8000F0E50 /* TelerikUI.framework */; };
 		FE1170271A79227000D01A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1170261A79227000D01A99 /* AppDelegate.swift */; };
 		FE1170291A79227000D01A99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1170281A79227000D01A99 /* ViewController.swift */; };
 		FE11702C1A79227000D01A99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE11702A1A79227000D01A99 /* Main.storyboard */; };
@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EB989B2D1A84C80100C56E63 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = ../../Documents/ioscontrols/TelerikUI/build/TelerikUI.framework; sourceTree = "<group>"; };
+		EB5981071A8BB3C8000F0E50 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = ../../ioscontrols/TelerikUI/build/TelerikUI.framework; sourceTree = "<group>"; };
 		FE1170211A79227000D01A99 /* DataSourceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataSourceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE1170251A79227000D01A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE1170261A79227000D01A99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +40,6 @@
 		FE11703B1A79227000D01A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE11703C1A79227000D01A99 /* DataSourceAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceAppTests.swift; sourceTree = "<group>"; };
 		FE1170481A7922B300D01A99 /* DataSourceApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DataSourceApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		FE1170491A7922B400D01A99 /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		FE11704A1A7922B400D01A99 /* Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB989B2E1A84C80100C56E63 /* TelerikUI.framework in Frameworks */,
+				EB5981081A8BB3C8000F0E50 /* TelerikUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,8 +65,7 @@
 		FE1170181A79227000D01A99 = {
 			isa = PBXGroup;
 			children = (
-				EB989B2D1A84C80100C56E63 /* TelerikUI.framework */,
-				FE1170491A7922B400D01A99 /* Bridge.h */,
+				EB5981071A8BB3C8000F0E50 /* TelerikUI.framework */,
 				FE11704A1A7922B400D01A99 /* Bridge.m */,
 				FE1170231A79227000D01A99 /* DataSourceApp */,
 				FE1170391A79227000D01A99 /* DataSourceAppTests */,
@@ -354,6 +352,7 @@
 					/Users/diyanov/Documents/ioscontrols/TelerikUI/build,
 				);
 				INFOPLIST_FILE = DataSourceApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -375,6 +374,7 @@
 					/Users/diyanov/Documents/ioscontrols/TelerikUI/build,
 				);
 				INFOPLIST_FILE = DataSourceApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

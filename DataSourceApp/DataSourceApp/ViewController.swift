@@ -42,12 +42,12 @@ class ViewController: UIViewController {
 
         self.dataSource = dataSource
         
-        let url = "http://api.openweathermap.org/data/2.5/forecast/daily?q=London&mode=json&units=metric&cnt=7"
-        dataSource.loadDataFromURL(url, dataFormat: TKDataSourceDataFormat.JSON, rootItemKeyPath: "list") { (NSError err) -> Void in
+        let url = "http://www.telerik.com/docs/default-source/ui-for-ios/weather.json?sfvrsn=2"
+        dataSource.loadDataFromURL(url, dataFormat: TKDataSourceDataFormat.JSON, rootItemKeyPath: "dayList") { (NSError err) -> Void in
             
             if (err != nil)
             {
-                println(err)
+                println("Can't connect to the server!")
                 return
             }
             
@@ -65,18 +65,18 @@ class ViewController: UIViewController {
             }
             
             dataSource.map {
-                let interval = $0.valueForKey("dt") as NSTimeInterval
+                let interval = $0.valueForKey("dateTime") as NSTimeInterval
                 let date = NSDate(timeIntervalSince1970: interval)
-                $0.setValue(date, forKey: "dt")
+                $0.setValue(date, forKey: "dateTime")
                 return $0
             }
             
             dataSource.valueKey = "humidity"
             
             let items = dataSource.items
-            dataSource.itemSource = [TKDataSourceGroup(items: items, valueKey: "clouds", displayKey: "dt"),
-                TKDataSourceGroup(items: items, valueKey: "temp.min", displayKey: "dt"),
-                TKDataSourceGroup(items: items, valueKey: "temp.max", displayKey: "dt")]
+            dataSource.itemSource = [TKDataSourceGroup(items: items, valueKey: "clouds", displayKey: "dateTime"),
+                TKDataSourceGroup(items: items, valueKey: "temp.min", displayKey: "dateTime"),
+                TKDataSourceGroup(items: items, valueKey: "temp.max", displayKey: "dateTime")]
 
             let chart = TKChart(frame: CGRectInset(self.view.bounds, 0, 20))
             self.view.addSubview(chart)
