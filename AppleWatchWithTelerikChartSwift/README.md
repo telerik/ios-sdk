@@ -17,3 +17,6 @@ The complete project structure consists of an iPhone app, a WatchKit app and a f
 For more information on how the project is built, please refer to the following blog article: [Send Data to Apple Watch with Core Data and Telerik UI for iOS in Swift](http://blogs.telerik.com/blogs/15-02-03/send-data-to-apple-watch-with-core-data-and-telerik-ui-for-ios-in-swift)
 
 Note that in order to build the project, you need [Telerik UI for iOS](http://www.telerik.com/ios-ui). 
+
+
+NOTE: This project is updated to work with Xcode 6.3 Beta (w/ Swift 1.2)

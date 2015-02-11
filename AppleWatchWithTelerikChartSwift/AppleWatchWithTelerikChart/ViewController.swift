@@ -23,7 +23,7 @@ class ViewController: UIViewController, TKChartDelegate {
         chart.delegate = self
         self.view.addSubview(chart)
         
-        let array:NSMutableArray = [
+        let array = [
             TKChartDataPoint(name: "Germany",value: 20),
             TKChartDataPoint(name: "USA",value: 30),
             TKChartDataPoint(name: "Canada",value: 10),

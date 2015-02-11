@@ -24,7 +24,7 @@ class InterfaceController: WKInterfaceController {
         let title = WatchCoreDataProxy.sharedInstance.receiveString()
         
         chartImageView.setImage(image)
-        titleLabel.setText(title)
+        titleLabel.setText(title as? String)
     }
 
     override func willActivate() {

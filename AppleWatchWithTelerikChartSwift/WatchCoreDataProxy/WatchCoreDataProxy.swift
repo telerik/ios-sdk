@@ -36,12 +36,12 @@ public class WatchCoreDataProxy: NSObject {
         var error: NSError? = nil
         let results = self.managedObjectContext?.executeFetchRequest(request, error: &error)
         if(results?.count==0){
-            let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName("ChartDataEntity", inManagedObjectContext: context!) as NSManagedObject
+            let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName("ChartDataEntity", inManagedObjectContext: context!) as! NSManagedObject
             
             newManagedObject.setValue(imageData, forKey: "imageBinaryData")
             
         }else{
-            let existingObject: NSManagedObject = results![0] as NSManagedObject
+            let existingObject: NSManagedObject = results![0] as! NSManagedObject
             existingObject.setValue(imageData, forKey: "imageBinaryData")
         }
         
@@ -62,7 +62,7 @@ public class WatchCoreDataProxy: NSObject {
         
         var image: UIImage?
         if results != nil && results?.count > 0 {
-            let managedObject: NSManagedObject = results![0] as NSManagedObject
+            let managedObject: NSManagedObject = results![0] as! NSManagedObject
             let myData: NSData? = managedObject.valueForKey("imageBinaryData") as? NSData
             image = UIImage(data: myData!)
         }
@@ -80,12 +80,12 @@ public class WatchCoreDataProxy: NSObject {
         var error: NSError? = nil
         let results = self.managedObjectContext?.executeFetchRequest(request, error: &error)
         if(results?.count==0){
-            let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName("ChartDataEntity", inManagedObjectContext: context!) as NSManagedObject
+            let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName("ChartDataEntity", inManagedObjectContext: context!) as! NSManagedObject
             
             newManagedObject.setValue(stringData, forKey: "stringData")
             
         }else{
-            let existingObject: NSManagedObject = results![0] as NSManagedObject
+            let existingObject: NSManagedObject = results![0] as! NSManagedObject
             existingObject.setValue(stringData, forKey: "stringData")
         }
         
@@ -106,7 +106,7 @@ public class WatchCoreDataProxy: NSObject {
         
         var stringData: NSString?
         if results != nil && results?.count > 0 {
-            let managedObject: NSManagedObject = results![0] as NSManagedObject
+            let managedObject: NSManagedObject = results![0] as! NSManagedObject
             stringData = managedObject.valueForKey("stringData") as? NSString
         }
         
@@ -119,7 +119,7 @@ public class WatchCoreDataProxy: NSObject {
     lazy var applicationDocumentsDirectory: NSURL = {
         
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.count-1] as NSURL
+        return urls[urls.count-1] as! NSURL
         }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
@@ -132,9 +132,9 @@ public class WatchCoreDataProxy: NSObject {
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         
-        let containerPath = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(self.sharedAppGroup)?.path
+        let containerPath = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(self.sharedAppGroup as! String)?.path
         let sqlitePath = NSString(format: "%@/%@", containerPath!, "WatchModel")
-        let url = NSURL(fileURLWithPath: sqlitePath);
+        let url = NSURL(fileURLWithPath: sqlitePath as! String);
         
         let  model = self.managedObjectModel;
         
