@@ -74,11 +74,11 @@
     xAxis.style.majorTickStyle.maxTickClippingMode = TKChartAxisClippingModeVisible;
 
     financialChart.yAxis.style.labelStyle.textAlignment = TKChartAxisLabelAlignmentBottom | TKChartAxisLabelAlignmentRight;
+
     financialChart.xAxis.allowZoom = YES;
     financialChart.xAxis.allowPan = YES;
     financialChart.yAxis.allowZoom = YES;
     financialChart.yAxis.allowPan = YES;
-    [financialChart reloadData];
 }
 
 - (NSArray *)loadChartDataFromData:(NSArray *)data

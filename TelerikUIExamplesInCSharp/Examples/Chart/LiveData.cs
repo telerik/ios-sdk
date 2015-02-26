@@ -1,9 +1,11 @@
 ﻿using System;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using TelerikUI;
 using System.Drawing;
 using System.Collections.Generic;
+
+using Foundation;
+using UIKit;
+
+using TelerikUI;
 
 namespace Examples
 {
@@ -24,10 +26,10 @@ namespace Examples
 			this.chart.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
 			this.View.AddSubview (chart);
 			this.dataPoints = new List<TKChartDataPoint> ();
-			NSTimer.CreateRepeatingScheduledTimer (0.127, UpdateChart);
+			NSTimer.CreateRepeatingScheduledTimer(0.127, UpdateChart);
 		}
 
-		public void UpdateChart () {
+		public void UpdateChart (NSTimer tr) {
 			this.chart.RemoveAllData ();
 			Random r = new Random ();
 			TKChartDataPoint dataPoint = new TKChartDataPoint (NSDate.Now, new NSNumber (r.Next () % 70));

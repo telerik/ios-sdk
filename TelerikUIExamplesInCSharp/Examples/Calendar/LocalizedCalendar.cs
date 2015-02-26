@@ -1,6 +1,8 @@
 ﻿using System;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+
+using Foundation;
+using UIKit;
+
 using TelerikUI;
 
 namespace Examples
@@ -35,28 +37,39 @@ namespace Examples
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Gregorian);
 			this.CalendarView.Locale = new NSLocale ("ru_RU");
-			this.CalendarView.Presenter.Update (false);
+			UpdateCalendar ();
 		}
 
 		public void SelectGerman (object sender, EventArgs e)
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Gregorian);
 			this.CalendarView.Locale = new NSLocale ("de_DE");
-			this.CalendarView.Presenter.Update (false);
+			UpdateCalendar ();
 		}
 
 		public void SelectHebrew (object sender, EventArgs e)
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Hebrew);
 			this.CalendarView.Locale = new NSLocale ("he_IL");
-			this.CalendarView.Presenter.Update (false);
+			UpdateCalendar ();
 		}
 
 		public void SelectChinese (object sender, EventArgs e)
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Chinese);
 			this.CalendarView.Locale = new NSLocale ("zh_Hans_SG");
-			this.CalendarView.Presenter.Update (false);
+			UpdateCalendar ();
+		}
+
+		void UpdateCalendar()
+		{
+			if (this.CalendarView.Presenter.GetType () == typeof(TKCalendarMonthPresenter)) {
+				((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (false);
+			} else if (this.CalendarView.Presenter.GetType () == typeof(TKCalendarYearNumbersPresenter)) {
+				((TKCalendarYearNumbersPresenter)this.CalendarView.Presenter).Update (false);
+			} else {
+				((TKCalendarMonthNamesPresenter)this.CalendarView.Presenter).Update (false);
+			}
 		}
 	}
 }

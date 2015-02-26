@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 using TelerikUI;
 

@@ -22,12 +22,13 @@
     if (self) {
         // Custom initialization
         
-        [self addOption:@"Year" selector:@selector(selectYear)];
+        [self addOption:@"Week view" selector:@selector(selectWeekView)];
         [self addOption:@"Month" selector:@selector(selectMonth)];
         [self addOption:@"Month Names" selector:@selector(selectMonthNames)];
+        [self addOption:@"Year" selector:@selector(selectYear)];
         [self addOption:@"Year Numbers" selector:@selector(selectYearNumbers)];
         [self addOption:@"Flow" selector:@selector(selectFlow)];
-        [self addOption:@"Week view" selector:@selector(selectWeekView)];
+        
     }
     return self;
 }
@@ -57,6 +58,8 @@
     self.calendarView.calendar = calendar;
     self.calendarView.minDate = minDate;
     self.calendarView.maxDate = maxDate;
+    self.calendarView.allowPinchZoom = NO;
+    
     [self.calendarView navigateToDate:date animated:NO];
 }
 
@@ -109,11 +112,18 @@
 
 #pragma mark TKCalendarDelegate
 
+- (TKCalendarCell *)calendar:(TKCalendar *)calendar viewForCellOfKind:(TKCalendarCellType)cellType
+{
+    return nil;
+}
+
 - (void)calendar:(TKCalendar *)calendar didChangedViewModeFrom:(TKCalendarViewMode)previousViewMode to:(TKCalendarViewMode)viewMode
 {
     if (viewMode == TKCalendarViewModeWeek || previousViewMode == TKCalendarViewModeWeek) {
         [self.view setNeedsLayout];
     }
+    
+    self.selectedOption = (int)viewMode;
 }
 
 @end

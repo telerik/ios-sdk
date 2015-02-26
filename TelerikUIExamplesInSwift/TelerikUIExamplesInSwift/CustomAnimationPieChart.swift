@@ -32,11 +32,11 @@ class CustomAnimationPieChart: ExampleViewController, TKChartDelegate {
         self.view.addSubview(chart)
         
         let array = NSMutableArray()
-        array.addObject(TKChartDataPoint(value: 10, name: "Apple"))
-        array.addObject(TKChartDataPoint(value: 20, name: "Google"))
-        array.addObject(TKChartDataPoint(value: 30, name: "Microsoft"))
-        array.addObject(TKChartDataPoint(value: 5, name: "IBM"))
-        array.addObject(TKChartDataPoint(value: 8, name: "Oracle"))
+        array.addObject(TKChartDataPoint(name: "Apple", value: 10))
+        array.addObject(TKChartDataPoint(name: "Google", value: 20))
+        array.addObject(TKChartDataPoint(name: "Microsoft", value: 30))
+        array.addObject(TKChartDataPoint(name: "IBM", value: 5))
+        array.addObject(TKChartDataPoint(name: "Oracle", value: 8))
         
         let series = TKChartPieSeries(items: array)
         series.selectionMode = TKChartSeriesSelectionMode.DataPoint

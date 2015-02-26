@@ -9,10 +9,12 @@
 #import "ExampleViewController.h"
 #import "OptionInfo.h"
 #import "SettingsViewController.h"
+#import "OptionSection.h"
 
 @implementation ExampleViewController
 {
     NSMutableArray *_options;
+    NSMutableArray *_sections;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -33,7 +35,7 @@
     
     UIUserInterfaceIdiom idiom = [[UIDevice currentDevice] userInterfaceIdiom];
     
-    if (_options.count > 0) {
+    if (_options.count > 0 || _sections) {
         if (idiom == UIUserInterfaceIdiomPad) {
             [self loadIPadLayout];
         }
@@ -53,12 +55,11 @@
 
 - (void)loadIPhoneLayout
 {
-    if (_options.count == 1) {
+    if (_sections == nil && _options.count == 1) {
         OptionInfo *info = _options[0];
         _settingsButton = [[UIBarButtonItem alloc] initWithTitle:info.optionText style:UIBarButtonItemStylePlain target:self action:@selector(optionTouched)];
     }
     else {
-        //button = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(settingsTouched)];
         _settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu"] style:UIBarButtonItemStylePlain target:self action:@selector(settingsTouched)];
     }
     self.navigationItem.rightBarButtonItem = _settingsButton;
@@ -68,7 +69,7 @@
 - (void)loadIPadLayout
 {
     CGSize desiredSize = CGSizeZero;
-    if (_options.count == 1) {
+    if (_sections == nil && _options.count == 1) {
         OptionInfo *info = _options[0];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [button addTarget:self action:@selector(optionTouched) forControlEvents:UIControlEventTouchDown];
@@ -77,7 +78,7 @@
         button.frame = CGRectMake(30, 10, desiredSize.width, desiredSize.height);
         [self.view addSubview:button];
     }
-    else if (_options.count >= 3) {
+    else if (_options.count >= 3 || _sections) {
         _settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu"] style:UIBarButtonItemStylePlain target:self action:@selector(settingsTouched)];
         self.navigationItem.rightBarButtonItem = _settingsButton;
     }
@@ -112,9 +113,41 @@
     [_options addObject:option];
 }
 
+- (void)addOption:(NSString*)text selector:(SEL)selector inSection:(NSString*)sectionName
+{
+    [self addOption:[[OptionInfo alloc] initWithText:text selector:selector] inSection:sectionName];
+}
+
+- (void)addOption:(OptionInfo *)option inSection:(NSString*)sectionName
+{
+    if (!_sections) {
+        _sections = [NSMutableArray new];
+    }
+    for (OptionSection *section in _sections) {
+        if ([section.title isEqualToString:sectionName]) {
+            [section.items addObject:option];
+            return;
+        }
+    }
+    OptionSection *section = [[OptionSection alloc] initWithTitle:sectionName];
+    [section.items addObject:option];
+    [_sections addObject:section];
+}
+
 - (NSArray *)options
 {
     return _options;
+}
+
+- (NSArray *)sections
+{
+    return _sections;
+}
+
+- (void)setSelectedOption:(NSInteger)selectedOption inSection:(NSInteger)section
+{
+    OptionSection *sec = _sections[section];
+    sec.selectedOption = selectedOption;
 }
 
 - (void)optionSelected:(UISegmentedControl*)sender
@@ -135,6 +168,7 @@
 - (void)settingsTouched
 {
     SettingsViewController *settings = [[SettingsViewController alloc] initWithOptions:_options];
+    settings.sections = _sections;
     settings.example = self;
     settings.selectedOption = self.selectedOption;
     

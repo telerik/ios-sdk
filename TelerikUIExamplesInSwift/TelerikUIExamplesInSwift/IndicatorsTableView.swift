@@ -69,7 +69,7 @@ class IndicatorsTableView : UIViewController, UITableViewDataSource, UITableView
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.textLabel.text = info.optionText
+        cell.textLabel!.text = info.optionText
         
         return cell
     }

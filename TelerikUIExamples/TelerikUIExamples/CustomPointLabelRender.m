@@ -29,7 +29,7 @@
     
     NSMutableArray *dataPoints = [[NSMutableArray alloc] init];
     for (int i = 0; i < 10; i++) {
-        TKChartDataPoint *point = [TKChartDataPoint dataPointWithX:@(i) Y:@(arc4random() % 80)];
+        TKChartDataPoint *point = [TKChartDataPoint dataPointWithX:@(i) Y:@(arc4random() % 100)];
         [dataPoints addObject:point];
     }
     
@@ -41,7 +41,7 @@
     columnSeries.style.pointLabelStyle.insets = UIEdgeInsetsMake(-1, -5, -1, -5);
     columnSeries.style.pointLabelStyle.font = [UIFont systemFontOfSize:10];
     columnSeries.style.pointLabelStyle.textAlignment = NSTextAlignmentCenter;
-    columnSeries.style.pointLabelStyle.clipMode = TKChartPointLabelClipModeHidden;
+    columnSeries.style.pointLabelStyle.clipMode = TKChartPointLabelClipModeVisible;
     columnSeries.style.pointLabelStyle.textColor = [UIColor whiteColor];
     columnSeries.style.pointLabelStyle.fill = [TKSolidFill solidFillWithColor:[UIColor colorWithRed:108/255.0 green:181/255.0 blue:250/255.0 alpha:1.0]];
 
@@ -66,6 +66,12 @@
 {
     _labelRender.selectedSeries = series.index;
     _labelRender.selectedDataPoint = index;
+}
+
+- (void)chart:(TKChart *)chart didDeselectPoint:(id<TKChartData>)point inSeries:(TKChartSeries *)series atIndex:(NSInteger)index
+{
+    _labelRender.selectedSeries = -1;
+    _labelRender.selectedDataPoint = -1;
 }
 
 - (void)didReceiveMemoryWarning

@@ -52,6 +52,8 @@
 #import "CalendarCustomization.h"
 #import "CalendarEventKitDataBinding.h"
 #import "LocalizedCalendar.h"
+#import "InlineEvents.h"
+
 #import "FeedbackExampleController.h"
 
 #import "PointLabels.h"
@@ -59,6 +61,26 @@
 #import "CustomPointLabelRender.h"
 
 #import "LiveData.h"
+#import "SideDrawerGettingStarted.h"
+#import "SideDrawerTransitions.h"
+#import "SideDrawerCustomContent.h"
+#import "SideDrawerCustomTransition.h"
+#import "SideDrawerPositions.h"
+
+#import "DataSourceGettingStarted.h"
+#import "DataSourceDescriptorsAPI.h"
+#import "DataSourceUIBindings.h"
+#import "DataSourceWithWebService.h"
+
+#import "ListViewGettingStarted.h"
+#import "ListViewSelection.h"
+#import "ListViewAnimations.h"
+#import "ListViewLoadOnDemand.h"
+#import "ListViewGroups.h"
+#import "ListViewLayout.h"
+#import "ListViewPullToRefresh.h"
+#import "ListViewReorder.h"
+#import "ListViewSwipe.h"
 
 @implementation AppDelegate
 
@@ -74,6 +96,7 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     navigationController.navigationBar.translucent = NO;
     
+    
     TKFeedbackController *feedbackController = [[TKFeedbackController alloc] init];
     feedbackController.dataSource = [[TKPlatformFeedbackSource alloc] initWithKey:apiKey uid:uID];
     feedbackController.contentController = navigationController;
@@ -81,6 +104,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = feedbackController;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -111,6 +135,11 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    return 0;
+}
+
 - (ExampleInfo*)createExamples
 {
     NSDictionary *examples = @{
@@ -125,7 +154,7 @@
                                                @"6.Stacked Column chart": [StackedColumnChart class],
                                                @"7.Stacked Area chart": [StackedAreaChart class],
                                                @"8.Financial chart": [FinancialChart class],
-                                               @"9.Indicators": [IndicatorsViewController class]
+                                               @"9.Indicators": [IndicatorsViewController class],
                                                },
                                        
                                        @"2.Axis Types": @{
@@ -133,7 +162,7 @@
                                                @"2.Categorical axis": [CategoricalAxis class],
                                                @"3.Date/Time axis": [DateTimeAxis class],
                                                @"4.Multiple axes": [MultipleAxes class],
-                                               @"5.Negative values": [NegativeValues class]
+                                               @"5.Negative values": [NegativeValues class],
                                                },
                                        
                                        @"3.Animations": @{
@@ -141,13 +170,13 @@
                                                @"2.Custom animation - line chart": [CustomAnimationLineChart class],
                                                @"3.Custom animation - area chart": [CustomAnimationAreaChart class],
                                                @"4.Custom animation - pie chart": [CustomAnimationPieChart class],
-                                               @"5.UIKit dynamics animation": [UIKitDynamicsAnimation class]
+                                               @"5.UIKit dynamics animation": [UIKitDynamicsAnimation class],
                                                },
                                        
                                        @"4.Binding": @{
                                                @"1.Bind with data point": [BindWithDataPoint class],
                                                @"2.Bind with custom object": [BindWithCustomObject class],
-                                               @"3.Bind with delegate": [BindWithDelegate class]
+                                               @"3.Bind with delegate": [BindWithDelegate class],
                                                },
                                        
                                        @"5.Pan/Zoom": [PanZoom class],
@@ -159,12 +188,12 @@
                                                @"4.View annotation": [ViewAnnotation class],
                                                @"5.Cross line annotation": [CrossLineAnnotation class],
                                                @"6.Custom annotation": [CustomAnnotation class],
-                                               @"7.Trackball": [Trackball class]
+                                               @"7.Trackball": [Trackball class],
                                                },
                                        @"8.Point Labels" : @{
                                                @"1.Point Labels" : [PointLabels class],
                                                @"2.Custom Label" : [CustomPointLabels class],
-                                               @"3.Custom Label Render" : [CustomPointLabelRender class]
+                                               @"3.Custom Label Render" : [CustomPointLabelRender class],
                                                },
                                        @"9.Live Data" : [LiveData class]
                                        },
@@ -177,9 +206,38 @@
                                        @"5. iOS 7 style calendar": [iOS7StyleCalendar class],
                                        @"6. Customization": [CalendarCustomization class],
                                        @"7. EventKit data binding": [CalendarEventKitDataBinding class],
-                                       @"8. Localized calendar": [LocalizedCalendar class]
+                                       @"8. Localized calendar": [LocalizedCalendar class],
+                                       @"9. Inline events": [InlineEvents class],
                                        },
+                               
                                @"3.Feedback": [FeedbackExampleController class],
+                               
+                               @"4.SideDrawer" : @{
+                                       @"1. Getting Started" : [SideDrawerGettingStarted class],
+                                       @"2. Transitions" : [SideDrawerTransitions class],
+                                       @"3. Custom Content" : [SideDrawerCustomContent class],
+                                       @"4. Custom Transition" : [SideDrawerCustomTransition class],
+                                       @"5. Positions" : [SideDrawerPositions class],
+                                       },
+                               
+                               @"5.DataSource": @{
+                                       @"1. Getting started": [DataSourceGettingStarted class],
+                                       @"2. Descriptors API": [DataSourceDescriptorsAPI class],
+                                       @"3. Bind with UI controls": [DataSourceUIBindings class],
+                                       @"4. Consume web service": [DataSourceWithWebService class],
+                                       },
+
+                               @"6.ListView (Beta)": @{
+                                       @"1. Getting started": [ListViewGettingStarted class],
+                                       @"2. Swipe cell": [ListViewSwipe class],
+                                       @"3. Items reorder": [ListViewReorder class],
+                                       @"4. Selection": [ListViewSelection class],
+                                       @"5. Grouping": [ListViewGroups class],
+                                       @"6. Layouts": [ListViewLayout class],
+                                       @"7. Animations": [ListViewAnimations class],
+                                       @"8. Load on demand": [ListViewLoadOnDemand class],
+                                       @"9. Pull to refresh": [ListViewPullToRefresh class],
+                                       },
                                };
     
     NSArray *examplesArray = [self createExamplesRecursively:examples];

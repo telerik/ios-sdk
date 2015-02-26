@@ -1,7 +1,7 @@
 ﻿using System;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 namespace Examples
 {
@@ -46,12 +46,12 @@ namespace Examples
 				this.example = example;
 			}
 
-			public override int NumberOfSections (UITableView tableView)
+			public override nint NumberOfSections (UITableView tableView)
 			{
 				return 2;
 			}
 
-			public override int RowsInSection (UITableView tableView, int section)
+			public override nint RowsInSection (UITableView tableView, nint section)
 			{
 				if (section == 0) {
 					return example.Trendlines.Count;
@@ -59,7 +59,7 @@ namespace Examples
 				return example.Indicators.Count;
 			}
 
-			public override string TitleForHeader (UITableView tableView, int section)
+			public override string TitleForHeader (UITableView tableView, nint section)
 			{
 				if (section == 0) {
 					return "Trendlines";
@@ -92,7 +92,7 @@ namespace Examples
 				this.example = example;
 			}
 
-			public override float GetHeightForHeader (UITableView tableView, int section)
+			public override nfloat GetHeightForHeader (UITableView tableView, nint section)
 			{
 				return 40;
 			}

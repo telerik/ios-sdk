@@ -13,7 +13,7 @@
 
 - (id)initWithText:(NSString *)text selector:(SEL)selector tag:(id)tag;
 
-@property (nonatomic, strong) NSString *optionText;
+@property (nonatomic, copy) NSString *optionText;
 
 @property (nonatomic, assign) SEL selector;
 

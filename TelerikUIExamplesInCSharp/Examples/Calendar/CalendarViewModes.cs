@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Drawing;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+
+using Foundation;
+using UIKit;
+using CoreGraphics;
+
 using TelerikUI;
 
 namespace Examples
@@ -53,7 +56,7 @@ namespace Examples
 		{
 			base.ViewDidLayoutSubviews ();
 			if (this.CalendarView.ViewMode == TKCalendarViewMode.Week) {
-				this.CalendarView.Frame = new RectangleF (0, 0, this.View.Bounds.Width, 100);
+				this.CalendarView.Frame = new CGRect (0, 0, this.View.Bounds.Width, 100);
 			} else {
 				this.CalendarView.Frame = this.View.Bounds;
 			}

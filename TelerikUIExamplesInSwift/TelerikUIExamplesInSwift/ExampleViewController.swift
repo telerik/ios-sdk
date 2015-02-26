@@ -15,7 +15,8 @@ class ExampleViewController: UIViewController {
     var popover: UIPopoverController?
     var settingsButton : UIBarButtonItem?
     var exampleBounds = CGRect.zeroRect
-
+    var sections = NSMutableArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +24,7 @@ class ExampleViewController: UIViewController {
         self.view.backgroundColor = UIColor.whiteColor()
         
         let idiom = UIDevice.currentDevice().userInterfaceIdiom as UIUserInterfaceIdiom
-        if(options.count > 0) {
+        if sections.count > 0 || options.count > 0 {
             if (idiom == UIUserInterfaceIdiom.Pad) {
                 self.loadIPadLayout()
             }
@@ -42,7 +43,7 @@ class ExampleViewController: UIViewController {
     }
     
     func loadIPhoneLayout() {
-        if options.count == 1 {
+        if sections.count == 0 && options.count == 1 {
            let info = options[0] as OptionInfo
            self.settingsButton = UIBarButtonItem(title: info.optionText, style: UIBarButtonItemStyle.Plain, target: self, action: "optionTouched")
         }
@@ -56,7 +57,7 @@ class ExampleViewController: UIViewController {
     
     func loadIPadLayout() {
         var desiredSize: CGSize = CGSizeZero
-        if (options.count == 1) {
+        if sections.count == 0 && options.count == 1 {
             let info  = options[0] as OptionInfo
             let button = UIButton.buttonWithType(UIButtonType.System) as UIButton
             button.addTarget(self, action: "optionTouched", forControlEvents: UIControlEvents.TouchDown)
@@ -65,7 +66,7 @@ class ExampleViewController: UIViewController {
             button.frame = CGRectMake(30, 10, desiredSize.width, desiredSize.height)
             self.view.addSubview(button)
         }
-        else if (options.count >= 3) {
+        else if options.count >= 3 || sections.count > 0 {
             settingsButton = UIBarButtonItem(image: UIImage(named: "menu"), style: UIBarButtonItemStyle.Plain, target: self, action: "settingsTouched")
             self.navigationItem.rightBarButtonItem = settingsButton
         }
@@ -94,12 +95,35 @@ class ExampleViewController: UIViewController {
         options.addObject(option)
     }
     
+    func addOption(text:NSString, inSection:NSString, selector: Optional<() -> ()>) {
+        addOption(OptionInfo(Text:text, Selector:selector), inSection:inSection)
+    }
+    
+    func addOption(option: OptionInfo, inSection:NSString)
+    {
+        for section in sections {
+            let sec = section as OptionSection
+            if sec.title == inSection {
+                sec.items.addObject(option)
+                return;
+            }
+        }
+        let section = OptionSection(Text: inSection)
+        section.items.addObject(option)
+        sections.addObject(section)
+    }
+    
     func optionSelected(sender: UISegmentedControl) {
         if (sender.selectedSegmentIndex >= 0) {
             self.selectedOption = sender.selectedSegmentIndex
             let info = options[sender.selectedSegmentIndex] as OptionInfo
             info.selector?()
         }
+    }
+    
+    func setSelectedOption(index: Int, section: Int) {
+        let sec = sections[section] as OptionSection
+        sec.selectedOption = index
     }
     
     func optionTouched() {
@@ -111,6 +135,7 @@ class ExampleViewController: UIViewController {
         let settings = SettingsViewController()
         settings.options = options
         settings.example = self
+        settings.sections = sections
         settings.selectedOption = self.selectedOption
         
         let idiom = UIDevice.currentDevice().userInterfaceIdiom as UIUserInterfaceIdiom

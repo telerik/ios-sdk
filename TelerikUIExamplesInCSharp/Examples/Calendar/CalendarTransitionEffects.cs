@@ -1,9 +1,12 @@
 ﻿using System;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using TelerikUI;
 using System.Drawing;
-using MonoTouch.ObjCRuntime;
+
+using Foundation;
+using UIKit;
+using ObjCRuntime;
+using CoreGraphics;
+
+using TelerikUI;
 
 namespace Examples
 {
@@ -11,35 +14,19 @@ namespace Examples
 	{
 		CalendarPresenterDelegate presenterDelegate;
 
-		public TKCalendar CalendarView {
-			get;
-			set;
-		}
+		public TKCalendar CalendarView { get; set; }
 
-		public UIButton ButtonPrev {
-			get;
-			set;
-		}
+		public UIButton ButtonPrev { get; set; }
 
-		public UIButton ButtonNext {
-			get;
-			set;
-		}
+		public UIButton ButtonNext { get; set; }
 
-		public int ColorIndex {
-			get;
-			set;
-		}
+		public int ColorIndex {	get; set; }
 
-		public int OldColorIndex {
-			get;
-			set;
-		}
+		public int OldColorIndex { get;	set; }
 
-		public UIColor[] Colors {
-			get;
-			set;
-		}
+		public UIColor[] Colors { get; set; }
+
+		public TKCalendarTransitionMode TransitionMode { get; set; }
 
 		public CalendarTransitionEffects ()
 		{
@@ -66,7 +53,7 @@ namespace Examples
 			base.ViewDidLoad ();
 			this.presenterDelegate = new CalendarPresenterDelegate (this);
 
-			UIToolbar toolbar = new UIToolbar (new RectangleF (0, this.View.Frame.Size.Height - 44, this.View.Bounds.Size.Width, 44));
+			UIToolbar toolbar = new UIToolbar (new CGRect (0, this.View.Frame.Size.Height - 44, this.View.Bounds.Size.Width, 44));
 			toolbar.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin;
 			this.View.AddSubview (toolbar);
 
@@ -75,15 +62,18 @@ namespace Examples
 			UIBarButtonItem space = new UIBarButtonItem (UIBarButtonSystemItem.FlexibleSpace, this, null);
 			toolbar.Items = new UIBarButtonItem[] { buttonPrev, space, buttonNext };
 
-			RectangleF rect = new RectangleF (0, 0, this.View.Bounds.Size.Width, this.View.Bounds.Size.Height - toolbar.Frame.Size.Height);
+			CGRect rect = new CGRect (0, 0, this.View.Bounds.Size.Width, this.View.Bounds.Size.Height - toolbar.Frame.Size.Height);
 			this.CalendarView = new TKCalendar (rect);
 			this.CalendarView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
+			this.CalendarView.Delegate = new CalendarDelegate (this);
+			this.CalendarView.AllowPinchZoom = false;
 			this.View.AddSubview (CalendarView);
 
 			TKCalendarMonthPresenter presenter = (TKCalendarMonthPresenter)this.CalendarView.Presenter;
 			presenter.TransitionMode = TKCalendarTransitionMode.Flip;
-//			presenter.Delegate = 
+			presenter.Delegate = new CalendarPresenterDelegate (this);
 			presenter.ContentView.BackgroundColor = this.Colors [ColorIndex];
+			this.TransitionMode = TKCalendarTransitionMode.Flip;
 		}
 
 		[Export ("PrevTouched")]
@@ -130,11 +120,34 @@ namespace Examples
 
 		public void SetTransition (TKCalendarTransitionMode transitionMode, bool isVertical)
 		{
+			this.CalendarView.ViewMode = TKCalendarViewMode.Month;
 			TKCalendarMonthPresenter presenter = (TKCalendarMonthPresenter)this.CalendarView.Presenter;
 			presenter.Delegate = presenterDelegate;
 			presenter.HeaderIsSticky = true;
 			presenter.TransitionIsVertical = isVertical;
 			presenter.TransitionMode = transitionMode;
+			this.TransitionMode = transitionMode;
+		}
+
+		class CalendarDelegate: TKCalendarDelegate
+		{
+			CalendarTransitionEffects main;
+
+			public CalendarDelegate (CalendarTransitionEffects main)
+			{
+				this.main = main;
+			}
+
+			public override void DidChangedViewModeFrom (TKCalendar calendar, TKCalendarViewMode previousViewMode, TKCalendarViewMode viewMode)
+			{
+				if (viewMode == TKCalendarViewMode.Month) 
+				{
+					TKCalendarMonthPresenter monthPresenter = (TKCalendarMonthPresenter)calendar.Presenter;
+					monthPresenter.ContentView.BackgroundColor = main.Colors [main.ColorIndex];
+					monthPresenter.Delegate = new CalendarPresenterDelegate (main);
+					monthPresenter.TransitionMode = main.TransitionMode;
+				}
+			}
 		}
 
 		class CalendarPresenterDelegate : TKCalendarPresenterDelegate
@@ -145,7 +158,7 @@ namespace Examples
 				this.main = main;
 			}
 
-			public override void BeginTransition (ITKCalendarPresenter presenter, TKViewTransition transition)
+			public override void BeginTransition (TKCalendarPresenter presenter, TKViewTransition transition)
 			{
 				main.OldColorIndex = main.ColorIndex;
 				main.ColorIndex = (main.ColorIndex + 1) % main.Colors.Length;
@@ -153,7 +166,7 @@ namespace Examples
 				monthPresenter.ContentView.BackgroundColor = main.Colors [main.ColorIndex];
 			}
 
-			public override void FinishTransition (ITKCalendarPresenter presenter, bool canceled)
+			public override void FinishTransition (TKCalendarPresenter presenter, bool canceled)
 			{
 				if (canceled) {
 					TKCalendarMonthPresenter monthPresenter = (TKCalendarMonthPresenter)presenter;

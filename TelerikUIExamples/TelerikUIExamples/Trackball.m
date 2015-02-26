@@ -77,10 +77,22 @@
 - (void)chart:(TKChart *)chart trackballDidTrackSelection:(NSArray *)selection
 {
     NSMutableString *str = [NSMutableString new];
+    BOOL first = YES;
     for (TKChartSelectionInfo *info in selection) {
-        [str appendFormat:@"Day %@ series %d - %@\n", info.dataPoint.dataXValue, (int)(info.series.index + 1), info.dataPoint.dataYValue];
+        if (!first) {
+            [str appendString:@"\n"];
+        }
+        else {
+            first = !first;
+        }
+        [str appendFormat:@"Day %@ series %d - %@", info.dataPoint.dataXValue, (int)(info.series.index + 1), info.dataPoint.dataYValue];
     }
     chart.trackball.tooltip.text = str;
+}
+
+- (void)chart:(TKChart *)chart trackballDidHideSelection:(NSArray *)selection
+{
+    NSLog(@"trackball did hide");
 }
 
 #pragma mark Events

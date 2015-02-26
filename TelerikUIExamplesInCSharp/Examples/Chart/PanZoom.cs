@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 using TelerikUI;
 
@@ -17,6 +17,7 @@ namespace Examples
 			TKChart chart = new TKChart ();
 			chart.Frame = this.ExampleBounds;
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
+			chart.AllowPanDeceleration = true;
 			this.View.AddSubview (chart);
 
 			Random r = new Random ();

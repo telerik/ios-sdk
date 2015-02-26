@@ -1,9 +1,12 @@
 ﻿using System;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using TelerikUI;
 using System.Drawing;
-using MonoTouch.ObjCRuntime;
+
+using Foundation;
+using UIKit;
+using ObjCRuntime;
+using CoreGraphics;
+
+using TelerikUI;
 
 namespace Examples
 {
@@ -20,7 +23,7 @@ namespace Examples
 			UIButton button = new UIButton (UIButtonType.System);
 			button.SetTitle ("Tap to load iOS 7 style calendar", UIControlState.Normal);
 			button.AddTarget (this, new Selector ("ButtonTouched"), UIControlEvent.TouchUpInside);
-			button.Frame = new RectangleF (0, this.View.Bounds.Size.Height / 2f - 20f, this.View.Bounds.Size.Width, 40f);
+			button.Frame = new CGRect (0, this.View.Bounds.Size.Height / 2f - 20f, this.View.Bounds.Size.Width, 40f);
 			button.AutoresizingMask = UIViewAutoresizing.FlexibleBottomMargin | UIViewAutoresizing.FlexibleTopMargin |
 			UIViewAutoresizing.FlexibleLeftMargin | UIViewAutoresizing.FlexibleRightMargin;
 
@@ -35,7 +38,7 @@ namespace Examples
 			NSCalendar calendar = new NSCalendar (NSCalendarType.Gregorian);
 			TKCalendarYearViewController controller = new TKCalendarYearViewController ();
 			controller.ContentView.MinDate = TKCalendar.DateWithYear (2012, 1, 1, calendar);
-			controller.ContentView.MaxDate = TKCalendar.DateWithYear (2018, 1, 1, calendar);
+			controller.ContentView.MaxDate = TKCalendar.DateWithYear (2018, 12, 31, calendar);
 			controller.ContentView.NavigateToDate (NSDate.Now, false);
 			this.NavigationController.PushViewController (controller, true);
 		}

@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
+using CoreGraphics;
 
 using TelerikUI;
-
 
 namespace Examples
 {
 	public class MyAnnotation: TKChartPointAnnotation
 	{
-		PointF center;
+		CGPoint center;
 
 		public TKShape Shape { get; set; }
 
@@ -26,14 +26,14 @@ namespace Examples
 			this.Shape = shape;
 		}
 
-		public override void LayoutInRect (RectangleF bounds)
+		public override void LayoutInRect (CGRect bounds)
 		{
 			center = this.LocationInRect (bounds);
 			center.X -= Shape.Size.Width / 2.0f;
 			center.Y -= Shape.Size.Height / 2.0f;
 		}
 
-		public override void DrawInContext (MonoTouch.CoreGraphics.CGContext context)
+		public override void DrawInContext (CGContext context)
 		{
 			List<TKDrawing> drawables = new List<TKDrawing> ();
 			if (this.Fill != null) {

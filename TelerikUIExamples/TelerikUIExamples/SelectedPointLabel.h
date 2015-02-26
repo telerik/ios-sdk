@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) TKChartPointLabelStyle *labelStyle;
 
-@property (nonatomic, strong) NSString *text;
+@property (nonatomic, copy) NSString *text;
+
+@property (nonatomic) BOOL isOutsideBounds;
 
 @end

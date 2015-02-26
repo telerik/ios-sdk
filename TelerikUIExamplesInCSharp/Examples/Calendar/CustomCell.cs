@@ -1,8 +1,11 @@
 ﻿using System;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using TelerikUI;
 using System.Drawing;
+
+using Foundation;
+using UIKit;
+using CoreGraphics;
+
+using TelerikUI;
 
 namespace Examples
 {
@@ -56,7 +59,7 @@ namespace Examples
 			}
 		}
 
-		public override void Draw (RectangleF rect)
+		public override void Draw (CGRect rect)
 		{
 			this.CurrentImage.Draw (rect);
 			base.Draw (rect);

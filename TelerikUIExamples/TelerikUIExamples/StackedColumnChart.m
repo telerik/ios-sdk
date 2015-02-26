@@ -47,8 +47,8 @@
     
     for (int i = 0; i < 4; i++) {
         NSMutableArray *points = [[NSMutableArray alloc] init];
-        for (int i = 1; i < 8; i++) {
-            [points addObject:[[TKChartDataPoint alloc] initWithX:@(i) Y:@(arc4random() % 100)]];
+        for (int j = 1; j < 8; j++) {
+            [points addObject:[[TKChartDataPoint alloc] initWithX:@(j) Y:@(arc4random() % 100)]];
         }
         
         TKChartSeries *series = [[TKChartColumnSeries alloc] initWithItems:points];

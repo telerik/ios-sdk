@@ -87,7 +87,7 @@ class CalendarWithEvents: ExampleViewController, TKCalendarDataSource, TKCalenda
         let count:UInt32 = UInt32(colors.count-1)
         
         var e = TKCalendarEvent()
-        e.title = "Two days event"
+        e.title = "Two-day event"
         e.startDate = self.dateWithOffset(1, hours: 2)
         e.endDate = self.dateWithOffset(2, hours: 4)
         e.allDay = true
@@ -95,7 +95,7 @@ class CalendarWithEvents: ExampleViewController, TKCalendarDataSource, TKCalenda
         events.addObject(e)
         
         e = TKCalendarEvent()
-        e.title = "Another two days event"
+        e.title = "Three-day day event"
         e.startDate = self.dateWithOffset(2, hours: 1)
         e.endDate = self.dateWithOffset(4, hours: 2)
         e.allDay = true
@@ -179,7 +179,7 @@ class CalendarWithEvents: ExampleViewController, TKCalendarDataSource, TKCalenda
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(kCellID) as UITableViewCell
         let event = self.eventsForDate![indexPath.row] as TKCalendarEvent
-        cell.textLabel.text = event.title
+        cell.textLabel!.text = event.title
         return cell
     }
 }

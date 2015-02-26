@@ -74,8 +74,6 @@
         [_chart addSeries:series];
     }
 
-    _chart.xAxis.allowZoom = YES;
-    _chart.yAxis.allowZoom = YES;
     [_chart reloadData];
 }
 

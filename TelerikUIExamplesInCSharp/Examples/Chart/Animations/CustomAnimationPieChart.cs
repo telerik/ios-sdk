@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using MonoTouch.CoreAnimation;
+using Foundation;
+using UIKit;
+using CoreAnimation;
+using CoreGraphics;
 
 using TelerikUI;
 
@@ -47,11 +48,11 @@ namespace Examples
 
 		class ChartDelegate: TKChartDelegate
 		{
-			public override MonoTouch.CoreAnimation.CAAnimation AnimationForSeries (TKChart chart, TKChartSeries series, TKChartSeriesRenderState state, System.Drawing.RectangleF rect)
+			public override CAAnimation AnimationForSeries (TKChart chart, TKChartSeries series, TKChartSeriesRenderState state, CGRect rect)
 			{
 				double duration = 0;
 				List<CAAnimation> animations = new List<CAAnimation>();
-				for (int i = 0; i<state.Points.Count; i++) {
+				for (int i = 0; i<(int)state.Points.Count; i++) {
 					string pointKeyPath = state.AnimationKeyPathForPointAtIndex ((uint)i);
 	
 					string keyPath = string.Format("{0}.distanceFromCenter", pointKeyPath);

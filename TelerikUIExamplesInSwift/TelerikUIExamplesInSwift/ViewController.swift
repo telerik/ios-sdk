@@ -83,10 +83,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     ExampleInfo(title: "iOS 7 style calendar") { iOS7StyleCalendar() },
                     ExampleInfo(title: "Customization") { CalendarCustomization() },
                     ExampleInfo(title: "EventKit data binding") { CalendarEventKitDataBinding() },
-                    ExampleInfo(title: "Localized calendar") { LocalizedCalendar() }
+                    ExampleInfo(title: "Localized calendar") { LocalizedCalendar() },
+                    ExampleInfo(title: "Inline events") { InlineEvents() },
                 ]))
             
             examples.addObject(ExampleInfo(title: "Feedback") { FeedbackExampleController(nibName: "FeedbackExampleController", bundle: nil) })
+            
+            examples.addObject(ExampleInfo(title: "SideDrawer", exampleList: [
+                ExampleInfo(title: "Getting Started") { SideDrawerGettingStarted() },
+                ExampleInfo(title: "Transitions") { SideDrawerTransitions() },
+                ExampleInfo(title: "Custom Content") { SideDrawerCustomContent() },
+                ExampleInfo(title: "Custom Transition") { SideDrawerCustomTransition() },
+                ExampleInfo(title: "Positions") { SideDrawerPositions() }
+                ]))
+            
+            examples.addObject(ExampleInfo(title: "DataSource", exampleList:[
+                    ExampleInfo(title: "Getting started") { DataSourceGettingStarted() },
+                    ExampleInfo(title: "Descriptors API") { DataSourceDescriptorsAPI() },
+                    ExampleInfo(title: "Bind with UI controls") { DataSourceUIBindings() },
+                    ExampleInfo(title: "Consume web service") { DataSourceWithWebService() },
+                ]))
+            
+
+            examples.addObject(ExampleInfo(title: "ListView (Beta)", exampleList: [
+                    ExampleInfo(title: "Getting started") { ListViewGettingStarted() },
+                    ExampleInfo(title: "Swipe cell") { ListViewSwipe() },
+                    ExampleInfo(title: "Items reorder") { ListViewReorder() },
+                    ExampleInfo(title: "Selection") { ListViewSelection() },
+                    ExampleInfo(title: "Grouping") { ListViewGroups() },
+                    ExampleInfo(title: "Layouts"){ ListViewLayout() },
+                    ExampleInfo(title: "Animations") { ListViewAnimations() },
+                    ExampleInfo(title: "Load on demand") { ListViewLoadOnDemand() },
+                    ExampleInfo(title: "Pull to refresh") { ListViewPullToRefresh() },
+                ]))
             
             self.title = "Examples"
         }
@@ -123,7 +152,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell!.selectionStyle = UITableViewCellSelectionStyle.None
         }
         var info = examples[indexPath.row] as ExampleInfo
-        cell!.textLabel.text = info.title
+        cell!.textLabel!.text = info.title
         return cell!
     }
     

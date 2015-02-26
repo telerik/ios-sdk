@@ -2,13 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "calendar_header.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "calendar_header-1.png"
+      "filename" : "calendar_header.png"
     },
     {
       "idiom" : "universal",

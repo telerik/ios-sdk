@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Drawing;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+
+using Foundation;
+using UIKit;
+using CoreGraphics;
+
 using TelerikUI;
 
 namespace Examples
@@ -33,8 +36,8 @@ namespace Examples
 		public override void ViewDidLayoutSubviews ()
 		{
 			base.ViewDidLayoutSubviews ();
-			float width = Math.Min (this.View.Bounds.Width, this.View.Bounds.Height);
-			this.CalendarView.Frame = new RectangleF (0, 0, width, width);
+			nfloat width = (nfloat)Math.Min (this.View.Bounds.Width, this.View.Bounds.Height);
+			this.CalendarView.Frame = new CGRect (0, 0, width, width);
 		}
 
 		class CalendarDelegate : TKCalendarDelegate

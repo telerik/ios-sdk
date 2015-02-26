@@ -26,7 +26,7 @@ class iOS7StyleCalendar:ExampleViewController {
         let date = NSDate()
         let controller = TKCalendarYearViewController()
         controller.contentView().minDate = TKCalendar.dateWithYear(2012, month: 1, day: 1, withCalendar: calendar)
-        controller.contentView().maxDate = TKCalendar.dateWithYear(2018, month: 1, day: 1, withCalendar: calendar)
+        controller.contentView().maxDate = TKCalendar.dateWithYear(2018, month: 12, day: 31, withCalendar: calendar)
         controller.contentView().navigateToDate(date, animated: false)
         self.navigationController?.pushViewController(controller, animated: true)
     }

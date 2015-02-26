@@ -42,7 +42,7 @@
         
     TKCalendarYearViewController *controller = [TKCalendarYearViewController new];
     controller.contentView.minDate = [TKCalendar dateWithYear:2012 month:1 day:1 withCalendar:calendar];
-    controller.contentView.maxDate = [TKCalendar dateWithYear:2018 month:1 day:1 withCalendar:calendar];
+    controller.contentView.maxDate = [TKCalendar dateWithYear:2018 month:12 day:31 withCalendar:calendar];
     [controller.contentView navigateToDate:[NSDate date] animated:NO];
     [self.navigationController pushViewController:controller animated:YES];
 }

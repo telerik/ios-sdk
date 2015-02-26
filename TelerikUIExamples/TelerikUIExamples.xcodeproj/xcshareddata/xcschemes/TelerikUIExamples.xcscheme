@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0600"
+   LastUpgradeVersion = "0610"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -18,6 +18,20 @@
                BuildableName = "libTelerikAppFeedback.a"
                BlueprintName = "AppFeedback"
                ReferencedContainer = "container:../AppFeedback/AppFeedback.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "016D295D17785EF100408814"
+               BuildableName = "libTelerikUI.a"
+               BlueprintName = "TelerikUI"
+               ReferencedContainer = "container:../TelerikUI.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry

@@ -35,6 +35,22 @@
     TKChartAreaSeries *areaSeries = [[TKChartAreaSeries alloc] initWithItems:points];
     areaSeries.selectionMode = TKChartSeriesSelectionModeSeries;
     [_chart addSeries:areaSeries];
+    
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+     [[NSNotificationCenter defaultCenter] addObserver:self
+                                              selector:@selector(deviceOrientationDidChange:)
+                                                  name:UIDeviceOrientationDidChangeNotification
+                                                object:nil];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+}
+
+- (void)deviceOrientationDidChange:(NSNotification *)notification
+{
+    [_chart animate];
 }
 
 - (void)didReceiveMemoryWarning

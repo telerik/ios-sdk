@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+
+using Foundation;
+using UIKit;
+
 using TelerikUI;
 
 namespace Examples
@@ -130,13 +132,11 @@ namespace Examples
 			xAxis.MinorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Days;
 			xAxis.MajorTickInterval = 1;
 			xAxis.PlotMode = TKChartAxisPlotMode.BetweenTicks;
-
-			chart.ReloadData ();
 		}
 
 		class ChartDelegate : TKChartDelegate
 		{
-			public override string TextForLabelAtPoint (TKChart chart, TKChartData dataPoint, TKChartSeries series, uint dataIndex)
+			public override string TextForLabelAtPoint (TKChart chart, TKChartData dataPoint, TKChartSeries series, nuint dataIndex)
 			{
 				if (series is TKChartPieSeries) {
 					TKChartDataPoint point = (TKChartDataPoint)dataPoint;

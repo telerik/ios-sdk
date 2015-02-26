@@ -13,13 +13,14 @@ class CalendarViewModes: ExampleViewController, TKCalendarDelegate {
     
     override init() {
         super.init()
-
-        self.addOption("Year") { self.selectYear() }
+        
+        self.addOption("Week view") { self.selectWeekView() }
         self.addOption("Month") { self.selectMonth() }
         self.addOption("Month Names") { self.selectMonthNames() }
+        self.addOption("Year") { self.selectYear() }
         self.addOption("Year Numbers") { self.selectYearNumbers() }
         self.addOption("Flow") { self.selectFlow() }
-        self.addOption("Week view") { self.selectWeekView() }
+        
     }
     
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
@@ -99,5 +100,7 @@ class CalendarViewModes: ExampleViewController, TKCalendarDelegate {
         if viewMode == TKCalendarViewMode.Week || previousViewMode == TKCalendarViewMode.Week {
             self.view.setNeedsLayout()
         }
+        
+        self.selectedOption = viewMode.rawValue;
     }
 }

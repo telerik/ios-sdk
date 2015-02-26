@@ -45,8 +45,8 @@ class StackedColumnChart : ExampleViewController {
         
         for i in 0..<4 {
             let points = NSMutableArray()
-            for i in 1..<8 {
-                points.addObject(TKChartDataPoint(x: i, y: Int(arc4random() % (100))))
+            for j in 1..<8 {
+                points.addObject(TKChartDataPoint(x: j, y: Int(arc4random() % (100))))
             }
             let series = TKChartColumnSeries(items: points)
             series.title = NSString(format: "Series %d", i)

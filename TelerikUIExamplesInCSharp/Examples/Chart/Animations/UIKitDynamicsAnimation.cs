@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreGraphics;
+using Foundation;
+using UIKit;
+using CoreAnimation;
+using CoreGraphics;
 
 using TelerikUI;
 
@@ -16,10 +16,10 @@ namespace Examples
 		TKChart chart;
 		UIDynamicAnimator animator;
 		TKChartVisualPoint selectedPoint;
-		PointF originalLocation;
-		PointF originalPosition;
+		CGPoint originalLocation;
+		CGPoint originalPosition;
 		List<TKChartDataPoint> points;
-		List<PointF> originalValues;
+		List<CGPoint> originalValues;
 
 		public UIKitDynamicsAnimation ()
 		{
@@ -43,7 +43,7 @@ namespace Examples
 			base.ViewDidAppear (animated);
 
 			TKChartVisualPoint[] points = chart.VisualPointsForSeries (chart.Series [0]);
-			originalValues = new List<PointF> ();
+			originalValues = new List<CGPoint> ();
 			foreach (TKChartVisualPoint p in points) {
 				originalValues.Add (p.CGPoint);
 			}
@@ -71,7 +71,7 @@ namespace Examples
 
 			for (int i=0; i<points.Length; i++) {
 				TKChartVisualPoint point = points [i];
-				PointF center = originalValues [i];
+				CGPoint center = originalValues [i];
 				if (point.Animator != null) {
 					point.Animator.RemoveAllBehaviors();
 					point.Animator = null;
@@ -119,7 +119,7 @@ namespace Examples
 			base.TouchesBegan (touches, evt);
 
 			UITouch touch = (UITouch)touches.AnyObject;
-			PointF touchPoint = touch.LocationInView(chart.PlotView);
+			CGPoint touchPoint = touch.LocationInView(chart.PlotView);
 			TKChartSelectionInfo hitTestInfo = chart.HitTestForPoint(touchPoint);
 			if (hitTestInfo != null) {
 				selectedPoint = chart.VisualPointForSeries (hitTestInfo.Series, hitTestInfo.DataPointIndex);
@@ -140,10 +140,10 @@ namespace Examples
 			}
 
 			UITouch touch = (UITouch)touches.AnyObject;
-			PointF touchPoint = touch.LocationInView(chart.PlotView);
-			PointF delta = new PointF(originalLocation.X - touchPoint.X, originalLocation.Y - touchPoint.Y);
+			CGPoint touchPoint = touch.LocationInView(chart.PlotView);
+			CGPoint delta = new CGPoint(originalLocation.X - touchPoint.X, originalLocation.Y - touchPoint.Y);
 
-			selectedPoint.Center = new PointF(originalPosition.X, originalPosition.Y - delta.Y);
+			selectedPoint.Center = new CGPoint(originalPosition.X, originalPosition.Y - delta.Y);
 		}
 
 		public override void TouchesEnded (NSSet touches, UIEvent evt)
@@ -155,8 +155,8 @@ namespace Examples
 			}
 
 			UITouch touch = (UITouch)touches.AnyObject;
-			PointF touchPoint = touch.LocationInView(chart.PlotView);
-			PointF delta = new PointF(originalLocation.X, originalLocation.Y - touchPoint.Y);
+			CGPoint touchPoint = touch.LocationInView(chart.PlotView);
+			CGPoint delta = new CGPoint(originalLocation.X, originalLocation.Y - touchPoint.Y);
 
 			UISnapBehavior snap = new UISnapBehavior(selectedPoint, originalPosition);
 			snap.Damping = 0.2f;

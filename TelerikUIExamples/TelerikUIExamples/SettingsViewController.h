@@ -21,6 +21,6 @@
 
 @property (nonatomic, strong) UITableView *table;
 
-//- (void)initialSelection;
+@property (nonatomic, strong) NSArray *sections;
 
 @end

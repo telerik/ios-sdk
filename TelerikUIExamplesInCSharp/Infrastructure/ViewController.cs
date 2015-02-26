@@ -2,8 +2,8 @@
 using System.Drawing;
 using System.Collections.Generic;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 namespace Examples
 {
@@ -80,9 +80,34 @@ namespace Examples
 					new ExampleInfo("View modes", typeof(CalendarViewModes)),
 					new ExampleInfo("Customization", typeof(CalendarCustomization)),
 					new ExampleInfo("EventKit data binding", typeof(CalendarEventKitDataBinding)),
-					new ExampleInfo("Localized calendar", typeof(LocalizedCalendar))
+					new ExampleInfo("Localized calendar", typeof(LocalizedCalendar)),
+					new ExampleInfo("Inline events", typeof(InlineEvents)),
 				}),
-				new ExampleInfo("Feedback", typeof(FeedbackExampleController))
+				new ExampleInfo("Feedback", typeof(FeedbackExampleController)),
+				new ExampleInfo("DataSource", new ExampleInfo[] {
+					new ExampleInfo("Getting started", typeof(DataSourceGettingStarted)),
+					new ExampleInfo("Descriptors API", typeof(DataSourceDescriptorsAPI)),
+					new ExampleInfo("Bind with UI controls", typeof(DataSourceUIBindings)),
+					new ExampleInfo("Consume web service", typeof(DataSourceWithWebService)),
+				}),
+				new ExampleInfo("SideDrawer", new ExampleInfo[] {
+					new ExampleInfo("Getting Started", typeof(SideDrawerGettingStarted)),
+					new ExampleInfo("Transitions", typeof(SideDrawerTransitions)),
+					new ExampleInfo("Positions", typeof(SideDrawerPositions)),
+					new ExampleInfo("Custom Content", typeof(SideDrawerCustomContent)),
+					new ExampleInfo("Custom Transition", typeof(SideDrawerCustomTransition))
+				}),
+				new ExampleInfo("ListView (Beta)", new ExampleInfo[] {
+					new ExampleInfo("Getting Started", typeof(ListViewGettingStarted)),
+					new ExampleInfo("Swipe cell", typeof(ListViewSwipe)),
+					new ExampleInfo("Items reorder", typeof(ListViewReorder)),
+					new ExampleInfo("Selection", typeof(ListViewSelection)),
+					new ExampleInfo("Grouping", typeof(ListViewGroups)),
+					new ExampleInfo("Layouts", typeof(ListViewLayout)),
+					new ExampleInfo("Animations", typeof(ListViewAnimations)),
+					new ExampleInfo("Load on demand", typeof(ListViewLoadOnDemand)),
+					new ExampleInfo("Pull to refresh", typeof(ListViewPullToRefresh)),
+				}),
 			};
 		}
 
@@ -109,6 +134,7 @@ namespace Examples
 			// Perform any additional setup after loading the view, typically from a nib.
 
 			this.tableView = new UITableView ();
+			this.tableView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.tableView.RegisterClassForCellReuse (typeof(UITableViewCell), new NSString("cell"));
 			this.tableView.Frame = this.View.Bounds;
 			if (this.Examples != null) {
@@ -149,7 +175,7 @@ namespace Examples
 				this.owner = owner;
 			}
 
-			public override int RowsInSection (UITableView tableView, int section)
+			public override nint RowsInSection (UITableView tableView, nint section)
 			{
 				return owner.Examples.Length;
 			}
@@ -159,6 +185,7 @@ namespace Examples
 				ExampleInfo info = owner.Examples [indexPath.Row];
 				UITableViewCell cell = tableView.DequeueReusableCell ("cell");
 				cell.TextLabel.Text = info.Title;
+				cell.SelectionStyle = UITableViewCellSelectionStyle.None;
 				return cell;
 			}
 		}

@@ -10,7 +10,7 @@
 @interface ExampleInfo : NSObject
 
 @property (nonatomic, strong) NSArray *examples;
-@property (nonatomic, strong) NSString *title;
+@property (nonatomic, copy) NSString *title;
 @property (nonatomic, assign) Class exampleClass;
 
 - (id)initWithExamples:(NSArray*)examples withTitle:(NSString*)title;

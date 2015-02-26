@@ -111,7 +111,7 @@ static NSString* const cellID = @"cell";
     
     
     TKCalendarEvent *event = [TKCalendarEvent new];
-    event.title = @"Two days event";
+    event.title = @"Two-day event";
     event.startDate = [self dateWithOffset:1 hours:2];
     event.endDate = [self dateWithOffset:2 hours:4];
     event.allDay = YES;
@@ -119,7 +119,7 @@ static NSString* const cellID = @"cell";
     [array addObject:event];
     
     event = [TKCalendarEvent new];
-    event.title = @"Three days event";
+    event.title = @"Three-day event";
     event.startDate = [self dateWithOffset:2 hours:1];
     event.endDate = [self dateWithOffset:4 hours:2];
     event.allDay = YES;

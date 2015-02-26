@@ -1,8 +1,10 @@
 ﻿using System;
-using TelerikUI;
 using System.Collections.Generic;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+
+using Foundation;
+using UIKit;
+
+using TelerikUI;
 
 namespace Examples
 {
@@ -14,14 +16,14 @@ namespace Examples
 		{
 			base.ViewDidLoad ();
 			chart = new TKChart (this.ExampleBounds);
-			chart.AutoresizingMask = MonoTouch.UIKit.UIViewAutoresizing.FlexibleHeight | MonoTouch.UIKit.UIViewAutoresizing.FlexibleWidth;
+			chart.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
 			chart.Delegate = new ChartDelegate (0, 3);
 			this.View.AddSubview (chart);
 
 			Random r = new Random ();
 			List<TKChartDataPoint> dataPoints = new List<TKChartDataPoint> ();
 			for (int i = 0; i < 10; i++) {
-				TKChartDataPoint point = new TKChartDataPoint (new NSNumber (i), new NSNumber (r.Next () % 80));
+				TKChartDataPoint point = new TKChartDataPoint (new NSNumber (i), new NSNumber (r.Next () % 100));
 				dataPoints.Add (point);
 			}
 
@@ -33,7 +35,7 @@ namespace Examples
 			columnSeries.Style.PointLabelStyle.Insets = new UIEdgeInsets (-1, -5, -1, -5);
 			columnSeries.Style.PointLabelStyle.Font = UIFont.SystemFontOfSize (10);
 			columnSeries.Style.PointLabelStyle.TextAlignment = UITextAlignment.Center;
-			columnSeries.Style.PointLabelStyle.ClipMode = TKChartPointLabelClipMode.Hidden;
+			columnSeries.Style.PointLabelStyle.ClipMode = TKChartPointLabelClipMode.Visible;
 			columnSeries.Style.PointLabelStyle.TextColor = UIColor.White;
 			columnSeries.Style.PointLabelStyle.Fill = new TKSolidFill (new UIColor ((float)(108 / 255.0), (float)(181 / 255.0), (float)(250 / 255.0), (float)1.0));
 
@@ -66,7 +68,7 @@ namespace Examples
 				return null;
 			}
 
-			public override void PointSelected (TKChart chart, TKChartData point, TKChartSeries series, int index)
+			public override void PointSelected (TKChart chart, TKChartData point, TKChartSeries series, nint index)
 			{
 				if (this.labelRender != null) {
 					this.labelRender.SelectedSeries = (int)series.Index;
@@ -74,16 +76,16 @@ namespace Examples
 				}
 			}
 
-			public override void PointDeselected (TKChart chart, TKChartData point, TKChartSeries series, int index)
+			public override void PointDeselected (TKChart chart, TKChartData point, TKChartSeries series, nint index)
 			{
 				if (this.labelRender != null) {
 					this.labelRender.SelectedDataPoint = -1;
 				}
 			}
 
-			public override TKChartPaletteItem PaletteItemForPoint (TKChart chart, uint index, TKChartSeries series)
+			public override TKChartPaletteItem PaletteItemForPoint (TKChart chart, nuint index, TKChartSeries series)
 			{
-				if (series.Index == this.selectedSeriesIndex && index == this.selectedDataPointIndex) {
+				if (series.Index == (nuint)this.selectedSeriesIndex && index == (nuint)this.selectedDataPointIndex) {
 					return new TKChartPaletteItem (new TKStroke (UIColor.Black, (float)2.0), new TKSolidFill (UIColor.White));
 				}
 

@@ -1,7 +1,8 @@
 ﻿using System;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
+
 using System.Drawing;
 
 namespace Examples
@@ -57,19 +58,50 @@ namespace Examples
 				this.owner = owner;
 			}
 
-			public override int RowsInSection (UITableView tableView, int section)
+			public override nint NumberOfSections (UITableView tableView)
 			{
+				if (this.owner.owner.Sections.Length > 0) {
+					return this.owner.owner.Sections.Length;
+				}
+
+				return 1;
+			}
+
+			public override nint RowsInSection (UITableView tableView, nint section)
+			{
+				if (this.owner.owner.Sections.Length > 0) {
+					OptionSection sectionInfo = this.owner.owner.Sections[section];
+					return sectionInfo.Items.Count;
+				}
+
 				return owner.owner.Options.Length;
+			}
+
+			public override string TitleForHeader (UITableView tableView, nint section)
+			{
+				OptionSection sectionInfo = this.owner.owner.Sections[section];
+				return sectionInfo.Title;
 			}
 
 			public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
 			{
-				OptionInfo info = owner.owner.Options [indexPath.Row];
 				UITableViewCell cell = tableView.DequeueReusableCell ("cell");
+				OptionInfo info = null;
+				if (this.owner.owner.Sections.Length > 0) {
+					OptionSection sectionInfo = this.owner.owner.Sections [indexPath.Section];
+					info = sectionInfo.Items [indexPath.Row];
+					if (indexPath.Row == sectionInfo.SelectedOption) {
+						cell.Accessory = UITableViewCellAccessory.Checkmark;
+					}
+				} else {
+					info = this.owner.owner.Options [indexPath.Row];
+					if (indexPath.Row == this.owner.owner.SelectedOption) {
+						cell.Accessory = UITableViewCellAccessory.Checkmark;
+					}
+				}
+
 				cell.TextLabel.Text = info.OptionText;
 				cell.SelectionStyle = UITableViewCellSelectionStyle.None;
-				if (indexPath.Row == this.owner.owner.SelectedOption)
-					cell.Accessory = UITableViewCellAccessory.Checkmark;
 				return cell;
 			}
 		}
@@ -83,17 +115,36 @@ namespace Examples
 				this.owner = owner;
 			}
 
+			public override nfloat GetHeightForHeader (UITableView tableView, nint section)
+			{
+				if (this.owner.owner.Sections.Length > 0) {
+					return 44;
+				}
+
+				return 0;
+			}
+
 			public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 			{
 				this.owner.owner.SelectedOption = indexPath.Row;
-				OptionInfo info = this.owner.owner.Options [indexPath.Row];
+				OptionInfo info = null;
+				if (this.owner.owner.Sections.Length > 0) {
+					OptionSection sectionInfo = this.owner.owner.Sections [indexPath.Section];
+					info = sectionInfo.Items [indexPath.Row];
+					sectionInfo.SelectedOption = indexPath.Row;
+				} else {
+					info = this.owner.owner.Options [indexPath.Row];
+					this.owner.owner.SelectedOption = indexPath.Row;
+				}
+
 				if (info.Handler != null) {
 					info.Handler (info, EventArgs.Empty);
 				}
+
 				if (this.owner.owner.Popover != null && this.owner.owner.Popover.PopoverVisible)
 					this.owner.owner.Popover.Dismiss (false);
 				else
-					this.owner.NavigationController.PopViewControllerAnimated (true);
+					this.owner.NavigationController.PopViewController (true);
 			}
 		}
 	}

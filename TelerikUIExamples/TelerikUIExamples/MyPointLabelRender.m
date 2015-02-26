@@ -31,7 +31,7 @@
     for (int i = 0; i < series.items.count; i++) {
         id<TKChartData> dataPoint = series.items[i];
         CGPoint location = [self locationForDataPoint:dataPoint forSeries:series inRect:bounds];
-        if (!CGRectContainsPoint(bounds, location)) {
+        if (![self isPoint:location insideRect:bounds]) {
             continue;
         }
         
@@ -40,6 +40,14 @@
         TKChartPointLabelStyle *labelStyle = series.style.pointLabelStyle;
         if (_isSelectedPoint) {
             labelRect = CGRectMake(location.x - 17.5, location.y - 10 - 2.5 * abs(labelStyle.labelOffset.vertical), 35, 30);
+            if (labelRect.origin.y < self.render.bounds.origin.y) {
+                _labelLayer.isOutsideBounds = YES;
+                labelRect.origin.y = location.y + 10 + 2.5 * abs(labelStyle.labelOffset.vertical) - labelRect.size.height;
+            }
+            else {
+                _labelLayer.isOutsideBounds = NO;
+            }
+            
             _labelLayer.frame = labelRect;
             [self.render addSublayer:_labelLayer];
             [_labelLayer setNeedsDisplay];
@@ -49,6 +57,13 @@
             labelRect = CGRectMake(location.x - labelSize.width / 2. + labelStyle.labelOffset.horizontal,
                                    location.y - labelSize.height / 2. + labelStyle.labelOffset.vertical,
                                    labelSize.width, labelSize.height);
+            
+            if (labelStyle.clipMode == TKChartPointLabelClipModeVisible) {
+                if (labelRect.origin.y < self.render.bounds.origin.y) {
+                    labelRect.origin.y = location.y - labelSize.height / 2. + abs(labelStyle.labelOffset.vertical);
+                }
+            }
+            
             [label drawInContext:ctx inRect:labelRect forVisualPoint:nil];
         }
     }

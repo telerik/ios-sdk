@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 using TelerikUI;
 
@@ -27,12 +27,12 @@ namespace Examples
 		{
 			Random r = new Random();
 
-			public override uint NumberOfSeries (TKChart chart)
+			public override nuint NumberOfSeries (TKChart chart)
 			{
 				return 3;
 			}
 
-			public override TKChartSeries GetSeries (TKChart chart, uint index)
+			public override TKChartSeries GetSeries (TKChart chart, nuint index)
 			{
 				TKChartSeries series = null;
 
@@ -48,12 +48,12 @@ namespace Examples
 				return series;
 			}
 
-			public override uint PointsInSeries (TKChart chart, uint seriesIndex)
+			public override nuint PointsInSeries (TKChart chart, nuint seriesIndex)
 			{
 				return 10;
 			}
 
-			public override TKChartData GetPoint (TKChart chart, uint dataIndex, uint seriesIndex)
+			public override TKChartData GetPoint (TKChart chart, nuint dataIndex, nuint seriesIndex)
 			{
 				TKChartDataPoint point = new TKChartDataPoint ();
 				point.DataXValue = new NSNumber (dataIndex);

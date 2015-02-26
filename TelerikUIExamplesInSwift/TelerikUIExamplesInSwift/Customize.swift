@@ -49,7 +49,7 @@ class Customize: ExampleViewController, TKChartDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func chart(chart: TKChart!, paletteItemForSeries series: TKChartSeries!, atIndex index: UInt) -> TKChartPaletteItem! {
+    func chart(chart: TKChart!, paletteItemForSeries series: TKChartSeries!, atIndex index: Int) -> TKChartPaletteItem! {
         var item:TKChartPaletteItem
         if(series.index == 1) {
             let colors = [UIColor(red: 0, green: 1, blue: 0, alpha: 0.4),

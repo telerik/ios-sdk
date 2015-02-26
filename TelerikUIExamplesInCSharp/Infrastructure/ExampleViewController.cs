@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
+using CoreGraphics;
 
 namespace Examples
 {
@@ -12,14 +13,19 @@ namespace Examples
 		UIBarButtonItem settingsButton;
 		UIPopoverController popover;
 		List<OptionInfo> options = new List<OptionInfo>();
+		List<OptionSection> sections = new List<OptionSection> ();
 		List<OptionInfo> selectedOptions = new List<OptionInfo>();
-		RectangleF exampleBounds;
+		CGRect exampleBounds;
 
-		public int SelectedOption { get; set; }
+		public nint SelectedOption { get; set; }
 	
-		public RectangleF ExampleBounds 
+		public CGRect ExampleBounds 
 		{ 
 			get { return exampleBounds; }
+		}
+
+		public OptionSection[] Sections {
+			get { return sections.ToArray (); }
 		}
 
 		public OptionInfo[] Options
@@ -54,7 +60,7 @@ namespace Examples
 			this.View.BackgroundColor = UIColor.White;
 
 			UIUserInterfaceIdiom idiom = UIDevice.CurrentDevice.UserInterfaceIdiom;
-			if (options.Count > 0) 
+			if (options.Count > 0 || sections.Count > 0) 
 			{
 				if (idiom == UIUserInterfaceIdiom.Pad)
 					this.loadIPadLayout ();
@@ -64,9 +70,9 @@ namespace Examples
 			else 
 			{
 				if (idiom == UIUserInterfaceIdiom.Pad)
-					exampleBounds = RectangleF.Inflate (this.View.Bounds, -30, -30);
+					exampleBounds = CGRect.Inflate (this.View.Bounds, -30, -30);
 				else
-					exampleBounds = RectangleF.Inflate (this.View.Bounds, -10, -10);
+					exampleBounds = CGRect.Inflate (this.View.Bounds, -10, -10);
 			}
 		}
 
@@ -97,20 +103,45 @@ namespace Examples
 		{
 			options.Add(new OptionInfo(text, func));
 		}
+
+		public virtual void AddOption(string text, EventHandler func, string sectionName)
+		{
+			this.AddOptionInSection (new OptionInfo(text, func), sectionName);
+		}
+
+		void AddOptionInSection(OptionInfo option, string sectionName)
+		{
+			foreach (OptionSection section in this.sections) {
+				if (section.Title.Equals(sectionName)) {
+					section.Items.Add (option);
+					return;
+				}
+			}
+
+			OptionSection newSection = new OptionSection(sectionName);
+			newSection.Items.Add(option);
+			this.sections.Add(newSection);
+		}
+
+		public void SetSelectedOptionInSection (int selectedOption, int section)
+		{
+			OptionSection sec = sections [section];
+			sec.SelectedOption = selectedOption;
+		}
 			
 		void loadIPadLayout()
 		{
-			SizeF desiredSize = SizeF.Empty;
-			if (options.Count == 1) 
+			CGSize desiredSize = CGSize.Empty;
+			if (sections.Count == 0 && options.Count == 1) 
 			{
 				UIButton button = new UIButton (UIButtonType.RoundedRect);
 				button.SetTitle (options [0].OptionText, UIControlState.Normal);
 				button.AddTarget (optionTouched, UIControlEvent.TouchUpInside);
 				desiredSize = button.SizeThatFits (this.View.Bounds.Size);
-				button.Frame = new RectangleF (30, 10, desiredSize.Width, desiredSize.Height);
+				button.Frame = new CGRect (30, 10, desiredSize.Width, desiredSize.Height);
 				this.View.AddSubview (button);
 			} 
-			else if (options.Count >= 3) 
+			else if (options.Count >= 3 || sections.Count > 0) 
 			{
 				settingsButton = new UIBarButtonItem (new UIImage ("menu.png"), UIBarButtonItemStyle.Plain, settingsTouched);
 				this.NavigationItem.RightBarButtonItem = settingsButton;
@@ -122,17 +153,17 @@ namespace Examples
 					segmented.InsertSegment (options [i].OptionText, i + 1, false);
 				}
 				desiredSize = segmented.SizeThatFits (this.View.Bounds.Size);
-				segmented.Frame = new RectangleF (10, 10, desiredSize.Width, desiredSize.Height);
+				segmented.Frame = new CGRect (10, 10, desiredSize.Width, desiredSize.Height);
 				segmented.AddTarget (optionTouched, UIControlEvent.ValueChanged);
 				this.View.AddSubview (segmented);
 				segmented.SelectedSegment = this.SelectedOption;
 			}
-			exampleBounds = new RectangleF (20, 30 + desiredSize.Height, this.View.Bounds.Size.Width - 40, this.View.Bounds.Size.Height - desiredSize.Height - 60);
+			exampleBounds = new CGRect (20, 30 + desiredSize.Height, this.View.Bounds.Size.Width - 40, this.View.Bounds.Size.Height - desiredSize.Height - 60);
 		}
 
 		void loadIPhoneLayout()
 		{
-			if (options.Count == 1) 
+			if (sections.Count == 0 && options.Count == 1) 
 			{
 				settingsButton = new UIBarButtonItem (options[0].OptionText, UIBarButtonItemStyle.Plain, optionTouched);
 			} 
@@ -141,7 +172,7 @@ namespace Examples
 				settingsButton = new UIBarButtonItem (new UIImage ("menu.png"), UIBarButtonItemStyle.Plain, settingsTouched);
 			}
 			this.NavigationItem.RightBarButtonItem = settingsButton;
-			exampleBounds = RectangleF.Inflate (this.View.Bounds, -10, -10);
+			exampleBounds = CGRect.Inflate (this.View.Bounds, -10, -10);
 		}
 
 		public virtual void optionTouched(object sender, EventArgs e)
@@ -152,7 +183,7 @@ namespace Examples
 			else {
 				this.SelectedOption = 0;
 			}
-			OptionInfo info = options [this.SelectedOption];
+			OptionInfo info = options [(int)this.SelectedOption];
 			if (info.Handler != null) {
 				info.Handler (info, EventArgs.Empty);
 			}
@@ -170,9 +201,9 @@ namespace Examples
 					return;
 				}
 				popover = new UIPopoverController (settings);
-				RectangleF settingsRect = settings.View.Bounds;
+				CGRect settingsRect = settings.View.Bounds;
 				settings.Table.SizeToFit ();
-				popover.PopoverContentSize = new SizeF ((float)(Math.Min(settingsRect.Size.Width, settingsRect.Size.Height) / 2.0), settings.Table.ContentSize.Height);
+				popover.PopoverContentSize = new CGSize ((float)(Math.Min(settingsRect.Size.Width, settingsRect.Size.Height) / 2.0), settings.Table.ContentSize.Height);
 				popover.PresentFromBarButtonItem (settingsButton, UIPopoverArrowDirection.Up, true);
 			} 
 			else 

@@ -3,14 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{093ED2D0-900D-4384-BA27-496A278BA603}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Examples</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>Examples</AssemblyName>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,7 +24,8 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchI18n>
     </MtouchI18n>
-    <MtouchArch>i386</MtouchArch>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>
@@ -53,6 +52,9 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <IpaPackageName>
     </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -94,16 +96,12 @@
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="monotouch" />
-    <Reference Include="Telerik.Xamarin.iOS">
-      <HintPath>..\..\..\..\Desktop\TelerikUI.Xamarin_for_iOS.Dev\Telerik.Xamarin.iOS.dll</HintPath>
-    </Reference>
+    <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="Resources\menu.png" />
     <BundleResource Include="Resources\menu%402x.png" />
-    <BundleResource Include="AppleStockPrices.json" />
     <BundleResource Include="Resources\pattern1.png" />
     <BundleResource Include="Resources\pattern1%402x.png" />
     <BundleResource Include="Resources\logo.png" />
@@ -112,6 +110,102 @@
     <BundleResource Include="Resources\calendar_cell.png" />
     <BundleResource Include="Resources\calendar_current_cell.png" />
     <BundleResource Include="Resources\calendar_selected_cell.png" />
+    <BundleResource Include="Resources\sdk-examples-bg.png" />
+    <BundleResource Include="Resources\sdk-examples-bg%402x.png" />
+    <BundleResource Include="Resources\AppleStockPrices.json" />
+    <BundleResource Include="Resources\ListViewSampleData.json" />
+    <BundleResource Include="Resources\PhotosWithNames.json" />
+    <BundleResource Include="Resources\ALFKIF.jpg" />
+    <BundleResource Include="Resources\ANATRF.jpg" />
+    <BundleResource Include="Resources\ANTONM.jpg" />
+    <BundleResource Include="Resources\AROUTM.jpg" />
+    <BundleResource Include="Resources\BERGSF.jpg" />
+    <BundleResource Include="Resources\BLAUSF.jpg" />
+    <BundleResource Include="Resources\BLONPM.jpg" />
+    <BundleResource Include="Resources\BOLIDM.jpg" />
+    <BundleResource Include="Resources\BONAPM.jpg" />
+    <BundleResource Include="Resources\BOTTMF.jpg" />
+    <BundleResource Include="Resources\BSBEVF.jpg" />
+    <BundleResource Include="Resources\CACTUM.jpg" />
+    <BundleResource Include="Resources\CENTCM.jpg" />
+    <BundleResource Include="Resources\CHOPSF.jpg" />
+    <BundleResource Include="Resources\COMMIM.jpg" />
+    <BundleResource Include="Resources\CONSHF.jpg" />
+    <BundleResource Include="Resources\DRACDM.jpg" />
+    <BundleResource Include="Resources\DUMONF.jpg" />
+    <BundleResource Include="Resources\EASTCF.jpg" />
+    <BundleResource Include="Resources\ERNSHM.jpg" />
+    <BundleResource Include="Resources\FAMIAF.jpg" />
+    <BundleResource Include="Resources\FISSAM.jpg" />
+    <BundleResource Include="Resources\FOLIGF.jpg" />
+    <BundleResource Include="Resources\FOLKOF.jpg" />
+    <BundleResource Include="Resources\FRANKM.jpg" />
+    <BundleResource Include="Resources\FRANRF.jpg" />
+    <BundleResource Include="Resources\FRANSM.jpg" />
+    <BundleResource Include="Resources\FURIBM.jpg" />
+    <BundleResource Include="Resources\GALEDM.jpg" />
+    <BundleResource Include="Resources\GODOSM.jpg" />
+    <BundleResource Include="Resources\GOURLM.jpg" />
+    <BundleResource Include="Resources\GREALM.jpg" />
+    <BundleResource Include="Resources\GROSRM.jpg" />
+    <BundleResource Include="Resources\HANARM.jpg" />
+    <BundleResource Include="Resources\HILAAM.jpg" />
+    <BundleResource Include="Resources\HUNGCM.jpg" />
+    <BundleResource Include="Resources\HUNGOF.jpg" />
+    <BundleResource Include="Resources\ISLATF.jpg" />
+    <BundleResource Include="Resources\KOENEM.jpg" />
+    <BundleResource Include="Resources\LACORM.jpg" />
+    <BundleResource Include="Resources\LAMAIF.jpg" />
+    <BundleResource Include="Resources\LAUGBM.jpg" />
+    <BundleResource Include="Resources\LAZYKM.jpg" />
+    <BundleResource Include="Resources\LEHMSF.jpg" />
+    <BundleResource Include="Resources\LETSSF.jpg" />
+    <BundleResource Include="Resources\LILASM.jpg" />
+    <BundleResource Include="Resources\LINODM.jpg" />
+    <BundleResource Include="Resources\LONEPF.jpg" />
+    <BundleResource Include="Resources\MAGAAM.jpg" />
+    <BundleResource Include="Resources\MAISDF.jpg" />
+    <BundleResource Include="Resources\MEREPM.jpg" />
+    <BundleResource Include="Resources\MORGKM.jpg" />
+    <BundleResource Include="Resources\NORTSM.jpg" />
+    <BundleResource Include="Resources\OCEANF.jpg" />
+    <BundleResource Include="Resources\OLDWOF.jpg" />
+    <BundleResource Include="Resources\OTTIKF.jpg" />
+    <BundleResource Include="Resources\PARISF.jpg" />
+    <BundleResource Include="Resources\PERICM.jpg" />
+    <BundleResource Include="Resources\PICCOM.jpg" />
+    <BundleResource Include="Resources\PRINIF.jpg" />
+    <BundleResource Include="Resources\QUEDEM.jpg" />
+    <BundleResource Include="Resources\QUEENF.jpg" />
+    <BundleResource Include="Resources\QUICKM.jpg" />
+    <BundleResource Include="Resources\RANCHM.jpg" />
+    <BundleResource Include="Resources\RATTCF.jpg" />
+    <BundleResource Include="Resources\REGGCM.jpg" />
+    <BundleResource Include="Resources\RICARF.jpg" />
+    <BundleResource Include="Resources\RICSUM.jpg" />
+    <BundleResource Include="Resources\ROMEYF.jpg" />
+    <BundleResource Include="Resources\SANTGM.jpg" />
+    <BundleResource Include="Resources\SAVEAM.jpg" />
+    <BundleResource Include="Resources\SEVESM.jpg" />
+    <BundleResource Include="Resources\SIMOBF.jpg" />
+    <BundleResource Include="Resources\SPECDF.jpg" />
+    <BundleResource Include="Resources\SPLIRM.jpg" />
+    <BundleResource Include="Resources\SUPRDF.jpg" />
+    <BundleResource Include="Resources\THEBIF.jpg" />
+    <BundleResource Include="Resources\THECRF.jpg" />
+    <BundleResource Include="Resources\TOMSPF.jpg" />
+    <BundleResource Include="Resources\TORTUM.jpg" />
+    <BundleResource Include="Resources\TRADHF.jpg" />
+    <BundleResource Include="Resources\TRAIHM.jpg" />
+    <BundleResource Include="Resources\VAFFEM.jpg" />
+    <BundleResource Include="Resources\VICTEF.jpg" />
+    <BundleResource Include="Resources\VINETM.jpg" />
+    <BundleResource Include="Resources\WANDKF.jpg" />
+    <BundleResource Include="Resources\WARTHM.jpg" />
+    <BundleResource Include="Resources\WELLIF.jpg" />
+    <BundleResource Include="Resources\WHITCM.jpg" />
+    <BundleResource Include="Resources\WILMKM.jpg" />
+    <BundleResource Include="Resources\WOLZAM.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -182,8 +276,41 @@
     </Compile>
     <Compile Include="Examples\Chart\PanZoom.cs" />
     <Compile Include="Examples\Chart\Customize.cs" />
+    <Compile Include="Examples\Calendar\InlineEvents.cs" />
+    <Compile Include="Examples\SideDrawer\GettingStartedExample\SideDrawerGettingStarted.cs" />
+    <Compile Include="Examples\SideDrawer\GettingStartedExample\SideDrawerGettingStartedModalController.cs" />
+    <Compile Include="Examples\SideDrawer\TransitionsExample\SideDrawerTransitions.cs" />
+    <Compile Include="Examples\SideDrawer\TransitionsExample\SideDrawerTransitionsModalController.cs" />
+    <Compile Include="Examples\SideDrawer\PositionsExample\SideDrawerPositions.cs" />
+    <Compile Include="Examples\SideDrawer\PositionsExample\SideDrawerPositionsModalController.cs" />
+    <Compile Include="Examples\SideDrawer\CustomContentExample\SideDrawerCustomContent.cs" />
+    <Compile Include="Examples\SideDrawer\CustomContentExample\SideDrawerCustomContentModalController.cs" />
+    <Compile Include="Examples\SideDrawer\CustomTransitionExample\ScaleContentTransition.cs" />
+    <Compile Include="Examples\SideDrawer\CustomTransitionExample\SideDrawerCustomTransition.cs" />
+    <Compile Include="Examples\SideDrawer\CustomTransitionExample\SideDrawerCustomTransitionModalController.cs" />
+    <Compile Include="Examples\DataSource\DataSourceGettingStarted.cs" />
+    <Compile Include="Examples\DataSource\DataSourceDescriptorsAPI.cs" />
+    <Compile Include="Examples\DataSource\DataSourceUIBindings.cs" />
+    <Compile Include="Examples\DataSource\DataSourceWithWebService.cs" />
+    <Compile Include="Examples\DataSource\DSItem.cs" />
+    <Compile Include="Examples\DataSource\DSCollectionViewCell.cs" />
+    <Compile Include="Examples\SideDrawer\SideDrawerHeader.cs" />
+    <Compile Include="Examples\ListView\ListViewSelection.cs" />
+    <Compile Include="Examples\ListView\ListViewAnimations.cs" />
+    <Compile Include="Examples\ListView\ListViewLoadOnDemand.cs" />
+    <Compile Include="Examples\ListView\ListViewGroups.cs" />
+    <Compile Include="Examples\ListView\ListViewPullToRefresh.cs" />
+    <Compile Include="Examples\ListView\ListViewReorder.cs" />
+    <Compile Include="Examples\ListView\ListViewSwipe.cs" />
+    <Compile Include="Examples\ListView\ListViewGettingStarted.cs" />
+    <Compile Include="Examples\ListView\CustomCells\ImageWithTextListViewCell.cs" />
+    <Compile Include="Examples\ListView\ListViewLayout.cs" />
+    <Compile Include="Infrastructure\OptionSection.cs" />
+    <Compile Include="Examples\ListView\CustomCells\SimpleListViewCell.cs" />
+    <Compile Include="Examples\ListView\LoremIpsumGenerator.cs" />
+    <Compile Include="Examples\ListView\CustomCells\CustomCardListViewCell.cs" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Infrastructure\" />
     <Folder Include="Examples\" />
@@ -199,9 +326,24 @@
     <Folder Include="Examples\Chart\PointLabels\CustomLabelRender\" />
     <Folder Include="Examples\Calendar\" />
     <Folder Include="Examples\Feedback\" />
+    <Folder Include="Examples\SideDrawer\" />
+    <Folder Include="Examples\SideDrawer\GettingStartedExample\" />
+    <Folder Include="Examples\SideDrawer\TransitionsExample\" />
+    <Folder Include="Examples\SideDrawer\PositionsExample\" />
+    <Folder Include="Examples\SideDrawer\CustomContentExample\" />
+    <Folder Include="Examples\SideDrawer\CustomTransitionExample\" />
+    <Folder Include="Examples\DataSource\" />
+    <Folder Include="Examples\ListView\" />
+    <Folder Include="Examples\ListView\CustomCells\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <InterfaceDefinition Include="Examples\Feedback\FeedbackExampleController.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Telerik.Xamarin.iOS\Telerik.Xamarin.iOS.csproj">
+      <Project>{813A9D66-625E-486C-84D8-6CEADB5A6CFD}</Project>
+      <Name>Telerik.Xamarin.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

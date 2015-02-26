@@ -2,8 +2,9 @@
 using System.Drawing;
 using System.Collections.Generic;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
+using CoreGraphics;
 
 using TelerikUI;
 
@@ -76,9 +77,9 @@ namespace Examples
 		{
 			base.ViewDidLoad ();
 
-			RectangleF exampleBounds = this.ExampleBounds;
-			RectangleF overlayChartBounds = new RectangleF (exampleBounds.X, exampleBounds.Y, exampleBounds.Width, exampleBounds.Height/1.5f);
-			RectangleF indicatorsChartBounds = new RectangleF (exampleBounds.X, overlayChartBounds.Height + 15, exampleBounds.Width, exampleBounds.Height / 3.0f);
+			CGRect exampleBounds = this.ExampleBounds;
+			CGRect overlayChartBounds = new CGRect (exampleBounds.X, exampleBounds.Y, exampleBounds.Width, exampleBounds.Height/1.5f);
+			CGRect indicatorsChartBounds = new CGRect (exampleBounds.X, overlayChartBounds.Height + 15, exampleBounds.Width, exampleBounds.Height / 3.0f);
 
 			overlayChart = new TKChart (overlayChartBounds);
 			overlayChart.GridStyle.VerticalLinesHidden = false;
@@ -111,8 +112,8 @@ namespace Examples
 					return;
 				}
 				this.Popover = new UIPopoverController (settings);
-				RectangleF settingBounds = settings.View.Bounds;
-				this.Popover.PopoverContentSize = new SizeF (320, settingBounds.Height);
+				CGRect settingBounds = settings.View.Bounds;
+				this.Popover.PopoverContentSize = new CGSize (320, settingBounds.Height);
 				this.Popover.PresentFromBarButtonItem (this.SettingsButton, UIPopoverArrowDirection.Up, true);
 			} else {
 				this.NavigationController.PushViewController (settings, true);

@@ -17,6 +17,7 @@ class UIKitDynamicsAnimation: ExampleViewController, TKChartDelegate
     var originalLocation = CGPoint.zeroPoint
     var originalPosition = CGPoint.zeroPoint
     var location = CGPoint.zeroPoint
+    var originalValues = [CGPoint]()
     
     override init() {
         super.init()
@@ -44,6 +45,12 @@ class UIKitDynamicsAnimation: ExampleViewController, TKChartDelegate
         super.viewDidAppear(animated)
         
         let points = chart.visualPointsForSeries(chart.series()[0] as TKChartSeries)
+        
+        for x in points {
+            let point = x as TKChartVisualPoint
+            originalValues.append(point.CGPoint())
+        }
+        
         let point = points[4] as TKChartVisualPoint
         
         location = point.center
@@ -73,12 +80,16 @@ class UIKitDynamicsAnimation: ExampleViewController, TKChartDelegate
         animator = UIDynamicAnimator(referenceView: chart.plotView())
         let points = chart.visualPointsForSeries(chart.series()[0] as TKChartSeries)
 
-        let point = points[4] as TKChartVisualPoint
-        if point.animator != nil {
-            point.animator.removeAllBehaviors()
+        var i = 0
+        for x in points {
+            let point = x as TKChartVisualPoint
+            if point.animator != nil {
+                point.animator.removeAllBehaviors()
+            }
+            point.animator = nil
+            point.center = originalValues[i]
+            i++
         }
-        point.animator = nil
-        point.center = CGPointMake(location.x, 0)
         
         let collision = UICollisionBehavior(items: points)
         collision.translatesReferenceBoundsIntoBoundary = true

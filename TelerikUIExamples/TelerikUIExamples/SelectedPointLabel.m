@@ -26,13 +26,21 @@
     CGRect bounds = self.bounds;
     TKFill *fill = self.labelStyle.fill;
     TKStroke *stroke = [TKStroke strokeWithColor:[UIColor blackColor]];
-    TKBalloonShape *shape = [[TKBalloonShape alloc] initWithArrowPosition:TKBalloonShapeArrowPositionBottom
-                                                                     size:CGSizeMake(bounds.size.width - stroke.width, bounds.size.height - stroke.width)];
+    TKBalloonShape *shape = [[TKBalloonShape alloc] initWithSize:CGSizeMake(bounds.size.width - stroke.width, bounds.size.height - stroke.width)];
+
+    CGRect textRect;
+    if (_isOutsideBounds) {
+        shape.arrowPosition = TKBalloonShapeArrowPositionTop;
+        textRect = CGRectMake(bounds.origin.x, bounds.origin.y - self.labelStyle.insets.top + shape.arrowSize.height,
+                              bounds.size.width, bounds.size.height - self.labelStyle.insets.bottom);
+    }
+    else {
+        shape.arrowPosition = TKBalloonShapeArrowPositionBottom;
+        textRect = CGRectMake(bounds.origin.x, bounds.origin.y - self.labelStyle.insets.top,
+                              bounds.size.width, bounds.size.height + self.labelStyle.insets.bottom);
+    }
+    
     [shape drawInContext:ctx withCenter:CGPointMake(CGRectGetMidX(bounds), CGRectGetMidY(bounds)) drawings:@[fill, stroke]];
-    
-    
-    CGRect textRect = CGRectMake(bounds.origin.x, bounds.origin.y - self.labelStyle.insets.top,
-                                 bounds.size.width, bounds.size.height + self.labelStyle.insets.bottom);
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
     paragraphStyle.alignment = self.labelStyle.textAlignment;
     NSMutableDictionary *attributes = [@{ NSFontAttributeName: [UIFont systemFontOfSize:18],

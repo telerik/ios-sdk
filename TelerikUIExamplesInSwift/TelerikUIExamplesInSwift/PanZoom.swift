@@ -16,6 +16,7 @@ class PanZoom: ExampleViewController {
         
         chart.frame = self.exampleBounds
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.allowPanDeceleration = true
         self.view.addSubview(chart)
         
         var items = NSMutableArray()

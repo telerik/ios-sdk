@@ -20,6 +20,7 @@
     CGPoint _originalLocation;
     CGPoint _originalPosition;
     CGPoint _location;
+    NSMutableArray *_originalValues;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -49,6 +50,11 @@
     [super viewDidAppear:animated];
 
     NSArray *points = [_chart visualPointsForSeries:_chart.series[0]];
+    _originalValues = [NSMutableArray new];
+    for (TKChartVisualPoint *p in points) {
+        [_originalValues addObject:[NSValue valueWithCGPoint:p.CGPoint]];
+    }
+    
     TKChartVisualPoint *point = points[4];
     
     _location = point.center;
@@ -85,8 +91,13 @@
     NSArray *points = [_chart visualPointsForSeries:_chart.series[0]];
     TKChartVisualPoint *point = points[4];
     
-    [point.animator removeAllBehaviors];
-    point.animator = nil;
+    for (int i = 0; i<_originalValues.count; i++) {
+        TKChartVisualPoint *p = points[i];
+        [p.animator removeAllBehaviors];
+        p.animator = nil;
+        p.center = [_originalValues[i] CGPointValue];
+    }
+
     point.center = CGPointMake(_location.x, 0);
     
     UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:points];

@@ -1,20 +1,23 @@
 ﻿using System;
-using TelerikUI;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
 using System.Collections.Generic;
 using System.Drawing;
+
+using Foundation;
+using UIKit;
+using CoreGraphics;
+
+using TelerikUI;
 
 namespace Examples
 {
 	public class CalendarWithEvents : ExampleViewController
 	{
-		public TKCalendarEvent[] Events {
+		public TKCalendarEventProtocol[] Events {
 			get;
 			set;
 		}
 
-		public TKCalendarEvent[] EventsForDate {
+		public TKCalendarEventProtocol[] EventsForDate {
 			get;
 			set;
 		}
@@ -69,7 +72,7 @@ namespace Examples
 			if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) {
 				presenter.WeekNumbersHidden = true;
 				this.CalendarView.Theme = new TKCalendarIPadTheme ();
-				this.CalendarView.Presenter.Update (true);
+				((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (true);
 			} else {
 				presenter.WeekNumbersHidden = false;
 			}
@@ -87,9 +90,9 @@ namespace Examples
 				this.TableView.Frame = new RectangleF ();
 				this.CalendarView.Frame = this.View.Bounds;
 			} else {
-				float height = this.View.Bounds.Height;
-				this.TableView.Frame = new RectangleF (0f, height - height / 3.6f, this.View.Bounds.Size.Width, height / 3.6f);
-				this.CalendarView.Frame = new RectangleF (2f, 0f, this.View.Bounds.Size.Width - 4f, height - height / 3.6f);
+				nfloat height = this.View.Bounds.Height;
+				this.TableView.Frame = new CGRect (0f, height - height / 3.6f, this.View.Bounds.Size.Width, height / 3.6f);
+				this.CalendarView.Frame = new CGRect (2f, 0f, this.View.Bounds.Size.Width - 4f, height - height / 3.6f);
 			}
 		}
 
@@ -180,12 +183,12 @@ namespace Examples
 				this.main = main;
 			}
 
-			public override int NumberOfSections (UITableView tableView)
+			public override nint NumberOfSections (UITableView tableView)
 			{
 				return 1;
 			}
 
-			public override int RowsInSection (UITableView tableView, int section)
+			public override nint RowsInSection (UITableView tableView, nint section)
 			{
 				if (this.main.EventsForDate == null) {
 					return 0;
@@ -197,7 +200,7 @@ namespace Examples
 			public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
 			{
 				UITableViewCell cell = tableView.DequeueReusableCell ("cell");
-				TKCalendarEvent ev = this.main.EventsForDate [indexPath.Row];
+				TKCalendarEvent ev = (TKCalendarEvent)this.main.EventsForDate [indexPath.Row];
 				cell.TextLabel.Text = ev.Title;
 				return cell;
 			}
@@ -228,16 +231,16 @@ namespace Examples
 				this.main = main;
 			}
 
-			public override TKCalendarEvent[] EventsForDate (TKCalendar calendar, NSDate date)
+			public override TKCalendarEventProtocol[] EventsForDate (TKCalendar calendar, NSDate date)
 			{
 				NSDateComponents components = calendar.Calendar.Components (NSCalendarUnit.Year | NSCalendarUnit.Month | NSCalendarUnit.Day, date);
 				components.Hour = 23;
 				components.Minute = 59;
 				components.Second = 59;
 				NSDate endDate = calendar.Calendar.DateFromComponents (components);
-				List<TKCalendarEvent> filteredEvents = new List<TKCalendarEvent> ();
+				List<TKCalendarEventProtocol> filteredEvents = new List<TKCalendarEventProtocol> ();
 				for (int i = 0; i < this.main.Events.Length; i++) {
-					TKCalendarEvent ev = this.main.Events [i];
+					TKCalendarEvent ev = (TKCalendarEvent)this.main.Events [i];
 					if (ev.StartDate.SecondsSinceReferenceDate <= endDate.SecondsSinceReferenceDate && 
 						ev.EndDate.SecondsSinceReferenceDate >= date.SecondsSinceReferenceDate) {
 						filteredEvents.Add (ev);

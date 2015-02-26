@@ -1,9 +1,10 @@
-﻿
-using System;
+﻿using System;
 using System.Drawing;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
+using CoreGraphics;
+
 using TelerikUI;
 
 namespace Examples
@@ -47,7 +48,7 @@ namespace Examples
 				return;
 			}
 
-			RectangleF bounds = UIScreen.MainScreen.Bounds;
+			CGRect bounds = UIScreen.MainScreen.Bounds;
 			if (bounds.Size.Height <= 480) {
 				this.DescriptionLabel.Font = UIFont.FromName ("HelveticaNeue-Thin", 12);
 				return;

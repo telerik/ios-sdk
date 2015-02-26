@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 using TelerikUI;
 
@@ -50,7 +50,7 @@ namespace Examples
 
 		class ChartDelegate: TKChartDelegate 
 		{
-			public override TKChartPaletteItem PaletteItemForSeries (TKChart chart, TKChartSeries series, uint index)
+			public override TKChartPaletteItem PaletteItemForSeries (TKChart chart, TKChartSeries series, nint index)
 			{
 				TKChartPaletteItem item = null;
 

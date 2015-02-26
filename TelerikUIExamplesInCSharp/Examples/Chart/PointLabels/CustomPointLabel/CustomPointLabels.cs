@@ -1,9 +1,11 @@
 ﻿using System;
-using TelerikUI;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
 using System.Collections.Generic;
 using System.Drawing;
+
+using Foundation;
+using UIKit;
+
+using TelerikUI;
 
 namespace Examples
 {
@@ -76,10 +78,10 @@ namespace Examples
 				this.selectedDataPointIndex = selectedDataPointIndex;
 			}
 
-			public override TKChartPointLabel LabelForDataPoint (TKChart chart, TKChartData dataPoint, TKChartSeries series, uint dataIndex)
+			public override TKChartPointLabel LabelForDataPoint (TKChart chart, TKChartData dataPoint, TKChartSeries series, nuint dataIndex)
 			{
 				TKChartDataPoint point = (TKChartDataPoint)dataPoint;
-				if (series.Index == this.selectedSeriesIndex && dataIndex == this.selectedDataPointIndex) {
+				if (series.Index == (nuint)this.selectedSeriesIndex && dataIndex == (nuint)this.selectedDataPointIndex) {
 					return new MyPointLabel (point, series.Style.PointLabelStyle, String.Format ("{0}", point.DataYValue));
 				}
 
@@ -87,9 +89,9 @@ namespace Examples
 				return new TKChartPointLabel (point, series.Style.PointLabelStyle, String.Format ("{0}", point.DataYValue));
 			}
 				
-			public override TKChartPaletteItem PaletteItemForPoint (TKChart chart, uint index, TKChartSeries series)
+			public override TKChartPaletteItem PaletteItemForPoint (TKChart chart, nuint index, TKChartSeries series)
 			{
-				if (series.Index == this.selectedSeriesIndex && index == this.selectedDataPointIndex) {
+				if (series.Index == (nuint)this.selectedSeriesIndex && index == (nuint)this.selectedDataPointIndex) {
 					return new TKChartPaletteItem (new TKStroke (UIColor.Black, 2.0f), new TKSolidFill (UIColor.White));
 				}
 
@@ -100,10 +102,10 @@ namespace Examples
 				return new TKChartPaletteItem (new TKSolidFill (new UIColor ((float)(241 / 255.0), (float)(140 / 255.0), (float)(133 / 255.0), (float)1.0)));
 			}
 
-			public override void PointSelected (TKChart chart, TKChartData point, TKChartSeries series, int index)
+			public override void PointSelected (TKChart chart, TKChartData point, TKChartSeries series, nint index)
 			{
 				this.selectedSeriesIndex = (int)series.Index;
-				this.selectedDataPointIndex = index;
+				this.selectedDataPointIndex = (int)index;
 			}
 		}
 	}

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
+using CoreGraphics;
 
 using TelerikUI;
-
 
 namespace Examples
 {
@@ -31,7 +31,7 @@ namespace Examples
 
 			UIImageView imageView = new UIImageView ();
 			imageView.Image = new UIImage ("logo.png");
-			imageView.Bounds = new RectangleF (0, 0, imageView.Image.Size.Width, imageView.Image.Size.Height);
+			imageView.Bounds = new CGRect (0, 0, imageView.Image.Size.Width, imageView.Image.Size.Height);
 			imageView.Alpha = 0.7f;
 			chart.AddAnnotation (new TKChartViewAnnotation(imageView, new NSNumber(550), new NSNumber(90), chart.Series[0]));
 		}

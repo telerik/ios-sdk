@@ -8,7 +8,7 @@
 #import "CalendarTransitionEffects.h"
 #import <TelerikUI/TelerikUI.h>
 
-@interface CalendarTransitionEffects () <TKCalendarPresenterDelegate>
+@interface CalendarTransitionEffects () <TKCalendarPresenterDelegate, TKCalendarDelegate>
 
 @property (nonatomic, strong) TKCalendar *calendarView;
 @property (nonatomic, strong) UIButton *buttonPrev;
@@ -21,6 +21,7 @@
     NSInteger _colorIndex;
     NSInteger _oldColorIndex;
     NSArray *_colors;
+    TKCalendarTransitionMode _transitionMode;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -62,6 +63,8 @@
     CGRect rect = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - toolbar.frame.size.height);
     self.calendarView = [[TKCalendar alloc] initWithFrame:CGRectInset(rect, 0, 0)];
     self.calendarView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.calendarView.delegate = self;
+    self.calendarView.allowPinchZoom = NO;
     [self.view addSubview:self.calendarView];
     
     TKCalendarMonthPresenter *presenter = (TKCalendarMonthPresenter*)self.calendarView.presenter;
@@ -69,6 +72,7 @@
     presenter.delegate = self;
     presenter.headerIsSticky = YES;
     presenter.contentView.backgroundColor = _colors[_colorIndex];
+    _transitionMode = TKCalendarTransitionModeFlip;
 }
 
 - (void)didReceiveMemoryWarning
@@ -119,11 +123,26 @@
 
 - (void)setTransition:(TKCalendarTransitionMode)transitionMode isVertical:(BOOL)isVertical
 {
+    _calendarView.viewMode = TKCalendarViewModeMonth;
     TKCalendarMonthPresenter *presenter = (TKCalendarMonthPresenter*)_calendarView.presenter;
+    presenter.contentView.backgroundColor = _colors[_colorIndex];
     presenter.delegate = self;
     presenter.headerIsSticky = YES;
     presenter.transitionIsVertical = isVertical;
     presenter.transitionMode = transitionMode;
+    _transitionMode = transitionMode;
+}
+
+#pragma mark TKCalendarDelegate
+
+- (void)calendar:(TKCalendar *)calendar didChangedViewModeFrom:(TKCalendarViewMode)previousViewMode to:(TKCalendarViewMode)viewMode
+{
+    if (viewMode == TKCalendarViewModeMonth) {
+        TKCalendarMonthPresenter *presenter = (TKCalendarMonthPresenter*)_calendarView.presenter;
+        presenter.contentView.backgroundColor = _colors[_colorIndex];
+        presenter.delegate = self;
+        presenter.transitionMode = _transitionMode;
+    }
 }
 
 #pragma mark TKCalendarPresenterDelegate

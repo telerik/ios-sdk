@@ -2,8 +2,9 @@
 using System.Drawing;
 using System.Collections.Generic;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
+using CoreGraphics;
 
 using TelerikUI;
 
@@ -21,15 +22,15 @@ namespace Examples
 			pieChart = new TKChart ();
 			donutChart = new TKChart ();
 
-			RectangleF bounds = this.View.Bounds;
-			pieChart.Frame = RectangleF.Inflate (new RectangleF (this.ExampleBounds.X, this.ExampleBounds.Y, this.ExampleBounds.Width, this.ExampleBounds.Height / 2), 10, 10);
+			CGRect bounds = this.View.Bounds;
+			pieChart.Frame = CGRect.Inflate (new CGRect (this.ExampleBounds.X, this.ExampleBounds.Y, this.ExampleBounds.Width, this.ExampleBounds.Height / 2), 10, 10);
 			pieChart.AutoresizingMask = ~UIViewAutoresizing.None;
 			pieChart.AllowAnimations = true;
 			pieChart.Legend.Hidden = false;
 			pieChart.Legend.Style.Position = TKChartLegendPosition.Right;
 			this.View.AddSubview (pieChart);
 
-			donutChart.Frame = RectangleF.Inflate(new RectangleF (this.ExampleBounds.X, this.ExampleBounds.Y + this.ExampleBounds.Height/2, 
+			donutChart.Frame = CGRect.Inflate(new CGRect (this.ExampleBounds.X, this.ExampleBounds.Y + this.ExampleBounds.Height/2, 
 				this.ExampleBounds.Width, this.ExampleBounds.Height/2), 10, 10);
 			donutChart.AutoresizingMask = ~UIViewAutoresizing.None;
 			donutChart.AllowAnimations = true;

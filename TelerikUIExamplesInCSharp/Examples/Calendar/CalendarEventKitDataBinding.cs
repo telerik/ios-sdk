@@ -1,7 +1,9 @@
 ﻿using System;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
 using System.Drawing;
+
+using Foundation;
+using UIKit;
+
 using TelerikUI;
 
 namespace Examples

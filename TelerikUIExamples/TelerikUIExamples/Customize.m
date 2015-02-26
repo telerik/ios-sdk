@@ -57,7 +57,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(TKChartPaletteItem *)chart:(TKChart *)chart paletteItemForSeries:(TKChartSeries *)series atIndex:(NSUInteger)index
+-(TKChartPaletteItem *)chart:(TKChart *)chart paletteItemForSeries:(TKChartSeries *)series atIndex:(NSInteger)index
 {
     TKChartPaletteItem *item = nil;
     

@@ -52,11 +52,11 @@ class PointLabels: ExampleViewController, TKChartDelegate {
             lineData.append(point)
         }
         
-        pieData.append(TKChartDataPoint(value: 20, name: "Google"))
-        pieData.append(TKChartDataPoint(value: 30, name: "Apple"))
-        pieData.append(TKChartDataPoint(value: 10, name: "Microsoft"))
-        pieData.append(TKChartDataPoint(value: 5, name: "IBM"))
-        pieData.append(TKChartDataPoint(value: 8, name: "Oracle"))
+        pieData.append(TKChartDataPoint(name: "Google", value: 20))
+        pieData.append(TKChartDataPoint(name: "Apple", value: 30))
+        pieData.append(TKChartDataPoint(name: "Microsoft", value: 10))
+        pieData.append(TKChartDataPoint(name: "IBM", value: 5))
+        pieData.append(TKChartDataPoint(name: "Oracle", value: 8))
         
         let openPrices = [100, 125, 69, 99, 140, 125]
         let closePrices = [85, 65, 135, 120, 80, 136]
@@ -131,7 +131,6 @@ class PointLabels: ExampleViewController, TKChartDelegate {
         xAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Days
         xAxis.majorTickInterval = 1
         xAxis.setPlotMode(TKChartAxisPlotMode.BetweenTicks)
-        chart.reloadData()
     }
     
     func chart(chart: TKChart!, textForLabelAtPoint dataPoint: TKChartData!, inSeries series: TKChartSeries!, atIndex dataIndex: UInt) -> String! {

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 using TelerikUI;
 
@@ -165,7 +165,7 @@ namespace Examples
 
 		}
 
-		public DateTime DateWithYear(int year, int month, int day)
+		public NSDate DateWithYear(int year, int month, int day)
 		{
 			NSCalendar calendar = new NSCalendar (NSCalendarType.Gregorian);
 			NSDateComponents components = new NSDateComponents ();

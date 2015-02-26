@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 using TelerikUI;
-
 
 namespace Examples
 {
@@ -108,9 +107,15 @@ namespace Examples
 			public override void TrackballDidTrackSelection (TKChart chart, TKChartSelectionInfo[] selection)
 			{
 				StringBuilder str = new StringBuilder();
+				bool first = true;
 				foreach (TKChartSelectionInfo info in selection) {
 					var point = info.DataPoint as TKChartDataPoint;
-					str.Append (string.Format ("Day {0} series {1} - {2}\n", point.DataXValue, info.Series.Index + 1, point.DataYValue));
+					if (!first) {
+						str.Append ("\n");
+					} else {
+						first = !first;
+					}
+					str.Append (string.Format ("Day {0} series {1} - {2}", point.DataXValue, info.Series.Index + 1, point.DataYValue));
 				}
 				chart.Trackball.Tooltip.Text = str.ToString();
 			}

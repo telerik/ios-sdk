@@ -36,11 +36,11 @@
     [self.view addSubview:_chart];
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:[[TKChartDataPoint alloc] initWithValue:@10 name:@"Apple" ]];
-    [array addObject:[[TKChartDataPoint alloc] initWithValue:@20 name:@"Google" ]];
-    [array addObject:[[TKChartDataPoint alloc] initWithValue:@30 name:@"Microsoft" ]];
-    [array addObject:[[TKChartDataPoint alloc] initWithValue:@5 name:@"IBM" ]];
-    [array addObject:[[TKChartDataPoint alloc] initWithValue:@8 name:@"Oracle" ]];
+    [array addObject:[[TKChartDataPoint alloc] initWithName:@"Apple" value:@10]];
+    [array addObject:[[TKChartDataPoint alloc] initWithName:@"Google" value:@20]];
+    [array addObject:[[TKChartDataPoint alloc] initWithName:@"Microsoft" value:@30]];
+    [array addObject:[[TKChartDataPoint alloc] initWithName:@"IBM" value:@5]];
+    [array addObject:[[TKChartDataPoint alloc] initWithName:@"Oracle" value:@8]];
     
     TKChartPieSeries *series = [[TKChartPieSeries alloc] initWithItems:array];
     series.selectionMode = TKChartSeriesSelectionModeDataPoint;

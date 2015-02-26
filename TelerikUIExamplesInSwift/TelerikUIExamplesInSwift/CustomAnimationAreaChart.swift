@@ -29,6 +29,19 @@ class CustomAnimationAreaChart: ExampleViewController, TKChartDelegate {
         let areaSeries = TKChartAreaSeries(items: points)
         areaSeries.selectionMode = TKChartSeriesSelectionMode.Series
         chart.addSeries(areaSeries)
+        
+        UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "deviceOrientationDidChange:",
+            name: UIDeviceOrientationDidChangeNotification, object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        UIDevice.currentDevice().endGeneratingDeviceOrientationNotifications()
+    }
+    
+    func deviceOrientationDidChange(notification: NSNotification) {
+        chart.animate()
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,7 +52,7 @@ class CustomAnimationAreaChart: ExampleViewController, TKChartDelegate {
     //MARK: - TKChartDelegate
     
     func chart(chart: TKChart!, animationForSeries series: TKChartSeries!, withState state: TKChartSeriesRenderState!, inRect rect: CGRect) -> CAAnimation! {
-        let duration = 5.0
+        let duration = 0.5
         let animations = NSMutableArray()
         for i in 0..<state.points.count() {
             let keyPath = NSString(format: "seriesRenderStates.%lu.points.%d.y", series.index, i)

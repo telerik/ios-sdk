@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreGraphics;
+using Foundation;
+using UIKit;
+using CoreAnimation;
+using CoreGraphics;
 
 using TelerikUI;
 
@@ -35,12 +35,12 @@ namespace Examples
 
 		class ChartDelegate: TKChartDelegate
 		{
-			public override CAAnimation AnimationForSeries (TKChart chart, TKChartSeries series, TKChartSeriesRenderState state, RectangleF rect)
+			public override CAAnimation AnimationForSeries (TKChart chart, TKChartSeries series, TKChartSeriesRenderState state, CGRect rect)
 			{
 				double duration = 0.5;
 				List<CAAnimation> animations = new List<CAAnimation> ();
 
-				for (int i = 0; i<state.Points.Count; i++) {
+				for (int i = 0; i<(int)state.Points.Count; i++) {
 					string keyPath = string.Format ("seriesRenderStates.{0}.points.{1}.y", series.Index, i);
 					TKChartVisualPoint point = (TKChartVisualPoint)state.Points.ObjectAtIndex((uint)i);
 					double oldY = rect.Height;	

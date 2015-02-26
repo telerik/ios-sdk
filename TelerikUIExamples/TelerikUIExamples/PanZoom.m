@@ -19,6 +19,7 @@
     
     _chart = [[TKChart alloc] initWithFrame:[self exampleBounds]];
     _chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    _chart.allowPanDeceleration = YES;
     [self.view addSubview:_chart];
     
     NSMutableArray *items = [NSMutableArray new];

@@ -32,11 +32,11 @@ class PieDonut:ExampleViewController {
         self.view.addSubview(donutChart)
         
         let array:NSMutableArray = [
-            TKChartDataPoint(value: 20, name: "Google"),
-            TKChartDataPoint(value: 30, name: "Apple"),
-            TKChartDataPoint(value: 10, name:"Microsoft"),
-            TKChartDataPoint(value: 5, name: "IBM"),
-            TKChartDataPoint(value: 8, name: "Oracle") ]
+            TKChartDataPoint(name: "Google", value: 20),
+            TKChartDataPoint(name: "Apple", value: 30),
+            TKChartDataPoint(name:"Microsoft", value: 10),
+            TKChartDataPoint(name: "IBM", value: 5),
+            TKChartDataPoint(name: "Oracle", value: 8) ]
         
         let series = TKChartPieSeries(items:array)
         series.selectionMode = TKChartSeriesSelectionMode.DataPoint

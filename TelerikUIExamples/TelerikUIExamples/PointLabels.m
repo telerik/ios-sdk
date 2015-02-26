@@ -64,11 +64,11 @@
     }
     
     _pieDonutData = [[NSMutableArray alloc] init];
-    [_pieDonutData addObject:[[TKChartDataPoint alloc] initWithValue:@20 name:@"Google"]];
-    [_pieDonutData addObject:[[TKChartDataPoint alloc] initWithValue:@30 name:@"Apple"]];
-    [_pieDonutData addObject:[[TKChartDataPoint alloc] initWithValue:@10 name:@"Microsoft"]];
-    [_pieDonutData addObject:[[TKChartDataPoint alloc] initWithValue:@5 name:@"IBM"]];
-    [_pieDonutData addObject:[[TKChartDataPoint alloc] initWithValue:@8 name:@"Oracle"]];
+    [_pieDonutData addObject:[[TKChartDataPoint alloc] initWithName:@"Google" value:@20]];
+    [_pieDonutData addObject:[[TKChartDataPoint alloc] initWithName:@"Apple" value:@30]];
+    [_pieDonutData addObject:[[TKChartDataPoint alloc] initWithName:@"Microsoft" value:@10]];
+    [_pieDonutData addObject:[[TKChartDataPoint alloc] initWithName:@"IBM" value:@5]];
+    [_pieDonutData addObject:[[TKChartDataPoint alloc] initWithName:@"Oracle" value:@8]];
     
     NSArray *openPrices = @[@100, @125, @69, @99, @140, @125];
     NSArray *closePrices = @[@85, @65, @135, @120, @80, @136];
@@ -145,8 +145,6 @@
     xAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnitDays;
     xAxis.majorTickInterval = 1;
     xAxis.plotMode = TKChartAxisPlotModeBetweenTicks;
-    
-    [_chart reloadData];
 }
 
 - (NSString *)chart:(TKChart *)chart textForLabelAtPoint:(id<TKChartData>)dataPoint inSeries:(TKChartSeries *)series atIndex:(NSUInteger)dataIndex
