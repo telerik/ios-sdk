@@ -58,7 +58,7 @@
             NSLog(@"group: %@", group.key);
         }
         else {
-            NSLog(@"%d", [item integerValue]);
+            NSLog(@"%d", (int)[item integerValue]);
         }
     }];
     

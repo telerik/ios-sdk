@@ -42,13 +42,13 @@
 		FE28FF721A8D0E77000E0BDC /* ListViewLoadOnDemand.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE28FF711A8D0E77000E0BDC /* ListViewLoadOnDemand.swift */; };
 		FE28FF741A8D0E95000E0BDC /* ListViewGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE28FF731A8D0E95000E0BDC /* ListViewGroups.swift */; };
 		FE2D10781A80FB4600A787EB /* InlineEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D10771A80FB4600A787EB /* InlineEvents.swift */; };
+		FE5549E01A9F8B9700C39375 /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5549DE1A9F8B9700C39375 /* TelerikAppFeedback.framework */; };
+		FE5549E11A9F8B9700C39375 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5549DF1A9F8B9700C39375 /* TelerikUI.framework */; };
 		FE6F334E1A9C716F00BE301B /* OptionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F334D1A9C716F00BE301B /* OptionSection.swift */; };
-		FE77380619ED5E5B009F5C34 /* libTelerikAppFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE77380519ED5E5B009F5C34 /* libTelerikAppFeedback.a */; };
 		FE92FA8019B4C746000B2E66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92FA7F19B4C746000B2E66 /* AppDelegate.swift */; };
 		FE92FA8219B4C746000B2E66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92FA8119B4C746000B2E66 /* ViewController.swift */; };
 		FE92FA8519B4C746000B2E66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE92FA8319B4C746000B2E66 /* Main.storyboard */; };
 		FE92FA8719B4C746000B2E66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE92FA8619B4C746000B2E66 /* Images.xcassets */; };
-		FE92FA9D19B4C7C1000B2E66 /* libTelerikUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE92FA9C19B4C7C1000B2E66 /* libTelerikUI.a */; };
 		FE92FAA719B4C88B000B2E66 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = FE92FAA619B4C88B000B2E66 /* Bridge.m */; };
 		FEAA9B9819B4CC1B00D60D4C /* BalloonAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA9B9019B4CC1B00D60D4C /* BalloonAnnotation.swift */; };
 		FEAA9B9919B4CC1B00D60D4C /* BandAndLineAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA9B9119B4CC1B00D60D4C /* BandAndLineAnnotations.swift */; };
@@ -151,6 +151,8 @@
 		FE28FF711A8D0E77000E0BDC /* ListViewLoadOnDemand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewLoadOnDemand.swift; sourceTree = "<group>"; };
 		FE28FF731A8D0E95000E0BDC /* ListViewGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewGroups.swift; sourceTree = "<group>"; };
 		FE2D10771A80FB4600A787EB /* InlineEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineEvents.swift; sourceTree = "<group>"; };
+		FE5549DE1A9F8B9700C39375 /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
+		FE5549DF1A9F8B9700C39375 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FE6F334D1A9C716F00BE301B /* OptionSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionSection.swift; sourceTree = "<group>"; };
 		FE77380519ED5E5B009F5C34 /* libTelerikAppFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikAppFeedback.a; path = "../AppFeedback/build/Debug-iphoneos/libTelerikAppFeedback.a"; sourceTree = "<group>"; };
 		FE92FA7A19B4C746000B2E66 /* TelerikUIExamplesInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelerikUIExamplesInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,12 +234,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE77380619ED5E5B009F5C34 /* libTelerikAppFeedback.a in Frameworks */,
+				FE5549E01A9F8B9700C39375 /* TelerikAppFeedback.framework in Frameworks */,
+				FE5549E11A9F8B9700C39375 /* TelerikUI.framework in Frameworks */,
 				FEAA9C0919B4CF0B00D60D4C /* Foundation.framework in Frameworks */,
 				FEAA9C0719B4CF0200D60D4C /* UIKit.framework in Frameworks */,
 				FEAA9C0319B4CEF200D60D4C /* EventKitUI.framework in Frameworks */,
 				FEAA9C0119B4CEED00D60D4C /* EventKit.framework in Frameworks */,
-				FE92FA9D19B4C7C1000B2E66 /* libTelerikUI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +409,8 @@
 		FE92FAA419B4C800000B2E66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE5549DE1A9F8B9700C39375 /* TelerikAppFeedback.framework */,
+				FE5549DF1A9F8B9700C39375 /* TelerikUI.framework */,
 				FE77380519ED5E5B009F5C34 /* libTelerikAppFeedback.a */,
 				FEAA9C0819B4CF0B00D60D4C /* Foundation.framework */,
 				FEAA9C0619B4CF0200D60D4C /* UIKit.framework */,
@@ -872,6 +876,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = TelerikUIExamplesInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -891,6 +896,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = TelerikUIExamplesInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

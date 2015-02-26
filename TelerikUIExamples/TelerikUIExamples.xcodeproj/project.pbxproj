@@ -61,10 +61,11 @@
 		FE3CF5901807F74C00461E57 /* NegativeValues.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF58F1807F74C00461E57 /* NegativeValues.m */; };
 		FE3CF593180802D000461E57 /* PanZoom.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF592180802D000461E57 /* PanZoom.m */; };
 		FE5386481A8E50DC00DE6941 /* ListViewSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = FE5386471A8E50DC00DE6941 /* ListViewSampleData.json */; };
+		FE5549DC1A9F8B4700C39375 /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5549DA1A9F8B4700C39375 /* TelerikAppFeedback.framework */; };
+		FE5549DD1A9F8B4700C39375 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5549DB1A9F8B4700C39375 /* TelerikUI.framework */; };
 		FE5F963F1A93933100E70AF2 /* ListViewGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F963E1A93933100E70AF2 /* ListViewGettingStarted.m */; };
 		FE5F96421A93A68F00E70AF2 /* OptionSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F96411A93A68F00E70AF2 /* OptionSection.m */; };
 		FE7131B8192FA4E400B9C231 /* CalendarTransitonEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7131B7192FA4E400B9C231 /* CalendarTransitonEffects.m */; };
-		FE77380419ED5E44009F5C34 /* libTelerikAppFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */; };
 		FE8701831941E2A700AC1D05 /* CalendarCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701821941E2A700AC1D05 /* CalendarCustomization.m */; };
 		FE8701D119420E4000AC1D05 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701D019420E4000AC1D05 /* CustomCell.m */; };
 		FE8701D91942141400AC1D05 /* CalendarEventKitDataBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701D81942141400AC1D05 /* CalendarEventKitDataBinding.m */; };
@@ -104,7 +105,6 @@
 		FEE269D11807066700E52C37 /* PieDonut.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D01807066700E52C37 /* PieDonut.m */; };
 		FEE269D7180708B900E52C37 /* StackedColumnChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D6180708B900E52C37 /* StackedColumnChart.m */; };
 		FEE269DA180708CD00E52C37 /* StackedAreaChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D9180708CD00E52C37 /* StackedAreaChart.m */; };
-		FEE8E7911887DF6E009D373B /* libTelerikUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE8E7901887DF6E009D373B /* libTelerikUI.a */; };
 		FEEAEBD318080A7600D75A5C /* DefaultAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD218080A7600D75A5C /* DefaultAnimation.m */; };
 		FEEAEBD618080A8900D75A5C /* CustomAnimationLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD518080A8900D75A5C /* CustomAnimationLineChart.m */; };
 		FEEAEBD918080A9A00D75A5C /* CustomAnimationPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD818080A9A00D75A5C /* CustomAnimationPieChart.m */; };
@@ -216,6 +216,8 @@
 		FE3CF591180802D000461E57 /* PanZoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanZoom.h; sourceTree = "<group>"; };
 		FE3CF592180802D000461E57 /* PanZoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanZoom.m; sourceTree = "<group>"; };
 		FE5386471A8E50DC00DE6941 /* ListViewSampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListViewSampleData.json; sourceTree = "<group>"; };
+		FE5549DA1A9F8B4700C39375 /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
+		FE5549DB1A9F8B4700C39375 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FE5F963D1A93933100E70AF2 /* ListViewGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewGettingStarted.h; sourceTree = "<group>"; };
 		FE5F963E1A93933100E70AF2 /* ListViewGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewGettingStarted.m; sourceTree = "<group>"; };
 		FE5F96401A93A68F00E70AF2 /* OptionSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionSection.h; sourceTree = "<group>"; };
@@ -322,10 +324,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE77380419ED5E44009F5C34 /* libTelerikAppFeedback.a in Frameworks */,
+				FE5549DC1A9F8B4700C39375 /* TelerikAppFeedback.framework in Frameworks */,
+				FE5549DD1A9F8B4700C39375 /* TelerikUI.framework in Frameworks */,
 				FE8701E4194218AB00AC1D05 /* EventKit.framework in Frameworks */,
 				FE8701E5194218AB00AC1D05 /* EventKitUI.framework in Frameworks */,
-				FEE8E7911887DF6E009D373B /* libTelerikUI.a in Frameworks */,
 				FEE2697F1806DBA300E52C37 /* UIKit.framework in Frameworks */,
 				FEE2697B1806DBA300E52C37 /* Foundation.framework in Frameworks */,
 			);
@@ -613,6 +615,8 @@
 		FEE269791806DBA300E52C37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE5549DA1A9F8B4700C39375 /* TelerikAppFeedback.framework */,
+				FE5549DB1A9F8B4700C39375 /* TelerikUI.framework */,
 				FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */,
 				FEE8E7901887DF6E009D373B /* libTelerikUI.a */,
 				FE8701E2194218AB00AC1D05 /* EventKit.framework */,
@@ -1032,6 +1036,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/**",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TelerikUIExamples/TelerikUIExamples-Prefix.pch";
@@ -1054,6 +1059,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/**",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TelerikUIExamples/TelerikUIExamples-Prefix.pch";
