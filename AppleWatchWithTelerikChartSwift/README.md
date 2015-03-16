@@ -12,7 +12,7 @@ There isn’t a single recommended approach by Apple, so all these methods are l
 
 The most common scenario is to have an existing iPhone app project, using Telerik Chart for iOS, which you want to compliment with an Apple Watch app. So, this tutorial assumes that you already have such a project, and it’s called AppleWatchWithTelerikChart. Don’t worry if you didn’t check the Use Core Data checkbox back then when you created your iPhone app. We will assume that Core Data is not enabled initially, and will show you how to enable it in the existing app. Last but not least, this tutorial assumes that you are using Swift as your primary language.
 
-The complete project structure consists of an iPhone app, a WatchKit app and a framework that directly communicates with Core Data. We use Xcode 6.2 Beta 4 to do all this.
+The complete project structure consists of an iPhone app, a WatchKit app and a framework that directly communicates with Core Data. We use Xcode 6.2 to do all this.
 
 For more information on how the project is built, please refer to the following blog article: [Send Data to Apple Watch with Core Data and Telerik UI for iOS in Swift](http://blogs.telerik.com/blogs/15-02-03/send-data-to-apple-watch-with-core-data-and-telerik-ui-for-ios-in-swift)
 
