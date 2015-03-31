@@ -34,6 +34,8 @@
 		1B53723C1A97869E00707810 /* PhotosWithNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B53723B1A97869E00707810 /* PhotosWithNames.json */; };
 		1B53723E1A9797B100707810 /* LoremIpsumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53723D1A9797B100707810 /* LoremIpsumGenerator.swift */; };
 		1B5372401A9B608E00707810 /* ListViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53723F1A9B608E00707810 /* ListViewLayout.swift */; };
+		EB0160B41ACAB4A000971B72 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5549DF1A9F8B9700C39375 /* TelerikUI.framework */; };
+		EB0160B51ACAB4A600971B72 /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5549DE1A9F8B9700C39375 /* TelerikAppFeedback.framework */; };
 		FE15E0081A91EDDC00F2AB01 /* ListViewPullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E0071A91EDDC00F2AB01 /* ListViewPullToRefresh.swift */; };
 		FE15E00A1A91EDF200F2AB01 /* ListViewReorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E0091A91EDF200F2AB01 /* ListViewReorder.swift */; };
 		FE15E00C1A920FE700F2AB01 /* ListViewSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E00B1A920FE700F2AB01 /* ListViewSwipe.swift */; };
@@ -42,8 +44,6 @@
 		FE28FF721A8D0E77000E0BDC /* ListViewLoadOnDemand.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE28FF711A8D0E77000E0BDC /* ListViewLoadOnDemand.swift */; };
 		FE28FF741A8D0E95000E0BDC /* ListViewGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE28FF731A8D0E95000E0BDC /* ListViewGroups.swift */; };
 		FE2D10781A80FB4600A787EB /* InlineEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D10771A80FB4600A787EB /* InlineEvents.swift */; };
-		FE5549E01A9F8B9700C39375 /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5549DE1A9F8B9700C39375 /* TelerikAppFeedback.framework */; };
-		FE5549E11A9F8B9700C39375 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5549DF1A9F8B9700C39375 /* TelerikUI.framework */; };
 		FE6F334E1A9C716F00BE301B /* OptionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F334D1A9C716F00BE301B /* OptionSection.swift */; };
 		FE92FA8019B4C746000B2E66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92FA7F19B4C746000B2E66 /* AppDelegate.swift */; };
 		FE92FA8219B4C746000B2E66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92FA8119B4C746000B2E66 /* ViewController.swift */; };
@@ -234,8 +234,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE5549E01A9F8B9700C39375 /* TelerikAppFeedback.framework in Frameworks */,
-				FE5549E11A9F8B9700C39375 /* TelerikUI.framework in Frameworks */,
+				EB0160B51ACAB4A600971B72 /* TelerikAppFeedback.framework in Frameworks */,
+				EB0160B41ACAB4A000971B72 /* TelerikUI.framework in Frameworks */,
 				FEAA9C0919B4CF0B00D60D4C /* Foundation.framework in Frameworks */,
 				FEAA9C0719B4CF0200D60D4C /* UIKit.framework in Frameworks */,
 				FEAA9C0319B4CEF200D60D4C /* EventKitUI.framework in Frameworks */,

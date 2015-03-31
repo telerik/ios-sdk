@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB5981081A8BB3C8000F0E50 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5981071A8BB3C8000F0E50 /* TelerikUI.framework */; };
+		EB0160B11ACAAD8400971B72 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0160B01ACAAD8400971B72 /* TelerikUI.framework */; };
 		FE1170271A79227000D01A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1170261A79227000D01A99 /* AppDelegate.swift */; };
 		FE1170291A79227000D01A99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1170281A79227000D01A99 /* ViewController.swift */; };
 		FE11702C1A79227000D01A99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE11702A1A79227000D01A99 /* Main.storyboard */; };
@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EB5981071A8BB3C8000F0E50 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = ../../ioscontrols/TelerikUI/build/TelerikUI.framework; sourceTree = "<group>"; };
+		EB0160B01ACAAD8400971B72 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FE1170211A79227000D01A99 /* DataSourceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataSourceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE1170251A79227000D01A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE1170261A79227000D01A99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB5981081A8BB3C8000F0E50 /* TelerikUI.framework in Frameworks */,
+				EB0160B11ACAAD8400971B72 /* TelerikUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +65,7 @@
 		FE1170181A79227000D01A99 = {
 			isa = PBXGroup;
 			children = (
-				EB5981071A8BB3C8000F0E50 /* TelerikUI.framework */,
+				EB0160B01ACAAD8400971B72 /* TelerikUI.framework */,
 				FE11704A1A7922B400D01A99 /* Bridge.m */,
 				FE1170231A79227000D01A99 /* DataSourceApp */,
 				FE1170391A79227000D01A99 /* DataSourceAppTests */,
@@ -349,15 +349,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/diyanov/Documents/ioscontrols/TelerikUI/build,
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = DataSourceApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/raikov/work/ioscontrols/TelerikUI/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DataSourceApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -371,15 +368,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/diyanov/Documents/ioscontrols/TelerikUI/build,
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = DataSourceApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/raikov/work/ioscontrols/TelerikUI/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DataSourceApp-Bridging-Header.h";
 			};

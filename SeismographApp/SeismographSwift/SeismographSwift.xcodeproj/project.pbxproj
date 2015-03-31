@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB0160AF1ACAACDB00971B72 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0160AE1ACAACDB00971B72 /* TelerikUI.framework */; };
 		EB48BD461A44661300811155 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48BD451A44661300811155 /* AppDelegate.swift */; };
 		EB48BD481A44661300811155 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48BD471A44661300811155 /* ViewController.swift */; };
 		EB48BD4B1A44661300811155 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB48BD491A44661300811155 /* Main.storyboard */; };
@@ -16,7 +17,6 @@
 		EB48BD691A44667800811155 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB48BD681A44667800811155 /* CoreMotion.framework */; };
 		EB48BD6E1A44724200811155 /* TelerikBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = EB48BD6D1A44724200811155 /* TelerikBridge.m */; };
 		EB48BD701A4822E500811155 /* NeedleAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB48BD6F1A4822E500811155 /* NeedleAnnotation.swift */; };
-		FE46D0C21A497B73000C2A3B /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE46D0C11A497B73000C2A3B /* TelerikUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB0160AE1ACAACDB00971B72 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		EB48BD401A44661300811155 /* SeismographSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeismographSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB48BD441A44661300811155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB48BD451A44661300811155 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +45,6 @@
 		EB48BD6C1A44724100811155 /* SeismographSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SeismographSwift-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		EB48BD6D1A44724200811155 /* TelerikBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TelerikBridge.m; path = ../TelerikBridge.m; sourceTree = "<group>"; };
 		EB48BD6F1A4822E500811155 /* NeedleAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleAnnotation.swift; sourceTree = "<group>"; };
-		FE46D0C11A497B73000C2A3B /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE46D0C21A497B73000C2A3B /* TelerikUI.framework in Frameworks */,
+				EB0160AF1ACAACDB00971B72 /* TelerikUI.framework in Frameworks */,
 				EB48BD691A44667800811155 /* CoreMotion.framework in Frameworks */,
 				EB48BD671A44667000811155 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -71,7 +71,7 @@
 		EB48BD371A44661300811155 = {
 			isa = PBXGroup;
 			children = (
-				FE46D0C11A497B73000C2A3B /* TelerikUI.framework */,
+				EB0160AE1ACAACDB00971B72 /* TelerikUI.framework */,
 				EB48BD681A44667800811155 /* CoreMotion.framework */,
 				EB48BD651A44666000811155 /* CoreGraphics.framework */,
 				EB48BD421A44661300811155 /* SeismographSwift */,
@@ -354,7 +354,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = SeismographSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SeismographSwift-Bridging-Header.h";
@@ -372,7 +372,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = SeismographSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SeismographSwift-Bridging-Header.h";

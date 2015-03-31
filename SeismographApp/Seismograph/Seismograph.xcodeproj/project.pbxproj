@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB397BEF1A497791001D4C40 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB397BEE1A497791001D4C40 /* TelerikUI.framework */; };
+		EB0160BB1ACACD1200971B72 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0160BA1ACACD1200971B72 /* TelerikUI.framework */; };
 		EB6AB8291A25D474009B11B0 /* NeedleAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6AB8281A25D474009B11B0 /* NeedleAnnotation.m */; };
 		EB6AB82B1A2648C9009B11B0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6AB82A1A2648C9009B11B0 /* CoreGraphics.framework */; };
 		EBE202AA1A2396DE00168205 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE202A91A2396DE00168205 /* main.m */; };
@@ -31,7 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EB397BEE1A497791001D4C40 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
+		EB0160BA1ACACD1200971B72 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		EB6AB8271A25D474009B11B0 /* NeedleAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeedleAnnotation.h; sourceTree = "<group>"; };
 		EB6AB8281A25D474009B11B0 /* NeedleAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NeedleAnnotation.m; sourceTree = "<group>"; };
 		EB6AB82A1A2648C9009B11B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB397BEF1A497791001D4C40 /* TelerikUI.framework in Frameworks */,
+				EB0160BB1ACACD1200971B72 /* TelerikUI.framework in Frameworks */,
 				EB6AB82B1A2648C9009B11B0 /* CoreGraphics.framework in Frameworks */,
 				EBE202D21A24B62E00168205 /* CoreMotion.framework in Frameworks */,
 			);
@@ -75,7 +75,7 @@
 		EBE2029B1A2396DE00168205 = {
 			isa = PBXGroup;
 			children = (
-				EB397BEE1A497791001D4C40 /* TelerikUI.framework */,
+				EB0160BA1ACACD1200971B72 /* TelerikUI.framework */,
 				EB6AB82A1A2648C9009B11B0 /* CoreGraphics.framework */,
 				EBE202D11A24B62E00168205 /* CoreMotion.framework */,
 				EBE202A61A2396DE00168205 /* Seismograph */,
@@ -185,7 +185,7 @@
 				TargetAttributes = {
 					EBE202A31A2396DE00168205 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = W7TGC3P93K;
+						DevelopmentTeam = CHSQ3M3P37;
 					};
 					EBE202BC1A2396DE00168205 = {
 						CreatedOnToolsVersion = 6.0;
@@ -369,26 +369,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
 				);
 				INFOPLIST_FILE = Seismograph/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -408,26 +388,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
 				);
 				INFOPLIST_FILE = Seismograph/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

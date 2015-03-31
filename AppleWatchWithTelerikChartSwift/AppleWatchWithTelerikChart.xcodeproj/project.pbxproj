@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB0160B31ACAAFE000971B72 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0160B21ACAAFE000971B72 /* TelerikUI.framework */; };
 		EB66F0B81A790A320090FB04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66F0B71A790A320090FB04 /* AppDelegate.swift */; };
 		EB66F0BA1A790A320090FB04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66F0B91A790A320090FB04 /* ViewController.swift */; };
 		EB66F0BD1A790A320090FB04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB66F0BB1A790A320090FB04 /* Main.storyboard */; };
@@ -28,7 +29,6 @@
 		EB66F1221A79364C0090FB04 /* WatchCoreDataProxy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EB66F10A1A79364B0090FB04 /* WatchCoreDataProxy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EB66F12C1A7936840090FB04 /* WatchModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB66F12A1A7936840090FB04 /* WatchModel.xcdatamodeld */; };
 		EB66F1521A7937DA0090FB04 /* WatchCoreDataProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66F1511A7937DA0090FB04 /* WatchCoreDataProxy.swift */; };
-		EBB607B11AB6DEDD009CB8D4 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB607B01AB6DEDD009CB8D4 /* TelerikUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +102,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EB0160B21ACAAFE000971B72 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		EB66F0B21A790A310090FB04 /* AppleWatchWithTelerikChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchWithTelerikChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB66F0B61A790A310090FB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB66F0B71A790A320090FB04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +135,6 @@
 		EB66F1511A7937DA0090FB04 /* WatchCoreDataProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchCoreDataProxy.swift; sourceTree = "<group>"; };
 		EB66F1541A793A190090FB04 /* AppleWatchWithTelerikChart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppleWatchWithTelerikChart.entitlements; sourceTree = "<group>"; };
 		EB66F1551A793B970090FB04 /* AppleWatchWithTelerikChart WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "AppleWatchWithTelerikChart WatchKit Extension.entitlements"; sourceTree = "<group>"; };
-		EBB607B01AB6DEDD009CB8D4 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../../Telerik/UI for iOS Q1 2015/TelerikUI.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBB607B11AB6DEDD009CB8D4 /* TelerikUI.framework in Frameworks */,
+				EB0160B31ACAAFE000971B72 /* TelerikUI.framework in Frameworks */,
 				EB66F1211A79364C0090FB04 /* WatchCoreDataProxy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,7 +182,7 @@
 		EB66F0A91A790A310090FB04 = {
 			isa = PBXGroup;
 			children = (
-				EBB607B01AB6DEDD009CB8D4 /* TelerikUI.framework */,
+				EB0160B21ACAAFE000971B72 /* TelerikUI.framework */,
 				EB66F0B41A790A310090FB04 /* AppleWatchWithTelerikChart */,
 				EB66F0CA1A790A320090FB04 /* AppleWatchWithTelerikChartTests */,
 				EB66F0E11A7934640090FB04 /* AppleWatchWithTelerikChart WatchKit Extension */,
@@ -754,7 +754,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AppleWatchWithTelerikChart/AppleWatchWithTelerikChart.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -762,58 +761,10 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q1,
-					2015,
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = AppleWatchWithTelerikChart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -826,7 +777,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AppleWatchWithTelerikChart/AppleWatchWithTelerikChart.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -834,58 +784,10 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q3,
-					2014,
-					/Users/diyanov/Documents/Telerik/UI,
-					for,
-					iOS,
-					Q1,
-					2015,
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = AppleWatchWithTelerikChart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
