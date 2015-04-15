@@ -18,19 +18,19 @@ class ViewController: UIViewController {
         let dataSource = TKDataSource(array: [ 10, 5, 12, 13, 7, 44 ], displayKey: nil)
         
         //filter all values less or equal to 5
-        dataSource.filter { $0 as Int > 5 }
+        dataSource.filter { $0 as! Int > 5 }
         
         //sort ascending
         dataSource.sort {
-            let a = $0 as Int
-            let b = $1 as Int
+            let a = $0 as! Int
+            let b = $1 as! Int
             if a < b { return NSComparisonResult.OrderedDescending }
             else if a > b { return NSComparisonResult.OrderedAscending }
             return NSComparisonResult.OrderedSame
         }
         
         //group all odd values
-        dataSource.group { ($0 as Int) % 2 == 0 }
+        dataSource.group { ($0 as! Int) % 2 == 0 }
         
         //visualize everything
         dataSource.enumerate { println($0) }
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
             }
             
             dataSource.map {
-                let interval = $0.valueForKey("dateTime") as NSTimeInterval
+                let interval = $0.valueForKey("dateTime") as! NSTimeInterval
                 let date = NSDate(timeIntervalSince1970: interval)
                 $0.setValue(date, forKey: "dateTime")
                 return $0
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
             
             let formatter = NSDateFormatter()
             formatter.dateFormat = "MMM/dd"
-            let xAxis:TKChartDateTimeAxis = chart.xAxis as TKChartDateTimeAxis
+            let xAxis:TKChartDateTimeAxis = chart.xAxis as! TKChartDateTimeAxis
             xAxis.majorTickInterval = 1
             xAxis.setPlotMode(TKChartAxisPlotMode.BetweenTicks)
             xAxis.labelFormatter = formatter
