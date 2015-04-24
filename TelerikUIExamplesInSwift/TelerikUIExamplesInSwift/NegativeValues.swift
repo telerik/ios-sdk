@@ -15,14 +15,14 @@ class NegativeValues: ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = CGRectInset(self.view.bounds, 10, 10)
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart)
         
-        let dataPoints = NSMutableArray()
+        var dataPoints = [TKChartDataPoint]()
         for i in 0..<10 {
             var y = CGFloat(i*10)
-            dataPoints.addObject(TKChartDataPoint(x:i, y:(i % 2==0 ? -y : y)))
+            dataPoints.append(TKChartDataPoint(x:i, y:(i % 2==0 ? -y : y)))
         }
         
         let xAxis = TKChartNumericAxis(minimum:0, andMaximum: 9)

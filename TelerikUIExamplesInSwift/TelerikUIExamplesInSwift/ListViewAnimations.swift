@@ -12,17 +12,17 @@ class ListViewAnimations: ExampleViewController {
     let listView = TKListView()
     let dataSource = TKDataSource()
     
-    override init() {
-        super.init()
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         self.addOption("Scale in") { self.scaleInSelected() }
         self.addOption("Fade in") { self.fadeInSelected() }
         self.addOption("Slide in") { self.slideInSelected() }
         self.addOption("Fade + Scale in") { self.dafePlusScaleSelected() }
     }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -31,8 +31,8 @@ class ListViewAnimations: ExampleViewController {
         // Do any additional setup after loading the view.
         self.dataSource.loadDataFromJSONResource("ListViewSampleData", ofType: "json", rootItemKeyPath: "photos")
         self.dataSource.settings.listView.initCell { (listView: TKListView!, indexPath: NSIndexPath!, cell: TKListViewCell!, item: AnyObject!) -> Void in
-            cell.imageView.image = UIImage(named: self.dataSource.items[indexPath.row] as String)
-            let view : TKView = cell.backgroundView as TKView
+            cell.imageView.image = UIImage(named: self.dataSource.items[indexPath.row] as! String)
+            let view : TKView = cell.backgroundView as! TKView
             view.stroke.width = 0
             
             cell.imageView.layer.shadowColor = UIColor(red: 0.27, green: 0.27, blue: 0.55, alpha: 1.0).CGColor
@@ -46,7 +46,7 @@ class ListViewAnimations: ExampleViewController {
         self.listView.dataSource = self.dataSource
         self.listView.cellAppearBehavior = TKListViewCellAppearBehavior()
         self.view.addSubview(self.listView)
-        let layout = listView.layout as TKListViewColumnsLayout
+        let layout = listView.layout as! TKListViewColumnsLayout
         layout.itemSize = CGSizeMake(130, 180)
         layout.minimumLineSpacing = 10
         layout.cellAlignment = TKListViewCellAlignment.Stretch

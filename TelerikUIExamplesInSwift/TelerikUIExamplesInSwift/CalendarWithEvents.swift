@@ -9,7 +9,7 @@ import Foundation
 
 class CalendarWithEvents: ExampleViewController, TKCalendarDataSource, TKCalendarDelegate, UITableViewDataSource {
     
-    let kCellID:NSString = "cell"
+    let kCellID = "cell"
     let calendarView = TKCalendar()
     let tableView = UITableView()
     let events = NSMutableArray()
@@ -19,12 +19,6 @@ class CalendarWithEvents: ExampleViewController, TKCalendarDataSource, TKCalenda
         super.viewDidLoad()
         
         self.createEvents()
-
-        self.tableView.frame = CGRect.zeroRect
-        self.tableView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: kCellID)
-        self.tableView.dataSource = self
-        self.view.addSubview(self.tableView)
         
         let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
         calendar.firstWeekday = 2
@@ -36,8 +30,6 @@ class CalendarWithEvents: ExampleViewController, TKCalendarDataSource, TKCalenda
         components.year = 10
         let maxDate = calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))
         
-        self.calendarView.frame = CGRect.zeroRect
-        self.calendarView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.calendarView.calendar = calendar
         self.calendarView.dataSource = self
         self.calendarView.delegate = self
@@ -45,7 +37,7 @@ class CalendarWithEvents: ExampleViewController, TKCalendarDataSource, TKCalenda
         self.calendarView.maxDate = maxDate
         self.calendarView.allowPinchZoom = true
         
-        let presenter = self.calendarView.presenter() as TKCalendarMonthPresenter
+        let presenter = self.calendarView.presenter() as! TKCalendarMonthPresenter
         presenter.style().titleCellHeight = 40
         presenter.headerIsSticky = true
         
@@ -58,20 +50,24 @@ class CalendarWithEvents: ExampleViewController, TKCalendarDataSource, TKCalenda
             presenter.weekNumbersHidden = false
         }
         self.view.addSubview(self.calendarView)
+        
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: kCellID)
+        self.tableView.dataSource = self
+        self.view.addSubview(self.tableView)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        if (self.calendarView.theme!.isKindOfClass(TKCalendarIPadTheme.self)) ||
-            self.interfaceOrientation == UIInterfaceOrientation.LandscapeLeft ||
-            self.interfaceOrientation == UIInterfaceOrientation.LandscapeRight {
+        
+        if (self.calendarView.theme!.isKindOfClass(TKCalendarIPadTheme.self) || UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
             self.tableView.frame = CGRectZero
-            self.calendarView.frame = self.view.bounds
+            self.calendarView.frame = self.exampleBounds
         }
         else {
-            let height = CGRectGetHeight(self.view.bounds)
-            self.tableView.frame = CGRectMake(0, height-height/3.6, self.view.bounds.size.width, height/3.6)
-            self.calendarView.frame = CGRectMake(2, 0, self.view.bounds.size.width - 4, height - height/3.6)
+            let height =  CGRectGetHeight(self.exampleBounds)
+            let tableHeight = height/3.2
+            self.calendarView.frame = CGRectMake(0, self.exampleBounds.origin.y, self.exampleBounds.size.width, height - tableHeight)
+            self.tableView.frame = CGRectMake(0, self.exampleBounds.origin.y + self.exampleBounds.size.height - tableHeight, self.exampleBounds.size.width, tableHeight)
         }
     }
     
@@ -146,8 +142,8 @@ class CalendarWithEvents: ExampleViewController, TKCalendarDataSource, TKCalenda
     }
     
 //MARK: - TKCalendarDataSource
-    
-    func calendar(calendar: TKCalendar, eventsForDate date: NSDate) -> NSArray {
+
+    func calendar(calendar: TKCalendar!, eventsForDate date: NSDate!) -> [AnyObject]! {
         var components : NSDateComponents
         
         components = self.calendarView.calendar.components(NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit, fromDate: date)
@@ -156,8 +152,8 @@ class CalendarWithEvents: ExampleViewController, TKCalendarDataSource, TKCalenda
         components.second = 59
         let endDate = self.calendarView.calendar.dateFromComponents(components)
         let predicate = NSPredicate(format: "(startDate <= %@) AND (endDate >= %@)", endDate!, date)
-        let result:NSArray = self.events.filteredArrayUsingPredicate(predicate!)
-        return result
+        let result:NSArray = self.events.filteredArrayUsingPredicate(predicate)
+        return result as [AnyObject]
     }
     
 //MARK: - TKCalendarDelegate
@@ -177,8 +173,8 @@ class CalendarWithEvents: ExampleViewController, TKCalendarDataSource, TKCalenda
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(kCellID) as UITableViewCell
-        let event = self.eventsForDate![indexPath.row] as TKCalendarEvent
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCellID) as! UITableViewCell
+        let event = self.eventsForDate![indexPath.row] as! TKCalendarEvent
         cell.textLabel!.text = event.title
         return cell
     }

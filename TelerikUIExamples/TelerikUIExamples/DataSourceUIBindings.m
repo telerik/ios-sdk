@@ -36,6 +36,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self.view addSubview:[UIView new]];
+
     self.title = @"Bind with UI controls";
 
     NSArray *imageNames = @[ @"CENTCM.jpg", @"FAMIAF.jpg", @"CHOPSF.jpg", @"DUMONF.jpg", @"ERNSHM.jpg", @"FOLIGF.jpg" ];
@@ -52,6 +54,14 @@
     self.dataSource.itemSource = items;
     
     [self useChart];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    if (self.view.subviews.count > 1) {
+        ((UIView*)self.view.subviews[1]).frame = self.exampleBounds;
+    }
 }
 
 - (void)addItem:(NSMutableArray*)items name:(NSString*)name value:(CGFloat)value group:(NSString*)group day:(NSInteger)dayOffset image:(UIImage*)image
@@ -78,8 +88,8 @@
 
 - (void)useChart
 {
-    if (self.view.subviews.count>0) {
-        [self.view.subviews[0] removeFromSuperview];
+    if (self.view.subviews.count>1) {
+        [self.view.subviews[1] removeFromSuperview];
     }
     
     [self.dataSource.settings.chart createSeries:^TKChartSeries *(TKDataSourceGroup *group) {
@@ -89,24 +99,22 @@
         return series;
     }];
     
-    TKChart *chart = [[TKChart alloc] initWithFrame:self.view.bounds];
-    chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    TKChart *chart = [[TKChart alloc] initWithFrame:self.exampleBounds];
     chart.dataSource = self.dataSource;
     [self.view addSubview:chart];
 }
 
 - (void)useCalendar
 {
-    if (self.view.subviews.count>0) {
-        [self.view.subviews[0] removeFromSuperview];
+    if (self.view.subviews.count>1) {
+        [self.view.subviews[1] removeFromSuperview];
     }
     
     self.dataSource.settings.calendar.startDateKey = @"date";
     self.dataSource.settings.calendar.endDateKey = @"date";
     self.dataSource.settings.calendar.defaultEventColor = [UIColor redColor];
     
-    TKCalendar *calendar = [[TKCalendar alloc] initWithFrame:self.view.bounds];
-    calendar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    TKCalendar *calendar = [[TKCalendar alloc] initWithFrame:self.exampleBounds];
     calendar.dataSource = self.dataSource;
     [self.view addSubview:calendar];
     
@@ -116,8 +124,8 @@
 
 - (void)useTableView
 {
-    if (self.view.subviews.count>0) {
-        [self.view.subviews[0] removeFromSuperview];
+    if (self.view.subviews.count>1) {
+        [self.view.subviews[1] removeFromSuperview];
     }
 
     // optional
@@ -136,16 +144,15 @@
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", dsitem.value];
     }];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.exampleBounds];
     tableView.dataSource = self.dataSource;
     [self.view addSubview:tableView];
 }
 
 - (void)useCollectionView
 {
-    if (self.view.subviews.count>0) {
-        [self.view.subviews[0] removeFromSuperview];
+    if (self.view.subviews.count>1) {
+        [self.view.subviews[1] removeFromSuperview];
     }
     
     [self.dataSource.settings.collectionView createCell:^UICollectionViewCell *(UICollectionView *collectionView, NSIndexPath *indexPath, id item) {
@@ -163,9 +170,8 @@
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.itemSize = CGSizeMake(140, 140);
     
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectInset(self.view.bounds, 10, 10) collectionViewLayout:layout];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.exampleBounds collectionViewLayout:layout];
     [collectionView registerClass:[DSCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
-    collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     collectionView.dataSource = self.dataSource;
     collectionView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:collectionView];
@@ -173,12 +179,11 @@
 
 - (void)useListView
 {
-    if (self.view.subviews.count>0) {
-        [self.view.subviews[0] removeFromSuperview];
+    if (self.view.subviews.count>1) {
+        [self.view.subviews[1] removeFromSuperview];
     }
     
-    TKListView *listView = [[TKListView alloc] initWithFrame:self.view.bounds];
-    listView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    TKListView *listView = [[TKListView alloc] initWithFrame:self.exampleBounds];
     listView.dataSource = self.dataSource;
     [self.view addSubview:listView];
 }

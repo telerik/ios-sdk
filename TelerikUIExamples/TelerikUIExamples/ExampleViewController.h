@@ -19,6 +19,8 @@
 
 @property (nonatomic) CGRect exampleBounds;
 
+@property (nonatomic) CGRect exampleBoundsWithInset;
+
 @property (nonatomic, strong) UIPopoverController *popover;
 
 @property (nonatomic, strong) UIBarButtonItem *settingsButton;

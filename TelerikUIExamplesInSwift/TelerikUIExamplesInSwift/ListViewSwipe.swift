@@ -14,15 +14,15 @@ class ListViewSwipe: ExampleViewController, TKListViewDelegate {
     var buttonAnimationEnabled = true
     let loremIpsum = LoremIpsumGenerator()
     
-    override init() {
-        super.init()
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         self.addOption("YES", inSection:"Animate buttons") { self.enableButtonAnimation() }
         self.addOption("NO", inSection:"Animate buttons") { self.disableButtonAnimation() }
     }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -55,7 +55,7 @@ class ListViewSwipe: ExampleViewController, TKListViewDelegate {
 
         dataSource.itemSource = mails
         dataSource.settings.listView.createCell { (listView: TKListView!, indexPath: NSIndexPath!, item: AnyObject!) -> TKListViewCell! in
-            let cell = listView.dequeueReusableCellWithReuseIdentifier("defaultCell", forIndexPath: indexPath) as TKListViewCell
+            let cell = listView.dequeueReusableCellWithReuseIdentifier("defaultCell", forIndexPath: indexPath) as! TKListViewCell
             
             if(cell.swipeBackgroundView.subviews.count == 0){
                 let size = cell.frame.size
@@ -97,8 +97,8 @@ class ListViewSwipe: ExampleViewController, TKListViewDelegate {
         
         dataSource.settings.listView.initCell { (listView: TKListView!, indexPath: NSIndexPath!, cell: TKListViewCell!, item: AnyObject!) -> Void in
             cell.textLabel.text = item as? String
-            let dict = self.dataSource.itemSource as NSDictionary
-            var attributedString : NSAttributedString = self.attributedMailText(dict[item as String!] as NSString) as NSAttributedString
+            let dict = self.dataSource.itemSource as! NSDictionary
+            var attributedString : NSAttributedString = self.attributedMailText(dict[item as! String!] as! NSString) as NSAttributedString
             cell.detailTextLabel.attributedText = attributedString
             cell.contentInsets = UIEdgeInsetsMake(5, 10, 5, 10)
         }
@@ -121,10 +121,10 @@ class ListViewSwipe: ExampleViewController, TKListViewDelegate {
     
     func attributedMailText(text: NSString) -> NSAttributedString {
         let randomStr = loremIpsum.generateString(10 + Int(arc4random()%15))
-        let str : NSString = "\(text)\n\(randomStr)"
+        let str = "\(text)\n\(randomStr)"
         let attrStr = NSMutableAttributedString(string: str, attributes: [NSObject : AnyObject]?())
-        let range : NSRange = str.rangeOfString("\n")
-        attrStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor(), range: NSMakeRange(range.location, str.length - range.location))
+        let range : NSRange = (str as NSString).rangeOfString("\n")
+        attrStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor(), range: NSMakeRange(range.location, (str as NSString).length - range.location))
         return attrStr
     }
     
@@ -143,9 +143,9 @@ class ListViewSwipe: ExampleViewController, TKListViewDelegate {
          return
         }
         
-        let bMore = cell.swipeBackgroundView.subviews[0] as UIButton
-        let bFlag = cell.swipeBackgroundView.subviews[1] as UIButton
-        let bTrash = cell.swipeBackgroundView.subviews[2] as UIButton
+        let bMore = cell.swipeBackgroundView.subviews[0] as! UIButton
+        let bFlag = cell.swipeBackgroundView.subviews[1] as! UIButton
+        let bTrash = cell.swipeBackgroundView.subviews[2] as! UIButton
         
         let size = cell.frame.size
         

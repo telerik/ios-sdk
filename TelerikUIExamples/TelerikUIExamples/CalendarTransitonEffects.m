@@ -22,6 +22,7 @@
     NSInteger _oldColorIndex;
     NSArray *_colors;
     TKCalendarTransitionMode _transitionMode;
+    UIView *_contentView;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -51,21 +52,23 @@
 {
     [super viewDidLoad];
     
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 44, self.view.bounds.size.width, 44)];
+    _contentView = [[UIView alloc] initWithFrame:self.exampleBounds];
+    [self.view addSubview:_contentView];
+    
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_contentView.bounds) - 44, CGRectGetWidth(_contentView.bounds), 44)];
     toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
-    [self.view addSubview:toolbar];
+    [_contentView addSubview:toolbar];
     
     UIBarButtonItem *buttonPrev = [[UIBarButtonItem alloc] initWithTitle:@"Prev month" style:UIBarButtonItemStylePlain target:self action:@selector(prevTouched:)];
     UIBarButtonItem *buttonNext = [[UIBarButtonItem alloc] initWithTitle:@"Next month" style:UIBarButtonItemStylePlain target:self action:@selector(nextTouched:)];
     UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     toolbar.items = @[buttonPrev, space, buttonNext];
     
-    CGRect rect = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - toolbar.frame.size.height);
-    self.calendarView = [[TKCalendar alloc] initWithFrame:CGRectInset(rect, 0, 0)];
+    self.calendarView = [[TKCalendar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(_contentView.bounds), CGRectGetHeight(_contentView.bounds) - 44)];
     self.calendarView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.calendarView.delegate = self;
     self.calendarView.allowPinchZoom = NO;
-    [self.view addSubview:self.calendarView];
+    [_contentView addSubview:self.calendarView];
     
     TKCalendarMonthPresenter *presenter = (TKCalendarMonthPresenter*)self.calendarView.presenter;
     presenter.transitionMode = TKCalendarTransitionModeFlip;
@@ -73,6 +76,12 @@
     presenter.headerIsSticky = YES;
     presenter.contentView.backgroundColor = _colors[_colorIndex];
     _transitionMode = TKCalendarTransitionModeFlip;
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    _contentView.frame = self.exampleBounds;
 }
 
 - (void)didReceiveMemoryWarning

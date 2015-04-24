@@ -29,11 +29,11 @@ class SelectedPointLabel: CALayer {
         }
         
         shape.drawInContext(ctx, withCenter: CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)), drawings: [fill, stroke])
-        var paragraphStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
+        var paragraphStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
         paragraphStyle.alignment = self.labelStyle!.textAlignment
-        let attributes: NSDictionary = [NSFontAttributeName: UIFont.systemFontOfSize(16),
-            NSForegroundColorAttributeName: self.labelStyle!.textColor,
-            NSParagraphStyleAttributeName: paragraphStyle]
+        let attributes = [NSFontAttributeName: UIFont.systemFontOfSize(16),
+                          NSForegroundColorAttributeName: self.labelStyle!.textColor,
+                          NSParagraphStyleAttributeName: paragraphStyle]
         
         self.text!.drawWithRect(textRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: attributes, context: nil)
         UIGraphicsPopContext()

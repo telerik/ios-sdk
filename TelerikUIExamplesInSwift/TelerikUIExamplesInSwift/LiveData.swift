@@ -15,7 +15,7 @@ class LiveData: ExampleViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chart = TKChart(frame: self.exampleBounds)
+        chart = TKChart(frame: self.exampleBoundsWithInset)
         chart?.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart!)
         NSTimer.scheduledTimerWithTimeInterval(0.127, target: self, selector: "updateChart", userInfo: nil, repeats: true)
@@ -32,7 +32,7 @@ class LiveData: ExampleViewController {
         chart?.yAxis = TKChartNumericAxis(minimum: 0, andMaximum: 100)
         let firstPoint = dataPoints[0]
         let lastPoint = dataPoints[dataPoints.count - 1]
-        let xAxis = TKChartDateTimeAxis(minimumDate: firstPoint.dataXValue as NSDate, andMaximumDate: lastPoint.dataXValue as NSDate)
+        let xAxis = TKChartDateTimeAxis(minimumDate: firstPoint.dataXValue as! NSDate, andMaximumDate: lastPoint.dataXValue as! NSDate)
         xAxis.style.labelStyle.fitMode = TKChartAxisLabelFitMode.None
         xAxis.style.majorTickStyle.maxTickClippingMode = TKChartAxisClippingMode.Visible
         xAxis.majorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Seconds

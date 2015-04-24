@@ -49,7 +49,8 @@
         cell.imageView.image = [UIImage imageNamed:_photos.items[indexPath.row]];
         cell.textLabel.text = _names.items[indexPath.row];
         TKView *view = (TKView*)cell.backgroundView;
-        view.stroke.strokeSides = [listView.layout isKindOfClass:[TKListViewColumnsLayout class]] ? TKRectSideRight | TKRectSideBottom : TKRectSideAll;
+        view.stroke.strokeSides = [listView.layout isKindOfClass:[TKListViewColumnsLayout class]] ?
+                                    TKRectSideRight | TKRectSideBottom : TKRectSideAll;
         [view setNeedsDisplay];
     }];
     
@@ -87,6 +88,7 @@
     layout.minimumInteritemSpacing = 0;
     layout.itemSize = CGSizeMake(100, 100);
     layout.columnsCount = 2;
+    layout.cellAlignment = TKListViewCellAlignmentStretch;
     _listView.layout = layout;
     [_listView reloadData];
     
@@ -97,6 +99,7 @@
 - (void)verticalSelected
 {
     _listView.scrollDirection = TKListViewScrollDirectionVertical;
+    [_listView.layout prepareLayout];
 }
 
 - (void)horizontalSelected
@@ -113,6 +116,7 @@
     }
     //Plese note that columns layout would not be affected by setting horizontal direction as it supports only vertical scroll direction.
     _listView.scrollDirection = TKListViewScrollDirectionHorizontal;
+    [_listView.layout prepareLayout];
 }
 
 @end

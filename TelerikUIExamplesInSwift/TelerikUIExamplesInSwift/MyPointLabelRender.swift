@@ -26,7 +26,7 @@ class MyPointLabelRender: TKChartPointLabelRender {
             labelLayer!.removeFromSuperlayer()
         }
         for i in 0..<series.items().count {
-            let dataPoint = series.items()[i] as TKChartData
+            let dataPoint = series.items()[i] as! TKChartData
             let location = self.locationForDataPoint(dataPoint, forSeries: series, inRect: bounds)
             if !CGRectContainsPoint(bounds, location) {
                 continue

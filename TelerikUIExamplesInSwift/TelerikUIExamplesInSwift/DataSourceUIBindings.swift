@@ -11,8 +11,8 @@ class DataSourceUIBindings: ExampleViewController {
 
     let dataSource = TKDataSource()
     
-    override init() {
-        super.init();
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         self.addOption("TKChart") { self.useChart() }
         self.addOption("TKCalendar") { self.useCalendar() }
@@ -20,15 +20,17 @@ class DataSourceUIBindings: ExampleViewController {
         self.addOption("UICollectionView") { self.useCollectionView() }
         self.addOption("TKListView") { self.useListView() }
     }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.addSubview(UIView())
+        
         self.title = "Bind with UI controls"
         
         let imageNames = [ "CENTCM.jpg", "FAMIAF.jpg", "CHOPSF.jpg", "DUMONF.jpg", "ERNSHM.jpg", "FOLIGF.jpg" ];
@@ -54,14 +56,22 @@ class DataSourceUIBindings: ExampleViewController {
         self.useChart()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if self.view.subviews.count > 1 {
+            let view = self.view.subviews[1] as! UIView
+            view.frame = self.exampleBounds
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func useChart() {
-        if self.view.subviews.count>0 {
-            self.view.subviews[0].removeFromSuperview()
+        if self.view.subviews.count>1 {
+            self.view.subviews[1].removeFromSuperview()
         }
         
         self.dataSource.settings.chart.createSeries { (TKDataSourceGroup group) -> TKChartSeries! in
@@ -71,38 +81,38 @@ class DataSourceUIBindings: ExampleViewController {
             return series
         }
         
-        let chart = TKChart(frame:self.view.bounds)
+        let chart = TKChart(frame:self.exampleBounds)
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         chart.dataSource = self.dataSource
         self.view.addSubview(chart)
     }
     
     func useCalendar() {
-        if self.view.subviews.count>0 {
-            self.view.subviews[0].removeFromSuperview()
+        if self.view.subviews.count>1 {
+            self.view.subviews[1].removeFromSuperview()
         }
         
         self.dataSource.settings.calendar.startDateKey = "date"
         self.dataSource.settings.calendar.endDateKey = "date"
         self.dataSource.settings.calendar.defaultEventColor = UIColor.redColor()
         
-        let calendar = TKCalendar(frame:self.view.bounds)
+        let calendar = TKCalendar(frame:self.exampleBounds)
         calendar.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         calendar.dataSource = self.dataSource
         self.view.addSubview(calendar)
         
-        let presenter = calendar.presenter() as TKCalendarMonthPresenter
+        let presenter = calendar.presenter() as! TKCalendarMonthPresenter
         presenter.inlineEventsViewMode = TKCalendarInlineEventsViewMode.Inline
     }
     
     func useTableView() {
-        if self.view.subviews.count>0 {
-            self.view.subviews[0].removeFromSuperview()
+        if self.view.subviews.count>1 {
+            self.view.subviews[1].removeFromSuperview()
         }
         
         // optional
         self.dataSource.settings.tableView.createCell { (UITableView tableView, NSIndexPath indexPath, AnyObject item) -> UITableViewCell in
-            var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell?
+            var cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell?
             if cell == nil {
                 cell = UITableViewCell(style:UITableViewCellStyle.Value1, reuseIdentifier:"cell")
             }
@@ -111,30 +121,29 @@ class DataSourceUIBindings: ExampleViewController {
         
         // optional
         self.dataSource.settings.tableView.initCell { (UITableView tableView, NSIndexPath indexPath, UITableViewCell cell, AnyObject item) in
-            let dsitem = item as DSItem
+            let dsitem = item as! DSItem
             cell.textLabel!.text = dsitem.name
             cell.detailTextLabel!.text = "\(dsitem.value)"
         }
         
-        let tableView = UITableView(frame:self.view.bounds)
-        tableView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        let tableView = UITableView(frame:self.exampleBounds)
         tableView.dataSource = self.dataSource
         self.view.addSubview(tableView)
     }
     
     func useCollectionView() {
-        if self.view.subviews.count>0 {
-            self.view.subviews[0].removeFromSuperview()
+        if self.view.subviews.count>1 {
+            self.view.subviews[1].removeFromSuperview()
         }
 
         self.dataSource.settings.collectionView.createCell { (UICollectionView collectionView, NSIndexPath indexPath, AnyObject item) -> UICollectionViewCell in
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath:indexPath) as UICollectionViewCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath:indexPath) as! UICollectionViewCell
             return cell
         }
         
         self.dataSource.settings.collectionView.initCell { (UICollectionView collectionView, NSIndexPath indexPath, UICollectionViewCell cell, AnyObject item) in
-            let dscell = cell as DSCollectionViewCell
-            let dsitem = item as DSItem
+            let dscell = cell as! DSCollectionViewCell
+            let dsitem = item as! DSItem
             dscell.label.text = self.dataSource.textFromItem(item, inGroup: nil)
             dscell.imageView.image = dsitem.image
         }
@@ -142,20 +151,19 @@ class DataSourceUIBindings: ExampleViewController {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSizeMake(140, 140)
         
-        let collectionView = UICollectionView(frame:CGRectInset(self.view.bounds, 10, 10), collectionViewLayout:layout)
+        let collectionView = UICollectionView(frame:self.exampleBounds, collectionViewLayout:layout)
         collectionView.registerClass(DSCollectionViewCell.self, forCellWithReuseIdentifier:"cell")
-        collectionView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         collectionView.dataSource = self.dataSource
         collectionView.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(collectionView)
     }
     
     func useListView() {
-        if self.view.subviews.count>0 {
-            self.view.subviews[0].removeFromSuperview();
+        if self.view.subviews.count>1 {
+            self.view.subviews[1].removeFromSuperview();
         }
         
-        let listView = TKListView(frame: self.view.bounds)
+        let listView = TKListView(frame: self.exampleBounds)
         listView.dataSource = self.dataSource
         self.view.addSubview(listView)
     }

@@ -154,8 +154,8 @@
     
     CGSize size = cell.frame.size;
     if (_buttonAnimationEnabled) {
-        CGFloat x = size.width - fabsf(offset.x);
-        CGFloat delta = fabsf(offset.x) / _listView.cellSwipeLimits.right;
+        CGFloat x = size.width - fabs(offset.x);
+        CGFloat delta = fabs(offset.x) / _listView.cellSwipeLimits.right;
         bTrash.frame = CGRectMake(x + 20 + 100*delta, 0, 60, size.height);
         bFlag.frame = CGRectMake(x + 10 + 50*delta, 0, 60, size.height);
         bMore.frame = CGRectMake(x, 0, 60, size.height);

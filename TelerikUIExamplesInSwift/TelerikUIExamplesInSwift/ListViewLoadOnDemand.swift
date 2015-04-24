@@ -31,7 +31,7 @@ class ListViewLoadOnDemand: ExampleViewController, TKListViewDataSource, TKListV
         self.view.addSubview(listView)
         listView.registerClass(CustomCardListViewCell.classForCoder(), forCellWithReuseIdentifier:"cell")
     
-        let layout = listView.layout as TKListViewColumnsLayout
+        let layout = listView.layout as! TKListViewColumnsLayout
         layout.itemSize = CGSizeMake(100, 120)
         layout.minimumLineSpacing = 5
         layout.cellAlignment = TKListViewCellAlignment.Stretch
@@ -50,13 +50,13 @@ class ListViewLoadOnDemand: ExampleViewController, TKListViewDataSource, TKListV
     }
     
     func listView(listView: TKListView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> TKListViewCell! {
-        let cell = listView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as TKListViewCell
+        let cell = listView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! TKListViewCell
         cell.backgroundView?.backgroundColor = UIColor(white: 0.3, alpha: 0.5)
-        cell.imageView.image = UIImage(named: self.photos.items[indexPath.row] as String)
+        cell.imageView.image = UIImage(named: self.photos.items[indexPath.row] as! String)
         cell.textLabel.text = names.items[indexPath.row] as? String
-        cell.detailTextLabel.text = loremIpsumGenerator.randomString(10 + Int(arc4random_uniform(16)), indexPath: indexPath)
+        cell.detailTextLabel.text = loremIpsumGenerator.randomString(10 + Int(arc4random_uniform(16)), indexPath: indexPath) as String
         cell.detailTextLabel.textColor = UIColor.whiteColor()
-        let backgroundView = cell.backgroundView as TKView
+        let backgroundView = cell.backgroundView as! TKView
         backgroundView.stroke = nil
         return cell
     }

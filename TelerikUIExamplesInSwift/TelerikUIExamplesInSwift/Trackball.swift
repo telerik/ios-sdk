@@ -10,9 +10,9 @@ import Foundation
 class Trackball: ExampleViewController, TKChartDelegate {
     
     let chart = TKChart()
-    
-    override init() {
-        super.init()
+
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("pin at top") { self.top() }
         self.addOption("pin at left") { self.left() }
@@ -21,22 +21,22 @@ class Trackball: ExampleViewController, TKChartDelegate {
         self.addOption("floating") { self.floating() }
     }
 
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        chart.frame = CGRectInset(self.view.bounds, 10, 10)
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart)
     
-        let array1 = NSMutableArray()
-        let array2 = NSMutableArray()
+        var array1 = [TKChartDataPoint]()
+        var array2 = [TKChartDataPoint]()
         for i in 0..<26 {
-            array1.addObject(TKChartDataPoint(x: (i+1), y: Int(arc4random() % (100))))
-            array2.addObject(TKChartDataPoint(x: (i+1), y: Int(arc4random() % (60))))
+            array1.append(TKChartDataPoint(x: (i+1), y: Int(arc4random() % (100))))
+            array2.append(TKChartDataPoint(x: (i+1), y: Int(arc4random() % (60))))
         }
     
         let xAxis = TKChartNumericAxis(minimum: 1, andMaximum: 26, position: TKChartAxisPosition.Bottom)
@@ -64,17 +64,19 @@ class Trackball: ExampleViewController, TKChartDelegate {
     
     //MARK: TKChartDelegate
     
-    func chart(chart: TKChart!, trackballDidTrackSelection selection: NSArray) {
+    func chart(chart: TKChart!, trackballDidTrackSelection selection: [AnyObject]!) {
         let str = NSMutableString()
-        for var i=0; i<selection.count; i++ {
-            let info = selection[i] as TKChartSelectionInfo
+        var i = 0
+        var count = selection.count
+        for info in selection as! [TKChartSelectionInfo] {
             let data = info.dataPoint() as TKChartData!
-            str.appendFormat("Day %2.f series %d - %2.f", data.dataXValue() as Float, info.series.index, data.dataYValue() as Float)
-            if (i<selection.count-1) {
+            str.appendFormat("Day %2.f series %d - %2.f", data.dataXValue() as! Float, info.series.index, data.dataYValue() as! Float)
+            if (i<count) {
                 str.appendString("\n");
             }
+            i++
         }
-        chart.trackball.tooltip.text = str
+        chart.trackball.tooltip.text = str as String
     }
     
     //MARK: Events

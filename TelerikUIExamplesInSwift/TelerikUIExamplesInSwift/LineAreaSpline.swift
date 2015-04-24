@@ -11,8 +11,8 @@ class LineAreaSpline: ExampleViewController {
     
     let chart = TKChart()
     
-    override init() {
-        super.init()
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Line") { self.reloadChart() }
         self.addOption("Spline") { self.reloadChart() }
@@ -20,14 +20,14 @@ class LineAreaSpline: ExampleViewController {
         self.addOption("Area Spline") { self.reloadChart() }
     }
 
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = CGRectInset(self.view.bounds, 10, 10)
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart)
         
@@ -38,9 +38,9 @@ class LineAreaSpline: ExampleViewController {
         chart.removeAllData()
         
         for i in 0..<3 {
-            let items = NSMutableArray()
+            var items = [TKChartDataPoint]()
             for i in 0..<8 {
-                items.addObject(TKChartDataPoint(x:(i+1), y:Int(arc4random()%100)))
+                items.append(TKChartDataPoint(x:(i+1), y:Int(arc4random()%100)))
             }
             var series:TKChartSeries
             switch self.selectedOption {

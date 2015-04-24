@@ -10,23 +10,23 @@ import Foundation
 class StackedColumnChart : ExampleViewController {
     
     let chart = TKChart()
-    
-    override init() {
-        super.init()
+
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Stack") { self.reloadData() }
         self.addOption("Stack 100") { self.reloadData() }
         self.addOption("Clustered") { self.reloadData() }
     }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = CGRectInset(self.view.bounds, 10, 10)
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart)
         
@@ -44,12 +44,12 @@ class StackedColumnChart : ExampleViewController {
         }
         
         for i in 0..<4 {
-            let points = NSMutableArray()
+            var points = [TKChartDataPoint]()
             for j in 1..<8 {
-                points.addObject(TKChartDataPoint(x: j, y: Int(arc4random() % (100))))
+                points.append(TKChartDataPoint(x: j, y: Int(arc4random() % (100))))
             }
             let series = TKChartColumnSeries(items: points)
-            series.title = NSString(format: "Series %d", i)
+            series.title = "Series \(i)"
             series.stackInfo = stackInfo
             series.selectionMode = TKChartSeriesSelectionMode.Series
             chart.addSeries(series)

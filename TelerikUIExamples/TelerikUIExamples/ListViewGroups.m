@@ -50,7 +50,7 @@
     }];
     
     [_dataSource.settings.listView initFooter:^(TKListView *listView, NSIndexPath *indexPath, TKListViewFooterCell *footerCell, TKDataSourceGroup *group) {
-        footerCell.textLabel.text = [NSString stringWithFormat:@"Members count: %li", group.items.count];
+        footerCell.textLabel.text = [NSString stringWithFormat:@"Members count: %d", (int)group.items.count];
         footerCell.textLabel.textAlignment = NSTextAlignmentLeft;
         footerCell.textLabel.frame = CGRectMake(5, 10, 200, 22);
     }];

@@ -11,22 +11,22 @@ class StackedAreaChart: ExampleViewController {
     
     let chart = TKChart()
     
-    override init() {
-        super.init()
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Stacked") { self.reloadData() }
         self.addOption("Stack 100") { self.reloadData() }
         self.addOption("No Stacking") { self.reloadData() }
     }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = CGRectInset(self.view.bounds, 10, 10)
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart)
         
@@ -46,9 +46,9 @@ class StackedAreaChart: ExampleViewController {
         }
         
         for i in 0..<3 {
-            let array = NSMutableArray()
+            var array = [TKChartDataPoint]()
             for i in 0..<8 {
-                array.addObject(TKChartDataPoint(x: i+1, y: Int(arc4random() % (100))))
+                array.append(TKChartDataPoint(x: i+1, y: Int(arc4random() % (100))))
             }
             let series = TKChartAreaSeries(items: array)
             series.selectionMode = TKChartSeriesSelectionMode.Series

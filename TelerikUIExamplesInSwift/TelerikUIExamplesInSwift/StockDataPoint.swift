@@ -13,18 +13,18 @@ class StockDataPoint: TKChartFinancialDataPoint/*, NSCoding*/ {
         let dataPoints = NSMutableArray()
         let filePath = NSBundle.mainBundle().pathForResource("AppleStockPrices", ofType: "json")
         let json = NSData(contentsOfFile: filePath!)!
-        let data = NSJSONSerialization.JSONObjectWithData(json, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSArray
+        let data = NSJSONSerialization.JSONObjectWithData(json, options: NSJSONReadingOptions.AllowFragments, error: nil) as! NSArray
         let formatter = NSDateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
         
         for jsonPoint in data {
             let datapoint = StockDataPoint()
-            datapoint.dataXValue = formatter.dateFromString(jsonPoint["date"] as NSString)
-            datapoint.setOpen(jsonPoint["open"] as NSNumber)
-            datapoint.setHigh(jsonPoint["high"] as NSNumber)
-            datapoint.setLow(jsonPoint["low"] as NSNumber)
-            datapoint.setClose(jsonPoint["close"] as NSNumber)
-            datapoint.setVolume(jsonPoint["volume"] as NSNumber)
+            datapoint.dataXValue = formatter.dateFromString(jsonPoint["date"] as! String)
+            datapoint.setOpen(jsonPoint["open"] as! NSNumber)
+            datapoint.setHigh(jsonPoint["high"] as! NSNumber)
+            datapoint.setLow(jsonPoint["low"] as! NSNumber)
+            datapoint.setClose(jsonPoint["close"] as! NSNumber)
+            datapoint.setVolume(jsonPoint["volume"] as! NSNumber)
             dataPoints.addObject(datapoint)
         }
         

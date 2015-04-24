@@ -5,17 +5,13 @@
 //  Copyright (c) 2015 Telerik. All rights reserved.
 //
 
-class SideDrawerCustomTransition: ExampleViewController {
+class SideDrawerCustomTransition: SideDrawerGettingStarted {
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let contentController = SideDrawerCustomTransitionModalController()
-        let sideDrawerController = TKSideDrawerController(content: contentController)
-        sideDrawerController.view.backgroundColor = UIColor.grayColor()
-        self.navigationController?.presentViewController(sideDrawerController, animated: true, completion: {() -> Void in
-            if let navController = self.navigationController {
-                navController.popViewControllerAnimated(false)
-            }
-        })
+        
+        let sideDrawer = self.sideDrawerView.sideDrawer
+        sideDrawer.fill = TKSolidFill(color: UIColor.grayColor())
+        sideDrawer.transitionManager = MyTransition(sideDrawer: sideDrawer)
+        sideDrawer.headerView = SideDrawerHeaderView(addButton: false, target: nil, selector: nil)
     }
 }

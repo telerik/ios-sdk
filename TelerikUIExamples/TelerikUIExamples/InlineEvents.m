@@ -23,8 +23,7 @@
     
     [self createEvents];
     
-    self.calendarView = [[TKCalendar alloc] initWithFrame:self.view.bounds];
-    self.calendarView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.calendarView = [[TKCalendar alloc] initWithFrame:self.exampleBounds];
     self.calendarView.dataSource = self;
     [self.view addSubview:self.calendarView];
     
@@ -39,6 +38,12 @@
     presenter.inlineEventsView.maxHeight = 140;
     presenter.inlineEventsView.fixedHeight = NO;
     presenter.delegate = self;
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    self.calendarView.frame = self.exampleBounds;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -136,12 +141,14 @@
 {
     NSLog(@"event selected: %@", event.title);
 
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Event selected"
-                                                    message:event.title
-                                                   delegate:nil
-                                          cancelButtonTitle:@"Done"
-                                          otherButtonTitles:nil];
-    [alert show];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Event selected"
+                                                        message:event.title
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Done"
+                                              otherButtonTitles:nil];
+        [alert show];
+    });
 }
 
 @end

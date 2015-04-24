@@ -14,15 +14,15 @@ class Indicators : ExampleViewController, UIPopoverControllerDelegate {
     let settings = IndicatorsTableView()
     let overlayChart = TKChart()
     let indicatorsChart = TKChart()
-    let data: NSArray = StockDataPoint.stockPoints()
+    let data = StockDataPoint.stockPoints() as! [TKChartDataPoint]
 
     var series: TKChartCandlestickSeries?
     var hasObservers: Bool = false
     var selectedTrendline = 0
     var selectedIndicator = 0
-    
-    override init() {
-        super.init()
+
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         settings.example = self
         
@@ -67,20 +67,23 @@ class Indicators : ExampleViewController, UIPopoverControllerDelegate {
         self.addIndicator("Market facilitation index") { self.addIndicatorToChart(TKChartMarketFacilitationIndex(series:self.series)) }
         self.addIndicator("Chaikin oscillator") { self.addIndicatorToChart(TKChartChaikinOscillator(series:self.series)) }
     }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let exampleBounds = self.exampleBoundsWithInset;
         
         overlayChart.frame = CGRectMake(exampleBounds.origin.x, exampleBounds.origin.y, exampleBounds.size.width, exampleBounds.size.height / 1.5)
         overlayChart.gridStyle().verticalLinesHidden = false
         overlayChart.autoresizingMask = ~UIViewAutoresizing.None
         self.view.addSubview(overlayChart)
         
-        indicatorsChart.frame = CGRectMake(exampleBounds.origin.x, overlayChart.frame.size.height + 15, exampleBounds.size.width, exampleBounds.size.height / 3)
+        let indicatorsOffset = exampleBounds.origin.y + overlayChart.bounds.size.height + 15
+        indicatorsChart.frame = CGRectMake(exampleBounds.origin.x, indicatorsOffset, exampleBounds.size.width, self.view.bounds.size.height - indicatorsOffset)
         indicatorsChart.autoresizingMask = ~UIViewAutoresizing.None
         self.view.addSubview(indicatorsChart)
         
@@ -94,15 +97,15 @@ class Indicators : ExampleViewController, UIPopoverControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func addTrendline(text:NSString, selector: Optional<() -> ()>) {
+    func addTrendline(text:String, selector: Optional<() -> ()>) {
         super.addOption(text, selector: selector)
-        let option = self.options[self.options.count-1] as OptionInfo
+        let option = self.options[self.options.count-1] as! OptionInfo
         self.trendlines.addObject(option)
     }
     
-    func addIndicator(text:NSString, selector: Optional<() -> ()>) {
+    func addIndicator(text:String, selector: Optional<() -> ()>) {
         super.addOption(text, selector: selector)
-        let option = self.options[self.options.count-1] as OptionInfo
+        let option = self.options[self.options.count-1] as! OptionInfo
         self.indicators.addObject(option)
     }
     
@@ -136,10 +139,10 @@ class Indicators : ExampleViewController, UIPopoverControllerDelegate {
         series!.xAxis.addObserver(self, forKeyPath: "zoom", options: NSKeyValueObservingOptions.New, context: nil)
         series!.xAxis.addObserver(self, forKeyPath: "pan", options: NSKeyValueObservingOptions.New, context: nil)
         
-        let trendlineInfo = trendlines[selectedTrendline] as OptionInfo
+        let trendlineInfo = trendlines[selectedTrendline] as! OptionInfo
         trendlineInfo.selector!()
         
-        let indicatorInfo = indicators[selectedIndicator] as OptionInfo
+        let indicatorInfo = indicators[selectedIndicator] as! OptionInfo
         indicatorInfo.selector!()
     }
     
@@ -150,14 +153,13 @@ class Indicators : ExampleViewController, UIPopoverControllerDelegate {
         overlayChart.addSeries(self.series)
         indicator.selectionMode = TKChartSeriesSelectionMode.Series
         overlayChart.addSeries(indicator)
-        overlayChart.reloadData()
     }
     
     func addIndicatorToChart(indicator: TKChartSeries) {
         indicatorsChart.removeAllData()
         indicator.selectionMode = TKChartSeriesSelectionMode.Series
         indicatorsChart.addSeries(indicator)
-        let yAxis = indicatorsChart.yAxis as TKChartNumericAxis
+        let yAxis = indicatorsChart.yAxis as! TKChartNumericAxis
         var max = ceil(yAxis.range.maximum.floatValue)
         var min = floor(yAxis.range.minimum.floatValue)
         if (max < 0) {
@@ -170,14 +172,13 @@ class Indicators : ExampleViewController, UIPopoverControllerDelegate {
         yAxis.style.labelStyle.textAlignment = TKChartAxisLabelAlignment.Right|TKChartAxisLabelAlignment.Bottom
         yAxis.style.lineHidden = false
         
-        let xAxis = indicatorsChart.xAxis as TKChartDateTimeAxis
+        let xAxis = indicatorsChart.xAxis as! TKChartDateTimeAxis
         xAxis.range = series!.xAxis.range
         xAxis.style.labelStyle.textHidden = true
         xAxis.zoom = overlayChart.xAxis.zoom
         xAxis.pan = overlayChart.xAxis.pan
         xAxis.majorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Years
         xAxis.majorTickInterval = 1
-        indicatorsChart.reloadData()
     }
     
     override func settingsTouched() {

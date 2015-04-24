@@ -11,27 +11,34 @@ class LocalizedCalendar: ExampleViewController {
     
     let calendarView = TKCalendar()
     
-    override init() {
-        super.init()
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Russian") { self.selectRussian() }
         self.addOption("German") { self.selectGerman() }
         self.addOption("Hebrew") { self.selectHebrew() }
         self.addOption("Chinese") { self.selectChinese() }
+        self.addOption("Islamic") { self.selectIslamic() }
+        
+        self.selectedOption = 2
     }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.calendarView.frame = self.view.bounds
         self.calendarView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(self.calendarView)
         
         self.selectHebrew()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.calendarView.frame = self.exampleBounds
     }
     
     func selectRussian() {
@@ -55,6 +62,12 @@ class LocalizedCalendar: ExampleViewController {
     func selectChinese() {
         self.calendarView.calendar = NSCalendar(calendarIdentifier: NSChineseCalendar)
         self.calendarView.locale = NSLocale(localeIdentifier: "zh_Hans_SG")
+        self.calendarView.presenter().update(false)
+    }
+    
+    func selectIslamic() {
+        self.calendarView.calendar = NSCalendar(calendarIdentifier: NSIslamicCalendar)
+        self.calendarView.locale = NSLocale(localeIdentifier:"ar-QA")
         self.calendarView.presenter().update(false)
     }
     

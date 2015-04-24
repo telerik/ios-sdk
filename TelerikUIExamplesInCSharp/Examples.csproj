@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Examples</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Examples</AssemblyName>
+    <AssemblyName>ExamplesDemo</AssemblyName>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
@@ -28,6 +28,7 @@
     </MtouchI18n>
     <MtouchArch>i386, x86_64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>
@@ -99,9 +100,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="Telerik.Xamarin.iOS">
-      <HintPath>..\Telerik.Xamarin.iOS.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -283,16 +281,10 @@
     <Compile Include="Examples\Chart\Customize.cs" />
     <Compile Include="Examples\Calendar\InlineEvents.cs" />
     <Compile Include="Examples\SideDrawer\GettingStartedExample\SideDrawerGettingStarted.cs" />
-    <Compile Include="Examples\SideDrawer\GettingStartedExample\SideDrawerGettingStartedModalController.cs" />
     <Compile Include="Examples\SideDrawer\TransitionsExample\SideDrawerTransitions.cs" />
-    <Compile Include="Examples\SideDrawer\TransitionsExample\SideDrawerTransitionsModalController.cs" />
     <Compile Include="Examples\SideDrawer\PositionsExample\SideDrawerPositions.cs" />
-    <Compile Include="Examples\SideDrawer\PositionsExample\SideDrawerPositionsModalController.cs" />
     <Compile Include="Examples\SideDrawer\CustomContentExample\SideDrawerCustomContent.cs" />
-    <Compile Include="Examples\SideDrawer\CustomContentExample\SideDrawerCustomContentModalController.cs" />
-    <Compile Include="Examples\SideDrawer\CustomTransitionExample\ScaleContentTransition.cs" />
     <Compile Include="Examples\SideDrawer\CustomTransitionExample\SideDrawerCustomTransition.cs" />
-    <Compile Include="Examples\SideDrawer\CustomTransitionExample\SideDrawerCustomTransitionModalController.cs" />
     <Compile Include="Examples\DataSource\DataSourceGettingStarted.cs" />
     <Compile Include="Examples\DataSource\DataSourceDescriptorsAPI.cs" />
     <Compile Include="Examples\DataSource\DataSourceUIBindings.cs" />
@@ -314,6 +306,7 @@
     <Compile Include="Examples\ListView\CustomCells\SimpleListViewCell.cs" />
     <Compile Include="Examples\ListView\LoremIpsumGenerator.cs" />
     <Compile Include="Examples\ListView\CustomCells\CustomCardListViewCell.cs" />
+    <Compile Include="Examples\SideDrawer\CustomTransitionExample\MyTransition.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

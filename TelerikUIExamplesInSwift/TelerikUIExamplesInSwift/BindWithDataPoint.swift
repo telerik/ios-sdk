@@ -14,13 +14,13 @@ class BindWithDataPoint : ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = CGRectInset(self.view.bounds, 10, 10)
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart)
         
-        let data = NSMutableArray()
+        var data = [DataPointImpl]()
         for i in 0..<6 {
-            data.addObject(DataPointImpl(ID: i, withValue: CGFloat(Int(arc4random() % 100))))
+            data.append(DataPointImpl(ID: i, withValue: CGFloat(Int(arc4random() % 100))))
         }
         
         let columnSeries = TKChartColumnSeries(items: data)

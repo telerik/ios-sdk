@@ -64,6 +64,7 @@
     
     // bind with a table view
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     tableView.dataSource = dataSource;
     [self.view addSubview:tableView];
     

@@ -27,7 +27,7 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     [button setTitle:@"Tap to load iOS 7 style calendar" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(buttonTouched:) forControlEvents:UIControlEventTouchUpInside];
-    button.frame = CGRectMake(0, self.view.bounds.size.height/2. - 20, self.view.bounds.size.width, 40);
+    button.frame = CGRectMake(self.exampleBounds.origin.x, self.exampleBounds.origin.y + self.view.bounds.size.height/2. - 20, self.exampleBounds.size.width, 40);
     button.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|
                               UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
     [self.view addSubview:button];
@@ -37,7 +37,7 @@
 {
     self.title = @"Back";
     
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     calendar.firstWeekday = 2;
         
     TKCalendarYearViewController *controller = [TKCalendarYearViewController new];

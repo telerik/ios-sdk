@@ -44,8 +44,7 @@
                                                                          [UIColor colorWithRed:0.35 green:0.68 blue:0.89 alpha:0.89],
                                                                          [UIColor colorWithRed:0.35 green:0.68 blue:1.00 alpha:1.0],
                                                                          [UIColor colorWithRed:0.85 green:0.8 blue:0.2 alpha:0.8]
-                                                                         ]];
-    
+                                                                         ]];    
 }
 
 - (void)didReceiveMemoryWarning

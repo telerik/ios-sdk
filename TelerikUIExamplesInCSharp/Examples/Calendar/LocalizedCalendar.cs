@@ -20,6 +20,8 @@ namespace Examples
 			this.AddOption ("German", SelectGerman);
 			this.AddOption ("Hebrew", SelectHebrew);
 			this.AddOption ("Chinese", SelectChinese);
+			this.AddOption ("Islamic", SelectIslamic);
+
 			this.SelectedOption = 2;
 		}
 
@@ -58,6 +60,13 @@ namespace Examples
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Chinese);
 			this.CalendarView.Locale = new NSLocale ("zh_Hans_SG");
+			UpdateCalendar ();
+		}
+
+		public void SelectIslamic (object sender, EventArgs e)
+		{
+			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Islamic);
+			this.CalendarView.Locale = new NSLocale ("ar-QA");
 			UpdateCalendar ();
 		}
 

@@ -5,7 +5,7 @@
 //  Copyright (c) 2013 Telerik. All rights reserved.
 //
 
-#import <TelerikAppFeedback/AppFeedback.h>
+#import <TelerikAppFeedback/TelerikAppFeedback.h>
 
 #import "AppDelegate.h"
 #import "ViewController.h"
@@ -63,7 +63,7 @@
 #import "LiveData.h"
 #import "SideDrawerGettingStarted.h"
 #import "SideDrawerTransitions.h"
-#import "SideDrawerCustomContent.h"
+#import "SideDrawerCustomContentController.h"
 #import "SideDrawerCustomTransition.h"
 #import "SideDrawerPositions.h"
 
@@ -94,7 +94,7 @@
     
     ViewController *mainViewController = [[ViewController alloc] initWithExample:[self createExamples]];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-    navigationController.navigationBar.translucent = NO;
+//    navigationController.navigationBar.translucent = NO;
     
     
     TKFeedbackController *feedbackController = [[TKFeedbackController alloc] init];
@@ -215,7 +215,7 @@
                                @"4.SideDrawer" : @{
                                        @"1. Getting Started" : [SideDrawerGettingStarted class],
                                        @"2. Transitions" : [SideDrawerTransitions class],
-                                       @"3. Custom Content" : [SideDrawerCustomContent class],
+                                       @"3. Custom Content" : [SideDrawerCustomContentController class],
                                        @"4. Custom Transition" : [SideDrawerCustomTransition class],
                                        @"5. Positions" : [SideDrawerPositions class],
                                        },

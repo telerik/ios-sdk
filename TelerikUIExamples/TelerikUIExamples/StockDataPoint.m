@@ -11,16 +11,6 @@
 
 + (NSArray *)stockPoints
 {
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *documentsDirectory = [paths objectAtIndex:0];
-//    NSString *fileName = nil;
-//    
-//    if (documentsDirectory) {
-//        fileName = [NSString stringWithFormat:@"%@/applestock.plist",documentsDirectory];
-//    }
-//    
-//    NSMutableArray *dataPoints = [NSMutableArray new];
-    
     NSString* filePath = [[NSBundle mainBundle] pathForResource:@"applestock" ofType:@"plist"];
     NSArray *items = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
     return items;

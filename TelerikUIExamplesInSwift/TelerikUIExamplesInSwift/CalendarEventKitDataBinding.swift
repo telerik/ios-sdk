@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CalendarEventKitDataBinding: ExampleViewController, TKCalendarEventKitDataSourceDelegate {
+class CalendarEventKitDataBinding: ExampleViewController {
     
     let calendarView = TKCalendar()
     let dataSource = TKCalendarEventKitDataSource()
@@ -15,25 +15,18 @@ class CalendarEventKitDataBinding: ExampleViewController, TKCalendarEventKitData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dataSource.delegate = self
-        
-        self.calendarView.frame = self.view.bounds
         self.calendarView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.calendarView.dataSource = self.dataSource
         self.view.addSubview(self.calendarView)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.calendarView.frame = self.exampleBounds
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-//MARK: - TKCalendarEventKitDataSourceDelegate
-    
-    func shouldImportEventsFromCalendar(calendar: EKCalendar!) -> Bool {
-        if calendar.type.value == EKCalendarTypeLocal.value  {
-            return true
-        }
-        return false
     }
 }

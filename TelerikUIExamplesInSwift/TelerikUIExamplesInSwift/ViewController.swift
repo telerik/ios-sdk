@@ -9,12 +9,14 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let examples = NSMutableArray()
+    var examples = [ExampleInfo]()
     let table = UITableView()
     var selectedRow: NSInteger = -1
     
     func initWithExample(example:ExampleInfo) {
-        self.examples.addObjectsFromArray(example.examples!)
+        for e in example.examples {
+            self.examples.append(e)
+        }
         self.title = example.title
     }
     
@@ -25,7 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         if (examples.count == 0) {
             
-            examples.addObject(ExampleInfo(title: "Chart", exampleList:[
+            examples.append(ExampleInfo(title: "Chart", exampleList:[
                     ExampleInfo(title: "Chart Types", exampleList:[
                             ExampleInfo(title: "Column / Bar chart") { ColumnAndBarChart() },
                             ExampleInfo(title: "Line / Area / Spline chart") { LineAreaSpline() },
@@ -75,7 +77,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     ExampleInfo(title: "Live data") { LiveData() }
                 ]))
             
-            examples.addObject(ExampleInfo(title: "Calendar", exampleList:[
+            examples.append(ExampleInfo(title: "Calendar", exampleList:[
                     ExampleInfo(title: "Calendar with events") { CalendarWithEvents() },
                     ExampleInfo(title: "View modes") { CalendarViewModes() },
                     ExampleInfo(title: "Transition effects") { CalendarTransitonEffects() },
@@ -87,9 +89,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     ExampleInfo(title: "Inline events") { InlineEvents() },
                 ]))
             
-            examples.addObject(ExampleInfo(title: "Feedback") { FeedbackExampleController(nibName: "FeedbackExampleController", bundle: nil) })
+            examples.append(ExampleInfo(title: "Feedback") { FeedbackExampleController(nibName: "FeedbackExampleController", bundle: nil) })
             
-            examples.addObject(ExampleInfo(title: "SideDrawer", exampleList: [
+            examples.append(ExampleInfo(title: "SideDrawer", exampleList: [
                 ExampleInfo(title: "Getting Started") { SideDrawerGettingStarted() },
                 ExampleInfo(title: "Transitions") { SideDrawerTransitions() },
                 ExampleInfo(title: "Custom Content") { SideDrawerCustomContent() },
@@ -97,7 +99,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 ExampleInfo(title: "Positions") { SideDrawerPositions() }
                 ]))
             
-            examples.addObject(ExampleInfo(title: "DataSource", exampleList:[
+            examples.append(ExampleInfo(title: "DataSource", exampleList:[
                     ExampleInfo(title: "Getting started") { DataSourceGettingStarted() },
                     ExampleInfo(title: "Descriptors API") { DataSourceDescriptorsAPI() },
                     ExampleInfo(title: "Bind with UI controls") { DataSourceUIBindings() },
@@ -105,7 +107,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 ]))
             
 
-            examples.addObject(ExampleInfo(title: "ListView (Beta)", exampleList: [
+            examples.append(ExampleInfo(title: "ListView (Beta)", exampleList: [
                     ExampleInfo(title: "Getting started") { ListViewGettingStarted() },
                     ExampleInfo(title: "Swipe cell") { ListViewSwipe() },
                     ExampleInfo(title: "Items reorder") { ListViewReorder() },
@@ -146,12 +148,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("examplescell") as UITableViewCell?
+        var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("examplescell") as! UITableViewCell?
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "examplescell")
             cell!.selectionStyle = UITableViewCellSelectionStyle.None
         }
-        var info = examples[indexPath.row] as ExampleInfo
+        var info = examples[indexPath.row]
         cell!.textLabel!.text = info.title
         return cell!
     }
@@ -159,7 +161,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //MARK: - UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var e = examples[indexPath.row] as ExampleInfo
+        var e = examples[indexPath.row]
         var controller = e.createController()
         self.navigationController?.pushViewController(controller, animated: true)
     }

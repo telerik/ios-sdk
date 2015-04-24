@@ -14,7 +14,7 @@ class MultipleAxes:ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        chart.frame = CGRectInset(self.view.bounds, 10, 10)
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart)
     
@@ -140,10 +140,10 @@ class MultipleAxes:ExampleViewController {
         let item = series.style.palette.paletteItemAtIndex(series.index)
         
         if series.isKindOfClass(TKChartColumnSeries) && item.drawables.count > 1 {
-            let drawable = item.drawables[2] as TKDrawing
+            let drawable = item.drawables[2] as! TKDrawing
             
             if drawable.isKindOfClass(TKStroke){
-                var stroke = drawable as TKStroke
+                var stroke = drawable as! TKStroke
                 series.yAxis.style.lineStroke = TKStroke(fill: stroke.fill)
             }
             else {
@@ -159,7 +159,7 @@ class MultipleAxes:ExampleViewController {
         series.yAxis.style.majorTickStyle.minTickClippingMode = TKChartAxisClippingMode.Visible
         
         if series.yAxis.style.majorTickStyle.ticksFill.isKindOfClass(TKSolidFill) {
-            let solidFill = series.yAxis.style.majorTickStyle.ticksFill as TKSolidFill
+            let solidFill = series.yAxis.style.majorTickStyle.ticksFill as! TKSolidFill
             series.yAxis.style.labelStyle.textColor = solidFill.color
         }
     }

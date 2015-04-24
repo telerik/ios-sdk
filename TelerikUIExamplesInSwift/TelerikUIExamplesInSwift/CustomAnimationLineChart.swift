@@ -12,32 +12,32 @@ class CustomAnimationLineChart: ExampleViewController, TKChartDelegate {
     
     let chart = TKChart()
     var grow = false
-
-    override init() {
-        super.init()
+    
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Sequential animation") { self.applySequential() }
         self.addOption("Grow animation") { self.applyGrow() }
         
         self.selectedOption = 0
     }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBounds
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         chart.allowAnimations = true
         chart.delegate = self
         self.view.addSubview(chart)
         
-        let points = NSMutableArray()
+        var points = [TKChartDataPoint]()
         for i in 0..<10 {
-            points.addObject(TKChartDataPoint(x: i, y: Int(arc4random() % 100)))
+            points.append(TKChartDataPoint(x: i, y: Int(arc4random() % 100)))
         }
         
         let lineSeries = TKChartLineSeries(items: points)
@@ -69,23 +69,23 @@ class CustomAnimationLineChart: ExampleViewController, TKChartDelegate {
     
     func chart(chart: TKChart!, animationForSeries series: TKChartSeries!, withState state: TKChartSeriesRenderState!, inRect rect: CGRect) -> CAAnimation! {
         var duration = 0.0
-        let animations = NSMutableArray()
+        var animations = [CAAnimation]()
         for i in 0..<state.points.count() {
             if grow {
-                let keyPath = NSString(format: "seriesRenderStates.%lu.points.%d.x", series.index, i)
-                let point = state.points.objectAtIndex(i) as TKChartVisualPoint
-                let animation = CABasicAnimation(keyPath: keyPath)
+                let keyPath = "seriesRenderStates.\(series.index).points.\(i).x"
+                let point = state.points.objectAtIndex(i) as! TKChartVisualPoint
+                let animation = CABasicAnimation(keyPath: keyPath as String)
                 animation.duration = 0.1*(Double(i)+0.2)
                 animation.fromValue = 0
                 animation.toValue = point.x
                 animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-                animations.addObject(animation)
+                animations.append(animation)
                 
                 duration = animation.duration
             }
             else {
-                let keyPath = NSString(format: "seriesRenderStates.%lu.points.%d.y", series.index, i)
-                let point = state.points.objectAtIndex(i) as TKChartVisualPoint
+                let keyPath = "seriesRenderStates.\(series.index).points.\(i).y"
+                let point = state.points.objectAtIndex(i) as! TKChartVisualPoint
                 let oldY = rect.size.height as CGFloat
                 
                 if i > 0 {
@@ -94,7 +94,7 @@ class CustomAnimationLineChart: ExampleViewController, TKChartDelegate {
                     animation.values = [oldY, oldY, point.y]
                     animation.keyTimes = [0, (i/(i+1)), 1]
                     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-                    animations.addObject(animation)
+                    animations.append(animation)
                     
                     duration = animation.duration
                 }
@@ -103,7 +103,7 @@ class CustomAnimationLineChart: ExampleViewController, TKChartDelegate {
                     animation.fromValue = oldY
                     animation.toValue = point.y
                     animation.duration = 0.1
-                    animations.addObject(animation)
+                    animations.append(animation)
                 }
             }
         }

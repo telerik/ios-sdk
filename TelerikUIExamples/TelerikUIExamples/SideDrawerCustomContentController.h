@@ -5,8 +5,8 @@
 //  Copyright (c) 2015 Telerik. All rights reserved.
 //
 
-#import "ExampleViewController.h"
+#import "SideDrawerGettingStarted.h"
 
-@interface SideDrawerCustomContent : ExampleViewController
+@interface SideDrawerCustomContentController : SideDrawerGettingStarted
 
 @end

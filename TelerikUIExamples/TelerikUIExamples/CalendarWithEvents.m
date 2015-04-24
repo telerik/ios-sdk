@@ -34,13 +34,7 @@ static NSString* const cellID = @"cell";
 {
     [super viewDidLoad];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero];
-    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
-    self.tableView.dataSource = self;
-    [self.view addSubview:self.tableView];
-    
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     calendar.firstWeekday = 2;
     
     NSDateComponents *components = [NSDateComponents new];
@@ -50,7 +44,6 @@ static NSString* const cellID = @"cell";
     NSDate *maxDate = [calendar dateByAddingComponents:components toDate:[NSDate date] options:0];
     
     self.calendarView = [[TKCalendar alloc] initWithFrame:CGRectZero];
-    self.calendarView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.calendarView.calendar = calendar;
     self.calendarView.dataSource = self;
     self.calendarView.delegate = self;
@@ -72,20 +65,27 @@ static NSString* const cellID = @"cell";
     }
     
     [self.view addSubview:self.calendarView];
+    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
 }
 
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
     
-    if ([self.calendarView.theme isKindOfClass:[TKCalendarIPadTheme class]] || UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
+    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+    if ([self.calendarView.theme isKindOfClass:[TKCalendarIPadTheme class]] || UIDeviceOrientationIsLandscape(orientation)) {
         self.tableView.frame = CGRectZero;
-        self.calendarView.frame = self.view.bounds;
+        self.calendarView.frame = self.exampleBounds;
     }
     else {
-        CGFloat height =  CGRectGetHeight(self.view.bounds);
-        self.tableView.frame = CGRectMake(0, height-height/3.6, self.view.bounds.size.width, height/3.6);
-        self.calendarView.frame = CGRectMake(2, 0, self.view.bounds.size.width - 4, height - height/3.6);
+        CGFloat height =  CGRectGetHeight(self.exampleBounds);
+        CGFloat tableHeight = height/3.2;
+        self.calendarView.frame = CGRectMake(0, self.exampleBounds.origin.y, self.exampleBounds.size.width, height - tableHeight);
+        self.tableView.frame = CGRectMake(0, self.exampleBounds.origin.y + self.exampleBounds.size.height - tableHeight, self.exampleBounds.size.width, tableHeight);
     }
 }
 

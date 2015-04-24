@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
     
-    CGRect bounds = [self exampleBounds];
+    CGRect bounds = self.exampleBoundsWithInset;
     
     _pieChart = [[TKChart alloc] initWithFrame:CGRectInset(CGRectMake(bounds.origin.x, bounds.origin.y,
                                                                        bounds.size.width, bounds.size.height / 2), 10, 10)];

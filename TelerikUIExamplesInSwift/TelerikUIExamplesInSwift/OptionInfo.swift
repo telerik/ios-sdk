@@ -13,7 +13,7 @@ class OptionInfo: NSObject
     var selector: Optional<() -> ()> = nil
     var tag: AnyObject?
     
-    init(Text:NSString, Selector selector:Optional<() -> ()>) {
+    init(Text:String, Selector selector:Optional<() -> ()>) {
         self.optionText = Text
         self.selector = selector
     }

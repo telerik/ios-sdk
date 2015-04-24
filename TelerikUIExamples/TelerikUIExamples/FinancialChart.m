@@ -27,9 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	CGRect bounds = [self exampleBounds];
-    
-    financialChart = [[TKChart alloc] initWithFrame:CGRectInset(bounds, 10, 10)];
+
+    financialChart = [[TKChart alloc] initWithFrame:CGRectInset(self.exampleBoundsWithInset, 10, 10)];
     financialChart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:financialChart];
     financialChart.gridStyle.verticalLinesHidden = NO;

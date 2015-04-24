@@ -37,8 +37,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    self.calendarView = [[TKCalendar alloc] initWithFrame:self.view.bounds];
-    self.calendarView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.calendarView = [[TKCalendar alloc] initWithFrame:self.exampleBounds];
     self.calendarView.delegate = self;
     self.calendarView.selectionMode = TKCalendarSelectionModeRange;
     [self.view addSubview:self.calendarView];
@@ -56,6 +55,12 @@
     NSDate *endDate = [self.calendarView.calendar dateByAddingComponents:components toDate:date options:0];
     
     self.calendarView.selectedDatesRange = [[TKDateRange alloc] initWithStart:startDate end:endDate];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    self.calendarView.frame = self.exampleBounds;
 }
 
 - (void)selectSingleMode

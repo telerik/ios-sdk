@@ -40,7 +40,7 @@
     
     self.view.backgroundColor = [UIColor lightGrayColor];
     
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     calendar.firstWeekday = 2;
     NSDate *date = [NSDate date];
     NSDateComponents *components = [NSDateComponents new];
@@ -50,7 +50,6 @@
     NSDate *maxDate = [calendar dateByAddingComponents:components toDate:date options:0];
     
     self.calendarView = [[TKCalendar alloc] initWithFrame:self.view.bounds];
-    self.calendarView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.calendarView];
 
     self.calendarView.delegate = self;
@@ -67,10 +66,10 @@
 {
     [super viewDidLayoutSubviews];
     if (self.calendarView.viewMode == TKCalendarViewModeWeek) {
-        self.calendarView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 100);
+        self.calendarView.frame = CGRectMake(self.exampleBounds.origin.x, self.exampleBounds.origin.y, CGRectGetWidth(self.exampleBounds), 100);
     }
     else {
-        self.calendarView.frame = self.view.bounds;
+        self.calendarView.frame = self.exampleBounds;
     }
 }
 

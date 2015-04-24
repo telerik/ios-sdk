@@ -16,7 +16,7 @@ class BindWithDelegate : ExampleViewController {
         
         super.viewDidLoad()
     
-        chart.frame = CGRectInset(self.view.bounds, 10, 10)
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         chart.dataSource = chartDataSource
         self.view.addSubview(chart)

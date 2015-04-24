@@ -39,10 +39,10 @@
         CGRect labelRect;
         TKChartPointLabelStyle *labelStyle = series.style.pointLabelStyle;
         if (_isSelectedPoint) {
-            labelRect = CGRectMake(location.x - 17.5, location.y - 10 - 2.5 * abs(labelStyle.labelOffset.vertical), 35, 30);
+            labelRect = CGRectMake(location.x - 17.5, location.y - 10 - 2.5 * fabs(labelStyle.labelOffset.vertical), 35, 30);
             if (labelRect.origin.y < self.render.bounds.origin.y) {
                 _labelLayer.isOutsideBounds = YES;
-                labelRect.origin.y = location.y + 10 + 2.5 * abs(labelStyle.labelOffset.vertical) - labelRect.size.height;
+                labelRect.origin.y = location.y + 10 + 2.5 * fabs(labelStyle.labelOffset.vertical) - labelRect.size.height;
             }
             else {
                 _labelLayer.isOutsideBounds = NO;
@@ -60,7 +60,7 @@
             
             if (labelStyle.clipMode == TKChartPointLabelClipModeVisible) {
                 if (labelRect.origin.y < self.render.bounds.origin.y) {
-                    labelRect.origin.y = location.y - labelSize.height / 2. + abs(labelStyle.labelOffset.vertical);
+                    labelRect.origin.y = location.y - labelSize.height / 2. + fabs(labelStyle.labelOffset.vertical);
                 }
             }
             

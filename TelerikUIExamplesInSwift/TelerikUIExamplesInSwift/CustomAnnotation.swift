@@ -14,15 +14,15 @@ class CustomAnnotation: ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = CGRectInset(self.view.bounds, 10, 10)
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart)
         
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
         let values = [95, 40, 55, 30, 76, 34]
-        let array = NSMutableArray()
+        var array = [TKChartDataPoint]()
         for i in 0..<months.count {
-            array.addObject(TKChartDataPoint(x: months[i], y: values[i]))
+            array.append(TKChartDataPoint(x: months[i], y: values[i]))
         }
         let series = TKChartAreaSeries(items: array)
         series.style.pointShape = TKPredefinedShape(type: TKShapeType.Circle, andSize: CGSizeMake(10, 10))

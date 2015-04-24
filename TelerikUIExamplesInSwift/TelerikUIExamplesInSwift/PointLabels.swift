@@ -18,21 +18,22 @@ class PointLabels: ExampleViewController, TKChartDelegate {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    override init() {
-        super.init()
+        
         self.addOption("Bar Series") { self.barSeries() }
         self.addOption("Column Series") { self.columnSeries() }
         self.addOption("Line Series") { self.lineSeries() }
         self.addOption("Pie Series") { self.pieSeries() }
         self.addOption("Ohlc Series") { self.ohlcSeries() }
     }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        chart.frame = self.exampleBounds
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
         chart.delegate = self
         chart.allowAnimations = true
@@ -127,7 +128,7 @@ class PointLabels: ExampleViewController, TKChartDelegate {
         ohlcSeries.style.pointLabelStyle.textAlignment = NSTextAlignment.Justified
         
         chart.addSeries(ohlcSeries)
-        let xAxis = chart.xAxis as TKChartDateTimeAxis
+        let xAxis = chart.xAxis as! TKChartDateTimeAxis
         xAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Days
         xAxis.majorTickInterval = 1
         xAxis.setPlotMode(TKChartAxisPlotMode.BetweenTicks)

@@ -14,7 +14,7 @@ class DateTimeAxis:ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = CGRectInset(self.view.bounds, 10, 10)
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart)
         
@@ -23,10 +23,10 @@ class DateTimeAxis:ExampleViewController {
         dateTimeComponents.year = 2013
         dateTimeComponents.day = 1
         
-        let array = NSMutableArray()
+        var array = [TKChartDataPoint]()
         for i in 1..<7 {
             dateTimeComponents.month = i
-            array.addObject(TKChartDataPoint(x:calendar.dateFromComponents(dateTimeComponents), y:Int(arc4random() % (100))))
+            array.append(TKChartDataPoint(x:calendar.dateFromComponents(dateTimeComponents), y:Int(arc4random() % (100))))
         }
         
         let series = TKChartSplineAreaSeries(items:array)

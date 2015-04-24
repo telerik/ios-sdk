@@ -11,21 +11,21 @@ class ColumnAndBarChart: ExampleViewController {
     
     let chart = TKChart()
     
-    override init() {
-        super.init()
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Column") { self.columnSelected() }
         self.addOption("Bar") { self.barSelected() }
     }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        chart.frame = self.exampleBounds;
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart)
         
@@ -35,9 +35,9 @@ class ColumnAndBarChart: ExampleViewController {
     func columnSelected() {
         chart.removeAllData()
         
-        let items = NSMutableArray()
+        var items = [TKChartDataPoint]()
         for i in 0..<8 {
-            items.addObject(TKChartDataPoint(x:(i+1), y:Int(arc4random()%100)))
+            items.append(TKChartDataPoint(x:(i+1), y:Int(arc4random()%100)))
         }
         
         let series = TKChartColumnSeries(items:items)
@@ -51,9 +51,9 @@ class ColumnAndBarChart: ExampleViewController {
     func barSelected() {
         chart.removeAllData()
         
-        let items = NSMutableArray()
+        var items = [TKChartDataPoint]()
         for i in 0..<8 {
-            items.addObject(TKChartDataPoint(x:Int(arc4random()%100), y:(i+1)))
+            items.append(TKChartDataPoint(x:Int(arc4random()%100), y:(i+1)))
         }
         
         let series = TKChartBarSeries(items:items)

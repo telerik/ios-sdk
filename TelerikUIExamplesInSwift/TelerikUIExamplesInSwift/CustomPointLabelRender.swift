@@ -17,7 +17,7 @@ class CustomPointLabelRender: ExampleViewController, TKChartDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBounds
+        chart.frame = self.exampleBoundsWithInset
         chart.delegate = self
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart)
@@ -41,7 +41,7 @@ class CustomPointLabelRender: ExampleViewController, TKChartDelegate {
         columnSeries.style.pointLabelStyle.fill = TKSolidFill(color: UIColor(red: 108/255.0, green: 181/255.0, blue: 250/255.0, alpha: 1.0))
         
         chart.addSeries(columnSeries)
-        chart.select(TKChartSelectionInfo(series: chart.series()[selectedSeriesIndex] as TKChartSeries, dataPointIndex: selectedDataPointIndex))
+        chart.select(TKChartSelectionInfo(series: chart.series()[selectedSeriesIndex] as! TKChartSeries, dataPointIndex: selectedDataPointIndex))
     }
     
     func chart(chart: TKChart!, pointLabelRenderForSeries series: TKChartSeries!, withRender render: TKChartSeriesRender!) -> TKChartPointLabelRender! {

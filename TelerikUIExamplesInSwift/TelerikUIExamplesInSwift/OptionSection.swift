@@ -15,7 +15,7 @@ class OptionSection: NSObject {
     
     var selectedOption: Int = 0
 
-    init(Text:NSString) {
+    init(Text:String) {
         self.title = Text
     }
 }

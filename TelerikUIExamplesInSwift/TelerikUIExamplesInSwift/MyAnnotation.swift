@@ -33,9 +33,9 @@ class MyAnnotation:TKChartPointAnnotation {
     
     override func drawInContext(context: CGContext!) {
         if let s = shape {
-            var drawables = NSMutableArray()
-            drawables.addObject(fill!)
-            drawables.addObject(stroke!)
+            var drawables = [TKDrawing]()
+            drawables.append(fill!)
+            drawables.append(stroke!)
             s.drawInContext(context, withCenter: center, drawings: drawables)
         }
     }

@@ -11,7 +11,7 @@ class IndicatorsTableView : UIViewController, UITableViewDataSource, UITableView
     
     var example: Indicators?
     var table = UITableView()
-    let kCellIdentifier: NSString = "indicatorCell"
+    let kCellIdentifier = "indicatorCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +47,10 @@ class IndicatorsTableView : UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var info: OptionInfo
-        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell!
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell!
         let section = indexPath.section as NSInteger
         if section == 0 {
-            info = example!.trendlines[indexPath.row] as OptionInfo
+            info = example!.trendlines[indexPath.row] as! OptionInfo
             if indexPath.row == example!.selectedTrendline {
                 cell.accessoryType = UITableViewCellAccessoryType.Checkmark
             }
@@ -59,7 +59,7 @@ class IndicatorsTableView : UIViewController, UITableViewDataSource, UITableView
             }
         }
         else {
-            info = example!.indicators[indexPath.row] as OptionInfo
+            info = example!.indicators[indexPath.row] as! OptionInfo
             if indexPath.row == example!.selectedIndicator {
                 cell.accessoryType = UITableViewCellAccessoryType.Checkmark
             }
@@ -80,7 +80,7 @@ class IndicatorsTableView : UIViewController, UITableViewDataSource, UITableView
         return 40
     }
 
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return "Trendlines"
         }
@@ -97,13 +97,13 @@ class IndicatorsTableView : UIViewController, UITableViewDataSource, UITableView
             let currentPath = NSIndexPath(forRow: example!.selectedTrendline, inSection: section)
             tableView.deselectRowAtIndexPath(currentPath, animated: false)
             example!.selectedTrendline = selectedRow
-            info = example!.trendlines[selectedRow] as OptionInfo
+            info = example!.trendlines[selectedRow] as! OptionInfo
         }
         else {
             let currentPath = NSIndexPath(forRow: example!.selectedTrendline, inSection: section)
             tableView.deselectRowAtIndexPath(currentPath, animated: false)
             example!.selectedIndicator = selectedRow
-            info = example!.indicators[selectedRow] as OptionInfo
+            info = example!.indicators[selectedRow] as! OptionInfo
         }
 
         info.selector!()

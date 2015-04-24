@@ -18,7 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _chart = [[TKChart alloc] initWithFrame:self.exampleBounds];
+    _chart = [[TKChart alloc] initWithFrame:self.exampleBoundsWithInset];
     _chart.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:_chart];
     _dataPoints = [[NSMutableArray alloc] init];

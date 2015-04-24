@@ -18,7 +18,7 @@ class ChartDataSource : NSObject, TKChartDataSource {
         series.selectionMode = TKChartSeriesSelectionMode.DataPoint
         series.style.pointShape = TKPredefinedShape(type: TKShapeType.Circle, andSize: CGSizeMake(10, 10))
         series.selectionMode = TKChartSeriesSelectionMode.Series
-        series.title = NSString(format: "Series %u", Int(index + 1))
+        series.title = "Series \(index + 1)"
         return series
     }
     

@@ -13,9 +13,9 @@ class ListViewSelection: ExampleViewController, TKListViewDelegate {
     let listView = TKListView()
     let dataSource = TKDataSource()
     
-    override init() {
-        super.init()
-
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
         self.addOption("Selection on press", inSection:"Selection type") { self.selectionOnPressSelected() }
         self.addOption("Selection on hold", inSection:"Selection type") { self.selectionOnHoldSelected() }
         self.addOption("No selection", inSection:"Selection type") { self.noSelectionSelected() }
@@ -23,9 +23,9 @@ class ListViewSelection: ExampleViewController, TKListViewDelegate {
         self.addOption("YES", inSection:"Multiple selection") { self.multipleSelectionSelected() }
         self.addOption("NO", inSection:"Multiple selection") { self.singleSelectionSelected() }
     }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -33,13 +33,8 @@ class ListViewSelection: ExampleViewController, TKListViewDelegate {
 
         // Do any additional setup after loading the view.
         self.dataSource.loadDataFromJSONResource("ListViewSampleData", ofType: "json", rootItemKeyPath: "players")
-
-        self.label.frame = CGRectMake(0, self.view.bounds.size.height-44, self.view.bounds.size.width, 44)
-        self.label.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin
-        self.label.textAlignment = NSTextAlignment.Center
-        self.view.addSubview(self.label)
         
-        self.listView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - self.label.frame.size.height - 55)
+        self.listView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 55)
         self.listView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.listView.registerClass(TKListViewCell.self, forCellWithReuseIdentifier:"cell")
         self.listView.delegate = self
@@ -50,10 +45,14 @@ class ListViewSelection: ExampleViewController, TKListViewDelegate {
         
         self.listView.selectItemAtIndexPath(NSIndexPath(forItem: 1, inSection: 0), animated: false, scrollPosition: UICollectionViewScrollPosition.None)
         
-        let layout : TKListViewColumnsLayout = listView.layout as TKListViewColumnsLayout
+        let layout : TKListViewColumnsLayout = listView.layout as! TKListViewColumnsLayout
         layout.cellAlignment = TKListViewCellAlignment.Stretch
         layout.minimumLineSpacing = 0
         
+        self.label.frame = CGRectMake(0, self.view.bounds.size.height-44, self.view.bounds.size.width, 44)
+        self.label.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin
+        self.label.textAlignment = NSTextAlignment.Center
+        self.listView.addSubview(self.label)
     }
     
     override func didReceiveMemoryWarning() {

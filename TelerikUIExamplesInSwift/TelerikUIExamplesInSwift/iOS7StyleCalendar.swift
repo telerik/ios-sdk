@@ -12,7 +12,7 @@ class iOS7StyleCalendar:ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let button = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        let button = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         button.setTitle("Tap to load iOS 7 style calendar", forState: UIControlState.Normal)
         button.addTarget(self, action: "buttonTouched:", forControlEvents: UIControlEvents.TouchUpInside)
         button.frame = CGRectMake(0, self.view.bounds.size.height/2.0 - 20, self.view.bounds.size.width, 40)

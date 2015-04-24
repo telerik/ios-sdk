@@ -17,11 +17,11 @@
 {
     [super viewDidLoad];
     
-    _chart = [[TKChart alloc] initWithFrame:[self exampleBounds]];
+    _chart = [[TKChart alloc] initWithFrame:self.exampleBoundsWithInset];
     _chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_chart];
     
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *dateTimeComponents = [[NSDateComponents alloc] init];
     dateTimeComponents.year = 2013;
     dateTimeComponents.day = 1;

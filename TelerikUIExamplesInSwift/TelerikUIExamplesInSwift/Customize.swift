@@ -14,16 +14,16 @@ class Customize: ExampleViewController, TKChartDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBounds
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         chart.delegate = self
         self.view.addSubview(chart)
         
-        let array1 = NSMutableArray()
-        let array2 = NSMutableArray()
+        var array1 = [TKChartDataPoint]()
+        var array2 = [TKChartDataPoint]()
         for i in 0..<10 {
-            array1.addObject(TKChartDataPoint(x: i, y: Int(arc4random() % (100))))
-            array2.addObject(TKChartDataPoint(x: i, y: Int(arc4random() % (100))))
+            array1.append(TKChartDataPoint(x: i, y: Int(arc4random() % (100))))
+            array2.append(TKChartDataPoint(x: i, y: Int(arc4random() % (100))))
         }
         
         let columnSeries = TKChartColumnSeries(items: array1)

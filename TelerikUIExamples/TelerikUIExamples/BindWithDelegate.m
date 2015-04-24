@@ -57,7 +57,7 @@
     
     _chartDataSource = [[ChartDataSource alloc] init];
     
-    _chart = [[TKChart alloc] initWithFrame:[self exampleBounds]];
+    _chart = [[TKChart alloc] initWithFrame:self.exampleBoundsWithInset];
     _chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _chart.dataSource = _chartDataSource;
     _chart.legend.hidden = NO;

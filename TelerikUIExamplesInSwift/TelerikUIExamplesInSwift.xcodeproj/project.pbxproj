@@ -8,18 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		190DBC131A84D3420017B623 /* SideDrawerCustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190DBC121A84D3420017B623 /* SideDrawerCustomTransition.swift */; };
-		190DBC151A84D3590017B623 /* SideDrawerCustomTransitionModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190DBC141A84D3590017B623 /* SideDrawerCustomTransitionModalController.swift */; };
 		190DBC171A84D4A60017B623 /* MyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190DBC161A84D4A60017B623 /* MyTransition.swift */; };
 		191453741A94D8D300B7670F /* SideDrawerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191453731A94D8D300B7670F /* SideDrawerHeaderView.swift */; };
 		1923F41C1A84DE8700BB0D03 /* SideDrawerPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1923F41B1A84DE8700BB0D03 /* SideDrawerPositions.swift */; };
-		1923F41E1A84DE9800BB0D03 /* SideDrawerPositionsModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1923F41D1A84DE9800BB0D03 /* SideDrawerPositionsModalController.swift */; };
 		194B156D1A84A6E0008E97F2 /* SideDrawerTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B156C1A84A6E0008E97F2 /* SideDrawerTransitions.swift */; };
-		194B156F1A84A6FA008E97F2 /* SideDrawerTransitionsModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B156E1A84A6FA008E97F2 /* SideDrawerTransitionsModalController.swift */; };
 		194B15721A84BD0F008E97F2 /* SideDrawerCustomContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B15711A84BD0F008E97F2 /* SideDrawerCustomContent.swift */; };
-		194B15741A84BD24008E97F2 /* SideDrawerCustomContentModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B15731A84BD24008E97F2 /* SideDrawerCustomContentModalController.swift */; };
-		199585DE1A8A01CB00672B53 /* ScaleContentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199585DD1A8A01CB00672B53 /* ScaleContentTransition.swift */; };
 		199D1CDA1A83A0C4009708D6 /* SideDrawerGettingStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D1CD91A83A0C4009708D6 /* SideDrawerGettingStarted.swift */; };
-		199D1CDE1A83A580009708D6 /* SideDrawerGettingStartedModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D1CDD1A83A580009708D6 /* SideDrawerGettingStartedModalController.swift */; };
 		19B3C3E419DE90C8000167D0 /* LiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B3C3E319DE90C8000167D0 /* LiveData.swift */; };
 		19B3C3E719DEB505000167D0 /* PointLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B3C3E619DEB505000167D0 /* PointLabels.swift */; };
 		19B3C44C19DEDF8A000167D0 /* MyPointLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B3C44B19DEDF8A000167D0 /* MyPointLabel.swift */; };
@@ -34,8 +28,6 @@
 		1B53723C1A97869E00707810 /* PhotosWithNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B53723B1A97869E00707810 /* PhotosWithNames.json */; };
 		1B53723E1A9797B100707810 /* LoremIpsumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53723D1A9797B100707810 /* LoremIpsumGenerator.swift */; };
 		1B5372401A9B608E00707810 /* ListViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53723F1A9B608E00707810 /* ListViewLayout.swift */; };
-		EB0160B41ACAB4A000971B72 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5549DF1A9F8B9700C39375 /* TelerikUI.framework */; };
-		EB0160B51ACAB4A600971B72 /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5549DE1A9F8B9700C39375 /* TelerikAppFeedback.framework */; };
 		FE15E0081A91EDDC00F2AB01 /* ListViewPullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E0071A91EDDC00F2AB01 /* ListViewPullToRefresh.swift */; };
 		FE15E00A1A91EDF200F2AB01 /* ListViewReorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E0091A91EDF200F2AB01 /* ListViewReorder.swift */; };
 		FE15E00C1A920FE700F2AB01 /* ListViewSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E00B1A920FE700F2AB01 /* ListViewSwipe.swift */; };
@@ -45,6 +37,8 @@
 		FE28FF741A8D0E95000E0BDC /* ListViewGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE28FF731A8D0E95000E0BDC /* ListViewGroups.swift */; };
 		FE2D10781A80FB4600A787EB /* InlineEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D10771A80FB4600A787EB /* InlineEvents.swift */; };
 		FE6F334E1A9C716F00BE301B /* OptionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F334D1A9C716F00BE301B /* OptionSection.swift */; };
+		FE74ACFB1AEA28490025137E /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE74ACF91AEA28490025137E /* TelerikAppFeedback.framework */; };
+		FE74ACFC1AEA28490025137E /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE74ACFA1AEA28490025137E /* TelerikUI.framework */; };
 		FE92FA8019B4C746000B2E66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92FA7F19B4C746000B2E66 /* AppDelegate.swift */; };
 		FE92FA8219B4C746000B2E66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92FA8119B4C746000B2E66 /* ViewController.swift */; };
 		FE92FA8519B4C746000B2E66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE92FA8319B4C746000B2E66 /* Main.storyboard */; };
@@ -117,18 +111,12 @@
 
 /* Begin PBXFileReference section */
 		190DBC121A84D3420017B623 /* SideDrawerCustomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerCustomTransition.swift; sourceTree = "<group>"; };
-		190DBC141A84D3590017B623 /* SideDrawerCustomTransitionModalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerCustomTransitionModalController.swift; sourceTree = "<group>"; };
 		190DBC161A84D4A60017B623 /* MyTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTransition.swift; sourceTree = "<group>"; };
 		191453731A94D8D300B7670F /* SideDrawerHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerHeaderView.swift; sourceTree = "<group>"; };
 		1923F41B1A84DE8700BB0D03 /* SideDrawerPositions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerPositions.swift; sourceTree = "<group>"; };
-		1923F41D1A84DE9800BB0D03 /* SideDrawerPositionsModalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerPositionsModalController.swift; sourceTree = "<group>"; };
 		194B156C1A84A6E0008E97F2 /* SideDrawerTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerTransitions.swift; sourceTree = "<group>"; };
-		194B156E1A84A6FA008E97F2 /* SideDrawerTransitionsModalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerTransitionsModalController.swift; sourceTree = "<group>"; };
 		194B15711A84BD0F008E97F2 /* SideDrawerCustomContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerCustomContent.swift; sourceTree = "<group>"; };
-		194B15731A84BD24008E97F2 /* SideDrawerCustomContentModalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerCustomContentModalController.swift; sourceTree = "<group>"; };
-		199585DD1A8A01CB00672B53 /* ScaleContentTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleContentTransition.swift; sourceTree = "<group>"; };
 		199D1CD91A83A0C4009708D6 /* SideDrawerGettingStarted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerGettingStarted.swift; sourceTree = "<group>"; };
-		199D1CDD1A83A580009708D6 /* SideDrawerGettingStartedModalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerGettingStartedModalController.swift; sourceTree = "<group>"; };
 		19B3C3E319DE90C8000167D0 /* LiveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveData.swift; sourceTree = "<group>"; };
 		19B3C3E619DEB505000167D0 /* PointLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLabels.swift; sourceTree = "<group>"; };
 		19B3C44B19DEDF8A000167D0 /* MyPointLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPointLabel.swift; sourceTree = "<group>"; };
@@ -151,17 +139,15 @@
 		FE28FF711A8D0E77000E0BDC /* ListViewLoadOnDemand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewLoadOnDemand.swift; sourceTree = "<group>"; };
 		FE28FF731A8D0E95000E0BDC /* ListViewGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewGroups.swift; sourceTree = "<group>"; };
 		FE2D10771A80FB4600A787EB /* InlineEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineEvents.swift; sourceTree = "<group>"; };
-		FE5549DE1A9F8B9700C39375 /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
-		FE5549DF1A9F8B9700C39375 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FE6F334D1A9C716F00BE301B /* OptionSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionSection.swift; sourceTree = "<group>"; };
-		FE77380519ED5E5B009F5C34 /* libTelerikAppFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikAppFeedback.a; path = "../AppFeedback/build/Debug-iphoneos/libTelerikAppFeedback.a"; sourceTree = "<group>"; };
+		FE74ACF91AEA28490025137E /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
+		FE74ACFA1AEA28490025137E /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FE92FA7A19B4C746000B2E66 /* TelerikUIExamplesInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelerikUIExamplesInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE92FA7E19B4C746000B2E66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE92FA7F19B4C746000B2E66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE92FA8119B4C746000B2E66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE92FA8419B4C746000B2E66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE92FA8619B4C746000B2E66 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FE92FA9C19B4C7C1000B2E66 /* libTelerikUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikUI.a; path = "../../../../../Library/Developer/Xcode/DerivedData/TelerikUI-dwzcvftbvbwddjbzzdyodshibupb/Build/Products/Debug-iphoneos/libTelerikUI.a"; sourceTree = "<group>"; };
 		FE92FAA519B4C88B000B2E66 /* TelerikUIExamplesInSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TelerikUIExamplesInSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		FE92FAA619B4C88B000B2E66 /* Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
 		FEAA9B9019B4CC1B00D60D4C /* BalloonAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonAnnotation.swift; sourceTree = "<group>"; };
@@ -234,8 +220,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB0160B51ACAB4A600971B72 /* TelerikAppFeedback.framework in Frameworks */,
-				EB0160B41ACAB4A000971B72 /* TelerikUI.framework in Frameworks */,
+				FE74ACFB1AEA28490025137E /* TelerikAppFeedback.framework in Frameworks */,
+				FE74ACFC1AEA28490025137E /* TelerikUI.framework in Frameworks */,
 				FEAA9C0919B4CF0B00D60D4C /* Foundation.framework in Frameworks */,
 				FEAA9C0719B4CF0200D60D4C /* UIKit.framework in Frameworks */,
 				FEAA9C0319B4CEF200D60D4C /* EventKitUI.framework in Frameworks */,
@@ -250,9 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				190DBC121A84D3420017B623 /* SideDrawerCustomTransition.swift */,
-				190DBC141A84D3590017B623 /* SideDrawerCustomTransitionModalController.swift */,
 				190DBC161A84D4A60017B623 /* MyTransition.swift */,
-				199585DD1A8A01CB00672B53 /* ScaleContentTransition.swift */,
 			);
 			name = CustomTransitionExample;
 			sourceTree = "<group>";
@@ -261,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				1923F41B1A84DE8700BB0D03 /* SideDrawerPositions.swift */,
-				1923F41D1A84DE9800BB0D03 /* SideDrawerPositionsModalController.swift */,
 			);
 			name = PositionsExample;
 			sourceTree = "<group>";
@@ -270,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				194B156C1A84A6E0008E97F2 /* SideDrawerTransitions.swift */,
-				194B156E1A84A6FA008E97F2 /* SideDrawerTransitionsModalController.swift */,
 			);
 			name = TransitionsExample;
 			sourceTree = "<group>";
@@ -279,7 +261,6 @@
 			isa = PBXGroup;
 			children = (
 				194B15711A84BD0F008E97F2 /* SideDrawerCustomContent.swift */,
-				194B15731A84BD24008E97F2 /* SideDrawerCustomContentModalController.swift */,
 			);
 			name = CustomContentExample;
 			sourceTree = "<group>";
@@ -301,7 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				199D1CD91A83A0C4009708D6 /* SideDrawerGettingStarted.swift */,
-				199D1CDD1A83A580009708D6 /* SideDrawerGettingStartedModalController.swift */,
 			);
 			name = GettingStartedExample;
 			sourceTree = "<group>";
@@ -409,14 +389,12 @@
 		FE92FAA419B4C800000B2E66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FE5549DE1A9F8B9700C39375 /* TelerikAppFeedback.framework */,
-				FE5549DF1A9F8B9700C39375 /* TelerikUI.framework */,
-				FE77380519ED5E5B009F5C34 /* libTelerikAppFeedback.a */,
+				FE74ACF91AEA28490025137E /* TelerikAppFeedback.framework */,
+				FE74ACFA1AEA28490025137E /* TelerikUI.framework */,
 				FEAA9C0819B4CF0B00D60D4C /* Foundation.framework */,
 				FEAA9C0619B4CF0200D60D4C /* UIKit.framework */,
 				FEAA9C0219B4CEF200D60D4C /* EventKitUI.framework */,
 				FEAA9C0019B4CEED00D60D4C /* EventKit.framework */,
-				FE92FA9C19B4C7C1000B2E66 /* libTelerikUI.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -678,7 +656,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEAA9BF119B4CDDA00D60D4C /* ExampleInfo.swift in Sources */,
-				194B156F1A84A6FA008E97F2 /* SideDrawerTransitionsModalController.swift in Sources */,
 				19B3C3E719DEB505000167D0 /* PointLabels.swift in Sources */,
 				199D1CDA1A83A0C4009708D6 /* SideDrawerGettingStarted.swift in Sources */,
 				1923F41C1A84DE8700BB0D03 /* SideDrawerPositions.swift in Sources */,
@@ -696,8 +673,6 @@
 				FEAA9BB919B4CCAE00D60D4C /* Indicators.swift in Sources */,
 				FEAA9BC019B4CCD100D60D4C /* CategoricalAxis.swift in Sources */,
 				FEAA9B9C19B4CC1B00D60D4C /* LayerAnnotation.swift in Sources */,
-				199585DE1A8A01CB00672B53 /* ScaleContentTransition.swift in Sources */,
-				1923F41E1A84DE9800BB0D03 /* SideDrawerPositionsModalController.swift in Sources */,
 				FEAA9B9819B4CC1B00D60D4C /* BalloonAnnotation.swift in Sources */,
 				FEAA9BF319B4CDDA00D60D4C /* OptionInfo.swift in Sources */,
 				FEAA9BD019B4CD0700D60D4C /* CustomAnimationPieChart.swift in Sources */,
@@ -736,14 +711,12 @@
 				FE92FAA719B4C88B000B2E66 /* Bridge.m in Sources */,
 				FEAA9B9E19B4CC1B00D60D4C /* Trackball.swift in Sources */,
 				FEAA9BC719B4CCEB00D60D4C /* StackedAreaChart.swift in Sources */,
-				190DBC151A84D3590017B623 /* SideDrawerCustomTransitionModalController.swift in Sources */,
 				19B3C3E419DE90C8000167D0 /* LiveData.swift in Sources */,
 				FEE6EE291A835229004895C1 /* DSItem.swift in Sources */,
 				FE28FF741A8D0E95000E0BDC /* ListViewGroups.swift in Sources */,
 				FEAA9BE119B4CD7300D60D4C /* CalendarCustomization.swift in Sources */,
 				191453741A94D8D300B7670F /* SideDrawerHeaderView.swift in Sources */,
 				FEAA9BAF19B4CC9000D60D4C /* BubbleChart.swift in Sources */,
-				199D1CDE1A83A580009708D6 /* SideDrawerGettingStartedModalController.swift in Sources */,
 				FEAA9BB419B4CC9000D60D4C /* ScatterChart.swift in Sources */,
 				FEAA9B9F19B4CC1B00D60D4C /* ViewAnnotation.swift in Sources */,
 				FE92FA8019B4C746000B2E66 /* AppDelegate.swift in Sources */,
@@ -769,7 +742,6 @@
 				FEAA9BCE19B4CD0700D60D4C /* CustomAnimationAreaChart.swift in Sources */,
 				194B156D1A84A6E0008E97F2 /* SideDrawerTransitions.swift in Sources */,
 				1B53723A1A97858700707810 /* CustomCardListViewCell.swift in Sources */,
-				194B15741A84BD24008E97F2 /* SideDrawerCustomContentModalController.swift in Sources */,
 				FEAA9BE519B4CD7300D60D4C /* CalendarViewModes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

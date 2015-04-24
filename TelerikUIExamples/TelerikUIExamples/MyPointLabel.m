@@ -19,8 +19,8 @@
                                   NSParagraphStyleAttributeName: paragraphStyle };
     
     CGSize textSize = [self.text sizeWithAttributes:attributes];
-    CGSize labelSize = CGSizeMake(textSize.width - 1.5 * (self.style.insets.left + self.style.insets.right) + abs(self.style.shadowOffset.width),
-                                  textSize.height - 1.5 * (self.style.insets.top + self.style.insets.bottom) + abs(self.style.shadowOffset.height));
+    CGSize labelSize = CGSizeMake(textSize.width - 1.5 * (self.style.insets.left + self.style.insets.right) + fabs(self.style.shadowOffset.width),
+                                  textSize.height - 1.5 * (self.style.insets.top + self.style.insets.bottom) + fabs(self.style.shadowOffset.height));
     return labelSize;
 }
 

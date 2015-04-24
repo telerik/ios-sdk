@@ -47,8 +47,8 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    CGFloat width = fminf(CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
-    self.calendarView.frame = CGRectMake(0, 0, width, width);
+    CGFloat width = fminf(CGRectGetWidth(self.exampleBounds), CGRectGetHeight(self.exampleBounds));
+    self.calendarView.frame = CGRectMake(self.exampleBounds.origin.x + (CGRectGetWidth(self.exampleBounds) - width)/2., self.exampleBounds.origin.y, width, width);
 }
 
 - (void)didReceiveMemoryWarning

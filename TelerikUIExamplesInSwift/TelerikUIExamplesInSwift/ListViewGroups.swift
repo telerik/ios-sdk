@@ -25,7 +25,7 @@ class ListViewGroups: ExampleViewController {
         listView.selectionBehavior = TKListViewSelectionBehavior.Press
         self.view.addSubview(listView)
         
-        let layout : TKListViewColumnsLayout = listView.layout as TKListViewColumnsLayout
+        let layout : TKListViewColumnsLayout = listView.layout as! TKListViewColumnsLayout
         
         layout.cellAlignment = TKListViewCellAlignment.Stretch
         layout.itemSize = CGSizeMake(300, 44)
@@ -34,7 +34,7 @@ class ListViewGroups: ExampleViewController {
         layout.footerReferenceSize = CGSizeMake(100, 44);
         
         self.dataSource.settings.listView.initCell { (listView: TKListView!, indexPath: NSIndexPath!, cell: TKListViewCell!, item: AnyObject!) -> Void in
-            let group = self.dataSource.items[indexPath.section] as TKDataSourceGroup
+            let group = self.dataSource.items[indexPath.section] as! TKDataSourceGroup
             cell.textLabel.text = group.items[indexPath.row] as? String
         }
         

@@ -10,7 +10,7 @@ import UIKit
 class MyPointLabel: TKChartPointLabel {
     
     override func sizeThatFits(size: CGSize) -> CGSize {
-        var paragraphStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
+        var paragraphStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
         paragraphStyle.alignment = self.style.textAlignment
         let attributes = [NSFontAttributeName: UIFont.systemFontOfSize(18),
             NSForegroundColorAttributeName: self.style.textColor,
@@ -31,17 +31,17 @@ class MyPointLabel: TKChartPointLabel {
         shape.drawInContext(ctx, withCenter: CGPointMake(CGRectGetMidX(bounds), CGRectGetMidY(bounds)), drawings: [fill, stroke])
         let textRect = CGRectMake(bounds.origin.x, bounds.origin.y - self.style.insets.top, bounds.size.width,
             bounds.size.height + self.style.insets.bottom)
-        var paragraphStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
+        var paragraphStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
         paragraphStyle.alignment = self.style.textAlignment
-        let attributes: NSDictionary = [NSFontAttributeName: UIFont.systemFontOfSize(16),
-            NSForegroundColorAttributeName: self.style.textColor,
-            NSParagraphStyleAttributeName: paragraphStyle]
+        let attributes = [NSFontAttributeName: UIFont.systemFontOfSize(16),
+                          NSForegroundColorAttributeName: self.style.textColor,
+                          NSParagraphStyleAttributeName: paragraphStyle]
         
-        let text: NSString = self.text as NSString
-        text.drawWithRect(textRect,
+        (text as NSString).drawWithRect(textRect,
             options: NSStringDrawingOptions.UsesLineFragmentOrigin,
             attributes: attributes,
             context: nil)
+        
         UIGraphicsPopContext()
     }
 }

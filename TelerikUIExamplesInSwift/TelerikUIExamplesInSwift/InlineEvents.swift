@@ -18,12 +18,11 @@ class InlineEvents: ExampleViewController, TKCalendarDataSource, TKCalendarMonth
         self.createEvents()
         
         // Do any additional setup after loading the view.
-        self.calendarView.frame = self.view.bounds
         self.calendarView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.calendarView.dataSource = self
         self.view.addSubview(self.calendarView)
         
-        let presenter = self.calendarView.presenter() as TKCalendarMonthPresenter
+        let presenter = self.calendarView.presenter() as! TKCalendarMonthPresenter
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             presenter.inlineEventsViewMode = TKCalendarInlineEventsViewMode.Popover
         }
@@ -35,6 +34,11 @@ class InlineEvents: ExampleViewController, TKCalendarDataSource, TKCalendarMonth
         presenter.delegate = self
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.calendarView.frame = self.exampleBounds
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -106,24 +110,27 @@ class InlineEvents: ExampleViewController, TKCalendarDataSource, TKCalendarMonth
     }
     
 //MARK: - TKCalendarDataSource
-    
-    func calendar(calendar: TKCalendar, eventsForDate date: NSDate) -> NSArray {
+
+    func calendar(calendar: TKCalendar!, eventsForDate date: NSDate!) -> [AnyObject]! {
         var components : NSDateComponents
-        
         components = self.calendarView.calendar.components(NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit, fromDate: date)
         components.hour = 23
         components.minute = 59
         components.second = 59
         let endDate = self.calendarView.calendar.dateFromComponents(components)
         let predicate = NSPredicate(format: "(startDate <= %@) AND (endDate >= %@)", endDate!, date)
-        let result:NSArray = self.events.filteredArrayUsingPredicate(predicate!)
-        return result
+        return self.events.filteredArrayUsingPredicate(predicate)
     }
     
 //MARK: - TKCalendarMonthPresenterDelegate
     
     func monthPresenter(presenter: TKCalendarMonthPresenter!, inlineEventSelected event: TKCalendarEventProtocol!) {
-        let alert = UIAlertView(title: "Event selected", message: event.title, delegate: nil, cancelButtonTitle: "Done")
-        alert.show()
+        
+        println("event selected: \(event.title)")
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            let alert = UIAlertView(title: "Event selected", message: event.title, delegate: nil, cancelButtonTitle: "Done")
+            alert.show()
+        });
     }
 }

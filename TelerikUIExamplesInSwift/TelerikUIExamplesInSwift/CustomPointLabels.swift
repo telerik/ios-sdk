@@ -16,7 +16,7 @@ class CustomPointLabels: ExampleViewController, TKChartDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        chart.frame = self.exampleBounds;
+        chart.frame = self.exampleBoundsWithInset;
         chart.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
         chart.delegate = self
         self.view.addSubview(chart)

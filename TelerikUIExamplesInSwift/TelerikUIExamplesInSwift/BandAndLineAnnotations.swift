@@ -14,14 +14,14 @@ class BandAndLineAnnotation:ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = CGRectInset(self.view.bounds, 10, 10)
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart)
         
         for i in 0..<2 {
-            let points = NSMutableArray()
+            var points = [TKChartDataPoint]()
             for i in 0..<20 {
-                points.addObject(TKChartDataPoint(x:Int(arc4random() % 1450), y:Int(arc4random() % 150)))
+                points.append(TKChartDataPoint(x:Int(arc4random() % 1450), y:Int(arc4random() % 150)))
             }
             chart.addSeries(TKChartScatterSeries(items: points))
         }

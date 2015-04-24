@@ -11,20 +11,19 @@ class CalendarViewModes: ExampleViewController, TKCalendarDelegate {
     
     let calendarView = TKCalendar()
     
-    override init() {
-        super.init()
-        
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
         self.addOption("Week view") { self.selectWeekView() }
         self.addOption("Month") { self.selectMonth() }
         self.addOption("Month Names") { self.selectMonthNames() }
         self.addOption("Year") { self.selectYear() }
         self.addOption("Year Numbers") { self.selectYearNumbers() }
         self.addOption("Flow") { self.selectFlow() }
-        
     }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -41,7 +40,6 @@ class CalendarViewModes: ExampleViewController, TKCalendarDelegate {
         components.year = 10
         let maxDate: NSDate = calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))!
         
-        self.calendarView.frame = self.view.bounds
         self.calendarView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(self.calendarView)
         
@@ -56,10 +54,10 @@ class CalendarViewModes: ExampleViewController, TKCalendarDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.calendarView.viewMode == TKCalendarViewMode.Week {
-            self.calendarView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 100)
+            self.calendarView.frame = CGRectMake(0, self.exampleBounds.origin.y, CGRectGetWidth(self.exampleBounds), 100)
         }
         else {
-            self.calendarView.frame = self.view.bounds
+            self.calendarView.frame = self.exampleBounds
         }
     }
     

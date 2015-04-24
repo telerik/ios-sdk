@@ -12,8 +12,8 @@ class DefaultAnimation: ExampleViewController {
     
     let chart = TKChart()
     
-    override init() {
-        super.init()
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         let names = ["Area Series", "Pie Series", "Line Series", "Scatter Series", "Bar Series", "Column Series"]
         let idiom = UIDevice.currentDevice().userInterfaceIdiom
@@ -27,15 +27,15 @@ class DefaultAnimation: ExampleViewController {
         
         self.selectedOption = 2
     }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBounds
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         chart.allowAnimations = true
         self.view.addSubview(chart)
@@ -48,10 +48,10 @@ class DefaultAnimation: ExampleViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func nameForOption(index: NSInteger, names: NSArray, idiom: UIUserInterfaceIdiom) -> NSString {
-        var name = names[index] as NSString
+    func nameForOption(index: NSInteger, names: NSArray, idiom: UIUserInterfaceIdiom) -> String {
+        var name = names[index] as! String
         if (idiom != UIUserInterfaceIdiom.Pad) {
-            name = NSString(format: "%@ Animation", name)
+            name = "\(name) Animation"
         }
         return name
     }
@@ -59,9 +59,9 @@ class DefaultAnimation: ExampleViewController {
     func setupLineSeries() {
         chart.removeAllData()
         
-        let array = NSMutableArray()
+        var array = [TKChartDataPoint]()
         for i in 0..<10 {
-            array.addObject(TKChartDataPoint(x: i, y: Int(arc4random() % 100)))
+            array.append(TKChartDataPoint(x: i, y: Int(arc4random() % 100)))
         }
         
         let lineSeries = TKChartLineSeries(items: array)
@@ -72,9 +72,9 @@ class DefaultAnimation: ExampleViewController {
     func setupAreaSeries() {
         chart.removeAllData()
         
-        let array = NSMutableArray()
+        var array = [TKChartDataPoint]()
         for i in 0..<10 {
-            array.addObject(TKChartDataPoint(x: i, y: Int(arc4random() % 100)))
+            array.append(TKChartDataPoint(x: i, y: Int(arc4random() % 100)))
         }
         
         let areaSeries = TKChartAreaSeries(items: array)
@@ -85,12 +85,12 @@ class DefaultAnimation: ExampleViewController {
     func setupPieSeries() {
         chart.removeAllData()
         
-        let array = NSMutableArray()
-        array.addObject(TKChartDataPoint(name: "Google", value: 20))
-        array.addObject(TKChartDataPoint(name: "Apple", value: 30))
-        array.addObject(TKChartDataPoint(name: "Microsoft", value: 10))
-        array.addObject(TKChartDataPoint(name: "IBM", value: 5))
-        array.addObject(TKChartDataPoint(name: "Oracle", value: 8))
+        var array = [TKChartDataPoint]()
+        array.append(TKChartDataPoint(name: "Google", value: 20))
+        array.append(TKChartDataPoint(name: "Apple", value: 30))
+        array.append(TKChartDataPoint(name: "Microsoft", value: 10))
+        array.append(TKChartDataPoint(name: "IBM", value: 5))
+        array.append(TKChartDataPoint(name: "Oracle", value: 8))
         
         let series = TKChartPieSeries(items: array)
         series.selectionMode = TKChartSeriesSelectionMode.DataPoint
@@ -100,9 +100,9 @@ class DefaultAnimation: ExampleViewController {
     func setupScatterSeries() {
         chart.removeAllData()
         
-        let points = NSMutableArray()
+        var points = [TKChartDataPoint]()
         for i in 0..<100 {
-            points.addObject(TKChartDataPoint(x: Int(arc4random() % 1450), y: Int(arc4random() % 150)))
+            points.append(TKChartDataPoint(x: Int(arc4random() % 1450), y: Int(arc4random() % 150)))
         }
         
         let scatterSeries = TKChartScatterSeries(items: points)
@@ -113,9 +113,9 @@ class DefaultAnimation: ExampleViewController {
     func setupBarSeries() {
         chart.removeAllData()
         
-        let array = NSMutableArray()
+        var array = [TKChartDataPoint]()
         for i in 0..<10 {
-            array.addObject(TKChartDataPoint(x: Int(arc4random() % 100), y: i))
+            array.append(TKChartDataPoint(x: Int(arc4random() % 100), y: i))
         }
         
         let barSeries = TKChartBarSeries(items: array)
@@ -126,9 +126,9 @@ class DefaultAnimation: ExampleViewController {
     func setupColumnSeries() {
         chart.removeAllData()
         
-        let array = NSMutableArray()
+        var array = [TKChartDataPoint]()
         for i in 0..<10 {
-            array.addObject(TKChartDataPoint(x: i, y: Int(arc4random() % 100)))
+            array.append(TKChartDataPoint(x: i, y: Int(arc4random() % 100)))
         }
         
         let columnSeries = TKChartColumnSeries(items: array)

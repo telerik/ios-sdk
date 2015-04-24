@@ -15,6 +15,8 @@
 {
     NSMutableArray *_options;
     NSMutableArray *_sections;
+    CGFloat _headerHeight;
+    CGFloat _offset;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -23,6 +25,7 @@
     if (self) {
         _options = [[NSMutableArray alloc] init];
         _selectedOptions = [[NSMutableSet alloc] init];
+        _headerHeight = 0;
     }
     return self;
 }
@@ -30,11 +33,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- 
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIUserInterfaceIdiom idiom = [[UIDevice currentDevice] userInterfaceIdiom];
+    [self updateHeaderHeight];
     
+    UIUserInterfaceIdiom idiom = [[UIDevice currentDevice] userInterfaceIdiom];
     if (_options.count > 0 || _sections) {
         if (idiom == UIUserInterfaceIdiomPad) {
             [self loadIPadLayout];
@@ -43,13 +47,46 @@
             [self loadIPhoneLayout];
         }
     }
+    
+    [self updateLayoutConstraints];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [self updateLayoutConstraints];
+}
+
+- (void)updateHeaderHeight
+{
+    UINavigationBar *navigationBar = self.navigationController.navigationBar;
+    if (navigationBar.translucent) {
+        UIApplication *app = [UIApplication sharedApplication];
+        BOOL isLandscape = UIInterfaceOrientationIsLandscape(app.statusBarOrientation);
+        _headerHeight = navigationBar.intrinsicContentSize.height + (isLandscape ? app.statusBarFrame.size.width : app.statusBarFrame.size.height);
+    }
+}
+
+- (void)updateLayoutConstraints
+{
+    _exampleBounds = self.view.bounds;
+    
+    [self updateHeaderHeight];
+    
+    _exampleBounds.origin.y += _headerHeight;
+    _exampleBounds.size.height -= _headerHeight;
+
+    if (_offset > 0) {
+        _exampleBounds.origin.y += _offset;
+        _exampleBounds.size.height -= _offset;
+    }
+    
+    UIUserInterfaceIdiom idiom = [[UIDevice currentDevice] userInterfaceIdiom];
+    if (idiom == UIUserInterfaceIdiomPad) {
+        _exampleBoundsWithInset = CGRectInset(_exampleBounds, 30, 30);
+    }
     else {
-        if (idiom == UIUserInterfaceIdiomPad) {
-            _exampleBounds = CGRectInset(self.view.bounds, 30, 30);
-        }
-        else {
-            _exampleBounds = CGRectInset(self.view.bounds, 10, 10);
-        }
+        _exampleBoundsWithInset = CGRectInset(_exampleBounds, 10, 10);
     }
 }
 
@@ -57,26 +94,33 @@
 {
     if (_sections == nil && _options.count == 1) {
         OptionInfo *info = _options[0];
-        _settingsButton = [[UIBarButtonItem alloc] initWithTitle:info.optionText style:UIBarButtonItemStylePlain target:self action:@selector(optionTouched)];
+        _settingsButton = [[UIBarButtonItem alloc] initWithTitle:info.optionText
+                                                           style:UIBarButtonItemStylePlain
+                                                          target:self
+                                                          action:@selector(optionTouched)];
     }
     else {
-        _settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu"] style:UIBarButtonItemStylePlain target:self action:@selector(settingsTouched)];
+        _settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu"]
+                                                           style:UIBarButtonItemStylePlain
+                                                          target:self
+                                                          action:@selector(settingsTouched)];
     }
     self.navigationItem.rightBarButtonItem = _settingsButton;
-    _exampleBounds = CGRectInset(self.view.bounds, 10, 10);
 }
 
 - (void)loadIPadLayout
 {
     CGSize desiredSize = CGSizeZero;
+    _offset = 0;
     if (_sections == nil && _options.count == 1) {
         OptionInfo *info = _options[0];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [button addTarget:self action:@selector(optionTouched) forControlEvents:UIControlEventTouchDown];
         [button setTitle:info.optionText forState:UIControlStateNormal];
         desiredSize = [button sizeThatFits:self.view.bounds.size];
-        button.frame = CGRectMake(30, 10, desiredSize.width, desiredSize.height);
+        button.frame = CGRectMake(30, 10 + _headerHeight, desiredSize.width, desiredSize.height);
         [self.view addSubview:button];
+        _offset = 10 + desiredSize.height + 10;
     }
     else if (_options.count >= 3 || _sections) {
         _settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu"] style:UIBarButtonItemStylePlain target:self action:@selector(settingsTouched)];
@@ -89,13 +133,12 @@
             [segmented insertSegmentWithTitle:option.optionText atIndex:i++ animated:NO];
         }
         desiredSize = [segmented sizeThatFits:self.view.bounds.size];
-        segmented.frame = CGRectMake(10, 10, desiredSize.width, desiredSize.height);
+        segmented.frame = CGRectMake(10, 10 + _headerHeight, desiredSize.width, desiredSize.height);
+        segmented.selectedSegmentIndex = self.selectedOption;
         [segmented addTarget:self action:@selector(optionSelected:) forControlEvents:UIControlEventValueChanged];
         [self.view addSubview:segmented];
-        
-        [segmented setSelectedSegmentIndex:self.selectedOption];
+        _offset = 10 + desiredSize.height + 10;
     }
-    _exampleBounds = CGRectMake(20, 30 + desiredSize.height, self.view.bounds.size.width - 40, self.view.bounds.size.height - desiredSize.height - 60);
 }
 
 - (CGRect)exampleBounds
@@ -176,7 +219,7 @@
     if (idiom == UIUserInterfaceIdiomPad) {
         if (_popover && [_popover isPopoverVisible]) {
             [_popover dismissPopoverAnimated:YES];
-
+            
             return;
         }
         

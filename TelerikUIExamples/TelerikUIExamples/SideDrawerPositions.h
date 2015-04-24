@@ -5,8 +5,8 @@
 //  Copyright (c) 2015 Telerik. All rights reserved.
 //
 
-#import "ExampleViewController.h"
+#import "SideDrawerGettingStarted.h"
 
-@interface SideDrawerPositions : ExampleViewController
+@interface SideDrawerPositions : SideDrawerGettingStarted
 
 @end

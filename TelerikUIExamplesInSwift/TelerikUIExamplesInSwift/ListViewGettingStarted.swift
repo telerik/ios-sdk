@@ -23,7 +23,7 @@ class ListViewGettingStarted: ExampleViewController, TKListViewDataSource {
         self.view.addSubview(listView)
         listView.registerClass(ImageWithTextListViewCell.classForCoder(), forCellWithReuseIdentifier: "cell")
         
-        let layout : TKListViewColumnsLayout = listView.layout as TKListViewColumnsLayout
+        let layout : TKListViewColumnsLayout = listView.layout as! TKListViewColumnsLayout
         layout.cellAlignment = TKListViewCellAlignment.Center
         layout.columnsCount = 2
         layout.itemSize = CGSizeMake(150, 200)
@@ -40,8 +40,8 @@ class ListViewGettingStarted: ExampleViewController, TKListViewDataSource {
     }
     
     func listView(listView: TKListView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> TKListViewCell! {
-        let cell = listView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as TKListViewCell
-        cell.imageView.image =  UIImage(named: photos.items[indexPath.row] as String)
+        let cell = listView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! TKListViewCell
+        cell.imageView.image =  UIImage(named: photos.items[indexPath.row] as! String)
         cell.textLabel.text = names.items[indexPath.row] as? String
         return cell
     

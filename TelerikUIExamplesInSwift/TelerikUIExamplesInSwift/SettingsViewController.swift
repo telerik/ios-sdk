@@ -52,25 +52,25 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if sections.count > 0 {
-            let sec = sections[section] as OptionSection
+            let sec = sections[section] as! OptionSection
             return sec.items.count
         }
         return options!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(kCellID) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCellID) as! UITableViewCell
 
         if sections.count > 0 {
-            let sec = sections[indexPath.section] as OptionSection
-            let info = sec.items[indexPath.row] as OptionInfo
+            let sec = sections[indexPath.section] as! OptionSection
+            let info = sec.items[indexPath.row] as! OptionInfo
             cell.textLabel!.text = info.optionText
             if (indexPath.row == sec.selectedOption) {
                 cell.accessoryType = UITableViewCellAccessoryType.Checkmark
             }
         }
         else {
-            let info = options![indexPath.row] as OptionInfo
+            let info = options![indexPath.row] as! OptionInfo
             cell.textLabel!.text = info.optionText
             if (indexPath.row == self.example!.selectedOption) {
                 cell.accessoryType = UITableViewCellAccessoryType.Checkmark
@@ -83,7 +83,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let sec = sections[section] as OptionSection
+        let sec = sections[section] as! OptionSection
         return sec.title
     }
     
@@ -100,7 +100,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
        
         var info:OptionInfo?
         if sections.count > 0 {
-            let sec = sections[indexPath.section] as OptionSection
+            let sec = sections[indexPath.section] as! OptionSection
             sec.selectedOption = indexPath.row
             info = sec.items[indexPath.row] as? OptionInfo
         }

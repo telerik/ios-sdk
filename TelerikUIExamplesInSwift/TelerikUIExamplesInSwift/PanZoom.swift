@@ -14,28 +14,28 @@ class PanZoom: ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBounds
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         chart.allowPanDeceleration = true
         self.view.addSubview(chart)
         
-        var items = NSMutableArray()
+        var items = [TKChartDataPoint]()
         for i in 0..<200 {
-            items.addObject(TKChartDataPoint(x: Int(arc4random() % 200), y: Int(arc4random() % 1000)))
+            items.append(TKChartDataPoint(x: Int(arc4random() % 200), y: Int(arc4random() % 1000)))
         }
         var series = TKChartScatterSeries(items: items)
         chart.addSeries(series)
         
-        items = NSMutableArray()
+        items = [TKChartDataPoint]()
         for i in 0..<200 {
-            items.addObject(TKChartDataPoint(x: Int(arc4random() % 200), y: Int(arc4random() % 1000)))
+            items.append(TKChartDataPoint(x: Int(arc4random() % 200), y: Int(arc4random() % 1000)))
         }
         series = TKChartScatterSeries(items: items)
         chart.addSeries(series)
         
-        items = NSMutableArray()
+        items = [TKChartDataPoint]()
         for i in 0..<200 {
-            items.addObject(TKChartDataPoint(x: Int(arc4random() % 200), y: Int(arc4random() % 1000)))
+            items.append(TKChartDataPoint(x: Int(arc4random() % 200), y: Int(arc4random() % 1000)))
         }
         
         series = TKChartScatterSeries(items: items)

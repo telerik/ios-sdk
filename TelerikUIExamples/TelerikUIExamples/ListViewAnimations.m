@@ -59,6 +59,44 @@
     layout.itemSize = CGSizeMake(130, 180);
     layout.minimumLineSpacing = 10;
     layout.cellAlignment = TKListViewCellAlignmentStretch;
+    
+    UIButton *insertRemoveButton = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 36, 36)];
+    UIColor *lightBlue = [UIColor colorWithRed:19/255.0 green:144/255.0 blue:255/255.0 alpha:1.0];
+    [insertRemoveButton setTitleColor:lightBlue forState:UIControlStateNormal];
+    [insertRemoveButton setTitle:@"-" forState:UIControlStateNormal];
+    insertRemoveButton.titleLabel.font = [UIFont systemFontOfSize:28.00];
+    [insertRemoveButton addTarget:self action:@selector(insertRemove:) forControlEvents:UIControlEventTouchDown];
+    
+    [self.view addSubview:insertRemoveButton];
+}
+
+- (void)insertRemove:(UIButton *)sender
+{
+    if([sender.titleLabel.text isEqualToString:@"+"]){
+        [self insertCell];
+        [sender setTitle:@"-" forState:UIControlStateNormal];
+    }else{
+        [self removeCell];
+        [sender setTitle:@"+" forState:UIControlStateNormal];
+    }
+}
+
+- (void)insertCell
+{
+    NSIndexPath *insertionIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+    NSMutableArray *newItems = [NSMutableArray arrayWithArray:_dataSource.items];
+    [newItems insertObject:@"ALFKIF.JPG" atIndex:0];
+    _dataSource.itemSource = newItems;
+    [_listView insertItemsAtIndexPaths:@[insertionIndexPath]];
+}
+
+- (void)removeCell
+{
+    NSIndexPath *insertionIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+    NSMutableArray *newItems = [NSMutableArray arrayWithArray:_dataSource.items];
+    [newItems removeObjectAtIndex:0];
+    _dataSource.itemSource = newItems;
+    [_listView deleteItemsAtIndexPaths:@[insertionIndexPath]];
 }
 
 - (void)didReceiveMemoryWarning

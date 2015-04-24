@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.translucent = NO;
+    
     _dataSource = [TKDataSource new];
     [_dataSource loadDataFromJSONResource:@"ListViewSampleData" ofType:@"json" rootItemKeyPath:@"teams"];
     _dataSource.groupItemSourceKey = @"items";
@@ -42,6 +44,14 @@
     listView.pullToRefreshView.backgroundColor = [UIColor blueColor];
     listView.pullToRefreshView.activityIndicator.color = [UIColor whiteColor];
     [self.view addSubview:listView];
+}
+
+- (void)willMoveToParentViewController:(UIViewController *)parent
+{
+    [super willMoveToParentViewController:parent];
+    if (parent == nil) {
+        self.navigationController.navigationBar.translucent = YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning

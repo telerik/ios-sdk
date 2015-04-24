@@ -14,13 +14,13 @@ class NumericAxis:ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = CGRectInset(self.view.bounds, 10, 10)
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart)
         
-        let array: NSMutableArray = []
+        var array = [TKChartDataPoint]()
         for i in 0..<12 {
-            array.addObject(TKChartBubbleDataPoint(x:i, y:Int(arc4random() % (2000))))
+            array.append(TKChartBubbleDataPoint(x:i, y:Int(arc4random() % (2000))))
         }
         let series = TKChartLineSeries(items:array)
         series.selectionMode = TKChartSeriesSelectionMode.Series

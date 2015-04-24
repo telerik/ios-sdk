@@ -10,23 +10,23 @@ import Foundation
 class FinancialChart: ExampleViewController {
 
     let chart = TKChart()
-    let dataPoints = NSMutableArray()
+    var dataPoints = [TKChartDataPoint]()
 
-    override init() {
-        super.init()
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Candlestick") { self.reloadChart() }
         self.addOption("Ohlc") { self.reloadChart() }
     }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        chart.frame = self.exampleBounds;
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(chart)
         
@@ -35,7 +35,7 @@ class FinancialChart: ExampleViewController {
         
         let data: NSArray = StockDataPoint.stockPoints()
         for i in 0..<42 {
-            dataPoints.addObject(data[i])
+            dataPoints.append(data[i] as! TKChartDataPoint)
         }
     
         self.reloadChart()
@@ -60,7 +60,7 @@ class FinancialChart: ExampleViewController {
         chart.yAxis = yAxis
         chart.addSeries(series)
     
-        let xAxis = chart.xAxis as TKChartDateTimeAxis
+        let xAxis = chart.xAxis as! TKChartDateTimeAxis
         xAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Days
         xAxis.style.majorTickStyle.ticksOffset = -3
         xAxis.style.majorTickStyle.ticksHidden = false

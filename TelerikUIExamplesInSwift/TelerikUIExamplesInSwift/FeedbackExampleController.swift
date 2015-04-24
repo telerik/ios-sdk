@@ -18,12 +18,12 @@ class FeedbackExampleController: ExampleViewController {
         
         self.showDescription()
         
-        let feedbackController: TKFeedbackController = UIApplication.sharedApplication().keyWindow!.rootViewController as TKFeedbackController
+        let feedbackController: TKFeedbackController = UIApplication.sharedApplication().keyWindow!.rootViewController as! TKFeedbackController
         feedbackController.dataSource = platformFeedbackSource
     }
     
     @IBAction func sendFeedback(sender : AnyObject) {
-        let feedbackController = self.view.window?.rootViewController as TKFeedbackController
+        let feedbackController = self.view.window?.rootViewController as! TKFeedbackController
         feedbackController.showFeedback()
     }
     

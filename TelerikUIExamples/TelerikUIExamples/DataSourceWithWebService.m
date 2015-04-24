@@ -24,7 +24,7 @@
     
     self.dataSource = [TKDataSource new];
     
-    TKChart *chart = [[TKChart alloc] initWithFrame:self.view.bounds];
+    TKChart *chart = [[TKChart alloc] initWithFrame:self.exampleBoundsWithInset];
     chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:chart];
 

@@ -12,25 +12,23 @@ class CalendarSelection: ExampleViewController, TKCalendarDelegate {
     let calendarView = TKCalendar()
     var unselectable:NSDate?
 
-    override init() {
-        super.init()
-
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
         self.addOption("Single date selection") { self.selectSingleMode() }
         self.addOption("Multiple dates selection") { self.selectMultipleMode() }
         self.addOption("Date range selection") { self.selectRangeMode() }
-        
+
         self.selectedOption = 2
     }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.calendarView.frame = self.view.bounds
-        self.calendarView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.calendarView.delegate = self
         self.calendarView.selectionMode = TKCalendarSelectionMode.Range
         self.view.addSubview(self.calendarView)
@@ -45,6 +43,11 @@ class CalendarSelection: ExampleViewController, TKCalendarDelegate {
         let endDate = self.calendarView.calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0));
         
         self.calendarView.selectedDatesRange = TKDateRange(start: startDate, end: endDate)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.calendarView.frame = self.exampleBounds
     }
     
     override func didReceiveMemoryWarning() {

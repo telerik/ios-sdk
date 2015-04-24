@@ -6,20 +6,42 @@
 //
 
 #import "SideDrawerCustomTransition.h"
-#import "SideDrawerCustomTransitionModal.h"
+#import "SideDrawerHeaderView.h"
+#import "MyTransition.h"
 
 @implementation SideDrawerCustomTransition
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    SideDrawerCustomTransitionModal *contentController = [[SideDrawerCustomTransitionModal alloc] init];
-    TKSideDrawerController *sideDrawerController = [[TKSideDrawerController alloc] initWithContent: contentController];
-    sideDrawerController.view.backgroundColor = [UIColor grayColor];
-    [self.navigationController presentViewController:sideDrawerController animated:YES completion:^{
-        [self.navigationController popViewControllerAnimated:NO];
-    }];
+    TKSideDrawer *sideDrawer = self.sideDrawer;
+    self.sideDrawer.headerView = [[SideDrawerHeaderView alloc] initWithButton:NO target:nil selector:nil];
+    self.sideDrawer.fill = [TKSolidFill solidFillWithColor:[UIColor grayColor]];
+    self.sideDrawer.width = 200;
+    self.sideDrawer.transitionManager = [[MyTransition alloc] initWithSideDrawer:sideDrawer];
+}
+
+- (UIView *)sideDrawerHeader
+{
+    TKSideDrawerHeader *sideDrawerHeader = [[TKSideDrawerHeader alloc] initWithTitle:@"Navigation Menu" button:nil image:nil];
+    sideDrawerHeader.buttonPosition = TKSideDrawerHeaderButtonPositionLeft;
+    sideDrawerHeader.contentInsets = UIEdgeInsetsMake(-15, -20, 0, 0);
+    return sideDrawerHeader;
+}
+
+#pragma mark TKSideDrawerDelegate
+
+- (void)sideDrawer:(TKSideDrawer *)sideDrawer updateVisualsForSection:(NSInteger)sectionIndex
+{
+    TKSideDrawerSection *section = sideDrawer.sections[sectionIndex];
+    section.style.contentInsets = UIEdgeInsetsMake(0, -15, 0, 0);
+}
+
+- (void)sideDrawer:(TKSideDrawer *)sideDrawer updateVisualsForItem:(NSInteger)item inSection:(NSInteger)section
+{
+    TKSideDrawerItem *currentItem = ((TKSideDrawerSection *)sideDrawer.sections[section]).items[item];
+    currentItem.style.contentInsets = UIEdgeInsetsMake(0, -5, 0, 0);
+    currentItem.style.separatorColor = [TKSolidFill solidFillWithColor:[UIColor clearColor]];
 }
 
 @end

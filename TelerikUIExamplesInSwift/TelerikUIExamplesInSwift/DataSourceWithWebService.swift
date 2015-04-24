@@ -17,8 +17,8 @@ class DataSourceWithWebService: ExampleViewController {
         // Do any additional setup after loading the view.
         self.title = "Consume web service"
         
-        let chart = TKChart(frame: self.view.bounds)
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        let chart = TKChart(frame: self.exampleBoundsWithInset)
+        chart.autoresizingMask = ~UIViewAutoresizing.None
         self.view.addSubview(chart)
 
         let url = "http://www.telerik.com/docs/default-source/ui-for-ios/weather.json?sfvrsn=2"
@@ -51,7 +51,7 @@ class DataSourceWithWebService: ExampleViewController {
             }
             
             self.dataSource.map {
-                let interval = $0.valueForKey("dateTime") as NSTimeInterval
+                let interval = $0.valueForKey("dateTime") as! NSTimeInterval
                 let date = NSDate(timeIntervalSince1970: interval)
                 $0.setValue(date, forKey: "dateTime")
                 return $0
@@ -66,7 +66,7 @@ class DataSourceWithWebService: ExampleViewController {
             
             let formatter = NSDateFormatter()
             formatter.dateFormat = "dd"
-            let xAxis:TKChartDateTimeAxis = chart.xAxis as TKChartDateTimeAxis
+            let xAxis:TKChartDateTimeAxis = chart.xAxis as! TKChartDateTimeAxis
             xAxis.majorTickInterval = 1
             xAxis.setPlotMode(TKChartAxisPlotMode.BetweenTicks)
             xAxis.labelFormatter = formatter

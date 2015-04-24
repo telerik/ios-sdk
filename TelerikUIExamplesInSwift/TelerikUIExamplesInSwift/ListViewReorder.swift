@@ -7,20 +7,20 @@
 
 import UIKit
 
-class ListViewReorder: ExampleViewController {
+class ListViewReorder: ExampleViewController{
 
     let listView = TKListView()
     let dataSource = TKDataSource()
     
-    override init() {
-        super.init()
-        
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
         self.addOption("Enable reorder mode") { self.enableReorderSelected() }
         self.addOption("Disable reorder mode") { self.disableReorderSelected() }
     }
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -52,4 +52,6 @@ class ListViewReorder: ExampleViewController {
     func disableReorderSelected() {
         listView.allowsCellReorder = false
     }
+    
+    
 }

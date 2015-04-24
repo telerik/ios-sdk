@@ -15,15 +15,15 @@ class CustomAnimationAreaChart: ExampleViewController, TKChartDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBounds
+        chart.frame = self.exampleBoundsWithInset
         chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         chart.allowAnimations = true
         chart.delegate = self
         self.view.addSubview(chart)
 
-        let points = NSMutableArray()
+        var points = [TKChartDataPoint]()
         for i in 0..<10 {
-            points.addObject(TKChartDataPoint(x: i, y: Int(arc4random() % 100)))
+            points.append(TKChartDataPoint(x: i, y: Int(arc4random() % 100)))
         }
         
         let areaSeries = TKChartAreaSeries(items: points)
@@ -53,10 +53,10 @@ class CustomAnimationAreaChart: ExampleViewController, TKChartDelegate {
     
     func chart(chart: TKChart!, animationForSeries series: TKChartSeries!, withState state: TKChartSeriesRenderState!, inRect rect: CGRect) -> CAAnimation! {
         let duration = 0.5
-        let animations = NSMutableArray()
+        var animations = [CAAnimation]()
         for i in 0..<state.points.count() {
-            let keyPath = NSString(format: "seriesRenderStates.%lu.points.%d.y", series.index, i)
-            let point = state.points.objectAtIndex(i) as TKChartVisualPoint
+            let keyPath = "seriesRenderStates.\(series.index).points.\(i).y"
+            let point = state.points.objectAtIndex(i) as! TKChartVisualPoint
             let oldY = rect.size.height
             
             let half = oldY + (point.y - oldY)/2 as CGFloat
@@ -65,7 +65,7 @@ class CustomAnimationAreaChart: ExampleViewController, TKChartDelegate {
             a.values = [oldY, half, point.y]
             a.duration = duration
             a.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-            animations.addObject(a)
+            animations.append(a)
         }
         
         let group = CAAnimationGroup()

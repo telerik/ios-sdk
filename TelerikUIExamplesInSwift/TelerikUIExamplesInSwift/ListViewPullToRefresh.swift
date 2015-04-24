@@ -16,6 +16,8 @@ class ListViewPullToRefresh: ExampleViewController, TKListViewDataSource, TKList
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.navigationBar.translucent = false
+        
         // Do any additional setup after loading the view.
         dataSource.loadDataFromJSONResource("ListViewSampleData", ofType:"json", rootItemKeyPath: "teams")
         dataSource.groupItemSourceKey = "items"
@@ -35,13 +37,19 @@ class ListViewPullToRefresh: ExampleViewController, TKListViewDataSource, TKList
         self.view.addSubview(listView)
     }
 
+    override func willMoveToParentViewController(parent: UIViewController?) {
+        if parent == nil {
+            self.navigationController?.navigationBar.translucent = true
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     func updateData(count: NSInteger) -> Int {
-      let group = dataSource.items[0] as TKDataSourceGroup
+      let group = dataSource.items[0] as! TKDataSourceGroup
       let startIndex = data.count
       var i = 0
         for ; i < count; i++ {
@@ -65,7 +73,7 @@ class ListViewPullToRefresh: ExampleViewController, TKListViewDataSource, TKList
     }
     
     func listView(listView: TKListView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> TKListViewCell! {
-        let cell = listView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as TKListViewCell
+        let cell = listView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! TKListViewCell
         let isUpdated = self.isUpdated(indexPath)
         cell.textLabel.text = data[indexPath.row]
         let backgroundView : UIView = cell.backgroundView!

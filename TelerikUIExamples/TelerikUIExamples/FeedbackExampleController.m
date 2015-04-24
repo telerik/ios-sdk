@@ -5,7 +5,7 @@
 //  Copyright (c) 2014 Telerik. All rights reserved.
 //
 #import <TelerikUI/TelerikUI.h>
-#import <TelerikAppFeedback/AppFeedback.h>
+#import <TelerikAppFeedback/TelerikAppFeedback.h>
 #import "FeedbackExampleController.h"
 
 

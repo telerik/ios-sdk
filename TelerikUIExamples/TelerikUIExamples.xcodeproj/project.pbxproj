@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0113350118151E47008E6477 /* CustomAnimationAreaChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0113350018151E47008E6477 /* CustomAnimationAreaChart.m */; };
 		192004F6193C7285003B1BB8 /* applestock.plist in Resources */ = {isa = PBXBuildFile; fileRef = 192004F5193C7285003B1BB8 /* applestock.plist */; };
-		19201E861A815BE200472531 /* SideDrawerPositionsModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 19201E851A815BE200472531 /* SideDrawerPositionsModal.m */; };
 		193BB85E19C1A8CD00143087 /* MyPointLabelRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 193BB85D19C1A8CD00143087 /* MyPointLabelRender.m */; };
 		193BB86119C1A8F000143087 /* CustomPointLabelRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 193BB86019C1A8F000143087 /* CustomPointLabelRender.m */; };
 		194609081A8D0821005101D6 /* SideDrawerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 194609071A8D0821005101D6 /* SideDrawerHeaderView.m */; };
@@ -19,17 +18,13 @@
 		19861127191A2E240026EFF7 /* AppleStockPrices.json in Resources */ = {isa = PBXBuildFile; fileRef = 19861126191A2E240026EFF7 /* AppleStockPrices.json */; };
 		1986112A191A2E550026EFF7 /* FinancialChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 19861129191A2E550026EFF7 /* FinancialChart.m */; };
 		19953A6F1A7BD26D001B9513 /* SideDrawerTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 19953A6E1A7BD26D001B9513 /* SideDrawerTransitions.m */; };
-		19953A7C1A7BDCB9001B9513 /* SideDrawerTransitionsModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 19953A7B1A7BDCB9001B9513 /* SideDrawerTransitionsModal.m */; };
-		199585DC1A89DB3500672B53 /* ScaleContentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 199585DB1A89DB3500672B53 /* ScaleContentTransition.m */; };
-		19A2A0201A80F63B00378C68 /* SideDrawerCustomContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A01F1A80F63B00378C68 /* SideDrawerCustomContent.m */; };
-		19A2A0231A80F65900378C68 /* SideDrawerCustomContentModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A0221A80F65900378C68 /* SideDrawerCustomContentModal.m */; };
+		19A2A0201A80F63B00378C68 /* SideDrawerCustomContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A01F1A80F63B00378C68 /* SideDrawerCustomContentController.m */; };
 		19A2A02B1A811B6F00378C68 /* SideDrawerCustomTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A02A1A811B6F00378C68 /* SideDrawerCustomTransition.m */; };
-		19A2A02E1A811BB500378C68 /* SideDrawerCustomTransitionModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A02D1A811BB500378C68 /* SideDrawerCustomTransitionModal.m */; };
 		19A2A0321A8124E400378C68 /* SideDrawerPositions.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A0311A8124E400378C68 /* SideDrawerPositions.m */; };
 		19B26F8A1A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B26F891A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m */; };
-		19B26F8D1A7A6B8C0081FEB1 /* SideDrawerGettingStartedModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B26F8C1A7A6B8C0081FEB1 /* SideDrawerGettingStartedModal.m */; };
 		19BAD0F219D43A0500803C27 /* LiveData.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BAD0F119D43A0500803C27 /* LiveData.m */; };
 		19C152CC193F668800770199 /* BubbleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C152CB193F668800770199 /* BubbleChart.m */; };
+		19DCA00F1ABB1457009C5D62 /* MyTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 19DCA00E1ABB1457009C5D62 /* MyTransition.m */; };
 		19E9055619BF11FB00A325D8 /* PointLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E9055519BF11FB00A325D8 /* PointLabels.m */; };
 		19E9055A19BF38F700A325D8 /* CustomPointLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E9055919BF38F700A325D8 /* CustomPointLabels.m */; };
 		19E9055D19BF391800A325D8 /* MyPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E9055C19BF391800A325D8 /* MyPointLabel.m */; };
@@ -61,11 +56,11 @@
 		FE3CF5901807F74C00461E57 /* NegativeValues.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF58F1807F74C00461E57 /* NegativeValues.m */; };
 		FE3CF593180802D000461E57 /* PanZoom.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF592180802D000461E57 /* PanZoom.m */; };
 		FE5386481A8E50DC00DE6941 /* ListViewSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = FE5386471A8E50DC00DE6941 /* ListViewSampleData.json */; };
-		FE5549DC1A9F8B4700C39375 /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5549DA1A9F8B4700C39375 /* TelerikAppFeedback.framework */; };
-		FE5549DD1A9F8B4700C39375 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5549DB1A9F8B4700C39375 /* TelerikUI.framework */; };
 		FE5F963F1A93933100E70AF2 /* ListViewGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F963E1A93933100E70AF2 /* ListViewGettingStarted.m */; };
 		FE5F96421A93A68F00E70AF2 /* OptionSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F96411A93A68F00E70AF2 /* OptionSection.m */; };
 		FE7131B8192FA4E400B9C231 /* CalendarTransitonEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7131B7192FA4E400B9C231 /* CalendarTransitonEffects.m */; };
+		FE74ACF71AEA28210025137E /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE74ACF51AEA28210025137E /* TelerikAppFeedback.framework */; };
+		FE74ACF81AEA28210025137E /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE74ACF61AEA28210025137E /* TelerikUI.framework */; };
 		FE8701831941E2A700AC1D05 /* CalendarCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701821941E2A700AC1D05 /* CalendarCustomization.m */; };
 		FE8701D119420E4000AC1D05 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701D019420E4000AC1D05 /* CustomCell.m */; };
 		FE8701D91942141400AC1D05 /* CalendarEventKitDataBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701D81942141400AC1D05 /* CalendarEventKitDataBinding.m */; };
@@ -119,8 +114,6 @@
 		011334FF18151E47008E6477 /* CustomAnimationAreaChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimationAreaChart.h; sourceTree = "<group>"; };
 		0113350018151E47008E6477 /* CustomAnimationAreaChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnimationAreaChart.m; sourceTree = "<group>"; };
 		192004F5193C7285003B1BB8 /* applestock.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = applestock.plist; sourceTree = "<group>"; };
-		19201E841A815BE200472531 /* SideDrawerPositionsModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerPositionsModal.h; sourceTree = "<group>"; };
-		19201E851A815BE200472531 /* SideDrawerPositionsModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerPositionsModal.m; sourceTree = "<group>"; };
 		193BB85C19C1A8CD00143087 /* MyPointLabelRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPointLabelRender.h; sourceTree = "<group>"; };
 		193BB85D19C1A8CD00143087 /* MyPointLabelRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPointLabelRender.m; sourceTree = "<group>"; };
 		193BB85F19C1A8F000143087 /* CustomPointLabelRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPointLabelRender.h; sourceTree = "<group>"; };
@@ -138,28 +131,20 @@
 		19861129191A2E550026EFF7 /* FinancialChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialChart.m; sourceTree = "<group>"; };
 		19953A6D1A7BD26D001B9513 /* SideDrawerTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerTransitions.h; sourceTree = "<group>"; };
 		19953A6E1A7BD26D001B9513 /* SideDrawerTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerTransitions.m; sourceTree = "<group>"; };
-		19953A7A1A7BDCB9001B9513 /* SideDrawerTransitionsModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerTransitionsModal.h; sourceTree = "<group>"; };
-		19953A7B1A7BDCB9001B9513 /* SideDrawerTransitionsModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerTransitionsModal.m; sourceTree = "<group>"; };
-		199585DA1A89DB3500672B53 /* ScaleContentTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleContentTransition.h; sourceTree = "<group>"; };
-		199585DB1A89DB3500672B53 /* ScaleContentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleContentTransition.m; sourceTree = "<group>"; };
-		19A2A01E1A80F63B00378C68 /* SideDrawerCustomContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerCustomContent.h; sourceTree = "<group>"; };
-		19A2A01F1A80F63B00378C68 /* SideDrawerCustomContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerCustomContent.m; sourceTree = "<group>"; };
-		19A2A0211A80F65900378C68 /* SideDrawerCustomContentModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerCustomContentModal.h; sourceTree = "<group>"; };
-		19A2A0221A80F65900378C68 /* SideDrawerCustomContentModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerCustomContentModal.m; sourceTree = "<group>"; };
+		19A2A01E1A80F63B00378C68 /* SideDrawerCustomContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerCustomContentController.h; sourceTree = "<group>"; };
+		19A2A01F1A80F63B00378C68 /* SideDrawerCustomContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerCustomContentController.m; sourceTree = "<group>"; };
 		19A2A0291A811B6F00378C68 /* SideDrawerCustomTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerCustomTransition.h; sourceTree = "<group>"; };
 		19A2A02A1A811B6F00378C68 /* SideDrawerCustomTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerCustomTransition.m; sourceTree = "<group>"; };
-		19A2A02C1A811BB500378C68 /* SideDrawerCustomTransitionModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerCustomTransitionModal.h; sourceTree = "<group>"; };
-		19A2A02D1A811BB500378C68 /* SideDrawerCustomTransitionModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerCustomTransitionModal.m; sourceTree = "<group>"; };
 		19A2A0301A8124E400378C68 /* SideDrawerPositions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerPositions.h; sourceTree = "<group>"; };
 		19A2A0311A8124E400378C68 /* SideDrawerPositions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerPositions.m; sourceTree = "<group>"; };
 		19B26F881A7A6B4D0081FEB1 /* SideDrawerGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerGettingStarted.h; sourceTree = "<group>"; };
 		19B26F891A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerGettingStarted.m; sourceTree = "<group>"; };
-		19B26F8B1A7A6B8C0081FEB1 /* SideDrawerGettingStartedModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerGettingStartedModal.h; sourceTree = "<group>"; };
-		19B26F8C1A7A6B8C0081FEB1 /* SideDrawerGettingStartedModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerGettingStartedModal.m; sourceTree = "<group>"; };
 		19BAD0F019D43A0500803C27 /* LiveData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveData.h; sourceTree = "<group>"; };
 		19BAD0F119D43A0500803C27 /* LiveData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveData.m; sourceTree = "<group>"; };
 		19C152CA193F668800770199 /* BubbleChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleChart.h; sourceTree = "<group>"; };
 		19C152CB193F668800770199 /* BubbleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleChart.m; sourceTree = "<group>"; };
+		19DCA00D1ABB1457009C5D62 /* MyTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTransition.h; sourceTree = "<group>"; };
+		19DCA00E1ABB1457009C5D62 /* MyTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTransition.m; sourceTree = "<group>"; };
 		19E9055419BF11FB00A325D8 /* PointLabels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointLabels.h; sourceTree = "<group>"; };
 		19E9055519BF11FB00A325D8 /* PointLabels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointLabels.m; sourceTree = "<group>"; };
 		19E9055819BF38F700A325D8 /* CustomPointLabels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPointLabels.h; sourceTree = "<group>"; };
@@ -216,14 +201,14 @@
 		FE3CF591180802D000461E57 /* PanZoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanZoom.h; sourceTree = "<group>"; };
 		FE3CF592180802D000461E57 /* PanZoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanZoom.m; sourceTree = "<group>"; };
 		FE5386471A8E50DC00DE6941 /* ListViewSampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListViewSampleData.json; sourceTree = "<group>"; };
-		FE5549DA1A9F8B4700C39375 /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
-		FE5549DB1A9F8B4700C39375 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FE5F963D1A93933100E70AF2 /* ListViewGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewGettingStarted.h; sourceTree = "<group>"; };
 		FE5F963E1A93933100E70AF2 /* ListViewGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewGettingStarted.m; sourceTree = "<group>"; };
 		FE5F96401A93A68F00E70AF2 /* OptionSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionSection.h; sourceTree = "<group>"; };
 		FE5F96411A93A68F00E70AF2 /* OptionSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionSection.m; sourceTree = "<group>"; };
 		FE7131B6192FA4E400B9C231 /* CalendarTransitionEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTransitionEffects.h; sourceTree = "<group>"; };
 		FE7131B7192FA4E400B9C231 /* CalendarTransitonEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTransitonEffects.m; sourceTree = "<group>"; };
+		FE74ACF51AEA28210025137E /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
+		FE74ACF61AEA28210025137E /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikAppFeedback.a; path = "../AppFeedback/build/Debug-iphoneos/libTelerikAppFeedback.a"; sourceTree = "<group>"; };
 		FE8701811941E2A700AC1D05 /* CalendarCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarCustomization.h; sourceTree = "<group>"; };
 		FE8701821941E2A700AC1D05 /* CalendarCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarCustomization.m; sourceTree = "<group>"; };
@@ -324,8 +309,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE5549DC1A9F8B4700C39375 /* TelerikAppFeedback.framework in Frameworks */,
-				FE5549DD1A9F8B4700C39375 /* TelerikUI.framework in Frameworks */,
+				FE74ACF71AEA28210025137E /* TelerikAppFeedback.framework in Frameworks */,
+				FE74ACF81AEA28210025137E /* TelerikUI.framework in Frameworks */,
 				FE8701E4194218AB00AC1D05 /* EventKit.framework in Frameworks */,
 				FE8701E5194218AB00AC1D05 /* EventKitUI.framework in Frameworks */,
 				FEE2697F1806DBA300E52C37 /* UIKit.framework in Frameworks */,
@@ -365,8 +350,6 @@
 			children = (
 				19B26F881A7A6B4D0081FEB1 /* SideDrawerGettingStarted.h */,
 				19B26F891A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m */,
-				19B26F8B1A7A6B8C0081FEB1 /* SideDrawerGettingStartedModal.h */,
-				19B26F8C1A7A6B8C0081FEB1 /* SideDrawerGettingStartedModal.m */,
 			);
 			name = GettingStartedExample;
 			sourceTree = "<group>";
@@ -376,8 +359,6 @@
 			children = (
 				19953A6D1A7BD26D001B9513 /* SideDrawerTransitions.h */,
 				19953A6E1A7BD26D001B9513 /* SideDrawerTransitions.m */,
-				19953A7A1A7BDCB9001B9513 /* SideDrawerTransitionsModal.h */,
-				19953A7B1A7BDCB9001B9513 /* SideDrawerTransitionsModal.m */,
 			);
 			name = TransitionsExample;
 			sourceTree = "<group>";
@@ -385,10 +366,8 @@
 		19A2A01D1A80F61F00378C68 /* CustomContentExample */ = {
 			isa = PBXGroup;
 			children = (
-				19A2A01E1A80F63B00378C68 /* SideDrawerCustomContent.h */,
-				19A2A01F1A80F63B00378C68 /* SideDrawerCustomContent.m */,
-				19A2A0211A80F65900378C68 /* SideDrawerCustomContentModal.h */,
-				19A2A0221A80F65900378C68 /* SideDrawerCustomContentModal.m */,
+				19A2A01E1A80F63B00378C68 /* SideDrawerCustomContentController.h */,
+				19A2A01F1A80F63B00378C68 /* SideDrawerCustomContentController.m */,
 			);
 			name = CustomContentExample;
 			sourceTree = "<group>";
@@ -396,12 +375,10 @@
 		19A2A0241A81076B00378C68 /* CustomTransitionExample */ = {
 			isa = PBXGroup;
 			children = (
-				199585DA1A89DB3500672B53 /* ScaleContentTransition.h */,
-				199585DB1A89DB3500672B53 /* ScaleContentTransition.m */,
 				19A2A0291A811B6F00378C68 /* SideDrawerCustomTransition.h */,
 				19A2A02A1A811B6F00378C68 /* SideDrawerCustomTransition.m */,
-				19A2A02C1A811BB500378C68 /* SideDrawerCustomTransitionModal.h */,
-				19A2A02D1A811BB500378C68 /* SideDrawerCustomTransitionModal.m */,
+				19DCA00D1ABB1457009C5D62 /* MyTransition.h */,
+				19DCA00E1ABB1457009C5D62 /* MyTransition.m */,
 			);
 			name = CustomTransitionExample;
 			sourceTree = "<group>";
@@ -411,8 +388,6 @@
 			children = (
 				19A2A0301A8124E400378C68 /* SideDrawerPositions.h */,
 				19A2A0311A8124E400378C68 /* SideDrawerPositions.m */,
-				19201E841A815BE200472531 /* SideDrawerPositionsModal.h */,
-				19201E851A815BE200472531 /* SideDrawerPositionsModal.m */,
 			);
 			name = PositionsExample;
 			sourceTree = "<group>";
@@ -615,8 +590,8 @@
 		FEE269791806DBA300E52C37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FE5549DA1A9F8B4700C39375 /* TelerikAppFeedback.framework */,
-				FE5549DB1A9F8B4700C39375 /* TelerikUI.framework */,
+				FE74ACF51AEA28210025137E /* TelerikAppFeedback.framework */,
+				FE74ACF61AEA28210025137E /* TelerikUI.framework */,
 				FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */,
 				FEE8E7901887DF6E009D373B /* libTelerikUI.a */,
 				FE8701E2194218AB00AC1D05 /* EventKit.framework */,
@@ -864,22 +839,20 @@
 				FE17150F1A961B7F000EB4C9 /* CustomCardListViewCell.m in Sources */,
 				FE8A36D518A3E65B0081EECA /* LayerAnnotation.m in Sources */,
 				FEEAEBDC18080AAC00D75A5C /* UIKitDynamicsAnimation.m in Sources */,
+				19DCA00F1ABB1457009C5D62 /* MyTransition.m in Sources */,
 				7A0FD505194B1732004B5A8D /* FeedbackExampleController.m in Sources */,
 				FE5F96421A93A68F00E70AF2 /* OptionSection.m in Sources */,
 				FEE269B51806DC9000E52C37 /* ExampleInfo.m in Sources */,
 				FE3CF5871807F6F700461E57 /* CategoricalAxis.m in Sources */,
-				199585DC1A89DB3500672B53 /* ScaleContentTransition.m in Sources */,
 				FEE269DA180708CD00E52C37 /* StackedAreaChart.m in Sources */,
 				19BAD0F219D43A0500803C27 /* LiveData.m in Sources */,
 				8DDC67051A8CFEC600FDE377 /* ListViewLayout.m in Sources */,
-				19953A7C1A7BDCB9001B9513 /* SideDrawerTransitionsModal.m in Sources */,
 				FEE269D7180708B900E52C37 /* StackedColumnChart.m in Sources */,
 				FE8701D91942141400AC1D05 /* CalendarEventKitDataBinding.m in Sources */,
 				FEB4260119336F1D00C2A602 /* CalendarSelection.m in Sources */,
 				FEEAEBD918080A9A00D75A5C /* CustomAnimationPieChart.m in Sources */,
 				FE3CF5841807F6E900461E57 /* NumericAxis.m in Sources */,
 				FE8701D119420E4000AC1D05 /* CustomCell.m in Sources */,
-				19A2A0231A80F65900378C68 /* SideDrawerCustomContentModal.m in Sources */,
 				193BB86119C1A8F000143087 /* CustomPointLabelRender.m in Sources */,
 				FE7131B8192FA4E400B9C231 /* CalendarTransitonEffects.m in Sources */,
 				FEA0D2DF1A821C340014CD96 /* DataSourceUIBindings.m in Sources */,
@@ -889,12 +862,10 @@
 				FEC0CF2D1A975BA30088A158 /* SimpleListViewCell.m in Sources */,
 				1956644719C9C678002F77EB /* SelectedPointLabel.m in Sources */,
 				FEB42604193374A500C2A602 /* iOS7StyleCalendar.m in Sources */,
-				19201E861A815BE200472531 /* SideDrawerPositionsModal.m in Sources */,
 				19E9055D19BF391800A325D8 /* MyPointLabel.m in Sources */,
 				19B26F8A1A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m in Sources */,
 				FEEAEBD318080A7600D75A5C /* DefaultAnimation.m in Sources */,
 				FEE269BD1806E20300E52C37 /* ExampleViewController.m in Sources */,
-				19B26F8D1A7A6B8C0081FEB1 /* SideDrawerGettingStartedModal.m in Sources */,
 				0113350118151E47008E6477 /* CustomAnimationAreaChart.m in Sources */,
 				FEE269CE180704F200E52C37 /* ScatterChart.m in Sources */,
 				FEE2698B1806DBA300E52C37 /* AppDelegate.m in Sources */,
@@ -917,7 +888,7 @@
 				FE8A36DB18A3E6780081EECA /* CrossLineAnnotation.m in Sources */,
 				1986112A191A2E550026EFF7 /* FinancialChart.m in Sources */,
 				FEEAEBE01808160000D75A5C /* BindWithDataPoint.m in Sources */,
-				19A2A0201A80F63B00378C68 /* SideDrawerCustomContent.m in Sources */,
+				19A2A0201A80F63B00378C68 /* SideDrawerCustomContentController.m in Sources */,
 				FEE269C01806E28500E52C37 /* OptionInfo.m in Sources */,
 				FE8A36E118A4009A0081EECA /* CustomAnnotation.m in Sources */,
 				FE17151B1A963D81000EB4C9 /* ImageWithTextListViewCell.m in Sources */,
@@ -931,7 +902,6 @@
 				FE8A36D818A3E6690081EECA /* ViewAnnotation.m in Sources */,
 				C1639F361A86B72500E86743 /* ListViewLoadOnDemand.m in Sources */,
 				8D6F5B7A1A8615E2008A8EF2 /* ListViewAnimations.m in Sources */,
-				19A2A02E1A811BB500378C68 /* SideDrawerCustomTransitionModal.m in Sources */,
 				FEE269871806DBA300E52C37 /* main.m in Sources */,
 				8DDC67081A8E1D4C00FDE377 /* ListViewPullToRefresh.m in Sources */,
 				FE8A36D218A3E4BA0081EECA /* Trackball.m in Sources */,

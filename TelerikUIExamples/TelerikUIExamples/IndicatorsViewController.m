@@ -28,6 +28,7 @@
     if (self) {
         _indicators = [[NSMutableArray alloc] init];
         _trendlines = [[NSMutableArray alloc] init];
+        
         [self addTrendlineOption:@"Simple moving average" selector:@selector(addOverlayToChart:) tag:[TKChartSimpleMovingAverageIndicator class]];
         [self addTrendlineOption:@"Exponential moving average" selector:@selector(addOverlayToChart:) tag:[TKChartExponentialMovingAverageIndicator class]];
         [self addTrendlineOption:@"Weighted moving average" selector:@selector(addOverlayToChart:) tag:[TKChartWeightedMovingAverageIndicator class]];
@@ -77,9 +78,12 @@
 {
     [super viewDidLoad];
     
-    CGRect exampleBounds = [self exampleBounds];
-    CGRect overlayChartBounds = CGRectMake(exampleBounds.origin.x, exampleBounds.origin.y, exampleBounds.size.width, exampleBounds.size.height / 1.5);
-    CGRect indicatorsChartBounds = CGRectMake(exampleBounds.origin.x, overlayChartBounds.size.height + 15, exampleBounds.size.width, exampleBounds.size.height / 3);
+    CGRect exampleBounds = self.exampleBoundsWithInset;
+    CGRect overlayChartBounds = CGRectMake(exampleBounds.origin.x, exampleBounds.origin.y,
+                                           exampleBounds.size.width, exampleBounds.size.height / 1.5);
+    CGFloat indicatorsOffset = exampleBounds.origin.y + overlayChartBounds.size.height + 15;
+    CGRect indicatorsChartBounds = CGRectMake(exampleBounds.origin.x, indicatorsOffset,
+                                              exampleBounds.size.width, self.view.bounds.size.height - indicatorsOffset);
     
     _overlayChart = [[TKChart alloc] initWithFrame:overlayChartBounds];
     _overlayChart.gridStyle.verticalLinesHidden = NO;
@@ -124,7 +128,6 @@
     TKChartFinancialIndicator *indicator = [[indicatorClass alloc] initWithSeries:_series];
     indicator.selectionMode = TKChartSeriesSelectionModeSeries;
     [_overlayChart addSeries:indicator];
-    [_overlayChart reloadData];
 }
 
 - (void)addIndicatorToChart:(OptionInfo *)option
@@ -156,7 +159,6 @@
     xAxis.pan = _overlayChart.xAxis.pan;
     xAxis.majorTickIntervalUnit = TKChartDateTimeAxisIntervalUnitYears;
     xAxis.majorTickInterval = 1;
-    [_indicatorsChart reloadData];
 }
 
 - (void)settingsTouched

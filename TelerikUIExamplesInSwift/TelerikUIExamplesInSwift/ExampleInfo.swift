@@ -9,16 +9,16 @@ import Foundation
 
 class ExampleInfo : NSObject {
     
-    let title : NSString
-    var examples : NSArray?
+    let title : String
+    var examples = [ExampleInfo]()
     var exampleFunc: () -> (UIViewController)
     
-    init(title: NSString, example exampleFunc:() -> (UIViewController)) {
+    init(title: String, example exampleFunc:() -> (UIViewController)) {
         self.exampleFunc = exampleFunc
         self.title = title
     }
     
-    init(title: NSString, exampleList examples:NSArray) {
+    init(title: String, exampleList examples:[ExampleInfo]) {
         exampleFunc = { ViewController() }
         self.examples = examples
         self.title = title
@@ -26,8 +26,8 @@ class ExampleInfo : NSObject {
     
     func createController() -> UIViewController {
         var controller = exampleFunc()
-        if let e = examples {
-           (controller as ViewController).initWithExample(self)
+        if examples.count > 0 {
+           (controller as! ViewController).initWithExample(self)
         }
         controller.title = self.title
         return controller
