@@ -47,7 +47,7 @@ namespace Examples
 			this.SideDrawerView.SideDrawer.Position = TKSideDrawerPosition.Top;
 			this.SideDrawerView.SideDrawer.HeaderView = new SideDrawerHeader (false, null, null);
 			TKSideDrawerTableView table = (TKSideDrawerTableView)this.SideDrawerView.SideDrawerContentView;
-			table.TableView.SetContentOffset (CGPoint.Empty, false);
+			table.SetContentOffset (CGPoint.Empty, false);
 			this.SideDrawerView.SideDrawer.AllowScroll = true;
 			this.SideDrawerView.SideDrawer.Show ();
 		}
@@ -58,7 +58,7 @@ namespace Examples
 			this.SideDrawerView.SideDrawer.Position = TKSideDrawerPosition.Bottom;
 			this.SideDrawerView.SideDrawer.HeaderView = new SideDrawerHeader (true, this, new Selector ("DismissSideDrawer"));
 			TKSideDrawerTableView table = (TKSideDrawerTableView)this.SideDrawerView.SideDrawerContentView;
-			table.TableView.SetContentOffset (CGPoint.Empty, false);
+			table.SetContentOffset (CGPoint.Empty, false);
 			this.SideDrawerView.SideDrawer.AllowScroll = true;
 			this.SideDrawerView.SideDrawer.Show ();
 		}

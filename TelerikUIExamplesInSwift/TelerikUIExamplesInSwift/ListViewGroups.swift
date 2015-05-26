@@ -25,11 +25,10 @@ class ListViewGroups: ExampleViewController {
         listView.selectionBehavior = TKListViewSelectionBehavior.Press
         self.view.addSubview(listView)
         
-        let layout : TKListViewColumnsLayout = listView.layout as! TKListViewColumnsLayout
+        let layout = listView.layout as! TKListViewLinearLayout
         
-        layout.cellAlignment = TKListViewCellAlignment.Stretch
         layout.itemSize = CGSizeMake(300, 44)
-        layout.minimumLineSpacing = 0
+        layout.itemSpacing = 0
         layout.headerReferenceSize = CGSizeMake(100, 44);
         layout.footerReferenceSize = CGSizeMake(100, 44);
         

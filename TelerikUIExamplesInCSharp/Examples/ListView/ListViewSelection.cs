@@ -42,9 +42,9 @@ namespace Examples
 			this.listView.AllowsMultipleSelection = true;
 			this.View.AddSubview (this.listView);
 
-			TKListViewColumnsLayout layout = new TKListViewColumnsLayout ();
-			layout.CellAlignment = TKListViewCellAlignment.Stretch;
-			layout.MinimumLineSpacing = 0;
+			TKListViewLinearLayout layout = new TKListViewLinearLayout ();
+			layout.ItemAlignment = TKListViewItemAlignment.Stretch;
+			layout.ItemSpacing = 0;
 
 			NSIndexPath indexPath = NSIndexPath.FromRowSection (1, 0);
 			this.listView.SelectItem (indexPath, false, UICollectionViewScrollPosition.None);

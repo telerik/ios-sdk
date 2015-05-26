@@ -36,14 +36,13 @@
     listView.delegate = self;
     listView.dataSource = self;
     listView.cellBufferSize = 5;
-    listView.insets = UIEdgeInsetsMake(10, 10, 10, 10);
+    listView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10);
     [self.view addSubview:listView];
     [listView registerClass:[CustomCardListViewCell class] forCellWithReuseIdentifier:@"cell"];
     
-    TKListViewColumnsLayout *layout = (TKListViewColumnsLayout*)listView.layout;
+    TKListViewLinearLayout *layout = (TKListViewLinearLayout*)listView.layout;
     layout.itemSize = CGSizeMake(100, 120);
-    layout.minimumLineSpacing = 5;
-    layout.cellAlignment = TKListViewCellAlignmentStretch;
+    layout.itemSpacing = 5;
 }
 
 - (void)didReceiveMemoryWarning

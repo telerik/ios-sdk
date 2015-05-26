@@ -45,9 +45,9 @@ class ListViewSelection: ExampleViewController, TKListViewDelegate {
         
         self.listView.selectItemAtIndexPath(NSIndexPath(forItem: 1, inSection: 0), animated: false, scrollPosition: UICollectionViewScrollPosition.None)
         
-        let layout : TKListViewColumnsLayout = listView.layout as! TKListViewColumnsLayout
-        layout.cellAlignment = TKListViewCellAlignment.Stretch
-        layout.minimumLineSpacing = 0
+        let layout = listView.layout as! TKListViewLinearLayout
+        layout.itemAlignment = TKListViewItemAlignment.Stretch
+        layout.itemSpacing = 0
         
         self.label.frame = CGRectMake(0, self.view.bounds.size.height-44, self.view.bounds.size.width, 44)
         self.label.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin

@@ -18,7 +18,6 @@ class ListViewAnimations: ExampleViewController {
         self.addOption("Scale in") { self.scaleInSelected() }
         self.addOption("Fade in") { self.fadeInSelected() }
         self.addOption("Slide in") { self.slideInSelected() }
-        self.addOption("Fade + Scale in") { self.dafePlusScaleSelected() }
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -30,28 +29,35 @@ class ListViewAnimations: ExampleViewController {
 
         // Do any additional setup after loading the view.
         self.dataSource.loadDataFromJSONResource("ListViewSampleData", ofType: "json", rootItemKeyPath: "photos")
+        
+        self.dataSource.settings.listView.createCell { (TKListView listView, NSIndexPath indexPath, AnyObject item) -> TKListViewCell! in
+            return listView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! TKListViewCell
+        }
+        
         self.dataSource.settings.listView.initCell { (listView: TKListView!, indexPath: NSIndexPath!, cell: TKListViewCell!, item: AnyObject!) -> Void in
             cell.imageView.image = UIImage(named: self.dataSource.items[indexPath.row] as! String)
-            let view : TKView = cell.backgroundView as! TKView
-            view.stroke.width = 0
-            
-            cell.imageView.layer.shadowColor = UIColor(red: 0.27, green: 0.27, blue: 0.55, alpha: 1.0).CGColor
-            cell.imageView.layer.shadowOffset = CGSizeMake(2, 2)
-            cell.imageView.layer.shadowOpacity = 0.5
-            cell.imageView.layer.shadowRadius = 3
-
         }
+
         self.listView.frame = self.view.bounds
         self.listView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.listView.dataSource = self.dataSource
-        self.listView.cellAppearBehavior = TKListViewCellAppearBehavior()
+        self.listView.registerClass(AnimationListCell.self, forCellWithReuseIdentifier: "cell")
         self.view.addSubview(self.listView)
-        let layout = listView.layout as! TKListViewColumnsLayout
+        
+        let layout = TKListViewGridLayout()
+        if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
+            layout.spanCount = 3
+        }
+        else {
+            layout.spanCount = 2
+        }
         layout.itemSize = CGSizeMake(130, 180)
-        layout.minimumLineSpacing = 10
-        layout.cellAlignment = TKListViewCellAlignment.Stretch
-        self.scaleInSelected()
-
+        layout.itemSpacing = 10
+        layout.lineSpacing = 10
+        layout.itemAlignment = TKListViewItemAlignment.Center
+        layout.itemAppearAnimation = TKListViewItemAnimation.Scale
+        layout.animationDuration = 0.4
+        self.listView.layout = layout
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,19 +66,17 @@ class ListViewAnimations: ExampleViewController {
     }
     
     func fadeInSelected() {
-        self.listView.cellAppearBehavior = TKListViewCellFadeInBehavior()
+        let layout = listView.layout as! TKListViewLinearLayout
+        layout.itemAppearAnimation = TKListViewItemAnimation.Fade
     }
     
     func slideInSelected() {
-        self.listView.cellAppearBehavior = TKListViewCellSlideInBehavior()
+        let layout = listView.layout as! TKListViewLinearLayout
+        layout.itemAppearAnimation = TKListViewItemAnimation.Slide
     }
     
     func scaleInSelected() {
-        self.listView.cellAppearBehavior = TKListViewCellScaleInBehavior()
-    }
-    
-    func dafePlusScaleSelected() {
-        self.listView.cellAppearBehavior = TKListViewCellFadeInBehavior()
-        self.listView.cellAppearBehavior.addChildBehavior(TKListViewCellScaleInBehavior())
+        let layout = listView.layout as! TKListViewLinearLayout
+        layout.itemAppearAnimation = TKListViewItemAnimation.Scale
     }
 }

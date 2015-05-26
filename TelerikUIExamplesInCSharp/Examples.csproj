@@ -9,8 +9,6 @@
     <RootNamespace>Examples</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>ExamplesDemo</AssemblyName>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -209,6 +207,51 @@
     <BundleResource Include="Resources\WHITCM.jpg" />
     <BundleResource Include="Resources\WILMKM.jpg" />
     <BundleResource Include="Resources\WOLZAM.jpg" />
+    <BundleResource Include="Resources\ListItems.json" />
+    <BundleResource Include="Resources\breakfast1.jpg" />
+    <BundleResource Include="Resources\breakfast2.jpg" />
+    <BundleResource Include="Resources\breakfast3.jpg" />
+    <BundleResource Include="Resources\breakfast4.jpg" />
+    <BundleResource Include="Resources\breakfast5.jpg" />
+    <BundleResource Include="Resources\breakfast6.jpg" />
+    <BundleResource Include="Resources\dessert1.jpg" />
+    <BundleResource Include="Resources\dessert2.jpg" />
+    <BundleResource Include="Resources\dessert3.jpg" />
+    <BundleResource Include="Resources\dessert4.jpg" />
+    <BundleResource Include="Resources\dessert5.jpg" />
+    <BundleResource Include="Resources\dessert6.jpg" />
+    <BundleResource Include="Resources\dessert7.jpg" />
+    <BundleResource Include="Resources\dessert8.jpg" />
+    <BundleResource Include="Resources\drink1.jpg" />
+    <BundleResource Include="Resources\drink2.jpg" />
+    <BundleResource Include="Resources\drink3.jpg" />
+    <BundleResource Include="Resources\drink4.jpg" />
+    <BundleResource Include="Resources\drink5.jpg" />
+    <BundleResource Include="Resources\drink6.jpg" />
+    <BundleResource Include="Resources\drink7.jpg" />
+    <BundleResource Include="Resources\drink8.jpg" />
+    <BundleResource Include="Resources\drink9.jpg" />
+    <BundleResource Include="Resources\drink10.jpg" />
+    <BundleResource Include="Resources\drink11.jpg" />
+    <BundleResource Include="Resources\drink12.jpg" />
+    <BundleResource Include="Resources\main1.jpg" />
+    <BundleResource Include="Resources\main2.jpg" />
+    <BundleResource Include="Resources\main3.jpg" />
+    <BundleResource Include="Resources\main4.jpg" />
+    <BundleResource Include="Resources\main5.jpg" />
+    <BundleResource Include="Resources\main6.jpg" />
+    <BundleResource Include="Resources\main7.jpg" />
+    <BundleResource Include="Resources\main8.jpg" />
+    <BundleResource Include="Resources\main9.jpg" />
+    <BundleResource Include="Resources\main10.jpg" />
+    <BundleResource Include="Resources\main11.jpg" />
+    <BundleResource Include="Resources\main12.jpg" />
+    <BundleResource Include="Resources\main13.jpg" />
+    <BundleResource Include="Resources\paleo1.jpg" />
+    <BundleResource Include="Resources\paleo2.jpg" />
+    <BundleResource Include="Resources\paleo3.jpg" />
+    <BundleResource Include="Resources\paleo4.jpg" />
+    <BundleResource Include="Resources\paleo5.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -307,6 +350,8 @@
     <Compile Include="Examples\ListView\LoremIpsumGenerator.cs" />
     <Compile Include="Examples\ListView\CustomCells\CustomCardListViewCell.cs" />
     <Compile Include="Examples\SideDrawer\CustomTransitionExample\MyTransition.cs" />
+    <Compile Include="Examples\ListView\CustomCells\CustomListCell.cs" />
+    <Compile Include="Examples\ListView\CustomCells\AnimationListCell.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -337,5 +382,11 @@
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <InterfaceDefinition Include="Examples\Feedback\FeedbackExampleController.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Telerik.Xamarin.iOS\Telerik.Xamarin.iOS.csproj">
+      <Project>{813A9D66-625E-486C-84D8-6CEADB5A6CFD}</Project>
+      <Name>Telerik.Xamarin.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

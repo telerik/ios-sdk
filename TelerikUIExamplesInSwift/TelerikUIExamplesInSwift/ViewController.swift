@@ -107,7 +107,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 ]))
             
 
-            examples.append(ExampleInfo(title: "ListView (Beta)", exampleList: [
+            examples.append(ExampleInfo(title: "ListView", exampleList: [
                     ExampleInfo(title: "Getting started") { ListViewGettingStarted() },
                     ExampleInfo(title: "Swipe cell") { ListViewSwipe() },
                     ExampleInfo(title: "Items reorder") { ListViewReorder() },

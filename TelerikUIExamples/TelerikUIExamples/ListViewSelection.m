@@ -51,9 +51,8 @@
     _label.textAlignment = NSTextAlignmentCenter;
     [_listView addSubview:_label];
 
-    TKListViewColumnsLayout *layout = (TKListViewColumnsLayout*)_listView.layout;
-    layout.cellAlignment = TKListViewCellAlignmentStretch;
-    layout.minimumLineSpacing = 0;
+    TKListViewLinearLayout *layout = (TKListViewLinearLayout*)_listView.layout;
+    layout.itemSpacing = 0;
 
     // select the second row
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];

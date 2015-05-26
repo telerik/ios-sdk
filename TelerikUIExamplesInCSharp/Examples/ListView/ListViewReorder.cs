@@ -29,7 +29,6 @@ namespace Examples
 			this.listView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.listView.WeakDataSource = this.dataSource;
 			this.listView.WeakDelegate = this.dataSource;
-			this.listView.Layout.MinimumLineSpacing = 0;
 			this.listView.AllowsCellReorder = true;
 			this.View.AddSubview (listView);
 		}

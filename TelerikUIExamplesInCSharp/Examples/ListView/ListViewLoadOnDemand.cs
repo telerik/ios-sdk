@@ -32,14 +32,14 @@ namespace Examples
 			listView.Delegate = new ListViewDelegate (this);
 			listView.DataSource = new ListViewDataSource (this);
 			listView.CellBufferSize = 5;
-			listView.Insets = new UIEdgeInsets (10, 10, 10, 10);
+			listView.ContentInset = new UIEdgeInsets (10, 10, 10, 10);
 			this.View.AddSubview (listView);
 			listView.RegisterClassForCell(new ObjCRuntime.Class(typeof(CustomCardListViewCell)), "cell");
 
-			TKListViewColumnsLayout layout = (TKListViewColumnsLayout)listView.Layout;
+			TKListViewLinearLayout layout = (TKListViewLinearLayout)listView.Layout;
 			layout.ItemSize = new CGSize (100, 120);
-			layout.MinimumLineSpacing = 5;
-			layout.CellAlignment = TKListViewCellAlignment.Stretch;
+			layout.ItemSpacing = 5;
+			layout.ItemAlignment = TKListViewItemAlignment.Stretch;
 		}
 
 		class ListViewDataSource: TKListViewDataSource

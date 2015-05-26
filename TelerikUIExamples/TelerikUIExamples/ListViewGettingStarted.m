@@ -33,18 +33,22 @@
     [self.view addSubview:listView];
     [listView registerClass:[ImageWithTextListViewCell class] forCellWithReuseIdentifier:@"cell"];
     
-    TKListViewColumnsLayout *layout = (TKListViewColumnsLayout*)listView.layout;
-    layout.cellAlignment = TKListViewCellAlignmentCenter;
-    layout.columnsCount = 2;
+    TKListViewGridLayout *layout = [TKListViewGridLayout new];
+    layout.itemAlignment = TKListViewItemAlignmentCenter;
+    layout.spanCount = 2;
     layout.itemSize = CGSizeMake(150, 200);
-    layout.minimumLineSpacing = 60;
-    layout.minimumInteritemSpacing = 10;
+    layout.lineSpacing = 60;
+    layout.itemSpacing = 10;
+    listView.layout = layout;
 
-    listView.fill = [TKLinearGradientFill linearGradientFillWithColors:@[
-                                                                         [UIColor colorWithRed:0.35 green:0.68 blue:0.89 alpha:0.89],
-                                                                         [UIColor colorWithRed:0.35 green:0.68 blue:1.00 alpha:1.0],
-                                                                         [UIColor colorWithRed:0.85 green:0.8 blue:0.2 alpha:0.8]
-                                                                         ]];    
+    TKView *view = [TKView new];
+    
+    view.fill = [TKLinearGradientFill linearGradientFillWithColors:@[
+                                                                     [UIColor colorWithRed:0.35 green:0.68 blue:0.89 alpha:0.89],
+                                                                     [UIColor colorWithRed:0.35 green:0.68 blue:1.00 alpha:1.0],
+                                                                     [UIColor colorWithRed:0.85 green:0.8 blue:0.2 alpha:0.8]
+                                                                     ]];
+    listView.backgroundView = view;
 }
 
 - (void)didReceiveMemoryWarning

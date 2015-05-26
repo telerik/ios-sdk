@@ -27,14 +27,13 @@ class ListViewLoadOnDemand: ExampleViewController, TKListViewDataSource, TKListV
         listView.dataSource = self
         listView.delegate = self
         listView.cellBufferSize = 5
-        listView.insets = UIEdgeInsetsMake(10, 10, 10, 10)
+        listView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10)
         self.view.addSubview(listView)
         listView.registerClass(CustomCardListViewCell.classForCoder(), forCellWithReuseIdentifier:"cell")
     
-        let layout = listView.layout as! TKListViewColumnsLayout
+        let layout = listView.layout as! TKListViewLinearLayout
         layout.itemSize = CGSizeMake(100, 120)
-        layout.minimumLineSpacing = 5
-        layout.cellAlignment = TKListViewCellAlignment.Stretch
+        layout.itemSpacing = 5
     
     }
     

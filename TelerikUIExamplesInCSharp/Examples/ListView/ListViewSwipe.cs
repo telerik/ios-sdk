@@ -104,8 +104,10 @@ namespace Examples
 			this.listView.AllowsCellSwipe = true;
 			this.listView.CellSwipeLimits = new UIEdgeInsets (0, 60, 0, 180);
 			this.listView.CellSwipeTreshold = 30;
-			this.listView.Layout.ItemSize = new CGSize (100, 80);
 			this.View.AddSubview (this.listView);
+
+			TKListViewLinearLayout layout = (TKListViewLinearLayout)this.listView.Layout;
+			layout.ItemSize = new CGSize (100, 80);
 		}
 
 		void EnableButtonAnimation(object sender, EventArgs e)

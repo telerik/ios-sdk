@@ -34,18 +34,21 @@ namespace Examples
 			this.View.AddSubview (listView);
 			listView.RegisterClassForCell (new Class(typeof(ImageWithTextListViewCell)), "cell");
 
-			TKListViewColumnsLayout layout = (TKListViewColumnsLayout)listView.Layout;
-			layout.CellAlignment = TKListViewCellAlignment.Center;
-			layout.ColumnsCount = 2;
+			TKListViewGridLayout layout = new TKListViewGridLayout();
+			layout.ItemAlignment = TKListViewItemAlignment.Center;
+			layout.SpanCount = 2;
 			layout.ItemSize = new CGSize (150, 200);
-			layout.MinimumLineSpacing = 60;
-			layout.MinimumInteritemSpacing = 10;
+			layout.LineSpacing = 60;
+			layout.ItemSpacing = 10;
+			listView.Layout = layout;
 
-			listView.Fill = TKLinearGradientFill.WithColors (new UIColor[] { 
+			TKView view = new TKView ();
+			view.Fill = TKLinearGradientFill.WithColors (new UIColor[] { 
 				new UIColor (0.35f, 0.68f, 0.89f, 0.89f), 
 				new UIColor (0.35f, 0.68f, 1.0f, 1.0f), 
 				new UIColor (0.85f, 0.8f, 0.2f, 0.8f)
 			});
+			listView.BackgroundView = view;
 		}
 
 		class ListViewDataSource : TKListViewDataSource

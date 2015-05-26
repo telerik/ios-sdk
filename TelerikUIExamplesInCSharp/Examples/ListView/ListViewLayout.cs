@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using Foundation;
 using UIKit;
@@ -12,26 +13,22 @@ namespace Examples
 {
 	public class ListViewLayout : ExampleViewController
 	{
-		public TKDataSource Photos {
-			get;
-			set;
-		}
-		public TKDataSource Names {
-			get;
-			set;
-		}
-
-		public TKListView ListView {
-			get;
-			set;
-		}
+		TKListView listView;
+		TKDataSource dataSource;
+		string[] categories = new string[] { "breakfast", "paleo", "desserts" };
+		int itemsCount;
+		TKListViewScrollDirection scrollDirection;
 
 		public ListViewLayout () : base()
 		{
-			this.AddOption ("Wrap Layout", WrapLayoutSelected, "Layout");
-			this.AddOption ("Columns Layout", ColumnLayoutSelected, "Layout");
-			this.AddOption ("Horizontal", HorizontalSelected, "Orientation");
+			this.AddOption ("Linear", LinearLayoutSelected, "Layout");
+			this.AddOption ("Grid", GridLayoutSelected, "Layout");
+			this.AddOption ("Staggered", StaggeredLayoutSelected, "Layout");
+			this.AddOption ("Flow", FlowLayoutSelected, "Layout");
+
+			this.AddOption ("Horiontal", HorizontalSelected, "Orientation");
 			this.AddOption ("Vertical", VerticalSelected, "Orientation");
+
 			this.SetSelectedOptionInSection (1, 1);
 		}
 
@@ -39,73 +36,126 @@ namespace Examples
 		{
 			base.ViewDidLoad ();
 
-			this.Photos = new TKDataSource ("PhotosWithNames", "json", "photos");
-			this.Names = new TKDataSource ("PhotosWithNames", "json", "names");
+			dataSource = new TKDataSource ();
+			dataSource.LoadDataFromJSONResource ("ListItems", "json", "items");
 
-			this.Photos.Settings.ListView.CreateCell (delegate (TKListView listView, NSIndexPath indexPath, NSObject item) {
-				TKListViewCell cell = listView.DequeueReusableCell("simpleCell", indexPath) as TKListViewCell;
-				return cell;
+			string descriptor = string.Format ("category LIKE '{0}' OR category LIKE '{1}' OR category LIKE '{2}'", 
+				                    categories [0], categories [1], categories [2]);
+			dataSource.AddFilterDescriptor (new TKDataSourceFilterDescriptor(descriptor));
+
+			itemsCount = dataSource.Items.Length;
+			dataSource.ReloadData ();
+			dataSource.GroupWithKey ("category");
+
+			dataSource.Settings.ListView.CreateCell ((TKListView listView, NSIndexPath indexPath, NSObject item) => {
+				return listView.DequeueReusableCell(new NSString("custom"), indexPath) as TKListViewCell;
 			});
 
-			this.Photos.Settings.ListView.InitCell (delegate (TKListView listView, NSIndexPath indexPath, TKListViewCell cell, NSObject item) {
-				NSString imageName = (NSString)this.Photos.Items [indexPath.Row];
-				cell.ImageView.Image = new UIImage (imageName);
-				cell.TextLabel.Text = this.Names.Items [indexPath.Row] as NSString;
-				TKView view = (TKView)cell.BackgroundView;
-				view.Stroke.StrokeSides = listView.Layout.IsKindOfClass(new Class(typeof(TKListViewColumnsLayout))) ? TKRectSide.Right | TKRectSide.Bottom : TKRectSide.All;
-				view.SetNeedsDisplay();
+			dataSource.Settings.ListView.InitCell ((TKListView listView, NSIndexPath indexPath, TKListViewCell cell, NSObject item) => {
+				cell.ImageView.Image = new UIImage((NSString)item.ValueForKey(new NSString("photo")));
+				cell.TextLabel.Text = (NSString)item.ValueForKey(new NSString("title"));
+				cell.DetailTextLabel.Text = (NSString)item.ValueForKey(new NSString("author"));
+			});
+				
+			dataSource.Settings.ListView.InitHeader ((TKListView listView, NSIndexPath indexPath, TKListViewHeaderCell headerCell, TKDataSourceGroup group) => {
+				headerCell.TextLabel.TextAlignment = UITextAlignment.Center;
+				headerCell.TextLabel.Text = group.Key as NSString;
+				headerCell.BackgroundColor = UIColor.LightGray;
 			});
 
-			this.ListView = new TKListView (this.View.Bounds);
-			this.ListView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			this.ListView.WeakDataSource = this.Photos;
-			this.ListView.RegisterClassForCell(new Class(typeof(SimpleListViewCell)), "simpleCell");
-			this.View.AddSubview (this.ListView);
+			this.listView = new TKListView (this.View.Bounds);
+			this.listView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
+			this.listView.WeakDataSource = this.dataSource;
+			this.listView.RegisterClassForCell(new Class(typeof(CustomListCell)), "custom");
+			this.View.AddSubview (this.listView);
 
-			this.WrapLayoutSelected (this, EventArgs.Empty);
+			this.LinearLayoutSelected (this, EventArgs.Empty);
 		}
 
-		void WrapLayoutSelected(object sender, EventArgs e)
+		void LinearLayoutSelected(object sender, EventArgs e)
 		{
-			this.ListView.Insets = new UIEdgeInsets (4, 4, 0, 4);
-			TKListViewWrapLayout layout = new TKListViewWrapLayout ();
-			layout.MinimumLineSpacing = 4;
-			layout.MinimumInteritemSpacing = 4;
-			layout.ItemSize = new CGSize (100f, 100f);
-			this.ListView.Layout = layout;
-			this.ListView.ReloadData ();
+			TKListViewLinearLayout layout = new TKListViewLinearLayout ();
+			layout.ItemSize = new CGSize(200, 200);
+			layout.HeaderReferenceSize = new CGSize(100, 30);
+			layout.ItemSpacing = 1;
+			layout.ScrollDirection = this.scrollDirection;
+			this.listView.Layout = layout;
+			this.SetSelectedOptionInSection (1, 1);
 		}
 
-		void ColumnLayoutSelected(object sender, EventArgs e)
+		void GridLayoutSelected(object sender, EventArgs e)
 		{
-			this.ListView.Insets = UIEdgeInsets.Zero;
-			TKListViewColumnsLayout layout = new TKListViewColumnsLayout ();
-			layout.MinimumLineSpacing = 0;
-			layout.MinimumInteritemSpacing = 0;
-			layout.ItemSize = new CGSize (100f, 100f);
-			layout.ColumnsCount = 2;
-			this.ListView.Layout = layout;
-			this.ListView.ReloadData ();
+			TKListViewGridLayout layout = new TKListViewGridLayout ();
+			layout.ItemSize = new CGSize(200, 100);
+			layout.HeaderReferenceSize = new CGSize(100, 30);
+			layout.SpanCount = 2;
+			layout.ItemSpacing = 1;
+			layout.LineSpacing = 1;
+			layout.ScrollDirection = this.scrollDirection;
+			this.listView.Layout = layout;
+			this.SetSelectedOptionInSection (1, 1);
+		}
 
-			this.ListView.ScrollDirection = TKListViewScrollDirection.Vertical;
+		void StaggeredLayoutSelected(object sender, EventArgs e)
+		{
+			TKListViewStaggeredLayout layout = new TKListViewStaggeredLayout ();
+			layout.Delegate = new StaggeredLayoutDelegate(itemsCount);
+			layout.ItemSize = new CGSize(200, 100);
+			layout.HeaderReferenceSize = new CGSize(100, 30);
+			layout.SpanCount = 2;
+			layout.ItemSpacing = 1;
+			layout.LineSpacing = 1;
+			layout.ScrollDirection = this.scrollDirection;
+			layout.AlignLastLine = true;
+			this.listView.Layout = layout;
+			this.SetSelectedOptionInSection (1, 1);
+		}
+
+		void FlowLayoutSelected(object sender, EventArgs e)
+		{
+			UICollectionViewFlowLayout layout = new UICollectionViewFlowLayout();
+			layout.ItemSize = new CGSize((this.listView.Bounds.Size.Width-3)/3.0, this.listView.Bounds.Size.Height/4.0);
+			layout.HeaderReferenceSize = new CGSize(100, 30);
+			layout.MinimumInteritemSpacing = 1;
+			layout.MinimumLineSpacing = 1;
+			this.listView.Layout = layout;
 			this.SetSelectedOptionInSection (1, 1);
 		}
 
 		void VerticalSelected(object sender, EventArgs e)
 		{
-			this.ListView.ScrollDirection = TKListViewScrollDirection.Vertical;
+			this.listView.ScrollDirection = TKListViewScrollDirection.Vertical;
+			this.scrollDirection = TKListViewScrollDirection.Vertical;
 		}
 
 		void HorizontalSelected(object sender, EventArgs e)
 		{
-			if (this.ListView.Layout.IsKindOfClass(new Class(typeof(TKListViewColumnsLayout)))) {
-				this.SetSelectedOptionInSection (1, 1);
-				UIAlertView alert = new UIAlertView ("TKListView", "Columns layout supports only vertical scroll direction", null, "Close", null);
-				alert.Show ();
-				return;
+			this.listView.ScrollDirection = TKListViewScrollDirection.Horizontal;
+			this.scrollDirection = TKListViewScrollDirection.Horizontal;
+		}
+
+		public class StaggeredLayoutDelegate: TKListViewStaggeredLayoutDelegate 
+		{
+			List<float> sizes = new List<float>();
+
+			public StaggeredLayoutDelegate(int itemsCount)
+			{
+				Random r = new Random();
+				for (int i = 0; i<itemsCount; i++) 
+				{
+					sizes.Add((float)(50.0 + 5.0*r.Next(40)));
+				}
 			}
 
-			this.ListView.ScrollDirection = TKListViewScrollDirection.Horizontal;
+			public override CGSize SizeForItem (TKListViewStaggeredLayout layout, NSIndexPath indexPath)
+			{
+				if (layout.ScrollDirection == TKListViewScrollDirection.Vertical) {
+					return new CGSize(100, sizes[indexPath.Row]);
+				}
+				else {
+					return new CGSize(sizes[indexPath.Row], 100);
+				}
+			}
 		}
 	}
 }

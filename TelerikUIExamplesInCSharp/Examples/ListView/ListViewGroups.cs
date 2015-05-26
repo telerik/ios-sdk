@@ -26,12 +26,11 @@ namespace Examples
 			listView.SelectionBehavior = TKListViewSelectionBehavior.Press;
 			this.View.AddSubview (listView);
 
-			TKListViewColumnsLayout layout = (TKListViewColumnsLayout)listView.Layout;
-			layout.CellAlignment = TKListViewCellAlignment.Stretch;
+			TKListViewLinearLayout layout = new TKListViewLinearLayout();
 			layout.ItemSize = new CGSize (300, 44);
-			layout.MinimumLineSpacing = 0;
 			layout.HeaderReferenceSize = new CGSize (100, 44);
 			layout.FooterReferenceSize = new CGSize (100, 44);
+			listView.Layout = layout;
 
 			this.dataSource.Settings.ListView.InitCell (delegate (TKListView list, NSIndexPath indexPath, TKListViewCell cell, NSObject item) {
 				TKDataSourceGroup group = this.dataSource.Items[indexPath.Section] as TKDataSourceGroup;

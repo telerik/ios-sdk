@@ -30,11 +30,15 @@ class ListViewReorder: ExampleViewController{
         self.dataSource.allowItemsReorder = true
         self.dataSource.loadDataFromJSONResource("PhotosWithNames", ofType: "json", rootItemKeyPath: "names")
         
-        self.listView.frame = self.view.bounds
+        if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
+            self.listView.frame = self.exampleBounds
+        }
+        else {
+            self.listView.frame = self.view.bounds
+        }
         self.listView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         self.listView.dataSource = self.dataSource
         self.listView.delegate = self.dataSource
-        self.listView.layout.minimumLineSpacing = 0
 
         self.listView.allowsCellReorder = true
         self.view.addSubview(self.listView)

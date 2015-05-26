@@ -110,7 +110,8 @@ class ListViewSwipe: ExampleViewController, TKListViewDelegate {
         listView.allowsCellSwipe = true
         listView.cellSwipeLimits = UIEdgeInsetsMake(0, 60, 0, 180)//how far the cell may swipe
         listView.cellSwipeTreshold = 30 // the treshold after which the cell will autoswipe to the end and will not jump back to the center.
-        listView.layout.itemSize = CGSizeMake(100, 80)
+        let layout = listView.layout as! TKListViewLinearLayout
+        layout.itemSize = CGSizeMake(100, 80)
         self.view.addSubview(listView)
     }
 

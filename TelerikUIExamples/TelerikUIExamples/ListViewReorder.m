@@ -29,19 +29,24 @@
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 
     _dataSource = [TKDataSource new];
     _dataSource.allowItemsReorder = YES;
     [_dataSource loadDataFromJSONResource:@"PhotosWithNames" ofType:@"json" rootItemKeyPath:@"names"];
     
-    _listView = [[TKListView alloc] initWithFrame:self.view.bounds];
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        _listView = [[TKListView alloc] initWithFrame:self.exampleBounds];
+    }
+    else {
+        _listView = [[TKListView alloc] initWithFrame:self.view.bounds];
+    }
     _listView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _listView.dataSource = _dataSource;
     _listView.delegate = _dataSource;
-    _listView.layout.minimumLineSpacing = 0;
-    _listView.allowsCellReorder = YES;
+   _listView.allowsCellReorder = YES;
     [self.view addSubview:_listView];
 }
 

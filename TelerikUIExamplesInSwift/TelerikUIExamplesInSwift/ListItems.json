@@ -1,0 +1,52 @@
+{
+    "items":[
+             { "title": "These Rolls..", "author": "Le Bakery de Trevi", "photo": "dessert1.jpg", "category": "desserts" },
+             { "title": "Chocolate Cake", "author": "The Sweetest Thing", "photo": "dessert2.jpg", "category": "desserts" },
+             { "title": "Rainbow Chocolate Pudding", "author": "Sweet and Sweeter", "photo": "dessert3.jpg", "category": "desserts" },
+             { "title": "Ice-cream Sandwich", "author": "The Sweetest Thing", "photo": "dessert4.jpg", "category": "desserts" },
+             { "title": "Le Macarons de Lyon", "author": "Le Bakery de Trevi", "photo": "dessert5.jpg", "category": "desserts" },
+             { "title": "Le Tiramisu de Treviso", "author": "Sweet and Sweeter", "photo": "dessert6.jpg", "category": "desserts" },
+             { "title": "Creme Caramel", "author": "The Sweetest Thing", "photo": "dessert7.jpg", "category": "desserts" },
+             { "title": "Be Fit, Be Healthy Fruit Mix", "author": "Sweet and Sweeter", "photo": "dessert8.jpg", "category": "desserts" },
+
+             { "title": "Ceylon Tea", "author": "The Healthy Bar", "photo": "drink1.jpg", "category": "drinks" },
+             { "title": "Orange Juice, Fresh", "author": "The Healthy Bar", "photo": "drink2.jpg", "category": "drinks" },
+             { "title": "A Glass of Wine", "author": "Tonight's Bar", "photo": "drink3.jpg", "category": "drinks" },
+             { "title": "Barista's Masterpiece", "author": "The Cafe Near You", "photo": "drink4.jpg", "category": "drinks" },
+             { "title": "Coffee", "author": "Sweet and Sweeter", "photo": "drink5.jpg", "category": "drinks" },
+             { "title": "Watermelon Dream", "author": "The Healthy Bar", "photo": "drink6.jpg", "category": "drinks" },
+             { "title": "Mojito", "author": "Tonight's Bar", "photo": "drink7.jpg", "category": "drinks" },
+             { "title": "Raspberry Smoothie", "author": "The Healhy Bar", "photo": "drink8.jpg", "category": "drinks" },
+             { "title": "Smootie (Different Flavors)", "author": "Sweet and Sweeter", "photo": "drink9.jpg", "category": "drinks" },
+             { "title": "Soda", "author": "The Healthy Bar", "photo": "drink10.jpg", "category": "drinks" },
+             { "title": "Lemon Ice Tea", "author": "Sweet and Sweeter", "photo": "drink11.jpg", "category": "drinks" },
+             { "title": "Crystal Water with Almond Oil", "author": "The Healthy Bar", "photo": "drink12.jpg", "category": "drinks" },
+
+             { "title": "The Fresh Sandwich", "author":  "Sandwiches and More", "photo": "breakfast1.jpg", "category": "breakfast" },
+             { "title": "The Healthy Sandwich", "author": "Sandwiches and More", "photo": "breakfast2.jpg", "category": "breakfast" },
+             { "title": "Crispy Chicken with Avocado Sandwich", "author":"Chicken's Heaven", "photo": "breakfast3.jpg", "category": "breakfast" },
+             { "title": "Beef Sandwich", "author": "Nice to Meat You", "photo": "breakfast4.jpg", "category": "breakfast" },
+             { "title": "Tuna Sandwich", "author": "Ron's Fishery", "photo": "breakfast5.jpg", "category": "breakfast" },
+             { "title": "Fruit Cake", "author": "ReFresh", "photo": "breakfast6.jpg", "category": "breakfast" },
+            
+             { "title": "A Quick Snack Burger", "author": "Nice to Meat You", "photo": "main1.jpg", "category": "mains" },
+             { "title": "Chilli Meat Bites", "author": "Nice to Meat You", "photo": "main2.jpg", "category": "mains" },
+             { "title": "Your Favourite Ribs", "author": "Nice to Meat You", "photo": "main3.jpg", "category": "mains" },
+             { "title":  "Burger at the Max", "author": "Burger Queen", "photo": "main4.jpg", "category": "mains" },
+             { "title":  "Special Burger with Fries", "author": "Burger Queen", "photo": "main5.jpg", "category": "mains" },
+             { "title":  "Everybody's Dream Hotdog", "author": "Prince Burger", "photo": "main6.jpg", "category": "mains" },
+             { "title": "Quinoa Balls", "author": "ReFresh", "photo": "main7.jpg", "category": "mains" },
+             { "title": "Bruschetta with Cheese", "author": "Sandwiches and More", "photo": "main8.jpg", "category": "mains" },
+             { "title": "Quick Toast with Bacon", "author": "Sandwiches and More", "photo": "main9.jpg", "category": "mains" },
+             { "title":  "Special Steak with Fries","author":  "Nice to Meat You", "photo": "main10.jpg", "category": "mains" },
+             { "title":  "Hotdog for Two", "author": "Prince Burger", "photo": "main11.jpg", "category": "mains" },
+             { "title":  "Bruschetta with Salmon Fish", "author":  "Ron's Fishery", "photo": "main12.jpg", "category": "mains" },
+             { "title":  "Chief's Steak", "author": "Nice to Meat You", "photo": "main13.jpg", "category": "mains" },
+
+             { "title": "Dried Meat with Spices", "author": "Nice to Meat You", "photo": "paleo1.jpg", "category": "paleo" },
+             { "title":  "Golden Chicken", "author": "Chicken's Heaven", "photo": "paleo2.jpg", "category": "paleo" },
+             { "title":  "Pork Steak with Vegetables", "author": "Nice to Meat You", "photo": "paleo3.jpg", "category": "paleo" },
+             { "title": "Lamb Cotlets", "author": "Nice to Meat You", "photo": "paleo4.jpg", "category": "paleo" },
+             { "title": "Salmon Steak", "author": "Ron's Fishery", "photo": "paleo5.jpg", "category": "paleo" }
+      ]
+}

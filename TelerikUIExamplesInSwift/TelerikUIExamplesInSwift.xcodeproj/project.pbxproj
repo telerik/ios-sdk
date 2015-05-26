@@ -31,18 +31,20 @@
 		FE15E0081A91EDDC00F2AB01 /* ListViewPullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E0071A91EDDC00F2AB01 /* ListViewPullToRefresh.swift */; };
 		FE15E00A1A91EDF200F2AB01 /* ListViewReorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E0091A91EDF200F2AB01 /* ListViewReorder.swift */; };
 		FE15E00C1A920FE700F2AB01 /* ListViewSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E00B1A920FE700F2AB01 /* ListViewSwipe.swift */; };
+		FE2582AA1B0CB79800E36C05 /* CustomListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2582A91B0CB79800E36C05 /* CustomListCell.swift */; };
+		FE2582AC1B0CC07200E36C05 /* ListItems.json in Resources */ = {isa = PBXBuildFile; fileRef = FE2582AB1B0CC07200E36C05 /* ListItems.json */; };
 		FE28FF6A1A8D0E1D000E0BDC /* ListViewSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE28FF691A8D0E1D000E0BDC /* ListViewSelection.swift */; };
 		FE28FF701A8D0E63000E0BDC /* ListViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE28FF6F1A8D0E63000E0BDC /* ListViewAnimations.swift */; };
 		FE28FF721A8D0E77000E0BDC /* ListViewLoadOnDemand.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE28FF711A8D0E77000E0BDC /* ListViewLoadOnDemand.swift */; };
 		FE28FF741A8D0E95000E0BDC /* ListViewGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE28FF731A8D0E95000E0BDC /* ListViewGroups.swift */; };
 		FE2D10781A80FB4600A787EB /* InlineEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D10771A80FB4600A787EB /* InlineEvents.swift */; };
 		FE6F334E1A9C716F00BE301B /* OptionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F334D1A9C716F00BE301B /* OptionSection.swift */; };
-		FE74ACFB1AEA28490025137E /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE74ACF91AEA28490025137E /* TelerikAppFeedback.framework */; };
-		FE74ACFC1AEA28490025137E /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE74ACFA1AEA28490025137E /* TelerikUI.framework */; };
+		FE77380619ED5E5B009F5C34 /* libTelerikAppFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE77380519ED5E5B009F5C34 /* libTelerikAppFeedback.a */; };
 		FE92FA8019B4C746000B2E66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92FA7F19B4C746000B2E66 /* AppDelegate.swift */; };
 		FE92FA8219B4C746000B2E66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92FA8119B4C746000B2E66 /* ViewController.swift */; };
 		FE92FA8519B4C746000B2E66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE92FA8319B4C746000B2E66 /* Main.storyboard */; };
 		FE92FA8719B4C746000B2E66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE92FA8619B4C746000B2E66 /* Images.xcassets */; };
+		FE92FA9D19B4C7C1000B2E66 /* libTelerikUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE92FA9C19B4C7C1000B2E66 /* libTelerikUI.a */; };
 		FE92FAA719B4C88B000B2E66 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = FE92FAA619B4C88B000B2E66 /* Bridge.m */; };
 		FEAA9B9819B4CC1B00D60D4C /* BalloonAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA9B9019B4CC1B00D60D4C /* BalloonAnnotation.swift */; };
 		FEAA9B9919B4CC1B00D60D4C /* BandAndLineAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA9B9119B4CC1B00D60D4C /* BandAndLineAnnotations.swift */; };
@@ -101,6 +103,7 @@
 		FEAA9C0719B4CF0200D60D4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEAA9C0619B4CF0200D60D4C /* UIKit.framework */; };
 		FEAA9C0919B4CF0B00D60D4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEAA9C0819B4CF0B00D60D4C /* Foundation.framework */; };
 		FEB32CAB1A8DFCC80060ED82 /* ListViewSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = FEB32CAA1A8DFCC80060ED82 /* ListViewSampleData.json */; };
+		FEB66DB71B13399500DC71AC /* AnimationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB66DB61B13399500DC71AC /* AnimationListCell.swift */; };
 		FEE6EE211A8351D1004895C1 /* DataSourceGettingStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6EE201A8351D1004895C1 /* DataSourceGettingStarted.swift */; };
 		FEE6EE231A8351E5004895C1 /* DataSourceDescriptorsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6EE221A8351E5004895C1 /* DataSourceDescriptorsAPI.swift */; };
 		FEE6EE251A8351FB004895C1 /* DataSourceUIBindings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6EE241A8351FB004895C1 /* DataSourceUIBindings.swift */; };
@@ -128,26 +131,28 @@
 		1B5372351A977A9E00707810 /* ImageWithTextListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageWithTextListViewCell.swift; sourceTree = "<group>"; };
 		1B5372371A9784B100707810 /* SimpleListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleListViewCell.swift; sourceTree = "<group>"; };
 		1B5372391A97858700707810 /* CustomCardListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCardListViewCell.swift; sourceTree = "<group>"; };
-		1B53723B1A97869E00707810 /* PhotosWithNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PhotosWithNames.json; sourceTree = "<group>"; };
+		1B53723B1A97869E00707810 /* PhotosWithNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PhotosWithNames.json; path = TelerikUIExamplesInSwift/PhotosWithNames.json; sourceTree = "<group>"; };
 		1B53723D1A9797B100707810 /* LoremIpsumGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoremIpsumGenerator.swift; sourceTree = "<group>"; };
 		1B53723F1A9B608E00707810 /* ListViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewLayout.swift; sourceTree = "<group>"; };
 		FE15E0071A91EDDC00F2AB01 /* ListViewPullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewPullToRefresh.swift; sourceTree = "<group>"; };
 		FE15E0091A91EDF200F2AB01 /* ListViewReorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewReorder.swift; sourceTree = "<group>"; };
 		FE15E00B1A920FE700F2AB01 /* ListViewSwipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewSwipe.swift; sourceTree = "<group>"; };
+		FE2582A91B0CB79800E36C05 /* CustomListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomListCell.swift; sourceTree = "<group>"; };
+		FE2582AB1B0CC07200E36C05 /* ListItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ListItems.json; path = TelerikUIExamplesInSwift/ListItems.json; sourceTree = "<group>"; };
 		FE28FF691A8D0E1D000E0BDC /* ListViewSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewSelection.swift; sourceTree = "<group>"; };
 		FE28FF6F1A8D0E63000E0BDC /* ListViewAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewAnimations.swift; sourceTree = "<group>"; };
 		FE28FF711A8D0E77000E0BDC /* ListViewLoadOnDemand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewLoadOnDemand.swift; sourceTree = "<group>"; };
 		FE28FF731A8D0E95000E0BDC /* ListViewGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewGroups.swift; sourceTree = "<group>"; };
 		FE2D10771A80FB4600A787EB /* InlineEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineEvents.swift; sourceTree = "<group>"; };
 		FE6F334D1A9C716F00BE301B /* OptionSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionSection.swift; sourceTree = "<group>"; };
-		FE74ACF91AEA28490025137E /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
-		FE74ACFA1AEA28490025137E /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
+		FE77380519ED5E5B009F5C34 /* libTelerikAppFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikAppFeedback.a; path = "../AppFeedback/build/Debug-iphoneos/libTelerikAppFeedback.a"; sourceTree = "<group>"; };
 		FE92FA7A19B4C746000B2E66 /* TelerikUIExamplesInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelerikUIExamplesInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE92FA7E19B4C746000B2E66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE92FA7F19B4C746000B2E66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE92FA8119B4C746000B2E66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE92FA8419B4C746000B2E66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE92FA8619B4C746000B2E66 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FE92FA9C19B4C7C1000B2E66 /* libTelerikUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikUI.a; path = "../../../../../Library/Developer/Xcode/DerivedData/TelerikUI-dwzcvftbvbwddjbzzdyodshibupb/Build/Products/Debug-iphoneos/libTelerikUI.a"; sourceTree = "<group>"; };
 		FE92FAA519B4C88B000B2E66 /* TelerikUIExamplesInSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TelerikUIExamplesInSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		FE92FAA619B4C88B000B2E66 /* Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
 		FEAA9B9019B4CC1B00D60D4C /* BalloonAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonAnnotation.swift; sourceTree = "<group>"; };
@@ -206,7 +211,8 @@
 		FEAA9C0219B4CEF200D60D4C /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		FEAA9C0619B4CF0200D60D4C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FEAA9C0819B4CF0B00D60D4C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		FEB32CAA1A8DFCC80060ED82 /* ListViewSampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListViewSampleData.json; sourceTree = "<group>"; };
+		FEB32CAA1A8DFCC80060ED82 /* ListViewSampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ListViewSampleData.json; path = TelerikUIExamplesInSwift/ListViewSampleData.json; sourceTree = "<group>"; };
+		FEB66DB61B13399500DC71AC /* AnimationListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationListCell.swift; sourceTree = "<group>"; };
 		FEE6EE201A8351D1004895C1 /* DataSourceGettingStarted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceGettingStarted.swift; sourceTree = "<group>"; };
 		FEE6EE221A8351E5004895C1 /* DataSourceDescriptorsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceDescriptorsAPI.swift; sourceTree = "<group>"; };
 		FEE6EE241A8351FB004895C1 /* DataSourceUIBindings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceUIBindings.swift; sourceTree = "<group>"; };
@@ -220,12 +226,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE74ACFB1AEA28490025137E /* TelerikAppFeedback.framework in Frameworks */,
-				FE74ACFC1AEA28490025137E /* TelerikUI.framework in Frameworks */,
+				FE77380619ED5E5B009F5C34 /* libTelerikAppFeedback.a in Frameworks */,
 				FEAA9C0919B4CF0B00D60D4C /* Foundation.framework in Frameworks */,
 				FEAA9C0719B4CF0200D60D4C /* UIKit.framework in Frameworks */,
 				FEAA9C0319B4CEF200D60D4C /* EventKitUI.framework in Frameworks */,
 				FEAA9C0119B4CEED00D60D4C /* EventKit.framework in Frameworks */,
+				FE92FA9D19B4C7C1000B2E66 /* libTelerikUI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +327,8 @@
 				1B5372351A977A9E00707810 /* ImageWithTextListViewCell.swift */,
 				1B5372371A9784B100707810 /* SimpleListViewCell.swift */,
 				1B5372391A97858700707810 /* CustomCardListViewCell.swift */,
+				FE2582A91B0CB79800E36C05 /* CustomListCell.swift */,
+				FEB66DB61B13399500DC71AC /* AnimationListCell.swift */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -329,8 +337,6 @@
 			isa = PBXGroup;
 			children = (
 				1B5372341A977A7000707810 /* CustomCells */,
-				1B53723B1A97869E00707810 /* PhotosWithNames.json */,
-				FEB32CAA1A8DFCC80060ED82 /* ListViewSampleData.json */,
 				1B5372321A97777800707810 /* ListViewGettingStarted.swift */,
 				FE15E00B1A920FE700F2AB01 /* ListViewSwipe.swift */,
 				FE15E0091A91EDF200F2AB01 /* ListViewReorder.swift */,
@@ -389,12 +395,12 @@
 		FE92FAA419B4C800000B2E66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FE74ACF91AEA28490025137E /* TelerikAppFeedback.framework */,
-				FE74ACFA1AEA28490025137E /* TelerikUI.framework */,
+				FE77380519ED5E5B009F5C34 /* libTelerikAppFeedback.a */,
 				FEAA9C0819B4CF0B00D60D4C /* Foundation.framework */,
 				FEAA9C0619B4CF0200D60D4C /* UIKit.framework */,
 				FEAA9C0219B4CEF200D60D4C /* EventKitUI.framework */,
 				FEAA9C0019B4CEED00D60D4C /* EventKit.framework */,
+				FE92FA9C19B4C7C1000B2E66 /* libTelerikUI.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -563,6 +569,9 @@
 		FEAA9BF519B4CDEB00D60D4C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FE2582AB1B0CC07200E36C05 /* ListItems.json */,
+				1B53723B1A97869E00707810 /* PhotosWithNames.json */,
+				FEB32CAA1A8DFCC80060ED82 /* ListViewSampleData.json */,
 				FEAA9BF619B4CE1400D60D4C /* AppleStockPrices.json */,
 			);
 			name = Resources;
@@ -640,6 +649,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE92FA8519B4C746000B2E66 /* Main.storyboard in Resources */,
+				FE2582AC1B0CC07200E36C05 /* ListItems.json in Resources */,
 				1B53723C1A97869E00707810 /* PhotosWithNames.json in Resources */,
 				FEAA9BF719B4CE1400D60D4C /* AppleStockPrices.json in Resources */,
 				FEAA9BDA19B4CD3B00D60D4C /* FeedbackExampleController.xib in Resources */,
@@ -727,6 +737,7 @@
 				190DBC171A84D4A60017B623 /* MyTransition.swift in Sources */,
 				FEAA9B9B19B4CC1B00D60D4C /* CustomAnnotation.swift in Sources */,
 				FEE6EE211A8351D1004895C1 /* DataSourceGettingStarted.swift in Sources */,
+				FE2582AA1B0CB79800E36C05 /* CustomListCell.swift in Sources */,
 				FEAA9BE619B4CD7300D60D4C /* CalendarWithEvents.swift in Sources */,
 				FEAA9BA619B4CC6100D60D4C /* BindWithDataPoint.swift in Sources */,
 				19B8AA6B19E2820A0041D44A /* SelectedPointLabel.swift in Sources */,
@@ -736,6 +747,7 @@
 				FEAA9BB519B4CC9000D60D4C /* StockDataPoint.swift in Sources */,
 				FE15E0081A91EDDC00F2AB01 /* ListViewPullToRefresh.swift in Sources */,
 				FEAA9BD219B4CD0700D60D4C /* UIKitDynamicsAnimation.swift in Sources */,
+				FEB66DB71B13399500DC71AC /* AnimationListCell.swift in Sources */,
 				FEAA9BD519B4CD2100D60D4C /* Customize.swift in Sources */,
 				FEAA9BEB19B4CD9A00D60D4C /* iOS7StyleCalendar.swift in Sources */,
 				FEAA9BBA19B4CCAE00D60D4C /* IndicatorsTableView.swift in Sources */,
@@ -848,7 +860,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = TelerikUIExamplesInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -868,7 +879,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = TelerikUIExamplesInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

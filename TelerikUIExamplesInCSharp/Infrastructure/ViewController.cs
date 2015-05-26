@@ -97,7 +97,7 @@ namespace Examples
 					new ExampleInfo("Custom Content", typeof(SideDrawerCustomContent)),
 					new ExampleInfo("Custom Transition", typeof(SideDrawerCustomTransition))
 				}),
-				new ExampleInfo("ListView (Beta)", new ExampleInfo[] {
+				new ExampleInfo("ListView", new ExampleInfo[] {
 					new ExampleInfo("Getting Started", typeof(ListViewGettingStarted)),
 					new ExampleInfo("Swipe cell", typeof(ListViewSwipe)),
 					new ExampleInfo("Items reorder", typeof(ListViewReorder)),

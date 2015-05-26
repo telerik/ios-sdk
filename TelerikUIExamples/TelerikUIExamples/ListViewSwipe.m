@@ -119,7 +119,7 @@
     _listView.allowsCellSwipe = YES;
     _listView.cellSwipeLimits = UIEdgeInsetsMake(0, 60, 0, 180);//how far the cell may swipe
     _listView.cellSwipeTreshold = 30; //the treshold after which the cell will autoswipe to the end and will not jump back to the center.
-    _listView.layout.itemSize = CGSizeMake(100, 80);
+    ((TKListViewLinearLayout*)_listView.layout).itemSize = CGSizeMake(100, 80);
     
     [self.view addSubview:_listView];
 }

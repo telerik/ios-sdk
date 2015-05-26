@@ -227,7 +227,7 @@
                                        @"4. Consume web service": [DataSourceWithWebService class],
                                        },
 
-                               @"6.ListView (Beta)": @{
+                               @"6.ListView": @{
                                        @"1. Getting started": [ListViewGettingStarted class],
                                        @"2. Swipe cell": [ListViewSwipe class],
                                        @"3. Items reorder": [ListViewReorder class],
