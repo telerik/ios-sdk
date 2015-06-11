@@ -369,6 +369,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"\"/Users/${USER}/Documents/Telerik/\"",
 				);
 				INFOPLIST_FILE = Seismograph/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -388,6 +389,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"\"/Users/${USER}/Documents/Telerik/\"",
 				);
 				INFOPLIST_FILE = Seismograph/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

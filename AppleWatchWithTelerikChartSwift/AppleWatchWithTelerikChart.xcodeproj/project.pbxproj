@@ -762,6 +762,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"\"/Users/${USER}/Documents/Telerik/\"/**",
 				);
 				INFOPLIST_FILE = AppleWatchWithTelerikChart/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -785,6 +786,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"\"/Users/${USER}/Documents/Telerik/\"/**",
 				);
 				INFOPLIST_FILE = AppleWatchWithTelerikChart/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
