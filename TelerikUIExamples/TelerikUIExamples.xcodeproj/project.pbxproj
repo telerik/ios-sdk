@@ -1023,7 +1023,7 @@
 					"$(inherited)",
 					"${SRCROOT}/**",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"\"/Users/${USER}/Documents/Telerik/UI for iOS Q1 2015/\"",
+					"\"/Users/${USER}/Documents/Telerik/UI for iOS Q1 2015/\"/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TelerikUIExamples/TelerikUIExamples-Prefix.pch";
@@ -1047,7 +1047,7 @@
 					"$(inherited)",
 					"${SRCROOT}/**",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"\"/Users/${USER}/Documents/Telerik/UI for iOS Q1 2015/\"",
+					"\"/Users/${USER}/Documents/Telerik/UI for iOS Q1 2015/\"/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TelerikUIExamples/TelerikUIExamples-Prefix.pch";
