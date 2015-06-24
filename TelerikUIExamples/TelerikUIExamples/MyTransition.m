@@ -14,8 +14,6 @@
     CGPoint _hostviewIdentityCenter;
 }
 
-
-
 - (void)show
 {
     if (!self.sideDrawer.isVisible) {
@@ -28,8 +26,8 @@
     [self transitionBegan:YES];
     [UIView animateWithDuration:self.sideDrawer.transitionDuration
                      animations:^{
-                         self.sideDrawer.center = CGPointMake(_sideDrawerIndentityCenter.x, _sideDrawerIndentityCenter.y + self.sideDrawer.bounds.size.height);
-                         self.sideDrawer.hostview.center = CGPointMake(_hostviewIdentityCenter.x + self.sideDrawer.width, _hostviewIdentityCenter.y);
+                         self.sideDrawer.center = CGPointMake(self.sideDrawer.width / 2.0, CGRectGetMidY(self.sideDrawer.superview.bounds));
+                         self.sideDrawer.hostview.center = CGPointMake(self.sideDrawer.hostview.center.x + self.sideDrawer.width, self.sideDrawer.hostview.center.y);
                      }
                      completion:^(BOOL finished){
                          [self transitionEnded:YES];
@@ -41,8 +39,9 @@
     [self transitionBegan:NO];
     [UIView animateWithDuration:self.sideDrawer.transitionDuration
                      animations:^{
-                         self.sideDrawer.center = _sideDrawerIndentityCenter;
-                         self.sideDrawer.hostview.center = _hostviewIdentityCenter;
+                         self.sideDrawer.center = CGPointMake(self.sideDrawer.width / 2.0, -self.sideDrawer.frame.size.height / 2.0);
+                         self.sideDrawer.hostview.center = CGPointMake(CGRectGetMidX(self.sideDrawer.hostview.superview.bounds),
+                                                                       CGRectGetMidY(self.sideDrawer.hostview.superview.bounds));
                      }
                      completion:^(BOOL finished){
                          [self transitionEnded:NO];

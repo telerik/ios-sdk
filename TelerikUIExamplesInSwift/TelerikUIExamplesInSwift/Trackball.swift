@@ -71,7 +71,7 @@ class Trackball: ExampleViewController, TKChartDelegate {
         for info in selection as! [TKChartSelectionInfo] {
             let data = info.dataPoint() as TKChartData!
             str.appendFormat("Day %2.f series %d - %2.f", data.dataXValue() as! Float, info.series.index, data.dataYValue() as! Float)
-            if (i<count) {
+            if (i<count-1) {
                 str.appendString("\n");
             }
             i++

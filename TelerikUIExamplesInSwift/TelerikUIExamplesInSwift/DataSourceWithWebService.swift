@@ -71,6 +71,7 @@ class DataSourceWithWebService: ExampleViewController {
             xAxis.setPlotMode(TKChartAxisPlotMode.BetweenTicks)
             xAxis.labelFormatter = formatter
             xAxis.title = "date"
+            xAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Days
         }
     }
 

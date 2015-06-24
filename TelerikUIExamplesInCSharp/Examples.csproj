@@ -252,6 +252,29 @@
     <BundleResource Include="Resources\paleo3.jpg" />
     <BundleResource Include="Resources\paleo4.jpg" />
     <BundleResource Include="Resources\paleo5.jpg" />
+    <BundleResource Include="Resources\calendar.png" />
+    <BundleResource Include="Resources\guest-name.png" />
+    <BundleResource Include="Resources\guest-number.png" />
+    <BundleResource Include="Resources\phone.png" />
+    <BundleResource Include="Resources\plus.png" />
+    <BundleResource Include="Resources\table-number.png" />
+    <BundleResource Include="Resources\time.png" />
+    <BundleResource Include="Resources\wood-pattern.png" />
+    <BundleResource Include="Resources\minus.png" />
+    <BundleResource Include="Resources\plus%402x.png" />
+    <BundleResource Include="Resources\plus%403x.png" />
+    <BundleResource Include="Resources\phone%402x.png" />
+    <BundleResource Include="Resources\phone%403x.png" />
+    <BundleResource Include="Resources\guest-name%402x.png" />
+    <BundleResource Include="Resources\guest-name%403x.png" />
+    <BundleResource Include="Resources\guest-number%402x.png" />
+    <BundleResource Include="Resources\guest-number%403x.png" />
+    <BundleResource Include="Resources\calendar%402x.png" />
+    <BundleResource Include="Resources\calendar%403x.png" />
+    <BundleResource Include="Resources\time%402x.png" />
+    <BundleResource Include="Resources\time%403x.png" />
+    <BundleResource Include="Resources\table-number%402x.png" />
+    <BundleResource Include="Resources\table-number%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -352,6 +375,26 @@
     <Compile Include="Examples\SideDrawer\CustomTransitionExample\MyTransition.cs" />
     <Compile Include="Examples\ListView\CustomCells\CustomListCell.cs" />
     <Compile Include="Examples\ListView\CustomCells\AnimationListCell.cs" />
+    <Compile Include="Examples\Alert\AlertGettingStarted.cs" />
+    <Compile Include="Examples\Alert\AlertAnimations.cs" />
+    <Compile Include="Examples\Alert\AlertNotifications.cs" />
+    <Compile Include="Examples\Alert\AlertCustomView.cs" />
+    <Compile Include="Examples\Alert\AlertViewCustomize.cs" />
+    <Compile Include="Examples\Alert\AlertSettings.cs" />
+    <Compile Include="Examples\Alert\Classes\AlertCustomContentView.cs" />
+    <Compile Include="Examples\Alert\Classes\Settings.cs" />
+    <Compile Include="Examples\Alert\Classes\UIButton_Circle.cs" />
+    <Compile Include="Examples\DataForm\DataFormGettingStarted.cs" />
+    <Compile Include="Examples\DataForm\PersonalInfo.cs" />
+    <Compile Include="Examples\DataForm\DataFormReadOnly.cs" />
+    <Compile Include="Examples\DataForm\CardInfo.cs" />
+    <Compile Include="Examples\DataForm\DataFormCustomization.cs" />
+    <Compile Include="Examples\DataForm\DataFormValidation.cs" />
+    <Compile Include="Examples\DataForm\RegistrationInfo.cs" />
+    <Compile Include="Examples\DataForm\EmailValidator.cs" />
+    <Compile Include="Examples\DataForm\PasswordValidator.cs" />
+    <Compile Include="Examples\DataForm\ReservationForm.cs" />
+    <Compile Include="Examples\DataForm\CallEditor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -378,6 +421,9 @@
     <Folder Include="Examples\DataSource\" />
     <Folder Include="Examples\ListView\" />
     <Folder Include="Examples\ListView\CustomCells\" />
+    <Folder Include="Examples\Alert\" />
+    <Folder Include="Examples\Alert\Classes\" />
+    <Folder Include="Examples\DataForm\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

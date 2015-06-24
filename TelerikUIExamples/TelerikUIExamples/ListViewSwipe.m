@@ -79,18 +79,21 @@
             [bMore setTitle:@"More" forState:UIControlStateNormal];
             [bMore setBackgroundColor:[UIColor lightGrayColor]];
             bMore.titleLabel.font = font;
+            [bMore addTarget:self action:@selector(buttonTouched) forControlEvents:UIControlEventTouchUpInside];
             [cell.swipeBackgroundView addSubview:bMore];
 
             UIButton *bFlag = [[UIButton alloc] initWithFrame:CGRectMake(size.width - 120, 0, 60, size.height)];
             [bFlag setTitle:@"Flag" forState:UIControlStateNormal];
             [bFlag setBackgroundColor:[UIColor orangeColor]];
             bFlag.titleLabel.font = font;
+            [bFlag addTarget:self action:@selector(buttonTouched) forControlEvents:UIControlEventTouchUpInside];
             [cell.swipeBackgroundView addSubview:bFlag];
 
             UIButton *bTrash = [[UIButton alloc] initWithFrame:CGRectMake(size.width - 60, 0, 60, size.height)];
             [bTrash setTitle:@"Trash" forState:UIControlStateNormal];
             [bTrash setBackgroundColor:[UIColor redColor]];
             bTrash.titleLabel.font = font;
+            [bTrash addTarget:self action:@selector(buttonTouched) forControlEvents:UIControlEventTouchUpInside];
             [cell.swipeBackgroundView addSubview:bTrash];
             
             UIButton *bUnread = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, size.height)];
@@ -99,6 +102,7 @@
             bUnread.titleLabel.font = font;
             bUnread.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
             bUnread.titleLabel.textAlignment = NSTextAlignmentCenter;
+            [bUnread addTarget:self action:@selector(buttonTouched) forControlEvents:UIControlEventTouchUpInside];
             [cell.swipeBackgroundView addSubview:bUnread];
         }
         
@@ -140,6 +144,11 @@
 {
     _buttonAnimationEnabled = NO;
     [_listView reloadData];
+}
+
+- (void)buttonTouched
+{
+    [_listView endSwipe:YES];
 }
 
 - (void)animateButtonsInCell:(TKListViewCell*)cell widthOffset:(CGPoint)offset
@@ -188,7 +197,7 @@
 
 - (void)listView:(TKListView *)listView didFinishSwipeCell:(TKListViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withOffset:(CGPoint)offset
 {
-    [self animateButtonsInCell:cell widthOffset:offset];
+    NSLog(@"swiped cell at index path: %ld", (long)indexPath.row);
 }
 
 @end

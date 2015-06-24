@@ -79,6 +79,7 @@
         xAxis.plotMode = TKChartAxisPlotModeBetweenTicks;
         xAxis.labelFormatter = formatter;
         xAxis.title = @"date";
+        xAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnitDays;
     }];
 }
 

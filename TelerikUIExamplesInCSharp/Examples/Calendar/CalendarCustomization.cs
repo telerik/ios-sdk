@@ -26,7 +26,7 @@ namespace Examples
 			this.View.AddSubview (this.CalendarView);
 
 			UIImage img = new UIImage ("calendar_header.png");
-
+	    
 			TKCalendarMonthPresenter presenter = (TKCalendarMonthPresenter)this.CalendarView.Presenter;
 			presenter.Style.TitleCellHeight = 20;
 			presenter.HeaderView.ContentMode = UIViewContentMode.ScaleToFill;

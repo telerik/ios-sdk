@@ -29,6 +29,7 @@ class MultipleAxes:ExampleViewController {
         
         let periodXAxis = TKChartDateTimeAxis()
         periodXAxis.majorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Years
+        periodXAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Years
         periodXAxis.majorTickInterval = 1
         periodXAxis.position = TKChartAxisPosition.Bottom
         periodXAxis.setPlotMode(TKChartAxisPlotMode.BetweenTicks)

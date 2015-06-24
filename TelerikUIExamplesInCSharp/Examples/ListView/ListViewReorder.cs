@@ -14,8 +14,8 @@ namespace Examples
 
 		public ListViewReorder()
 		{
-			this.AddOption ("Enable reorder mode", EnableReorderSelected);
-			this.AddOption ("Disable reorder mode", DisableReorderSelected);
+			this.AddOption ("Enabled", EnableReorderSelected, "Items reorder");
+			this.AddOption ("Disabled", DisableReorderSelected, "Items reorder");
 		}
 
 		public override void ViewDidLoad ()

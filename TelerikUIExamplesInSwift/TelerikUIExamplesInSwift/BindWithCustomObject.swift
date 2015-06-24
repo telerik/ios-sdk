@@ -13,21 +13,21 @@ class CustomObject : NSObject
     var value1:Float?
     var value2:Float?
     var value3:Float?
-
+    
     override func valueForKey(key: String) -> AnyObject? {
         switch key {
-            case "objectID":
-                return self.objectID
-            case "value1":
-                return self.value1
-            case "value2":
-                return self.value2
-            case "value3":
-                return self.value3
+        case "objectID":
+            return self.objectID
+        case "value1":
+            return self.value1
+        case "value2":
+            return self.value2
+        case "value3":
+            return self.value3
         default:
             break
         }
-       return super.valueForKey(key)
+        return super.valueForKey(key)
     }
 }
 
@@ -59,10 +59,10 @@ class BindWithCustomObject: ExampleViewController {
         var stackInfo = TKChartStackInfo(ID: 1, withStackMode: TKChartStackMode.Stack)
         for i in 0..<chart.series().count {
             let series = chart.series()[i] as! TKChartSeries
-            series.selectionMode = TKChartSeriesSelectionMode.Series
+            series.selectionMode = TKChartSeriesSelectionMode.DataPoint
             series.stackInfo = stackInfo
         }
-
+        
         chart.reloadData()
     }
     

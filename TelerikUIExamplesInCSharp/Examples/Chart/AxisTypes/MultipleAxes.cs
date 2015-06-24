@@ -30,6 +30,7 @@ namespace Examples
 
 			TKChartDateTimeAxis periodXAxis = new TKChartDateTimeAxis ();
 			periodXAxis.MajorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Years;
+			periodXAxis.MinorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Years;
 			periodXAxis.MajorTickInterval = 1;
 			periodXAxis.Position = TKChartAxisPosition.Bottom;
 			periodXAxis.PlotMode = TKChartAxisPlotMode.BetweenTicks;

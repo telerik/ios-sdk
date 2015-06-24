@@ -79,6 +79,7 @@
 - (void)noSelectionSelected
 {
     _listView.selectionBehavior = TKListViewSelectionBehaviorNone;
+    _label.text = @"";
     [_listView clearSelectedItems];
 }
 
@@ -94,15 +95,31 @@
 
 #pragma mark - TKListViewDelegate
 
+- (void)listView:(TKListView *)listView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Did highlight item at row %ld", (long)indexPath.row);
+    TKListViewCell *cell = [listView cellForItemAtIndexPath:indexPath];
+    if (!cell.selected && listView.selectionBehavior == TKListViewSelectionBehaviorLongPress) {
+        cell.selectedBackgroundView.hidden = YES;
+    }
+}
+
+- (void)listView:(TKListView *)listView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Did unhighlight item at row %ld", (long)indexPath.row);
+}
+
 - (void)listView:(TKListView *)listView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     _label.text = [NSString stringWithFormat:@"Selected: %@", _dataSource.items[indexPath.row]];
-    NSLog(@"Did select item at row %ld",(long)indexPath.row);
+    NSLog(@"Did select item at row %ld", (long)indexPath.row);
+    TKListViewCell *cell = [listView cellForItemAtIndexPath:indexPath];
+    cell.selectedBackgroundView.hidden = NO;
 }
 
 - (void)listView:(TKListView *)listView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Did deselect item at row %ld",(long)indexPath.row);
+    NSLog(@"Did deselect item at row %ld", (long)indexPath.row);
 }
 
 @end

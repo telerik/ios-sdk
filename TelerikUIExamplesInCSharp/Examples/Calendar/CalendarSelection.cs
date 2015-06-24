@@ -50,6 +50,12 @@ namespace Examples
 			components.Day = 6;
 			NSDate endDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, (NSCalendarOptions)0);
 
+			components.Year = -5;
+			this.CalendarView.MinDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, (NSCalendarOptions)0);
+
+			components.Year = 5;
+			this.CalendarView.MaxDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, (NSCalendarOptions)0);
+
 			this.CalendarView.SelectedDatesRange = new TKDateRange (startDate, endDate);
 		}
 
@@ -91,6 +97,14 @@ namespace Examples
 				Console.WriteLine (String.Format ("Trying to select the unselectable {0}", date));
 
 				return !TKCalendar.IsDate (main.UnselectableDate, date, NSCalendarUnit.Year | NSCalendarUnit.Month | NSCalendarUnit.Day, main.CalendarView.Calendar);
+			}
+
+			public override void UpdateVisualsForCell (TKCalendar calendar, TKCalendarCell cell)
+			{
+				if (cell.IsKindOfClass(new ObjCRuntime.Class(typeof(TKCalendarMonthTitleCell)))) {
+					TKCalendarMonthTitleCell monthTitleCell = (TKCalendarMonthTitleCell)cell;
+					monthTitleCell.LayoutMode = TKCalendarMonthTitleCellLayoutMode.MonthAndYearWithButotns;
+				}
 			}
 		}
 	}

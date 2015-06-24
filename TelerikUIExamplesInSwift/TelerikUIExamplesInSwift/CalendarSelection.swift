@@ -42,7 +42,16 @@ class CalendarSelection: ExampleViewController, TKCalendarDelegate {
         components.day = 6
         let endDate = self.calendarView.calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0));
         
+        components.year = -5
+        self.calendarView.minDate = self.calendarView.calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))
+
+        components.year = 5
+        self.calendarView.maxDate = self.calendarView.calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))
+
         self.calendarView.selectedDatesRange = TKDateRange(start: startDate, end: endDate)
+        
+        let presenter = self.calendarView.presenter() as! TKCalendarMonthPresenter
+        presenter.headerIsSticky = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -82,5 +91,12 @@ class CalendarSelection: ExampleViewController, TKCalendarDelegate {
     func calendar(calenadr:TKCalendar, shouldSelectDate date: NSDate)->Bool {
         println("Trying to select the unselectable: %@", date)
         return TKCalendar.isDate(self.unselectable, equalToDate: date, withComponents: NSCalendarUnit.YearCalendarUnit, withCalendar: calendarView.calendar)
+    }
+    
+    func calendar(calendar: TKCalendar!, updateVisualsForCell cell: TKCalendarCell!) {
+        if cell.isKindOfClass(TKCalendarMonthTitleCell.self) {
+            let monthTitleCell = cell as! TKCalendarMonthTitleCell
+            monthTitleCell.layoutMode = TKCalendarMonthTitleCellLayoutMode.MonthAndYearWithButotns
+        }
     }
 }

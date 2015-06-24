@@ -31,6 +31,7 @@
     
     TKChartDateTimeAxis *periodXAxis = [[TKChartDateTimeAxis alloc] init];
     periodXAxis.majorTickIntervalUnit = TKChartDateTimeAxisIntervalUnitYears;
+    periodXAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnitYears;
     periodXAxis.majorTickInterval = 1;
     periodXAxis.position = TKChartAxisPositionBottom;
     periodXAxis.plotMode = TKChartAxisPlotModeBetweenTicks;

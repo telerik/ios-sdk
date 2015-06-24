@@ -32,6 +32,8 @@
     
     [self.sideDrawerView.mainView addSubview:_scrollView];
     self.sideDrawerView.backgroundColor = [UIColor grayColor];
+    
+    self.sideDrawerView.sideDrawer.style.shadowMode = TKSideDrawerShadowModeSideDrawer;
 }
 
 - (void)viewDidLayoutSubviews

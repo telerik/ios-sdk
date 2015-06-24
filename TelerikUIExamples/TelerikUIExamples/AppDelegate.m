@@ -82,6 +82,18 @@
 #import "ListViewReorder.h"
 #import "ListViewSwipe.h"
 
+#import "AlertViewGettingStarted.h"
+#import "AlertViewSettings.h"
+#import "AlertViewCustomize.h"
+#import "AlertViewAnimations.h"
+#import "AlertNotifications.h"
+#import "AlertCustomView.h"
+
+#import "DataFormController.h"
+#import "DataFormValidation.h"
+#import "DataFormReadOnly.h"
+#import "DataFormCustomization.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -238,6 +250,22 @@
                                        @"8. Load on demand": [ListViewLoadOnDemand class],
                                        @"9. Pull to refresh": [ListViewPullToRefresh class],
                                        },
+
+                               @"7.DataForm (Beta)": @{
+                                       @"1. Getting started": [DataFormController class],
+                                       @"2. Validation": [DataFormValidation class],
+                                       @"3. Read Only Mode": [DataFormReadOnly class],
+                                       @"4. Customization": [DataFormCustomization class]
+                                       },
+
+                               @"8.Alert" : @{
+                                       @"1. Getting started": [AlertViewGettingStarted class],
+                                       @"2. Custom View": [AlertCustomView class],
+                                       @"3. Animations": [AlertViewAnimations class],
+                                       @"4. Notifications": [AlertNotifications class],
+                                       @"5. Customize": [AlertViewCustomize class],
+                                       @"6. Settings": [AlertViewSettings class],
+                                       }
                                };
     
     NSArray *examplesArray = [self createExamplesRecursively:examples];

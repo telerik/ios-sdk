@@ -63,7 +63,14 @@
     if (navigationBar.translucent) {
         UIApplication *app = [UIApplication sharedApplication];
         BOOL isLandscape = UIInterfaceOrientationIsLandscape(app.statusBarOrientation);
-        _headerHeight = navigationBar.intrinsicContentSize.height + (isLandscape ? app.statusBarFrame.size.width : app.statusBarFrame.size.height);
+        UIUserInterfaceIdiom idiom = [[UIDevice currentDevice] userInterfaceIdiom];
+        CGFloat version = [[UIDevice currentDevice].systemVersion floatValue];
+        if (idiom == UIUserInterfaceIdiomPad && version >= 8.0) {
+            _headerHeight = navigationBar.intrinsicContentSize.height + app.statusBarFrame.size.height;
+        }
+        else {
+            _headerHeight = navigationBar.intrinsicContentSize.height + (isLandscape ? app.statusBarFrame.size.width : app.statusBarFrame.size.height);
+        }
     }
 }
 

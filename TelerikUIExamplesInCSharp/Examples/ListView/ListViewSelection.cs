@@ -53,7 +53,6 @@ namespace Examples
 		void SelectionOnPressSelected(object sender, EventArgs e)
 		{
 			this.listView.SelectionBehavior = TKListViewSelectionBehavior.Press;
-			this.listView.Layout.InvalidateLayout ();
 		}
 
 		void SelectionOnHoldSelected(object sender, EventArgs e)
@@ -64,7 +63,7 @@ namespace Examples
 		void NoSelectionSelected(object sender, EventArgs e)
 		{
 			this.listView.SelectionBehavior = TKListViewSelectionBehavior.None;
-			this.listView.ClearSelectedItems ();
+			this.label.Text = "";
 		}
 
 		void MultipleSelectionSelected (object sender, EventArgs e)
@@ -86,10 +85,29 @@ namespace Examples
 				this.owner = owner;
 			}
 
+			public override void DidHighlightItemAtIndexPath (TKListView listView, NSIndexPath indexPath)
+			{
+				Console.WriteLine ("Did highlight item at row {0}", this.owner.dataSource.Items [indexPath.Row]);
+				TKListViewCell cell = listView.CellForItem (indexPath);
+				if (!cell.Selected && listView.SelectionBehavior == TKListViewSelectionBehavior.LongPress)
+				{
+					cell.SelectedBackgroundView.Hidden = true;
+				}
+			}
+
+			public override void DidUnhighlightItemAtIndexPath (TKListView listView, NSIndexPath indexPath)
+			{
+				Console.WriteLine ("Did unhighlight item at row {0}", this.owner.dataSource.Items [indexPath.Row]);
+			}
+
 			public override void DidSelectItemAtIndexPath (TKListView listView, NSIndexPath indexPath)
 			{
 				this.owner.label.Text = string.Format("Selected: {0}", this.owner.dataSource.Items[indexPath.Row]);
 				Console.WriteLine ("Did select item at row {0}", this.owner.dataSource.Items [indexPath.Row]);
+				TKListViewCell cell = listView.CellForItem (indexPath);
+				if (cell != null) {
+					cell.SelectedBackgroundView.Hidden = false;
+				}
 			}
 
 			public override void DidDeselectItemAtIndexPath (TKListView listView, NSIndexPath indexPath)

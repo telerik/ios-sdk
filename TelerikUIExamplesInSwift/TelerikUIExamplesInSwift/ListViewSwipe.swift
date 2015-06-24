@@ -66,6 +66,7 @@ class ListViewSwipe: ExampleViewController, TKListViewDelegate {
                 bMore.setTitle("More", forState: UIControlState.Normal)
                 bMore.backgroundColor = UIColor.lightGrayColor()
                 bMore.titleLabel?.font = font
+                bMore.addTarget(self, action: "buttonTouched", forControlEvents: UIControlEvents.TouchUpInside)
                 cell.swipeBackgroundView.addSubview(bMore)
                 
                 let bFlag = UIButton()
@@ -73,6 +74,7 @@ class ListViewSwipe: ExampleViewController, TKListViewDelegate {
                 bFlag.setTitle("Flag", forState: UIControlState.Normal)
                 bFlag.backgroundColor = UIColor.orangeColor()
                 bFlag.titleLabel?.font = font
+                bFlag.addTarget(self, action: "buttonTouched", forControlEvents: UIControlEvents.TouchUpInside)
                 cell.swipeBackgroundView.addSubview(bFlag)
                 
                 let bTrash = UIButton()
@@ -80,6 +82,7 @@ class ListViewSwipe: ExampleViewController, TKListViewDelegate {
                 bTrash.setTitle("Trash", forState: UIControlState.Normal)
                 bTrash.backgroundColor = UIColor.redColor()
                 bTrash.titleLabel?.font = font
+                bTrash.addTarget(self, action: "buttonTouched", forControlEvents: UIControlEvents.TouchUpInside)
                 cell.swipeBackgroundView.addSubview(bTrash)
 
                 let bUnread = UIButton()
@@ -89,6 +92,7 @@ class ListViewSwipe: ExampleViewController, TKListViewDelegate {
                 bUnread.titleLabel?.font = font
                 bUnread.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
                 bUnread.titleLabel?.textAlignment = NSTextAlignment.Center
+                bUnread.addTarget(self, action: "buttonTouched", forControlEvents: UIControlEvents.TouchUpInside)
                 cell.swipeBackgroundView.addSubview(bUnread)
                 
             }
@@ -127,6 +131,10 @@ class ListViewSwipe: ExampleViewController, TKListViewDelegate {
         let range : NSRange = (str as NSString).rangeOfString("\n")
         attrStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor(), range: NSMakeRange(range.location, (str as NSString).length - range.location))
         return attrStr
+    }
+    
+    func buttonTouched() {
+        listView.endSwipe(true)
     }
     
     func enableButtonAnimation() {
@@ -171,6 +179,6 @@ class ListViewSwipe: ExampleViewController, TKListViewDelegate {
     }
     
     func listView(listView: TKListView!, didFinishSwipeCell cell: TKListViewCell!, atIndexPath indexPath: NSIndexPath!, withOffset offset: CGPoint) {
-        animateButtonsInCell(cell, offset: offset)
+        println("Swiped cell at indexPath: %d", indexPath.row)
     }
 }

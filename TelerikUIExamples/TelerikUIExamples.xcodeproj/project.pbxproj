@@ -12,9 +12,15 @@
 		193BB85E19C1A8CD00143087 /* MyPointLabelRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 193BB85D19C1A8CD00143087 /* MyPointLabelRender.m */; };
 		193BB86119C1A8F000143087 /* CustomPointLabelRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 193BB86019C1A8F000143087 /* CustomPointLabelRender.m */; };
 		194609081A8D0821005101D6 /* SideDrawerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 194609071A8D0821005101D6 /* SideDrawerHeaderView.m */; };
+		19463A421B343A290022054C /* DataFormCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 19463A411B343A290022054C /* DataFormCustomization.m */; };
+		19463A451B343A5D0022054C /* ReservationForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 19463A441B343A5D0022054C /* ReservationForm.m */; };
+		19463A481B343C450022054C /* CallEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 19463A471B343C450022054C /* CallEditor.m */; };
 		194C56F41934C505006D7C4F /* IndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194C56F31934C505006D7C4F /* IndicatorsViewController.m */; };
 		1956644719C9C678002F77EB /* SelectedPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1956644619C9C678002F77EB /* SelectedPointLabel.m */; };
 		1960558F1940B12D00F0E4C0 /* IndicatorsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1960558E1940B12D00F0E4C0 /* IndicatorsTableView.m */; };
+		1977F8C31B285B110024ECB2 /* PersonalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977F8C21B285B110024ECB2 /* PersonalInfo.m */; };
+		1977F8C71B28666B0024ECB2 /* DataFormValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977F8C61B28666B0024ECB2 /* DataFormValidation.m */; };
+		1977F8CA1B2867370024ECB2 /* RegisterationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977F8C91B2867370024ECB2 /* RegisterationInfo.m */; };
 		19861127191A2E240026EFF7 /* AppleStockPrices.json in Resources */ = {isa = PBXBuildFile; fileRef = 19861126191A2E240026EFF7 /* AppleStockPrices.json */; };
 		1986112A191A2E550026EFF7 /* FinancialChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 19861129191A2E550026EFF7 /* FinancialChart.m */; };
 		19953A6F1A7BD26D001B9513 /* SideDrawerTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 19953A6E1A7BD26D001B9513 /* SideDrawerTransitions.m */; };
@@ -25,9 +31,21 @@
 		19BAD0F219D43A0500803C27 /* LiveData.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BAD0F119D43A0500803C27 /* LiveData.m */; };
 		19C152CC193F668800770199 /* BubbleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C152CB193F668800770199 /* BubbleChart.m */; };
 		19DCA00F1ABB1457009C5D62 /* MyTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 19DCA00E1ABB1457009C5D62 /* MyTransition.m */; };
+		19DD17561B3049360001CCC0 /* DataFormReadOnly.m in Sources */ = {isa = PBXBuildFile; fileRef = 19DD17551B3049360001CCC0 /* DataFormReadOnly.m */; };
+		19DD17591B304D490001CCC0 /* CardInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 19DD17581B304D490001CCC0 /* CardInfo.m */; };
 		19E9055619BF11FB00A325D8 /* PointLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E9055519BF11FB00A325D8 /* PointLabels.m */; };
 		19E9055A19BF38F700A325D8 /* CustomPointLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E9055919BF38F700A325D8 /* CustomPointLabels.m */; };
 		19E9055D19BF391800A325D8 /* MyPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E9055C19BF391800A325D8 /* MyPointLabel.m */; };
+		19F6481B1B2EE3F70023A601 /* EmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6481A1B2EE3F70023A601 /* EmailValidator.m */; };
+		19F648201B2EF3C40023A601 /* PasswordValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6481F1B2EF3C40023A601 /* PasswordValidator.m */; };
+		19F9188F1B298163008C10F2 /* DataFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F9188E1B298163008C10F2 /* DataFormController.m */; };
+		1B3258731B272AC800EAC1DF /* AlertCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3258721B272AC800EAC1DF /* AlertCustomView.m */; };
+		1B3258761B272E5100EAC1DF /* AlertSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3258751B272E5100EAC1DF /* AlertSettings.m */; };
+		1B52B8C61B0DF1000005F916 /* AlertViewGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B8C51B0DF1000005F916 /* AlertViewGettingStarted.m */; };
+		1B52B9061B0E1E010005F916 /* AlertViewSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B9051B0E1E010005F916 /* AlertViewSettings.m */; };
+		1B52B9091B0E1E790005F916 /* AlertViewCustomize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B9081B0E1E790005F916 /* AlertViewCustomize.m */; };
+		1B52B90C1B0E1E880005F916 /* AlertViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B90B1B0E1E880005F916 /* AlertViewAnimations.m */; };
+		1BBFAA011B208843006FB5A6 /* AlertNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFAA001B208843006FB5A6 /* AlertNotifications.m */; };
 		7A0FD505194B1732004B5A8D /* FeedbackExampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FD504194B1732004B5A8D /* FeedbackExampleController.m */; };
 		7A0FD507194B1856004B5A8D /* FeedbackExampleController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A0FD506194B1856004B5A8D /* FeedbackExampleController.xib */; };
 		7A56815419374195005FEC6D /* StockDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A56815319374195005FEC6D /* StockDataPoint.m */; };
@@ -74,19 +92,20 @@
 		FE8A36DE18A3E68A0081EECA /* BandAndLineAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36DD18A3E68A0081EECA /* BandAndLineAnnotations.m */; };
 		FE8A36E118A4009A0081EECA /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36E018A4009A0081EECA /* CustomAnnotation.m */; };
 		FE8A36E518A401590081EECA /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36E418A401590081EECA /* MyAnnotation.m */; };
+		FE8FE8FE1B29EB8A00485201 /* AlertCustomContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8FE8FD1B29EB8A00485201 /* AlertCustomContentView.m */; };
 		FEA0D2D91A820C7D0014CD96 /* DataSourceGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2D81A820C7D0014CD96 /* DataSourceGettingStarted.m */; };
 		FEA0D2DC1A82174C0014CD96 /* DataSourceDescriptorsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2DB1A82174C0014CD96 /* DataSourceDescriptorsAPI.m */; };
 		FEA0D2DF1A821C340014CD96 /* DataSourceUIBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2DE1A821C340014CD96 /* DataSourceUIBindings.m */; };
 		FEA0D2E21A8245920014CD96 /* DSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2E11A8245920014CD96 /* DSItem.m */; };
 		FEA0D2E51A8280CF0014CD96 /* DSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2E41A8280CF0014CD96 /* DSCollectionViewCell.m */; };
 		FEA0D2E81A8286970014CD96 /* DataSourceWithWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2E71A8286970014CD96 /* DataSourceWithWebService.m */; };
+		FEB301971B3AF6ED00A3C525 /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB301951B3AF6ED00A3C525 /* TelerikAppFeedback.framework */; };
+		FEB301981B3AF6ED00A3C525 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB301961B3AF6ED00A3C525 /* TelerikUI.framework */; };
 		FEB4260119336F1D00C2A602 /* CalendarSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4260019336F1D00C2A602 /* CalendarSelection.m */; };
 		FEB42604193374A500C2A602 /* iOS7StyleCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB42603193374A500C2A602 /* iOS7StyleCalendar.m */; };
 		FEB66DB51B132ECA00DC71AC /* AnimationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB66DB41B132ECA00DC71AC /* AnimationListCell.m */; };
 		FEBC2E2619372D92007C12B1 /* CalendarViewModes.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBC2E2519372D92007C12B1 /* CalendarViewModes.m */; };
 		FEC0CF2D1A975BA30088A158 /* SimpleListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC0CF2C1A975BA30088A158 /* SimpleListViewCell.m */; };
-		FEC3AD631B14D171008CE266 /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC3AD611B14D171008CE266 /* TelerikAppFeedback.framework */; };
-		FEC3AD641B14D171008CE266 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC3AD621B14D171008CE266 /* TelerikUI.framework */; };
 		FEE2697B1806DBA300E52C37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE2697A1806DBA300E52C37 /* Foundation.framework */; };
 		FEE2697F1806DBA300E52C37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE2697E1806DBA300E52C37 /* UIKit.framework */; };
 		FEE269851806DBA300E52C37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEE269831806DBA300E52C37 /* InfoPlist.strings */; };
@@ -123,12 +142,24 @@
 		193BB86019C1A8F000143087 /* CustomPointLabelRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPointLabelRender.m; sourceTree = "<group>"; };
 		194609061A8D0821005101D6 /* SideDrawerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerHeaderView.h; sourceTree = "<group>"; };
 		194609071A8D0821005101D6 /* SideDrawerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerHeaderView.m; sourceTree = "<group>"; };
+		19463A401B343A290022054C /* DataFormCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormCustomization.h; sourceTree = "<group>"; };
+		19463A411B343A290022054C /* DataFormCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormCustomization.m; sourceTree = "<group>"; };
+		19463A431B343A5D0022054C /* ReservationForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationForm.h; sourceTree = "<group>"; };
+		19463A441B343A5D0022054C /* ReservationForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationForm.m; sourceTree = "<group>"; };
+		19463A461B343C450022054C /* CallEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallEditor.h; sourceTree = "<group>"; };
+		19463A471B343C450022054C /* CallEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallEditor.m; sourceTree = "<group>"; };
 		194C56F21934C505006D7C4F /* IndicatorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorsViewController.h; sourceTree = "<group>"; };
 		194C56F31934C505006D7C4F /* IndicatorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorsViewController.m; sourceTree = "<group>"; };
 		1956644519C9C678002F77EB /* SelectedPointLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedPointLabel.h; sourceTree = "<group>"; };
 		1956644619C9C678002F77EB /* SelectedPointLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedPointLabel.m; sourceTree = "<group>"; };
 		1960558D1940B12D00F0E4C0 /* IndicatorsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorsTableView.h; sourceTree = "<group>"; };
 		1960558E1940B12D00F0E4C0 /* IndicatorsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorsTableView.m; sourceTree = "<group>"; };
+		1977F8C11B285B110024ECB2 /* PersonalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfo.h; sourceTree = "<group>"; };
+		1977F8C21B285B110024ECB2 /* PersonalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfo.m; sourceTree = "<group>"; };
+		1977F8C51B28666B0024ECB2 /* DataFormValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormValidation.h; sourceTree = "<group>"; };
+		1977F8C61B28666B0024ECB2 /* DataFormValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormValidation.m; sourceTree = "<group>"; };
+		1977F8C81B2867370024ECB2 /* RegisterationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterationInfo.h; sourceTree = "<group>"; };
+		1977F8C91B2867370024ECB2 /* RegisterationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterationInfo.m; sourceTree = "<group>"; };
 		19861126191A2E240026EFF7 /* AppleStockPrices.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AppleStockPrices.json; sourceTree = "<group>"; };
 		19861128191A2E550026EFF7 /* FinancialChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialChart.h; sourceTree = "<group>"; };
 		19861129191A2E550026EFF7 /* FinancialChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialChart.m; sourceTree = "<group>"; };
@@ -148,12 +179,36 @@
 		19C152CB193F668800770199 /* BubbleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleChart.m; sourceTree = "<group>"; };
 		19DCA00D1ABB1457009C5D62 /* MyTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTransition.h; sourceTree = "<group>"; };
 		19DCA00E1ABB1457009C5D62 /* MyTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTransition.m; sourceTree = "<group>"; };
+		19DD17541B3049360001CCC0 /* DataFormReadOnly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormReadOnly.h; sourceTree = "<group>"; };
+		19DD17551B3049360001CCC0 /* DataFormReadOnly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormReadOnly.m; sourceTree = "<group>"; };
+		19DD17571B304D490001CCC0 /* CardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInfo.h; sourceTree = "<group>"; };
+		19DD17581B304D490001CCC0 /* CardInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardInfo.m; sourceTree = "<group>"; };
 		19E9055419BF11FB00A325D8 /* PointLabels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointLabels.h; sourceTree = "<group>"; };
 		19E9055519BF11FB00A325D8 /* PointLabels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointLabels.m; sourceTree = "<group>"; };
 		19E9055819BF38F700A325D8 /* CustomPointLabels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPointLabels.h; sourceTree = "<group>"; };
 		19E9055919BF38F700A325D8 /* CustomPointLabels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPointLabels.m; sourceTree = "<group>"; };
 		19E9055B19BF391800A325D8 /* MyPointLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPointLabel.h; sourceTree = "<group>"; };
 		19E9055C19BF391800A325D8 /* MyPointLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPointLabel.m; sourceTree = "<group>"; };
+		19F648191B2EE3F70023A601 /* EmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailValidator.h; sourceTree = "<group>"; };
+		19F6481A1B2EE3F70023A601 /* EmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailValidator.m; sourceTree = "<group>"; };
+		19F6481E1B2EF3C40023A601 /* PasswordValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordValidator.h; sourceTree = "<group>"; };
+		19F6481F1B2EF3C40023A601 /* PasswordValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordValidator.m; sourceTree = "<group>"; };
+		19F9188D1B298163008C10F2 /* DataFormController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormController.h; sourceTree = "<group>"; };
+		19F9188E1B298163008C10F2 /* DataFormController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormController.m; sourceTree = "<group>"; };
+		1B3258711B272AC800EAC1DF /* AlertCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertCustomView.h; sourceTree = "<group>"; };
+		1B3258721B272AC800EAC1DF /* AlertCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertCustomView.m; sourceTree = "<group>"; };
+		1B3258741B272E5100EAC1DF /* AlertSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertSettings.h; sourceTree = "<group>"; };
+		1B3258751B272E5100EAC1DF /* AlertSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertSettings.m; sourceTree = "<group>"; };
+		1B52B8C41B0DF1000005F916 /* AlertViewGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewGettingStarted.h; sourceTree = "<group>"; };
+		1B52B8C51B0DF1000005F916 /* AlertViewGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewGettingStarted.m; sourceTree = "<group>"; };
+		1B52B9041B0E1E010005F916 /* AlertViewSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewSettings.h; sourceTree = "<group>"; };
+		1B52B9051B0E1E010005F916 /* AlertViewSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewSettings.m; sourceTree = "<group>"; };
+		1B52B9071B0E1E790005F916 /* AlertViewCustomize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewCustomize.h; sourceTree = "<group>"; };
+		1B52B9081B0E1E790005F916 /* AlertViewCustomize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewCustomize.m; sourceTree = "<group>"; };
+		1B52B90A1B0E1E880005F916 /* AlertViewAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewAnimations.h; sourceTree = "<group>"; };
+		1B52B90B1B0E1E880005F916 /* AlertViewAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewAnimations.m; sourceTree = "<group>"; };
+		1BBFA9FF1B208843006FB5A6 /* AlertNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertNotifications.h; sourceTree = "<group>"; };
+		1BBFAA001B208843006FB5A6 /* AlertNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertNotifications.m; sourceTree = "<group>"; };
 		7A0FD503194B1732004B5A8D /* FeedbackExampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackExampleController.h; sourceTree = "<group>"; };
 		7A0FD504194B1732004B5A8D /* FeedbackExampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackExampleController.m; sourceTree = "<group>"; };
 		7A0FD506194B1856004B5A8D /* FeedbackExampleController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackExampleController.xib; sourceTree = "<group>"; };
@@ -173,6 +228,7 @@
 		8DDC67071A8E1D4C00FDE377 /* ListViewPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewPullToRefresh.m; sourceTree = "<group>"; };
 		8DFB71C71A88B109005ACF59 /* ListViewGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewGroups.h; sourceTree = "<group>"; };
 		8DFB71C81A88B109005ACF59 /* ListViewGroups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewGroups.m; sourceTree = "<group>"; };
+		A6238D701B2DAD830050378A /* UIButton_Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButton_Circle.h; sourceTree = "<group>"; };
 		A63F862B194461DC00FB766C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C1639F341A86B72500E86743 /* ListViewLoadOnDemand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewLoadOnDemand.h; sourceTree = "<group>"; };
 		C1639F351A86B72500E86743 /* ListViewLoadOnDemand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewLoadOnDemand.m; sourceTree = "<group>"; };
@@ -213,7 +269,6 @@
 		FE5F96411A93A68F00E70AF2 /* OptionSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionSection.m; sourceTree = "<group>"; };
 		FE7131B6192FA4E400B9C231 /* CalendarTransitionEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTransitionEffects.h; sourceTree = "<group>"; };
 		FE7131B7192FA4E400B9C231 /* CalendarTransitonEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTransitonEffects.m; sourceTree = "<group>"; };
-		FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikAppFeedback.a; path = "../AppFeedback/build/Debug-iphoneos/libTelerikAppFeedback.a"; sourceTree = "<group>"; };
 		FE8701811941E2A700AC1D05 /* CalendarCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarCustomization.h; sourceTree = "<group>"; };
 		FE8701821941E2A700AC1D05 /* CalendarCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarCustomization.m; sourceTree = "<group>"; };
 		FE8701CF19420E4000AC1D05 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
@@ -238,6 +293,8 @@
 		FE8A36E018A4009A0081EECA /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
 		FE8A36E318A401590081EECA /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
 		FE8A36E418A401590081EECA /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
+		FE8FE8FC1B29EB8A00485201 /* AlertCustomContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertCustomContentView.h; sourceTree = "<group>"; };
+		FE8FE8FD1B29EB8A00485201 /* AlertCustomContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertCustomContentView.m; sourceTree = "<group>"; };
 		FEA0D2D71A820C7D0014CD96 /* DataSourceGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceGettingStarted.h; sourceTree = "<group>"; };
 		FEA0D2D81A820C7D0014CD96 /* DataSourceGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceGettingStarted.m; sourceTree = "<group>"; };
 		FEA0D2DA1A82174C0014CD96 /* DataSourceDescriptorsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceDescriptorsAPI.h; sourceTree = "<group>"; };
@@ -250,6 +307,8 @@
 		FEA0D2E41A8280CF0014CD96 /* DSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSCollectionViewCell.m; sourceTree = "<group>"; };
 		FEA0D2E61A8286970014CD96 /* DataSourceWithWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceWithWebService.h; sourceTree = "<group>"; };
 		FEA0D2E71A8286970014CD96 /* DataSourceWithWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceWithWebService.m; sourceTree = "<group>"; };
+		FEB301951B3AF6ED00A3C525 /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
+		FEB301961B3AF6ED00A3C525 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FEB425FF19336F1D00C2A602 /* CalendarSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSelection.h; sourceTree = "<group>"; };
 		FEB4260019336F1D00C2A602 /* CalendarSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSelection.m; sourceTree = "<group>"; };
 		FEB42602193374A500C2A602 /* iOS7StyleCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOS7StyleCalendar.h; sourceTree = "<group>"; };
@@ -260,8 +319,6 @@
 		FEBC2E2519372D92007C12B1 /* CalendarViewModes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewModes.m; sourceTree = "<group>"; };
 		FEC0CF2B1A975BA30088A158 /* SimpleListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleListViewCell.h; sourceTree = "<group>"; };
 		FEC0CF2C1A975BA30088A158 /* SimpleListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleListViewCell.m; sourceTree = "<group>"; };
-		FEC3AD611B14D171008CE266 /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
-		FEC3AD621B14D171008CE266 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FEE269771806DBA300E52C37 /* TelerikUIExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelerikUIExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE2697A1806DBA300E52C37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FEE2697E1806DBA300E52C37 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -293,7 +350,6 @@
 		FEE269D6180708B900E52C37 /* StackedColumnChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackedColumnChart.m; sourceTree = "<group>"; };
 		FEE269D8180708CD00E52C37 /* StackedAreaChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackedAreaChart.h; sourceTree = "<group>"; };
 		FEE269D9180708CD00E52C37 /* StackedAreaChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackedAreaChart.m; sourceTree = "<group>"; };
-		FEE8E7901887DF6E009D373B /* libTelerikUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikUI.a; path = "../../../../../Library/Developer/Xcode/DerivedData/TelerikUI-dwzcvftbvbwddjbzzdyodshibupb/Build/Products/Debug-iphoneos/libTelerikUI.a"; sourceTree = "<group>"; };
 		FEEAEBD118080A7600D75A5C /* DefaultAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultAnimation.h; sourceTree = "<group>"; };
 		FEEAEBD218080A7600D75A5C /* DefaultAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultAnimation.m; sourceTree = "<group>"; };
 		FEEAEBD418080A8900D75A5C /* CustomAnimationLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimationLineChart.h; sourceTree = "<group>"; };
@@ -317,8 +373,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEC3AD631B14D171008CE266 /* TelerikAppFeedback.framework in Frameworks */,
-				FEC3AD641B14D171008CE266 /* TelerikUI.framework in Frameworks */,
+				FEB301971B3AF6ED00A3C525 /* TelerikAppFeedback.framework in Frameworks */,
+				FEB301981B3AF6ED00A3C525 /* TelerikUI.framework in Frameworks */,
 				FE8701E4194218AB00AC1D05 /* EventKit.framework in Frameworks */,
 				FE8701E5194218AB00AC1D05 /* EventKitUI.framework in Frameworks */,
 				FEE2697F1806DBA300E52C37 /* UIKit.framework in Frameworks */,
@@ -342,6 +398,19 @@
 			name = CustomLabelRender;
 			sourceTree = "<group>";
 		};
+		19463A3F1B343A130022054C /* Customization */ = {
+			isa = PBXGroup;
+			children = (
+				19463A401B343A290022054C /* DataFormCustomization.h */,
+				19463A411B343A290022054C /* DataFormCustomization.m */,
+				19463A431B343A5D0022054C /* ReservationForm.h */,
+				19463A441B343A5D0022054C /* ReservationForm.m */,
+				19463A461B343C450022054C /* CallEditor.h */,
+				19463A471B343C450022054C /* CallEditor.m */,
+			);
+			name = Customization;
+			sourceTree = "<group>";
+		};
 		1960558C1940A87E00F0E4C0 /* IndicatorsExample */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +420,32 @@
 				1960558E1940B12D00F0E4C0 /* IndicatorsTableView.m */,
 			);
 			name = IndicatorsExample;
+			sourceTree = "<group>";
+		};
+		1977F8C01B285AF20024ECB2 /* GettingStarted */ = {
+			isa = PBXGroup;
+			children = (
+				1977F8C11B285B110024ECB2 /* PersonalInfo.h */,
+				1977F8C21B285B110024ECB2 /* PersonalInfo.m */,
+				19F9188D1B298163008C10F2 /* DataFormController.h */,
+				19F9188E1B298163008C10F2 /* DataFormController.m */,
+			);
+			name = GettingStarted;
+			sourceTree = "<group>";
+		};
+		1977F8C41B28655A0024ECB2 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				1977F8C51B28666B0024ECB2 /* DataFormValidation.h */,
+				1977F8C61B28666B0024ECB2 /* DataFormValidation.m */,
+				1977F8C81B2867370024ECB2 /* RegisterationInfo.h */,
+				1977F8C91B2867370024ECB2 /* RegisterationInfo.m */,
+				19F648191B2EE3F70023A601 /* EmailValidator.h */,
+				19F6481A1B2EE3F70023A601 /* EmailValidator.m */,
+				19F6481E1B2EF3C40023A601 /* PasswordValidator.h */,
+				19F6481F1B2EF3C40023A601 /* PasswordValidator.m */,
+			);
+			name = Validation;
 			sourceTree = "<group>";
 		};
 		19953A731A7BDB1A001B9513 /* GettingStartedExample */ = {
@@ -414,6 +509,28 @@
 			name = SideDrawer;
 			sourceTree = "<group>";
 		};
+		19D7E3201B0F6A7000235365 /* DataForm */ = {
+			isa = PBXGroup;
+			children = (
+				19463A3F1B343A130022054C /* Customization */,
+				19DD17531B3049120001CCC0 /* ReadOnly */,
+				1977F8C41B28655A0024ECB2 /* Validation */,
+				1977F8C01B285AF20024ECB2 /* GettingStarted */,
+			);
+			name = DataForm;
+			sourceTree = "<group>";
+		};
+		19DD17531B3049120001CCC0 /* ReadOnly */ = {
+			isa = PBXGroup;
+			children = (
+				19DD17541B3049360001CCC0 /* DataFormReadOnly.h */,
+				19DD17551B3049360001CCC0 /* DataFormReadOnly.m */,
+				19DD17571B304D490001CCC0 /* CardInfo.h */,
+				19DD17581B304D490001CCC0 /* CardInfo.m */,
+			);
+			name = ReadOnly;
+			sourceTree = "<group>";
+		};
 		19E9055319BF100F00A325D8 /* PointLabels */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +551,26 @@
 				19E9055C19BF391800A325D8 /* MyPointLabel.m */,
 			);
 			name = CustomPointLabel;
+			sourceTree = "<group>";
+		};
+		1B52B8C31B0DF08A0005F916 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				FE8FE8FB1B29E4F000485201 /* Classes */,
+				1B52B8C41B0DF1000005F916 /* AlertViewGettingStarted.h */,
+				1B52B8C51B0DF1000005F916 /* AlertViewGettingStarted.m */,
+				1B3258711B272AC800EAC1DF /* AlertCustomView.h */,
+				1B3258721B272AC800EAC1DF /* AlertCustomView.m */,
+				1B52B90A1B0E1E880005F916 /* AlertViewAnimations.h */,
+				1B52B90B1B0E1E880005F916 /* AlertViewAnimations.m */,
+				1BBFA9FF1B208843006FB5A6 /* AlertNotifications.h */,
+				1BBFAA001B208843006FB5A6 /* AlertNotifications.m */,
+				1B52B9071B0E1E790005F916 /* AlertViewCustomize.h */,
+				1B52B9081B0E1E790005F916 /* AlertViewCustomize.m */,
+				1B52B9041B0E1E010005F916 /* AlertViewSettings.h */,
+				1B52B9051B0E1E010005F916 /* AlertViewSettings.m */,
+			);
+			name = Alert;
 			sourceTree = "<group>";
 		};
 		7A0FD502194B16B4004B5A8D /* Feedback */ = {
@@ -561,6 +698,18 @@
 			name = Annotations;
 			sourceTree = "<group>";
 		};
+		FE8FE8FB1B29E4F000485201 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1B3258741B272E5100EAC1DF /* AlertSettings.h */,
+				1B3258751B272E5100EAC1DF /* AlertSettings.m */,
+				FE8FE8FC1B29EB8A00485201 /* AlertCustomContentView.h */,
+				FE8FE8FD1B29EB8A00485201 /* AlertCustomContentView.m */,
+				A6238D701B2DAD830050378A /* UIButton_Circle.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		FEA0D2D61A820BC90014CD96 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,10 +749,8 @@
 		FEE269791806DBA300E52C37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FEC3AD611B14D171008CE266 /* TelerikAppFeedback.framework */,
-				FEC3AD621B14D171008CE266 /* TelerikUI.framework */,
-				FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */,
-				FEE8E7901887DF6E009D373B /* libTelerikUI.a */,
+				FEB301951B3AF6ED00A3C525 /* TelerikAppFeedback.framework */,
+				FEB301961B3AF6ED00A3C525 /* TelerikUI.framework */,
 				FE8701E2194218AB00AC1D05 /* EventKit.framework */,
 				FE8701E3194218AB00AC1D05 /* EventKitUI.framework */,
 				FEE2697A1806DBA300E52C37 /* Foundation.framework */,
@@ -640,6 +787,8 @@
 		FEE269B21806DC7500E52C37 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				19D7E3201B0F6A7000235365 /* DataForm */,
+				1B52B8C31B0DF08A0005F916 /* Alert */,
 				8D6F5B6E1A84F195008A8EF2 /* ListView */,
 				FEA0D2D61A820BC90014CD96 /* DataSource */,
 				19D74EE31A7942F800D51148 /* SideDrawer */,
@@ -837,30 +986,39 @@
 			files = (
 				1960558F1940B12D00F0E4C0 /* IndicatorsTableView.m in Sources */,
 				19C152CC193F668800770199 /* BubbleChart.m in Sources */,
+				1B52B9061B0E1E010005F916 /* AlertViewSettings.m in Sources */,
 				FE017A2B1945F571005C46D5 /* LocalizedCalendar.m in Sources */,
 				FE8A36CF18A3E4AE0081EECA /* BalloonAnnotation.m in Sources */,
+				1B52B9091B0E1E790005F916 /* AlertViewCustomize.m in Sources */,
+				1977F8C71B28666B0024ECB2 /* DataFormValidation.m in Sources */,
 				7A56815419374195005FEC6D /* StockDataPoint.m in Sources */,
 				8DFB71C91A88B109005ACF59 /* ListViewGroups.m in Sources */,
 				FE2D10761A80CB2D00A787EB /* InlineEvents.m in Sources */,
 				FE3CF5901807F74C00461E57 /* NegativeValues.m in Sources */,
 				FE0161CF192E57510064C284 /* CalendarWithEvents.m in Sources */,
+				1977F8CA1B2867370024ECB2 /* RegisterationInfo.m in Sources */,
 				8D69A2E11A91F544008315D1 /* ListViewSwipe.m in Sources */,
 				FE5F963F1A93933100E70AF2 /* ListViewGettingStarted.m in Sources */,
 				19A2A02B1A811B6F00378C68 /* SideDrawerCustomTransition.m in Sources */,
 				FEE269BA1806E17D00E52C37 /* ColumnAndBarChart.m in Sources */,
 				194609081A8D0821005101D6 /* SideDrawerHeaderView.m in Sources */,
+				19463A451B343A5D0022054C /* ReservationForm.m in Sources */,
 				FE3CF593180802D000461E57 /* PanZoom.m in Sources */,
 				FE17150F1A961B7F000EB4C9 /* CustomCardListViewCell.m in Sources */,
 				FE8A36D518A3E65B0081EECA /* LayerAnnotation.m in Sources */,
 				FEEAEBDC18080AAC00D75A5C /* UIKitDynamicsAnimation.m in Sources */,
 				19DCA00F1ABB1457009C5D62 /* MyTransition.m in Sources */,
+				19F648201B2EF3C40023A601 /* PasswordValidator.m in Sources */,
 				7A0FD505194B1732004B5A8D /* FeedbackExampleController.m in Sources */,
 				FE5F96421A93A68F00E70AF2 /* OptionSection.m in Sources */,
 				FEE269B51806DC9000E52C37 /* ExampleInfo.m in Sources */,
 				FE3CF5871807F6F700461E57 /* CategoricalAxis.m in Sources */,
 				FEE269DA180708CD00E52C37 /* StackedAreaChart.m in Sources */,
+				1B52B8C61B0DF1000005F916 /* AlertViewGettingStarted.m in Sources */,
+				19F9188F1B298163008C10F2 /* DataFormController.m in Sources */,
 				19BAD0F219D43A0500803C27 /* LiveData.m in Sources */,
 				8DDC67051A8CFEC600FDE377 /* ListViewLayout.m in Sources */,
+				19463A421B343A290022054C /* DataFormCustomization.m in Sources */,
 				FEB66DB51B132ECA00DC71AC /* AnimationListCell.m in Sources */,
 				FEE269D7180708B900E52C37 /* StackedColumnChart.m in Sources */,
 				FE8701D91942141400AC1D05 /* CalendarEventKitDataBinding.m in Sources */,
@@ -871,6 +1029,7 @@
 				193BB86119C1A8F000143087 /* CustomPointLabelRender.m in Sources */,
 				FE7131B8192FA4E400B9C231 /* CalendarTransitonEffects.m in Sources */,
 				FE4F98251B0C9CC9001B51D8 /* CustomListCell.m in Sources */,
+				19DD17591B304D490001CCC0 /* CardInfo.m in Sources */,
 				FEA0D2DF1A821C340014CD96 /* DataSourceUIBindings.m in Sources */,
 				FEEAEBD618080A8900D75A5C /* CustomAnimationLineChart.m in Sources */,
 				FEE269941806DBA300E52C37 /* ViewController.m in Sources */,
@@ -878,27 +1037,33 @@
 				FEC0CF2D1A975BA30088A158 /* SimpleListViewCell.m in Sources */,
 				1956644719C9C678002F77EB /* SelectedPointLabel.m in Sources */,
 				FEB42604193374A500C2A602 /* iOS7StyleCalendar.m in Sources */,
+				1977F8C31B285B110024ECB2 /* PersonalInfo.m in Sources */,
 				19E9055D19BF391800A325D8 /* MyPointLabel.m in Sources */,
 				19B26F8A1A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m in Sources */,
 				FEEAEBD318080A7600D75A5C /* DefaultAnimation.m in Sources */,
 				FEE269BD1806E20300E52C37 /* ExampleViewController.m in Sources */,
+				1B52B90C1B0E1E880005F916 /* AlertViewAnimations.m in Sources */,
 				0113350118151E47008E6477 /* CustomAnimationAreaChart.m in Sources */,
 				FEE269CE180704F200E52C37 /* ScatterChart.m in Sources */,
 				FEE2698B1806DBA300E52C37 /* AppDelegate.m in Sources */,
 				19E9055619BF11FB00A325D8 /* PointLabels.m in Sources */,
+				FE8FE8FE1B29EB8A00485201 /* AlertCustomContentView.m in Sources */,
 				C1639F3D1A909F2800E86743 /* ListViewReorder.m in Sources */,
 				FE3CF58D1807F71800461E57 /* MultipleAxes.m in Sources */,
 				194C56F41934C505006D7C4F /* IndicatorsViewController.m in Sources */,
+				1B3258731B272AC800EAC1DF /* AlertCustomView.m in Sources */,
 				19E9055A19BF38F700A325D8 /* CustomPointLabels.m in Sources */,
 				FEA0D2E51A8280CF0014CD96 /* DSCollectionViewCell.m in Sources */,
 				FEBC2E2619372D92007C12B1 /* CalendarViewModes.m in Sources */,
 				FEA0D2DC1A82174C0014CD96 /* DataSourceDescriptorsAPI.m in Sources */,
 				19953A6F1A7BD26D001B9513 /* SideDrawerTransitions.m in Sources */,
+				1BBFAA011B208843006FB5A6 /* AlertNotifications.m in Sources */,
 				FE3CF58A1807F70800461E57 /* DateTimeAxis.m in Sources */,
 				FEA0D2E21A8245920014CD96 /* DSItem.m in Sources */,
 				FEA0D2D91A820C7D0014CD96 /* DataSourceGettingStarted.m in Sources */,
 				FE8A36E518A401590081EECA /* MyAnnotation.m in Sources */,
 				8D6F5B741A8509A8008A8EF2 /* ListViewSelection.m in Sources */,
+				19463A481B343C450022054C /* CallEditor.m in Sources */,
 				FE8701831941E2A700AC1D05 /* CalendarCustomization.m in Sources */,
 				FE8A36DE18A3E68A0081EECA /* BandAndLineAnnotations.m in Sources */,
 				FE8A36DB18A3E6780081EECA /* CrossLineAnnotation.m in Sources */,
@@ -906,6 +1071,7 @@
 				FEEAEBE01808160000D75A5C /* BindWithDataPoint.m in Sources */,
 				19A2A0201A80F63B00378C68 /* SideDrawerCustomContentController.m in Sources */,
 				FEE269C01806E28500E52C37 /* OptionInfo.m in Sources */,
+				19F6481B1B2EE3F70023A601 /* EmailValidator.m in Sources */,
 				FE8A36E118A4009A0081EECA /* CustomAnnotation.m in Sources */,
 				FE17151B1A963D81000EB4C9 /* ImageWithTextListViewCell.m in Sources */,
 				193BB85E19C1A8CD00143087 /* MyPointLabelRender.m in Sources */,
@@ -917,7 +1083,9 @@
 				FEEAEBE61808162600D75A5C /* BindWithDelegate.m in Sources */,
 				FE8A36D818A3E6690081EECA /* ViewAnnotation.m in Sources */,
 				C1639F361A86B72500E86743 /* ListViewLoadOnDemand.m in Sources */,
+				1B3258761B272E5100EAC1DF /* AlertSettings.m in Sources */,
 				8D6F5B7A1A8615E2008A8EF2 /* ListViewAnimations.m in Sources */,
+				19DD17561B3049360001CCC0 /* DataFormReadOnly.m in Sources */,
 				FEE269871806DBA300E52C37 /* main.m in Sources */,
 				8DDC67081A8E1D4C00FDE377 /* ListViewPullToRefresh.m in Sources */,
 				FE8A36D218A3E4BA0081EECA /* Trackball.m in Sources */,
@@ -972,7 +1140,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1005,7 +1173,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1027,6 +1195,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TelerikUIExamples/TelerikUIExamples-Prefix.pch";
 				INFOPLIST_FILE = "TelerikUIExamples/TelerikUIExamples-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1050,6 +1219,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TelerikUIExamples/TelerikUIExamples-Prefix.pch";
 				INFOPLIST_FILE = "TelerikUIExamples/TelerikUIExamples-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

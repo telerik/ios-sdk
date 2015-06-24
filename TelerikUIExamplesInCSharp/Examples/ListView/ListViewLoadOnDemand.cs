@@ -14,10 +14,18 @@ namespace Examples
 {
 	public class ListViewLoadOnDemand: ExampleViewController
 	{
+		TKListView listView = new TKListView();
 		TKDataSource names = new TKDataSource();
 		TKDataSource photos = new TKDataSource();
 		LoremIpsumGenerator loremIpsum = new LoremIpsumGenerator();
 		int lastRetrievedDataIndex = 15;
+
+		public ListViewLoadOnDemand ()
+		{
+			this.AddOption ("Manual", LoadOnDemandManual, "Load on demand mode");
+			this.AddOption ("Auto", LoadOnDemandAuto, "Load on demand mode");
+		}
+
 
 		public override void ViewDidLoad ()
 		{
@@ -26,12 +34,13 @@ namespace Examples
 			this.photos.LoadDataFromJSONResource ("PhotosWithNames", "json", "photos");
 			this.names.LoadDataFromJSONResource ("PhotosWithNames", "json", "names");
 
-			TKListView listView = new TKListView (this.View.Bounds);
+			listView.Frame = this.View.Bounds;
 			listView.BackgroundColor = new UIColor (0.0f, 1.0f, 0.0f, 0.5f);
 			listView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
 			listView.Delegate = new ListViewDelegate (this);
 			listView.DataSource = new ListViewDataSource (this);
-			listView.CellBufferSize = 5;
+			listView.LoadOnDemandBufferSize = 5;
+			listView.LoadOnDemandMode = TKListViewLoadOnDemandMode.Manual;
 			listView.ContentInset = new UIEdgeInsets (10, 10, 10, 10);
 			this.View.AddSubview (listView);
 			listView.RegisterClassForCell(new ObjCRuntime.Class(typeof(CustomCardListViewCell)), "cell");
@@ -40,6 +49,21 @@ namespace Examples
 			layout.ItemSize = new CGSize (100, 120);
 			layout.ItemSpacing = 5;
 			layout.ItemAlignment = TKListViewItemAlignment.Stretch;
+		}
+
+		void LoadOnDemandManual(object sender, EventArgs e) {
+			this.lastRetrievedDataIndex = 15;
+			this.listView.LoadOnDemandMode = TKListViewLoadOnDemandMode.Manual;
+			this.listView.ReloadData ();
+			this.listView.ContentOffset = new CGPoint(0, 0);
+		}
+
+
+		void LoadOnDemandAuto(object sender, EventArgs e) {
+			this.lastRetrievedDataIndex = 15;
+			this.listView.LoadOnDemandMode = TKListViewLoadOnDemandMode.Auto;
+			this.listView.ReloadData ();
+			this.listView.ContentOffset = new CGPoint(0, 0);
 		}
 
 		class ListViewDataSource: TKListViewDataSource
@@ -58,15 +82,20 @@ namespace Examples
 
 			public override TKListViewCell CellForItem (TKListView listView, NSIndexPath indexPath)
 			{
-				TKListViewCell cell = listView.DequeueReusableCell ("cell", indexPath) as TKListViewCell;
+				TKListViewCell cell = listView.DequeueLoadOnDemandCell (indexPath);
+
+				if (cell == null) {
+					cell = listView.DequeueReusableCell ("cell", indexPath) as TKListViewCell;
+					cell.ImageView.Image = new UIImage (this.owner.photos.Items [indexPath.Row] as NSString);
+					cell.TextLabel.Text = this.owner.names.Items [indexPath.Row] as NSString;
+					Random r = new Random ();
+					cell.DetailTextLabel.Text = this.owner.loremIpsum.RandomString (10 + r.Next (0, 16), indexPath);
+					cell.DetailTextLabel.TextColor = UIColor.White;
+				}
+
 				cell.BackgroundView.BackgroundColor = UIColor.FromWhiteAlpha (0.3f, 0.5f);
-				string imageName = this.owner.photos.Items [indexPath.Row] as NSString;
-				cell.ImageView.Image = new UIImage (imageName);
-				cell.TextLabel.Text = this.owner.names.Items [indexPath.Row] as NSString;
-				Random r = new Random ();
-				cell.DetailTextLabel.Text = this.owner.loremIpsum.RandomString (10 + r.Next (0, 16), indexPath);
-				cell.DetailTextLabel.TextColor = UIColor.White;
 				((TKView)cell.BackgroundView).Stroke = null;
+
 				return cell;
 			}
 		}
@@ -85,7 +114,10 @@ namespace Examples
 				DispatchQueue.DefaultGlobalQueue.DispatchAsync (() => {
 					this.owner.lastRetrievedDataIndex = Math.Min(this.owner.names.Items.Length, this.owner.lastRetrievedDataIndex + 10);
 					DispatchQueue.MainQueue.DispatchAfter(new DispatchTime(DispatchTime.Now, 2 * 400000000), new Action(delegate {
-							listView.DidLoadDataOnDemand();				
+						if (this.owner.names.Items.Length == this.owner.lastRetrievedDataIndex) {
+							listView.LoadOnDemandMode = TKListViewLoadOnDemandMode.None;
+						}
+						listView.DidLoadDataOnDemand();				
 					}));
 				});
 

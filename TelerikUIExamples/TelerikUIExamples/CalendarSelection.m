@@ -54,7 +54,16 @@
     components.day = 6;
     NSDate *endDate = [self.calendarView.calendar dateByAddingComponents:components toDate:date options:0];
     
+    components.year = -5;
+    self.calendarView.minDate = [self.calendarView.calendar dateByAddingComponents:components toDate:date options:0];
+    
+    components.year = 5;
+    self.calendarView.maxDate = [self.calendarView.calendar dateByAddingComponents:components toDate:date options:0];
+    
     self.calendarView.selectedDatesRange = [[TKDateRange alloc] initWithStart:startDate end:endDate];
+
+    TKCalendarMonthPresenter *presenter = (TKCalendarMonthPresenter*)self.calendarView.presenter;
+    presenter.headerIsSticky = YES;
 }
 
 - (void)viewDidLayoutSubviews
@@ -104,6 +113,14 @@
                   equalToDate:date
                withComponents:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay
                  withCalendar:_calendarView.calendar];
+}
+
+- (void)calendar:(TKCalendar *)calendar updateVisualsForCell:(TKCalendarCell *)cell
+{
+    if ([cell isKindOfClass:[TKCalendarMonthTitleCell class]]) {
+        TKCalendarMonthTitleCell *monthTitleCell = (TKCalendarMonthTitleCell*)cell;
+        monthTitleCell.layoutMode = TKCalendarMonthTitleCellLayoutModeMonthAndYearWithButotns;
+    }
 }
 
 @end

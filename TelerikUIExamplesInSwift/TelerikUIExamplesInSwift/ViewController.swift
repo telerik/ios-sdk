@@ -118,6 +118,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     ExampleInfo(title: "Load on demand") { ListViewLoadOnDemand() },
                     ExampleInfo(title: "Pull to refresh") { ListViewPullToRefresh() },
                 ]))
+
+            examples.append(ExampleInfo(title: "DataForm (Beta)", exampleList: [
+                ExampleInfo(title: "Getting started") { DataFormGettingStarted()},
+                ExampleInfo(title: "Validation") { DataFormValidation()},
+                ExampleInfo(title: "Read Only") { DataFormReadOnly()},
+                ExampleInfo(title: "Customization") { DataFormCustomization()}
+                
+                ]))
+            
+            examples.append(ExampleInfo(title: "Alert", exampleList: [
+                    ExampleInfo(title: "Getting started") { AlertGettingStarted() },
+                    ExampleInfo(title: "Animations") { AlertAnimations() },
+                    ExampleInfo(title: "Notifications") { AlertNotifications() },
+                    ExampleInfo(title: "Custom View") { AlertCustomView() },
+                    ExampleInfo(title: "Customize") { AlertCustomize() },
+                    ExampleInfo(title: "Settings") { AlertSettings() },
+
+                ]))
             
             self.title = "Examples"
         }

@@ -21,6 +21,11 @@
 		19B8AA6B19E2820A0041D44A /* SelectedPointLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8AA6A19E2820A0041D44A /* SelectedPointLabel.swift */; };
 		19B8AA6D19E28ADD0041D44A /* MyPointLabelRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8AA6C19E28ADD0041D44A /* MyPointLabelRender.swift */; };
 		19B8AA6F19E2B2400041D44A /* CustomPointLabelRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8AA6E19E2B2400041D44A /* CustomPointLabelRender.swift */; };
+		1B46C9191B30174E0021B2A2 /* UIButton_Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B46C9181B30174E0021B2A2 /* UIButton_Circle.swift */; };
+		1B46C91B1B304A490021B2A2 /* AlertNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B46C91A1B304A490021B2A2 /* AlertNotifications.swift */; };
+		1B46C91D1B30599E0021B2A2 /* AlertCustomize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B46C91C1B30599E0021B2A2 /* AlertCustomize.swift */; };
+		1B46C91F1B3066250021B2A2 /* AlertGettingStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B46C91E1B3066250021B2A2 /* AlertGettingStarted.swift */; };
+		1B46C9211B306A1B0021B2A2 /* AlertCustomContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B46C9201B306A1B0021B2A2 /* AlertCustomContentView.swift */; };
 		1B5372331A97777800707810 /* ListViewGettingStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5372321A97777800707810 /* ListViewGettingStarted.swift */; };
 		1B5372361A977A9E00707810 /* ImageWithTextListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5372351A977A9E00707810 /* ImageWithTextListViewCell.swift */; };
 		1B5372381A9784B100707810 /* SimpleListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5372371A9784B100707810 /* SimpleListViewCell.swift */; };
@@ -28,6 +33,21 @@
 		1B53723C1A97869E00707810 /* PhotosWithNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B53723B1A97869E00707810 /* PhotosWithNames.json */; };
 		1B53723E1A9797B100707810 /* LoremIpsumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53723D1A9797B100707810 /* LoremIpsumGenerator.swift */; };
 		1B5372401A9B608E00707810 /* ListViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53723F1A9B608E00707810 /* ListViewLayout.swift */; };
+		F69BE0421B2981C800B7AB95 /* AlertSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BE0411B2981C800B7AB95 /* AlertSettings.swift */; };
+		F69BE0441B29A63D00B7AB95 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BE0431B29A63D00B7AB95 /* Settings.swift */; };
+		F69BE0461B29AB8400B7AB95 /* AlertAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BE0451B29AB8400B7AB95 /* AlertAnimations.swift */; };
+		F69BE04A1B29CCAC00B7AB95 /* AlertCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BE0491B29CCAC00B7AB95 /* AlertCustomView.swift */; };
+		F6B595911B37F67F00846250 /* DataFormGettingStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595901B37F67F00846250 /* DataFormGettingStarted.swift */; };
+		F6B595931B37F73E00846250 /* PersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595921B37F73E00846250 /* PersonalInfo.swift */; };
+		F6B595961B37FFCB00846250 /* DataFormReadOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595951B37FFCB00846250 /* DataFormReadOnly.swift */; };
+		F6B595981B38007300846250 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595971B38007300846250 /* CardInfo.swift */; };
+		F6B5959A1B38065A00846250 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595991B38065A00846250 /* PasswordValidator.swift */; };
+		F6B5959C1B380ED000846250 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B5959B1B380ED000846250 /* EmailValidator.swift */; };
+		F6B5959E1B38124000846250 /* RegistrationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B5959D1B38124000846250 /* RegistrationInfo.swift */; };
+		F6B595A01B38137E00846250 /* DataFormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B5959F1B38137E00846250 /* DataFormValidation.swift */; };
+		F6B595A21B381D5C00846250 /* DataFormCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595A11B381D5C00846250 /* DataFormCustomization.swift */; };
+		F6B595A41B381FD300846250 /* ReservationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595A31B381FD300846250 /* ReservationForm.swift */; };
+		F6B595A61B38206000846250 /* CallEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595A51B38206000846250 /* CallEditor.swift */; };
 		FE15E0081A91EDDC00F2AB01 /* ListViewPullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E0071A91EDDC00F2AB01 /* ListViewPullToRefresh.swift */; };
 		FE15E00A1A91EDF200F2AB01 /* ListViewReorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E0091A91EDF200F2AB01 /* ListViewReorder.swift */; };
 		FE15E00C1A920FE700F2AB01 /* ListViewSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E00B1A920FE700F2AB01 /* ListViewSwipe.swift */; };
@@ -100,10 +120,10 @@
 		FEAA9C0319B4CEF200D60D4C /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEAA9C0219B4CEF200D60D4C /* EventKitUI.framework */; };
 		FEAA9C0719B4CF0200D60D4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEAA9C0619B4CF0200D60D4C /* UIKit.framework */; };
 		FEAA9C0919B4CF0B00D60D4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEAA9C0819B4CF0B00D60D4C /* Foundation.framework */; };
+		FEB301931B3AF66D00A3C525 /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB301911B3AF66D00A3C525 /* TelerikAppFeedback.framework */; };
+		FEB301941B3AF66D00A3C525 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB301921B3AF66D00A3C525 /* TelerikUI.framework */; };
 		FEB32CAB1A8DFCC80060ED82 /* ListViewSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = FEB32CAA1A8DFCC80060ED82 /* ListViewSampleData.json */; };
 		FEB66DB71B13399500DC71AC /* AnimationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB66DB61B13399500DC71AC /* AnimationListCell.swift */; };
-		FEC3AD671B14D1A9008CE266 /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC3AD651B14D1A9008CE266 /* TelerikAppFeedback.framework */; };
-		FEC3AD681B14D1A9008CE266 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC3AD661B14D1A9008CE266 /* TelerikUI.framework */; };
 		FEE6EE211A8351D1004895C1 /* DataSourceGettingStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6EE201A8351D1004895C1 /* DataSourceGettingStarted.swift */; };
 		FEE6EE231A8351E5004895C1 /* DataSourceDescriptorsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6EE221A8351E5004895C1 /* DataSourceDescriptorsAPI.swift */; };
 		FEE6EE251A8351FB004895C1 /* DataSourceUIBindings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6EE241A8351FB004895C1 /* DataSourceUIBindings.swift */; };
@@ -127,6 +147,11 @@
 		19B8AA6A19E2820A0041D44A /* SelectedPointLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedPointLabel.swift; sourceTree = "<group>"; };
 		19B8AA6C19E28ADD0041D44A /* MyPointLabelRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPointLabelRender.swift; sourceTree = "<group>"; };
 		19B8AA6E19E2B2400041D44A /* CustomPointLabelRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointLabelRender.swift; sourceTree = "<group>"; };
+		1B46C9181B30174E0021B2A2 /* UIButton_Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton_Circle.swift; sourceTree = "<group>"; };
+		1B46C91A1B304A490021B2A2 /* AlertNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertNotifications.swift; sourceTree = "<group>"; };
+		1B46C91C1B30599E0021B2A2 /* AlertCustomize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertCustomize.swift; sourceTree = "<group>"; };
+		1B46C91E1B3066250021B2A2 /* AlertGettingStarted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertGettingStarted.swift; sourceTree = "<group>"; };
+		1B46C9201B306A1B0021B2A2 /* AlertCustomContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertCustomContentView.swift; sourceTree = "<group>"; };
 		1B5372321A97777800707810 /* ListViewGettingStarted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewGettingStarted.swift; sourceTree = "<group>"; };
 		1B5372351A977A9E00707810 /* ImageWithTextListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageWithTextListViewCell.swift; sourceTree = "<group>"; };
 		1B5372371A9784B100707810 /* SimpleListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleListViewCell.swift; sourceTree = "<group>"; };
@@ -134,6 +159,21 @@
 		1B53723B1A97869E00707810 /* PhotosWithNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PhotosWithNames.json; path = TelerikUIExamplesInSwift/PhotosWithNames.json; sourceTree = "<group>"; };
 		1B53723D1A9797B100707810 /* LoremIpsumGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoremIpsumGenerator.swift; sourceTree = "<group>"; };
 		1B53723F1A9B608E00707810 /* ListViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewLayout.swift; sourceTree = "<group>"; };
+		F69BE0411B2981C800B7AB95 /* AlertSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSettings.swift; sourceTree = "<group>"; };
+		F69BE0431B29A63D00B7AB95 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		F69BE0451B29AB8400B7AB95 /* AlertAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAnimations.swift; sourceTree = "<group>"; };
+		F69BE0491B29CCAC00B7AB95 /* AlertCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertCustomView.swift; sourceTree = "<group>"; };
+		F6B595901B37F67F00846250 /* DataFormGettingStarted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormGettingStarted.swift; sourceTree = "<group>"; };
+		F6B595921B37F73E00846250 /* PersonalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalInfo.swift; sourceTree = "<group>"; };
+		F6B595951B37FFCB00846250 /* DataFormReadOnly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormReadOnly.swift; sourceTree = "<group>"; };
+		F6B595971B38007300846250 /* CardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
+		F6B595991B38065A00846250 /* PasswordValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
+		F6B5959B1B380ED000846250 /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
+		F6B5959D1B38124000846250 /* RegistrationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationInfo.swift; sourceTree = "<group>"; };
+		F6B5959F1B38137E00846250 /* DataFormValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormValidation.swift; sourceTree = "<group>"; };
+		F6B595A11B381D5C00846250 /* DataFormCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormCustomization.swift; sourceTree = "<group>"; };
+		F6B595A31B381FD300846250 /* ReservationForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationForm.swift; sourceTree = "<group>"; };
+		F6B595A51B38206000846250 /* CallEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallEditor.swift; sourceTree = "<group>"; };
 		FE15E0071A91EDDC00F2AB01 /* ListViewPullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewPullToRefresh.swift; sourceTree = "<group>"; };
 		FE15E0091A91EDF200F2AB01 /* ListViewReorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewReorder.swift; sourceTree = "<group>"; };
 		FE15E00B1A920FE700F2AB01 /* ListViewSwipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewSwipe.swift; sourceTree = "<group>"; };
@@ -145,14 +185,12 @@
 		FE28FF731A8D0E95000E0BDC /* ListViewGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewGroups.swift; sourceTree = "<group>"; };
 		FE2D10771A80FB4600A787EB /* InlineEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineEvents.swift; sourceTree = "<group>"; };
 		FE6F334D1A9C716F00BE301B /* OptionSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionSection.swift; sourceTree = "<group>"; };
-		FE77380519ED5E5B009F5C34 /* libTelerikAppFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikAppFeedback.a; path = "../AppFeedback/build/Debug-iphoneos/libTelerikAppFeedback.a"; sourceTree = "<group>"; };
 		FE92FA7A19B4C746000B2E66 /* TelerikUIExamplesInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelerikUIExamplesInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE92FA7E19B4C746000B2E66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE92FA7F19B4C746000B2E66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE92FA8119B4C746000B2E66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE92FA8419B4C746000B2E66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE92FA8619B4C746000B2E66 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FE92FA9C19B4C7C1000B2E66 /* libTelerikUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikUI.a; path = "../../../../../Library/Developer/Xcode/DerivedData/TelerikUI-dwzcvftbvbwddjbzzdyodshibupb/Build/Products/Debug-iphoneos/libTelerikUI.a"; sourceTree = "<group>"; };
 		FE92FAA519B4C88B000B2E66 /* TelerikUIExamplesInSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TelerikUIExamplesInSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		FE92FAA619B4C88B000B2E66 /* Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
 		FEAA9B9019B4CC1B00D60D4C /* BalloonAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonAnnotation.swift; sourceTree = "<group>"; };
@@ -211,10 +249,10 @@
 		FEAA9C0219B4CEF200D60D4C /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		FEAA9C0619B4CF0200D60D4C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FEAA9C0819B4CF0B00D60D4C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FEB301911B3AF66D00A3C525 /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
+		FEB301921B3AF66D00A3C525 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FEB32CAA1A8DFCC80060ED82 /* ListViewSampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ListViewSampleData.json; path = TelerikUIExamplesInSwift/ListViewSampleData.json; sourceTree = "<group>"; };
 		FEB66DB61B13399500DC71AC /* AnimationListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationListCell.swift; sourceTree = "<group>"; };
-		FEC3AD651B14D1A9008CE266 /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
-		FEC3AD661B14D1A9008CE266 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FEE6EE201A8351D1004895C1 /* DataSourceGettingStarted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceGettingStarted.swift; sourceTree = "<group>"; };
 		FEE6EE221A8351E5004895C1 /* DataSourceDescriptorsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceDescriptorsAPI.swift; sourceTree = "<group>"; };
 		FEE6EE241A8351FB004895C1 /* DataSourceUIBindings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceUIBindings.swift; sourceTree = "<group>"; };
@@ -228,8 +266,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEC3AD671B14D1A9008CE266 /* TelerikAppFeedback.framework in Frameworks */,
-				FEC3AD681B14D1A9008CE266 /* TelerikUI.framework in Frameworks */,
+				FEB301931B3AF66D00A3C525 /* TelerikAppFeedback.framework in Frameworks */,
+				FEB301941B3AF66D00A3C525 /* TelerikUI.framework in Frameworks */,
 				FEAA9C0919B4CF0B00D60D4C /* Foundation.framework in Frameworks */,
 				FEAA9C0719B4CF0200D60D4C /* UIKit.framework in Frameworks */,
 				FEAA9C0319B4CEF200D60D4C /* EventKitUI.framework in Frameworks */,
@@ -335,6 +373,46 @@
 			name = CustomCells;
 			sourceTree = "<group>";
 		};
+		F69BE03E1B29748C00B7AB95 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				FE67F3C41B3194FF00320D81 /* Classes */,
+				1B46C91E1B3066250021B2A2 /* AlertGettingStarted.swift */,
+				F69BE0451B29AB8400B7AB95 /* AlertAnimations.swift */,
+				1B46C91A1B304A490021B2A2 /* AlertNotifications.swift */,
+				F69BE0491B29CCAC00B7AB95 /* AlertCustomView.swift */,
+				1B46C91C1B30599E0021B2A2 /* AlertCustomize.swift */,
+				F69BE0411B2981C800B7AB95 /* AlertSettings.swift */,
+			);
+			name = Alert;
+			sourceTree = "<group>";
+		};
+		F6B5958F1B37F5AA00846250 /* DataForm */ = {
+			isa = PBXGroup;
+			children = (
+				F6B595941B37FF8900846250 /* Classes */,
+				F6B595901B37F67F00846250 /* DataFormGettingStarted.swift */,
+				F6B595951B37FFCB00846250 /* DataFormReadOnly.swift */,
+				F6B5959F1B38137E00846250 /* DataFormValidation.swift */,
+				F6B595A11B381D5C00846250 /* DataFormCustomization.swift */,
+			);
+			name = DataForm;
+			sourceTree = "<group>";
+		};
+		F6B595941B37FF8900846250 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F6B5959B1B380ED000846250 /* EmailValidator.swift */,
+				F6B595991B38065A00846250 /* PasswordValidator.swift */,
+				F6B595921B37F73E00846250 /* PersonalInfo.swift */,
+				F6B595971B38007300846250 /* CardInfo.swift */,
+				F6B5959D1B38124000846250 /* RegistrationInfo.swift */,
+				F6B595A31B381FD300846250 /* ReservationForm.swift */,
+				F6B595A51B38206000846250 /* CallEditor.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		FE28FF681A8D0DED000E0BDC /* ListView */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +429,16 @@
 				1B53723D1A9797B100707810 /* LoremIpsumGenerator.swift */,
 			);
 			name = ListView;
+			sourceTree = "<group>";
+		};
+		FE67F3C41B3194FF00320D81 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F69BE0431B29A63D00B7AB95 /* Settings.swift */,
+				1B46C9201B306A1B0021B2A2 /* AlertCustomContentView.swift */,
+				1B46C9181B30174E0021B2A2 /* UIButton_Circle.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		FE92FA7119B4C746000B2E66 = {
@@ -397,14 +485,12 @@
 		FE92FAA419B4C800000B2E66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FEC3AD651B14D1A9008CE266 /* TelerikAppFeedback.framework */,
-				FEC3AD661B14D1A9008CE266 /* TelerikUI.framework */,
-				FE77380519ED5E5B009F5C34 /* libTelerikAppFeedback.a */,
+				FEB301911B3AF66D00A3C525 /* TelerikAppFeedback.framework */,
+				FEB301921B3AF66D00A3C525 /* TelerikUI.framework */,
 				FEAA9C0819B4CF0B00D60D4C /* Foundation.framework */,
 				FEAA9C0619B4CF0200D60D4C /* UIKit.framework */,
 				FEAA9C0219B4CEF200D60D4C /* EventKitUI.framework */,
 				FEAA9C0019B4CEED00D60D4C /* EventKit.framework */,
-				FE92FA9C19B4C7C1000B2E66 /* libTelerikUI.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -421,6 +507,8 @@
 		FEAA9B8419B4CB2000D60D4C /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				F6B5958F1B37F5AA00846250 /* DataForm */,
+				F69BE03E1B29748C00B7AB95 /* Alert */,
 				FE28FF681A8D0DED000E0BDC /* ListView */,
 				FEE6EE1F1A8351B9004895C1 /* DataSource */,
 				199D1CD71A839F70009708D6 /* SideDrawer */,
@@ -672,37 +760,48 @@
 				FEAA9BF119B4CDDA00D60D4C /* ExampleInfo.swift in Sources */,
 				19B3C3E719DEB505000167D0 /* PointLabels.swift in Sources */,
 				199D1CDA1A83A0C4009708D6 /* SideDrawerGettingStarted.swift in Sources */,
+				F6B5959A1B38065A00846250 /* PasswordValidator.swift in Sources */,
 				1923F41C1A84DE8700BB0D03 /* SideDrawerPositions.swift in Sources */,
 				FEAA9BEA19B4CD9A00D60D4C /* CustomCell.swift in Sources */,
 				1B5372381A9784B100707810 /* SimpleListViewCell.swift in Sources */,
+				F69BE0421B2981C800B7AB95 /* AlertSettings.swift in Sources */,
 				FE28FF701A8D0E63000E0BDC /* ListViewAnimations.swift in Sources */,
 				FEAA9BE319B4CD7300D60D4C /* CalendarSelection.swift in Sources */,
 				FEAA9BB119B4CC9000D60D4C /* FinancialChart.swift in Sources */,
 				FE28FF721A8D0E77000E0BDC /* ListViewLoadOnDemand.swift in Sources */,
+				F6B595981B38007300846250 /* CardInfo.swift in Sources */,
 				FEE6EE2B1A835245004895C1 /* DSCollectionViewCell.swift in Sources */,
+				F6B595A41B381FD300846250 /* ReservationForm.swift in Sources */,
 				1B5372401A9B608E00707810 /* ListViewLayout.swift in Sources */,
 				FEAA9BE219B4CD7300D60D4C /* CalendarEventKitDataBinding.swift in Sources */,
+				F6B595A01B38137E00846250 /* DataFormValidation.swift in Sources */,
 				FEAA9BB319B4CC9000D60D4C /* PieDonut.swift in Sources */,
+				1B46C9211B306A1B0021B2A2 /* AlertCustomContentView.swift in Sources */,
 				FEAA9BE419B4CD7300D60D4C /* CalendarTransitonEffects.swift in Sources */,
 				FEAA9BB919B4CCAE00D60D4C /* Indicators.swift in Sources */,
 				FEAA9BC019B4CCD100D60D4C /* CategoricalAxis.swift in Sources */,
 				FEAA9B9C19B4CC1B00D60D4C /* LayerAnnotation.swift in Sources */,
 				FEAA9B9819B4CC1B00D60D4C /* BalloonAnnotation.swift in Sources */,
+				F6B595961B37FFCB00846250 /* DataFormReadOnly.swift in Sources */,
 				FEAA9BF319B4CDDA00D60D4C /* OptionInfo.swift in Sources */,
 				FEAA9BD019B4CD0700D60D4C /* CustomAnimationPieChart.swift in Sources */,
 				FEAA9B9D19B4CC1B00D60D4C /* MyAnnotation.swift in Sources */,
 				FE92FA8219B4C746000B2E66 /* ViewController.swift in Sources */,
 				19B8AA6F19E2B2400041D44A /* CustomPointLabelRender.swift in Sources */,
 				FEAA9BF919B4CE4C00D60D4C /* ChartDataSource.swift in Sources */,
+				1B46C9191B30174E0021B2A2 /* UIButton_Circle.swift in Sources */,
 				1B5372331A97777800707810 /* ListViewGettingStarted.swift in Sources */,
 				FEAA9BCF19B4CD0700D60D4C /* CustomAnimationLineChart.swift in Sources */,
 				FEAA9BB019B4CC9000D60D4C /* ColumnAndBarChart.swift in Sources */,
 				FEAA9BC419B4CCD100D60D4C /* NumericAxis.swift in Sources */,
 				FE6F334E1A9C716F00BE301B /* OptionSection.swift in Sources */,
+				F69BE04A1B29CCAC00B7AB95 /* AlertCustomView.swift in Sources */,
+				F6B595911B37F67F00846250 /* DataFormGettingStarted.swift in Sources */,
 				FEAA9B9919B4CC1B00D60D4C /* BandAndLineAnnotations.swift in Sources */,
 				FEAA9BF219B4CDDA00D60D4C /* ExampleViewController.swift in Sources */,
 				FEAA9BFD19B4CE7900D60D4C /* DataPointImpl.swift in Sources */,
 				1B5372361A977A9E00707810 /* ImageWithTextListViewCell.swift in Sources */,
+				1B46C91B1B304A490021B2A2 /* AlertNotifications.swift in Sources */,
 				190DBC131A84D3420017B623 /* SideDrawerCustomTransition.swift in Sources */,
 				FE28FF6A1A8D0E1D000E0BDC /* ListViewSelection.swift in Sources */,
 				FEAA9BC119B4CCD100D60D4C /* DateTimeAxis.swift in Sources */,
@@ -712,7 +811,9 @@
 				FEAA9BF419B4CDDA00D60D4C /* SettingsViewController.swift in Sources */,
 				FEAA9BD919B4CD3B00D60D4C /* FeedbackExampleController.swift in Sources */,
 				1B53723E1A9797B100707810 /* LoremIpsumGenerator.swift in Sources */,
+				F6B595A61B38206000846250 /* CallEditor.swift in Sources */,
 				FEAA9BC819B4CCEB00D60D4C /* StackedColumnChart.swift in Sources */,
+				F6B595931B37F73E00846250 /* PersonalInfo.swift in Sources */,
 				19B8AA6D19E28ADD0041D44A /* MyPointLabelRender.swift in Sources */,
 				FEAA9BD119B4CD0700D60D4C /* DefaultAnimation.swift in Sources */,
 				19B3C44C19DEDF8A000167D0 /* MyPointLabel.swift in Sources */,
@@ -728,18 +829,22 @@
 				19B3C3E419DE90C8000167D0 /* LiveData.swift in Sources */,
 				FEE6EE291A835229004895C1 /* DSItem.swift in Sources */,
 				FE28FF741A8D0E95000E0BDC /* ListViewGroups.swift in Sources */,
+				1B46C91D1B30599E0021B2A2 /* AlertCustomize.swift in Sources */,
 				FEAA9BE119B4CD7300D60D4C /* CalendarCustomization.swift in Sources */,
 				191453741A94D8D300B7670F /* SideDrawerHeaderView.swift in Sources */,
 				FEAA9BAF19B4CC9000D60D4C /* BubbleChart.swift in Sources */,
 				FEAA9BB419B4CC9000D60D4C /* ScatterChart.swift in Sources */,
 				FEAA9B9F19B4CC1B00D60D4C /* ViewAnnotation.swift in Sources */,
 				FE92FA8019B4C746000B2E66 /* AppDelegate.swift in Sources */,
+				F69BE0441B29A63D00B7AB95 /* Settings.swift in Sources */,
 				FEE6EE271A835212004895C1 /* DataSourceWithWebService.swift in Sources */,
+				F6B5959E1B38124000846250 /* RegistrationInfo.swift in Sources */,
 				FE2D10781A80FB4600A787EB /* InlineEvents.swift in Sources */,
 				FEAA9BD619B4CD2100D60D4C /* PanZoom.swift in Sources */,
 				FEAA9B9A19B4CC1B00D60D4C /* CrossLineAnnotation.swift in Sources */,
 				190DBC171A84D4A60017B623 /* MyTransition.swift in Sources */,
 				FEAA9B9B19B4CC1B00D60D4C /* CustomAnnotation.swift in Sources */,
+				F69BE0461B29AB8400B7AB95 /* AlertAnimations.swift in Sources */,
 				FEE6EE211A8351D1004895C1 /* DataSourceGettingStarted.swift in Sources */,
 				FE2582AA1B0CB79800E36C05 /* CustomListCell.swift in Sources */,
 				FEAA9BE619B4CD7300D60D4C /* CalendarWithEvents.swift in Sources */,
@@ -748,15 +853,18 @@
 				19B3C44E19DEEB18000167D0 /* CustomPointLabels.swift in Sources */,
 				FE15E00A1A91EDF200F2AB01 /* ListViewReorder.swift in Sources */,
 				FEAA9BB219B4CC9000D60D4C /* LineAreaSpline.swift in Sources */,
+				F6B5959C1B380ED000846250 /* EmailValidator.swift in Sources */,
 				FEAA9BB519B4CC9000D60D4C /* StockDataPoint.swift in Sources */,
 				FE15E0081A91EDDC00F2AB01 /* ListViewPullToRefresh.swift in Sources */,
 				FEAA9BD219B4CD0700D60D4C /* UIKitDynamicsAnimation.swift in Sources */,
+				1B46C91F1B3066250021B2A2 /* AlertGettingStarted.swift in Sources */,
 				FEB66DB71B13399500DC71AC /* AnimationListCell.swift in Sources */,
 				FEAA9BD519B4CD2100D60D4C /* Customize.swift in Sources */,
 				FEAA9BEB19B4CD9A00D60D4C /* iOS7StyleCalendar.swift in Sources */,
 				FEAA9BBA19B4CCAE00D60D4C /* IndicatorsTableView.swift in Sources */,
 				FEAA9BCE19B4CD0700D60D4C /* CustomAnimationAreaChart.swift in Sources */,
 				194B156D1A84A6E0008E97F2 /* SideDrawerTransitions.swift in Sources */,
+				F6B595A21B381D5C00846250 /* DataFormCustomization.swift in Sources */,
 				1B53723A1A97858700707810 /* CustomCardListViewCell.swift in Sources */,
 				FEAA9BE519B4CD7300D60D4C /* CalendarViewModes.swift in Sources */,
 			);

@@ -70,6 +70,7 @@ namespace Examples
 				xAxis.PlotMode = TKChartAxisPlotMode.BetweenTicks;
 				xAxis.LabelFormatter = formatter;
 				xAxis.Title = "date";
+				xAxis.MinorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Days;
 			});
 		}
 	}

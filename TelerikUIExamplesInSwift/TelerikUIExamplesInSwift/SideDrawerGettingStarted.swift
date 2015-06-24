@@ -75,8 +75,8 @@ class SideDrawerGettingStarted: ExampleViewController, TKSideDrawerDelegate {
         section.style.contentInsets = UIEdgeInsetsMake(0, -15, 0, 0)
     }
     
-    func sideDrawer(sideDrawer: TKSideDrawer!, updateVisualsForItem item: Int, inSection section: Int) {
-        let currentItem = (sideDrawer.sections()[section] as! TKSideDrawerSection).items()[item] as! TKSideDrawerItem
+    func sideDrawer(sideDrawer: TKSideDrawer!, updateVisualsForItemAtIndexPath indexPath: NSIndexPath!) {
+        let currentItem = (sideDrawer.sections()[indexPath.section] as! TKSideDrawerSection).items()[indexPath.item] as! TKSideDrawerItem
         currentItem.style.contentInsets = UIEdgeInsetsMake(0, -10, 0, 0)
         currentItem.style.separatorColor = TKSolidFill(color: UIColor.clearColor())
     }

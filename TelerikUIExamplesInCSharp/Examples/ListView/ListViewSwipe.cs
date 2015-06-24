@@ -64,18 +64,21 @@ namespace Examples
 					bMore.SetTitle("More", UIControlState.Normal);
 					bMore.BackgroundColor = UIColor.LightGray;
 					bMore.TitleLabel.Font = font;
+					bMore.AddTarget(ButtonTouched, UIControlEvent.TouchUpInside);
 					cell.SwipeBackgroundView.AddSubview(bMore);
 
 					UIButton bFlag = new UIButton(new CGRect(size.Width - 120, 0, 60, size.Height));
 					bFlag.SetTitle("Flag", UIControlState.Normal);
 					bFlag.BackgroundColor = UIColor.Orange;
 					bFlag.TitleLabel.Font = font;
+					bFlag.AddTarget(ButtonTouched, UIControlEvent.TouchUpInside);
 					cell.SwipeBackgroundView.AddSubview(bFlag);
 
 					UIButton bTrash = new UIButton(new CGRect(size.Width - 60, 0, 60, size.Height));
 					bTrash.SetTitle("Trash", UIControlState.Normal);
 					bTrash.BackgroundColor = UIColor.Red;
 					bTrash.TitleLabel.Font = font;
+					bTrash.AddTarget(ButtonTouched, UIControlEvent.TouchUpInside);
 					cell.SwipeBackgroundView.AddSubview(bTrash);
 
 					UIButton bUnread = new UIButton(new CGRect(0, 0, 60, size.Height));
@@ -84,6 +87,7 @@ namespace Examples
 					bUnread.TitleLabel.Font = font;
 					bUnread.TitleLabel.LineBreakMode = UILineBreakMode.WordWrap;
 					bUnread.TitleLabel.TextAlignment = UITextAlignment.Center;
+					bUnread.AddTarget(ButtonTouched, UIControlEvent.TouchUpInside);
 					cell.SwipeBackgroundView.AddSubview(bUnread);
 				}
 
@@ -108,6 +112,11 @@ namespace Examples
 
 			TKListViewLinearLayout layout = (TKListViewLinearLayout)this.listView.Layout;
 			layout.ItemSize = new CGSize (100, 80);
+		}
+
+		void ButtonTouched(object sender, EventArgs e)
+		{
+			this.listView.EndSwipe (true);
 		}
 
 		void EnableButtonAnimation(object sender, EventArgs e)
@@ -173,7 +182,7 @@ namespace Examples
 
 			public override void DidFinishSwipeCell (TKListView listView, TKListViewCell cell, NSIndexPath indexPath, CGPoint offset)
 			{
-				this.owner.AnimateButtonInCell (cell, offset);
+				Console.WriteLine ("Did swipe cell at index: {0}", indexPath.Row);
 			}
 		}
 	}

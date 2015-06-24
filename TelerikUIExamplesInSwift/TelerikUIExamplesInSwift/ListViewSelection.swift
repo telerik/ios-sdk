@@ -71,6 +71,7 @@ class ListViewSelection: ExampleViewController, TKListViewDelegate {
     
     func noSelectionSelected() {
         self.listView.selectionBehavior = TKListViewSelectionBehavior.None
+        self.label.text = ""
         listView.clearSelectedItems()
     }
     
@@ -84,13 +85,29 @@ class ListViewSelection: ExampleViewController, TKListViewDelegate {
 
 // MARK: TKListViewDelegate
     
+    func listView(listView: TKListView!, didHighlightItemAtIndexPath indexPath: NSIndexPath!) {
+        println("Did highlight item at row\(indexPath.row)")
+        let cell = listView.cellForItemAtIndexPath(indexPath)
+        if !cell.selected && listView.selectionBehavior == TKListViewSelectionBehavior.LongPress {
+            cell.selectedBackgroundView.hidden = true
+        }
+    }
+    
+    func listView(listView: TKListView!, didUnhighlightItemAtIndexPath indexPath: NSIndexPath!) {
+        println("Did unhighlight item at row\(indexPath.row)")
+    }
+    
     func listView(listView: TKListView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
-       label.text = "Selected \(dataSource.items[indexPath.row])"
-        NSLog("Did select item at row\(indexPath.row)")
+        label.text = "Selected \(dataSource.items[indexPath.row])"
+        println("Did select item at row\(indexPath.row)")
+        let cell = listView.cellForItemAtIndexPath(indexPath)
+        if cell != nil {
+            cell.selectedBackgroundView.hidden = false
+        }
     }
     
     func listView(listView: TKListView!, didDeselectItemAtIndexPath indexPath: NSIndexPath!) {
-        NSLog("Did deselect item at row\(indexPath.row)")
+        println("Did deselect item at row\(indexPath.row)")
 
     }
 }

@@ -108,6 +108,20 @@ namespace Examples
 					new ExampleInfo("Load on demand", typeof(ListViewLoadOnDemand)),
 					new ExampleInfo("Pull to refresh", typeof(ListViewPullToRefresh)),
 				}),
+				new ExampleInfo("DataForm (Beta)", new ExampleInfo[] {
+					new ExampleInfo("Getting Started", typeof(DataFormGettingStarted)),
+					new ExampleInfo("Read Only", typeof(DataFormReadOnly)),
+					new ExampleInfo("Validation", typeof(DataFormValidation)),
+					new ExampleInfo("Customization", typeof(DataFormCustomization))
+				}),
+				new ExampleInfo("Alert", new ExampleInfo[] {
+					new ExampleInfo("Getting Started", typeof(AlertGettingStarted)),
+					new ExampleInfo("Notifications", typeof(AlertNotifications)),
+					new ExampleInfo("Animations", typeof(AlertAnimations)),
+					new ExampleInfo("Custom View", typeof(AlertCustomView)),
+					new ExampleInfo("Customize", typeof(AlertViewCustomize)),
+					new ExampleInfo("Settings", typeof(AlertSettings)),
+				}),
 			};
 		}
 

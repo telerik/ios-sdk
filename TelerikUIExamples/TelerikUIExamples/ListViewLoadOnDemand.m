@@ -15,10 +15,21 @@
 
 @implementation ListViewLoadOnDemand
 {
+    TKListView *_listView;
     TKDataSource *_names;
     TKDataSource *_photos;
     LoremIpsumGenerator *_loremIpsum;
     long _lastRetrievedDataIndex;
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        [self addOption:@"Manual" selector:@selector(loadOnDemandManual) inSection:@"Load on demand mode"];
+        [self addOption:@"Automatic" selector:@selector(loadOnDemandAuto) inSection:@"Load on demand mode"];
+    }
+    return self;
 }
 
 - (void)viewDidLoad
@@ -30,17 +41,18 @@
     _photos = [[TKDataSource alloc] initWithDataFromJSONResource:@"PhotosWithNames" ofType:@"json" rootItemKeyPath:@"photos"];
     _names = [[TKDataSource alloc] initWithDataFromJSONResource:@"PhotosWithNames" ofType:@"json" rootItemKeyPath:@"names"];
     
-    TKListView *listView = [[TKListView alloc] initWithFrame:self.view.bounds];
-    listView.backgroundColor = [UIColor colorWithRed:0. green:1. blue:0. alpha:0.5];
-    listView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    listView.delegate = self;
-    listView.dataSource = self;
-    listView.cellBufferSize = 5;
-    listView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10);
-    [self.view addSubview:listView];
-    [listView registerClass:[CustomCardListViewCell class] forCellWithReuseIdentifier:@"cell"];
+    _listView = [[TKListView alloc] initWithFrame:self.view.bounds];
+    _listView.backgroundColor = [UIColor colorWithRed:0. green:1. blue:0. alpha:0.5];
+    _listView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    _listView.delegate = self;
+    _listView.dataSource = self;
+    _listView.loadOnDemandBufferSize = 5;
+    _listView.loadOnDemandMode = TKListViewLoadOnDemandModeManual;
+    _listView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    [self.view addSubview:_listView];
+    [_listView registerClass:[CustomCardListViewCell class] forCellWithReuseIdentifier:@"cell"];
     
-    TKListViewLinearLayout *layout = (TKListViewLinearLayout*)listView.layout;
+    TKListViewLinearLayout *layout = (TKListViewLinearLayout*)_listView.layout;
     layout.itemSize = CGSizeMake(100, 120);
     layout.itemSpacing = 5;
 }
@@ -49,6 +61,22 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)loadOnDemandManual
+{
+    _listView.loadOnDemandMode = TKListViewLoadOnDemandModeManual;
+    _lastRetrievedDataIndex = 15;
+    [_listView reloadData];
+    _listView.contentOffset = CGPointZero;
+}
+
+- (void)loadOnDemandAuto
+{
+    _listView.loadOnDemandMode = TKListViewLoadOnDemandModeAuto;
+    _lastRetrievedDataIndex = 15;
+    [_listView reloadData];
+    _listView.contentOffset = CGPointZero;
 }
 
 #pragma mark - TKListViewDataSource
@@ -60,13 +88,17 @@
 
 - (TKListViewCell*)listView:(TKListView *)listView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    TKListViewCell *cell = [listView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    TKListViewCell *cell = [listView dequeueLoadOnDemandCellForIndexPath:indexPath];
+    if (cell == nil) {
+        cell = [listView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+        cell.imageView.image = [UIImage imageNamed:_photos.items[indexPath.row]];
+        cell.textLabel.text = _names.items[indexPath.row];
+        cell.detailTextLabel.text = [_loremIpsum randomString:10 + (arc4random()%16) forIndexPath:indexPath];
+        cell.detailTextLabel.textColor = [UIColor whiteColor];
+    }
     cell.backgroundView.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.5];
-    cell.imageView.image = [UIImage imageNamed:_photos.items[indexPath.row]];
-    cell.textLabel.text = _names.items[indexPath.row];
-    cell.detailTextLabel.text = [_loremIpsum randomString:10 + (arc4random()%16) forIndexPath:indexPath];
-    cell.detailTextLabel.textColor = [UIColor whiteColor];
     ((TKView*)cell.backgroundView).stroke = nil;
+
     return cell;
 }
 
@@ -80,6 +112,11 @@
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2* NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             //Notifying the ListView that we have fresh data so it can hide the activity indicator and be ready for next load-on-demand request.
+            
+            if (_lastRetrievedDataIndex == _names.items.count) {
+                listView.loadOnDemandMode = TKListViewLoadOnDemandModeNone;
+            }
+            
             [listView didLoadDataOnDemand];
         });
     });
