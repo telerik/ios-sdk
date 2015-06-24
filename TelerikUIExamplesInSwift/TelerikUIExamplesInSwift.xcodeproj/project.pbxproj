@@ -973,6 +973,7 @@
 					"$(PROJECT_DIR)",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"\"/Users/${USER}/Documents/Telerik/\"/**",
 				);
 				INFOPLIST_FILE = TelerikUIExamplesInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -993,6 +994,7 @@
 					"$(PROJECT_DIR)",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"\"/Users/${USER}/Documents/Telerik/\"/**",
 				);
 				INFOPLIST_FILE = TelerikUIExamplesInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
