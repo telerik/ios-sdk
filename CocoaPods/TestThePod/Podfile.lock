@@ -1,0 +1,18 @@
+PODS:
+  - TelerikUI (0.0.2)
+
+DEPENDENCIES:
+  - TelerikUI (from `{:http=>"http://127.0.0.1:3003/TelerikUI.zip"}`)
+
+EXTERNAL SOURCES:
+  TelerikUI:
+    :http: http://127.0.0.1:3003/TelerikUI.zip
+
+CHECKOUT OPTIONS:
+  TelerikUI:
+    :http: http://127.0.0.1:3003/TelerikUI.zip
+
+SPEC CHECKSUMS:
+  TelerikUI: 50d55198ebd3ac7bdfd661b286739b9f5ab4c1fb
+
+COCOAPODS: 0.37.2
