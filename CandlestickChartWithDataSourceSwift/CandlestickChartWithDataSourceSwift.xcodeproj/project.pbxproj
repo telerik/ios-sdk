@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F609C79D1B5CD14B00ED5C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F609C79C1B5CD14B00ED5C99 /* AppDelegate.swift */; };
+		F609C79F1B5CD14B00ED5C99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F609C79E1B5CD14B00ED5C99 /* ViewController.swift */; };
+		F609C7A21B5CD14B00ED5C99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F609C7A01B5CD14B00ED5C99 /* Main.storyboard */; };
+		F609C7A41B5CD14B00ED5C99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F609C7A31B5CD14B00ED5C99 /* Images.xcassets */; };
+		F609C7A71B5CD14B00ED5C99 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F609C7A51B5CD14B00ED5C99 /* LaunchScreen.xib */; };
+		F609C7B31B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F609C7B21B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests.swift */; };
+		F609C7C21B5CD28800ED5C99 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F609C7C11B5CD28800ED5C99 /* TelerikUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F609C7AD1B5CD14C00ED5C99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F609C78F1B5CD14B00ED5C99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F609C7961B5CD14B00ED5C99;
+			remoteInfo = CandlestickChartWithDataSourceSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F609C7971B5CD14B00ED5C99 /* CandlestickChartWithDataSourceSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandlestickChartWithDataSourceSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F609C79B1B5CD14B00ED5C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F609C79C1B5CD14B00ED5C99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F609C79E1B5CD14B00ED5C99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F609C7A11B5CD14B00ED5C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F609C7A31B5CD14B00ED5C99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F609C7A61B5CD14B00ED5C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F609C7AC1B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandlestickChartWithDataSourceSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F609C7B11B5CD14C00ED5C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F609C7B21B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlestickChartWithDataSourceSwiftTests.swift; sourceTree = "<group>"; };
+		F609C7BE1B5CD1D500ED5C99 /* CandlestickChartWithDataSourceSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CandlestickChartWithDataSourceSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		F609C7C11B5CD28800ED5C99 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = ../TelerikUI/TelerikUI.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F609C7941B5CD14B00ED5C99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F609C7C21B5CD28800ED5C99 /* TelerikUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F609C7A91B5CD14C00ED5C99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F609C78E1B5CD14B00ED5C99 = {
+			isa = PBXGroup;
+			children = (
+				F609C7C11B5CD28800ED5C99 /* TelerikUI.framework */,
+				F609C7991B5CD14B00ED5C99 /* CandlestickChartWithDataSourceSwift */,
+				F609C7AF1B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests */,
+				F609C7981B5CD14B00ED5C99 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F609C7981B5CD14B00ED5C99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F609C7971B5CD14B00ED5C99 /* CandlestickChartWithDataSourceSwift.app */,
+				F609C7AC1B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F609C7991B5CD14B00ED5C99 /* CandlestickChartWithDataSourceSwift */ = {
+			isa = PBXGroup;
+			children = (
+				F609C79C1B5CD14B00ED5C99 /* AppDelegate.swift */,
+				F609C79E1B5CD14B00ED5C99 /* ViewController.swift */,
+				F609C7A01B5CD14B00ED5C99 /* Main.storyboard */,
+				F609C7A31B5CD14B00ED5C99 /* Images.xcassets */,
+				F609C7A51B5CD14B00ED5C99 /* LaunchScreen.xib */,
+				F609C79A1B5CD14B00ED5C99 /* Supporting Files */,
+				F609C7BE1B5CD1D500ED5C99 /* CandlestickChartWithDataSourceSwift-Bridging-Header.h */,
+			);
+			path = CandlestickChartWithDataSourceSwift;
+			sourceTree = "<group>";
+		};
+		F609C79A1B5CD14B00ED5C99 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F609C79B1B5CD14B00ED5C99 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F609C7AF1B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				F609C7B21B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests.swift */,
+				F609C7B01B5CD14C00ED5C99 /* Supporting Files */,
+			);
+			path = CandlestickChartWithDataSourceSwiftTests;
+			sourceTree = "<group>";
+		};
+		F609C7B01B5CD14C00ED5C99 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F609C7B11B5CD14C00ED5C99 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F609C7961B5CD14B00ED5C99 /* CandlestickChartWithDataSourceSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F609C7B61B5CD14C00ED5C99 /* Build configuration list for PBXNativeTarget "CandlestickChartWithDataSourceSwift" */;
+			buildPhases = (
+				F609C7931B5CD14B00ED5C99 /* Sources */,
+				F609C7941B5CD14B00ED5C99 /* Frameworks */,
+				F609C7951B5CD14B00ED5C99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CandlestickChartWithDataSourceSwift;
+			productName = CandlestickChartWithDataSourceSwift;
+			productReference = F609C7971B5CD14B00ED5C99 /* CandlestickChartWithDataSourceSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F609C7AB1B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F609C7B91B5CD14C00ED5C99 /* Build configuration list for PBXNativeTarget "CandlestickChartWithDataSourceSwiftTests" */;
+			buildPhases = (
+				F609C7A81B5CD14C00ED5C99 /* Sources */,
+				F609C7A91B5CD14C00ED5C99 /* Frameworks */,
+				F609C7AA1B5CD14C00ED5C99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F609C7AE1B5CD14C00ED5C99 /* PBXTargetDependency */,
+			);
+			name = CandlestickChartWithDataSourceSwiftTests;
+			productName = CandlestickChartWithDataSourceSwiftTests;
+			productReference = F609C7AC1B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F609C78F1B5CD14B00ED5C99 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Sophia Lazarova";
+				TargetAttributes = {
+					F609C7961B5CD14B00ED5C99 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					F609C7AB1B5CD14C00ED5C99 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = F609C7961B5CD14B00ED5C99;
+					};
+				};
+			};
+			buildConfigurationList = F609C7921B5CD14B00ED5C99 /* Build configuration list for PBXProject "CandlestickChartWithDataSourceSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F609C78E1B5CD14B00ED5C99;
+			productRefGroup = F609C7981B5CD14B00ED5C99 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F609C7961B5CD14B00ED5C99 /* CandlestickChartWithDataSourceSwift */,
+				F609C7AB1B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F609C7951B5CD14B00ED5C99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F609C7A21B5CD14B00ED5C99 /* Main.storyboard in Resources */,
+				F609C7A71B5CD14B00ED5C99 /* LaunchScreen.xib in Resources */,
+				F609C7A41B5CD14B00ED5C99 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F609C7AA1B5CD14C00ED5C99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F609C7931B5CD14B00ED5C99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F609C79F1B5CD14B00ED5C99 /* ViewController.swift in Sources */,
+				F609C79D1B5CD14B00ED5C99 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F609C7A81B5CD14C00ED5C99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F609C7B31B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F609C7AE1B5CD14C00ED5C99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F609C7961B5CD14B00ED5C99 /* CandlestickChartWithDataSourceSwift */;
+			targetProxy = F609C7AD1B5CD14C00ED5C99 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F609C7A01B5CD14B00ED5C99 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F609C7A11B5CD14B00ED5C99 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F609C7A51B5CD14B00ED5C99 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F609C7A61B5CD14B00ED5C99 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F609C7B41B5CD14C00ED5C99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F609C7B51B5CD14C00ED5C99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F609C7B71B5CD14C00ED5C99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/slazarov/Desktop/TelerikUI,
+					2,
+					/Users/slazarov/Desktop/TelerikUI,
+				);
+				INFOPLIST_FILE = CandlestickChartWithDataSourceSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CandlestickChartWithDataSourceSwift/CandlestickChartWithDataSourceSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F609C7B81B5CD14C00ED5C99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/slazarov/Desktop/TelerikUI,
+					2,
+					/Users/slazarov/Desktop/TelerikUI,
+				);
+				INFOPLIST_FILE = CandlestickChartWithDataSourceSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CandlestickChartWithDataSourceSwift/CandlestickChartWithDataSourceSwift-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		F609C7BA1B5CD14C00ED5C99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CandlestickChartWithDataSourceSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CandlestickChartWithDataSourceSwift.app/CandlestickChartWithDataSourceSwift";
+			};
+			name = Debug;
+		};
+		F609C7BB1B5CD14C00ED5C99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CandlestickChartWithDataSourceSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CandlestickChartWithDataSourceSwift.app/CandlestickChartWithDataSourceSwift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F609C7921B5CD14B00ED5C99 /* Build configuration list for PBXProject "CandlestickChartWithDataSourceSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F609C7B41B5CD14C00ED5C99 /* Debug */,
+				F609C7B51B5CD14C00ED5C99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F609C7B61B5CD14C00ED5C99 /* Build configuration list for PBXNativeTarget "CandlestickChartWithDataSourceSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F609C7B71B5CD14C00ED5C99 /* Debug */,
+				F609C7B81B5CD14C00ED5C99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F609C7B91B5CD14C00ED5C99 /* Build configuration list for PBXNativeTarget "CandlestickChartWithDataSourceSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F609C7BA1B5CD14C00ED5C99 /* Debug */,
+				F609C7BB1B5CD14C00ED5C99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F609C78F1B5CD14B00ED5C99 /* Project object */;
+}
