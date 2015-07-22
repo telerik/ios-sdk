@@ -14,7 +14,8 @@ class StockDataPoint: TKChartFinancialDataPoint/*, NSCoding*/ {
         let filePath = NSBundle.mainBundle().pathForResource("AppleStockPrices", ofType: "json")
         let json = NSData(contentsOfFile: filePath!)!
         do {
-            let data = try NSJSONSerialization.JSONObjectWithData(json, options: NSJSONReadingOptions.AllowFragments) as! NSArray
+            let data = try
+                NSJSONSerialization.JSONObjectWithData(json, options: NSJSONReadingOptions.AllowFragments) as! NSArray
             let formatter = NSDateFormatter()
             formatter.dateFormat = "dd-MM-yyyy"
             

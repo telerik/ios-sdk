@@ -33,6 +33,8 @@
 		1B53723C1A97869E00707810 /* PhotosWithNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B53723B1A97869E00707810 /* PhotosWithNames.json */; };
 		1B53723E1A9797B100707810 /* LoremIpsumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53723D1A9797B100707810 /* LoremIpsumGenerator.swift */; };
 		1B5372401A9B608E00707810 /* ListViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53723F1A9B608E00707810 /* ListViewLayout.swift */; };
+		EBBE678B1B5FAF0900E74CA9 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBE678A1B5FAF0900E74CA9 /* TelerikUI.framework */; };
+		EBBE678D1B5FAF1600E74CA9 /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBE678C1B5FAF1600E74CA9 /* TelerikAppFeedback.framework */; };
 		F69BE0421B2981C800B7AB95 /* AlertSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BE0411B2981C800B7AB95 /* AlertSettings.swift */; };
 		F69BE0441B29A63D00B7AB95 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BE0431B29A63D00B7AB95 /* Settings.swift */; };
 		F69BE0461B29AB8400B7AB95 /* AlertAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BE0451B29AB8400B7AB95 /* AlertAnimations.swift */; };
@@ -121,8 +123,6 @@
 		FEAA9C0719B4CF0200D60D4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEAA9C0619B4CF0200D60D4C /* UIKit.framework */; };
 		FEAA9C0919B4CF0B00D60D4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEAA9C0819B4CF0B00D60D4C /* Foundation.framework */; };
 		FEB32CAB1A8DFCC80060ED82 /* ListViewSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = FEB32CAA1A8DFCC80060ED82 /* ListViewSampleData.json */; };
-		FEB632A21B3C3FE4006FB64B /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB632A01B3C3FE4006FB64B /* TelerikAppFeedback.framework */; };
-		FEB632A31B3C3FE4006FB64B /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB632A11B3C3FE4006FB64B /* TelerikUI.framework */; };
 		FEB66DB71B13399500DC71AC /* AnimationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB66DB61B13399500DC71AC /* AnimationListCell.swift */; };
 		FEE6EE211A8351D1004895C1 /* DataSourceGettingStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6EE201A8351D1004895C1 /* DataSourceGettingStarted.swift */; };
 		FEE6EE231A8351E5004895C1 /* DataSourceDescriptorsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6EE221A8351E5004895C1 /* DataSourceDescriptorsAPI.swift */; };
@@ -159,6 +159,8 @@
 		1B53723B1A97869E00707810 /* PhotosWithNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PhotosWithNames.json; path = TelerikUIExamplesInSwift/PhotosWithNames.json; sourceTree = "<group>"; };
 		1B53723D1A9797B100707810 /* LoremIpsumGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoremIpsumGenerator.swift; sourceTree = "<group>"; };
 		1B53723F1A9B608E00707810 /* ListViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewLayout.swift; sourceTree = "<group>"; };
+		EBBE678A1B5FAF0900E74CA9 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../../../Telerik/UI for iOS Q2 2015/TelerikUI.framework"; sourceTree = "<group>"; };
+		EBBE678C1B5FAF1600E74CA9 /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = "../../../Telerik/UI for iOS Q2 2015/TelerikAppFeedback.framework"; sourceTree = "<group>"; };
 		F69BE0411B2981C800B7AB95 /* AlertSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSettings.swift; sourceTree = "<group>"; };
 		F69BE0431B29A63D00B7AB95 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		F69BE0451B29AB8400B7AB95 /* AlertAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAnimations.swift; sourceTree = "<group>"; };
@@ -266,8 +268,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEB632A21B3C3FE4006FB64B /* TelerikAppFeedback.framework in Frameworks */,
-				FEB632A31B3C3FE4006FB64B /* TelerikUI.framework in Frameworks */,
+				EBBE678D1B5FAF1600E74CA9 /* TelerikAppFeedback.framework in Frameworks */,
+				EBBE678B1B5FAF0900E74CA9 /* TelerikUI.framework in Frameworks */,
 				FEAA9C0919B4CF0B00D60D4C /* Foundation.framework in Frameworks */,
 				FEAA9C0719B4CF0200D60D4C /* UIKit.framework in Frameworks */,
 				FEAA9C0319B4CEF200D60D4C /* EventKitUI.framework in Frameworks */,
@@ -445,6 +447,8 @@
 		FE92FAA419B4C800000B2E66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EBBE678C1B5FAF1600E74CA9 /* TelerikAppFeedback.framework */,
+				EBBE678A1B5FAF0900E74CA9 /* TelerikUI.framework */,
 				FEB632A01B3C3FE4006FB64B /* TelerikAppFeedback.framework */,
 				FEB632A11B3C3FE4006FB64B /* TelerikUI.framework */,
 				FEAA9C0819B4CF0B00D60D4C /* Foundation.framework */,
@@ -928,13 +932,12 @@
 		FE92FA9719B4C747000B2E66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(inherited)",
-					"\"/Users/raikov/Documents/Telerik/UI for iOS Q2 2015\"",
+					"\"/Users/${USER}/Documents/Telerik/\"/**",
 				);
 				INFOPLIST_FILE = TelerikUIExamplesInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -949,13 +952,12 @@
 		FE92FA9819B4C747000B2E66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(inherited)",
-					"\"/Users/raikov/Documents/Telerik/UI for iOS Q2 2015\"",
+					"\"/Users/${USER}/Documents/Telerik/\"/**",
 				);
 				INFOPLIST_FILE = TelerikUIExamplesInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
