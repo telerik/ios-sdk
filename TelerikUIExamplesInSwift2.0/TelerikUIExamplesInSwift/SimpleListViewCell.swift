@@ -15,7 +15,7 @@ class SimpleListViewCell: TKListViewCell {
         self.textLabel.font = UIFont.systemFontOfSize(12)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

@@ -206,8 +206,8 @@ class Indicators : ExampleViewController, UIPopoverControllerDelegate {
         overlayChart.xAxis.removeObserver(self, forKeyPath: "pan")
         hasObservers = false
     }
-
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [NSObject : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if keyPath == "zoom" {
             self.indicatorsChart.xAxis.zoom = overlayChart.xAxis.zoom
         }

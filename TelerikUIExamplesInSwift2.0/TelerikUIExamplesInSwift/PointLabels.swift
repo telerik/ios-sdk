@@ -136,7 +136,7 @@ class PointLabels: ExampleViewController, TKChartDelegate {
     
     func chart(chart: TKChart!, textForLabelAtPoint dataPoint: TKChartData!, inSeries series: TKChartSeries!, atIndex dataIndex: UInt) -> String! {
         if series.isKindOfClass(TKChartPieSeries) {
-            return dataPoint.dataName!()
+            return dataPoint.dataName?()
         }
         else if series.isKindOfClass(TKChartBarSeries) {
             return "\(dataPoint.dataXValue())"
