@@ -72,7 +72,7 @@ namespace Examples
 			if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) {
 				presenter.WeekNumbersHidden = true;
 				this.CalendarView.Theme = new TKCalendarIPadTheme ();
-				((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (true);
+				((TKCalendarPresenter)this.CalendarView.Presenter).Update (true);
 			} else {
 				presenter.WeekNumbersHidden = false;
 			}

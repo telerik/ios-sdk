@@ -98,6 +98,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="Telerik.Xamarin.iOS">
+      <HintPath>..\Telerik.Xamarin.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -282,12 +285,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
+    <Compile Include="Infrastructure\AppDelegate.cs" />
     <Compile Include="Infrastructure\ExampleInfo.cs" />
     <Compile Include="Infrastructure\ViewController.cs" />
     <Compile Include="Infrastructure\ExamplesViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\AppDelegate.cs" />
     <Compile Include="Infrastructure\OptionInfo.cs" />
     <Compile Include="Infrastructure\ExampleViewController.cs" />
     <Compile Include="Infrastructure\SettingsViewController.cs" />
@@ -430,9 +433,5 @@
     <InterfaceDefinition Include="Examples\Feedback\FeedbackExampleController.xib" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Telerik.Xamarin.iOS\Telerik.Xamarin.iOS.csproj">
-      <Project>{813A9D66-625E-486C-84D8-6CEADB5A6CFD}</Project>
-      <Name>Telerik.Xamarin.iOS</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

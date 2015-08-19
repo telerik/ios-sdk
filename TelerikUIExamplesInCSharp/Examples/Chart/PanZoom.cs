@@ -18,6 +18,7 @@ namespace Examples
 			chart.Frame = this.ExampleBounds;
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			chart.AllowPanDeceleration = true;
+			chart.ZoomMode = TKChartZoomMode.Symmetric;
 			this.View.AddSubview (chart);
 
 			Random r = new Random ();

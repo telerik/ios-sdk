@@ -27,7 +27,7 @@ namespace Examples
 				}
 
 				TKChartScatterSeries series = new TKChartScatterSeries (list.ToArray());
-				series.Title = string.Format ("Series: {0}", list);
+				series.Title = string.Format ("Series: {0}", i + 1);
 				if (2 == i) {
 					series.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
 				} else {
@@ -37,7 +37,7 @@ namespace Examples
 				series.MarginForHitDetection = 300;
 				chart.AddSeries (series);
 			}
-			chart.EndUpdates ();
+
 			chart.XAxis.AllowZoom = true;
 			chart.YAxis.AllowZoom = true;
 		}

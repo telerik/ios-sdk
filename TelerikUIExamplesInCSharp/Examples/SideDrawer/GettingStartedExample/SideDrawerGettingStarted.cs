@@ -88,9 +88,9 @@ namespace Examples
 				section.Style.ContentInsets = new UIEdgeInsets (0, -15, 0, 0);
 			}
 
-			public override void UpdateVisualsForItem (TKSideDrawer sideDrawer, int itemIndex, int sectionIndex)
+			public override void UpdateVisualsForItem (TKSideDrawer sideDrawer, NSIndexPath indexPath)
 			{
-				TKSideDrawerItem item = sideDrawer.Sections[sectionIndex].Items[itemIndex];
+				TKSideDrawerItem item = sideDrawer.Sections[indexPath.Section].Items[indexPath.Item];
 				item.Style.ContentInsets = new UIEdgeInsets (0, -5, 0, 0);
 				item.Style.SeparatorColor = new TKSolidFill (UIColor.Clear);
 			}

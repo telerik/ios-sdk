@@ -16,12 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let mainViewController = ViewController()
         let navigationController = UINavigationController(rootViewController: mainViewController)
-        let feedbackController = TKFeedbackController()
-        feedbackController.dataSource = TKPlatformFeedbackSource(key: "58cb0070-f612-11e3-b9fc-55b0b983d3be", uid:"iosteam@telerik.com")
-        feedbackController.contentController = navigationController
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.rootViewController = feedbackController
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         
         // Override point for customization after application launch.

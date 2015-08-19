@@ -61,7 +61,7 @@ namespace Examples
 			alert.Style.ShowAnimation = TKAlertAnimation.SlideFromTop;
 			alert.Style.DismissAnimation = TKAlertAnimation.SlideFromTop;
 			alert.Style.BackgroundStyle = TKAlertBackgroundStyle.None;
-			alert.DismissMode = TKAlertDismissMode.Tap;
+			alert.DismissMode = TKAlertDismisMode.Tap;
 		}
 	}
 

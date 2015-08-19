@@ -119,6 +119,7 @@ namespace Examples
 			layout.MinimumInteritemSpacing = 1;
 			layout.MinimumLineSpacing = 1;
 			this.listView.Layout = layout;
+			this.scrollDirection = TKListViewScrollDirection.Vertical;
 			this.SetSelectedOptionInSection (1, 1);
 		}
 

@@ -21,7 +21,7 @@ namespace Examples
 			this.TextLabel.Font = UIFont.FromName ("HelveticaNeue-Italic", (nfloat)13);
 
 			this.DetailTextLabel.TextColor = new UIColor ((nfloat)0.2, (nfloat)0.2, (nfloat)0.2, (nfloat)1);
-			this.DetailTextLabel.Font = UIFont.FromName ("HelveticaNeue-Italic", (nfloat)13);
+			this.DetailTextLabel.Font = UIFont.FromName ("HelveticaNeue-Italic", (nfloat)11);
 
 			this.ImageView.ContentMode = UIViewContentMode.ScaleAspectFill;
 
@@ -31,8 +31,8 @@ namespace Examples
 			this.ImageView.Layer.InsertSublayer(this.gradient, 0);
 
 			((TKView)this.BackgroundView).Stroke.StrokeSides = 0;
-		} 
-
+		}
+			
 		public override void LayoutSubviews ()
 		{
 			base.LayoutSubviews ();
@@ -41,7 +41,7 @@ namespace Examples
 			this.DetailTextLabel.Frame = new CGRect(14, this.Frame.Size.Height - 15 - 10, this.Frame.Size.Width - 28, 15);
 			CATransaction.Begin ();
 			CATransaction.DisableActions = true;
-			this.gradient.Frame = new CGRect(-2, this.Frame.Size.Height/2.0, this.Frame.Size.Width + 2, this.Frame.Size.Height - this.Frame.Size.Height/2);
+			this.gradient.Frame = new CGRect (-2, this.Frame.Size.Height / 2.0, this.Frame.Size.Width + 2, this.Frame.Size.Height - this.Frame.Size.Height / 2);
 			CATransaction.Commit ();
 			this.ImageView.Frame = this.Bounds;
 		}

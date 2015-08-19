@@ -9,32 +9,45 @@ namespace Examples
 {
 	public class Settings : NSObject
 	{
+		public Settings()
+		{
+			this.Title = new NSString ("Alert");
+			this.Message = new NSString ("Hello World");
+			this.AllowParallaxEffect = false;
+			this.BackgroundStyle = TKAlertBackgroundStyle.Dim;
+			this.ActionsLayout = TKAlertActionsLayout.Horizontal;
+			this.DismissMode = TKAlertDismisMode.None;
+			this.DismissDirection = TKAlertSwipeDismissDirection.Horizontal;
+			this.AnimationDuration = 0.3;
+			this.BackgroundDim = 0.3;
+		}
+
 		[Export("Title")]
-		public NSString Title { get; set; } = new NSString("Alert");
+		public NSString Title { get; set; }
 
 		[Export("Message")]
-		public NSString Message { get; set; } = new NSString("Hello world");
+		public NSString Message { get; set; }
 
 		[Export("AllowParallaxEffect")] 
-		public bool AllowParallaxEffect { get; set; } = false;
+		public bool AllowParallaxEffect { get; set; }
 
 		[Export("BackgroundStyle")] 
-		public TKAlertBackgroundStyle BackgroundStyle { get; set; } = TKAlertBackgroundStyle.Dim;
+		public TKAlertBackgroundStyle BackgroundStyle { get; set; }
 
 		[Export("ActionsLayout")] 
-		public TKAlertActionsLayout ActionsLayout { get; set; } = TKAlertActionsLayout.Horizontal;
+		public TKAlertActionsLayout ActionsLayout { get; set; }
 
 		[Export("DismissMode")] 
-		public TKAlertDismissMode DismissMode { get; set; } = TKAlertDismissMode.None;
+		public TKAlertDismisMode DismissMode { get; set; }
 
 		[Export("DismissDirection")] 
-		public TKAlertSwipeDismissDirection DismissDirection { get; set; } = TKAlertSwipeDismissDirection.Horizontal;
+		public TKAlertSwipeDismissDirection DismissDirection { get; set; }
 
 		[Export("AnimationDuration")] 
-		public double AnimationDuration { get; set; } = 0.3;
+		public double AnimationDuration { get; set; }
 
 		[Export("BackgroundDim")] 
-		public double BackgroundDim { get; set; } = 0.3;
+		public double BackgroundDim { get; set; }
 	}
 }
 

@@ -17,9 +17,6 @@ namespace Examples
 	{
 		// class-level declarations
 
-		static string apiKey = "58cb0070-f612-11e3-b9fc-55b0b983d3be";
-		static string uID = "iosteam@telerik.com";
-		
 		public override UIWindow Window {
 			get;
 			set;
@@ -32,13 +29,10 @@ namespace Examples
 			UINavigationController navigationController = new UINavigationController (examplesController);
 			navigationController.NavigationBar.Translucent = false;
 
-			TKFeedbackController feedbackController = new TKFeedbackController ();
-			feedbackController.DataSource = new TKPlatformFeedbackSource (apiKey, uID);
-			feedbackController.ContentController = navigationController;
-
 			this.Window = new UIWindow (UIScreen.MainScreen.Bounds);
-			this.Window.RootViewController = feedbackController;
+			this.Window.RootViewController = navigationController;
 			this.Window.MakeKeyAndVisible ();
+
 			return true;
 		}
 

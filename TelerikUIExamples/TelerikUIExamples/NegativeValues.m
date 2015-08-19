@@ -49,6 +49,8 @@
     series.style.pointShape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeCircle andSize:CGSizeMake(shapeSize, shapeSize)];
     series.selectionMode = TKChartSeriesSelectionModeSeries;
     [_chart addSeries:series];
+    _chart.xAxis.allowZoom = YES;
+    _chart.yAxis.allowZoom = YES;
 }
 
 - (void)didReceiveMemoryWarning

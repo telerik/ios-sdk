@@ -98,23 +98,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //api key used to work with Telerik AppFeedback service
-    static NSString *apiKey = @"58cb0070-f612-11e3-b9fc-55b0b983d3be";
-    
-    //user id used to send feedback to Telerik AppFeedback service
-    static NSString *uID = @"iosteam@telerik.com";
-    
     ViewController *mainViewController = [[ViewController alloc] initWithExample:[self createExamples]];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-//    navigationController.navigationBar.translucent = NO;
-    
-    
-    TKFeedbackController *feedbackController = [[TKFeedbackController alloc] init];
-    feedbackController.dataSource = [[TKPlatformFeedbackSource alloc] initWithKey:apiKey uid:uID];
-    feedbackController.contentController = navigationController;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = feedbackController;
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -207,7 +195,8 @@
                                                @"2.Custom Label" : [CustomPointLabels class],
                                                @"3.Custom Label Render" : [CustomPointLabelRender class],
                                                },
-                                       @"9.Live Data" : [LiveData class]
+                                       @"9.Live Data" : [LiveData class],
+                                       
                                        },
                                
                                @"2.Calendar": @{

@@ -79,6 +79,7 @@
 		FE5F963F1A93933100E70AF2 /* ListViewGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F963E1A93933100E70AF2 /* ListViewGettingStarted.m */; };
 		FE5F96421A93A68F00E70AF2 /* OptionSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F96411A93A68F00E70AF2 /* OptionSection.m */; };
 		FE7131B8192FA4E400B9C231 /* CalendarTransitonEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7131B7192FA4E400B9C231 /* CalendarTransitonEffects.m */; };
+		FE77380419ED5E44009F5C34 /* libTelerikAppFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */; };
 		FE8701831941E2A700AC1D05 /* CalendarCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701821941E2A700AC1D05 /* CalendarCustomization.m */; };
 		FE8701D119420E4000AC1D05 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701D019420E4000AC1D05 /* CustomCell.m */; };
 		FE8701D91942141400AC1D05 /* CalendarEventKitDataBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701D81942141400AC1D05 /* CalendarEventKitDataBinding.m */; };
@@ -99,8 +100,6 @@
 		FEA0D2E21A8245920014CD96 /* DSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2E11A8245920014CD96 /* DSItem.m */; };
 		FEA0D2E51A8280CF0014CD96 /* DSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2E41A8280CF0014CD96 /* DSCollectionViewCell.m */; };
 		FEA0D2E81A8286970014CD96 /* DataSourceWithWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2E71A8286970014CD96 /* DataSourceWithWebService.m */; };
-		FEB301971B3AF6ED00A3C525 /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB301951B3AF6ED00A3C525 /* TelerikAppFeedback.framework */; };
-		FEB301981B3AF6ED00A3C525 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB301961B3AF6ED00A3C525 /* TelerikUI.framework */; };
 		FEB4260119336F1D00C2A602 /* CalendarSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4260019336F1D00C2A602 /* CalendarSelection.m */; };
 		FEB42604193374A500C2A602 /* iOS7StyleCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB42603193374A500C2A602 /* iOS7StyleCalendar.m */; };
 		FEB66DB51B132ECA00DC71AC /* AnimationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB66DB41B132ECA00DC71AC /* AnimationListCell.m */; };
@@ -122,6 +121,7 @@
 		FEE269D11807066700E52C37 /* PieDonut.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D01807066700E52C37 /* PieDonut.m */; };
 		FEE269D7180708B900E52C37 /* StackedColumnChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D6180708B900E52C37 /* StackedColumnChart.m */; };
 		FEE269DA180708CD00E52C37 /* StackedAreaChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D9180708CD00E52C37 /* StackedAreaChart.m */; };
+		FEE8E7911887DF6E009D373B /* libTelerikUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE8E7901887DF6E009D373B /* libTelerikUI.a */; };
 		FEEAEBD318080A7600D75A5C /* DefaultAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD218080A7600D75A5C /* DefaultAnimation.m */; };
 		FEEAEBD618080A8900D75A5C /* CustomAnimationLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD518080A8900D75A5C /* CustomAnimationLineChart.m */; };
 		FEEAEBD918080A9A00D75A5C /* CustomAnimationPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD818080A9A00D75A5C /* CustomAnimationPieChart.m */; };
@@ -269,6 +269,7 @@
 		FE5F96411A93A68F00E70AF2 /* OptionSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionSection.m; sourceTree = "<group>"; };
 		FE7131B6192FA4E400B9C231 /* CalendarTransitionEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTransitionEffects.h; sourceTree = "<group>"; };
 		FE7131B7192FA4E400B9C231 /* CalendarTransitonEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTransitonEffects.m; sourceTree = "<group>"; };
+		FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = "../TelerikAppFeedback.framework"; sourceTree = "<group>"; };
 		FE8701811941E2A700AC1D05 /* CalendarCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarCustomization.h; sourceTree = "<group>"; };
 		FE8701821941E2A700AC1D05 /* CalendarCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarCustomization.m; sourceTree = "<group>"; };
 		FE8701CF19420E4000AC1D05 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
@@ -307,8 +308,6 @@
 		FEA0D2E41A8280CF0014CD96 /* DSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSCollectionViewCell.m; sourceTree = "<group>"; };
 		FEA0D2E61A8286970014CD96 /* DataSourceWithWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceWithWebService.h; sourceTree = "<group>"; };
 		FEA0D2E71A8286970014CD96 /* DataSourceWithWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceWithWebService.m; sourceTree = "<group>"; };
-		FEB301951B3AF6ED00A3C525 /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
-		FEB301961B3AF6ED00A3C525 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FEB425FF19336F1D00C2A602 /* CalendarSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSelection.h; sourceTree = "<group>"; };
 		FEB4260019336F1D00C2A602 /* CalendarSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSelection.m; sourceTree = "<group>"; };
 		FEB42602193374A500C2A602 /* iOS7StyleCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOS7StyleCalendar.h; sourceTree = "<group>"; };
@@ -350,6 +349,7 @@
 		FEE269D6180708B900E52C37 /* StackedColumnChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackedColumnChart.m; sourceTree = "<group>"; };
 		FEE269D8180708CD00E52C37 /* StackedAreaChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackedAreaChart.h; sourceTree = "<group>"; };
 		FEE269D9180708CD00E52C37 /* StackedAreaChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackedAreaChart.m; sourceTree = "<group>"; };
+		FEE8E7901887DF6E009D373B /* libTelerikUI.a */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../TelerikUI.framework"; sourceTree = "<group>"; };
 		FEEAEBD118080A7600D75A5C /* DefaultAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultAnimation.h; sourceTree = "<group>"; };
 		FEEAEBD218080A7600D75A5C /* DefaultAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultAnimation.m; sourceTree = "<group>"; };
 		FEEAEBD418080A8900D75A5C /* CustomAnimationLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimationLineChart.h; sourceTree = "<group>"; };
@@ -373,10 +373,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEB301971B3AF6ED00A3C525 /* TelerikAppFeedback.framework in Frameworks */,
-				FEB301981B3AF6ED00A3C525 /* TelerikUI.framework in Frameworks */,
+				FE77380419ED5E44009F5C34 /* libTelerikAppFeedback.a in Frameworks */,
 				FE8701E4194218AB00AC1D05 /* EventKit.framework in Frameworks */,
 				FE8701E5194218AB00AC1D05 /* EventKitUI.framework in Frameworks */,
+				FEE8E7911887DF6E009D373B /* libTelerikUI.a in Frameworks */,
 				FEE2697F1806DBA300E52C37 /* UIKit.framework in Frameworks */,
 				FEE2697B1806DBA300E52C37 /* Foundation.framework in Frameworks */,
 			);
@@ -749,8 +749,8 @@
 		FEE269791806DBA300E52C37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FEB301951B3AF6ED00A3C525 /* TelerikAppFeedback.framework */,
-				FEB301961B3AF6ED00A3C525 /* TelerikUI.framework */,
+				FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */,
+				FEE8E7901887DF6E009D373B /* libTelerikUI.a */,
 				FE8701E2194218AB00AC1D05 /* EventKit.framework */,
 				FE8701E3194218AB00AC1D05 /* EventKitUI.framework */,
 				FEE2697A1806DBA300E52C37 /* Foundation.framework */,
@@ -1190,8 +1190,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/**",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"\"/Users/${USER}/Documents/Telerik/UI for iOS Q1 2015/\"/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TelerikUIExamples/TelerikUIExamples-Prefix.pch";
@@ -1215,8 +1213,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/**",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"\"/Users/${USER}/Documents/Telerik/UI for iOS Q1 2015/\"/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TelerikUIExamples/TelerikUIExamples-Prefix.pch";

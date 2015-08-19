@@ -79,12 +79,11 @@
 
 #pragma mark TKSideDrawerDelegate
 
-- (void)sideDrawer:(TKSideDrawer *)sideDrawer updateVisualsForItem:(NSInteger)itemIndex inSection:(NSInteger)sectionIndex
+- (void)sideDrawer:(TKSideDrawer *)sideDrawer updateVisualsForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    TKSideDrawerSection *section = sideDrawer.sections[sectionIndex];
-    TKSideDrawerItem *item = section.items[itemIndex];
+    TKSideDrawerSection *section = sideDrawer.sections[indexPath.section];
+    TKSideDrawerItem *item = section.items[indexPath.item];
     item.style.contentInsets = UIEdgeInsetsMake(0, -5, 0, 0);
-    item.style.separatorColor = [TKSolidFill solidFillWithColor:[UIColor clearColor]];
 }
 
 - (void)sideDrawer:(TKSideDrawer *)sideDrawer updateVisualsForSection:(NSInteger)sectionIndex
