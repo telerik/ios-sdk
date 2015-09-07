@@ -17,7 +17,7 @@
 		D096D7BE1B83143200C9174B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D096D7BD1B83143200C9174B /* Foundation.framework */; };
 		D096D7BF1B83146A00C9174B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D096D7BB1B83142D00C9174B /* UIKit.framework */; };
 		D096D7C01B83146E00C9174B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D096D7BD1B83143200C9174B /* Foundation.framework */; };
-		FEC788FA1B83619B00F1B230 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC788F91B83619B00F1B230 /* TelerikUI.framework */; };
+		EB0C96931B9DD0F1008C120F /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0C96921B9DD0F1008C120F /* TelerikUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +56,8 @@
 		D096D7AB1B8311E100C9174B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D096D7BB1B83142D00C9174B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D096D7BD1B83143200C9174B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EB0C96921B9DD0F1008C120F /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../../../Telerik/UI for iOS Q2 2015/TelerikUI.framework"; sourceTree = "<group>"; };
 		FEC788F51B83616C00F1B230 /* Alert UI Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Alert UI Tests-Bridging-Header.h"; sourceTree = "<group>"; };
-		FEC788F91B83619B00F1B230 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../../Documents/Telerik/UI for iOS Q2 2015/TelerikUI.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEC788FA1B83619B00F1B230 /* TelerikUI.framework in Frameworks */,
+				EB0C96931B9DD0F1008C120F /* TelerikUI.framework in Frameworks */,
 				D096D7C01B83146E00C9174B /* Foundation.framework in Frameworks */,
 				D096D7BF1B83146A00C9174B /* UIKit.framework in Frameworks */,
 			);
@@ -86,7 +86,7 @@
 		D096D7881B8311E100C9174B = {
 			isa = PBXGroup;
 			children = (
-				FEC788F91B83619B00F1B230 /* TelerikUI.framework */,
+				EB0C96921B9DD0F1008C120F /* TelerikUI.framework */,
 				D096D7BD1B83143200C9174B /* Foundation.framework */,
 				D096D7BB1B83142D00C9174B /* UIKit.framework */,
 				D096D7931B8311E100C9174B /* Alert UI Tests */,

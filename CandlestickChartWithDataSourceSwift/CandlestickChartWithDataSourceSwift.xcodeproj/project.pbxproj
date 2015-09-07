@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EBC115731B9DD09100F50F9F /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC115721B9DD09100F50F9F /* TelerikUI.framework */; };
 		F609C79D1B5CD14B00ED5C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F609C79C1B5CD14B00ED5C99 /* AppDelegate.swift */; };
 		F609C79F1B5CD14B00ED5C99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F609C79E1B5CD14B00ED5C99 /* ViewController.swift */; };
 		F609C7A21B5CD14B00ED5C99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F609C7A01B5CD14B00ED5C99 /* Main.storyboard */; };
 		F609C7A41B5CD14B00ED5C99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F609C7A31B5CD14B00ED5C99 /* Images.xcassets */; };
 		F609C7A71B5CD14B00ED5C99 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F609C7A51B5CD14B00ED5C99 /* LaunchScreen.xib */; };
 		F609C7B31B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F609C7B21B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests.swift */; };
-		F609C7C21B5CD28800ED5C99 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F609C7C11B5CD28800ED5C99 /* TelerikUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EBC115721B9DD09100F50F9F /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		F609C7971B5CD14B00ED5C99 /* CandlestickChartWithDataSourceSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandlestickChartWithDataSourceSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F609C79B1B5CD14B00ED5C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F609C79C1B5CD14B00ED5C99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +39,6 @@
 		F609C7B11B5CD14C00ED5C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F609C7B21B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlestickChartWithDataSourceSwiftTests.swift; sourceTree = "<group>"; };
 		F609C7BE1B5CD1D500ED5C99 /* CandlestickChartWithDataSourceSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CandlestickChartWithDataSourceSwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		F609C7C11B5CD28800ED5C99 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = ../TelerikUI/TelerikUI.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F609C7C21B5CD28800ED5C99 /* TelerikUI.framework in Frameworks */,
+				EBC115731B9DD09100F50F9F /* TelerikUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,7 @@
 		F609C78E1B5CD14B00ED5C99 = {
 			isa = PBXGroup;
 			children = (
-				F609C7C11B5CD28800ED5C99 /* TelerikUI.framework */,
+				EBC115721B9DD09100F50F9F /* TelerikUI.framework */,
 				F609C7991B5CD14B00ED5C99 /* CandlestickChartWithDataSourceSwift */,
 				F609C7AF1B5CD14C00ED5C99 /* CandlestickChartWithDataSourceSwiftTests */,
 				F609C7981B5CD14B00ED5C99 /* Products */,

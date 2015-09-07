@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EBC115711B9DD04700F50F9F /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC115701B9DD04700F50F9F /* TelerikUI.framework */; };
 		F609C7351B59596200ED5C99 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F609C7341B59596200ED5C99 /* main.m */; };
 		F609C7381B59596200ED5C99 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F609C7371B59596200ED5C99 /* AppDelegate.m */; };
 		F609C73B1B59596200ED5C99 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F609C73A1B59596200ED5C99 /* ViewController.m */; };
@@ -14,7 +15,6 @@
 		F609C7401B59596200ED5C99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F609C73F1B59596200ED5C99 /* Images.xcassets */; };
 		F609C7431B59596200ED5C99 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F609C7411B59596200ED5C99 /* LaunchScreen.xib */; };
 		F609C74F1B59596200ED5C99 /* CandlestickChartWithDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F609C74E1B59596200ED5C99 /* CandlestickChartWithDataSourceTests.m */; };
-		F609C7C81B5CD4CE00ED5C99 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F609C7C71B5CD4CE00ED5C99 /* TelerikUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EBC115701B9DD04700F50F9F /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		F609C72F1B59596200ED5C99 /* CandlestickChartWithDataSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandlestickChartWithDataSource.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F609C7331B59596200ED5C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F609C7341B59596200ED5C99 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		F609C7481B59596200ED5C99 /* CandlestickChartWithDataSourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandlestickChartWithDataSourceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F609C74D1B59596200ED5C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F609C74E1B59596200ED5C99 /* CandlestickChartWithDataSourceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandlestickChartWithDataSourceTests.m; sourceTree = "<group>"; };
-		F609C7C71B5CD4CE00ED5C99 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = ../TelerikUI/TelerikUI.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F609C7C81B5CD4CE00ED5C99 /* TelerikUI.framework in Frameworks */,
+				EBC115711B9DD04700F50F9F /* TelerikUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +66,7 @@
 		F609C7261B59596200ED5C99 = {
 			isa = PBXGroup;
 			children = (
-				F609C7C71B5CD4CE00ED5C99 /* TelerikUI.framework */,
+				EBC115701B9DD04700F50F9F /* TelerikUI.framework */,
 				F609C7311B59596200ED5C99 /* CandlestickChartWithDataSource */,
 				F609C74B1B59596200ED5C99 /* CandlestickChartWithDataSourceTests */,
 				F609C7301B59596200ED5C99 /* Products */,

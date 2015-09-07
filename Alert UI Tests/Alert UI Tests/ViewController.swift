@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         
         textLabel.frame = CGRectMake(0, 100, self.view.frame.size.width, 44)
         textLabel.textAlignment = NSTextAlignment.Center
-        textLabel.text = "Please, answer the question?"
+        textLabel.text = "Please, answer the question"
         self.view.addSubview(textLabel)
     }
     
