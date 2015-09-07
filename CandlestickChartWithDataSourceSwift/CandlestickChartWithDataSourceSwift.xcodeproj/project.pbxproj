@@ -351,11 +351,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/slazarov/Desktop/TelerikUI,
-					2,
-					/Users/slazarov/Desktop/TelerikUI,
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"\"/Users/${USER}/Documents/Telerik/\"/**",
 				);
 				INFOPLIST_FILE = CandlestickChartWithDataSourceSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CandlestickChartWithDataSourceSwift/CandlestickChartWithDataSourceSwift-Bridging-Header.h";
@@ -370,11 +370,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/slazarov/Desktop/TelerikUI,
-					2,
-					/Users/slazarov/Desktop/TelerikUI,
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"\"/Users/${USER}/Documents/Telerik/\"/**",
 				);
 				INFOPLIST_FILE = CandlestickChartWithDataSourceSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CandlestickChartWithDataSourceSwift/CandlestickChartWithDataSourceSwift-Bridging-Header.h";
@@ -434,6 +434,7 @@
 				F609C7B81B5CD14C00ED5C99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F609C7B91B5CD14C00ED5C99 /* Build configuration list for PBXNativeTarget "CandlestickChartWithDataSourceSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +443,7 @@
 				F609C7BB1B5CD14C00ED5C99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
