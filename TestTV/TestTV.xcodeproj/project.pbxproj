@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE15D44B1BA1DAA300B4A3C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15D44A1BA1DAA300B4A3C8 /* AppDelegate.swift */; };
+		FE15D44D1BA1DAA300B4A3C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15D44C1BA1DAA300B4A3C8 /* ViewController.swift */; };
+		FE15D4501BA1DAA300B4A3C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE15D44E1BA1DAA300B4A3C8 /* Main.storyboard */; };
+		FE15D4521BA1DAA300B4A3C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE15D4511BA1DAA300B4A3C8 /* Assets.xcassets */; };
+		FE15D4601BA1DBB700B4A3C8 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15D45F1BA1DBB700B4A3C8 /* TelerikUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FE15D45E1BA1DB8A00B4A3C8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FE15D4471BA1DAA300B4A3C8 /* TestTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE15D44A1BA1DAA300B4A3C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE15D44C1BA1DAA300B4A3C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FE15D44F1BA1DAA300B4A3C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE15D4511BA1DAA300B4A3C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE15D4531BA1DAA300B4A3C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE15D45F1BA1DBB700B4A3C8 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../../Documents/Telerik/UI for iOS Q2 2015/TelerikUI.framework"; sourceTree = "<group>"; };
+		FE15D4611BA2C2EC00B4A3C8 /* TestTV-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestTV-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE15D4441BA1DAA300B4A3C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE15D4601BA1DBB700B4A3C8 /* TelerikUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE15D43E1BA1DAA300B4A3C8 = {
+			isa = PBXGroup;
+			children = (
+				FE15D45F1BA1DBB700B4A3C8 /* TelerikUI.framework */,
+				FE15D4491BA1DAA300B4A3C8 /* TestTV */,
+				FE15D4481BA1DAA300B4A3C8 /* Products */,
+				FE15D4611BA2C2EC00B4A3C8 /* TestTV-Bridging-Header.h */,
+			);
+			sourceTree = "<group>";
+		};
+		FE15D4481BA1DAA300B4A3C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE15D4471BA1DAA300B4A3C8 /* TestTV.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE15D4491BA1DAA300B4A3C8 /* TestTV */ = {
+			isa = PBXGroup;
+			children = (
+				FE15D44A1BA1DAA300B4A3C8 /* AppDelegate.swift */,
+				FE15D44C1BA1DAA300B4A3C8 /* ViewController.swift */,
+				FE15D44E1BA1DAA300B4A3C8 /* Main.storyboard */,
+				FE15D4511BA1DAA300B4A3C8 /* Assets.xcassets */,
+				FE15D4531BA1DAA300B4A3C8 /* Info.plist */,
+			);
+			path = TestTV;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE15D4461BA1DAA300B4A3C8 /* TestTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE15D4561BA1DAA300B4A3C8 /* Build configuration list for PBXNativeTarget "TestTV" */;
+			buildPhases = (
+				FE15D4431BA1DAA300B4A3C8 /* Sources */,
+				FE15D4441BA1DAA300B4A3C8 /* Frameworks */,
+				FE15D4451BA1DAA300B4A3C8 /* Resources */,
+				FE15D45E1BA1DB8A00B4A3C8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestTV;
+			productName = TestTV;
+			productReference = FE15D4471BA1DAA300B4A3C8 /* TestTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE15D43F1BA1DAA300B4A3C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = TR;
+				TargetAttributes = {
+					FE15D4461BA1DAA300B4A3C8 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = FE15D4421BA1DAA300B4A3C8 /* Build configuration list for PBXProject "TestTV" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE15D43E1BA1DAA300B4A3C8;
+			productRefGroup = FE15D4481BA1DAA300B4A3C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE15D4461BA1DAA300B4A3C8 /* TestTV */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE15D4451BA1DAA300B4A3C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE15D4521BA1DAA300B4A3C8 /* Assets.xcassets in Resources */,
+				FE15D4501BA1DAA300B4A3C8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE15D4431BA1DAA300B4A3C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE15D44D1BA1DAA300B4A3C8 /* ViewController.swift in Sources */,
+				FE15D44B1BA1DAA300B4A3C8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FE15D44E1BA1DAA300B4A3C8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE15D44F1BA1DAA300B4A3C8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE15D4541BA1DAA300B4A3C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		FE15D4551BA1DAA300B4A3C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE15D4571BA1DAA300B4A3C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = TestTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Telerik.TestTV;
+				PRODUCT_NAME = TestTV;
+				SWIFT_OBJC_BRIDGING_HEADER = "TestTV-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FE15D4581BA1DAA300B4A3C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = TestTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Telerik.TestTV;
+				PRODUCT_NAME = TestTV;
+				SWIFT_OBJC_BRIDGING_HEADER = "TestTV-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE15D4421BA1DAA300B4A3C8 /* Build configuration list for PBXProject "TestTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE15D4541BA1DAA300B4A3C8 /* Debug */,
+				FE15D4551BA1DAA300B4A3C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE15D4561BA1DAA300B4A3C8 /* Build configuration list for PBXNativeTarget "TestTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE15D4571BA1DAA300B4A3C8 /* Debug */,
+				FE15D4581BA1DAA300B4A3C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE15D43F1BA1DAA300B4A3C8 /* Project object */;
+}
