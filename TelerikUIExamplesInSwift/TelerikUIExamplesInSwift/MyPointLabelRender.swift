@@ -14,6 +14,10 @@ class MyPointLabelRender: TKChartPointLabelRender {
     var labelLayer: SelectedPointLabel?
     var isSelectedPoint = false
    
+    override init() {
+        super.init()
+    }
+    
     init(render: TKChartSeriesRender, selectedDataIndex: Int, selectedSeriesIndex: Int)
     {
         super.init(render: render)
@@ -21,18 +25,18 @@ class MyPointLabelRender: TKChartPointLabelRender {
         self.selectedSeriesIndex = selectedSeriesIndex
     }
     
-    override func renderPointLabelsForSeries(series: TKChartSeries!, inRect bounds: CGRect, context ctx: CGContext!) {
+    override func renderPointLabelsForSeries(series: TKChartSeries, inRect bounds: CGRect, context ctx: CGContext) {
         if labelLayer != nil {
             labelLayer!.removeFromSuperlayer()
         }
-        for i in 0..<series.items().count {
-            let dataPoint = series.items()[i] as! TKChartData
+        for i in 0..<series.items.count {
+            let dataPoint = series.items[i] as! TKChartData
             let location = self.locationForDataPoint(dataPoint, forSeries: series, inRect: bounds)
             if !CGRectContainsPoint(bounds, location) {
                 continue
             }
             
-            let label: TKChartPointLabel? = self.labelForDataPoint(dataPoint, inSeries: series, atIndex:(UInt)(i))
+            let label: TKChartPointLabel? = self.labelForDataPoint(dataPoint, property:"dataYValue", inSeries: series, atIndex:(UInt)(i))
             var labelRect = CGRectZero
             let labelStyle = series.style.pointLabelStyle
             if isSelectedPoint {
@@ -46,7 +50,7 @@ class MyPointLabelRender: TKChartPointLabelRender {
                 }
                 
                 self.labelLayer!.frame = labelRect
-                self.render.addSublayer(labelLayer)
+                self.render!.addSublayer(labelLayer!)
                 self.labelLayer!.setNeedsDisplay()
             }
             else {
@@ -55,8 +59,8 @@ class MyPointLabelRender: TKChartPointLabelRender {
                     location.y - labelSize.height / 2.0 + labelStyle.labelOffset.vertical,
                     labelSize.width, labelSize.height)
                 
-                if labelStyle!.clipMode == TKChartPointLabelClipMode.Visible {
-                    if labelRect.origin.y < self.render.bounds.origin.y {
+                if labelStyle.clipMode == TKChartPointLabelClipMode.Visible {
+                    if labelRect.origin.y < self.render!.bounds.origin.y {
                         labelRect.origin.y = location.y - labelSize.height / 2.0 + fabs(labelStyle.labelOffset.vertical)
                     }
                 }
@@ -65,8 +69,10 @@ class MyPointLabelRender: TKChartPointLabelRender {
             }
         }
     }
-    
-    override func labelForDataPoint(dataPoint: TKChartData!, inSeries series: TKChartSeries!, atIndex dataIndex: UInt) -> TKChartPointLabel! {
+
+    override func labelForDataPoint(dataPoint: TKChartData, property propertyName: String?, inSeries series: TKChartSeries, atIndex dataIndex: UInt) -> TKChartPointLabel? {
+        let value: AnyObject? = (dataPoint as! NSObject).valueForKey(propertyName!)
+        let v = value?.doubleValue
         if Int(series.index) == self.selectedSeriesIndex && Int(dataIndex) == self.selectedDataPointIndex {
             if labelLayer == nil {
                 labelLayer = SelectedPointLabel()
@@ -76,12 +82,12 @@ class MyPointLabelRender: TKChartPointLabelRender {
             }
             
             labelLayer!.labelStyle = series.style.pointLabelStyle
-            labelLayer!.text = "\(dataPoint.dataYValue())"
+            labelLayer!.text = NSString(format: "%.0f", v!)
             self.isSelectedPoint = true
             return nil
         }
         
         self.isSelectedPoint = false
-        return TKChartPointLabel(point: dataPoint, style: series.style.pointLabelStyle, text: "\(dataPoint.dataYValue())")
+        return TKChartPointLabel(point: dataPoint, series: series, text:  NSString(format: "%.0f", v!) as String)
     }
 }

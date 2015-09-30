@@ -23,8 +23,8 @@ class AlertCustomContentView: UIView, TKCalendarDelegate {
         self.calendarView.delegate = self
         self.addSubview(self.calendarView)
         
-        let presenter :TKCalendarMonthPresenter = self.calendarView.presenter() as! TKCalendarMonthPresenter
-        presenter.style().backgroundColor = color
+        let presenter :TKCalendarMonthPresenter = self.calendarView.presenter as! TKCalendarMonthPresenter
+        presenter.style.backgroundColor = color
 
         self.dayLabel.frame = CGRectMake(0, 0, width/2, height)
         self.dayLabel.textAlignment = NSTextAlignment.Center
@@ -42,7 +42,7 @@ class AlertCustomContentView: UIView, TKCalendarDelegate {
     
     //MARK: - TKCalendarDelegate
     
-    func calendar(calendar: TKCalendar!, updateVisualsForCell cell: TKCalendarCell!) {
+    func calendar(calendar: TKCalendar, updateVisualsForCell cell: TKCalendarCell) {
         
         cell.style().textColor = UIColor.whiteColor()
         cell.style().bottomBorderWidth = 0
@@ -52,7 +52,7 @@ class AlertCustomContentView: UIView, TKCalendarDelegate {
     
         if cell.isKindOfClass(TKCalendarDayCell.self) {
             let dayCell = cell as! TKCalendarDayCell
-            if ((dayCell.state & TKCalendarDayState.Selected).rawValue != 0) {
+            if ((dayCell.state.rawValue & TKCalendarDayState.Selected.rawValue) != 0) {
                 dayCell.style().textColor = UIColor(red: 0.5, green: 0.7, blue: 0.2, alpha: 1)
             }
         }
@@ -69,8 +69,8 @@ class AlertCustomContentView: UIView, TKCalendarDelegate {
         }
     }
     
-    func calendar(calendar: TKCalendar!, didSelectDate date: NSDate!) {
-        let components: NSDateComponents = calendar.calendar.components(NSCalendarUnit.DayCalendarUnit, fromDate: date)
+    func calendar(calendar: TKCalendar, didSelectDate date: NSDate) {
+        let components: NSDateComponents = calendar.calendar.components(NSCalendarUnit.Day, fromDate: date)
         self.dayLabel.text = "\(components.day)"
     }
 }

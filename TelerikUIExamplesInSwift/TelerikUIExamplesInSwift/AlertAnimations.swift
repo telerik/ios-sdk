@@ -10,6 +10,7 @@ import Foundation
 class AlertAnimations: ExampleViewController, TKListViewDelegate {
 
     let alert = TKAlert()
+
     let appearLabel = UILabel()
     let hideLabel = UILabel()
     let appearAnimationsList = TKListView()
@@ -17,12 +18,12 @@ class AlertAnimations: ExampleViewController, TKListViewDelegate {
     let appearAnimations = TKDataSource(array: ["Scale in", "Fade in", "Slide from left", "Slide from top", "Slide from right", "Slide from bottom"])
     let hideAnimations = TKDataSource(array: ["Scale out", "Fade out", "Slide to left", "Slide to top", "Slide to right", "Slide to bottom"])
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
+
         self.addOption("Show Alert") { self.show() }
     }
-    
+
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -45,13 +46,13 @@ class AlertAnimations: ExampleViewController, TKListViewDelegate {
         
         }
         
-        appearAnimations.settings.listView.initCell(block)
-        hideAnimations.settings.listView.initCell(block)
+        self.appearAnimations.settings.listView.initCell(block)
+        self.hideAnimations.settings.listView.initCell(block)
 
         self.view.addSubview(TKListView())
         
         appearAnimationsList.frame = CGRectMake(0, 44, self.view.frame.size.width/2, self.view.frame.size.height)
-        appearAnimationsList.dataSource = appearAnimations
+        appearAnimationsList.dataSource = self.appearAnimations
         appearAnimationsList.delegate = self
         appearAnimationsList.tag = 0
         self.view.addSubview(appearAnimationsList)
@@ -59,7 +60,7 @@ class AlertAnimations: ExampleViewController, TKListViewDelegate {
         appearAnimationsList.selectItemAtIndexPath(NSIndexPath(forItem:3, inSection: 0), animated: false, scrollPosition: UICollectionViewScrollPosition.None)
         
         hideAnimationsList.frame = CGRectMake(self.view.frame.size.width/2 , 108, self.view.frame.size.width/2, self.view.frame.size.height + 20)
-        hideAnimationsList.dataSource = hideAnimations
+        hideAnimationsList.dataSource = self.hideAnimations
         hideAnimationsList.delegate = self
         hideAnimationsList.tag = 1
         self.view.addSubview(hideAnimationsList)
@@ -93,11 +94,11 @@ class AlertAnimations: ExampleViewController, TKListViewDelegate {
             titleHeight += 40;
         }
     
-        var halfWidth:CGFloat = CGRectGetWidth(self.view.frame)/2.0
+        let halfWidth:CGFloat = CGRectGetWidth(self.view.frame)/2.0
         appearLabel.frame = CGRectMake(0.0, titleHeight + 10.0, halfWidth, 20.0)
         hideLabel.frame = CGRectMake(halfWidth, titleHeight + 10.0, halfWidth, 20.0)
     
-        var height:CGFloat = CGRectGetHeight(self.view.frame) - titleHeight - 50.0
+        let height:CGFloat = CGRectGetHeight(self.view.frame) - titleHeight - 50.0
     
         appearAnimationsList.frame = CGRectMake(0, titleHeight + 40, halfWidth, height)
         hideAnimationsList.frame = CGRectMake(halfWidth, titleHeight + 40, halfWidth, height)
@@ -107,16 +108,18 @@ class AlertAnimations: ExampleViewController, TKListViewDelegate {
         
         let message = NSMutableString()
         
-        var selected = appearAnimationsList.indexPathsForSelectedItems()
-        if (selected.count > 0) {
-            let indexPath:NSIndexPath = selected[0] as! NSIndexPath
-            message.appendString(String(format: "Alert did %@. \n", appearAnimations.items[indexPath.row] as! String))
+        if let selected = appearAnimationsList.indexPathsForSelectedItems {
+            if (selected.count > 0) {
+                let indexPath:NSIndexPath = selected[0] as! NSIndexPath
+                message.appendString(String(format: "Alert did %@. \n", appearAnimations.items[indexPath.row] as! String))
+            }
         }
 
-        selected = hideAnimationsList.indexPathsForSelectedItems()
-        if (selected.count > 0) {
-            let indexPath:NSIndexPath = selected[0] as! NSIndexPath
-            message.appendString(String(format: "It will %@ when closed. \n", appearAnimations.items[indexPath.row] as! String))
+        if let selected = hideAnimationsList.indexPathsForSelectedItems {
+            if (selected.count > 0) {
+                let indexPath:NSIndexPath = selected[0] as! NSIndexPath
+                message.appendString(String(format: "It will %@ when closed. \n", appearAnimations.items[indexPath.row] as! String))
+            }
         }
         
         alert.message = message as String
@@ -124,7 +127,9 @@ class AlertAnimations: ExampleViewController, TKListViewDelegate {
         alert.show(true)
     }
     
-    func listView(listView: TKListView!, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    //MARK: - TKListViewDelegate
+    
+    func listView(listView: TKListView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if(listView.tag == 0) {
             alert.style.showAnimation = TKAlertAnimation(rawValue: indexPath.row)!
         } else {

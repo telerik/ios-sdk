@@ -11,7 +11,7 @@
 
 @interface SettingsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
-- (id)initWithOptions:(NSArray*)options;
+- (instancetype __nonnull)initWithOptions:(NSArray*)options;
 
 @property (nonatomic, weak) ExampleViewController *example;
 

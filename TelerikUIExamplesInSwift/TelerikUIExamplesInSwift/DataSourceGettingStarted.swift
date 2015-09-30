@@ -20,7 +20,10 @@ class DataSourceGettingStarted: ExampleViewController {
         let dataSource = TKDataSource(array: [ 10, 5, 12, 7, 44 ])
         
         // filter all values less or equal to 5
-        dataSource.filter { $0 as! Int > 5 }
+//TODO
+//        dataSource.filter { (Int i) -> ObjCBool in
+//            return i > 5
+//        }
         
         // sort ascending
         dataSource.sort {
@@ -45,23 +48,23 @@ class DataSourceGettingStarted: ExampleViewController {
             return $1
         } as! Int
         
-        println("the max value is: \(maxValue)")
+        print("the max value is: \(maxValue)")
         
         // output everything to the console
         dataSource.enumerate {
             if $0.isKindOfClass(TKDataSourceGroup) {
                 let group = $0 as! TKDataSourceGroup
-                println("group: \(group.key)")
+                print("group: \(group.key)")
             }
             else {
-                println("\($0)")
+                print("\($0)")
             }
         }
         
         // bind with a table view
         let tableView = UITableView(frame: self.view.bounds)
         tableView.dataSource = dataSource
-        tableView.autoresizingMask = ~UIViewAutoresizing.None
+        tableView.autoresizingMask = UIViewAutoresizing(rawValue:~UIViewAutoresizing.None.rawValue)
         self.view.addSubview(tableView)
         
         self.dataSource = dataSource

@@ -40,15 +40,16 @@ class CustomCell: TKCalendarDayCell {
     
         CellImages.loadImages()
         
-        self.style()!.backgroundColor = UIColor.clearColor()
-        self.style()!.shape = nil
-        self.style()!.topBorderColor = nil
-        self.style()!.bottomBorderColor = nil
+        let dayStyle = self.style() as TKCalendarDayCellStyle!
+        dayStyle.backgroundColor = UIColor.clearColor()
+        dayStyle.shape = nil
+        dayStyle.topBorderColor = nil
+        dayStyle.bottomBorderColor = nil
 
-        if (self.state & TKCalendarDayState.Selected).rawValue != 0 {
+        if self.state.rawValue & TKCalendarDayState.Selected.rawValue != 0 {
             self.currentImg = CellImages.selectedDayImage!
         }
-        else if (self.state & TKCalendarDayState.Today).rawValue != 0 {
+        else if self.state.rawValue & TKCalendarDayState.Today.rawValue != 0 {
             self.currentImg = CellImages.currentDayImage!
             self.label.textColor = UIColor.whiteColor()
         }

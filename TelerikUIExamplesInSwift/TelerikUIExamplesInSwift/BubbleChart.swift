@@ -15,12 +15,12 @@ class BubbleChart: ExampleViewController {
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         
         for i in 0..<2 {
-            var points = [TKChartDataPoint]()
-            for i in 0..<20 {
+            var points = [TKChartBubbleDataPoint]()
+            for _ in 0..<20 {
                 let randomX = Int(arc4random()%1450)
                 let randomY = Int(arc4random()%150)
                 let area = Int(arc4random()%200)

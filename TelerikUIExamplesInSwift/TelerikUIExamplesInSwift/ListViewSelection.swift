@@ -13,7 +13,7 @@ class ListViewSelection: ExampleViewController, TKListViewDelegate {
     let listView = TKListView()
     let dataSource = TKDataSource()
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         self.addOption("Selection on press", inSection:"Selection type") { self.selectionOnPressSelected() }
@@ -35,7 +35,7 @@ class ListViewSelection: ExampleViewController, TKListViewDelegate {
         self.dataSource.loadDataFromJSONResource("ListViewSampleData", ofType: "json", rootItemKeyPath: "players")
         
         self.listView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 55)
-        self.listView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        self.listView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.listView.registerClass(TKListViewCell.self, forCellWithReuseIdentifier:"cell")
         self.listView.delegate = self
         self.listView.dataSource = self.dataSource
@@ -50,7 +50,7 @@ class ListViewSelection: ExampleViewController, TKListViewDelegate {
         layout.itemSpacing = 0
         
         self.label.frame = CGRectMake(0, self.view.bounds.size.height-44, self.view.bounds.size.width, 44)
-        self.label.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin
+        self.label.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleTopMargin.rawValue)
         self.label.textAlignment = NSTextAlignment.Center
         self.listView.addSubview(self.label)
     }
@@ -85,29 +85,28 @@ class ListViewSelection: ExampleViewController, TKListViewDelegate {
 
 // MARK: TKListViewDelegate
     
-    func listView(listView: TKListView!, didHighlightItemAtIndexPath indexPath: NSIndexPath!) {
-        println("Did highlight item at row\(indexPath.row)")
-        let cell = listView.cellForItemAtIndexPath(indexPath)
-        if !cell.selected && listView.selectionBehavior == TKListViewSelectionBehavior.LongPress {
-            cell.selectedBackgroundView.hidden = true
-        }
-    }
-    
-    func listView(listView: TKListView!, didUnhighlightItemAtIndexPath indexPath: NSIndexPath!) {
-        println("Did unhighlight item at row\(indexPath.row)")
-    }
-    
-    func listView(listView: TKListView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
-        label.text = "Selected \(dataSource.items[indexPath.row])"
-        println("Did select item at row\(indexPath.row)")
-        let cell = listView.cellForItemAtIndexPath(indexPath)
-        if cell != nil {
-            cell.selectedBackgroundView.hidden = false
-        }
-    }
-    
-    func listView(listView: TKListView!, didDeselectItemAtIndexPath indexPath: NSIndexPath!) {
-        println("Did deselect item at row\(indexPath.row)")
 
+    func listView(listView: TKListView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
+        print("Did highlight item at row\(indexPath.row)")
+        let cell = listView.cellForItemAtIndexPath(indexPath)!
+        if !cell.selected && listView.selectionBehavior == TKListViewSelectionBehavior.LongPress {
+            cell.selectedBackgroundView!.hidden = true
+        }
+    }
+    
+    func listView(listView: TKListView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
+        print("Did unhighlight item at row\(indexPath.row)")
+    }
+    
+    func listView(listView: TKListView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        label.text = "Selected \(dataSource.items[indexPath.row])"
+        print("Did select item at row\(indexPath.row)")
+        if let cell = listView.cellForItemAtIndexPath(indexPath) {
+            cell.selectedBackgroundView!.hidden = false
+        }
+    }
+    
+    func listView(listView: TKListView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        print("Did deselect item at row\(indexPath.row)")
     }
 }

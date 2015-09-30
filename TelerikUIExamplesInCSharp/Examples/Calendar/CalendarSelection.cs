@@ -103,7 +103,7 @@ namespace Examples
 			{
 				if (cell.IsKindOfClass(new ObjCRuntime.Class(typeof(TKCalendarMonthTitleCell)))) {
 					TKCalendarMonthTitleCell monthTitleCell = (TKCalendarMonthTitleCell)cell;
-					monthTitleCell.LayoutMode = TKCalendarMonthTitleCellLayoutMode.MonthAndYearWithButotns;
+					monthTitleCell.LayoutMode = TKCalendarMonthTitleCellLayoutMode.MonthAndYearWithButtons;
 				}
 			}
 		}

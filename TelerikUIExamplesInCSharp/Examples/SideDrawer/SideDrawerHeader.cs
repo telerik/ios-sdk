@@ -15,13 +15,13 @@ namespace Examples
 		public SideDrawerHeader (bool addButton, NSObject target, Selector selector)
 		{
 			sideDrawerHeader = new TKSideDrawerHeader ("Navigation Menu");
-			sideDrawerHeader.ContentInsets = new UIEdgeInsets (-15, 0, 0, 0);
+			sideDrawerHeader.ContentInsets = new UIEdgeInsets (0, 0, 0, 0);
 			if (addButton) {
 				UIButton button = UIButton.FromType (UIButtonType.System);
 				button.SetImage (new UIImage ("menu.png"), UIControlState.Normal);
 				button.AddTarget (target, selector, UIControlEvent.TouchUpInside);
 				sideDrawerHeader.ActionButton = button;
-				sideDrawerHeader.ContentInsets = new UIEdgeInsets (-15, -20, 0, 0);
+				sideDrawerHeader.ContentInsets = new UIEdgeInsets (0, -20, 0, 0);
 				sideDrawerHeader.ButtonPosition = TKSideDrawerHeaderButtonPosition.Left;
 			}
 

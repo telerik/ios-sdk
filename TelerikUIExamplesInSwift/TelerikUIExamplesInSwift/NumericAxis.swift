@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NumericAxis:ExampleViewController {
+class NumericAxis: ExampleViewController {
     
     let chart = TKChart()
     
@@ -15,12 +15,12 @@ class NumericAxis:ExampleViewController {
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         
-        var array = [TKChartDataPoint]()
+        var array = [TKChartBubbleDataPoint]()
         for i in 0..<12 {
-            array.append(TKChartBubbleDataPoint(x:i, y:Int(arc4random() % (2000))))
+            array.append(TKChartBubbleDataPoint(x: i, y: Int(arc4random() % 2000), area: 0))
         }
         let series = TKChartLineSeries(items:array)
         series.selectionMode = TKChartSeriesSelectionMode.Series

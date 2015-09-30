@@ -13,9 +13,9 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, assign) Class exampleClass;
 
-- (id)initWithExamples:(NSArray*)examples withTitle:(NSString*)title;
+- (instancetype __nonnull)initWithExamples:(NSArray*)examples withTitle:(NSString*)title;
 
-- (id)initWithClass:(Class)exampleClass withTitle:(NSString*)title;
+- (instancetype __nonnull)initWithClass:(Class)exampleClass withTitle:(NSString*)title;
 
 - (UIViewController*)createController;
 

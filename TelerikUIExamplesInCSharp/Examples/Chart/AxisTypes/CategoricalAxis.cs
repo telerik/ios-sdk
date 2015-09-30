@@ -31,7 +31,7 @@ namespace Examples
 			TKChartCategoryAxis xAxis = new TKChartCategoryAxis ();
 			xAxis.Position = TKChartAxisPosition.Bottom;
 			xAxis.PlotMode = TKChartAxisPlotMode.BetweenTicks;
-			chart.XAxis = xAxis;
+			series.XAxis = xAxis;
 
 			TKChartNumericAxis yAxis = new TKChartNumericAxis (new NSNumber (0), new NSNumber (100));
 			yAxis.Position = TKChartAxisPosition.Left;

@@ -5,6 +5,7 @@
 //  Copyright (c) 2015 Telerik. All rights reserved.
 //
 
+import UIKit
 
 class RegistrationInfo: NSObject {
 

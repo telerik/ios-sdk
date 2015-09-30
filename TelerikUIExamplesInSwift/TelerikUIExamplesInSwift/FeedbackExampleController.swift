@@ -27,7 +27,7 @@ class FeedbackExampleController: ExampleViewController {
         TKFeedback.setDataSource(TKPlatformFeedbackSource(key: "58cb0070-f612-11e3-b9fc-55b0b983d3be", uid: "iosteam@telerik.com"))
     }
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         TKFeedback.showFeedback()
     }
     

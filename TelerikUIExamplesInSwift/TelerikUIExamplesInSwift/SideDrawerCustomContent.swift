@@ -5,6 +5,8 @@
 //  Copyright (c) 2015 Telerik. All rights reserved.
 //
 
+import UIKit
+
 class SideDrawerCustomContent: SideDrawerGettingStarted {
 
     override func viewDidLoad() {

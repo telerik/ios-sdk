@@ -14,9 +14,10 @@ class SimpleListViewCell: TKListViewCell {
         self.textLabel.textAlignment = NSTextAlignment.Center
         self.textLabel.font = UIFont.systemFontOfSize(12)
     }
-    
-    required init(coder aDecoder: NSCoder) {
+
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func layoutSubviews(){

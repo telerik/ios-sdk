@@ -19,6 +19,6 @@
 
 @property (nonatomic, strong) NSDate *date;
 
-- (id)initWithName:(NSString*)name value:(CGFloat)value group:(NSString*)group;
+- (instancetype __nonnull)initWithName:(NSString*)name value:(CGFloat)value group:(NSString*)group;
 
 @end

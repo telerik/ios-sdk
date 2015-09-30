@@ -5,6 +5,8 @@
 //  Copyright (c) 2015 Telerik. All rights reserved.
 //
 
+import UIKit
+
 class SideDrawerGettingStarted: ExampleViewController, TKSideDrawerDelegate {
 
     let sideDrawerView = TKSideDrawerView()
@@ -13,7 +15,7 @@ class SideDrawerGettingStarted: ExampleViewController, TKSideDrawerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController!.interactivePopGestureRecognizer.enabled = false
+        self.navigationController!.interactivePopGestureRecognizer!.enabled = false
 
         self.sideDrawerView.frame = self.exampleBounds
         self.view.addSubview(sideDrawerView)
@@ -21,7 +23,7 @@ class SideDrawerGettingStarted: ExampleViewController, TKSideDrawerDelegate {
         let mainView = sideDrawerView.mainView
         
         let backgroundView = UIImageView(frame: mainView.bounds)
-        backgroundView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        backgroundView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         backgroundView.image = UIImage(named: "sdk-examples-bg")
         mainView.addSubview(backgroundView)
         
@@ -57,7 +59,7 @@ class SideDrawerGettingStarted: ExampleViewController, TKSideDrawerDelegate {
         super.viewWillDisappear(animated)
         
         if (self.navigationController!.respondsToSelector("interactivePopGestureRecognizer")) {
-            self.navigationController!.interactivePopGestureRecognizer.enabled = true
+            self.navigationController!.interactivePopGestureRecognizer!.enabled = true
         }
     }
     
@@ -71,12 +73,12 @@ class SideDrawerGettingStarted: ExampleViewController, TKSideDrawerDelegate {
     }
     
     func sideDrawer(sideDrawer: TKSideDrawer!, updateVisualsForSection sectionIndex: Int) {
-        let section = sideDrawer.sections()[sectionIndex] as! TKSideDrawerSection
+        let section = sideDrawer.sections[sectionIndex] as! TKSideDrawerSection
         section.style.contentInsets = UIEdgeInsetsMake(0, -15, 0, 0)
     }
     
     func sideDrawer(sideDrawer: TKSideDrawer!, updateVisualsForItemAtIndexPath indexPath: NSIndexPath!) {
-        let currentItem = (sideDrawer.sections()[indexPath.section] as! TKSideDrawerSection).items()[indexPath.item] as! TKSideDrawerItem
+        let currentItem = (sideDrawer.sections[indexPath.section] as! TKSideDrawerSection).items[indexPath.item] as! TKSideDrawerItem
         currentItem.style.contentInsets = UIEdgeInsetsMake(0, -10, 0, 0)
         currentItem.style.separatorColor = TKSolidFill(color: UIColor.clearColor())
     }

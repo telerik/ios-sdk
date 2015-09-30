@@ -171,8 +171,6 @@ namespace Examples
 			xAxis.Pan = overlayChart.XAxis.Pan;
 			xAxis.MajorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Years;
 			xAxis.MajorTickInterval = 1;
-
-			indicatorsChart.ReloadData ();
 		}
 
 		void loadCharts()

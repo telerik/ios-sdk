@@ -15,7 +15,7 @@ class Customize: ExampleViewController, TKChartDelegate {
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.delegate = self
         self.view.addSubview(chart)
         
@@ -36,12 +36,12 @@ class Customize: ExampleViewController, TKChartDelegate {
         areaSeries.selectionMode = TKChartSeriesSelectionMode.Series
         chart.addSeries(areaSeries)
         
-        chart.yAxis.style.labelStyle.font = UIFont.systemFontOfSize(18)
-        chart.yAxis.style.labelStyle.textColor = UIColor.blackColor()
+        chart.yAxis!.style.labelStyle.font = UIFont.systemFontOfSize(18)
+        chart.yAxis!.style.labelStyle.textColor = UIColor.blackColor()
         
-        chart.xAxis.style.labelStyle.font = UIFont.systemFontOfSize(18)
-        chart.xAxis.style.labelStyle.textColor = UIColor.blackColor()
-        chart.gridStyle().horizontalAlternateFill = TKSolidFill(color: UIColor(white: 0.9, alpha: 0.8))
+        chart.xAxis!.style.labelStyle.font = UIFont.systemFontOfSize(18)
+        chart.xAxis!.style.labelStyle.textColor = UIColor.blackColor()
+        chart.gridStyle.horizontalAlternateFill = TKSolidFill(color: UIColor(white: 0.9, alpha: 0.8))
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,7 +49,7 @@ class Customize: ExampleViewController, TKChartDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func chart(chart: TKChart!, paletteItemForSeries series: TKChartSeries!, atIndex index: Int) -> TKChartPaletteItem! {
+    func chart(chart: TKChart, paletteItemForSeries series: TKChartSeries, atIndex index: Int) -> TKChartPaletteItem? {
         var item:TKChartPaletteItem
         if(series.index == 1) {
             let colors = [UIColor(red: 0, green: 1, blue: 0, alpha: 0.4),
@@ -59,7 +59,7 @@ class Customize: ExampleViewController, TKChartDelegate {
             item = TKChartPaletteItem(fill: gradient)
         }
         else {
-            let image = TKImageFill(image: UIImage(named: "pattern1"), cornerRadius: 5.0)
+            let image = TKImageFill(image: UIImage(named: "pattern1")!, cornerRadius: 5.0)
             image.resizingMode = TKImageFillResizingMode.Tile
             let stroke = TKStroke(color: UIColor.blackColor(), width: 1, cornerRadius: 5)
             stroke.dashPattern = [2, 2, 5, 2]

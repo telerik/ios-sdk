@@ -26,7 +26,7 @@ class ListViewPullToRefresh: ExampleViewController, TKListViewDataSource, TKList
         self.updateData(3)
         
         let listView = TKListView(frame: self.view.bounds)
-        listView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        listView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         listView.dataSource = self
         listView.delegate = self
         listView.allowsPullToRefresh = true
@@ -49,17 +49,17 @@ class ListViewPullToRefresh: ExampleViewController, TKListViewDataSource, TKList
     }
 
     func updateData(count: NSInteger) -> Int {
-      let group = dataSource.items[0] as! TKDataSourceGroup
-      let startIndex = data.count
-      var i = 0
+        let group = dataSource.items[0] as! TKDataSourceGroup
+        let startIndex = data.count
+        var i = 0
         for ; i < count; i++ {
             if(i + startIndex >= group.items.count){
                 return i
             }
-            var points = arc4random() % 100
+            let points = arc4random() % 100
             data.insert("\(group.items[i + startIndex]) \(points) points", atIndex: 0)
-        }
-        return i
+         }
+         return i
     }
     
     func isUpdated(indexPath: NSIndexPath) -> Bool {
@@ -68,11 +68,11 @@ class ListViewPullToRefresh: ExampleViewController, TKListViewDataSource, TKList
     
 // MARK: - TKListViewDataSource
     
-    func listView(listView: TKListView!, numberOfItemsInSection section: Int) -> Int {
+    func listView(listView: TKListView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
     
-    func listView(listView: TKListView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> TKListViewCell! {
+    func listView(listView: TKListView, cellForItemAtIndexPath indexPath: NSIndexPath) -> TKListViewCell? {
         let cell = listView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! TKListViewCell
         let isUpdated = self.isUpdated(indexPath)
         cell.textLabel.text = data[indexPath.row]
@@ -89,11 +89,11 @@ class ListViewPullToRefresh: ExampleViewController, TKListViewDataSource, TKList
     
 // MARK: - TKListViewDelegate
     
-    func listView(listView: TKListView!, didPullWithOffset offset: CGFloat) {
+    func listView(listView: TKListView, didPullWithOffset offset: CGFloat) {
         listView.pullToRefreshView.alpha = min(offset/listView.pullToRefreshTreshold, 1.0)
     }
     
-    func listViewShouldRefreshOnPull(listView: TKListView!) -> Bool {
+    func listViewShouldRefreshOnPull(listView: TKListView) -> Bool {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
             
@@ -102,8 +102,13 @@ class ListViewPullToRefresh: ExampleViewController, TKListViewDataSource, TKList
                 listView.didRefreshOnPull()
                 
                 if(self.newItemsCount < 1){
-                 let alert = UIAlertView(title: "Pull to refresh", message: "No more data available", delegate: nil, cancelButtonTitle: "Close")
-                    alert.show()
+                    let alert = TKAlert()
+                    alert.title = "Pull to refresh"
+                    alert.message = "No more data available"
+                    alert.addAction(TKAlertAction(title: "Close", handler: { (alert:TKAlert, action:TKAlertAction) -> Bool in
+                        return true
+                    }))
+                    alert.show(true)
                 }
             })
         })

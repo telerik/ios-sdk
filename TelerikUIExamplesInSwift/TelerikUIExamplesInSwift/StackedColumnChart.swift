@@ -11,7 +11,7 @@ class StackedColumnChart : ExampleViewController {
     
     let chart = TKChart()
 
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Stack") { self.reloadData() }
@@ -27,7 +27,7 @@ class StackedColumnChart : ExampleViewController {
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         
         reloadData()

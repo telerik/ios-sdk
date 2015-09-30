@@ -1,0 +1,17 @@
+{
+    "items":[
+    {"name":"ActionScript", "code":"trace\n(\"Hello, World!\");"},
+    {"name":"C#", "code":"using System;\nclass HelloWorld\n{\n static void Main()\n{\n  System.Console.WriteLine(\"Hello, World!\");\n }\n}"},
+    {"name":"C++", "code":"#include <iostream>\nint main()\n{\n std::cout << \"Hello, World!\";\n}"},
+    {"name":"JavaScript", "code":" <script>\nalert('Hello, World!')\n</script>"},
+    {"name":"Ruby", "code":"puts \"Hello, World!\""},
+    {"name":"Python", "code":"print(\"Hello, World\")"},
+    {"name":"Java", "code":"public class HelloWorld {\n public static void main(String[] args) {\n  System.out.println(\"Hello, World!\");\n }\n}"},
+    {"name":"Php", "code":"<?php echo \"Hello, World!\" ?>"},
+    {"name":"Objective-C", "code":"NSLog(@\"Hello, World\")"},
+    {"name":"Swift", "code":"println(\"Hello, World\")"},
+    {"name":"Pascal", "code":"program hello;\nbegin\nwriteln('Hello, World!');\nend."},
+    {"name":"C", "code":"#import <stdio.h>\nint main()\n{\n printf( \"Hello, World!\" );\n return 0;\n}"},
+    {"name":"Bash", "code":"#!/bin/sh\necho \"Hello, World!\""},
+    ]
+}

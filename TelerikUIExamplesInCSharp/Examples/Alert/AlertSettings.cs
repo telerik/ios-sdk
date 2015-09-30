@@ -9,7 +9,7 @@ namespace Examples
 {
 	public class AlertSettings : ExampleViewController
 	{
-		TKDataFormEntityDataSource dataSource;
+		TKDataFormEntityDataSourceHelper dataSource;
 		TKDataForm dataForm;
 		Settings settings;
 
@@ -22,34 +22,36 @@ namespace Examples
 		{
 			base.ViewDidLoad ();
 
+			this.AutomaticallyAdjustsScrollViewInsets = false;
+
 			settings = new Settings ();
+			this.dataSource = new TKDataFormEntityDataSourceHelper (settings);
 
-			dataSource = new TKDataFormEntityDataSource ();
-			dataSource.SelectedObject = settings;
-			dataSource.AllowPropertySorting = true;
+			dataSource["Title"].Index = 0;
+			dataSource["Message"].Index = 1;
+			dataSource["AllowParallax"].Index = 2;
+			dataSource["BackgroundStyle"].Index = 3;
+			dataSource["ActionsLayout"].Index = 4;
+			dataSource["DismissMode"].Index = 5;
+			dataSource["DismissDirection"].Index = 6;
+			dataSource["AnimationDuration"].Index = 7;
+			dataSource["BackgroundDim"].Index = 8;
 
-			dataSource.EntityModel.PropertyWithName ("Title").PropertyIndex = 0;
-			dataSource.EntityModel.PropertyWithName ("Message").PropertyIndex = 1;
-			dataSource.EntityModel.PropertyWithName ("AllowParallaxEffect").PropertyIndex = 2;
-			dataSource.EntityModel.PropertyWithName ("BackgroundStyle").PropertyIndex = 3;
-			dataSource.EntityModel.PropertyWithName ("ActionsLayout").PropertyIndex = 4;
-			dataSource.EntityModel.PropertyWithName ("DismissMode").PropertyIndex = 5;
-			dataSource.EntityModel.PropertyWithName ("DismissDirection").PropertyIndex = 6;
-			dataSource.EntityModel.PropertyWithName ("AnimationDuration").PropertyIndex = 7;
-			dataSource.EntityModel.PropertyWithName ("BackgroundDim").PropertyIndex = 8;
+			dataSource["ActionsLayout"].ValuesProvider = NSArray.FromObjects(new string[] { "Horizontal", "Vertical" });
+			dataSource["BackgroundStyle"].ValuesProvider = NSArray.FromObjects(new string[] { "Blur", "Dim" });
+			dataSource["DismissMode"].ValuesProvider = NSArray.FromObjects (new string[] { "None", "Tap", "Swipe" });
+			dataSource["DismissDirection"].ValuesProvider = NSArray.FromObjects (new string[] { "Horizontal", "Vertical" });
 
-			dataForm = new TKDataForm ();
-			dataForm.Frame = this.ExampleBounds;
-			dataForm.Delegate = new DataFormDelegate ();
+			dataForm = new TKDataForm (this.View.Bounds);
+			dataForm.WeakDataSource = this.dataSource.NativeObject;
+			dataForm.CommitMode = TKDataFormCommitMode.Manual;
+			dataForm.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
 			this.View.AddSubview (dataForm);
 
-			dataForm.RegisterEditor (new ObjCRuntime.Class (typeof(TKDataFormSegmentedEditor)), dataSource.EntityModel.PropertyWithName ("ActionsLayout"));
-			dataForm.RegisterEditor (new ObjCRuntime.Class (typeof(TKDataFormSegmentedEditor)), dataSource.EntityModel.PropertyWithName ("BackgroundStyle"));
-			dataForm.RegisterEditor (new ObjCRuntime.Class (typeof(TKDataFormSegmentedEditor)), dataSource.EntityModel.PropertyWithName ("DismissMode"));
-			dataForm.RegisterEditor (new ObjCRuntime.Class (typeof(TKDataFormSegmentedEditor)), dataSource.EntityModel.PropertyWithName ("DismissDirection"));
-			dataForm.CommitMode = TKDataFormCommitMode.Delayed;
-			dataForm.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
-			dataForm.DataSource = dataSource;
+			if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) {
+				dataForm.Frame = this.ExampleBounds;
+				this.View.BackgroundColor = new UIColor(0.937f, 0.937f, 0.957f, 1.00f);
+			}
 
 			this.View.BackgroundColor = new UIColor(0.937f, 0.937f, 0.957f, 1.00f);
 		}
@@ -83,32 +85,6 @@ namespace Examples
 			});
 
 			alert.Show (true);
-		}
-	}
-
-	class DataFormDelegate : TKDataFormDelegate
-	{
-		public override void UpdateEditor (TKDataForm dataForm, TKDataFormEditor editor, TKDataFormEntityProperty property)
-		{
-			if (property.Name == "ActionsLayout") {
-				TKDataFormSegmentedEditor segmentedEditor = (TKDataFormSegmentedEditor)editor;
-				segmentedEditor.Segments = new NSObject[] {new NSString("Horizontal"), new NSString("Vertical")};
-			}
-
-			if (property.Name == "BackgroundStyle") {
-				TKDataFormSegmentedEditor segmentedEditor = (TKDataFormSegmentedEditor)editor;
-				segmentedEditor.Segments = new NSObject[] {new NSString("Blur"), new NSString("Dim")};
-			}
-
-			if (property.Name == "DismissMode") {
-				TKDataFormSegmentedEditor segmentedEditor = (TKDataFormSegmentedEditor)editor;
-				segmentedEditor.Segments = new NSObject[] {new NSString("None"), new NSString("Tap"), new NSString("Swipe")};
-			}
-
-			if (property.Name == "DismissDirection") {
-				TKDataFormSegmentedEditor segmentedEditor = (TKDataFormSegmentedEditor)editor;
-				segmentedEditor.Segments = new NSObject[] {new NSString("Horizontal"), new NSString("Vertical")};
-			}
 		}
 	}
 }

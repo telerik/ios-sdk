@@ -2,68 +2,85 @@
 using TelerikUI;
 using UIKit;
 using Foundation;
+using System.Collections.Generic;
+using CoreGraphics;
 
 namespace Examples
 {
 	public class DataFormCustomization : TKDataFormViewController
 	{
-		TKDataFormEntityDataSource dataSource;
+		CustomizationDataFormDelegate dataFormDelegate;
+		TKDataFormEntityDataSourceHelper dataSource;
+		ReservationForm reservationForm;
+		UIButton btn;
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			this.View.BackgroundColor = UIColor.White;
 
-			this.dataSource = new TKDataFormEntityDataSource ();
-			this.dataSource.AllowPropertySorting = true;
-			this.dataSource.SelectedObject = new ReservationForm ();
-			this.dataSource.EntityModel.PropertyWithName ("Name").Image = new UIImage ("guest-name.png");
-			this.dataSource.EntityModel.PropertyWithName ("Phone").Image = new UIImage ("phone.png");
-			this.dataSource.EntityModel.PropertyWithName ("Date").Image = new UIImage ("calendar.png");
-			this.dataSource.EntityModel.PropertyWithName ("Time").Image = new UIImage ("time.png");
-			this.dataSource.EntityModel.PropertyWithName ("Guests").Image = new UIImage ("guest-number.png");
-			this.dataSource.EntityModel.PropertyWithName ("Table").Image = new UIImage ("table-number.png");
+			this.reservationForm = new ReservationForm ();
+			this.dataSource = new TKDataFormEntityDataSourceHelper (this.reservationForm);
+			this.dataFormDelegate = new CustomizationDataFormDelegate ();
 
-			dataSource.EntityModel.PropertyWithName ("Name").PropertyIndex = 0;
-			dataSource.EntityModel.PropertyWithName ("Phone").PropertyIndex = 1;
-			dataSource.EntityModel.PropertyWithName ("Date").PropertyIndex = 2;
-			dataSource.EntityModel.PropertyWithName ("Time").PropertyIndex = 3;
-			dataSource.EntityModel.PropertyWithName ("Guests").PropertyIndex = 4;
-			dataSource.EntityModel.PropertyWithName ("Section").PropertyIndex = 5;
-			dataSource.EntityModel.PropertyWithName ("Origin").PropertyIndex = 6;
-			dataSource.EntityModel.PropertyWithName ("CancelReservation").PropertyIndex = 7;
+			NSDateFormatter formatter = new NSDateFormatter ();
+			formatter.DateFormat = "h:mm a";
+			this.dataSource.PropertyWithName ("Time").Formatter = formatter;
 
-			foreach (TKDataFormEntityProperty property in this.dataSource.EntityModel.Properties) {
-				if (property.Name == "Section" || property.Name == "Table") {
-					property.GroupKey = @"TABLE DETAILS";
-				}
-				else if (property.Name == "Origin" || property.Name == "CancelReservation") {
-					property.GroupKey = @"ORIGIN";
-				}
-				else {
-					property.GroupKey = @"RESERVATION DETAILS";
-				}
-			}
+			this.dataSource["Name"].Image = new UIImage ("guest-name.png");
+			this.dataSource["Phone"].Image = new UIImage ("phone.png");
+			this.dataSource["Date"].Image = new UIImage ("calendar.png");
+			this.dataSource["Time"].Image = new UIImage ("time.png");
+			this.dataSource["Guests"].Image = new UIImage ("guest-number.png");
+			this.dataSource["Table"].Image = new UIImage ("table-number.png");
+
+			this.dataSource["Name"].HintText = "Name";
+			this.dataSource["Name"].ErrorMessage = @"Please fill in the guest name";
+			this.dataSource["Time"].EditorClass = new ObjCRuntime.Class(typeof(TKDataFormTimePickerEditor));
+			this.dataSource["Phone"].EditorClass = new ObjCRuntime.Class(typeof(CallEditor));
+			this.dataSource ["Phone"].HintText = "Phone";
+			this.dataSource["Origin"].EditorClass = new ObjCRuntime.Class(typeof(TKDataFormSegmentedEditor));
+
+			this.dataSource["Guests"].ValuesProvider = new TKRange (new NSNumber(1), new NSNumber(10));
+			this.dataSource["Section"].ValuesProvider = NSArray.FromStrings (new string[] {
+				"Section 1",
+				"Section 2",
+				"Section 3",
+				"Section 4"
+			});
+			this.dataSource["Table"].ValuesProvider = NSArray.FromStrings(new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" });
+			this.dataSource["Origin"].ValuesProvider = NSArray.FromStrings (new string[] {
+				"phone",
+				"in-person",
+				"online",
+				"other"
+			});
+
+			this.dataSource.AddGroup ("RESERVATION DETAILS", new string[] { "Name", "Phone", "Date", "Time", "Guests" });
+			this.dataSource.AddGroup ("TABLE DETAILS", new string[] { "Section", "Table" });
+			this.dataSource.AddGroup ("ORIGIN", new string[] { "Origin" });
 				
 			this.DataForm.BackgroundColor = UIColor.FromPatternImage (new UIImage ("wood-pattern.png"));
-			this.DataForm.RegisterEditor (new ObjCRuntime.Class (typeof(CallEditor)), this.dataSource.EntityModel.PropertyWithName ("Phone"));
-			this.DataForm.RegisterEditor (new ObjCRuntime.Class (typeof(CallEditor)), this.dataSource.EntityModel.PropertyWithName ("CancelReservation"));
-			this.DataForm.RegisterEditor (new ObjCRuntime.Class (typeof(TKDataFormOptionsEditor)), this.dataSource.EntityModel.PropertyWithName ("Section"));
-			this.DataForm.RegisterEditor (new ObjCRuntime.Class (typeof(TKDataFormOptionsEditor)), this.dataSource.EntityModel.PropertyWithName ("Table"));
-			this.DataForm.RegisterEditor (new ObjCRuntime.Class (typeof(TKDataFormSegmentedEditor)), this.dataSource.EntityModel.PropertyWithName ("Origin"));
-			this.DataForm.RegisterEditor(new ObjCRuntime.Class(typeof (TKDataFormDatePickerEditor)), this.dataSource.EntityModel.PropertyWithName("Date"));
-			this.DataForm.RegisterEditor(new ObjCRuntime.Class(typeof (TKDataFormDatePickerEditor)), this.dataSource.EntityModel.PropertyWithName("Time"));
+			this.DataForm.Frame = new CGRect (0, 0, this.View.Bounds.Size.Width, this.View.Bounds.Size.Height - 66);
+			this.DataForm.TintColor = new UIColor (0.780f, 0.2f, 0.223f, 1.0f);
+			this.DataForm.Delegate = this.dataFormDelegate;
+			this.DataForm.WeakDataSource = this.dataSource.NativeObject;
 
-			CustomizationDataFormDelegate currentDelegate = new CustomizationDataFormDelegate ();
-			this.DataForm.Delegate = currentDelegate;
-			this.DataForm.DataSource = dataSource;
+			btn = new UIButton (new CGRect (0, this.DataForm.Frame.Size.Height, this.View.Bounds.Size.Width, 66));
+			btn.SetTitle ("Cancel Reservation", UIControlState.Normal);
+			btn.SetTitleColor (new UIColor (0.780f, 0.2f, 0.223f, 1.0f), UIControlState.Normal);
+			btn.AddTarget (this, new ObjCRuntime.Selector ("CancelReservation"), UIControlEvent.TouchUpInside);
+			this.View.AddSubview (btn);
 		}
-	}
 
-	public class CustomizationDataFormDelegate: TKDataFormDelegate
-	{
-		bool cancelAdded;
+		public override void ViewWillLayoutSubviews ()
+		{
+			base.ViewWillLayoutSubviews ();
+			btn.Frame = new CGRect (0, this.DataForm.Frame.Size.Height, this.View.Bounds.Size.Width, 66);
+		}
 
-		void CancelReservation(object sender, EventArgs e)
+		[Export ("CancelReservation")]
+		void CancelReservation()
 		{
 			TKAlert alert = new TKAlert();
 
@@ -72,14 +89,16 @@ namespace Examples
 			alert.Message = "Reservation Canceled!";
 
 			alert.AddActionWithTitle ("OK", (TKAlert a, TKAlertAction action) => { return true; });
-
 			alert.Show(true);
 		}
-
-		public override bool ValidateProperty (TKDataForm dataForm, TKDataFormEntityProperty propery, TKDataFormEditor editor)
+	}
+		
+	class CustomizationDataFormDelegate: TKDataFormDelegate
+	{
+		public override bool ValidateProperty (TKDataForm dataForm, TKEntityProperty property, TKDataFormEditor editor)
 		{
-			if (propery.Name == "Name") {
-				NSString value = (NSString)propery.Value;
+			if (property.Name == "Name") {
+				NSString value = (NSString)property.ValueCandidate;
 				if (value.Length == 0) {
 					return false;
 				}
@@ -88,126 +107,59 @@ namespace Examples
 			return true;
 		}
 
-		public override void DidValidateProperty (TKDataForm dataForm, TKDataFormEntityProperty propery, TKDataFormEditor editor)
+		public override void UpdateEditor (TKDataForm dataForm, TKDataFormEditor editor, TKEntityProperty property)
 		{
-			if (propery.Name == "Name") {
-				if (!propery.IsValid) {
-					propery.FeedbackMessage = "Please fill in the guest name";
-				} else {
-					propery.FeedbackMessage = null;
-				}
-			}
-		}
-
-		public override void UpdateEditor (TKDataForm dataForm, TKDataFormEditor editor, TKDataFormEntityProperty property)
-		{
-			editor.Style.TextLabelOffset = new UIOffset (25, 0);
+			editor.Style.TextLabelOffset = new UIOffset (10, 0);
 			editor.Style.SeparatorLeadingSpace = 40;
 			editor.Style.AccessoryArrowStroke = new TKStroke (new UIColor (0.780f, 0.2f, 0.233f, 1.0f));
-			if (property.Name == "Name") {
-				if (!property.IsValid) {
-					editor.Style.FeedbackLabelOffset = new UIOffset (25, -5);
-					editor.Style.EditorOffset = new UIOffset (25, -7);
-				} else {
-					editor.Style.FeedbackLabelOffset = new UIOffset (25, 0);
-					editor.Style.EditorOffset = new UIOffset (25, 0);
-				}
+			List<string> properties = new List<string> () { "Origin", "Date", "Time", "Name", "Phone" };
 
-				editor.FeedbackLabel.Font = UIFont.ItalicSystemFontOfSize (10);
+			if (properties.Contains(property.Name)) {
 				editor.Style.TextLabelDisplayMode = TKDataFormEditorTextLabelDisplayMode.Hidden;
-				((UITextField)editor.Editor).Placeholder = "Name";
-			}
-
-			if (property.Name == "Time") {
-				editor.Style.TextLabelDisplayMode = TKDataFormEditorTextLabelDisplayMode.Hidden;
-				editor.Style.TextLabelOffset = new UIOffset (25, 0);
-				((TKDataFormDatePickerEditor)editor).DateFormatter.DateFormat = "h:mm:a";
-				((UIDatePicker)editor.Editor).Mode = UIDatePickerMode.Time;
-			}
-
-			if (property.Name == "Date") {
-				editor.Style.TextLabelDisplayMode = TKDataFormEditorTextLabelDisplayMode.Hidden;
-				editor.Style.TextLabelOffset = new UIOffset (25, 0);
-			}
-
-			if (property.Name == "Guests") {
-				var stepper = (UIStepper)editor.Editor;
-				stepper.MinimumValue = 1;
-				stepper.TintColor = new UIColor (0.780f, 0.2f, 0.223f, 1.0f);
-				stepper.SetIncrementImage (new UIImage ("plus.png"), UIControlState.Normal);
-				stepper.SetDecrementImage (new UIImage ("minus.png"), UIControlState.Normal);
-			}
-
-			if (property.Name == "Section") {
-				editor.TextLabel.TextColor = UIColor.White;
-				editor.BackgroundColor = UIColor.Clear;
-				((TKDataFormOptionsEditor)editor).Options = new NSString[] {(NSString)"Section 1", (NSString)"Section 2", (NSString)"Section 3", (NSString)"Section 4"};
-				((TKDataFormOptionsEditor)editor).SelectedOptionLabel.TextColor = UIColor.White;
-			}
-
-			if (property.Name == "Table") {
-				editor.TextLabel.TextColor = UIColor.White;
-				editor.BackgroundColor = UIColor.Clear;
-				((TKDataFormOptionsEditor)editor).Options = new NSString[] {
-					(NSString)"1",
-					(NSString)"2",
-					(NSString)"3",
-					(NSString)"4",
-					(NSString)"5",
-					(NSString)"6",
-					(NSString)"7",
-					(NSString)"8",
-					(NSString)"9",
-					(NSString)"10",
-					(NSString)"11",
-					(NSString)"12",
-					(NSString)"13",
-					(NSString)"14",
-					(NSString)"15",
-				};
-
-				((TKDataFormOptionsEditor)editor).SelectedOptionLabel.TextColor = UIColor.White;
+				TKGridLayoutCellDefinition titleDef = editor.GridLayout.DefinitionForView (editor.TextLabel);
+				editor.GridLayout.SetWidth (0, titleDef.Column.Int32Value);
+				editor.Style.EditorOffset = new UIOffset (10, 0);
 			}
 
 			if (property.Name == "Origin") {
-				editor.Style.TextLabelDisplayMode = TKDataFormEditorTextLabelDisplayMode.Hidden;
-				editor.Style.EditorOffset = new UIOffset (25, 0);
-				((TKDataFormSegmentedEditor)editor).Segments = new NSString[] { (NSString)"phone", (NSString)"in-person", (NSString)"online", (NSString)"other" };
-				UISegmentedControl segmentedControl = (UISegmentedControl)editor.Editor;
-				segmentedControl.TintColor = new UIColor (0.780f, 0.2f, 0.223f, 1.0f);
+				editor.Style.EditorOffset = new UIOffset (0, 0);
+				editor.Style.SeparatorColor = null;
 			}
 
-			if (property.Name == "CancelReservation") {
-				editor.Style.TextLabelDisplayMode = TKDataFormEditorTextLabelDisplayMode.Hidden;
-				editor.Style.EditorOffset = new UIOffset (35, 0);
-				((CallEditor)editor).ActionButton.SetTitle (property.DisplayName, UIControlState.Normal);
-				if (!cancelAdded) {
-					((CallEditor)editor).ActionButton.AddTarget (CancelReservation, UIControlEvent.TouchUpInside);
-					cancelAdded = true;
-				}
+			if (property.Name == "Name") {
+				editor.Style.FeedbackLabelOffset = new UIOffset (10, 0);
+				editor.FeedbackLabel.Font = UIFont.ItalicSystemFontOfSize (10);
+			}
+
+			if (property.Name == "Guests") {
+				TKGridLayoutCellDefinition labelDef = editor.GridLayout.DefinitionForView (((TKDataFormStepperEditor)editor).ValueLabel);
+				labelDef.ContentOffset = new UIOffset (-25, 0);
+			}
+
+			if (property.Name == "Section") {
+				UIImage img = new UIImage ("guest-name.png");
+				editor.Style.TextLabelOffset = new UIOffset (img.Size.Width + 10, 0);
+			}
+
+			if (property.Name == "Table" || property.Name == "Section") {
+				editor.TextLabel.TextColor = UIColor.White;
+				editor.BackgroundColor = UIColor.Clear;
+				((TKDataFormOptionsEditor)editor).SelectedOptionLabel.TextColor = UIColor.White;
+				((TKDataFormOptionsEditor)editor).SelectedOptionLabel.TextAlignment = UITextAlignment.Right;
+				editor.Style.EditorOffset = new UIOffset (-10, 0);
 			}
 		}
 
-		public override UIView Header (TKDataForm dataForm, nint section)
+		public override void UpdateGroupView (TKDataForm dataForm, TKEntityPropertyGroupView groupView, uint groupIndex)
 		{
-			TKDataFormHeaderView header = new TKDataFormHeaderView ();
-			header.TitleLabel.TextColor = UIColor.Gray;
-			header.Insets = new UIEdgeInsets(0, 40, 0, 0);
-			if (section == 0) {
-				header.TitleLabel.Text = "RESERVATION DETAILS";
-			} else if (section == 1) {
-				header.TitleLabel.Text = "TABLE DETAILS";
-			} else {
-				header.TitleLabel.Text = "ORIGIN";
+			groupView.TitleView.TitleLabel.TextColor = UIColor.LightGray;
+			groupView.TitleView.TitleLabel.Font = UIFont.SystemFontOfSize (13);
+			groupView.TitleView.Style.Insets = new UIEdgeInsets (0, 10, 0, 0);
+			if (groupIndex == 1) {
+				groupView.EditorsContainer.BackgroundColor = UIColor.Clear;
 			}
-
-			return header;
 		}
-
-		public override nfloat HeaderHeight (TKDataForm dataForm, nint section)
-		{
-			return 30;
-		}
+			
 	}
 }
 

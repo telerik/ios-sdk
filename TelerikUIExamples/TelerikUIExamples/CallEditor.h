@@ -7,7 +7,7 @@
 
 #import <TelerikUI/TelerikUI.h>
 
-@interface CallEditor : TKDataFormEditor <UITextFieldDelegate>
+@interface CallEditor : TKDataFormPhoneEditor
 
 @property (nonatomic, strong) UIButton *actionButton;
 

@@ -16,14 +16,14 @@ class CategoricalAxis:ExampleViewController {
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         
-        var array = [TKChartDataPoint]()
+        var array = [TKChartBubbleDataPoint]()
         let categories = ["Apple", "Google", "Microsoft", "Samsung"]
         
         for item in 0..<categories.count {
-            array.append(TKChartBubbleDataPoint(x:categories[item], y:Int(arc4random() % (100))))
+            array.append(TKChartBubbleDataPoint(x: categories[item], y: Int(arc4random()%100), area: 0))
         }
         
         let series = TKChartColumnSeries(items:array)

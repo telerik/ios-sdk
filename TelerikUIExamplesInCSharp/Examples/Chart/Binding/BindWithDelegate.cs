@@ -19,7 +19,7 @@ namespace Examples
 			chart.DataSource = new ChartDataSource ();
 			chart.Legend.Hidden = false;
 			chart.Legend.Style.Position = TKChartLegendPosition.Top;
-			chart.Legend.Container.Stack.Orientation = TKStackLayoutOrientation.Horizontal;
+			chart.Legend.Container.Stack.Orientation = TKCoreStackLayoutOrientation.Horizontal;
 			this.View.AddSubview (chart);
 		}
 
@@ -53,12 +53,12 @@ namespace Examples
 				return 10;
 			}
 
-			public override TKChartData GetPoint (TKChart chart, nuint dataIndex, nuint seriesIndex)
+			public override ITKChartData GetPoint (TKChart chart, nuint dataIndex, nuint seriesIndex)
 			{
 				TKChartDataPoint point = new TKChartDataPoint ();
 				point.DataXValue = new NSNumber (dataIndex);
 				point.DataYValue = new NSNumber(r.Next (100));
-				return point;
+				return (ITKChartData)point;
 			}
 		}
 	}

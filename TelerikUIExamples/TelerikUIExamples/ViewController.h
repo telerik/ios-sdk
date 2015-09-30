@@ -11,6 +11,6 @@
 
 @interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
-- (id)initWithExample:(ExampleInfo*)example;
+- (instancetype __nonnull)initWithExample:(ExampleInfo*)example;
 
 @end

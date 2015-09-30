@@ -11,7 +11,7 @@ class LineAreaSpline: ExampleViewController {
     
     let chart = TKChart()
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Line") { self.reloadChart() }
@@ -28,7 +28,7 @@ class LineAreaSpline: ExampleViewController {
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         
         self.reloadChart()
@@ -37,7 +37,7 @@ class LineAreaSpline: ExampleViewController {
     func reloadChart() {
         chart.removeAllData()
         
-        for i in 0..<3 {
+        for _ in 0..<3 {
             var items = [TKChartDataPoint]()
             for i in 0..<8 {
                 items.append(TKChartDataPoint(x:(i+1), y:Int(arc4random()%100)))

@@ -39,7 +39,7 @@ class BindWithCustomObject: ExampleViewController {
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         
         var data = [CustomObject]()
@@ -56,10 +56,10 @@ class BindWithCustomObject: ExampleViewController {
         chart.addSeries(TKChartAreaSeries(items: data, forKeys: ["dataXValue": "objectID", "dataYValue": "value2"]))
         chart.addSeries(TKChartAreaSeries(items: data, xValueKey: "objectID", yValueKey: "value3"))
         
-        var stackInfo = TKChartStackInfo(ID: 1, withStackMode: TKChartStackMode.Stack)
-        for i in 0..<chart.series().count {
-            let series = chart.series()[i] as! TKChartSeries
-            series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        let stackInfo = TKChartStackInfo(ID: 1, withStackMode: TKChartStackMode.Stack)
+        for i in 0..<chart.series.count {
+            let series = chart.series[i] 
+            series.selectionMode = TKChartSeriesSelectionMode.Series
             series.stackInfo = stackInfo
         }
         

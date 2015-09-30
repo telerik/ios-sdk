@@ -16,12 +16,12 @@ class NegativeValues: ExampleViewController {
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         
         var dataPoints = [TKChartDataPoint]()
         for i in 0..<10 {
-            var y = CGFloat(i*10)
+            let y = CGFloat(i*10)
             dataPoints.append(TKChartDataPoint(x:i, y:(i % 2==0 ? -y : y)))
         }
         

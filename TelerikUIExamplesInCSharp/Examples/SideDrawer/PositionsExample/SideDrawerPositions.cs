@@ -13,7 +13,7 @@ namespace Examples
 		{
 			base.ViewDidLoad ();
 			this.NavItem.Title = "Positions";
-			this.SideDrawerView.SideDrawer.Transition = TKSideDrawerTransitionType.Reveal;
+			this.SideDrawerView.SideDrawer.TransitionType = TKSideDrawerTransitionType.Reveal;
 			this.SideDrawerView.SideDrawer.Fill = new TKSolidFill (UIColor.Gray);
 		}
 

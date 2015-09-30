@@ -14,12 +14,12 @@ class UIKitDynamicsAnimation: ExampleViewController, TKChartDelegate
     var animator:UIDynamicAnimator?
     var points = [TKChartDataPoint]()
     var selectedPoint:TKChartVisualPoint?
-    var originalLocation = CGPoint.zeroPoint
-    var originalPosition = CGPoint.zeroPoint
-    var location = CGPoint.zeroPoint
+    var originalLocation = CGPoint.zero
+    var originalPosition = CGPoint.zero
+    var location = CGPoint.zero
     var originalValues = [CGPoint]()
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Apply Gravity") { self.applyGravity() }
@@ -33,7 +33,7 @@ class UIKitDynamicsAnimation: ExampleViewController, TKChartDelegate
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.allowAnimations = true
         chart.delegate = self
         self.view.addSubview(chart)
@@ -44,29 +44,29 @@ class UIKitDynamicsAnimation: ExampleViewController, TKChartDelegate
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        let points = chart.visualPointsForSeries(chart.series()[0] as! TKChartSeries)
+        if let points = chart.visualPointsForSeries(chart.series[0]) {
         
-        for x in points {
-            let point = x as! TKChartVisualPoint
-            originalValues.append(point.CGPoint())
+            for point in points {
+                originalValues.append(point.CGPoint)
+            }
+            
+            let point = points[4]
+            
+            location = point.center
+            
+            let snap = UISnapBehavior(item: point, snapToPoint: point.center)
+            snap.damping = 0.2
+            
+            let push = UIPushBehavior(items:[point], mode:UIPushBehaviorMode.Instantaneous)
+            push.pushDirection = CGVectorMake(0, -1)
+            push.magnitude = 0.003
+            
+            let animator = UIDynamicAnimator()
+            animator.addBehavior(snap)
+            animator.addBehavior(push)
+            
+            point.animator = animator
         }
-        
-        let point = points[4] as! TKChartVisualPoint
-        
-        location = point.center
-        
-        let snap = UISnapBehavior(item: point, snapToPoint: point.center)
-        snap.damping = 0.2
-        
-        let push = UIPushBehavior(items:[point], mode:UIPushBehaviorMode.Instantaneous)
-        push.pushDirection = CGVectorMake(0, -1)
-        push.magnitude = 0.003
-        
-        let animator = UIDynamicAnimator()
-        animator.addBehavior(snap)
-        animator.addBehavior(push)
-        
-        point.animator = animator
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,32 +77,32 @@ class UIKitDynamicsAnimation: ExampleViewController, TKChartDelegate
     //MARK: - Methods
     
     func applyGravity() {
-        animator = UIDynamicAnimator(referenceView: chart.plotView())
-        let points = chart.visualPointsForSeries(chart.series()[0] as! TKChartSeries)
+        animator = UIDynamicAnimator(referenceView: chart.plotView)
+        if let points = chart.visualPointsForSeries(chart.series[0]) {
 
-        var i = 0
-        for x in points {
-            let point = x as! TKChartVisualPoint
-            if point.animator != nil {
-                point.animator.removeAllBehaviors()
+            var i = 0
+            for point in points {
+                if let animator = point.animator {
+                    animator.removeAllBehaviors()
+                }
+                point.animator = nil
+                point.center = originalValues[i]
+                i++
             }
-            point.animator = nil
-            point.center = originalValues[i]
-            i++
+            
+            let collision = UICollisionBehavior(items: points)
+            collision.translatesReferenceBoundsIntoBoundary = true
+            
+            let gravity = UIGravityBehavior(items: points)
+            gravity.gravityDirection = CGVectorMake(0, 2)
+            
+            let dynamic = UIDynamicItemBehavior(items: points)
+            dynamic.elasticity = 0.5
+            
+            animator!.addBehavior(dynamic)
+            animator!.addBehavior(gravity)
+            animator!.addBehavior(collision)
         }
-        
-        let collision = UICollisionBehavior(items: points)
-        collision.translatesReferenceBoundsIntoBoundary = true
-        
-        let gravity = UIGravityBehavior(items: points)
-        gravity.gravityDirection = CGVectorMake(0, 2)
-        
-        let dynamic = UIDynamicItemBehavior(items: points)
-        dynamic.elasticity = 0.5
-        
-        animator!.addBehavior(dynamic)
-        animator!.addBehavior(gravity)
-        animator!.addBehavior(collision)
     }
     
     func reloadChart() {
@@ -118,27 +118,26 @@ class UIKitDynamicsAnimation: ExampleViewController, TKChartDelegate
         lineSeries.style.pointShape = TKPredefinedShape(type: TKShapeType.Rhombus, andSize: CGSizeMake(shapeSize, shapeSize))
         lineSeries.style.shapeMode = TKChartSeriesStyleShapeMode.AlwaysShow
         chart.addSeries(lineSeries)
-        chart.yAxis.style.labelStyle.textHidden = true
+        chart.yAxis!.style.labelStyle.textHidden = true
         
         chart.reloadData()
     }
     
     //MARK: - TKChartDelegate
     
-    func chart(chart: TKChart!, animationForSeries series: TKChartSeries!, withState state: TKChartSeriesRenderState!, inRect rect: CGRect) -> CAAnimation! {
+    func chart(chart: TKChart, animationForSeries series: TKChartSeries, withState state: TKChartSeriesRenderState, inRect rect: CGRect) -> CAAnimation? {
         return nil
     }
     
     //MARK: - Events
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
-        
-        let touch: UITouch = touches.first as! UITouch
-        let touchPoint = touch.locationInView(chart.plotView())
-        let hitTestInfo = chart.hitTestForPoint(touchPoint)
-        if hitTestInfo != nil {
-            selectedPoint = chart.visualPointForSeries(hitTestInfo.series, dataPointIndex: hitTestInfo.dataPointIndex)
+
+        let touch: UITouch = touches.first as UITouch!
+        let touchPoint = touch.locationInView(chart.plotView)
+        if let hitTestInfo = chart.hitTestForPoint(touchPoint) {
+            selectedPoint = chart.visualPointForSeries(hitTestInfo.series!, dataPointIndex: hitTestInfo.dataPointIndex)
             originalLocation = touchPoint
             if let point = selectedPoint  {
                 point.animator = nil
@@ -147,23 +146,23 @@ class UIKitDynamicsAnimation: ExampleViewController, TKChartDelegate
         }
     }
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
-        
-        let touch:UITouch = touches.first as! UITouch
-        let touchPoint = touch.locationInView(chart.plotView())
+    
+        let touch:UITouch = touches.first as UITouch!
+        let touchPoint = touch.locationInView(chart.plotView)
         let delta = CGPointMake((originalPosition.x) - (touchPoint.x), originalLocation.y - touchPoint.y)
         if let point = selectedPoint {
             point.center = CGPointMake(originalPosition.x, originalPosition.y - delta.y)
         }
     }
-    
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
 
         if let point = selectedPoint {
-            let touch:UITouch = touches.first as! UITouch
-            let touchPoint = touch.locationInView(chart.plotView())
+            let touch:UITouch = touches.first as UITouch!
+            let touchPoint = touch.locationInView(chart.plotView)
             let delta = CGPointMake(originalLocation.x, originalLocation.y - touchPoint.y)
             
             let snap = UISnapBehavior(item: selectedPoint!, snapToPoint: originalPosition)

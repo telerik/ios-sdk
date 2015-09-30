@@ -17,11 +17,17 @@ class DataPointImpl : NSObject, TKChartData {
         self.value = value
     }
     
-    func dataXValue() -> AnyObject! {
-        return self.objectID
+    var dataXValue: AnyObject! {
+        get {
+            return self.objectID
+        }
+        set {}
     }
     
-    func dataYValue() -> AnyObject! {
-        return self.value
+    var dataYValue: AnyObject! {
+        get {
+            return self.value
+        }
+        set {}
     }
 }

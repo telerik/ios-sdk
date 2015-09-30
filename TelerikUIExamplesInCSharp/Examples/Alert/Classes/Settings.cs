@@ -16,7 +16,7 @@ namespace Examples
 			this.AllowParallaxEffect = false;
 			this.BackgroundStyle = TKAlertBackgroundStyle.Dim;
 			this.ActionsLayout = TKAlertActionsLayout.Horizontal;
-			this.DismissMode = TKAlertDismisMode.None;
+			this.DismissMode = TKAlertDismissMode.None;
 			this.DismissDirection = TKAlertSwipeDismissDirection.Horizontal;
 			this.AnimationDuration = 0.3;
 			this.BackgroundDim = 0.3;
@@ -28,7 +28,7 @@ namespace Examples
 		[Export("Message")]
 		public NSString Message { get; set; }
 
-		[Export("AllowParallaxEffect")] 
+		[Export("AllowParallax")] 
 		public bool AllowParallaxEffect { get; set; }
 
 		[Export("BackgroundStyle")] 
@@ -38,7 +38,7 @@ namespace Examples
 		public TKAlertActionsLayout ActionsLayout { get; set; }
 
 		[Export("DismissMode")] 
-		public TKAlertDismisMode DismissMode { get; set; }
+		public TKAlertDismissMode DismissMode { get; set; }
 
 		[Export("DismissDirection")] 
 		public TKAlertSwipeDismissDirection DismissDirection { get; set; }

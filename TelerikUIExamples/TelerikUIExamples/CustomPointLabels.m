@@ -71,13 +71,13 @@
     [_chart addSeries:lineSeries1];
 }
 
-- (TKChartPointLabel *)chart:(TKChart *)chart labelForDataPoint:(id<TKChartData>)dataPoint inSeries:(TKChartSeries *)series atIndex:(NSUInteger)dataIndex
+- (TKChartPointLabel *)chart:(TKChart *)chart labelForDataPoint:(id<TKChartData>)dataPoint property:(NSString *)propertyName inSeries:(TKChartSeries *)series atIndex:(NSUInteger)dataIndex
 {
     if (series.index == _selectedSeriesIndex && dataIndex == _selectedDataPointIndex) {
-        return [[MyPointLabel alloc] initWithPoint:dataPoint style:series.style.pointLabelStyle text:[NSString stringWithFormat:@"%@", dataPoint.dataYValue]];
+        return [[MyPointLabel alloc] initWithPoint:dataPoint series:series text:[NSString stringWithFormat:@"%@", dataPoint.dataYValue]];
     }
     
-    return [[TKChartPointLabel alloc] initWithPoint:dataPoint style:series.style.pointLabelStyle text:[NSString stringWithFormat:@"%@", dataPoint.dataYValue]];
+    return [[TKChartPointLabel alloc] initWithPoint:dataPoint series:series text:[NSString stringWithFormat:@"%@", dataPoint.dataYValue]];
 }
 
 - (TKChartPaletteItem *)chart:(TKChart *)chart paletteItemForPoint:(NSUInteger)index inSeries:(TKChartSeries *)series

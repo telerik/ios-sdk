@@ -18,8 +18,8 @@ class AlertCustomize: ExampleViewController, TKAlertDelegate {
     
     func show(sender: AnyObject) {
         
-        let alert : TKAlert = TKAlert()
-        
+        let alert = TKAlert()
+
         alert.delegate = self
         alert.style.cornerRadius = 3
         alert.title = "Warning"
@@ -47,16 +47,16 @@ class AlertCustomize: ExampleViewController, TKAlertDelegate {
         action = alert.addActionWithTitle("No") { (TKAlert, TKAlertAction) -> Bool in
             return true
         }
-        
         action.backgroundColor = UIColor(red: 0.961, green: 0.369, blue: 0.306, alpha: 1.00)
         action.titleColor = UIColor.whiteColor()
         action.cornerRadius = 3
         
         alert.show(true)
-        
     }
     
-    func alertDidShow(alert: TKAlert!) {
+    //MARK: - TKAlertDelegate
+    
+    func alertDidShow(alert: TKAlert) {
         
         let view = TKView(frame: CGRectMake(20, -30, 60, 60))
         view.shape = TKPredefinedShape(type: TKShapeType.Circle, andSize: CGSizeZero)

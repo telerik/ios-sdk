@@ -13,9 +13,9 @@
 
 @implementation SettingsViewController
 
-- (id)initWithOptions:(NSArray*)options
+- (instancetype)initWithOptions:(NSArray*)options
 {
-    self = [super init];
+    self = [self init];
     if (self) {
         _options = options;
         _selectedOption = 0;

@@ -12,7 +12,7 @@ class CustomAnimationPieChart: ExampleViewController, TKChartDelegate {
     
     let chart = TKChart()
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Animate") { self.animate() }
@@ -26,7 +26,7 @@ class CustomAnimationPieChart: ExampleViewController, TKChartDelegate {
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.allowAnimations = true
         chart.delegate = self
         self.view.addSubview(chart)
@@ -55,14 +55,14 @@ class CustomAnimationPieChart: ExampleViewController, TKChartDelegate {
     
     //MARK: - TKChartDelegate
     
-    func chart(chart: TKChart!, animationForSeries series: TKChartSeries!, withState state: TKChartSeriesRenderState!, inRect rect: CGRect) -> CAAnimation! {
+    func chart(chart: TKChart, animationForSeries series: TKChartSeries, withState state: TKChartSeriesRenderState, inRect rect: CGRect) -> CAAnimation? {
         var duration = 0.0
         var animations = [CAAnimation]()
         for i in 0..<state.points.count() {
-            let pointKeyPath = state.animationKeyPathForPointAtIndex(i) as NSString
-            var keyPath = NSString(format: "%@.distanceFromCenter", pointKeyPath)
+            let pointKeyPath = state.animationKeyPathForPointAtIndex(i)!
+            let keyPath = NSString(format: "%@.distanceFromCenter", pointKeyPath)
             var a = CAKeyframeAnimation(keyPath: keyPath as String)
-            var interval = 0.3*(Double(i)+1.1)
+            let interval = 0.3*(Double(i)+1.1)
             
             a.values = [50, 50, 0]
             a.keyTimes = [0.0, (Double(i)/(Double(i)+1.0)), 1.0]

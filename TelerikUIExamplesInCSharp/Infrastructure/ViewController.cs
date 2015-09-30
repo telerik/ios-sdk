@@ -15,11 +15,44 @@ namespace Examples
 
 		public ViewController()
 		{
+			this.Title = "Examples";
+
 			this.Examples = new ExampleInfo[] { 
+				
+				new ExampleInfo("Alert", new ExampleInfo[] {
+					new ExampleInfo("Getting Started", typeof(AlertGettingStarted)),
+					new ExampleInfo("Notifications", typeof(AlertNotifications)),
+					new ExampleInfo("Animations", typeof(AlertAnimations)),
+					new ExampleInfo("Custom View", typeof(AlertCustomView)),
+					new ExampleInfo("Customize", typeof(AlertViewCustomize)),
+					new ExampleInfo("Settings", typeof(AlertSettings)),
+				}),
+
+				new ExampleInfo("AppFeedback", typeof(FeedbackExampleController)),
+
+				new ExampleInfo("AutoCompleteTextView (Beta)", new ExampleInfo[] {
+					new ExampleInfo("Getting Started", typeof(AutoCompleteGettingStarted)),
+					new ExampleInfo("Customization", typeof(AutoCompleteCustomize)),
+					new ExampleInfo("Tokens", typeof(AutoCompleteTokens)),
+				}),
+
+				new ExampleInfo("Calendar", new ExampleInfo[] {
+					new ExampleInfo("Calendar with events", typeof(CalendarWithEvents)),
+					new ExampleInfo("Transition Effects", typeof(CalendarTransitionEffects)),
+					new ExampleInfo("Selection", typeof(CalendarSelection)),
+					new ExampleInfo("iOS 7 style calendar", typeof(iOS7StyleCalendar)),
+					new ExampleInfo("View modes", typeof(CalendarViewModes)),
+					new ExampleInfo("Customization", typeof(CalendarCustomization)),
+					new ExampleInfo("EventKit data binding", typeof(CalendarEventKitDataBinding)),
+					new ExampleInfo("Localized calendar", typeof(LocalizedCalendar)),
+					new ExampleInfo("Inline events", typeof(InlineEvents)),
+				}),
+
 				new ExampleInfo("Chart", new ExampleInfo[] {
 
 					new ExampleInfo("Chart Types", new ExampleInfo[] {
 						new ExampleInfo("Column / Bar chart", typeof(ColumnAndBarChart)),
+						new ExampleInfo("Range Column / Bar chart", typeof(RangeColumnBarChart)),
 						new ExampleInfo("Line / Area / Spline chart", typeof(LineAreaSpline)),
 						new ExampleInfo("Scatter chart", typeof(ScatterChart)),
 						new ExampleInfo("Bubble chart", typeof(BubbleChart)),
@@ -34,8 +67,11 @@ namespace Examples
 						new ExampleInfo("Numeric axis", typeof(NumericAxis)),
 						new ExampleInfo("Categorical axis", typeof(CategoricalAxis)),
 						new ExampleInfo("Date/Time axis", typeof(DateTimeAxis)),
+						new ExampleInfo("Date/Time category axis", typeof(DateTimeCategoryAxis)),
 						new ExampleInfo("Multiple axes", typeof(MultipleAxes)),
 						new ExampleInfo("Negative values", typeof(NegativeValues)),
+						new ExampleInfo("Logarithmic Axis", typeof(LogarithmicAxis)),
+						new ExampleInfo("Custom Axis", typeof(CustomAxis))
 					}),
 
 					new ExampleInfo("Animations", new ExampleInfo[] {
@@ -72,31 +108,23 @@ namespace Examples
 					}),
 					new ExampleInfo("Live data", typeof(LiveData))
 				}),
-				new ExampleInfo("Calendar", new ExampleInfo[] {
-					new ExampleInfo("Calendar with events", typeof(CalendarWithEvents)),
-					new ExampleInfo("Transition Effects", typeof(CalendarTransitionEffects)),
-					new ExampleInfo("Selection", typeof(CalendarSelection)),
-					new ExampleInfo("iOS 7 style calendar", typeof(iOS7StyleCalendar)),
-					new ExampleInfo("View modes", typeof(CalendarViewModes)),
-					new ExampleInfo("Customization", typeof(CalendarCustomization)),
-					new ExampleInfo("EventKit data binding", typeof(CalendarEventKitDataBinding)),
-					new ExampleInfo("Localized calendar", typeof(LocalizedCalendar)),
-					new ExampleInfo("Inline events", typeof(InlineEvents)),
+
+				new ExampleInfo("DataForm (New)", new ExampleInfo[] {
+					new ExampleInfo("Getting Started", typeof(DataFormGettingStarted)),
+					new ExampleInfo("Read Only", typeof(DataFormReadOnly)),
+					new ExampleInfo("Validation", typeof(DataFormValidation)),
+					new ExampleInfo("Customization", typeof(DataFormCustomization)),
+					new ExampleInfo("Collapsable Groups", typeof(DataFormCollapsibleGroups)),
+					new ExampleInfo("Alignment", typeof(DataFormAlignment))
 				}),
-				new ExampleInfo("Feedback", typeof(FeedbackExampleController)),
+
 				new ExampleInfo("DataSource", new ExampleInfo[] {
 					new ExampleInfo("Getting started", typeof(DataSourceGettingStarted)),
 					new ExampleInfo("Descriptors API", typeof(DataSourceDescriptorsAPI)),
 					new ExampleInfo("Bind with UI controls", typeof(DataSourceUIBindings)),
 					new ExampleInfo("Consume web service", typeof(DataSourceWithWebService)),
 				}),
-				new ExampleInfo("SideDrawer", new ExampleInfo[] {
-					new ExampleInfo("Getting Started", typeof(SideDrawerGettingStarted)),
-					new ExampleInfo("Transitions", typeof(SideDrawerTransitions)),
-					new ExampleInfo("Positions", typeof(SideDrawerPositions)),
-					new ExampleInfo("Custom Content", typeof(SideDrawerCustomContent)),
-					new ExampleInfo("Custom Transition", typeof(SideDrawerCustomTransition))
-				}),
+					
 				new ExampleInfo("ListView", new ExampleInfo[] {
 					new ExampleInfo("Getting Started", typeof(ListViewGettingStarted)),
 					new ExampleInfo("Swipe cell", typeof(ListViewSwipe)),
@@ -108,20 +136,23 @@ namespace Examples
 					new ExampleInfo("Load on demand", typeof(ListViewLoadOnDemand)),
 					new ExampleInfo("Pull to refresh", typeof(ListViewPullToRefresh)),
 				}),
-				new ExampleInfo("DataForm (Beta)", new ExampleInfo[] {
-					new ExampleInfo("Getting Started", typeof(DataFormGettingStarted)),
-					new ExampleInfo("Read Only", typeof(DataFormReadOnly)),
-					new ExampleInfo("Validation", typeof(DataFormValidation)),
-					new ExampleInfo("Customization", typeof(DataFormCustomization))
+
+				new ExampleInfo("SideDrawer", new ExampleInfo[] {
+					new ExampleInfo("Getting Started", typeof(SideDrawerGettingStarted)),
+					new ExampleInfo("Transitions", typeof(SideDrawerTransitions)),
+					new ExampleInfo("Positions", typeof(SideDrawerPositions)),
+					new ExampleInfo("Custom Content", typeof(SideDrawerCustomContent)),
+					new ExampleInfo("Custom Transition", typeof(SideDrawerCustomTransition))
 				}),
-				new ExampleInfo("Alert", new ExampleInfo[] {
-					new ExampleInfo("Getting Started", typeof(AlertGettingStarted)),
-					new ExampleInfo("Notifications", typeof(AlertNotifications)),
-					new ExampleInfo("Animations", typeof(AlertAnimations)),
-					new ExampleInfo("Custom View", typeof(AlertCustomView)),
-					new ExampleInfo("Customize", typeof(AlertViewCustomize)),
-					new ExampleInfo("Settings", typeof(AlertSettings)),
+				new ExampleInfo("Gauges (New)", new ExampleInfo[] {
+					new ExampleInfo("Getting Started", typeof(GaugesGettingStarted)),
+					new ExampleInfo("Customization", typeof(GaugeCustomization)),
+					new ExampleInfo("Interaction", typeof(GaugeInteraction)),
+					new ExampleInfo("Animations", typeof(GaugeValueAnimation)),
+					new ExampleInfo("Scales", typeof(GaugeMultipleScales)),
+					new ExampleInfo("Ranges", typeof(GaugeMultipleRanges)),
 				}),
+
 			};
 		}
 

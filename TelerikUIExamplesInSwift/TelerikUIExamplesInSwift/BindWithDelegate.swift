@@ -17,13 +17,13 @@ class BindWithDelegate : ExampleViewController {
         super.viewDidLoad()
     
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.dataSource = chartDataSource
         self.view.addSubview(chart)
         
-        chart.legend().hidden = false
-        chart.legend().style.position = TKChartLegendPosition.Top
-        chart.legend().container.stack.orientation = TKStackLayoutOrientation.Horizontal
+        chart.legend.hidden = false
+        chart.legend.style.position = TKChartLegendPosition.Top
+        chart.legend.container.stack.orientation = TKCoreStackLayoutOrientation.Horizontal
     }
     
     override func didReceiveMemoryWarning() {

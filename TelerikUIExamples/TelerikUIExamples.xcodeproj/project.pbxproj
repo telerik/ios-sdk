@@ -17,12 +17,15 @@
 		19463A481B343C450022054C /* CallEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 19463A471B343C450022054C /* CallEditor.m */; };
 		194C56F41934C505006D7C4F /* IndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194C56F31934C505006D7C4F /* IndicatorsViewController.m */; };
 		1956644719C9C678002F77EB /* SelectedPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1956644619C9C678002F77EB /* SelectedPointLabel.m */; };
+		195F5CB01BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 195F5CAF1BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m */; settings = {ASSET_TAGS = (); }; };
 		1960558F1940B12D00F0E4C0 /* IndicatorsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1960558E1940B12D00F0E4C0 /* IndicatorsTableView.m */; };
 		1977F8C31B285B110024ECB2 /* PersonalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977F8C21B285B110024ECB2 /* PersonalInfo.m */; };
 		1977F8C71B28666B0024ECB2 /* DataFormValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977F8C61B28666B0024ECB2 /* DataFormValidation.m */; };
-		1977F8CA1B2867370024ECB2 /* RegisterationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977F8C91B2867370024ECB2 /* RegisterationInfo.m */; };
+		1977F8CA1B2867370024ECB2 /* RegistrationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977F8C91B2867370024ECB2 /* RegistrationInfo.m */; };
 		19861127191A2E240026EFF7 /* AppleStockPrices.json in Resources */ = {isa = PBXBuildFile; fileRef = 19861126191A2E240026EFF7 /* AppleStockPrices.json */; };
 		1986112A191A2E550026EFF7 /* FinancialChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 19861129191A2E550026EFF7 /* FinancialChart.m */; };
+		1990679E1BAAB111002129EE /* DataFormLabelAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1990679D1BAAB111002129EE /* DataFormLabelAlignment.m */; settings = {ASSET_TAGS = (); }; };
+		199067A11BAAB140002129EE /* EmployeeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 199067A01BAAB140002129EE /* EmployeeInfo.m */; settings = {ASSET_TAGS = (); }; };
 		19953A6F1A7BD26D001B9513 /* SideDrawerTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 19953A6E1A7BD26D001B9513 /* SideDrawerTransitions.m */; };
 		19A2A0201A80F63B00378C68 /* SideDrawerCustomContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A01F1A80F63B00378C68 /* SideDrawerCustomContentController.m */; };
 		19A2A02B1A811B6F00378C68 /* SideDrawerCustomTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A02A1A811B6F00378C68 /* SideDrawerCustomTransition.m */; };
@@ -30,6 +33,7 @@
 		19B26F8A1A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B26F891A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m */; };
 		19BAD0F219D43A0500803C27 /* LiveData.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BAD0F119D43A0500803C27 /* LiveData.m */; };
 		19C152CC193F668800770199 /* BubbleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C152CB193F668800770199 /* BubbleChart.m */; };
+		19DB73E51B59472000680707 /* RangeBarColumnChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 19DB73E41B59472000680707 /* RangeBarColumnChart.m */; };
 		19DCA00F1ABB1457009C5D62 /* MyTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 19DCA00E1ABB1457009C5D62 /* MyTransition.m */; };
 		19DD17561B3049360001CCC0 /* DataFormReadOnly.m in Sources */ = {isa = PBXBuildFile; fileRef = 19DD17551B3049360001CCC0 /* DataFormReadOnly.m */; };
 		19DD17591B304D490001CCC0 /* CardInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 19DD17581B304D490001CCC0 /* CardInfo.m */; };
@@ -38,14 +42,21 @@
 		19E9055D19BF391800A325D8 /* MyPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E9055C19BF391800A325D8 /* MyPointLabel.m */; };
 		19F6481B1B2EE3F70023A601 /* EmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6481A1B2EE3F70023A601 /* EmailValidator.m */; };
 		19F648201B2EF3C40023A601 /* PasswordValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6481F1B2EF3C40023A601 /* PasswordValidator.m */; };
-		19F9188F1B298163008C10F2 /* DataFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F9188E1B298163008C10F2 /* DataFormController.m */; };
+		19F9188F1B298163008C10F2 /* DataFormGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F9188E1B298163008C10F2 /* DataFormGettingStarted.m */; };
 		1B3258731B272AC800EAC1DF /* AlertCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3258721B272AC800EAC1DF /* AlertCustomView.m */; };
 		1B3258761B272E5100EAC1DF /* AlertSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3258751B272E5100EAC1DF /* AlertSettings.m */; };
+		1B33C9B31B9EDC4700906C7E /* AxisRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B33C9B21B9EDC4700906C7E /* AxisRender.m */; };
 		1B52B8C61B0DF1000005F916 /* AlertViewGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B8C51B0DF1000005F916 /* AlertViewGettingStarted.m */; };
 		1B52B9061B0E1E010005F916 /* AlertViewSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B9051B0E1E010005F916 /* AlertViewSettings.m */; };
 		1B52B9091B0E1E790005F916 /* AlertViewCustomize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B9081B0E1E790005F916 /* AlertViewCustomize.m */; };
 		1B52B90C1B0E1E880005F916 /* AlertViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B90B1B0E1E880005F916 /* AlertViewAnimations.m */; };
+		1B8F7A641BAACCA20022C222 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F7A631BAACCA20022C222 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		1B96644C1BA851A8000804EA /* GaugeGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B96644B1BA851A8000804EA /* GaugeGettingStarted.m */; };
+		1B96644F1BA851ED000804EA /* GaugeCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B96644E1BA851ED000804EA /* GaugeCustomization.m */; };
+		1BA376D11BA9BAB000FA48A7 /* GaugeScales.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA376D01BA9BAB000FA48A7 /* GaugeScales.m */; settings = {ASSET_TAGS = (); }; };
 		1BBFAA011B208843006FB5A6 /* AlertNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFAA001B208843006FB5A6 /* AlertNotifications.m */; };
+		1BC90EE71BAC357600A5B6DC /* GaugeRanges.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC90EE61BAC357600A5B6DC /* GaugeRanges.m */; settings = {ASSET_TAGS = (); }; };
+		1BC928851B9D9A6C00937336 /* CustomAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC928841B9D9A6C00937336 /* CustomAxis.m */; };
 		7A0FD505194B1732004B5A8D /* FeedbackExampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FD504194B1732004B5A8D /* FeedbackExampleController.m */; };
 		7A0FD507194B1856004B5A8D /* FeedbackExampleController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A0FD506194B1856004B5A8D /* FeedbackExampleController.xib */; };
 		7A56815419374195005FEC6D /* StockDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A56815319374195005FEC6D /* StockDataPoint.m */; };
@@ -57,11 +68,21 @@
 		8DDC67051A8CFEC600FDE377 /* ListViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC67041A8CFEC600FDE377 /* ListViewLayout.m */; };
 		8DDC67081A8E1D4C00FDE377 /* ListViewPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC67071A8E1D4C00FDE377 /* ListViewPullToRefresh.m */; };
 		8DFB71C91A88B109005ACF59 /* ListViewGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB71C81A88B109005ACF59 /* ListViewGroups.m */; };
-		A63F862C194461DC00FB766C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63F862B194461DC00FB766C /* Images.xcassets */; };
 		C1639F361A86B72500E86743 /* ListViewLoadOnDemand.m in Sources */ = {isa = PBXBuildFile; fileRef = C1639F351A86B72500E86743 /* ListViewLoadOnDemand.m */; };
 		C1639F3D1A909F2800E86743 /* ListViewReorder.m in Sources */ = {isa = PBXBuildFile; fileRef = C1639F3C1A909F2800E86743 /* ListViewReorder.m */; };
+		F615197C1B94B02B008614C7 /* electricity.json in Resources */ = {isa = PBXBuildFile; fileRef = F615197B1B94B02B008614C7 /* electricity.json */; };
+		F620D59B1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = F620D59A1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m */; };
+		F620D5A01BA97CC00063F3C0 /* languages.json in Resources */ = {isa = PBXBuildFile; fileRef = F620D59F1BA97CC00063F3C0 /* languages.json */; };
+		F640C3CE1BAC2E7D001FEC95 /* AutoCompleteCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = F640C3CD1BAC2E7D001FEC95 /* AutoCompleteCustomization.m */; settings = {ASSET_TAGS = (); }; };
+		F640C3D11BAC3B00001FEC95 /* PersonListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F640C3D01BAC3B00001FEC95 /* PersonListViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		F67C57EA1BB157DA004B7FED /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = F67C57E91BB157DA004B7FED /* countries.json */; settings = {ASSET_TAGS = (); }; };
+		F6A266081BB1732C00742A69 /* AutoCompleteTokens.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A266071BB1732C00742A69 /* AutoCompleteTokens.m */; settings = {ASSET_TAGS = (); }; };
+		F6D7A6D71BB46656006549F4 /* emails.json in Resources */ = {isa = PBXBuildFile; fileRef = F6D7A6D61BB46656006549F4 /* emails.json */; settings = {ASSET_TAGS = (); }; };
+		F6D7A6D91BB54B48006549F4 /* namesPhotos.json in Resources */ = {isa = PBXBuildFile; fileRef = F6D7A6D81BB54B48006549F4 /* namesPhotos.json */; settings = {ASSET_TAGS = (); }; };
+		F6F51A721B8DB9820065E055 /* LogarithmicAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F51A711B8DB9820065E055 /* LogarithmicAxis.m */; };
 		FE0161CF192E57510064C284 /* CalendarWithEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0161CE192E57510064C284 /* CalendarWithEvents.m */; };
 		FE017A2B1945F571005C46D5 /* LocalizedCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = FE017A2A1945F571005C46D5 /* LocalizedCalendar.m */; };
+		FE0C968F1BA9C691005A7BA1 /* GaugeAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C968E1BA9C691005A7BA1 /* GaugeAnimations.m */; settings = {ASSET_TAGS = (); }; };
 		FE17150F1A961B7F000EB4C9 /* CustomCardListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE17150E1A961B7F000EB4C9 /* CustomCardListViewCell.m */; };
 		FE1715121A962278000EB4C9 /* PhotosWithNames.json in Resources */ = {isa = PBXBuildFile; fileRef = FE1715111A962278000EB4C9 /* PhotosWithNames.json */; };
 		FE1715151A9625C3000EB4C9 /* LoremIpsumGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1715141A9625C3000EB4C9 /* LoremIpsumGenerator.m */; };
@@ -78,8 +99,9 @@
 		FE5386481A8E50DC00DE6941 /* ListViewSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = FE5386471A8E50DC00DE6941 /* ListViewSampleData.json */; };
 		FE5F963F1A93933100E70AF2 /* ListViewGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F963E1A93933100E70AF2 /* ListViewGettingStarted.m */; };
 		FE5F96421A93A68F00E70AF2 /* OptionSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F96411A93A68F00E70AF2 /* OptionSection.m */; };
+		FE6B547C1BBC3440008E5EDB /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6B547A1BBC343F008E5EDB /* TelerikAppFeedback.framework */; };
+		FE6B547D1BBC3440008E5EDB /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6B547B1BBC3440008E5EDB /* TelerikUI.framework */; };
 		FE7131B8192FA4E400B9C231 /* CalendarTransitonEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7131B7192FA4E400B9C231 /* CalendarTransitonEffects.m */; };
-		FE77380419ED5E44009F5C34 /* libTelerikAppFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */; };
 		FE8701831941E2A700AC1D05 /* CalendarCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701821941E2A700AC1D05 /* CalendarCustomization.m */; };
 		FE8701D119420E4000AC1D05 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701D019420E4000AC1D05 /* CustomCell.m */; };
 		FE8701D91942141400AC1D05 /* CalendarEventKitDataBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701D81942141400AC1D05 /* CalendarEventKitDataBinding.m */; };
@@ -100,11 +122,13 @@
 		FEA0D2E21A8245920014CD96 /* DSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2E11A8245920014CD96 /* DSItem.m */; };
 		FEA0D2E51A8280CF0014CD96 /* DSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2E41A8280CF0014CD96 /* DSCollectionViewCell.m */; };
 		FEA0D2E81A8286970014CD96 /* DataSourceWithWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2E71A8286970014CD96 /* DataSourceWithWebService.m */; };
+		FEAF8DC31B94AD7700AD77E0 /* DateTimeCategoryAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAF8DC21B94AD7700AD77E0 /* DateTimeCategoryAxis.m */; };
 		FEB4260119336F1D00C2A602 /* CalendarSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4260019336F1D00C2A602 /* CalendarSelection.m */; };
 		FEB42604193374A500C2A602 /* iOS7StyleCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB42603193374A500C2A602 /* iOS7StyleCalendar.m */; };
 		FEB66DB51B132ECA00DC71AC /* AnimationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB66DB41B132ECA00DC71AC /* AnimationListCell.m */; };
 		FEBC2E2619372D92007C12B1 /* CalendarViewModes.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBC2E2519372D92007C12B1 /* CalendarViewModes.m */; };
 		FEC0CF2D1A975BA30088A158 /* SimpleListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC0CF2C1A975BA30088A158 /* SimpleListViewCell.m */; };
+		FEDBD4731BAAB5140018E9ED /* GaugeInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDBD4721BAAB5140018E9ED /* GaugeInteraction.m */; settings = {ASSET_TAGS = (); }; };
 		FEE2697B1806DBA300E52C37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE2697A1806DBA300E52C37 /* Foundation.framework */; };
 		FEE2697F1806DBA300E52C37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE2697E1806DBA300E52C37 /* UIKit.framework */; };
 		FEE269851806DBA300E52C37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEE269831806DBA300E52C37 /* InfoPlist.strings */; };
@@ -121,7 +145,6 @@
 		FEE269D11807066700E52C37 /* PieDonut.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D01807066700E52C37 /* PieDonut.m */; };
 		FEE269D7180708B900E52C37 /* StackedColumnChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D6180708B900E52C37 /* StackedColumnChart.m */; };
 		FEE269DA180708CD00E52C37 /* StackedAreaChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D9180708CD00E52C37 /* StackedAreaChart.m */; };
-		FEE8E7911887DF6E009D373B /* libTelerikUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE8E7901887DF6E009D373B /* libTelerikUI.a */; };
 		FEEAEBD318080A7600D75A5C /* DefaultAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD218080A7600D75A5C /* DefaultAnimation.m */; };
 		FEEAEBD618080A8900D75A5C /* CustomAnimationLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD518080A8900D75A5C /* CustomAnimationLineChart.m */; };
 		FEEAEBD918080A9A00D75A5C /* CustomAnimationPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD818080A9A00D75A5C /* CustomAnimationPieChart.m */; };
@@ -152,17 +175,23 @@
 		194C56F31934C505006D7C4F /* IndicatorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorsViewController.m; sourceTree = "<group>"; };
 		1956644519C9C678002F77EB /* SelectedPointLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedPointLabel.h; sourceTree = "<group>"; };
 		1956644619C9C678002F77EB /* SelectedPointLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedPointLabel.m; sourceTree = "<group>"; };
+		195F5CAE1BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormCollapsibleGroups.h; sourceTree = "<group>"; };
+		195F5CAF1BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormCollapsibleGroups.m; sourceTree = "<group>"; };
 		1960558D1940B12D00F0E4C0 /* IndicatorsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorsTableView.h; sourceTree = "<group>"; };
 		1960558E1940B12D00F0E4C0 /* IndicatorsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorsTableView.m; sourceTree = "<group>"; };
 		1977F8C11B285B110024ECB2 /* PersonalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfo.h; sourceTree = "<group>"; };
 		1977F8C21B285B110024ECB2 /* PersonalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfo.m; sourceTree = "<group>"; };
 		1977F8C51B28666B0024ECB2 /* DataFormValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormValidation.h; sourceTree = "<group>"; };
 		1977F8C61B28666B0024ECB2 /* DataFormValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormValidation.m; sourceTree = "<group>"; };
-		1977F8C81B2867370024ECB2 /* RegisterationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterationInfo.h; sourceTree = "<group>"; };
-		1977F8C91B2867370024ECB2 /* RegisterationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterationInfo.m; sourceTree = "<group>"; };
+		1977F8C81B2867370024ECB2 /* RegistrationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationInfo.h; sourceTree = "<group>"; };
+		1977F8C91B2867370024ECB2 /* RegistrationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationInfo.m; sourceTree = "<group>"; };
 		19861126191A2E240026EFF7 /* AppleStockPrices.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AppleStockPrices.json; sourceTree = "<group>"; };
 		19861128191A2E550026EFF7 /* FinancialChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialChart.h; sourceTree = "<group>"; };
 		19861129191A2E550026EFF7 /* FinancialChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialChart.m; sourceTree = "<group>"; };
+		1990679C1BAAB111002129EE /* DataFormLabelAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormLabelAlignment.h; sourceTree = "<group>"; };
+		1990679D1BAAB111002129EE /* DataFormLabelAlignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormLabelAlignment.m; sourceTree = "<group>"; };
+		1990679F1BAAB140002129EE /* EmployeeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeInfo.h; sourceTree = "<group>"; };
+		199067A01BAAB140002129EE /* EmployeeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeInfo.m; sourceTree = "<group>"; };
 		19953A6D1A7BD26D001B9513 /* SideDrawerTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerTransitions.h; sourceTree = "<group>"; };
 		19953A6E1A7BD26D001B9513 /* SideDrawerTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerTransitions.m; sourceTree = "<group>"; };
 		19A2A01E1A80F63B00378C68 /* SideDrawerCustomContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerCustomContentController.h; sourceTree = "<group>"; };
@@ -177,6 +206,8 @@
 		19BAD0F119D43A0500803C27 /* LiveData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveData.m; sourceTree = "<group>"; };
 		19C152CA193F668800770199 /* BubbleChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleChart.h; sourceTree = "<group>"; };
 		19C152CB193F668800770199 /* BubbleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleChart.m; sourceTree = "<group>"; };
+		19DB73E31B59472000680707 /* RangeBarColumnChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RangeBarColumnChart.h; sourceTree = "<group>"; };
+		19DB73E41B59472000680707 /* RangeBarColumnChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RangeBarColumnChart.m; sourceTree = "<group>"; };
 		19DCA00D1ABB1457009C5D62 /* MyTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTransition.h; sourceTree = "<group>"; };
 		19DCA00E1ABB1457009C5D62 /* MyTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTransition.m; sourceTree = "<group>"; };
 		19DD17541B3049360001CCC0 /* DataFormReadOnly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormReadOnly.h; sourceTree = "<group>"; };
@@ -193,12 +224,14 @@
 		19F6481A1B2EE3F70023A601 /* EmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailValidator.m; sourceTree = "<group>"; };
 		19F6481E1B2EF3C40023A601 /* PasswordValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordValidator.h; sourceTree = "<group>"; };
 		19F6481F1B2EF3C40023A601 /* PasswordValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordValidator.m; sourceTree = "<group>"; };
-		19F9188D1B298163008C10F2 /* DataFormController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormController.h; sourceTree = "<group>"; };
-		19F9188E1B298163008C10F2 /* DataFormController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormController.m; sourceTree = "<group>"; };
+		19F9188D1B298163008C10F2 /* DataFormGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormGettingStarted.h; sourceTree = "<group>"; };
+		19F9188E1B298163008C10F2 /* DataFormGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormGettingStarted.m; sourceTree = "<group>"; };
 		1B3258711B272AC800EAC1DF /* AlertCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertCustomView.h; sourceTree = "<group>"; };
 		1B3258721B272AC800EAC1DF /* AlertCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertCustomView.m; sourceTree = "<group>"; };
 		1B3258741B272E5100EAC1DF /* AlertSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertSettings.h; sourceTree = "<group>"; };
 		1B3258751B272E5100EAC1DF /* AlertSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertSettings.m; sourceTree = "<group>"; };
+		1B33C9B11B9EDC4700906C7E /* AxisRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxisRender.h; sourceTree = "<group>"; };
+		1B33C9B21B9EDC4700906C7E /* AxisRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxisRender.m; sourceTree = "<group>"; };
 		1B52B8C41B0DF1000005F916 /* AlertViewGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewGettingStarted.h; sourceTree = "<group>"; };
 		1B52B8C51B0DF1000005F916 /* AlertViewGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewGettingStarted.m; sourceTree = "<group>"; };
 		1B52B9041B0E1E010005F916 /* AlertViewSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewSettings.h; sourceTree = "<group>"; };
@@ -207,8 +240,19 @@
 		1B52B9081B0E1E790005F916 /* AlertViewCustomize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewCustomize.m; sourceTree = "<group>"; };
 		1B52B90A1B0E1E880005F916 /* AlertViewAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewAnimations.h; sourceTree = "<group>"; };
 		1B52B90B1B0E1E880005F916 /* AlertViewAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewAnimations.m; sourceTree = "<group>"; };
+		1B8F7A631BAACCA20022C222 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1B96644A1BA851A8000804EA /* GaugeGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaugeGettingStarted.h; sourceTree = "<group>"; };
+		1B96644B1BA851A8000804EA /* GaugeGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaugeGettingStarted.m; sourceTree = "<group>"; };
+		1B96644D1BA851ED000804EA /* GaugeCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaugeCustomization.h; sourceTree = "<group>"; };
+		1B96644E1BA851ED000804EA /* GaugeCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaugeCustomization.m; sourceTree = "<group>"; };
+		1BA376CF1BA9BAB000FA48A7 /* GaugeScales.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaugeScales.h; sourceTree = "<group>"; };
+		1BA376D01BA9BAB000FA48A7 /* GaugeScales.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaugeScales.m; sourceTree = "<group>"; };
 		1BBFA9FF1B208843006FB5A6 /* AlertNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertNotifications.h; sourceTree = "<group>"; };
 		1BBFAA001B208843006FB5A6 /* AlertNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertNotifications.m; sourceTree = "<group>"; };
+		1BC90EE51BAC357600A5B6DC /* GaugeRanges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaugeRanges.h; sourceTree = "<group>"; };
+		1BC90EE61BAC357600A5B6DC /* GaugeRanges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaugeRanges.m; sourceTree = "<group>"; };
+		1BC928831B9D9A6C00937336 /* CustomAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAxis.h; sourceTree = "<group>"; };
+		1BC928841B9D9A6C00937336 /* CustomAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAxis.m; sourceTree = "<group>"; };
 		7A0FD503194B1732004B5A8D /* FeedbackExampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackExampleController.h; sourceTree = "<group>"; };
 		7A0FD504194B1732004B5A8D /* FeedbackExampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackExampleController.m; sourceTree = "<group>"; };
 		7A0FD506194B1856004B5A8D /* FeedbackExampleController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackExampleController.xib; sourceTree = "<group>"; };
@@ -229,15 +273,31 @@
 		8DFB71C71A88B109005ACF59 /* ListViewGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewGroups.h; sourceTree = "<group>"; };
 		8DFB71C81A88B109005ACF59 /* ListViewGroups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewGroups.m; sourceTree = "<group>"; };
 		A6238D701B2DAD830050378A /* UIButton_Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButton_Circle.h; sourceTree = "<group>"; };
-		A63F862B194461DC00FB766C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C1639F341A86B72500E86743 /* ListViewLoadOnDemand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewLoadOnDemand.h; sourceTree = "<group>"; };
 		C1639F351A86B72500E86743 /* ListViewLoadOnDemand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewLoadOnDemand.m; sourceTree = "<group>"; };
 		C1639F3B1A909F2800E86743 /* ListViewReorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewReorder.h; sourceTree = "<group>"; };
 		C1639F3C1A909F2800E86743 /* ListViewReorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewReorder.m; sourceTree = "<group>"; };
+		F615197B1B94B02B008614C7 /* electricity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = electricity.json; sourceTree = "<group>"; };
+		F620D5991BA8767D0063F3C0 /* AutoCompleteGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompleteGettingStarted.h; sourceTree = "<group>"; };
+		F620D59A1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteGettingStarted.m; sourceTree = "<group>"; };
+		F620D59F1BA97CC00063F3C0 /* languages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = languages.json; sourceTree = "<group>"; };
+		F640C3CC1BAC2E7D001FEC95 /* AutoCompleteCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompleteCustomization.h; sourceTree = "<group>"; };
+		F640C3CD1BAC2E7D001FEC95 /* AutoCompleteCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteCustomization.m; sourceTree = "<group>"; };
+		F640C3CF1BAC3B00001FEC95 /* PersonListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonListViewCell.h; sourceTree = "<group>"; };
+		F640C3D01BAC3B00001FEC95 /* PersonListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonListViewCell.m; sourceTree = "<group>"; };
+		F67C57E91BB157DA004B7FED /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		F6A266061BB1732C00742A69 /* AutoCompleteTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompleteTokens.h; sourceTree = "<group>"; };
+		F6A266071BB1732C00742A69 /* AutoCompleteTokens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteTokens.m; sourceTree = "<group>"; };
+		F6D7A6D61BB46656006549F4 /* emails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emails.json; sourceTree = "<group>"; };
+		F6D7A6D81BB54B48006549F4 /* namesPhotos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = namesPhotos.json; sourceTree = "<group>"; };
+		F6F51A701B8DB9820065E055 /* LogarithmicAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogarithmicAxis.h; sourceTree = "<group>"; };
+		F6F51A711B8DB9820065E055 /* LogarithmicAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogarithmicAxis.m; sourceTree = "<group>"; };
 		FE0161CD192E57510064C284 /* CalendarWithEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarWithEvents.h; sourceTree = "<group>"; };
 		FE0161CE192E57510064C284 /* CalendarWithEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarWithEvents.m; sourceTree = "<group>"; };
 		FE017A291945F571005C46D5 /* LocalizedCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizedCalendar.h; sourceTree = "<group>"; };
 		FE017A2A1945F571005C46D5 /* LocalizedCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizedCalendar.m; sourceTree = "<group>"; };
+		FE0C968D1BA9C691005A7BA1 /* GaugeAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaugeAnimations.h; sourceTree = "<group>"; };
+		FE0C968E1BA9C691005A7BA1 /* GaugeAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaugeAnimations.m; sourceTree = "<group>"; };
 		FE17150D1A961B7F000EB4C9 /* CustomCardListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCardListViewCell.h; sourceTree = "<group>"; };
 		FE17150E1A961B7F000EB4C9 /* CustomCardListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCardListViewCell.m; sourceTree = "<group>"; };
 		FE1715111A962278000EB4C9 /* PhotosWithNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PhotosWithNames.json; sourceTree = "<group>"; };
@@ -267,9 +327,10 @@
 		FE5F963E1A93933100E70AF2 /* ListViewGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewGettingStarted.m; sourceTree = "<group>"; };
 		FE5F96401A93A68F00E70AF2 /* OptionSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionSection.h; sourceTree = "<group>"; };
 		FE5F96411A93A68F00E70AF2 /* OptionSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionSection.m; sourceTree = "<group>"; };
+		FE6B547A1BBC343F008E5EDB /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
+		FE6B547B1BBC3440008E5EDB /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FE7131B6192FA4E400B9C231 /* CalendarTransitionEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTransitionEffects.h; sourceTree = "<group>"; };
 		FE7131B7192FA4E400B9C231 /* CalendarTransitonEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTransitonEffects.m; sourceTree = "<group>"; };
-		FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = "../TelerikAppFeedback.framework"; sourceTree = "<group>"; };
 		FE8701811941E2A700AC1D05 /* CalendarCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarCustomization.h; sourceTree = "<group>"; };
 		FE8701821941E2A700AC1D05 /* CalendarCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarCustomization.m; sourceTree = "<group>"; };
 		FE8701CF19420E4000AC1D05 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
@@ -308,6 +369,8 @@
 		FEA0D2E41A8280CF0014CD96 /* DSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSCollectionViewCell.m; sourceTree = "<group>"; };
 		FEA0D2E61A8286970014CD96 /* DataSourceWithWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceWithWebService.h; sourceTree = "<group>"; };
 		FEA0D2E71A8286970014CD96 /* DataSourceWithWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceWithWebService.m; sourceTree = "<group>"; };
+		FEAF8DC11B94AD7700AD77E0 /* DateTimeCategoryAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTimeCategoryAxis.h; sourceTree = "<group>"; };
+		FEAF8DC21B94AD7700AD77E0 /* DateTimeCategoryAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTimeCategoryAxis.m; sourceTree = "<group>"; };
 		FEB425FF19336F1D00C2A602 /* CalendarSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSelection.h; sourceTree = "<group>"; };
 		FEB4260019336F1D00C2A602 /* CalendarSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSelection.m; sourceTree = "<group>"; };
 		FEB42602193374A500C2A602 /* iOS7StyleCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOS7StyleCalendar.h; sourceTree = "<group>"; };
@@ -318,6 +381,8 @@
 		FEBC2E2519372D92007C12B1 /* CalendarViewModes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewModes.m; sourceTree = "<group>"; };
 		FEC0CF2B1A975BA30088A158 /* SimpleListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleListViewCell.h; sourceTree = "<group>"; };
 		FEC0CF2C1A975BA30088A158 /* SimpleListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleListViewCell.m; sourceTree = "<group>"; };
+		FEDBD4711BAAB5140018E9ED /* GaugeInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaugeInteraction.h; sourceTree = "<group>"; };
+		FEDBD4721BAAB5140018E9ED /* GaugeInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaugeInteraction.m; sourceTree = "<group>"; };
 		FEE269771806DBA300E52C37 /* TelerikUIExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelerikUIExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE2697A1806DBA300E52C37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FEE2697E1806DBA300E52C37 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -349,7 +414,6 @@
 		FEE269D6180708B900E52C37 /* StackedColumnChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackedColumnChart.m; sourceTree = "<group>"; };
 		FEE269D8180708CD00E52C37 /* StackedAreaChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackedAreaChart.h; sourceTree = "<group>"; };
 		FEE269D9180708CD00E52C37 /* StackedAreaChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackedAreaChart.m; sourceTree = "<group>"; };
-		FEE8E7901887DF6E009D373B /* libTelerikUI.a */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../TelerikUI.framework"; sourceTree = "<group>"; };
 		FEEAEBD118080A7600D75A5C /* DefaultAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultAnimation.h; sourceTree = "<group>"; };
 		FEEAEBD218080A7600D75A5C /* DefaultAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultAnimation.m; sourceTree = "<group>"; };
 		FEEAEBD418080A8900D75A5C /* CustomAnimationLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimationLineChart.h; sourceTree = "<group>"; };
@@ -373,10 +437,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE77380419ED5E44009F5C34 /* libTelerikAppFeedback.a in Frameworks */,
+				FE6B547C1BBC3440008E5EDB /* TelerikAppFeedback.framework in Frameworks */,
+				FE6B547D1BBC3440008E5EDB /* TelerikUI.framework in Frameworks */,
 				FE8701E4194218AB00AC1D05 /* EventKit.framework in Frameworks */,
 				FE8701E5194218AB00AC1D05 /* EventKitUI.framework in Frameworks */,
-				FEE8E7911887DF6E009D373B /* libTelerikUI.a in Frameworks */,
 				FEE2697F1806DBA300E52C37 /* UIKit.framework in Frameworks */,
 				FEE2697B1806DBA300E52C37 /* Foundation.framework in Frameworks */,
 			);
@@ -411,6 +475,15 @@
 			name = Customization;
 			sourceTree = "<group>";
 		};
+		195F5C491BAB1EFC003C5FA5 /* CollapsibleGroups */ = {
+			isa = PBXGroup;
+			children = (
+				195F5CAE1BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.h */,
+				195F5CAF1BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m */,
+			);
+			name = CollapsibleGroups;
+			sourceTree = "<group>";
+		};
 		1960558C1940A87E00F0E4C0 /* IndicatorsExample */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,10 +498,10 @@
 		1977F8C01B285AF20024ECB2 /* GettingStarted */ = {
 			isa = PBXGroup;
 			children = (
+				19F9188D1B298163008C10F2 /* DataFormGettingStarted.h */,
+				19F9188E1B298163008C10F2 /* DataFormGettingStarted.m */,
 				1977F8C11B285B110024ECB2 /* PersonalInfo.h */,
 				1977F8C21B285B110024ECB2 /* PersonalInfo.m */,
-				19F9188D1B298163008C10F2 /* DataFormController.h */,
-				19F9188E1B298163008C10F2 /* DataFormController.m */,
 			);
 			name = GettingStarted;
 			sourceTree = "<group>";
@@ -438,14 +511,25 @@
 			children = (
 				1977F8C51B28666B0024ECB2 /* DataFormValidation.h */,
 				1977F8C61B28666B0024ECB2 /* DataFormValidation.m */,
-				1977F8C81B2867370024ECB2 /* RegisterationInfo.h */,
-				1977F8C91B2867370024ECB2 /* RegisterationInfo.m */,
+				1977F8C81B2867370024ECB2 /* RegistrationInfo.h */,
+				1977F8C91B2867370024ECB2 /* RegistrationInfo.m */,
 				19F648191B2EE3F70023A601 /* EmailValidator.h */,
 				19F6481A1B2EE3F70023A601 /* EmailValidator.m */,
 				19F6481E1B2EF3C40023A601 /* PasswordValidator.h */,
 				19F6481F1B2EF3C40023A601 /* PasswordValidator.m */,
 			);
 			name = Validation;
+			sourceTree = "<group>";
+		};
+		1990679B1BAAB0B7002129EE /* LabelAlignment */ = {
+			isa = PBXGroup;
+			children = (
+				1990679C1BAAB111002129EE /* DataFormLabelAlignment.h */,
+				1990679D1BAAB111002129EE /* DataFormLabelAlignment.m */,
+				1990679F1BAAB140002129EE /* EmployeeInfo.h */,
+				199067A01BAAB140002129EE /* EmployeeInfo.m */,
+			);
+			name = LabelAlignment;
 			sourceTree = "<group>";
 		};
 		19953A731A7BDB1A001B9513 /* GettingStartedExample */ = {
@@ -512,10 +596,12 @@
 		19D7E3201B0F6A7000235365 /* DataForm */ = {
 			isa = PBXGroup;
 			children = (
-				19463A3F1B343A130022054C /* Customization */,
-				19DD17531B3049120001CCC0 /* ReadOnly */,
-				1977F8C41B28655A0024ECB2 /* Validation */,
 				1977F8C01B285AF20024ECB2 /* GettingStarted */,
+				195F5C491BAB1EFC003C5FA5 /* CollapsibleGroups */,
+				1990679B1BAAB0B7002129EE /* LabelAlignment */,
+				1977F8C41B28655A0024ECB2 /* Validation */,
+				19DD17531B3049120001CCC0 /* ReadOnly */,
+				19463A3F1B343A130022054C /* Customization */,
 			);
 			name = DataForm;
 			sourceTree = "<group>";
@@ -583,6 +669,25 @@
 			name = Feedback;
 			sourceTree = "<group>";
 		};
+		87BA60E81B886FDC009B7ABB /* Gauges */ = {
+			isa = PBXGroup;
+			children = (
+				1B96644A1BA851A8000804EA /* GaugeGettingStarted.h */,
+				1B96644B1BA851A8000804EA /* GaugeGettingStarted.m */,
+				1B96644D1BA851ED000804EA /* GaugeCustomization.h */,
+				1B96644E1BA851ED000804EA /* GaugeCustomization.m */,
+				FE0C968D1BA9C691005A7BA1 /* GaugeAnimations.h */,
+				FE0C968E1BA9C691005A7BA1 /* GaugeAnimations.m */,
+				FEDBD4711BAAB5140018E9ED /* GaugeInteraction.h */,
+				FEDBD4721BAAB5140018E9ED /* GaugeInteraction.m */,
+				1BA376CF1BA9BAB000FA48A7 /* GaugeScales.h */,
+				1BA376D01BA9BAB000FA48A7 /* GaugeScales.m */,
+				1BC90EE51BAC357600A5B6DC /* GaugeRanges.h */,
+				1BC90EE61BAC357600A5B6DC /* GaugeRanges.m */,
+			);
+			name = Gauges;
+			sourceTree = "<group>";
+		};
 		8D6F5B6E1A84F195008A8EF2 /* ListView */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,6 +714,21 @@
 				FE1715141A9625C3000EB4C9 /* LoremIpsumGenerator.m */,
 			);
 			name = ListView;
+			sourceTree = "<group>";
+		};
+		F64FC1431BA07FE3007FF8D3 /* AutoComplete */ = {
+			isa = PBXGroup;
+			children = (
+				F620D5991BA8767D0063F3C0 /* AutoCompleteGettingStarted.h */,
+				F620D59A1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m */,
+				F640C3CC1BAC2E7D001FEC95 /* AutoCompleteCustomization.h */,
+				F640C3CD1BAC2E7D001FEC95 /* AutoCompleteCustomization.m */,
+				F6A266061BB1732C00742A69 /* AutoCompleteTokens.h */,
+				F6A266071BB1732C00742A69 /* AutoCompleteTokens.m */,
+				F640C3CF1BAC3B00001FEC95 /* PersonListViewCell.h */,
+				F640C3D01BAC3B00001FEC95 /* PersonListViewCell.m */,
+			);
+			name = AutoComplete;
 			sourceTree = "<group>";
 		};
 		FE0161CB192E54F50064C284 /* Chart */ = {
@@ -749,8 +869,8 @@
 		FEE269791806DBA300E52C37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */,
-				FEE8E7901887DF6E009D373B /* libTelerikUI.a */,
+				FE6B547A1BBC343F008E5EDB /* TelerikAppFeedback.framework */,
+				FE6B547B1BBC3440008E5EDB /* TelerikUI.framework */,
 				FE8701E2194218AB00AC1D05 /* EventKit.framework */,
 				FE8701E3194218AB00AC1D05 /* EventKitUI.framework */,
 				FEE2697A1806DBA300E52C37 /* Foundation.framework */,
@@ -766,7 +886,7 @@
 				FEE269C71806F9D800E52C37 /* Infrastructure */,
 				FEE269891806DBA300E52C37 /* AppDelegate.h */,
 				FEE2698A1806DBA300E52C37 /* AppDelegate.m */,
-				A63F862B194461DC00FB766C /* Images.xcassets */,
+				1B8F7A631BAACCA20022C222 /* Images.xcassets */,
 				FEE269811806DBA300E52C37 /* Supporting Files */,
 				FEEAEBEA18082B1D00D75A5C /* Resources */,
 			);
@@ -787,6 +907,8 @@
 		FEE269B21806DC7500E52C37 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				F64FC1431BA07FE3007FF8D3 /* AutoComplete */,
+				87BA60E81B886FDC009B7ABB /* Gauges */,
 				19D7E3201B0F6A7000235365 /* DataForm */,
 				1B52B8C31B0DF08A0005F916 /* Alert */,
 				8D6F5B6E1A84F195008A8EF2 /* ListView */,
@@ -824,6 +946,8 @@
 				1960558C1940A87E00F0E4C0 /* IndicatorsExample */,
 				FEE269B81806E17D00E52C37 /* ColumnAndBarChart.h */,
 				FEE269B91806E17D00E52C37 /* ColumnAndBarChart.m */,
+				19DB73E31B59472000680707 /* RangeBarColumnChart.h */,
+				19DB73E41B59472000680707 /* RangeBarColumnChart.m */,
 				FEE269C91806FE9E00E52C37 /* LineAreaSpline.h */,
 				FEE269CA1806FE9E00E52C37 /* LineAreaSpline.m */,
 				FEE269CC180704F200E52C37 /* ScatterChart.h */,
@@ -854,16 +978,24 @@
 		FEE269D31807087100E52C37 /* AxisTypes */ = {
 			isa = PBXGroup;
 			children = (
+				1B33C9B11B9EDC4700906C7E /* AxisRender.h */,
+				1B33C9B21B9EDC4700906C7E /* AxisRender.m */,
+				1BC928831B9D9A6C00937336 /* CustomAxis.h */,
+				1BC928841B9D9A6C00937336 /* CustomAxis.m */,
 				FE3CF5821807F6E900461E57 /* NumericAxis.h */,
 				FE3CF5831807F6E900461E57 /* NumericAxis.m */,
 				FE3CF5851807F6F700461E57 /* CategoricalAxis.h */,
 				FE3CF5861807F6F700461E57 /* CategoricalAxis.m */,
 				FE3CF5881807F70800461E57 /* DateTimeAxis.h */,
 				FE3CF5891807F70800461E57 /* DateTimeAxis.m */,
+				FEAF8DC11B94AD7700AD77E0 /* DateTimeCategoryAxis.h */,
+				FEAF8DC21B94AD7700AD77E0 /* DateTimeCategoryAxis.m */,
 				FE3CF58B1807F71800461E57 /* MultipleAxes.h */,
 				FE3CF58C1807F71800461E57 /* MultipleAxes.m */,
 				FE3CF58E1807F74C00461E57 /* NegativeValues.h */,
 				FE3CF58F1807F74C00461E57 /* NegativeValues.m */,
+				F6F51A701B8DB9820065E055 /* LogarithmicAxis.h */,
+				F6F51A711B8DB9820065E055 /* LogarithmicAxis.m */,
 			);
 			name = AxisTypes;
 			sourceTree = "<group>";
@@ -901,6 +1033,7 @@
 		FEEAEBEA18082B1D00D75A5C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F620D59F1BA97CC00063F3C0 /* languages.json */,
 				FE4F98211B0C9948001B51D8 /* ListItems.json */,
 				FE5386471A8E50DC00DE6941 /* ListViewSampleData.json */,
 				FE1715111A962278000EB4C9 /* PhotosWithNames.json */,
@@ -908,6 +1041,10 @@
 				19861126191A2E240026EFF7 /* AppleStockPrices.json */,
 				7ABD7166180C1841009C726F /* DowJonesData.csv */,
 				7AC1894F19791AC400F13E8B /* dto.json */,
+				F615197B1B94B02B008614C7 /* electricity.json */,
+				F67C57E91BB157DA004B7FED /* countries.json */,
+				F6D7A6D61BB46656006549F4 /* emails.json */,
+				F6D7A6D81BB54B48006549F4 /* namesPhotos.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -938,8 +1075,13 @@
 		FEE2696F1806DBA300E52C37 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Telerik;
+				TargetAttributes = {
+					FEE269761806DBA300E52C37 = {
+						DevelopmentTeam = CHSQ3M3P37;
+					};
+				};
 			};
 			buildConfigurationList = FEE269721806DBA300E52C37 /* Build configuration list for PBXProject "TelerikUIExamples" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -965,14 +1107,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE4F98221B0C9948001B51D8 /* ListItems.json in Resources */,
+				F615197C1B94B02B008614C7 /* electricity.json in Resources */,
 				192004F6193C7285003B1BB8 /* applestock.plist in Resources */,
 				7A0FD507194B1856004B5A8D /* FeedbackExampleController.xib in Resources */,
+				F6D7A6D71BB46656006549F4 /* emails.json in Resources */,
 				FE5386481A8E50DC00DE6941 /* ListViewSampleData.json in Resources */,
-				A63F862C194461DC00FB766C /* Images.xcassets in Resources */,
 				FE1715121A962278000EB4C9 /* PhotosWithNames.json in Resources */,
 				19861127191A2E240026EFF7 /* AppleStockPrices.json in Resources */,
 				FEE269851806DBA300E52C37 /* InfoPlist.strings in Resources */,
+				F620D5A01BA97CC00063F3C0 /* languages.json in Resources */,
+				F67C57EA1BB157DA004B7FED /* countries.json in Resources */,
+				1B8F7A641BAACCA20022C222 /* Images.xcassets in Resources */,
 				7ABD7167180C1841009C726F /* DowJonesData.csv in Resources */,
+				F6D7A6D91BB54B48006549F4 /* namesPhotos.json in Resources */,
 				7AC1895019791AC400F13E8B /* dto.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -984,11 +1131,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F620D59B1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m in Sources */,
 				1960558F1940B12D00F0E4C0 /* IndicatorsTableView.m in Sources */,
 				19C152CC193F668800770199 /* BubbleChart.m in Sources */,
 				1B52B9061B0E1E010005F916 /* AlertViewSettings.m in Sources */,
 				FE017A2B1945F571005C46D5 /* LocalizedCalendar.m in Sources */,
 				FE8A36CF18A3E4AE0081EECA /* BalloonAnnotation.m in Sources */,
+				195F5CB01BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m in Sources */,
 				1B52B9091B0E1E790005F916 /* AlertViewCustomize.m in Sources */,
 				1977F8C71B28666B0024ECB2 /* DataFormValidation.m in Sources */,
 				7A56815419374195005FEC6D /* StockDataPoint.m in Sources */,
@@ -996,7 +1145,7 @@
 				FE2D10761A80CB2D00A787EB /* InlineEvents.m in Sources */,
 				FE3CF5901807F74C00461E57 /* NegativeValues.m in Sources */,
 				FE0161CF192E57510064C284 /* CalendarWithEvents.m in Sources */,
-				1977F8CA1B2867370024ECB2 /* RegisterationInfo.m in Sources */,
+				1977F8CA1B2867370024ECB2 /* RegistrationInfo.m in Sources */,
 				8D69A2E11A91F544008315D1 /* ListViewSwipe.m in Sources */,
 				FE5F963F1A93933100E70AF2 /* ListViewGettingStarted.m in Sources */,
 				19A2A02B1A811B6F00378C68 /* SideDrawerCustomTransition.m in Sources */,
@@ -1007,6 +1156,7 @@
 				FE17150F1A961B7F000EB4C9 /* CustomCardListViewCell.m in Sources */,
 				FE8A36D518A3E65B0081EECA /* LayerAnnotation.m in Sources */,
 				FEEAEBDC18080AAC00D75A5C /* UIKitDynamicsAnimation.m in Sources */,
+				1BC928851B9D9A6C00937336 /* CustomAxis.m in Sources */,
 				19DCA00F1ABB1457009C5D62 /* MyTransition.m in Sources */,
 				19F648201B2EF3C40023A601 /* PasswordValidator.m in Sources */,
 				7A0FD505194B1732004B5A8D /* FeedbackExampleController.m in Sources */,
@@ -1015,13 +1165,14 @@
 				FE3CF5871807F6F700461E57 /* CategoricalAxis.m in Sources */,
 				FEE269DA180708CD00E52C37 /* StackedAreaChart.m in Sources */,
 				1B52B8C61B0DF1000005F916 /* AlertViewGettingStarted.m in Sources */,
-				19F9188F1B298163008C10F2 /* DataFormController.m in Sources */,
+				19F9188F1B298163008C10F2 /* DataFormGettingStarted.m in Sources */,
 				19BAD0F219D43A0500803C27 /* LiveData.m in Sources */,
 				8DDC67051A8CFEC600FDE377 /* ListViewLayout.m in Sources */,
 				19463A421B343A290022054C /* DataFormCustomization.m in Sources */,
 				FEB66DB51B132ECA00DC71AC /* AnimationListCell.m in Sources */,
 				FEE269D7180708B900E52C37 /* StackedColumnChart.m in Sources */,
 				FE8701D91942141400AC1D05 /* CalendarEventKitDataBinding.m in Sources */,
+				1BC90EE71BAC357600A5B6DC /* GaugeRanges.m in Sources */,
 				FEB4260119336F1D00C2A602 /* CalendarSelection.m in Sources */,
 				FEEAEBD918080A9A00D75A5C /* CustomAnimationPieChart.m in Sources */,
 				FE3CF5841807F6E900461E57 /* NumericAxis.m in Sources */,
@@ -1031,15 +1182,20 @@
 				FE4F98251B0C9CC9001B51D8 /* CustomListCell.m in Sources */,
 				19DD17591B304D490001CCC0 /* CardInfo.m in Sources */,
 				FEA0D2DF1A821C340014CD96 /* DataSourceUIBindings.m in Sources */,
+				FEAF8DC31B94AD7700AD77E0 /* DateTimeCategoryAxis.m in Sources */,
+				1B96644F1BA851ED000804EA /* GaugeCustomization.m in Sources */,
+				199067A11BAAB140002129EE /* EmployeeInfo.m in Sources */,
 				FEEAEBD618080A8900D75A5C /* CustomAnimationLineChart.m in Sources */,
 				FEE269941806DBA300E52C37 /* ViewController.m in Sources */,
 				FEE269C61806F3BC00E52C37 /* SettingsViewController.m in Sources */,
 				FEC0CF2D1A975BA30088A158 /* SimpleListViewCell.m in Sources */,
 				1956644719C9C678002F77EB /* SelectedPointLabel.m in Sources */,
+				F640C3CE1BAC2E7D001FEC95 /* AutoCompleteCustomization.m in Sources */,
 				FEB42604193374A500C2A602 /* iOS7StyleCalendar.m in Sources */,
 				1977F8C31B285B110024ECB2 /* PersonalInfo.m in Sources */,
 				19E9055D19BF391800A325D8 /* MyPointLabel.m in Sources */,
 				19B26F8A1A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m in Sources */,
+				F6F51A721B8DB9820065E055 /* LogarithmicAxis.m in Sources */,
 				FEEAEBD318080A7600D75A5C /* DefaultAnimation.m in Sources */,
 				FEE269BD1806E20300E52C37 /* ExampleViewController.m in Sources */,
 				1B52B90C1B0E1E880005F916 /* AlertViewAnimations.m in Sources */,
@@ -1048,10 +1204,13 @@
 				FEE2698B1806DBA300E52C37 /* AppDelegate.m in Sources */,
 				19E9055619BF11FB00A325D8 /* PointLabels.m in Sources */,
 				FE8FE8FE1B29EB8A00485201 /* AlertCustomContentView.m in Sources */,
+				1B96644C1BA851A8000804EA /* GaugeGettingStarted.m in Sources */,
 				C1639F3D1A909F2800E86743 /* ListViewReorder.m in Sources */,
 				FE3CF58D1807F71800461E57 /* MultipleAxes.m in Sources */,
+				1B33C9B31B9EDC4700906C7E /* AxisRender.m in Sources */,
 				194C56F41934C505006D7C4F /* IndicatorsViewController.m in Sources */,
 				1B3258731B272AC800EAC1DF /* AlertCustomView.m in Sources */,
+				F6A266081BB1732C00742A69 /* AutoCompleteTokens.m in Sources */,
 				19E9055A19BF38F700A325D8 /* CustomPointLabels.m in Sources */,
 				FEA0D2E51A8280CF0014CD96 /* DSCollectionViewCell.m in Sources */,
 				FEBC2E2619372D92007C12B1 /* CalendarViewModes.m in Sources */,
@@ -1062,19 +1221,24 @@
 				FEA0D2E21A8245920014CD96 /* DSItem.m in Sources */,
 				FEA0D2D91A820C7D0014CD96 /* DataSourceGettingStarted.m in Sources */,
 				FE8A36E518A401590081EECA /* MyAnnotation.m in Sources */,
+				1BA376D11BA9BAB000FA48A7 /* GaugeScales.m in Sources */,
 				8D6F5B741A8509A8008A8EF2 /* ListViewSelection.m in Sources */,
 				19463A481B343C450022054C /* CallEditor.m in Sources */,
+				FEDBD4731BAAB5140018E9ED /* GaugeInteraction.m in Sources */,
 				FE8701831941E2A700AC1D05 /* CalendarCustomization.m in Sources */,
 				FE8A36DE18A3E68A0081EECA /* BandAndLineAnnotations.m in Sources */,
 				FE8A36DB18A3E6780081EECA /* CrossLineAnnotation.m in Sources */,
+				FE0C968F1BA9C691005A7BA1 /* GaugeAnimations.m in Sources */,
 				1986112A191A2E550026EFF7 /* FinancialChart.m in Sources */,
 				FEEAEBE01808160000D75A5C /* BindWithDataPoint.m in Sources */,
+				F640C3D11BAC3B00001FEC95 /* PersonListViewCell.m in Sources */,
 				19A2A0201A80F63B00378C68 /* SideDrawerCustomContentController.m in Sources */,
 				FEE269C01806E28500E52C37 /* OptionInfo.m in Sources */,
 				19F6481B1B2EE3F70023A601 /* EmailValidator.m in Sources */,
 				FE8A36E118A4009A0081EECA /* CustomAnnotation.m in Sources */,
 				FE17151B1A963D81000EB4C9 /* ImageWithTextListViewCell.m in Sources */,
 				193BB85E19C1A8CD00143087 /* MyPointLabelRender.m in Sources */,
+				1990679E1BAAB111002129EE /* DataFormLabelAlignment.m in Sources */,
 				19A2A0321A8124E400378C68 /* SideDrawerPositions.m in Sources */,
 				FEE269D11807066700E52C37 /* PieDonut.m in Sources */,
 				FEA0D2E81A8286970014CD96 /* DataSourceWithWebService.m in Sources */,
@@ -1086,6 +1250,7 @@
 				1B3258761B272E5100EAC1DF /* AlertSettings.m in Sources */,
 				8D6F5B7A1A8615E2008A8EF2 /* ListViewAnimations.m in Sources */,
 				19DD17561B3049360001CCC0 /* DataFormReadOnly.m in Sources */,
+				19DB73E51B59472000680707 /* RangeBarColumnChart.m in Sources */,
 				FEE269871806DBA300E52C37 /* main.m in Sources */,
 				8DDC67081A8E1D4C00FDE377 /* ListViewPullToRefresh.m in Sources */,
 				FE8A36D218A3E4BA0081EECA /* Trackball.m in Sources */,
@@ -1122,10 +1287,12 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = NO;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1142,8 +1309,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "";
 			};
 			name = Debug;
 		};
@@ -1161,6 +1330,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = NO;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1174,9 +1344,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = "";
 			};
 			name = Release;
 		};
@@ -1187,9 +1359,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/**",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TelerikUIExamples/TelerikUIExamples-Prefix.pch";
@@ -1197,6 +1371,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-Wno-nullability-completeness";
+				PRODUCT_BUNDLE_IDENTIFIER = "Telerik.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -1210,9 +1386,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/**",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TelerikUIExamples/TelerikUIExamples-Prefix.pch";
@@ -1220,6 +1398,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-Wno-nullability-completeness";
+				PRODUCT_BUNDLE_IDENTIFIER = "Telerik.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

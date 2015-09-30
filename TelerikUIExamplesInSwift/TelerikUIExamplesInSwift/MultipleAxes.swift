@@ -15,7 +15,7 @@ class MultipleAxes:ExampleViewController {
         super.viewDidLoad()
     
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
     
         let gdpInPoundsYAxis = TKChartNumericAxis(minimum: 1050, andMaximum: 1400)
@@ -129,8 +129,8 @@ class MultipleAxes:ExampleViewController {
     }
     
     class func dateWithYear(year: Int, month: Int, day: Int) -> NSDate {
-        var calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
-        var components = NSDateComponents()
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let components = NSDateComponents()
         components.year = year
         components.month = month
         components.day = day
@@ -138,30 +138,30 @@ class MultipleAxes:ExampleViewController {
     }
     
     class func setStyle(series:TKChartSeries) {
-        let item = series.style.palette.paletteItemAtIndex(series.index)
+        let item = series.style.palette!.paletteItemAtIndex(series.index)!
         
         if series.isKindOfClass(TKChartColumnSeries) && item.drawables.count > 1 {
             let drawable = item.drawables[2] as! TKDrawing
             
             if drawable.isKindOfClass(TKStroke){
-                var stroke = drawable as! TKStroke
-                series.yAxis.style.lineStroke = TKStroke(fill: stroke.fill)
+                let stroke = drawable as! TKStroke
+                series.yAxis!.style.lineStroke = TKStroke(fill: stroke.fill!)
             }
             else {
-                series.yAxis.style.lineStroke = TKStroke(fill: item.stroke.fill)
+                series.yAxis!.style.lineStroke = TKStroke(fill: item.stroke!.fill!)
             }
         }
         else {
-            series.yAxis.style.lineStroke = TKStroke(fill: item.stroke.fill)
+            series.yAxis!.style.lineStroke = TKStroke(fill: item.stroke!.fill!)
         }
         
-        series.yAxis.style.majorTickStyle.ticksFill = series.yAxis.style.lineStroke.fill
-        series.yAxis.style.majorTickStyle.maxTickClippingMode = TKChartAxisClippingMode.Visible
-        series.yAxis.style.majorTickStyle.minTickClippingMode = TKChartAxisClippingMode.Visible
+        series.yAxis!.style.majorTickStyle.ticksFill = series.yAxis!.style.lineStroke.fill
+        series.yAxis!.style.majorTickStyle.maxTickClippingMode = TKChartAxisClippingMode.Visible
+        series.yAxis!.style.majorTickStyle.minTickClippingMode = TKChartAxisClippingMode.Visible
         
-        if series.yAxis.style.majorTickStyle.ticksFill.isKindOfClass(TKSolidFill) {
-            let solidFill = series.yAxis.style.majorTickStyle.ticksFill as! TKSolidFill
-            series.yAxis.style.labelStyle.textColor = solidFill.color
+        if series.yAxis!.style.majorTickStyle.ticksFill!.isKindOfClass(TKSolidFill) {
+            let solidFill = series.yAxis!.style.majorTickStyle.ticksFill as! TKSolidFill
+            series.yAxis!.style.labelStyle.textColor = solidFill.color
         }
     }
     

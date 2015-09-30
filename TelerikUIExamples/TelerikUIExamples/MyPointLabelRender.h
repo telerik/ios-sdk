@@ -9,7 +9,7 @@
 
 @interface MyPointLabelRender : TKChartPointLabelRender
 
-- (id)initWithRender:(TKChartSeriesRender *)render selectedDataIndex:(NSUInteger)dataIndex selectedSeriesIndex:(NSUInteger)seriesIndex;
+- (instancetype __nonnull)initWithRender:(TKChartSeriesRender *)render selectedDataIndex:(NSUInteger)dataIndex selectedSeriesIndex:(NSUInteger)seriesIndex;
 
 @property (nonatomic) NSUInteger selectedSeries;
 

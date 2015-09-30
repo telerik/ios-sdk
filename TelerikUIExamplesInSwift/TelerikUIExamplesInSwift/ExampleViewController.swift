@@ -5,7 +5,7 @@
 //  Copyright (c) 2014 Telerik. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ExampleViewController: UIViewController {
     
@@ -14,8 +14,8 @@ class ExampleViewController: UIViewController {
     var selectedOption : NSInteger = 0
     var popover: UIPopoverController?
     var settingsButton : UIBarButtonItem?
-    var exampleBounds = CGRect.zeroRect
-    var exampleBoundsWithInset = CGRect.zeroRect
+    var exampleBounds = CGRect.zero
+    var exampleBoundsWithInset = CGRect.zero
     var sections = NSMutableArray()
     var headerHeight:CGFloat = 0
     var offset:CGFloat = 0
@@ -96,7 +96,7 @@ class ExampleViewController: UIViewController {
         var desiredSize: CGSize = CGSizeZero
         if sections.count == 0 && options.count == 1 {
             let info  = options[0] as! OptionInfo
-            let button = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+            let button = UIButton(type:UIButtonType.System)
             button.addTarget(self, action: "optionTouched", forControlEvents: UIControlEvents.TouchDown)
             button.setTitle(info.optionText, forState: UIControlState.Normal)
             desiredSize = button.sizeThatFits(self.view.bounds.size)

@@ -11,6 +11,6 @@
 
 @interface SideDrawerHeaderView : UIView
 
-- (id)initWithButton:(BOOL)addButton target:(id)target selector:(SEL)selector;
+- (instancetype __nonnull)initWithButton:(BOOL)addButton target:(id)target selector:(SEL)selector;
 
 @end

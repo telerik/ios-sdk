@@ -9,7 +9,7 @@ import Foundation
 
 class MyAnnotation:TKChartPointAnnotation {
     
-    var center: CGPoint = CGPoint.zeroPoint
+    var center: CGPoint = CGPoint.zero
     var shape: TKShape?
     var fill: TKFill?
     var stroke: TKStroke?
@@ -17,7 +17,7 @@ class MyAnnotation:TKChartPointAnnotation {
     override init() {
         super.init()
     }
-    
+
     init(Shape shape: TKShape, X xValue: AnyObject, Y yValue: AnyObject, forSeries series: TKChartSeries) {
         super.init(x: xValue, y: yValue, forSeries: series)
         self.shape = shape
@@ -31,7 +31,7 @@ class MyAnnotation:TKChartPointAnnotation {
         }
     }
     
-    override func drawInContext(context: CGContext!) {
+    override func drawInContext(context: CGContext) {
         if let s = shape {
             var drawables = [TKDrawing]()
             drawables.append(fill!)

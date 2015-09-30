@@ -23,13 +23,14 @@ class ImageWithTextListViewCell: TKListViewCell {
         
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews(){
-    super.layoutSubviews()
-    self.imageView.frame = CGRectMake(15 , 0, 120, 150);
-    self.textLabel.frame = CGRectMake(0, self.imageView.frame.size.height, self.frame.size.width, 60);
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.imageView.frame = CGRectMake(15 , 0, 120, 150);
+        self.textLabel.frame = CGRectMake(0, self.imageView.frame.size.height, self.frame.size.width, 60);
     }
 }

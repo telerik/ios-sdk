@@ -18,7 +18,7 @@ class ListViewGettingStarted: ExampleViewController, TKListViewDataSource {
         self.photos.loadDataFromJSONResource("PhotosWithNames", ofType: "json", rootItemKeyPath: "photos")
         
         let listView = TKListView(frame: self.view.bounds)
-        listView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        listView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         listView.dataSource = self
         self.view.addSubview(listView)
         listView.registerClass(ImageWithTextListViewCell.classForCoder(), forCellWithReuseIdentifier: "cell")
@@ -38,11 +38,11 @@ class ListViewGettingStarted: ExampleViewController, TKListViewDataSource {
         listView.backgroundView = view
     }
     
-    func listView(listView: TKListView!, numberOfItemsInSection section: Int) -> Int {
+    func listView(listView: TKListView, numberOfItemsInSection section: Int) -> Int {
         return names.items.count
     }
     
-    func listView(listView: TKListView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> TKListViewCell! {
+    func listView(listView: TKListView, cellForItemAtIndexPath indexPath: NSIndexPath) -> TKListViewCell? {
         let cell = listView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! TKListViewCell
         cell.imageView.image =  UIImage(named: photos.items[indexPath.row] as! String)
         cell.textLabel.text = names.items[indexPath.row] as? String

@@ -17,7 +17,7 @@ class CustomPointLabels: ExampleViewController, TKChartDelegate {
         super.viewDidLoad()
 
         chart.frame = self.exampleBoundsWithInset;
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
+        chart.autoresizingMask = UIViewAutoresizing(rawValue:UIViewAutoresizing.FlexibleHeight.rawValue | UIViewAutoresizing.FlexibleWidth.rawValue)
         chart.delegate = self
         self.view.addSubview(chart)
         
@@ -66,15 +66,15 @@ class CustomPointLabels: ExampleViewController, TKChartDelegate {
         chart.addSeries(lineSeries1)
     }
     
-    func chart(chart: TKChart!, labelForDataPoint dataPoint: TKChartData!, inSeries series: TKChartSeries!, atIndex dataIndex: UInt) -> TKChartPointLabel! {
+    func chart(chart: TKChart, labelForDataPoint dataPoint: TKChartData, property propertyName: String?, inSeries series: TKChartSeries, atIndex dataIndex: UInt) -> TKChartPointLabel? {
         if series.index == self.selectedSeriesIndex && dataIndex == self.selectedDataPointIndex {
-            return MyPointLabel(point: dataPoint, style: series.style.pointLabelStyle, text: "\(dataPoint.dataYValue())")
+            return MyPointLabel(point: dataPoint, series: series, text: "\(dataPoint.dataYValue)")
         }
         
-        return TKChartPointLabel(point: dataPoint, style: series.style.pointLabelStyle, text: "\(dataPoint.dataYValue())")
+        return TKChartPointLabel(point: dataPoint, series: series, text: "\(dataPoint.dataYValue)")
     }
     
-    func chart(chart: TKChart!, paletteItemForPoint index: UInt, inSeries series: TKChartSeries!) -> TKChartPaletteItem! {
+    func chart(chart: TKChart, paletteItemForPoint index: UInt, inSeries series: TKChartSeries) -> TKChartPaletteItem? {
         if series.index == self.selectedSeriesIndex && index == self.selectedDataPointIndex {
             return TKChartPaletteItem(stroke: TKStroke(color: UIColor.blackColor(), width: 2.0), andFill: TKSolidFill(color: UIColor.whiteColor()))
         }
@@ -86,7 +86,7 @@ class CustomPointLabels: ExampleViewController, TKChartDelegate {
         return TKChartPaletteItem(fill: TKSolidFill(color: UIColor(red: 241/255.0, green: 140/255.0, blue: 133/255.0, alpha: 1.0)))
     }
     
-    func chart(chart: TKChart!, didSelectPoint point: TKChartData!, inSeries series: TKChartSeries!, atIndex index: Int) {
+    func chart(chart: TKChart, didSelectPoint point: TKChartData, inSeries series: TKChartSeries, atIndex index: Int) {
         self.selectedSeriesIndex = series.index
         self.selectedDataPointIndex = (UInt)(index)
     }

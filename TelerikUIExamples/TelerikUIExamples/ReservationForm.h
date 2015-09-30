@@ -25,6 +25,4 @@
 
 @property (nonatomic) NSInteger origin;
 
-@property (nonatomic) NSString *cancelReservation;
-
 @end

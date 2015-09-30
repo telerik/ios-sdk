@@ -17,7 +17,7 @@
 
 @implementation CalendarSelection
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -119,7 +119,7 @@
 {
     if ([cell isKindOfClass:[TKCalendarMonthTitleCell class]]) {
         TKCalendarMonthTitleCell *monthTitleCell = (TKCalendarMonthTitleCell*)cell;
-        monthTitleCell.layoutMode = TKCalendarMonthTitleCellLayoutModeMonthAndYearWithButotns;
+        monthTitleCell.layoutMode = TKCalendarMonthTitleCellLayoutModeMonthAndYearWithButtons;
     }
 }
 

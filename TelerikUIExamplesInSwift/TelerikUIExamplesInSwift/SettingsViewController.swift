@@ -5,7 +5,7 @@
 //  Copyright (c) 2014 Telerik. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -59,7 +59,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(kCellID) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCellID)!
 
         if sections.count > 0 {
             let sec = sections[indexPath.section] as! OptionSection
@@ -77,7 +77,6 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             }
         }
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-
         
         return cell
     }

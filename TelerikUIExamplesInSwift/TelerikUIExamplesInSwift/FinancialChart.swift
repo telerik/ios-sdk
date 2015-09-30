@@ -5,14 +5,14 @@
 //  Copyright (c) 2014 Telerik. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class FinancialChart: ExampleViewController {
 
     let chart = TKChart()
-    var dataPoints = [TKChartDataPoint]()
+    var dataPoints = [TKChartData]()
 
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Candlestick") { self.reloadChart() }
@@ -27,15 +27,15 @@ class FinancialChart: ExampleViewController {
         super.viewDidLoad()
     
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         
-        chart.gridStyle().verticalLinesHidden = false
-        chart.gridStyle().horizontalLinesHidden = false
+        chart.gridStyle.verticalLinesHidden = false
+        chart.gridStyle.horizontalLinesHidden = false
         
         let data: NSArray = StockDataPoint.stockPoints()
         for i in 0..<42 {
-            dataPoints.append(data[i] as! TKChartDataPoint)
+            dataPoints.append(data[i] as! TKChartData)
         }
     
         self.reloadChart()
@@ -55,9 +55,14 @@ class FinancialChart: ExampleViewController {
         }
     
         series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        
         let yAxis = TKChartNumericAxis(minimum: 300, andMaximum: 380)
         yAxis.majorTickInterval = 20
-        chart.yAxis = yAxis
+        yAxis.style.labelStyle.textAlignment = TKChartAxisLabelAlignment(rawValue:TKChartAxisLabelAlignment.Bottom.rawValue | TKChartAxisLabelAlignment.Right.rawValue)
+        yAxis.allowZoom = true
+        yAxis.allowPan = true
+        series.yAxis = yAxis
+
         chart.addSeries(series)
     
         let xAxis = chart.xAxis as! TKChartDateTimeAxis
@@ -68,11 +73,11 @@ class FinancialChart: ExampleViewController {
         xAxis.style.majorTickStyle.ticksFill = TKSolidFill(color: UIColor(red: 203/255.0, green: 203/255.0, blue: 203/255.0, alpha: 1.0))
         xAxis.style.majorTickStyle.maxTickClippingMode = TKChartAxisClippingMode.Visible
     
-        chart.yAxis.style!.labelStyle!.textAlignment = TKChartAxisLabelAlignment.Bottom | TKChartAxisLabelAlignment.Right
-        chart.xAxis.allowZoom = true
-        chart.xAxis.allowPan = true
-        chart.yAxis.allowZoom = true
-        chart.yAxis.allowPan = true
+        chart.yAxis!.style.labelStyle.textAlignment = TKChartAxisLabelAlignment(rawValue: TKChartAxisLabelAlignment.Bottom.rawValue | TKChartAxisLabelAlignment.Right.rawValue)
+        chart.xAxis!.allowZoom = true
+        chart.xAxis!.allowPan = true
+        chart.yAxis!.allowZoom = true
+        chart.yAxis!.allowPan = true
     }
 
     override func didReceiveMemoryWarning() {

@@ -10,9 +10,9 @@
 
 @implementation ExampleInfo
 
-- (id)initWithExamples:(NSArray*)examples withTitle:(NSString*)title
+- (instancetype)initWithExamples:(NSArray*)examples withTitle:(NSString*)title
 {
-    self = [super init];
+    self = [self init];
     if (self) {
         _examples = examples;
         _title = title;
@@ -20,9 +20,9 @@
     return self;
 }
 
-- (id)initWithClass:(Class)exampleClass withTitle:(NSString*)title
+- (instancetype)initWithClass:(Class)exampleClass withTitle:(NSString*)title
 {
-    self = [super init];
+    self = [self init];
     if (self) {
         _exampleClass = exampleClass;
         _title = title;

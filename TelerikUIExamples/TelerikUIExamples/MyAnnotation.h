@@ -9,7 +9,7 @@
 
 @interface MyAnnotation : TKChartPointAnnotation
 
-- (id)initWithShape:(TKShape*)shape X:(id)xValue Y:(id)yValue forSeries:(TKChartSeries *)series;
+- (instancetype __nonnull)initWithShape:(TKShape*)shape X:(id)xValue Y:(id)yValue forSeries:(TKChartSeries *)series;
 
 @property (nonatomic,strong) TKFill *fill;
 @property (nonatomic,strong) TKStroke *stroke;

@@ -21,7 +21,7 @@
     NSMutableArray *_ohlcData;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -118,6 +118,8 @@
     
     [_chart addSeries:lineSeries];
     [_chart reloadData];
+    _chart.xAxis.allowZoom = YES;
+    _chart.yAxis.allowZoom = YES;
 }
 
 - (void)pieSeries
@@ -148,7 +150,7 @@
     xAxis.plotMode = TKChartAxisPlotModeBetweenTicks;
 }
 
-- (NSString *)chart:(TKChart *)chart textForLabelAtPoint:(id<TKChartData>)dataPoint inSeries:(TKChartSeries *)series atIndex:(NSUInteger)dataIndex
+- (NSString *)chart:(TKChart *)chart textForLabelAtPoint:(id<TKChartData>)dataPoint property:(NSString *)propertyName inSeries:(TKChartSeries *)series atIndex:(NSUInteger)dataIndex
 {
     if ([series isKindOfClass:TKChartPieSeries.class]) {
         return dataPoint.dataName;

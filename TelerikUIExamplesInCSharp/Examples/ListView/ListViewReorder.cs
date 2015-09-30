@@ -14,8 +14,9 @@ namespace Examples
 
 		public ListViewReorder()
 		{
-			this.AddOption ("Enabled", EnableReorderSelected, "Items reorder");
-			this.AddOption ("Disabled", DisableReorderSelected, "Items reorder");
+			this.AddOption ("Reorder with handle", ReorderWithHandleSelected);
+			this.AddOption ("Reorder with long press", ReorderWithLongPressSelected);
+			this.AddOption ("Disable reorder mode", DisableReorderSelected);
 		}
 
 		public override void ViewDidLoad ()
@@ -28,19 +29,49 @@ namespace Examples
 			this.listView.Frame = this.View.Bounds;
 			this.listView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.listView.WeakDataSource = this.dataSource;
-			this.listView.WeakDelegate = this.dataSource;
+			this.listView.WeakDelegate = new ListViewDelegate(this);
 			this.listView.AllowsCellReorder = true;
 			this.View.AddSubview (listView);
 		}
 
-		void EnableReorderSelected(object sender, EventArgs e)
+		void ReorderWithHandleSelected(object sender, EventArgs e)
 		{
 			this.listView.AllowsCellReorder = true;
+			this.listView.ReorderMode = TKListViewReorderMode.WithHandle;
+		}
+
+		void ReorderWithLongPressSelected(object sender, EventArgs e)
+		{
+			this.listView.AllowsCellReorder = true;
+			this.listView.ReorderMode = TKListViewReorderMode.WithLongPress;
 		}
 
 		void DisableReorderSelected(object sender, EventArgs e)
 		{
 			this.listView.AllowsCellReorder = false;
+		}
+
+		class ListViewDelegate: TKListViewDelegate
+		{
+			ListViewReorder owner;
+
+			public ListViewDelegate(ListViewReorder owner) 
+			{
+				this.owner = owner;
+			}
+
+			public override void WillReorderItemAtIndexPath (TKListView listView, NSIndexPath indexPath)
+			{
+				TKListViewCell cell = listView.CellForItem(indexPath);
+				cell.BackgroundView.BackgroundColor = UIColor.Yellow;
+			}
+
+			public override void DidReorderItemFromIndexPath (TKListView listView, NSIndexPath originalIndexPath, NSIndexPath targetIndexPath)
+			{
+				TKListViewCell cell = listView.CellForItem(originalIndexPath);
+				cell.BackgroundView.BackgroundColor = UIColor.White;
+				this.owner.dataSource.DidReorderItemFromTo (listView, originalIndexPath, targetIndexPath);
+			}
 		}
 	}
 }

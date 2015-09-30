@@ -17,7 +17,7 @@ class AlertGettingStarted: ExampleViewController {
 
         textLabel.frame = CGRectMake(0, 100, self.view.frame.size.width, 44);
         textLabel.textAlignment = NSTextAlignment.Center
-        textLabel.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleBottomMargin
+        textLabel.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleBottomMargin.rawValue)
         textLabel.text = "Please, answer the question?"
         self.view.addSubview(textLabel);
         
@@ -42,6 +42,7 @@ class AlertGettingStarted: ExampleViewController {
             self.textLabel.text = "It was the chiken"
             return true
         }
+
         alert.show(true)
     }
     

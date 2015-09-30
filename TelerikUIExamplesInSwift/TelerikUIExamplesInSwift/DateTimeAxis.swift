@@ -15,10 +15,10 @@ class DateTimeAxis:ExampleViewController {
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         
-        let calendar = NSCalendar(calendarIdentifier:NSGregorianCalendar)!
+        let calendar = NSCalendar(calendarIdentifier:NSCalendarIdentifierGregorian)!
         let dateTimeComponents = NSDateComponents()
         dateTimeComponents.year = 2013
         dateTimeComponents.day = 1
@@ -33,10 +33,10 @@ class DateTimeAxis:ExampleViewController {
         series.selectionMode = TKChartSeriesSelectionMode.Series
         
         dateTimeComponents.month = 1
-        let minDate = calendar.dateFromComponents(dateTimeComponents)
+        let minDate = calendar.dateFromComponents(dateTimeComponents)!
         dateTimeComponents.month = 6
-        let maxDate = calendar.dateFromComponents(dateTimeComponents)
-        
+        let maxDate = calendar.dateFromComponents(dateTimeComponents)!
+    
         let xAxis = TKChartDateTimeAxis(minimumDate: minDate, andMaximumDate: maxDate)
         xAxis.majorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Months
         xAxis.majorTickInterval = 1

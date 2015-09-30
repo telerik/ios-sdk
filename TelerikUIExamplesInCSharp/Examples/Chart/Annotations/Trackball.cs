@@ -47,9 +47,9 @@ namespace Examples
 			series.XAxis = xAxis;
 			chart.AddSeries (series);
 
-			series = new TKChartAreaSeries (list2.ToArray());
-			series.XAxis = xAxis;
-			chart.AddSeries (series);
+			TKChartAreaSeries series1 = new TKChartAreaSeries (list2.ToArray());
+			series1.XAxis = xAxis;
+			chart.AddSeries (series1);
 
 			chart.AllowTrackball = true;
 			chart.Trackball.SnapMode = TKChartTrackballSnapMode.AllClosestPoints;

@@ -27,47 +27,80 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         if (examples.count == 0) {
             
+            examples.append(ExampleInfo(title: "Alert", exampleList: [
+                ExampleInfo(title: "Getting started") { AlertGettingStarted() },
+                ExampleInfo(title: "Animations") { AlertAnimations() },
+                ExampleInfo(title: "Notifications") { AlertNotifications() },
+                ExampleInfo(title: "Custom View") { AlertCustomView() },
+                ExampleInfo(title: "Customize") { AlertCustomize() },
+                ExampleInfo(title: "Settings") { AlertSettings() },
+                ]))
+            
+            examples.append(ExampleInfo(title: "AppFeedback") { FeedbackExampleController(nibName: "FeedbackExampleController", bundle: nil) })
+            
+            examples.append(ExampleInfo(title: "AutoCompleteTextView (Beta)", exampleList:[
+                ExampleInfo(title: "Getting Started") { AutoCompleteGettingStartedViewController() },
+                ExampleInfo(title: "Customization") { AutoCompleteCustomization() },
+                ExampleInfo(title: "Tokens") { AutoCompleteTokens() },
+                ]))
+
+            examples.append(ExampleInfo(title: "Calendar", exampleList:[
+                ExampleInfo(title: "Calendar with events") { CalendarWithEvents() },
+                ExampleInfo(title: "View modes") { CalendarViewModes() },
+                ExampleInfo(title: "Transition effects") { CalendarTransitonEffects() },
+                ExampleInfo(title: "Selection") { CalendarSelection() },
+                ExampleInfo(title: "iOS 7 style calendar") { iOS7StyleCalendar() },
+                ExampleInfo(title: "Customization") { CalendarCustomization() },
+                ExampleInfo(title: "EventKit data binding") { CalendarEventKitDataBinding() },
+                ExampleInfo(title: "Localized calendar") { LocalizedCalendar() },
+                ExampleInfo(title: "Inline events") { InlineEvents() },
+                ]))
+            
             examples.append(ExampleInfo(title: "Chart", exampleList:[
                     ExampleInfo(title: "Chart Types", exampleList:[
-                            ExampleInfo(title: "Column / Bar chart") { ColumnAndBarChart() },
-                            ExampleInfo(title: "Line / Area / Spline chart") { LineAreaSpline() },
-                            ExampleInfo(title: "Scatter chart") { ScatterChart() },
-                            ExampleInfo(title: "Bubble chart") { BubbleChart() },
-                            ExampleInfo(title: "Pie chart") { PieDonut() },
-                            ExampleInfo(title: "Stacked Column chart") { StackedColumnChart() },
-                            ExampleInfo(title: "Stacked Area chart") { StackedAreaChart() },
-                            ExampleInfo(title: "Financial chart") { FinancialChart() },
-                            ExampleInfo(title: "Indicators") { Indicators() },
+                        ExampleInfo(title: "Column / Bar chart") { ColumnAndBarChart() },
+                        ExampleInfo(title: "Range Column / Bar chart") { RangeBarColumnChart() },
+                        ExampleInfo(title: "Line / Area / Spline chart") { LineAreaSpline() },
+                        ExampleInfo(title: "Scatter chart") { ScatterChart() },
+                        ExampleInfo(title: "Bubble chart") { BubbleChart() },
+                        ExampleInfo(title: "Pie chart") { PieDonut() },
+                        ExampleInfo(title: "Stacked Column chart") { StackedColumnChart() },
+                        ExampleInfo(title: "Stacked Area chart") { StackedAreaChart() },
+                        ExampleInfo(title: "Financial chart") { FinancialChart() },
+                        ExampleInfo(title: "Indicators") { Indicators() },
                         ]),
                     ExampleInfo(title: "Axis Types", exampleList:[
-                            ExampleInfo(title: "Numeric axis") { NumericAxis() },
-                            ExampleInfo(title: "Categorical axis") { CategoricalAxis() },
-                            ExampleInfo(title: "Date/Time axis") { DateTimeAxis() },
-                            ExampleInfo(title: "Multiple axes") { MultipleAxes() },
-                            ExampleInfo(title: "Negative values") { NegativeValues() }
+                        ExampleInfo(title: "Numeric axis") { NumericAxis() },
+                        ExampleInfo(title: "Categorical axis") { CategoricalAxis() },
+                        ExampleInfo(title: "Date/Time axis") { DateTimeAxis() },
+                        ExampleInfo(title:"Date/Time category axis") { DateTimeCategoryAxis() },
+                        ExampleInfo(title: "Multiple axes") { MultipleAxes() },
+                        ExampleInfo(title: "Negative values") { NegativeValues() },
+                        ExampleInfo(title: "Logarithmic axis") { LogarithmicAxis() },
+                        ExampleInfo(title: "CustomAxis"){ CustomAxis() }
                         ]),
                     ExampleInfo(title: "Animations", exampleList:[
-                            ExampleInfo(title: "Default animations") { DefaultAnimation() },
-                            ExampleInfo(title: "Custom animation - line chart") { CustomAnimationLineChart() },
-                            ExampleInfo(title: "Custom animation - area chart") { CustomAnimationAreaChart() },
-                            ExampleInfo(title: "Custom animation - pie chart") { CustomAnimationPieChart() },
-                            ExampleInfo(title: "UIKit dynamics animation") { UIKitDynamicsAnimation() }
+                        ExampleInfo(title: "Default animations") { DefaultAnimation() },
+                        ExampleInfo(title: "Custom animation - line chart") { CustomAnimationLineChart() },
+                        ExampleInfo(title: "Custom animation - area chart") { CustomAnimationAreaChart() },
+                        ExampleInfo(title: "Custom animation - pie chart") { CustomAnimationPieChart() },
+                        ExampleInfo(title: "UIKit dynamics animation") { UIKitDynamicsAnimation() }
                         ]),
                     ExampleInfo(title: "Binding", exampleList:[
-                            ExampleInfo(title: "Bind with data point") { BindWithDataPoint() },
-                            ExampleInfo(title: "Bind with custom object") { BindWithCustomObject() },
-                            ExampleInfo(title: "Bind with delegate") { BindWithDelegate() }
+                        ExampleInfo(title: "Bind with data point") { BindWithDataPoint() },
+                        ExampleInfo(title: "Bind with custom object") { BindWithCustomObject() },
+                        ExampleInfo(title: "Bind with delegate") { BindWithDelegate() }
                         ]),
                     ExampleInfo(title: "Pan/Zoom") { PanZoom() },
                     ExampleInfo(title: "Customize") { Customize() },
                     ExampleInfo(title: "Annotations", exampleList:[
-                            ExampleInfo(title: "Band and line annotations") { BandAndLineAnnotation() },
-                            ExampleInfo(title: "Balloon annotation") { BalloonAnnotation() },
-                            ExampleInfo(title: "Layer annotation") { LayerAnnotation() },
-                            ExampleInfo(title: "View annotation") { ViewAnnotation() },
-                            ExampleInfo(title: "Cross line annotation") { CrossLineAnnotation() },
-                            ExampleInfo(title: "Custom annotation") { CustomAnnotation() },
-                            ExampleInfo(title: "Trackball") { Trackball() }
+                        ExampleInfo(title: "Band and line annotations") { BandAndLineAnnotation() },
+                        ExampleInfo(title: "Balloon annotation") { BalloonAnnotation() },
+                        ExampleInfo(title: "Layer annotation") { LayerAnnotation() },
+                        ExampleInfo(title: "View annotation") { ViewAnnotation() },
+                        ExampleInfo(title: "Cross line annotation") { CrossLineAnnotation() },
+                        ExampleInfo(title: "Custom annotation") { CustomAnnotation() },
+                        ExampleInfo(title: "Trackball") { Trackball() }
                         ]),
                     ExampleInfo(title: "Point Labels", exampleList: [
                         ExampleInfo(title: "Point Labels") { PointLabels() },
@@ -77,19 +110,42 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     ExampleInfo(title: "Live data") { LiveData() }
                 ]))
             
-            examples.append(ExampleInfo(title: "Calendar", exampleList:[
-                    ExampleInfo(title: "Calendar with events") { CalendarWithEvents() },
-                    ExampleInfo(title: "View modes") { CalendarViewModes() },
-                    ExampleInfo(title: "Transition effects") { CalendarTransitonEffects() },
-                    ExampleInfo(title: "Selection") { CalendarSelection() },
-                    ExampleInfo(title: "iOS 7 style calendar") { iOS7StyleCalendar() },
-                    ExampleInfo(title: "Customization") { CalendarCustomization() },
-                    ExampleInfo(title: "EventKit data binding") { CalendarEventKitDataBinding() },
-                    ExampleInfo(title: "Localized calendar") { LocalizedCalendar() },
-                    ExampleInfo(title: "Inline events") { InlineEvents() },
+            examples.append(ExampleInfo(title: "DataForm (New)", exampleList: [
+                ExampleInfo(title: "Getting started") { DataFormGettingStarted()},
+                ExampleInfo(title: "Validation") { DataFormValidation()},
+                ExampleInfo(title: "Read Only") { DataFormReadOnly()},
+                ExampleInfo(title: "Customization") { DataFormCustomization()},
+                ExampleInfo(title: "Collapsable Grups") { DataFormCollapsibleGroups()},
+                ExampleInfo(title: "Alignment") { DataFormLabelsAlignment()}
                 ]))
             
-            examples.append(ExampleInfo(title: "Feedback") { FeedbackExampleController(nibName: "FeedbackExampleController", bundle: nil) })
+            examples.append(ExampleInfo(title: "DataSource", exampleList:[
+                ExampleInfo(title: "Getting started") { DataSourceGettingStarted() },
+                ExampleInfo(title: "Descriptors API") { DataSourceDescriptorsAPI() },
+                ExampleInfo(title: "Bind with UI controls") { DataSourceUIBindings() },
+                ExampleInfo(title: "Consume web service") { DataSourceWithWebService() },
+                ]))
+            
+            examples.append(ExampleInfo(title: "Gauges (New)", exampleList: [
+                ExampleInfo(title: "Getting started") { GaugeGettingStarted() },
+                ExampleInfo(title: "Customization") { GaugeCustomization() },
+                ExampleInfo(title: "Interaction") { GaugeInteraction() },
+                ExampleInfo(title: "Animations") { GaugeAnimations() },
+                ExampleInfo(title: "Scales") { GaugeScales() },
+                ExampleInfo(title: "Ranges") { GaugeRanges() },
+                ]))
+            
+            examples.append(ExampleInfo(title: "ListView", exampleList: [
+                ExampleInfo(title: "Getting started") { ListViewGettingStarted() },
+                ExampleInfo(title: "Swipe cell") { ListViewSwipe() },
+                ExampleInfo(title: "Items reorder") { ListViewReorder() },
+                ExampleInfo(title: "Selection") { ListViewSelection() },
+                ExampleInfo(title: "Grouping") { ListViewGroups() },
+                ExampleInfo(title: "Layouts"){ ListViewLayout() },
+                ExampleInfo(title: "Animations") { ListViewAnimations() },
+                ExampleInfo(title: "Load on demand") { ListViewLoadOnDemand() },
+                ExampleInfo(title: "Pull to refresh") { ListViewPullToRefresh() },
+                ]))
             
             examples.append(ExampleInfo(title: "SideDrawer", exampleList: [
                 ExampleInfo(title: "Getting Started") { SideDrawerGettingStarted() },
@@ -97,44 +153,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 ExampleInfo(title: "Custom Content") { SideDrawerCustomContent() },
                 ExampleInfo(title: "Custom Transition") { SideDrawerCustomTransition() },
                 ExampleInfo(title: "Positions") { SideDrawerPositions() }
-                ]))
-            
-            examples.append(ExampleInfo(title: "DataSource", exampleList:[
-                    ExampleInfo(title: "Getting started") { DataSourceGettingStarted() },
-                    ExampleInfo(title: "Descriptors API") { DataSourceDescriptorsAPI() },
-                    ExampleInfo(title: "Bind with UI controls") { DataSourceUIBindings() },
-                    ExampleInfo(title: "Consume web service") { DataSourceWithWebService() },
-                ]))
-            
-
-            examples.append(ExampleInfo(title: "ListView", exampleList: [
-                    ExampleInfo(title: "Getting started") { ListViewGettingStarted() },
-                    ExampleInfo(title: "Swipe cell") { ListViewSwipe() },
-                    ExampleInfo(title: "Items reorder") { ListViewReorder() },
-                    ExampleInfo(title: "Selection") { ListViewSelection() },
-                    ExampleInfo(title: "Grouping") { ListViewGroups() },
-                    ExampleInfo(title: "Layouts"){ ListViewLayout() },
-                    ExampleInfo(title: "Animations") { ListViewAnimations() },
-                    ExampleInfo(title: "Load on demand") { ListViewLoadOnDemand() },
-                    ExampleInfo(title: "Pull to refresh") { ListViewPullToRefresh() },
-                ]))
-
-            examples.append(ExampleInfo(title: "DataForm (Beta)", exampleList: [
-                ExampleInfo(title: "Getting started") { DataFormGettingStarted()},
-                ExampleInfo(title: "Validation") { DataFormValidation()},
-                ExampleInfo(title: "Read Only") { DataFormReadOnly()},
-                ExampleInfo(title: "Customization") { DataFormCustomization()}
-                
-                ]))
-            
-            examples.append(ExampleInfo(title: "Alert", exampleList: [
-                    ExampleInfo(title: "Getting started") { AlertGettingStarted() },
-                    ExampleInfo(title: "Animations") { AlertAnimations() },
-                    ExampleInfo(title: "Notifications") { AlertNotifications() },
-                    ExampleInfo(title: "Custom View") { AlertCustomView() },
-                    ExampleInfo(title: "Customize") { AlertCustomize() },
-                    ExampleInfo(title: "Settings") { AlertSettings() },
-
                 ]))
             
             self.title = "Examples"
@@ -166,21 +184,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("examplescell") as! UITableViewCell?
+        var cell = tableView.dequeueReusableCellWithIdentifier("examplescell")
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "examplescell")
             cell!.selectionStyle = UITableViewCellSelectionStyle.None
         }
-        var info = examples[indexPath.row]
-        cell!.textLabel!.text = info.title
+        cell!.textLabel!.text = examples[indexPath.row].title
         return cell!
     }
     
 //MARK: - UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var e = examples[indexPath.row]
-        var controller = e.createController()
+        let controller = examples[indexPath.row].createController()
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

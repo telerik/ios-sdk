@@ -19,7 +19,7 @@ class CustomPointLabelRender: ExampleViewController, TKChartDelegate {
         
         chart.frame = self.exampleBoundsWithInset
         chart.delegate = self
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         
         var dataPoints = [TKChartDataPoint]()
@@ -41,10 +41,10 @@ class CustomPointLabelRender: ExampleViewController, TKChartDelegate {
         columnSeries.style.pointLabelStyle.fill = TKSolidFill(color: UIColor(red: 108/255.0, green: 181/255.0, blue: 250/255.0, alpha: 1.0))
         
         chart.addSeries(columnSeries)
-        chart.select(TKChartSelectionInfo(series: chart.series()[selectedSeriesIndex] as! TKChartSeries, dataPointIndex: selectedDataPointIndex))
+        chart.select(TKChartSelectionInfo(series: chart.series[selectedSeriesIndex], dataPointIndex: selectedDataPointIndex))
     }
     
-    func chart(chart: TKChart!, pointLabelRenderForSeries series: TKChartSeries!, withRender render: TKChartSeriesRender!) -> TKChartPointLabelRender! {
+    func chart(chart: TKChart, pointLabelRenderForSeries series: TKChartSeries, withRender render: TKChartSeriesRender) -> TKChartPointLabelRender? {
         if labelRender == nil {
             labelRender = MyPointLabelRender(render: render, selectedDataIndex: Int(selectedDataPointIndex), selectedSeriesIndex: Int(selectedSeriesIndex))
         }
@@ -56,12 +56,12 @@ class CustomPointLabelRender: ExampleViewController, TKChartDelegate {
         return nil
     }
     
-    func chart(chart: TKChart!, didDeselectPoint point: TKChartData!, inSeries series: TKChartSeries!, atIndex index: Int) {
+    func chart(chart: TKChart, didDeselectPoint point: TKChartData, inSeries series: TKChartSeries, atIndex index: Int) {
         self.labelRender!.selectedSeriesIndex = -1
         self.labelRender!.selectedDataPointIndex = -1
     }
     
-    func chart(chart: TKChart!, didSelectPoint point: TKChartData!, inSeries series: TKChartSeries!, atIndex index: Int) {
+    func chart(chart: TKChart, didSelectPoint point: TKChartData, inSeries series: TKChartSeries, atIndex index: Int) {
         if self.labelRender != nil {
             self.labelRender!.selectedSeriesIndex = Int(series.index)
             self.labelRender!.selectedDataPointIndex = index

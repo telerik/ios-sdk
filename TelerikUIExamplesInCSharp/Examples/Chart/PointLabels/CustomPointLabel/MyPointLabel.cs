@@ -11,7 +11,7 @@ namespace Examples
 {
 	public class MyPointLabel : TKChartPointLabel
 	{
-		public MyPointLabel(TKChartData dataPoint, TKChartPointLabelStyle style, string text) : base(dataPoint, style, text)
+		public MyPointLabel(TKChartData dataPoint, TKChartSeries series, string text) : base(dataPoint, series, text)
 		{
 		}
 
@@ -40,7 +40,7 @@ namespace Examples
 
 			NSMutableParagraphStyle paragraphStyle = new NSMutableParagraphStyle ();
 			paragraphStyle.Alignment = this.Style.TextAlignment;
-			NSDictionary attributes = new NSDictionary (UIStringAttributeKey.Font, UIFont.SystemFontOfSize (18),
+			NSDictionary attributes = new NSDictionary (UIStringAttributeKey.Font, UIFont.SystemFontOfSize (16),
 				                          UIStringAttributeKey.ForegroundColor, this.Style.TextColor, 
 				                          UIStringAttributeKey.ParagraphStyle, paragraphStyle);
 

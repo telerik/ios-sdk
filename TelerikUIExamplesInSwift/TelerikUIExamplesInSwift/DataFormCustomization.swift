@@ -5,44 +5,76 @@
 //  Copyright (c) 2015 Telerik. All rights reserved.
 //
 
+import UIKit
 
 class DataFormCustomization: TKDataFormViewController {
 
     let dataSource = TKDataFormEntityDataSource()
     let reservationForm = ReservationForm()
+    let btn = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.whiteColor()
+        dataSource.sourceObject = reservationForm
+    
+        let name = dataSource["name"]
+        name.hintText = "Name"
+        name.errorMessage = "Please fill in the guest name"
+        name.image = UIImage(named: "guest-name")
         
-        dataSource.selectedObject = reservationForm
-        self.dataForm.dataSource = dataSource
-        self.dataForm.backgroundColor = UIColor(patternImage: UIImage(named: "wood-pattern")!)
+        let phone = dataSource["phone"]
+        phone.hintText = "Phone"
+        phone.image = UIImage(named: "phone")
         
-        self.dataForm.registerEditor(CallEditor.self, forProperty: dataSource.entityModel.propertyWithName("phone"))
-        self.dataForm.registerEditor(CallEditor.self, forProperty: dataSource.entityModel.propertyWithName("cancelReservation"))
-        self.dataForm.registerEditor(TKDataFormOptionsEditor.self, forProperty: dataSource.entityModel.propertyWithName("section"))
-        self.dataForm.registerEditor(TKDataFormOptionsEditor.self, forProperty: dataSource.entityModel.propertyWithName("table"))
-        self.dataForm.registerEditor(TKDataFormSegmentedEditor.self, forProperty: dataSource.entityModel.propertyWithName("origin"))
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "h:mm a";
+        dataSource["time"].formatter = formatter
         
-        dataSource.entityModel.propertyWithName("name").image = UIImage(named: "guest-name")
-        dataSource.entityModel.propertyWithName("phone").image = UIImage(named: "phone")
-        dataSource.entityModel.propertyWithName("date").image = UIImage(named: "calendar")
-        dataSource.entityModel.propertyWithName("time").image = UIImage(named: "time")
-        dataSource.entityModel.propertyWithName("guests").image = UIImage(named: "guest-number")
-        dataSource.entityModel.propertyWithName("table").image = UIImage(named: "table-number")
+        dataSource["date"].image = UIImage(named: "calendar")
+        dataSource["time"].image = UIImage(named: "time")
+        dataSource["guests"].image = UIImage(named: "guest-number")
+        dataSource["table"].image = UIImage(named: "table-number")
         
-        for property in dataSource.entityModel.properties() as! [TKDataFormEntityProperty] {
+        dataSource["time"].editorClass = TKDataFormTimePickerEditor.self
+        dataSource["phone"].editorClass = CallEditor.self
+        dataSource["origin"].editorClass = TKDataFormSegmentedEditor.self
+        
+        dataSource["guests"].valuesProvider = TKRange(minimum: 1, andMaximum: 10)
+        dataSource["section"].valuesProvider = [ "Section 1", "Section 2", "Section 3", "Section 4" ]
+        dataSource["table"].valuesProvider = [Int](1...15)
+        dataSource["origin"].valuesProvider = [ "phone", "in-person", "online", "other" ]
+
+        for  i in 0 ..< dataSource.properties.count {
+            let property: TKEntityProperty = dataSource.properties[i] as! TKEntityProperty
             if property.name == "section" || property.name == "table" {
-                property.groupKey = "TABLE DETAILS";
+                property.groupName = "TABLE DETAILS";
             }
             else if property.name == "origin" || property.name == "cancelReservation" {
-                property.groupKey = "ORIGIN";
+                property.groupName = "ORIGIN";
             }
             else {
-                property.groupKey = "RESERVATION DETAILS";
+                property.groupName = "RESERVATION DETAILS";
             }
         }
+        
+        self.dataForm.dataSource = dataSource
+        self.dataForm.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height - 66)
+        self.dataForm.backgroundColor = UIColor(patternImage: UIImage(named: "wood-pattern")!)
+        self.dataForm.tintColor = UIColor(red: 0.780, green: 0.2, blue: 0.223, alpha: 1.0)
+        
+        btn.frame = CGRect(x: 0, y: self.dataForm.frame.size.height, width: self.view.bounds.size.width, height: 66)
+        btn.setTitle("Cancel reservation", forState: .Normal)
+        btn.setTitleColor(UIColor(red: 0.780, green: 0.2, blue: 0.223, alpha: 1.0), forState: .Normal)
+        btn.addTarget(self, action: "cancelReservation", forControlEvents: .TouchUpInside)
+        self.view.addSubview(btn)
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        btn.frame = CGRect(x: 0, y: self.dataForm.frame.size.height, width: self.view.bounds.size.width, height: 66)
+    }
+    
     func cancelReservation() {
         let alert = TKAlert()
         
@@ -59,117 +91,61 @@ class DataFormCustomization: TKDataFormViewController {
     
     //MARK:- TKDataFormDelegate
     
-    override func dataForm(dataForm: TKDataForm!, validateProperty propery: TKDataFormEntityProperty!, editor: TKDataFormEditor!) -> Bool {
+    override func dataForm(dataForm: TKDataForm, validateProperty propery: TKEntityProperty, editor: TKDataFormEditor) -> Bool {
         if propery.name == "name" {
-            let value = propery.value() as! NSString
-            if value.length == 0 {
-                return false
-            }
+            return (propery.valueCandidate as! NSString).length > 0
         }
-        
         return true
     }
     
-    override func dataForm(dataForm: TKDataForm!, didValidateProperty propery: TKDataFormEntityProperty!, editor: TKDataFormEditor!) {
-        if propery.name == "name" {
-            if !propery.isValid {
-                propery.feedbackMessage = "Please fill in the guest name"
-            }
-            else {
-                propery.feedbackMessage = nil
-            }
-        }
-    }
-    
-    override func dataForm(dataForm: TKDataForm!, updateEditor editor: TKDataFormEditor!, forProperty property: TKDataFormEntityProperty!) {
-        editor.style.textLabelOffset = UIOffsetMake(25, 0)
+    override func dataForm(dataForm: TKDataForm, updateEditor editor: TKDataFormEditor, forProperty property: TKEntityProperty) {
+
+        editor.style.textLabelOffset = UIOffsetMake(10, 0)
         editor.style.separatorLeadingSpace = 40
         editor.style.accessoryArrowStroke = TKStroke(color: UIColor(red: 0.780, green: 0.2, blue: 0.223, alpha: 1.0))
-        if property.name == "name" {
-            if !property.isValid {
-                editor.style.feedbackLabelOffset = UIOffsetMake(25, -5)
-                editor.style.editorOffset = UIOffsetMake(25, -7)
-            }
-            else{
-                editor.style.feedbackLabelOffset = UIOffsetMake(25, 0)
-                editor.style.editorOffset = UIOffsetMake(25, 0)
-            }
-            
-            editor.feedbackLabel.font = UIFont(name: "Verdana-Italic", size: 10)
-            editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayMode.Hidden
-            (editor.editor() as! UITextField).placeholder = "Name"
-        }
         
-        if property.name == "time" {
+        if ["origin", "date", "time", "name", "phone"].contains(property.name) {
             editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayMode.Hidden;
-            editor.style.textLabelOffset = UIOffsetMake(25, 0);
-            (editor as! TKDataFormDatePickerEditor).dateFormatter.dateFormat = "h:mm a";
-            (editor.editor() as! UIDatePicker).datePickerMode = UIDatePickerMode.Time;
+            let titleDef = editor.gridLayout.definitionForView(editor.textLabel)
+            editor.gridLayout.setWidth(0, forColumn: titleDef.column.integerValue)
+            editor.style.editorOffset = UIOffsetMake(10, 0)
         }
         
-        if property.name == "date" {
-            editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayMode.Hidden
-            editor.style.textLabelOffset = UIOffsetMake(25, 0)
+        if property.name == "origin" {
+            editor.style.editorOffset = UIOffsetMake(0, 0)
+            editor.style.separatorColor = nil
+        }
+        
+        if property.name == "name" {
+            editor.style.feedbackLabelOffset = UIOffsetMake(10, 0)
+            editor.feedbackLabel.font = UIFont(name: "Verdana-Italic", size: 10)
         }
         
         if property.name == "guests" {
-            var stepper = editor.editor() as! UIStepper
-            stepper.minimumValue = 1
-            stepper.tintColor = UIColor(red: 0.780, green: 0.2, blue: 0.223, alpha: 1.0)
-            stepper.setIncrementImage(UIImage(named: "plus"), forState: UIControlState.Normal)
-            stepper.setDecrementImage(UIImage(named: "minus"), forState: UIControlState.Normal)
+            let labelDef = editor.gridLayout.definitionForView((editor as! TKDataFormStepperEditor).valueLabel)
+            labelDef.contentOffset = UIOffsetMake(-25, 0)
         }
         
         if property.name == "section" {
-            editor.textLabel.textColor = UIColor.whiteColor()
-            editor.backgroundColor = UIColor.clearColor()
-            (editor as! TKDataFormOptionsEditor).options = ["Section 1", "Section 2", "Section 3", "Section 4"]
-            (editor as! TKDataFormOptionsEditor).selectedOptionLabel.textColor = UIColor.whiteColor()
+            let img = UIImage(named: "guest-name")
+            editor.style.textLabelOffset = UIOffsetMake((img?.size.width)! + 10, 0)
         }
         
-        if property.name == "table" {
+        if property.name == "table" || property.name == "section" {
             editor.textLabel.textColor = UIColor.whiteColor()
             editor.backgroundColor = UIColor.clearColor()
-            (editor as! TKDataFormOptionsEditor).options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
             (editor as! TKDataFormOptionsEditor).selectedOptionLabel.textColor = UIColor.whiteColor()
-        }
-        if property.name == "origin" {
-            editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayMode.Hidden
-            editor.style.editorOffset = UIOffsetMake(25, 0)
-            (editor as! TKDataFormSegmentedEditor).segments = ["phone", "in-person", "online", "other"]
-            let segmentedControl = editor.editor() as! UISegmentedControl
-            segmentedControl.tintColor = UIColor(red:0.780, green:0.2, blue:0.223, alpha:1.0)
-        }
-        
-        if property.name == "cancelReservation" {
-            editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayMode.Hidden
-            editor.style.editorOffset = UIOffsetMake(25,0)
-            (editor as! CallEditor).actionButton.setTitle(property.displayName, forState: UIControlState.Normal)
-            (editor as! CallEditor).actionButton.addTarget(self, action: "cancelReservation", forControlEvents: UIControlEvents.TouchUpInside)
+            editor.style.editorOffset = UIOffsetMake(-10, 0)
+            (editor as! TKDataFormOptionsEditor).selectedOptionLabel.textAlignment = .Right
         }
     }
     
-    override func dataForm(dataForm: TKDataForm!, viewForHeaderInSection section: Int) -> UIView! {
-        var header = TKDataFormHeaderView()
-        header.titleLabel.textColor = UIColor.grayColor()
-        header.insets = UIEdgeInsetsMake(0, 40, 0, 0)
-        header.separatorColor = TKSolidFill(color: UIColor.clearColor())
-        if section == 0 {
-            header.titleLabel.text = "RESERVATION DETAILS"
+    override func dataForm(dataForm: TKDataForm, updateGroupView groupView: TKEntityPropertyGroupView, forGroupAtIndex groupIndex: UInt) {
+        groupView.titleView.titleLabel.textColor = UIColor.lightGrayColor()
+        groupView.titleView.titleLabel.font = UIFont.systemFontOfSize(13)
+        groupView.titleView.style.insets = UIEdgeInsetsMake(0, 10, 0, 0)
+        if groupIndex == 1 {
+            groupView.editorsContainer.backgroundColor = UIColor.clearColor()
         }
-        else if section == 1 {
-            header.titleLabel.text = "TABLE DETAILS"
-        }
-        else{
-            header.titleLabel.text = "ORIGIN"
-        }
-        
-        return header
-    }
-    
-    override func dataForm(dataForm: TKDataForm!, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
     }
 }
-
-

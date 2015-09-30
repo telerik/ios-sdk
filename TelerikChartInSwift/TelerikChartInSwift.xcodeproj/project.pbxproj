@@ -165,6 +165,7 @@
 		EBA66C281A824B2700883279 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = Telerik;
 				TargetAttributes = {

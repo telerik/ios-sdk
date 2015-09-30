@@ -5,29 +5,26 @@
 //  Copyright (c) 2015 Telerik. All rights reserved.
 //
 
-
-
 class PasswordValidator: NSObject, TKDataFormValidator {
 
     var shortPassword: Bool?
 
-    func validateProperty(property: TKDataFormEntityProperty!) -> Bool {
-                shortPassword = false
-                var password: NSString = property.value() as! NSString
-                if(password.length < 6){
-                    shortPassword = true
-                    return false
-                }
-                
-                return true
+    func validateProperty(property: TKEntityProperty) -> Bool {
+        shortPassword = false
+        let password: NSString = property.valueCandidate as! NSString
+        if(password.length < 6) {
+            shortPassword = true
+            return false
+        }
+        
+        return true
     }
     
-    func validationMessage() -> String! {
-                if(shortPassword == true){
-                    return "Password must be at least 6 characters"
-                }
-        
-                return nil
-            }
+    var validationMessage: String? {
+        if(shortPassword == true) {
+            return "Password must be at least 6 characters"
+        }
+        return nil
     }
+}
 

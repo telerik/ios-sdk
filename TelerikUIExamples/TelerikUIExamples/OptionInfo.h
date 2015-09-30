@@ -9,9 +9,9 @@
 
 @interface OptionInfo : NSObject
 
-- (id)initWithText:(NSString*)text selector:(SEL)selector;
+- (instancetype __nonnull)initWithText:(NSString*)text selector:(SEL)selector;
 
-- (id)initWithText:(NSString *)text selector:(SEL)selector tag:(id)tag;
+- (instancetype __nonnull)initWithText:(NSString *)text selector:(SEL)selector tag:(id)tag;
 
 @property (nonatomic, copy) NSString *optionText;
 

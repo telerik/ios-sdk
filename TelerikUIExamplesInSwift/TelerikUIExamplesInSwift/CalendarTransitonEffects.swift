@@ -22,7 +22,7 @@ class CalendarTransitonEffects: ExampleViewController, TKCalendarPresenterDelega
     var oldColorIndex = -1
     var transitionMode = TKCalendarTransitionMode.Scroll
 
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Flip effect") { self.selectFlipEffect() }
@@ -44,7 +44,7 @@ class CalendarTransitonEffects: ExampleViewController, TKCalendarPresenterDelega
         self.view.addSubview(self.contentView)
 
         self.toolbar.frame = CGRectMake(0, CGRectGetHeight(self.contentView.bounds) - 44, CGRectGetWidth(self.contentView.bounds), 44)
-        self.toolbar.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin
+        self.toolbar.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleTopMargin.rawValue)
         let buttonPrev = UIBarButtonItem(title: "Prev month", style: UIBarButtonItemStyle.Plain, target: self, action: "prevTouched:")
         let buttonNext = UIBarButtonItem(title: "Next month", style: UIBarButtonItemStyle.Plain, target: self, action: "nextTouched:")
         let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: self, action: nil)
@@ -52,16 +52,16 @@ class CalendarTransitonEffects: ExampleViewController, TKCalendarPresenterDelega
         self.contentView.addSubview(self.toolbar)
         
         self.calendarView.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.bounds), CGRectGetHeight(self.contentView.bounds) - 44)
-        self.calendarView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        self.calendarView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.calendarView.delegate = self
         self.calendarView.allowPinchZoom = false
         self.contentView.addSubview(self.calendarView)
         
-        let presenter = self.calendarView.presenter() as! TKCalendarMonthPresenter
+        let presenter = self.calendarView.presenter as! TKCalendarMonthPresenter
         presenter.transitionMode = TKCalendarTransitionMode.Flip
         presenter.delegate = self
         presenter.headerIsSticky = true
-        presenter.contentView().backgroundColor = colors[colorIndex]
+        presenter.contentView.backgroundColor = colors[colorIndex]
         self.transitionMode = TKCalendarTransitionMode.Flip
     }
     
@@ -111,7 +111,7 @@ class CalendarTransitonEffects: ExampleViewController, TKCalendarPresenterDelega
     
     func setTransition(transitionMode: TKCalendarTransitionMode, isVertical: Bool) {
         calendarView.viewMode = TKCalendarViewMode.Month
-        let presenter = calendarView.presenter() as! TKCalendarMonthPresenter
+        let presenter = calendarView.presenter as! TKCalendarMonthPresenter
         presenter.delegate = self
         presenter.headerIsSticky = true
         presenter.transitionIsVertical = isVertical
@@ -121,10 +121,10 @@ class CalendarTransitonEffects: ExampleViewController, TKCalendarPresenterDelega
     
 //MARK: - TKCalendarDelegate
     
-    func calendar(calendar: TKCalendar!, didChangedViewModeFrom previousViewMode: TKCalendarViewMode, to viewMode: TKCalendarViewMode) {
+    func calendar(calendar: TKCalendar, didChangedViewModeFrom previousViewMode: TKCalendarViewMode, to viewMode: TKCalendarViewMode) {
         if viewMode == TKCalendarViewMode.Month {
-            let presenter = calendar.presenter() as! TKCalendarMonthPresenter
-            presenter.contentView().backgroundColor = colors[colorIndex]
+            let presenter = calendar.presenter as! TKCalendarMonthPresenter
+            presenter.contentView.backgroundColor = colors[colorIndex]
             presenter.delegate = self;
             presenter.transitionMode = transitionMode;
         }
@@ -132,17 +132,17 @@ class CalendarTransitonEffects: ExampleViewController, TKCalendarPresenterDelega
     
 //MARK: - TKCalendarPresenterDelegate
     
-    func presenter(presenter: TKCalendarPresenter!, beginTransition transition: TKViewTransition!) {
+    func presenter(presenter: TKCalendarPresenter, beginTransition transition: TKViewTransition) {
         oldColorIndex = colorIndex
         colorIndex = (colorIndex + 1) % colors.count
         let monthPresenter = presenter as! TKCalendarMonthPresenter
-        monthPresenter.contentView().backgroundColor = colors[colorIndex]
+        monthPresenter.contentView.backgroundColor = colors[colorIndex]
     }
     
-    func presenter(presenter: TKCalendarPresenter!, finishTransition canceled: Bool) {
+    func presenter(presenter: TKCalendarPresenter, finishTransition canceled: Bool) {
         if canceled {
             let monthPresenter = presenter as! TKCalendarMonthPresenter
-            monthPresenter.contentView().backgroundColor = colors[oldColorIndex]
+            monthPresenter.contentView.backgroundColor = colors[oldColorIndex]
             colorIndex = oldColorIndex
         }
     }

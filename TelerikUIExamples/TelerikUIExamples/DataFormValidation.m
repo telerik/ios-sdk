@@ -7,106 +7,69 @@
 
 #import "DataFormValidation.h"
 #import <TelerikUI/TelerikUI.h>
-#import "RegisterationInfo.h"
+#import "RegistrationInfo.h"
 #import "EmailValidator.h"
 #import "PasswordValidator.h"
 
-@interface DataFormValidation() <TKDataFormDelegate>
+@interface DataFormValidation()
 @end
 
 @implementation DataFormValidation
 {
     TKDataFormEntityDataSource *_dataSource;
+    RegistrationInfo *_registrationInfo;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    _dataSource = [TKDataFormEntityDataSource new];
-    _dataSource.selectedObject = [RegisterationInfo new];
+    _registrationInfo = [RegistrationInfo new];
     
-    self.dataForm.validationMode = TKDataFormValidationModeImmediate;
+    _dataSource = [[TKDataFormEntityDataSource alloc] initWithObject:_registrationInfo];
+    
+    _dataSource[@"email"].hintText = @"E-mail (Required)";
+    _dataSource[@"email"].editorClass = [TKDataFormEmailEditor class];
+    _dataSource[@"name"].hintText = @"Name (Optional)";
+    _dataSource[@"password"].hintText = @"Password (Minimum 6 characters)";
+    _dataSource[@"password"].editorClass = [TKDataFormPasswordEditor class];
+    
+    TKEntityProperty *property = _dataSource[@"repeatPassword"];
+    property.hintText = @"Confirm password";
+    property.errorMessage =  @"The password does not match!";
+    property.editorClass = [TKDataFormPasswordEditor class];
+
+    _dataSource[@"email"].validators = @[ [EmailValidator new] ];
+    _dataSource[@"password"].validators = @[ [PasswordValidator new] ];
+
+    _dataSource[@"gender"].valuesProvider = @[ @"Male", @"Female" ];
+    _dataSource[@"country"].valuesProvider = @[ @"Bulgaria", @"France", @"Germany", @"Italy", @"United Kingdom" ];
+    _dataSource[@"country"].editorClass = [TKDataFormPickerViewEditor class];
+    
+    [_dataSource addGroupWithName:@"Account" propertyNames:@[ @"email", @"password", @"repeatPassword", @"rememberMe" ]];
+    [_dataSource addGroupWithName:@"Details" propertyNames:@[ @"name", @"dateOfBirth", @"gender", @"country" ]];
+
     self.dataForm.dataSource = _dataSource;
-    
-    [self.dataForm registerEditor:[TKDataFormOptionsEditor class] forProperty:[_dataSource.entityModel propertyWithName:@"gender"]];
-    [self.dataForm registerEditor:[TKDataFormPickerViewEditor class] forProperty:[_dataSource.entityModel propertyWithName:@"country"]];
-    
-    TKDataFormEntityProperty *emailProperty = [_dataSource.entityModel propertyWithName:@"email"];
-    emailProperty.validators = @[[EmailValidator new]];
-    emailProperty.groupKey = @"Account";
-    
-    TKDataFormEntityProperty *password = [_dataSource.entityModel propertyWithName:@"password"];
-    password.validators = @[[PasswordValidator new]];
-    password.groupKey = @"Account";
-    
-    [_dataSource.entityModel propertyWithName:@"repeatPassword"].groupKey = @"Account";
-    [_dataSource.entityModel propertyWithName:@"rememberMe"].groupKey = @"Account";
-    
-    [_dataSource.entityModel propertyWithName:@"name"].groupKey = @"Details";
-    [_dataSource.entityModel propertyWithName:@"dateOfBirth"].groupKey = @"Details";
-    [_dataSource.entityModel propertyWithName:@"gender"].groupKey = @"Details";
-    [_dataSource.entityModel propertyWithName:@"country"].groupKey = @"Details";
+    self.dataForm.validationMode = TKDataFormValidationModeImmediate;
+    self.dataForm.backgroundColor = [UIColor colorWithRed:0.937 green:0.937 blue:0.960 alpha:1.0];
 }
 
 #pragma mark TKDataFormDelegate
 
-- (BOOL)dataForm:(TKDataForm *)dataForm validateProperty:(TKDataFormEntityProperty *)propery editor:(TKDataFormEditor *)editor
+- (BOOL)dataForm:(TKDataForm *)dataForm validateProperty:(TKEntityProperty *)property editor:(TKDataFormEditor *)editor
 {
-    if ([propery.name isEqualToString:@"repeatPassword"]) {
-        NSString *repeatedPassword = propery.value;
-        TKDataFormEntityProperty *passwordProperty = [_dataSource.entityModel propertyWithName:@"password"];
-        NSString *password = passwordProperty.value;
-        if (![repeatedPassword isEqualToString:password]) {
-            return NO;
-        }
-        return YES;
+    if ([property.name isEqualToString:@"repeatPassword"]) {
+        return property.isValid && [property.valueCandidate isEqualToString:_dataSource[@"password"].valueCandidate];
     }
-    return propery.isValid;
+    return property.isValid;
 }
 
-- (void)dataForm:(TKDataForm *)dataForm didValidateProperty:(TKDataFormEntityProperty *)propery editor:(TKDataFormEditor *)editor
+- (void)dataForm:(TKDataForm *)dataForm updateEditor:(TKDataFormEditor *)editor forProperty:(TKEntityProperty *)property
 {
-    if ([propery.name isEqualToString:@"repeatPassword"]) {
-        if (propery.isValid) {
-            propery.feedbackMessage = nil;
-        }
-        else {
-            propery.feedbackMessage = @"Incorrect password!";
-        }
-    }
-}
-
-- (void)dataForm:(TKDataForm *)dataForm updateEditor:(TKDataFormEditor *)editor forProperty:(TKDataFormEntityProperty *)property
-{
-    if ([property.name isEqualToString:@"gender"]) {
-        ((TKDataFormOptionsEditor *)editor).options = @[@"Male", @"Female"];
-    }
-    else if ([property.name isEqualToString:@"email"]) {
+    if ([@[@"email", @"password", @"repeatPassword", @"name"] containsObject:property.name]) {
         editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayModeHidden;
-        ((UITextField *)editor.editor).keyboardType = UIKeyboardTypeEmailAddress;
-        ((UITextField *)editor.editor).placeholder = @"E-mail (Required)";
-    }
-    else if ([property.name isEqualToString:@"password"]) {
-        editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayModeHidden;
-        ((UITextField *)editor.editor).secureTextEntry = YES;
-        ((UITextField *)editor.editor).placeholder = @"Password (Minimum 6 characters)";
-    }
-    else if ([property.name isEqualToString:@"repeatPassword"]) {
-        editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayModeHidden;
-        ((UITextField *)editor.editor).secureTextEntry = YES;
-        ((UITextField *)editor.editor).placeholder = @"Confirm password";
-    }
-    else if ([property.name isEqualToString:@"name"]) {
-        editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayModeHidden;
-        ((UITextField *)editor.editor).placeholder = @"Name (Optional)";
-    }
-    else if ([property.name isEqualToString:@"country"]) {
-        ((TKDataFormPickerViewEditor *)editor).options = @[@"Bulgaria", @"United Kingdom", @"Germany", @"France", @"Italy", @"Belgium", @"Norway", @"Sweden", @"Russia", @"Turkey"];
-        editor.style.separatorLeadingSpace = 0;
-    }
-    else if ([property.name isEqualToString:@"rememberMe"]) {
-        editor.style.separatorLeadingSpace = 0;
+        TKGridLayoutCellDefinition *titleDef = [editor.gridLayout definitionForView:editor.textLabel];
+        [editor.gridLayout setWidth:0 forColumn:[titleDef.column integerValue]];
     }
     
     if (!property.isValid) {

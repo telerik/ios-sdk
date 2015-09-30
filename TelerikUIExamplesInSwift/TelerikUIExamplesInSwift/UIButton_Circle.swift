@@ -10,9 +10,8 @@ import UIKit
 extension UIButton {
 
     class func circleButtonInView(view: UIView, title: NSString, target: AnyObject, action: Selector) -> UIButton {
-        
-        let button : UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton;
-       
+        let button : UIButton = UIButton(type:UIButtonType.Custom)
+
         button.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
         button.backgroundColor = UIColor(red: 0.5, green: 0.7, blue: 0.2, alpha: 0.7)
         button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
@@ -22,7 +21,7 @@ extension UIButton {
         button.clipsToBounds = true
         button.frame = CGRectMake((CGRectGetWidth(view.frame) - 80)/2.0 , CGRectGetHeight(view.frame)-180, 80, 80)
         
-        button.autoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleLeftMargin | UIViewAutoresizing.FlexibleRightMargin
+        button.autoresizingMask = UIViewAutoresizing(rawValue:UIViewAutoresizing.FlexibleTopMargin.rawValue | UIViewAutoresizing.FlexibleLeftMargin.rawValue | UIViewAutoresizing.FlexibleRightMargin.rawValue)
         
         view.addSubview(button)
         

@@ -5,6 +5,7 @@
 //  Copyright (c) 2015 Telerik. All rights reserved.
 //
 
+
 class SideDrawerHeaderView: UIView {
     
     let sideDrawerHeader = TKSideDrawerHeader(title: "Navigation Menu")
@@ -13,7 +14,7 @@ class SideDrawerHeaderView: UIView {
         self.init()
         sideDrawerHeader.contentInsets = UIEdgeInsetsMake(-15, 0, 0, 0)
         if addButton {
-            let button = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+            let button = UIButton(type:UIButtonType.System)
             button.setImage(UIImage(named: "menu"), forState: UIControlState.Normal)
             button.addTarget(target, action: selector!, forControlEvents: UIControlEvents.TouchUpInside)
             sideDrawerHeader.actionButton = button

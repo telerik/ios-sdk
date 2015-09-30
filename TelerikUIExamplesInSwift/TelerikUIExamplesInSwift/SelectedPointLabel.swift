@@ -13,9 +13,9 @@ class SelectedPointLabel: CALayer {
     var text: NSString?
     var isOutsideBounds = false
 
-    override func drawInContext(ctx: CGContext!) {
+    override func drawInContext(ctx: CGContext) {
         UIGraphicsPushContext(ctx)
-        let fill = self.labelStyle!.fill
+        let fill = self.labelStyle!.fill!
         let stroke = TKStroke(color: UIColor.blackColor())
         let shape = TKBalloonShape(size: CGSizeMake(self.bounds.size.width - stroke.width, self.bounds.size.height - stroke.width))
         var textRect = CGRectMake(self.bounds.origin.x, self.bounds.origin.y - self.labelStyle!.insets.top, self.bounds.size.width, self.bounds.size.height + self.labelStyle!.insets.bottom)
@@ -29,10 +29,10 @@ class SelectedPointLabel: CALayer {
         }
         
         shape.drawInContext(ctx, withCenter: CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)), drawings: [fill, stroke])
-        var paragraphStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+        let paragraphStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
         paragraphStyle.alignment = self.labelStyle!.textAlignment
-        let attributes = [NSFontAttributeName: UIFont.systemFontOfSize(16),
-                          NSForegroundColorAttributeName: self.labelStyle!.textColor,
+        let attributes = [NSFontAttributeName: UIFont.systemFontOfSize(CGFloat(16.0)),
+                          NSForegroundColorAttributeName: self.labelStyle!.textColor!,
                           NSParagraphStyleAttributeName: paragraphStyle]
         
         self.text!.drawWithRect(textRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: attributes, context: nil)

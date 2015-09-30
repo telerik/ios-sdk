@@ -14,7 +14,7 @@
     NSArray *_dataPoints;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -34,8 +34,7 @@
     financialChart.gridStyle.verticalLinesHidden = NO;
     financialChart.gridStyle.horizontalLinesHidden = NO;
     
-    NSArray *data = [StockDataPoint stockPoints];
-    _dataPoints = [self loadChartDataFromData:data];
+    _dataPoints = [StockDataPoint stockPoints:42];
     
     [self reloadChart];
 }
@@ -78,16 +77,6 @@
     financialChart.xAxis.allowPan = YES;
     financialChart.yAxis.allowZoom = YES;
     financialChart.yAxis.allowPan = YES;
-}
-
-- (NSArray *)loadChartDataFromData:(NSArray *)data
-{
-    NSMutableArray *dataPoints = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 42; i++) {
-        [dataPoints addObject:data[i]];
-    }
-    
-    return dataPoints;
 }
 
 @end

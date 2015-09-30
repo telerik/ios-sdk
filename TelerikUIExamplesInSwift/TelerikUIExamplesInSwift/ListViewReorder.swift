@@ -7,15 +7,16 @@
 
 import UIKit
 
-class ListViewReorder: ExampleViewController{
+class ListViewReorder: ExampleViewController, TKListViewDelegate {
 
     let listView = TKListView()
     let dataSource = TKDataSource()
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("Enable reorder mode") { self.enableReorderSelected() }
+        self.addOption("Reorder with handle") { self.reorderWithHandleSelected() }
+        self.addOption("Reorder with long press") { self.reorderWithLongPressSelected() }
         self.addOption("Disable reorder mode") { self.disableReorderSelected() }
     }
     
@@ -36,10 +37,9 @@ class ListViewReorder: ExampleViewController{
         else {
             self.listView.frame = self.view.bounds
         }
-        self.listView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        self.listView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.listView.dataSource = self.dataSource
-        self.listView.delegate = self.dataSource
-
+        self.listView.delegate = self
         self.listView.allowsCellReorder = true
         self.view.addSubview(self.listView)
     }
@@ -49,13 +49,30 @@ class ListViewReorder: ExampleViewController{
         // Dispose of any resources that can be recreated.
     }
     
-    func enableReorderSelected() {
-        listView.allowsCellReorder = true
+    func reorderWithHandleSelected() {
+        self.listView.allowsCellReorder = true
+        self.listView.reorderMode = TKListViewReorderMode.WithHandle
+    }
+    
+    func reorderWithLongPressSelected() {
+        self.listView.allowsCellReorder = true
+        self.listView.reorderMode = TKListViewReorderMode.WithLongPress
     }
     
     func disableReorderSelected() {
-        listView.allowsCellReorder = false
+        self.listView.allowsCellReorder = false
     }
     
+    // MARK: - TKListViewDelegate
     
+    func listView(listView: TKListView, willReorderItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = listView.cellForItemAtIndexPath(indexPath)
+        cell!.backgroundView?.backgroundColor = UIColor.yellowColor()
+    }
+    
+    func listView(listView: TKListView, didReorderItemFromIndexPath originalIndexPath: NSIndexPath, toIndexPath targetIndexPath: NSIndexPath) {
+        let cell = listView.cellForItemAtIndexPath(originalIndexPath)
+        cell!.backgroundView?.backgroundColor = UIColor.whiteColor()
+        self.dataSource .listView(listView, didReorderItemFromIndexPath: originalIndexPath, toIndexPath: targetIndexPath)
+    }
 }

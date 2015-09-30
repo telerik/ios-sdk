@@ -5,19 +5,20 @@
 //  Copyright (c) 2015 Telerik. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class AlertSettings: ExampleViewController, TKAlertDelegate, TKDataFormDelegate {
     
     let settings: Settings = Settings()
     let dataForm: TKDataForm = TKDataForm()
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    let dataSource: TKDataFormEntityDataSource = TKDataFormEntityDataSource()
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
+
         self.addOption("Show Alert") { self.show() }
     }
-    
+
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -34,18 +35,18 @@ class AlertSettings: ExampleViewController, TKAlertDelegate, TKDataFormDelegate 
             dataForm.frame = self.view.bounds
         }
         dataForm.delegate = self
-        dataForm.commitMode = TKDataFormCommitMode.Delayed;
+        dataForm.commitMode = TKDataFormCommitMode.Manual
         dataForm.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         self.view.addSubview(dataForm)
+        
+        dataSource.sourceObject = self.settings
 
-        var dataSource =  dataForm.dataSource as! TKDataFormEntityDataSource
-        dataSource.selectedObject = self.settings
-
-        dataForm.registerEditor(TKDataFormSegmentedEditor.self, forProperty: dataSource.entityModel.propertyWithName("dismissDirection"))
-        dataForm.registerEditor(TKDataFormSegmentedEditor.self, forProperty: dataSource.entityModel.propertyWithName("dismissMode"))
-        dataForm.registerEditor(TKDataFormSegmentedEditor.self, forProperty: dataSource.entityModel.propertyWithName("actionsLayout"))
-        dataForm.registerEditor(TKDataFormSegmentedEditor.self, forProperty: dataSource.entityModel.propertyWithName("backgroundStyle"))
-        dataForm.registerEditor(TKDataFormSwitchEditor.self, forProperty: dataSource.entityModel.propertyWithName("allowParallaxEffect"))
+        dataForm.registerEditor(TKDataFormSegmentedEditor.self, forProperty: "dismissDirection")
+        dataForm.registerEditor(TKDataFormSegmentedEditor.self, forProperty: "dismissMode")
+        dataForm.registerEditor(TKDataFormSegmentedEditor.self, forProperty: "actionsLayout")
+        dataForm.registerEditor(TKDataFormSegmentedEditor.self, forProperty: "backgroundStyle")
+        dataForm.registerEditor(TKDataFormSwitchEditor.self, forProperty: "allowParallax")
+        dataForm.dataSource = dataSource;
     }
     
     func show()
@@ -54,7 +55,7 @@ class AlertSettings: ExampleViewController, TKAlertDelegate, TKDataFormDelegate 
         let alert : TKAlert = TKAlert()
         alert.title = settings.title
         alert.message = settings.message
-        alert.allowParallaxEffect = settings.allowParallaxEffect
+        alert.allowParallaxEffect = settings.allowParallax
         alert.style.backgroundStyle = settings.backgroundStyle
         alert.actionsLayout = settings.actionsLayout
         alert.dismissMode = settings.dismissMode
@@ -82,28 +83,26 @@ class AlertSettings: ExampleViewController, TKAlertDelegate, TKDataFormDelegate 
     
     //MARK: - TKDataFormDelegate
  
-    func dataForm(dataForm: TKDataForm!, updateEditor editor: TKDataFormEditor!, forProperty property: TKDataFormEntityProperty!) {
+    func dataForm(dataForm: TKDataForm, updateEditor editor: TKDataFormEditor, forProperty property: TKEntityProperty) {
         if(property.name == "actionsLayout") {
             let segmentedEditor = editor as! TKDataFormSegmentedEditor
-            segmentedEditor.segments = ["Horizontal", "Vertical"]
+            segmentedEditor.options = ["Horizontal", "Vertical"]
         }
         
         if(property.name == "backgroundStyle") {
             let segmentedEditor = editor as! TKDataFormSegmentedEditor
-            let segmentedControl = segmentedEditor.editor() as! UISegmentedControl
-            segmentedEditor.segments = ["Blur", "Dim"];
+            segmentedEditor.options = ["Blur", "Dim"];
         }
         
         if(property.name == "dismissMode") {
             let segmentedEditor = editor as! TKDataFormSegmentedEditor
-            segmentedEditor.segments = ["None", "Tap", "Swipe"];
+            segmentedEditor.options = ["None", "Tap", "Swipe"];
         }
-        
 
         if(property.name == "dismissDirection"){
 
             let segmentedEditor = editor as! TKDataFormSegmentedEditor
-            segmentedEditor.segments = ["Horizontal", "Vertical"];
+            segmentedEditor.options = ["Horizontal", "Vertical"];
         }
     }
 }

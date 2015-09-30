@@ -13,11 +13,11 @@
     BOOL _incorrectFormat;
 }
 
-- (BOOL)validateProperty:(TKDataFormEntityProperty *)property
+- (BOOL)validateProperty:(TKEntityProperty *)property
 {
     _emptyField = NO;
     _incorrectFormat = NO;
-    NSString *email = property.value;
+    NSString *email = property.valueCandidate;
     if (!email || email.length == 0) {
         _emptyField = YES;
         return NO;

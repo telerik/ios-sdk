@@ -15,7 +15,7 @@
     BOOL _isSelectedPoint;
 }
 
-- (id)initWithRender:(TKChartSeriesRender *)render selectedDataIndex:(NSUInteger)dataIndex selectedSeriesIndex:(NSUInteger)seriesIndex
+- (instancetype)initWithRender:(TKChartSeriesRender *)render selectedDataIndex:(NSUInteger)dataIndex selectedSeriesIndex:(NSUInteger)seriesIndex
 {
     self = [super initWithRender:render];
     if (self) {
@@ -35,7 +35,7 @@
             continue;
         }
         
-        TKChartPointLabel *label = [self labelForDataPoint:dataPoint inSeries:series atIndex:i];
+        TKChartPointLabel *label = [self labelForDataPoint:dataPoint property:@"dataYValue" inSeries:series atIndex:i];
         CGRect labelRect;
         TKChartPointLabelStyle *labelStyle = series.style.pointLabelStyle;
         if (_isSelectedPoint) {
@@ -69,7 +69,7 @@
     }
 }
 
-- (TKChartPointLabel *)labelForDataPoint:(id<TKChartData>)dataPoint inSeries:(TKChartSeries *)series atIndex:(NSUInteger)dataIndex
+- (TKChartPointLabel *)labelForDataPoint:(id<TKChartData>)dataPoint property:(NSString *)propertyName inSeries:(TKChartSeries *)series atIndex:(NSUInteger)dataIndex
 {
     if (series.index == _selectedSeries && dataIndex == _selectedDataPoint) {
         
@@ -84,7 +84,7 @@
     }
     
     _isSelectedPoint = NO;
-    return [[TKChartPointLabel alloc] initWithPoint:dataPoint style:series.style.pointLabelStyle text:[NSString stringWithFormat:@"%@", dataPoint.dataYValue]];
+    return [[TKChartPointLabel alloc] initWithPoint:dataPoint series:series text:[NSString stringWithFormat:@"%@", dataPoint.dataYValue]];
 }
 
 @end

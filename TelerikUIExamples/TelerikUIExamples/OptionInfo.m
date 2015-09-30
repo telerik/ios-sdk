@@ -9,14 +9,14 @@
 
 @implementation OptionInfo
 
-- (id)initWithText:(NSString*)text selector:(SEL)selector
+- (instancetype)initWithText:(NSString*)text selector:(SEL)selector
 {
     return [self initWithText:text selector:selector tag:nil];
 }
 
-- (id)initWithText:(NSString *)text selector:(SEL)selector tag:(id)tag
+- (instancetype)initWithText:(NSString *)text selector:(SEL)selector tag:(id)tag
 {
-    self = [super init];
+    self = [self init];
     if (self) {
         _tag = tag;
         _optionText = text;

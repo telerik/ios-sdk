@@ -13,7 +13,7 @@ class LoremIpsumGenerator: NSObject {
     let rows = NSMutableDictionary()
     
     func generateString(wordCount: NSInteger) -> NSString {
-        var randomString = NSMutableString()
+        let randomString = NSMutableString()
         for var i = 0; i < wordCount; ++i {
             let index : Int = Int(arc4random_uniform(UInt32(words.count)))
             randomString.appendString(words[index])

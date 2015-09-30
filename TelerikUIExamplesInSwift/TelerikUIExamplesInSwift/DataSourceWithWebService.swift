@@ -18,33 +18,33 @@ class DataSourceWithWebService: ExampleViewController {
         self.title = "Consume web service"
         
         let chart = TKChart(frame: self.exampleBoundsWithInset)
-        chart.autoresizingMask = ~UIViewAutoresizing.None
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: ~UIViewAutoresizing.None.rawValue)
         self.view.addSubview(chart)
 
         let url = "http://www.telerik.com/docs/default-source/ui-for-ios/weather.json?sfvrsn=2"
         dataSource.loadDataFromURL(url, dataFormat: TKDataSourceDataFormat.JSON, rootItemKeyPath: "dayList") { (NSError err) -> Void in
 
             if err != nil {
-                println("Can't connect with the server!")
+                print("Can't connect with the server!")
                 return
             }
             
             self.dataSource.settings.chart.createSeries { (TKDataSourceGroup group) -> TKChartSeries! in
-                var series:TKChartSeries? = nil
-                if group.valueKey == "clouds" {
+                let series:TKChartSeries
+                if group!.valueKey == "clouds" {
                     series = TKChartColumnSeries()
-                    series?.yAxis = TKChartNumericAxis(minimum: 0, andMaximum: 100)
-                    series?.yAxis.title = "clouds"
-                    series?.yAxis.style.titleStyle.rotationAngle = CGFloat(M_PI_2);
+                    series.yAxis = TKChartNumericAxis(minimum: 0, andMaximum: 100)
+                    series.yAxis!.title = "clouds"
+                    series.yAxis!.style.titleStyle.rotationAngle = CGFloat(M_PI_2);
                 }
                 else {
                     series = TKChartLineSeries()
-                    series?.yAxis = TKChartNumericAxis(minimum: -10, andMaximum: 30)
-                    if group.valueKey == "temp.min" {
-                        series?.yAxis.position = TKChartAxisPosition.Right
-                        series?.yAxis.title = "temperature"
-                        series?.yAxis.style.titleStyle.rotationAngle = CGFloat(M_PI_2);
-                        chart.addAxis(series?.yAxis)
+                    series.yAxis = TKChartNumericAxis(minimum: -10, andMaximum: 30)
+                    if group!.valueKey == "temp.min" {
+                        series.yAxis!.position = TKChartAxisPosition.Right
+                        series.yAxis!.title = "temperature"
+                        series.yAxis!.style.titleStyle.rotationAngle = CGFloat(M_PI_2);
+                        chart.addAxis(series.yAxis!)
                     }
                 }
                 return series
@@ -70,6 +70,7 @@ class DataSourceWithWebService: ExampleViewController {
             xAxis.majorTickInterval = 1
             xAxis.setPlotMode(TKChartAxisPlotMode.BetweenTicks)
             xAxis.labelFormatter = formatter
+            xAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Days
             xAxis.title = "date"
             xAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Days
         }

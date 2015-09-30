@@ -18,17 +18,17 @@ class PieDonut:ExampleViewController {
         let bounds = self.exampleBoundsWithInset
         
         pieChart.frame = CGRectInset(CGRectMake(bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height / 2), 10, 10)
-        pieChart.autoresizingMask = ~UIViewAutoresizing.None
+        pieChart.autoresizingMask = UIViewAutoresizing(rawValue:~UIViewAutoresizing.None.rawValue)
         pieChart.allowAnimations = true
-        pieChart.legend().hidden = false
-        pieChart.legend().style.position = TKChartLegendPosition.Right
+        pieChart.legend.hidden = false
+        pieChart.legend.style.position = TKChartLegendPosition.Right
         self.view.addSubview(pieChart)
         
         donutChart.frame = CGRectInset(CGRectMake(bounds.origin.x, bounds.origin.y + bounds.size.height / 2, bounds.size.width, bounds.size.height / 2), 10, 10)
-        donutChart.autoresizingMask = ~UIViewAutoresizing.None
+        donutChart.autoresizingMask = UIViewAutoresizing(rawValue:~UIViewAutoresizing.None.rawValue)
         donutChart.allowAnimations = true
-        donutChart.legend().hidden = false
-        donutChart.legend().style.position = TKChartLegendPosition.Right
+        donutChart.legend.hidden = false
+        donutChart.legend.style.position = TKChartLegendPosition.Right
         self.view.addSubview(donutChart)
         
         let array:[TKChartDataPoint] = [
@@ -56,7 +56,7 @@ class PieDonut:ExampleViewController {
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
-        pieChart.select(TKChartSelectionInfo(series:pieChart.series()[0] as! TKChartSeries, dataPointIndex: 0))
+        pieChart.select(TKChartSelectionInfo(series:pieChart.series[0], dataPointIndex: 0))
     }
     
     override func didReceiveMemoryWarning() {

@@ -120,12 +120,12 @@
             [listView didRefreshOnPull];
             
             if (_newItemsCount < 1) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Pull to refresh"
-                                                                message:@"No more data available!"
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"Close"
-                                                      otherButtonTitles:nil];
-                [alert show];
+                TKAlert *alert = [[TKAlert alloc] initWithTitle:@"Pull to refresh"
+                                                        message:@"No more data available!"
+                                                       delegate:nil
+                                              cancelActionTitle:@"Close"
+                                              otherActionTitles:nil];
+                [alert show:YES];
             }
         });
 

@@ -15,7 +15,7 @@
     if (self) {
         _title = @"Alert";
         _message = @"Hello world";
-        _allowParallaxEffect = NO;
+        _allowParallax = NO;
         _backgroundStyle = TKAlertBackgroundStyleDim;
         _actionsLayout = TKAlertActionsLayoutHorizontal;
         _dismissMode = TKAlertDismissModeNone;

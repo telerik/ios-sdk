@@ -8,46 +8,78 @@
 #import "DataFormCustomization.h"
 #import "ReservationForm.h"
 #import "CallEditor.h"
+
 @implementation DataFormCustomization
 {
     TKDataFormEntityDataSource *_dataSource;
+    ReservationForm *_reservationForm;
+    UIButton *_btn;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    _reservationForm = [ReservationForm new];
     
-    _dataSource = [TKDataFormEntityDataSource new];
-    _dataSource.selectedObject = [ReservationForm new];
+    _dataSource = [[TKDataFormEntityDataSource alloc] initWithObject:_reservationForm];
     
-    self.dataForm.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wood-pattern"]];
-    self.dataForm.dataSource = _dataSource;
+    TKEntityProperty *name = _dataSource[@"name"];
+    name.hintText = @"Name";
+    name.errorMessage = @"Please fill in the guest name";
+    name.image = [UIImage imageNamed:@"guest-name"];
     
-    [self.dataForm registerEditor:[CallEditor class] forProperty:[_dataSource.entityModel propertyWithName:@"phone"]];
-    [self.dataForm registerEditor:[CallEditor class] forProperty:[_dataSource.entityModel propertyWithName:@"cancelReservation"]];
-    [self.dataForm registerEditor:[TKDataFormOptionsEditor class] forProperty:[_dataSource.entityModel propertyWithName:@"section"]];
-    [self.dataForm registerEditor:[TKDataFormOptionsEditor class] forProperty:[_dataSource.entityModel propertyWithName:@"table"]];
-    [self.dataForm registerEditor:[TKDataFormSegmentedEditor class] forProperty:[_dataSource.entityModel propertyWithName:@"origin"]];
+    TKEntityProperty *phone = _dataSource[@"phone"];
+    phone.hintText = @"Phone";
+    phone.image = [UIImage imageNamed:@"phone"];
     
-    [_dataSource.entityModel propertyWithName:@"name"].image = [UIImage imageNamed:@"guest-name"];
-    [_dataSource.entityModel propertyWithName:@"phone"].image = [UIImage imageNamed:@"phone"];
-    [_dataSource.entityModel propertyWithName:@"date"].image = [UIImage imageNamed:@"calendar"];
-    [_dataSource.entityModel propertyWithName:@"time"].image = [UIImage imageNamed:@"time"];
-    [_dataSource.entityModel propertyWithName:@"guests"].image = [UIImage imageNamed:@"guest-number"];
-    [_dataSource.entityModel propertyWithName:@"table"].image = [UIImage imageNamed:@"table-number"];
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    formatter.dateFormat = @"h:mm a";
+    _dataSource[@"time"].formatter = formatter;
     
-    [_dataSource.entityModel.properties enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        TKDataFormEntityProperty *property = (TKDataFormEntityProperty*)obj;
+    _dataSource[@"date"].image = [UIImage imageNamed:@"calendar"];
+    _dataSource[@"time"].image = [UIImage imageNamed:@"time"];
+    _dataSource[@"guests"].image = [UIImage imageNamed:@"guest-number"];
+    _dataSource[@"table"].image = [UIImage imageNamed:@"table-number"];
+    
+    _dataSource[@"time"].editorClass = [TKDataFormTimePickerEditor class];
+    _dataSource[@"phone"].editorClass = [CallEditor class];
+    _dataSource[@"origin"].editorClass = [TKDataFormSegmentedEditor class];
+    
+    _dataSource[@"guests"].valuesProvider = [TKRange rangeWithMinimum:@1 andMaximum:@10];
+    _dataSource[@"section"].valuesProvider = @[ @"Section 1", @"Section 2", @"Section 3", @"Section 4" ];
+    _dataSource[@"table"].valuesProvider = @[ @1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12, @13, @14, @15 ];
+    _dataSource[@"origin"].valuesProvider = @[ @"phone", @"in-person", @"online", @"other" ];
+    [_dataSource.properties enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        TKEntityProperty *property = (TKEntityProperty*)obj;
         if ([property.name isEqualToString:@"section"] || [property.name isEqualToString:@"table"]) {
-            property.groupKey = @"TABLE DETAILS";
+            property.groupName = @"TABLE DETAILS";
         }
-        else if ([property.name isEqualToString:@"origin"] || [property.name isEqualToString:@"cancelReservation"]) {
-            property.groupKey = @"ORIGIN";
+        else if ([property.name isEqualToString:@"origin"]) {
+            property.groupName = @"ORIGIN";
         }
         else {
-            property.groupKey = @"RESERVATION DETAILS";
+            property.groupName = @"RESERVATION DETAILS";
         }
     }];
+    
+    self.dataForm.dataSource = _dataSource;
+    self.dataForm.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 66);
+    self.dataForm.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wood-pattern"]];
+    self.dataForm.tintColor = [UIColor colorWithRed:0.780 green:0.2 blue:0.223 alpha:1.0];
+    
+    _btn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.dataForm.frame.size.height, self.view.bounds.size.width, 66)];
+    [_btn setTitle:@"Cancel reservation" forState:UIControlStateNormal];
+    [_btn setTitleColor:[UIColor colorWithRed:0.780 green:0.2 blue:0.223 alpha:1.0] forState:UIControlStateNormal];
+    [_btn addTarget:self action:@selector(cancelReservation) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:_btn];
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    _btn.frame = CGRectMake(0, self.dataForm.frame.size.height, self.view.bounds.size.width, 66);
 }
 
 - (void)cancelReservation
@@ -67,122 +99,62 @@
 
 #pragma mark TKDataFormDelegate
 
-- (BOOL)dataForm:(TKDataForm *)dataForm validateProperty:(TKDataFormEntityProperty *)propery editor:(TKDataFormEditor *)editor
+- (BOOL)dataForm:(TKDataForm *)dataForm validateProperty:(TKEntityProperty *)property editor:(TKDataFormEditor *)editor
 {
-    if ([propery.name isEqualToString:@"name"]) {
-        NSString *value = propery.value;
-        if (value.length == 0) {
-            return NO;
-        }
+    if ([property.name isEqualToString:@"name"]) {
+        return ((NSString*)property.valueCandidate).length > 0;
     }
     return YES;
 }
 
-- (void)dataForm:(TKDataForm *)dataForm didValidateProperty:(TKDataFormEntityProperty *)propery editor:(TKDataFormEditor *)editor
+- (void)dataForm:(TKDataForm *)dataForm updateEditor:(TKDataFormEditor *)editor forProperty:(TKEntityProperty *)property
 {
-    if ([propery.name isEqualToString:@"name"]) {
-        if (!propery.isValid) {
-            propery.feedbackMessage = @"Please fill in the guest name";
-        }
-        else {
-            propery.feedbackMessage = nil;
-        }
-    }
-}
-
-- (void)dataForm:(TKDataForm *)dataForm updateEditor:(TKDataFormEditor *)editor forProperty:(TKDataFormEntityProperty *)property
-{
-    editor.style.textLabelOffset = UIOffsetMake(25, 0);
+    editor.style.textLabelOffset = UIOffsetMake(10, 0);
     editor.style.separatorLeadingSpace = 40;
     editor.style.accessoryArrowStroke = [TKStroke strokeWithColor:[UIColor colorWithRed:0.780 green:0.2 blue:0.223 alpha:1.0]];
+    if ([@[@"origin", @"date", @"time", @"name", @"phone"] containsObject:property.name]) {
+        editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayModeHidden;
+        TKGridLayoutCellDefinition *titleDef = [editor.gridLayout definitionForView:editor.textLabel];
+        [editor.gridLayout setWidth:0 forColumn:[titleDef.column integerValue]];
+        editor.style.editorOffset = UIOffsetMake(10, 0);
+    }
+
+    if ([property.name isEqualToString:@"origin"]) {
+        editor.style.editorOffset = UIOffsetMake(0, 0);
+        editor.style.separatorColor = nil;
+    }
+
     if ([property.name isEqualToString:@"name"]) {
-        if (!property.isValid) {
-            editor.style.feedbackLabelOffset = UIOffsetMake(25, -5);
-            editor.style.editorOffset = UIOffsetMake(25, -7);
-        }
-        else {
-            editor.style.feedbackLabelOffset = UIOffsetMake(25, 0);
-            editor.style.editorOffset = UIOffsetMake(25, 0);
-        }
-        
+        editor.style.feedbackLabelOffset = UIOffsetMake(10, 0);
         editor.feedbackLabel.font = [UIFont fontWithName:@"Verdana-Italic" size:10];
-        editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayModeHidden;
-        ((UITextField *)editor.editor).placeholder = @"Name";
-    }
-    
-    if ([property.name isEqualToString:@"time"]) {
-        editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayModeHidden;
-        editor.style.textLabelOffset = UIOffsetMake(25, 0);
-        ((TKDataFormDatePickerEditor *)editor).dateFormatter.dateFormat = @"h:mm a";
-        ((UIDatePicker *)editor.editor).datePickerMode = UIDatePickerModeTime;
-    }
-    
-    if ([property.name isEqualToString:@"date"]) {
-        editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayModeHidden;
-        editor.style.textLabelOffset = UIOffsetMake(25, 0);
     }
     
     if ([property.name isEqualToString:@"guests"]) {
-        UIStepper *stepper = ((UIStepper *)editor.editor);
-        stepper.minimumValue = 1;
-        stepper.tintColor = [UIColor colorWithRed:0.780 green:0.2 blue:0.223 alpha:1.0];
-        [stepper setIncrementImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
-        [stepper setDecrementImage:[UIImage imageNamed:@"minus"] forState:UIControlStateNormal];
+        TKGridLayoutCellDefinition *labelDef = [editor.gridLayout definitionForView:((TKDataFormStepperEditor *)editor).valueLabel];
+        labelDef.contentOffset = UIOffsetMake(-25, 0);
     }
-    
+
     if ([property.name isEqualToString:@"section"]) {
+        UIImage *img = [UIImage imageNamed:@"guest-name"];
+        editor.style.textLabelOffset = UIOffsetMake(img.size.width + 10, 0);
+    }
+    
+    if ([property.name isEqualToString:@"table"] || [property.name isEqualToString:@"section"]) {
         editor.textLabel.textColor = [UIColor whiteColor];
         editor.backgroundColor = [UIColor clearColor];
-        ((TKDataFormOptionsEditor *)editor).options = @[@"Section 1", @"Section 2", @"Section 3", @"Section 4"];
         ((TKDataFormOptionsEditor *)editor).selectedOptionLabel.textColor = [UIColor whiteColor];
-    }
-    
-    if ([property.name isEqualToString:@"table"]) {
-        editor.textLabel.textColor = [UIColor whiteColor];
-        editor.backgroundColor = [UIColor clearColor];
-        ((TKDataFormOptionsEditor *)editor).options = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15"];
-        ((TKDataFormOptionsEditor *)editor).selectedOptionLabel.textColor = [UIColor whiteColor];
-    }
-    
-    if ([property.name isEqualToString:@"origin"]) {
-        editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayModeHidden;
-        editor.style.editorOffset = UIOffsetMake(25, 0);
-        ((TKDataFormSegmentedEditor *)editor).segments = @[@"phone", @"in-person", @"online", @"other"];
-        UISegmentedControl *segmentedControl = (UISegmentedControl *)editor.editor;
-        segmentedControl.tintColor = [UIColor colorWithRed:0.780 green:0.2 blue:0.223 alpha:1.0];
-    }
-    
-    if ([property.name isEqualToString:@"cancelReservation"]) {
-        editor.style.textLabelDisplayMode = TKDataFormEditorTextLabelDisplayModeHidden;
-        editor.style.editorOffset = UIOffsetMake(25, 0);
-        [((CallEditor *)editor).actionButton setTitle:property.displayName forState:UIControlStateNormal];
-        [((CallEditor *)editor).actionButton addTarget:self action:@selector(cancelReservation) forControlEvents:UIControlEventTouchUpInside];
+        editor.style.editorOffset = UIOffsetMake(-10, 0);
+        ((TKDataFormOptionsEditor *)editor).selectedOptionLabel.textAlignment = NSTextAlignmentRight;
     }
 }
 
-- (UIView *)dataForm:(TKDataForm *)dataForm viewForHeaderInSection:(NSInteger)section
+- (void)dataForm:(TKDataForm *)dataForm updateGroupView:(TKEntityPropertyGroupView *)groupView forGroupAtIndex:(NSUInteger)groupIndex
 {
-    TKDataFormHeaderView *header = [[TKDataFormHeaderView alloc] init];
-    header.titleLabel.textColor = [UIColor grayColor];
-    header.insets = UIEdgeInsetsMake(0, 40, 0, 0);
-    header.separatorColor = [TKSolidFill solidFillWithColor:[UIColor clearColor]];
-    if (section == 0) {
-        header.titleLabel.text = @"RESERVATION DETAILS";
+    groupView.titleView.titleLabel.textColor = [UIColor lightGrayColor];
+    groupView.titleView.titleLabel.font = [UIFont systemFontOfSize:13];
+    groupView.titleView.style.insets = UIEdgeInsetsMake(0, 10, 0, 0);
+    if (groupIndex == 1) {
+        groupView.editorsContainer.backgroundColor = [UIColor clearColor];
     }
-    else if (section == 1) {
-        header.titleLabel.text = @"TABLE DETAILS";
-        header.backgroundColor = [UIColor clearColor];
-    }
-    else {
-        header.titleLabel.text = @"ORIGIN";
-    }
-    
-    return header;
 }
-
-- (CGFloat)dataForm:(TKDataForm *)dataForm heightForHeaderInSection:(NSInteger)section
-{
-    return 30;
-}
-
 @end

@@ -12,12 +12,10 @@ class AlertCustomView: ExampleViewController, TKAlertDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
         UIButton.circleButtonInView(self.view, title: "Show Alert", target: self, action: "show:")
     }
     
     func show(sender: AnyObject) {
-        
         let alert = TKAlert()
         
         alert.style.headerHeight = 0
@@ -27,7 +25,7 @@ class AlertCustomView: ExampleViewController, TKAlertDelegate {
         
         let view = AlertCustomContentView(frame: CGRectMake(0, 0, 300, 210))
         alert.contentView.addSubview(view)
-        
+
         alert.addActionWithTitle("Done") { (TKAlert, TKAlertAction) -> Bool in
             return true
         }

@@ -11,7 +11,7 @@ class CrossLineAnnotation: ExampleViewController {
     
     let chart = TKChart()
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("cross lines") { self.crossLine() }
@@ -28,19 +28,19 @@ class CrossLineAnnotation: ExampleViewController {
         super.viewDidLoad()
     
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         
-        for i in 0..<2 {
+        for _ in 0..<2 {
             var points = [TKChartDataPoint]()
-            for i in 0..<20 {
+            for _ in 0..<20 {
                 points.append(TKChartDataPoint(x: Int(arc4random() % (1450)), y: Int(arc4random() % (150))))
             }
             chart.addSeries(TKChartScatterSeries(items: points))
         }
         
         // Add a cross line annotation
-        chart.addAnnotation(TKChartCrossLineAnnotation(x: 900, y: 60, forSeries: chart.series()[0] as! TKChartSeries))
+        chart.addAnnotation(TKChartCrossLineAnnotation(x: 900, y: 60, forSeries: chart.series[0]))
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,7 +52,7 @@ class CrossLineAnnotation: ExampleViewController {
     
     func crossLine()
     {
-        let a = chart.annotations()[0] as! TKChartCrossLineAnnotation
+        let a = chart.annotations[0] as! TKChartCrossLineAnnotation
         a.style.verticalLineStroke = TKStroke(color: UIColor.blackColor())
         a.style.horizontalLineStroke = TKStroke(color: UIColor.blackColor())
         a.style.pointShape = TKPredefinedShape(type: TKShapeType.Circle, andSize: CGSizeMake(4, 4))
@@ -61,7 +61,7 @@ class CrossLineAnnotation: ExampleViewController {
     
     func horizontalLine()
     {
-        let a = chart.annotations()[0] as! TKChartCrossLineAnnotation
+        let a = chart.annotations[0] as! TKChartCrossLineAnnotation
         a.style.verticalLineStroke = nil
         a.style.horizontalLineStroke = TKStroke(color: UIColor.blackColor())
         a.style.pointShape = TKPredefinedShape(type: TKShapeType.Circle, andSize: CGSizeMake(4, 4))
@@ -70,7 +70,7 @@ class CrossLineAnnotation: ExampleViewController {
     
     func verticalLine()
     {
-        let a = chart.annotations()[0] as! TKChartCrossLineAnnotation
+        let a = chart.annotations[0] as! TKChartCrossLineAnnotation
         a.style.verticalLineStroke = TKStroke(color: UIColor.blackColor())
         a.style.horizontalLineStroke = nil
         a.style.pointShape = TKPredefinedShape(type: TKShapeType.Circle, andSize: CGSizeMake(4, 4))
@@ -79,7 +79,7 @@ class CrossLineAnnotation: ExampleViewController {
     
     func disableLines()
     {
-        let a = chart.annotations()[0] as! TKChartCrossLineAnnotation
+        let a = chart.annotations[0] as! TKChartCrossLineAnnotation
         a.style.verticalLineStroke = nil
         a.style.horizontalLineStroke = nil
         a.style.pointShape = TKPredefinedShape(type: TKShapeType.TriangleUp, andSize: CGSizeMake(20, 20))

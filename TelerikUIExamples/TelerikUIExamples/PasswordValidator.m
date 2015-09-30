@@ -12,10 +12,10 @@
     BOOL _shortPassword;
 }
 
-- (BOOL)validateProperty:(TKDataFormEntityProperty *)property
+- (BOOL)validateProperty:(TKEntityProperty *)property
 {
     _shortPassword = NO;
-    NSString *password = property.value;
+    NSString *password = property.valueCandidate;
     if (password.length < 6) {
         _shortPassword = YES;
         return NO;

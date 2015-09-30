@@ -42,7 +42,6 @@ namespace Examples
 				TextLabel.Text = "It was the chicken!";
 				return true;
 			});
-
 			alert.Show (true);
 		}
 	}

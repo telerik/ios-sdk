@@ -14,15 +14,15 @@ class CalendarCustomization: ExampleViewController, TKCalendarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.calendarView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        self.calendarView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.calendarView.delegate = self
         self.view.addSubview(self.calendarView)
         
         let img = UIImage(named: "calendar_header")
-        let presenter = self.calendarView.presenter() as! TKCalendarMonthPresenter
-        presenter.style().titleCellHeight = 20
-        presenter.headerView().contentMode = UIViewContentMode.ScaleToFill
-        presenter.headerView().backgroundColor = UIColor(patternImage: img!)
+        let presenter = self.calendarView.presenter as! TKCalendarMonthPresenter
+        presenter.style.titleCellHeight = 20
+        presenter.headerView.contentMode = UIViewContentMode.ScaleToFill
+        presenter.headerView.backgroundColor = UIColor(patternImage: img!)
     }
     
     override func viewDidLayoutSubviews() {
@@ -38,7 +38,7 @@ class CalendarCustomization: ExampleViewController, TKCalendarDelegate {
     
 //MARK: TKCalendarDelegate
     
-    func calendar(calendar: TKCalendar!, viewForCellOfKind cellType: TKCalendarCellType) -> TKCalendarCell! {
+    func calendar(calendar: TKCalendar, viewForCellOfKind cellType: TKCalendarCellType) -> TKCalendarCell? {
         if cellType == TKCalendarCellType.Day {
             return CustomCell()
         }

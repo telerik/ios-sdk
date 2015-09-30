@@ -16,6 +16,8 @@ namespace Examples
 		List<OptionSection> sections = new List<OptionSection> ();
 		List<OptionInfo> selectedOptions = new List<OptionInfo>();
 		CGRect exampleBounds;
+		float headerHeight = 0;
+		float offset = 0;
 
 		public nint SelectedOption { get; set; }
 	
@@ -58,6 +60,7 @@ namespace Examples
 			base.ViewDidLoad ();
 
 			this.View.BackgroundColor = UIColor.White;
+			this.UpdateHeaderHeight ();
 
 			UIUserInterfaceIdiom idiom = UIDevice.CurrentDevice.UserInterfaceIdiom;
 			if (options.Count > 0 || sections.Count > 0) 
@@ -66,14 +69,57 @@ namespace Examples
 					this.loadIPadLayout ();
 				else
 					this.loadIPhoneLayout ();
- 			} 
-			else 
-			{
-				if (idiom == UIUserInterfaceIdiom.Pad)
-					exampleBounds = CGRect.Inflate (this.View.Bounds, -30, -30);
-				else
-					exampleBounds = CGRect.Inflate (this.View.Bounds, -10, -10);
+			} 
+			this.UpdateLayoutConstraints ();
+
+		}
+
+		void UpdateHeaderHeight () 
+		{
+			if (this.NavigationController == null) {
+				return;
 			}
+			UINavigationBar navigationBar = this.NavigationController.NavigationBar;
+			if (navigationBar.Translucent) {
+				UIApplication app = UIApplication.SharedApplication;
+				bool isLandscape = UIInterfaceOrientationExtensions.IsLandscape (app.StatusBarOrientation);
+				UIUserInterfaceIdiom idiom = UIDevice.CurrentDevice.UserInterfaceIdiom;
+				double version = Double.Parse (UIDevice.CurrentDevice.SystemVersion);
+				if (idiom == UIUserInterfaceIdiom.Pad && version >= 8.0) {
+					this.headerHeight = (float)(navigationBar.IntrinsicContentSize.Height + app.StatusBarFrame.Height);
+				} else {
+					float statusBarSize = (float)app.StatusBarFrame.Size.Height;
+					if (isLandscape) {
+						statusBarSize = (float)app.StatusBarFrame.Size.Width;
+					}
+					this.headerHeight = (float)(navigationBar.IntrinsicContentSize.Height + statusBarSize);
+				}
+			}
+		}
+
+		void UpdateLayoutConstraints () 
+		{
+			this.exampleBounds = this.View.Bounds;
+			this.UpdateHeaderHeight ();
+			this.exampleBounds.Y += this.headerHeight;
+			this.exampleBounds.Height -= this.headerHeight;
+
+			if (this.offset > 0) {
+				this.exampleBounds.Y += this.offset;
+				this.exampleBounds.Height -= this.offset;
+			}
+
+			UIUserInterfaceIdiom idiom = UIDevice.CurrentDevice.UserInterfaceIdiom;
+			if (idiom == UIUserInterfaceIdiom.Pad)
+				exampleBounds = CGRect.Inflate (this.exampleBounds, -30, -30);
+			else
+				exampleBounds = CGRect.Inflate (this.exampleBounds, -10, -10);
+		}
+
+		public override void ViewDidLayoutSubviews ()
+		{
+			base.ViewDidLayoutSubviews ();
+			this.UpdateLayoutConstraints();
 		}
 
 		public override void ViewWillDisappear (bool animated)
@@ -132,14 +178,16 @@ namespace Examples
 		void loadIPadLayout()
 		{
 			CGSize desiredSize = CGSize.Empty;
+			this.offset = 0;
 			if (sections.Count == 0 && options.Count == 1) 
 			{
 				UIButton button = new UIButton (UIButtonType.RoundedRect);
 				button.SetTitle (options [0].OptionText, UIControlState.Normal);
 				button.AddTarget (optionTouched, UIControlEvent.TouchUpInside);
 				desiredSize = button.SizeThatFits (this.View.Bounds.Size);
-				button.Frame = new CGRect (30, 10, desiredSize.Width, desiredSize.Height);
+				button.Frame = new CGRect (30, 10 + this.headerHeight, desiredSize.Width, desiredSize.Height);
 				this.View.AddSubview (button);
+				this.offset = (float)(10 + desiredSize.Height + 10);
 			} 
 			else if (options.Count >= 3 || sections.Count > 0) 
 			{
@@ -153,12 +201,12 @@ namespace Examples
 					segmented.InsertSegment (options [i].OptionText, i + 1, false);
 				}
 				desiredSize = segmented.SizeThatFits (this.View.Bounds.Size);
-				segmented.Frame = new CGRect (10, 10, desiredSize.Width, desiredSize.Height);
+				segmented.Frame = new CGRect (10, 10 + this.headerHeight, desiredSize.Width, desiredSize.Height);
 				segmented.AddTarget (optionTouched, UIControlEvent.ValueChanged);
 				this.View.AddSubview (segmented);
 				segmented.SelectedSegment = this.SelectedOption;
+				this.offset = (float)(10 + desiredSize.Height + 10);
 			}
-			exampleBounds = new CGRect (20, 30 + desiredSize.Height, this.View.Bounds.Size.Width - 40, this.View.Bounds.Size.Height - desiredSize.Height - 60);
 		}
 
 		void loadIPhoneLayout()
@@ -172,7 +220,7 @@ namespace Examples
 				settingsButton = new UIBarButtonItem (new UIImage ("menu.png"), UIBarButtonItemStyle.Plain, settingsTouched);
 			}
 			this.NavigationItem.RightBarButtonItem = settingsButton;
-			exampleBounds = CGRect.Inflate (this.View.Bounds, -10, -10);
+//			exampleBounds = CGRect.Inflate (this.View.Bounds, -10, -10);
 		}
 
 		public virtual void optionTouched(object sender, EventArgs e)

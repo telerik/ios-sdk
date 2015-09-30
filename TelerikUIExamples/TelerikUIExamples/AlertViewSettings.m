@@ -17,9 +17,10 @@
 {
     TKDataForm* _dataForm;
     AlertSettings* _settings;
+    TKDataFormEntityDataSource *_dataSource;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -35,6 +36,8 @@
     _settings = [AlertSettings new];
     
     _dataForm = [TKDataForm new];
+    _dataSource = [[TKDataFormEntityDataSource alloc] initWithObject:_settings];
+    _dataForm.dataSource = _dataSource;
     
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         _dataForm.frame = self.exampleBounds;
@@ -47,14 +50,21 @@
     _dataForm.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_dataForm];
     
-    TKDataFormEntityDataSource* dataSource = ((TKDataFormEntityDataSource*)_dataForm.dataSource);
-    dataSource.selectedObject = _settings;
-
-    [_dataForm registerEditor:[TKDataFormSegmentedEditor class] forProperty:[dataSource.entityModel propertyWithName:@"actionsLayout"]];
-    [_dataForm registerEditor:[TKDataFormSegmentedEditor class] forProperty:[dataSource.entityModel propertyWithName:@"backgroundStyle"]];
-    [_dataForm registerEditor:[TKDataFormSegmentedEditor class] forProperty:[dataSource.entityModel propertyWithName:@"dismissMode"]];
-    [_dataForm registerEditor:[TKDataFormSegmentedEditor class] forProperty:[dataSource.entityModel propertyWithName:@"dismissDirection"]];
-    _dataForm.commitMode = TKDataFormCommitModeDelayed;
+    _dataSource[@"actionsLayout"].editorClass = [TKDataFormSegmentedEditor class];
+    _dataSource[@"actionsLayout"].valuesProvider = @[@"Horizontal", @"Vertical"];
+    
+    _dataSource[@"backgroundStyle"].editorClass = [TKDataFormSegmentedEditor class];
+    _dataSource[@"backgroundStyle"].valuesProvider = @[@"Blur", @"Dim"];
+    
+    _dataSource[@"dismissMode"].editorClass = [TKDataFormSegmentedEditor class];
+    _dataSource[@"dismissMode"].valuesProvider = @[@"None", @"Tap", @"Swipe"];
+    
+    _dataSource[@"dismissDirection"].editorClass = [TKDataFormSegmentedEditor class];
+    _dataSource[@"dismissDirection"].valuesProvider = @[@"Horizontal", @"Vertical"];
+    
+    _dataForm.commitMode = TKDataFormCommitModeManual;
+    
+    [_dataForm reloadData];
 }
 
 - (void)show:(id)sender
@@ -64,7 +74,7 @@
 
     alert.title = _settings.title;
     alert.message = _settings.message;
-    alert.allowParallaxEffect = _settings.allowParallaxEffect;
+    alert.allowParallaxEffect = _settings.allowParallax;
     alert.style.backgroundStyle = _settings.backgroundStyle;
     alert.actionsLayout = _settings.actionsLayout;
     alert.dismissMode = _settings.dismissMode;
@@ -87,31 +97,6 @@
     }];
     
     [alert show:YES];
-}
-
-#pragma mark - TKDataFormDelegate
-
-- (void)dataForm:(TKDataForm *)dataForm updateEditor:(TKDataFormEditor *)editor forProperty:(TKDataFormEntityProperty *)property
-{
-    if ([property.name isEqualToString:@"actionsLayout"]) {
-       TKDataFormSegmentedEditor* segmentedEditor = (TKDataFormSegmentedEditor*)editor;
-       segmentedEditor.segments = @[@"Horizontal", @"Vertical"];
-    }
-    
-    if ([property.name isEqualToString:@"backgroundStyle"]) {
-        TKDataFormSegmentedEditor* segmentedEditor = (TKDataFormSegmentedEditor*)editor;
-        segmentedEditor.segments = @[@"Blur", @"Dim"];
-    }
-    
-    if ([property.name isEqualToString:@"dismissMode"]) {
-        TKDataFormSegmentedEditor* segmentedEditor = (TKDataFormSegmentedEditor*)editor;
-        segmentedEditor.segments = @[@"None", @"Tap", @"Swipe"];
-    }
-    
-    if ([property.name isEqualToString:@"dismissDirection"]) {
-        TKDataFormSegmentedEditor* segmentedEditor = (TKDataFormSegmentedEditor*)editor;
-        segmentedEditor.segments = @[@"Horizontal", @"Vertical"];
-    }
 }
 
 @end

@@ -11,7 +11,7 @@ class DataSourceUIBindings: ExampleViewController {
 
     let dataSource = TKDataSource()
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         self.addOption("TKChart") { self.useChart() }
@@ -37,7 +37,7 @@ class DataSourceUIBindings: ExampleViewController {
         let names = [ "John", "Abby", "Phill", "Saly", "Robert", "Donna" ]
         var items = [DSItem]()
         for i in 0..<names.count {
-            var item = DSItem()
+            let item = DSItem()
             item.name = names[i]
             item.value = Float(arc4random()%100)
             item.group = (arc4random()%100)>50 ? "two" : "one"
@@ -45,7 +45,7 @@ class DataSourceUIBindings: ExampleViewController {
             let calendar = NSCalendar.currentCalendar()
             let components = NSDateComponents()
             components.day = Int(arc4random()%10)
-            item.date = calendar.dateByAddingComponents(components, toDate:NSDate(), options:NSCalendarOptions(0))
+            item.date = calendar.dateByAddingComponents(components, toDate:NSDate(), options:NSCalendarOptions(rawValue: 0))
             items.append(item)
         }
         
@@ -59,7 +59,7 @@ class DataSourceUIBindings: ExampleViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.view.subviews.count > 1 {
-            let view = self.view.subviews[1] as! UIView
+            let view = self.view.subviews[1] as UIView!
             view.frame = self.exampleBounds
         }
     }
@@ -82,7 +82,7 @@ class DataSourceUIBindings: ExampleViewController {
         }
         
         let chart = TKChart(frame:self.exampleBounds)
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.dataSource = self.dataSource
         self.view.addSubview(chart)
     }
@@ -97,11 +97,11 @@ class DataSourceUIBindings: ExampleViewController {
         self.dataSource.settings.calendar.defaultEventColor = UIColor.redColor()
         
         let calendar = TKCalendar(frame:self.exampleBounds)
-        calendar.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        calendar.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         calendar.dataSource = self.dataSource
         self.view.addSubview(calendar)
         
-        let presenter = calendar.presenter() as! TKCalendarMonthPresenter
+        let presenter = calendar.presenter as! TKCalendarMonthPresenter
         presenter.inlineEventsViewMode = TKCalendarInlineEventsViewMode.Inline
     }
     
@@ -112,7 +112,7 @@ class DataSourceUIBindings: ExampleViewController {
         
         // optional
         self.dataSource.settings.tableView.createCell { (UITableView tableView, NSIndexPath indexPath, AnyObject item) -> UITableViewCell in
-            var cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell?
+            var cell = tableView.dequeueReusableCellWithIdentifier("cell")
             if cell == nil {
                 cell = UITableViewCell(style:UITableViewCellStyle.Value1, reuseIdentifier:"cell")
             }
@@ -137,7 +137,7 @@ class DataSourceUIBindings: ExampleViewController {
         }
 
         self.dataSource.settings.collectionView.createCell { (UICollectionView collectionView, NSIndexPath indexPath, AnyObject item) -> UICollectionViewCell in
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath:indexPath) as! UICollectionViewCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath:indexPath)
             return cell
         }
         

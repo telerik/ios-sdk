@@ -11,7 +11,7 @@ class StackedAreaChart: ExampleViewController {
     
     let chart = TKChart()
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Stacked") { self.reloadData() }
@@ -27,7 +27,7 @@ class StackedAreaChart: ExampleViewController {
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         
         reloadData()
@@ -45,7 +45,7 @@ class StackedAreaChart: ExampleViewController {
             stackInfo = TKChartStackInfo(ID: 1, withStackMode: TKChartStackMode.Stack100)
         }
         
-        for i in 0..<3 {
+        for _ in 0..<3 {
             var array = [TKChartDataPoint]()
             for i in 0..<8 {
                 array.append(TKChartDataPoint(x: i+1, y: Int(arc4random() % (100))))

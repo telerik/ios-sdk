@@ -9,17 +9,14 @@
 #import <TelerikUI/TelerikUI.h>
 
 @implementation DateTimeAxis
-{
-    TKChart *_chart;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    _chart = [[TKChart alloc] initWithFrame:self.exampleBoundsWithInset];
-    _chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:_chart];
+    TKChart *chart = [[TKChart alloc] initWithFrame:self.exampleBoundsWithInset];
+    chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:chart];
     
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *dateTimeComponents = [[NSDateComponents alloc] init];
@@ -42,9 +39,9 @@
     TKChartDateTimeAxis *xAxis = [[TKChartDateTimeAxis alloc] initWithMinimumDate:minDate andMaximumDate:maxDate];
     xAxis.majorTickIntervalUnit = TKChartDateTimeAxisIntervalUnitMonths;
     xAxis.majorTickInterval = 1;
-    _chart.xAxis = xAxis;
+    chart.xAxis = xAxis;
     
-    [_chart addSeries:series];
+    [chart addSeries:series];
 }
 
 - (void)didReceiveMemoryWarning

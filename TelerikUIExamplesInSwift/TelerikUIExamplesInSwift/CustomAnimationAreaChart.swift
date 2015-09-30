@@ -16,7 +16,7 @@ class CustomAnimationAreaChart: ExampleViewController, TKChartDelegate {
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.allowAnimations = true
         chart.delegate = self
         self.view.addSubview(chart)
@@ -51,7 +51,7 @@ class CustomAnimationAreaChart: ExampleViewController, TKChartDelegate {
     
     //MARK: - TKChartDelegate
     
-    func chart(chart: TKChart!, animationForSeries series: TKChartSeries!, withState state: TKChartSeriesRenderState!, inRect rect: CGRect) -> CAAnimation! {
+    func chart(chart: TKChart, animationForSeries series: TKChartSeries, withState state: TKChartSeriesRenderState, inRect rect: CGRect) -> CAAnimation? {
         let duration = 0.5
         var animations = [CAAnimation]()
         for i in 0..<state.points.count() {

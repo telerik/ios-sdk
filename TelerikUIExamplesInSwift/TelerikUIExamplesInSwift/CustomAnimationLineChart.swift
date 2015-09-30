@@ -13,7 +13,7 @@ class CustomAnimationLineChart: ExampleViewController, TKChartDelegate {
     let chart = TKChart()
     var grow = false
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Sequential animation") { self.applySequential() }
@@ -30,7 +30,7 @@ class CustomAnimationLineChart: ExampleViewController, TKChartDelegate {
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.allowAnimations = true
         chart.delegate = self
         self.view.addSubview(chart)
@@ -67,7 +67,7 @@ class CustomAnimationLineChart: ExampleViewController, TKChartDelegate {
     
     //MARK: - TKChartDelegate
     
-    func chart(chart: TKChart!, animationForSeries series: TKChartSeries!, withState state: TKChartSeriesRenderState!, inRect rect: CGRect) -> CAAnimation! {
+    func chart(chart: TKChart, animationForSeries series: TKChartSeries, withState state: TKChartSeriesRenderState, inRect rect: CGRect) -> CAAnimation? {
         var duration = 0.0
         var animations = [CAAnimation]()
         for i in 0..<state.points.count() {

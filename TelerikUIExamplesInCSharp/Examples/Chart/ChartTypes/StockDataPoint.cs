@@ -29,10 +29,10 @@ namespace Examples
 				StockDataPoint dataPoint = new StockDataPoint ();
 				dataPoint.DataXValue = formatter.Parse ( (NSString)jsonPoint ["date"]);
 				dataPoint.Open = (NSNumber)jsonPoint ["open"];
-				dataPoint.High = (NSNumber)jsonPoint ["high"];
 				dataPoint.Low = (NSNumber)jsonPoint ["low"];
 				dataPoint.Close = (NSNumber)jsonPoint ["close"];
 				dataPoint.Volume = (NSNumber)jsonPoint ["volume"];
+				dataPoint.High = (NSNumber)jsonPoint ["high"];
 				stockPoints.Add (dataPoint);
 			}
 

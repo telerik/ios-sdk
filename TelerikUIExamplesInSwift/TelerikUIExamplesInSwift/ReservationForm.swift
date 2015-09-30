@@ -5,6 +5,7 @@
 //  Copyright (c) 2015 Telerik. All rights reserved.
 //
 
+import UIKit
 
 class ReservationForm: NSObject {
 
@@ -16,5 +17,4 @@ class ReservationForm: NSObject {
     var section = 0
     var table = 0
     var origin = 0
-    var cancelReservation = ""
 }

@@ -165,6 +165,7 @@
 		FE1170191A79227000D01A99 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Telerik;
 				TargetAttributes = {

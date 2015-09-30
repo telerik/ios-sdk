@@ -13,6 +13,11 @@
 		1923F41C1A84DE8700BB0D03 /* SideDrawerPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1923F41B1A84DE8700BB0D03 /* SideDrawerPositions.swift */; };
 		194B156D1A84A6E0008E97F2 /* SideDrawerTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B156C1A84A6E0008E97F2 /* SideDrawerTransitions.swift */; };
 		194B15721A84BD0F008E97F2 /* SideDrawerCustomContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B15711A84BD0F008E97F2 /* SideDrawerCustomContent.swift */; };
+		196EBD461BBBC0F900B1553D /* AxisRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EBD451BBBC0F900B1553D /* AxisRender.swift */; settings = {ASSET_TAGS = (); }; };
+		196EBD481BBBC97600B1553D /* MyAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EBD471BBBC97600B1553D /* MyAxis.swift */; settings = {ASSET_TAGS = (); }; };
+		198A094D1BB3009A00DCA4CA /* DataFormCollapsibleGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198A094C1BB3009A00DCA4CA /* DataFormCollapsibleGroups.swift */; };
+		198A094F1BB3019500DCA4CA /* EmployeeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198A094E1BB3019500DCA4CA /* EmployeeInfo.swift */; };
+		198A09511BB3042500DCA4CA /* DataFormLabelsAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198A09501BB3042500DCA4CA /* DataFormLabelsAlignment.swift */; };
 		199D1CDA1A83A0C4009708D6 /* SideDrawerGettingStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D1CD91A83A0C4009708D6 /* SideDrawerGettingStarted.swift */; };
 		19B3C3E419DE90C8000167D0 /* LiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B3C3E319DE90C8000167D0 /* LiveData.swift */; };
 		19B3C3E719DEB505000167D0 /* PointLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B3C3E619DEB505000167D0 /* PointLabels.swift */; };
@@ -21,6 +26,8 @@
 		19B8AA6B19E2820A0041D44A /* SelectedPointLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8AA6A19E2820A0041D44A /* SelectedPointLabel.swift */; };
 		19B8AA6D19E28ADD0041D44A /* MyPointLabelRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8AA6C19E28ADD0041D44A /* MyPointLabelRender.swift */; };
 		19B8AA6F19E2B2400041D44A /* CustomPointLabelRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8AA6E19E2B2400041D44A /* CustomPointLabelRender.swift */; };
+		19DB73E71B594BE100680707 /* RangeBarColumnChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB73E61B594BE100680707 /* RangeBarColumnChart.swift */; };
+		1B33C9B51B9F16D600906C7E /* CustomAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B33C9B41B9F16D600906C7E /* CustomAxis.swift */; };
 		1B46C9191B30174E0021B2A2 /* UIButton_Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B46C9181B30174E0021B2A2 /* UIButton_Circle.swift */; };
 		1B46C91B1B304A490021B2A2 /* AlertNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B46C91A1B304A490021B2A2 /* AlertNotifications.swift */; };
 		1B46C91D1B30599E0021B2A2 /* AlertCustomize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B46C91C1B30599E0021B2A2 /* AlertCustomize.swift */; };
@@ -33,6 +40,18 @@
 		1B53723C1A97869E00707810 /* PhotosWithNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B53723B1A97869E00707810 /* PhotosWithNames.json */; };
 		1B53723E1A9797B100707810 /* LoremIpsumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53723D1A9797B100707810 /* LoremIpsumGenerator.swift */; };
 		1B5372401A9B608E00707810 /* ListViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53723F1A9B608E00707810 /* ListViewLayout.swift */; };
+		D04BCDC01BB3DAEA0030F13F /* GaugeGettingStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDBF1BB3DAEA0030F13F /* GaugeGettingStarted.swift */; };
+		D04BCDC21BB3DB120030F13F /* GaugeCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDC11BB3DB120030F13F /* GaugeCustomization.swift */; };
+		D04BCDC41BB3DB280030F13F /* GaugeAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDC31BB3DB280030F13F /* GaugeAnimations.swift */; };
+		D04BCDC61BB3DB3E0030F13F /* GaugeScales.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDC51BB3DB3E0030F13F /* GaugeScales.swift */; };
+		D04BCDC81BB3DB570030F13F /* GaugeRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDC71BB3DB570030F13F /* GaugeRanges.swift */; };
+		D04BCDCA1BB3DB750030F13F /* GaugeInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDC91BB3DB750030F13F /* GaugeInteraction.swift */; };
+		F615197E1B94B8D3008614C7 /* electricity.json in Resources */ = {isa = PBXBuildFile; fileRef = F615197D1B94B8D3008614C7 /* electricity.json */; };
+		F66B0DAC1BB58D540005910C /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = F66B0DAB1BB58D540005910C /* countries.json */; };
+		F66B0DAE1BB5922E0005910C /* AutoCompleteCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66B0DAD1BB5922E0005910C /* AutoCompleteCustomization.swift */; };
+		F66B0DB01BB5927A0005910C /* namesPhotos.json in Resources */ = {isa = PBXBuildFile; fileRef = F66B0DAF1BB5927A0005910C /* namesPhotos.json */; };
+		F66B0DB21BB597350005910C /* AutoCompleteTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66B0DB11BB597350005910C /* AutoCompleteTokens.swift */; };
+		F66B0DB41BB5986D0005910C /* PersonListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66B0DB31BB5986D0005910C /* PersonListViewCell.swift */; };
 		F69BE0421B2981C800B7AB95 /* AlertSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BE0411B2981C800B7AB95 /* AlertSettings.swift */; };
 		F69BE0441B29A63D00B7AB95 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BE0431B29A63D00B7AB95 /* Settings.swift */; };
 		F69BE0461B29AB8400B7AB95 /* AlertAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69BE0451B29AB8400B7AB95 /* AlertAnimations.swift */; };
@@ -48,6 +67,8 @@
 		F6B595A21B381D5C00846250 /* DataFormCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595A11B381D5C00846250 /* DataFormCustomization.swift */; };
 		F6B595A41B381FD300846250 /* ReservationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595A31B381FD300846250 /* ReservationForm.swift */; };
 		F6B595A61B38206000846250 /* CallEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595A51B38206000846250 /* CallEditor.swift */; };
+		F6D7A6D51BB45620006549F4 /* AutoCompleteGettingStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7A6D41BB45620006549F4 /* AutoCompleteGettingStartedViewController.swift */; };
+		F6F51A751B8DBCF20065E055 /* LogarithmicAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F51A741B8DBCF20065E055 /* LogarithmicAxis.swift */; };
 		FE15E0081A91EDDC00F2AB01 /* ListViewPullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E0071A91EDDC00F2AB01 /* ListViewPullToRefresh.swift */; };
 		FE15E00A1A91EDF200F2AB01 /* ListViewReorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E0091A91EDF200F2AB01 /* ListViewReorder.swift */; };
 		FE15E00C1A920FE700F2AB01 /* ListViewSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15E00B1A920FE700F2AB01 /* ListViewSwipe.swift */; };
@@ -58,14 +79,14 @@
 		FE28FF721A8D0E77000E0BDC /* ListViewLoadOnDemand.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE28FF711A8D0E77000E0BDC /* ListViewLoadOnDemand.swift */; };
 		FE28FF741A8D0E95000E0BDC /* ListViewGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE28FF731A8D0E95000E0BDC /* ListViewGroups.swift */; };
 		FE2D10781A80FB4600A787EB /* InlineEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D10771A80FB4600A787EB /* InlineEvents.swift */; };
+		FE6B54801BBC350F008E5EDB /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6B547E1BBC350F008E5EDB /* TelerikAppFeedback.framework */; };
+		FE6B54811BBC350F008E5EDB /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6B547F1BBC350F008E5EDB /* TelerikUI.framework */; };
 		FE6F334E1A9C716F00BE301B /* OptionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F334D1A9C716F00BE301B /* OptionSection.swift */; };
-		FE77380619ED5E5B009F5C34 /* libTelerikAppFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE77380519ED5E5B009F5C34 /* libTelerikAppFeedback.a */; };
+		FE7FB6021B97279500753DF5 /* DateTimeCategoryAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FB6011B97279500753DF5 /* DateTimeCategoryAxis.swift */; };
 		FE92FA8019B4C746000B2E66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92FA7F19B4C746000B2E66 /* AppDelegate.swift */; };
 		FE92FA8219B4C746000B2E66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92FA8119B4C746000B2E66 /* ViewController.swift */; };
 		FE92FA8519B4C746000B2E66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE92FA8319B4C746000B2E66 /* Main.storyboard */; };
 		FE92FA8719B4C746000B2E66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE92FA8619B4C746000B2E66 /* Images.xcassets */; };
-		FE92FA9D19B4C7C1000B2E66 /* libTelerikUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE92FA9C19B4C7C1000B2E66 /* libTelerikUI.a */; };
-		FE92FAA719B4C88B000B2E66 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = FE92FAA619B4C88B000B2E66 /* Bridge.m */; };
 		FEAA9B9819B4CC1B00D60D4C /* BalloonAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA9B9019B4CC1B00D60D4C /* BalloonAnnotation.swift */; };
 		FEAA9B9919B4CC1B00D60D4C /* BandAndLineAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA9B9119B4CC1B00D60D4C /* BandAndLineAnnotations.swift */; };
 		FEAA9B9A19B4CC1B00D60D4C /* CrossLineAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA9B9219B4CC1B00D60D4C /* CrossLineAnnotation.swift */; };
@@ -139,6 +160,11 @@
 		1923F41B1A84DE8700BB0D03 /* SideDrawerPositions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerPositions.swift; sourceTree = "<group>"; };
 		194B156C1A84A6E0008E97F2 /* SideDrawerTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerTransitions.swift; sourceTree = "<group>"; };
 		194B15711A84BD0F008E97F2 /* SideDrawerCustomContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerCustomContent.swift; sourceTree = "<group>"; };
+		196EBD451BBBC0F900B1553D /* AxisRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxisRender.swift; sourceTree = "<group>"; };
+		196EBD471BBBC97600B1553D /* MyAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAxis.swift; sourceTree = "<group>"; };
+		198A094C1BB3009A00DCA4CA /* DataFormCollapsibleGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormCollapsibleGroups.swift; sourceTree = "<group>"; };
+		198A094E1BB3019500DCA4CA /* EmployeeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeInfo.swift; sourceTree = "<group>"; };
+		198A09501BB3042500DCA4CA /* DataFormLabelsAlignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormLabelsAlignment.swift; sourceTree = "<group>"; };
 		199D1CD91A83A0C4009708D6 /* SideDrawerGettingStarted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerGettingStarted.swift; sourceTree = "<group>"; };
 		19B3C3E319DE90C8000167D0 /* LiveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveData.swift; sourceTree = "<group>"; };
 		19B3C3E619DEB505000167D0 /* PointLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLabels.swift; sourceTree = "<group>"; };
@@ -147,6 +173,8 @@
 		19B8AA6A19E2820A0041D44A /* SelectedPointLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedPointLabel.swift; sourceTree = "<group>"; };
 		19B8AA6C19E28ADD0041D44A /* MyPointLabelRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPointLabelRender.swift; sourceTree = "<group>"; };
 		19B8AA6E19E2B2400041D44A /* CustomPointLabelRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointLabelRender.swift; sourceTree = "<group>"; };
+		19DB73E61B594BE100680707 /* RangeBarColumnChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeBarColumnChart.swift; sourceTree = "<group>"; };
+		1B33C9B41B9F16D600906C7E /* CustomAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAxis.swift; sourceTree = "<group>"; };
 		1B46C9181B30174E0021B2A2 /* UIButton_Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton_Circle.swift; sourceTree = "<group>"; };
 		1B46C91A1B304A490021B2A2 /* AlertNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertNotifications.swift; sourceTree = "<group>"; };
 		1B46C91C1B30599E0021B2A2 /* AlertCustomize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertCustomize.swift; sourceTree = "<group>"; };
@@ -159,6 +187,19 @@
 		1B53723B1A97869E00707810 /* PhotosWithNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PhotosWithNames.json; path = TelerikUIExamplesInSwift/PhotosWithNames.json; sourceTree = "<group>"; };
 		1B53723D1A9797B100707810 /* LoremIpsumGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoremIpsumGenerator.swift; sourceTree = "<group>"; };
 		1B53723F1A9B608E00707810 /* ListViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewLayout.swift; sourceTree = "<group>"; };
+		A689F20F1BBB4B3C005F2B30 /* TelerikUIExamplesInSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TelerikUIExamplesInSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		D04BCDBF1BB3DAEA0030F13F /* GaugeGettingStarted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaugeGettingStarted.swift; sourceTree = "<group>"; };
+		D04BCDC11BB3DB120030F13F /* GaugeCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaugeCustomization.swift; sourceTree = "<group>"; };
+		D04BCDC31BB3DB280030F13F /* GaugeAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaugeAnimations.swift; sourceTree = "<group>"; };
+		D04BCDC51BB3DB3E0030F13F /* GaugeScales.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaugeScales.swift; sourceTree = "<group>"; };
+		D04BCDC71BB3DB570030F13F /* GaugeRanges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaugeRanges.swift; sourceTree = "<group>"; };
+		D04BCDC91BB3DB750030F13F /* GaugeInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaugeInteraction.swift; sourceTree = "<group>"; };
+		F615197D1B94B8D3008614C7 /* electricity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = electricity.json; sourceTree = "<group>"; };
+		F66B0DAB1BB58D540005910C /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		F66B0DAD1BB5922E0005910C /* AutoCompleteCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteCustomization.swift; sourceTree = "<group>"; };
+		F66B0DAF1BB5927A0005910C /* namesPhotos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = namesPhotos.json; sourceTree = "<group>"; };
+		F66B0DB11BB597350005910C /* AutoCompleteTokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTokens.swift; sourceTree = "<group>"; };
+		F66B0DB31BB5986D0005910C /* PersonListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonListViewCell.swift; sourceTree = "<group>"; };
 		F69BE0411B2981C800B7AB95 /* AlertSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSettings.swift; sourceTree = "<group>"; };
 		F69BE0431B29A63D00B7AB95 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		F69BE0451B29AB8400B7AB95 /* AlertAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAnimations.swift; sourceTree = "<group>"; };
@@ -174,6 +215,8 @@
 		F6B595A11B381D5C00846250 /* DataFormCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormCustomization.swift; sourceTree = "<group>"; };
 		F6B595A31B381FD300846250 /* ReservationForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationForm.swift; sourceTree = "<group>"; };
 		F6B595A51B38206000846250 /* CallEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallEditor.swift; sourceTree = "<group>"; };
+		F6D7A6D41BB45620006549F4 /* AutoCompleteGettingStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteGettingStartedViewController.swift; sourceTree = "<group>"; };
+		F6F51A741B8DBCF20065E055 /* LogarithmicAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogarithmicAxis.swift; sourceTree = "<group>"; };
 		FE15E0071A91EDDC00F2AB01 /* ListViewPullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewPullToRefresh.swift; sourceTree = "<group>"; };
 		FE15E0091A91EDF200F2AB01 /* ListViewReorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewReorder.swift; sourceTree = "<group>"; };
 		FE15E00B1A920FE700F2AB01 /* ListViewSwipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewSwipe.swift; sourceTree = "<group>"; };
@@ -184,17 +227,16 @@
 		FE28FF711A8D0E77000E0BDC /* ListViewLoadOnDemand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewLoadOnDemand.swift; sourceTree = "<group>"; };
 		FE28FF731A8D0E95000E0BDC /* ListViewGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewGroups.swift; sourceTree = "<group>"; };
 		FE2D10771A80FB4600A787EB /* InlineEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineEvents.swift; sourceTree = "<group>"; };
+		FE6B547E1BBC350F008E5EDB /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
+		FE6B547F1BBC350F008E5EDB /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FE6F334D1A9C716F00BE301B /* OptionSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionSection.swift; sourceTree = "<group>"; };
-		FE77380519ED5E5B009F5C34 /* libTelerikAppFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = "../TelerikAppFeedback.framework"; sourceTree = "<group>"; };
+		FE7FB6011B97279500753DF5 /* DateTimeCategoryAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeCategoryAxis.swift; sourceTree = "<group>"; };
 		FE92FA7A19B4C746000B2E66 /* TelerikUIExamplesInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelerikUIExamplesInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE92FA7E19B4C746000B2E66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE92FA7F19B4C746000B2E66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE92FA8119B4C746000B2E66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE92FA8419B4C746000B2E66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE92FA8619B4C746000B2E66 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FE92FA9C19B4C7C1000B2E66 /* libTelerikUI.a */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../TelerikUI.framework"; sourceTree = "<group>"; };
-		FE92FAA519B4C88B000B2E66 /* TelerikUIExamplesInSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TelerikUIExamplesInSwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		FE92FAA619B4C88B000B2E66 /* Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
 		FEAA9B9019B4CC1B00D60D4C /* BalloonAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonAnnotation.swift; sourceTree = "<group>"; };
 		FEAA9B9119B4CC1B00D60D4C /* BandAndLineAnnotations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BandAndLineAnnotations.swift; sourceTree = "<group>"; };
 		FEAA9B9219B4CC1B00D60D4C /* CrossLineAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossLineAnnotation.swift; sourceTree = "<group>"; };
@@ -266,70 +308,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE77380619ED5E5B009F5C34 /* libTelerikAppFeedback.a in Frameworks */,
+				FE6B54801BBC350F008E5EDB /* TelerikAppFeedback.framework in Frameworks */,
+				FE6B54811BBC350F008E5EDB /* TelerikUI.framework in Frameworks */,
 				FEAA9C0919B4CF0B00D60D4C /* Foundation.framework in Frameworks */,
 				FEAA9C0719B4CF0200D60D4C /* UIKit.framework in Frameworks */,
 				FEAA9C0319B4CEF200D60D4C /* EventKitUI.framework in Frameworks */,
 				FEAA9C0119B4CEED00D60D4C /* EventKit.framework in Frameworks */,
-				FE92FA9D19B4C7C1000B2E66 /* libTelerikUI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		190DBC111A84D3240017B623 /* CustomTransitionExample */ = {
-			isa = PBXGroup;
-			children = (
-				190DBC121A84D3420017B623 /* SideDrawerCustomTransition.swift */,
-				190DBC161A84D4A60017B623 /* MyTransition.swift */,
-			);
-			name = CustomTransitionExample;
-			sourceTree = "<group>";
-		};
-		1923F41A1A84DE6F00BB0D03 /* PositionsExample */ = {
-			isa = PBXGroup;
-			children = (
-				1923F41B1A84DE8700BB0D03 /* SideDrawerPositions.swift */,
-			);
-			name = PositionsExample;
-			sourceTree = "<group>";
-		};
-		194B156B1A84A6B8008E97F2 /* TransitionsExample */ = {
-			isa = PBXGroup;
-			children = (
-				194B156C1A84A6E0008E97F2 /* SideDrawerTransitions.swift */,
-			);
-			name = TransitionsExample;
-			sourceTree = "<group>";
-		};
-		194B15701A84BCF1008E97F2 /* CustomContentExample */ = {
-			isa = PBXGroup;
-			children = (
-				194B15711A84BD0F008E97F2 /* SideDrawerCustomContent.swift */,
-			);
-			name = CustomContentExample;
-			sourceTree = "<group>";
-		};
 		199D1CD71A839F70009708D6 /* SideDrawer */ = {
 			isa = PBXGroup;
 			children = (
-				1923F41A1A84DE6F00BB0D03 /* PositionsExample */,
-				190DBC111A84D3240017B623 /* CustomTransitionExample */,
-				194B15701A84BCF1008E97F2 /* CustomContentExample */,
-				194B156B1A84A6B8008E97F2 /* TransitionsExample */,
-				199D1CD81A839F7D009708D6 /* GettingStartedExample */,
+				1923F41B1A84DE8700BB0D03 /* SideDrawerPositions.swift */,
+				190DBC121A84D3420017B623 /* SideDrawerCustomTransition.swift */,
+				190DBC161A84D4A60017B623 /* MyTransition.swift */,
+				194B15711A84BD0F008E97F2 /* SideDrawerCustomContent.swift */,
+				194B156C1A84A6E0008E97F2 /* SideDrawerTransitions.swift */,
+				199D1CD91A83A0C4009708D6 /* SideDrawerGettingStarted.swift */,
 				191453731A94D8D300B7670F /* SideDrawerHeaderView.swift */,
 			);
 			name = SideDrawer;
-			sourceTree = "<group>";
-		};
-		199D1CD81A839F7D009708D6 /* GettingStartedExample */ = {
-			isa = PBXGroup;
-			children = (
-				199D1CD91A83A0C4009708D6 /* SideDrawerGettingStarted.swift */,
-			);
-			name = GettingStartedExample;
 			sourceTree = "<group>";
 		};
 		19B3C3E519DEB4EC000167D0 /* PointLabels */ = {
@@ -373,6 +375,19 @@
 			name = CustomCells;
 			sourceTree = "<group>";
 		};
+		D04BCDBC1BB3D9FD0030F13F /* Gauges */ = {
+			isa = PBXGroup;
+			children = (
+				D04BCDBF1BB3DAEA0030F13F /* GaugeGettingStarted.swift */,
+				D04BCDC11BB3DB120030F13F /* GaugeCustomization.swift */,
+				D04BCDC31BB3DB280030F13F /* GaugeAnimations.swift */,
+				D04BCDC51BB3DB3E0030F13F /* GaugeScales.swift */,
+				D04BCDC71BB3DB570030F13F /* GaugeRanges.swift */,
+				D04BCDC91BB3DB750030F13F /* GaugeInteraction.swift */,
+			);
+			name = Gauges;
+			sourceTree = "<group>";
+		};
 		F69BE03E1B29748C00B7AB95 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,9 +407,11 @@
 			children = (
 				F6B595941B37FF8900846250 /* Classes */,
 				F6B595901B37F67F00846250 /* DataFormGettingStarted.swift */,
-				F6B595951B37FFCB00846250 /* DataFormReadOnly.swift */,
 				F6B5959F1B38137E00846250 /* DataFormValidation.swift */,
+				F6B595951B37FFCB00846250 /* DataFormReadOnly.swift */,
 				F6B595A11B381D5C00846250 /* DataFormCustomization.swift */,
+				198A094C1BB3009A00DCA4CA /* DataFormCollapsibleGroups.swift */,
+				198A09501BB3042500DCA4CA /* DataFormLabelsAlignment.swift */,
 			);
 			name = DataForm;
 			sourceTree = "<group>";
@@ -409,8 +426,20 @@
 				F6B5959D1B38124000846250 /* RegistrationInfo.swift */,
 				F6B595A31B381FD300846250 /* ReservationForm.swift */,
 				F6B595A51B38206000846250 /* CallEditor.swift */,
+				198A094E1BB3019500DCA4CA /* EmployeeInfo.swift */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		F6D7A6D31BB455FC006549F4 /* AutoComplete */ = {
+			isa = PBXGroup;
+			children = (
+				F6D7A6D41BB45620006549F4 /* AutoCompleteGettingStartedViewController.swift */,
+				F66B0DAD1BB5922E0005910C /* AutoCompleteCustomization.swift */,
+				F66B0DB11BB597350005910C /* AutoCompleteTokens.swift */,
+				F66B0DB31BB5986D0005910C /* PersonListViewCell.swift */,
+			);
+			name = AutoComplete;
 			sourceTree = "<group>";
 		};
 		FE28FF681A8D0DED000E0BDC /* ListView */ = {
@@ -445,9 +474,9 @@
 			isa = PBXGroup;
 			children = (
 				FE92FA7C19B4C746000B2E66 /* TelerikUIExamplesInSwift */,
-				FE92FAA819B4C8A5000B2E66 /* Bridge */,
 				FE92FAA419B4C800000B2E66 /* Frameworks */,
 				FE92FA7B19B4C746000B2E66 /* Products */,
+				A689F20F1BBB4B3C005F2B30 /* TelerikUIExamplesInSwift-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -485,28 +514,21 @@
 		FE92FAA419B4C800000B2E66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FE77380519ED5E5B009F5C34 /* libTelerikAppFeedback.a */,
+				FE6B547E1BBC350F008E5EDB /* TelerikAppFeedback.framework */,
+				FE6B547F1BBC350F008E5EDB /* TelerikUI.framework */,
 				FEAA9C0819B4CF0B00D60D4C /* Foundation.framework */,
 				FEAA9C0619B4CF0200D60D4C /* UIKit.framework */,
 				FEAA9C0219B4CEF200D60D4C /* EventKitUI.framework */,
 				FEAA9C0019B4CEED00D60D4C /* EventKit.framework */,
-				FE92FA9C19B4C7C1000B2E66 /* libTelerikUI.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FE92FAA819B4C8A5000B2E66 /* Bridge */ = {
-			isa = PBXGroup;
-			children = (
-				FE92FAA619B4C88B000B2E66 /* Bridge.m */,
-				FE92FAA519B4C88B000B2E66 /* TelerikUIExamplesInSwift-Bridging-Header.h */,
-			);
-			name = Bridge;
 			sourceTree = "<group>";
 		};
 		FEAA9B8419B4CB2000D60D4C /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				F6D7A6D31BB455FC006549F4 /* AutoComplete */,
+				D04BCDBC1BB3D9FD0030F13F /* Gauges */,
 				F6B5958F1B37F5AA00846250 /* DataForm */,
 				F69BE03E1B29748C00B7AB95 /* Alert */,
 				FE28FF681A8D0DED000E0BDC /* ListView */,
@@ -607,6 +629,7 @@
 				FEAA9BB619B4CC9C00D60D4C /* Indicators */,
 				FEAA9BA819B4CC9000D60D4C /* BubbleChart.swift */,
 				FEAA9BA919B4CC9000D60D4C /* ColumnAndBarChart.swift */,
+				19DB73E61B594BE100680707 /* RangeBarColumnChart.swift */,
 				FEAA9BAA19B4CC9000D60D4C /* FinancialChart.swift */,
 				FEAA9BAB19B4CC9000D60D4C /* LineAreaSpline.swift */,
 				FEAA9BAC19B4CC9000D60D4C /* PieDonut.swift */,
@@ -619,11 +642,16 @@
 		FEAA9B8D19B4CBAE00D60D4C /* AxisTypes */ = {
 			isa = PBXGroup;
 			children = (
+				1B33C9B41B9F16D600906C7E /* CustomAxis.swift */,
+				196EBD451BBBC0F900B1553D /* AxisRender.swift */,
+				196EBD471BBBC97600B1553D /* MyAxis.swift */,
 				FEAA9BBB19B4CCD100D60D4C /* CategoricalAxis.swift */,
 				FEAA9BBC19B4CCD100D60D4C /* DateTimeAxis.swift */,
+				FE7FB6011B97279500753DF5 /* DateTimeCategoryAxis.swift */,
 				FEAA9BBD19B4CCD100D60D4C /* MultipleAxes.swift */,
 				FEAA9BBE19B4CCD100D60D4C /* NegativeValues.swift */,
 				FEAA9BBF19B4CCD100D60D4C /* NumericAxis.swift */,
+				F6F51A741B8DBCF20065E055 /* LogarithmicAxis.swift */,
 			);
 			name = AxisTypes;
 			sourceTree = "<group>";
@@ -665,6 +693,9 @@
 				1B53723B1A97869E00707810 /* PhotosWithNames.json */,
 				FEB32CAA1A8DFCC80060ED82 /* ListViewSampleData.json */,
 				FEAA9BF619B4CE1400D60D4C /* AppleStockPrices.json */,
+				F615197D1B94B8D3008614C7 /* electricity.json */,
+				F66B0DAB1BB58D540005910C /* countries.json */,
+				F66B0DAF1BB5927A0005910C /* namesPhotos.json */,
 			);
 			name = Resources;
 			path = ..;
@@ -709,8 +740,14 @@
 		FE92FA7219B4C746000B2E66 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Telerik;
+				TargetAttributes = {
+					FE92FA7919B4C746000B2E66 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
 			};
 			buildConfigurationList = FE92FA7519B4C746000B2E66 /* Build configuration list for PBXProject "TelerikUIExamplesInSwift" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -736,7 +773,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE92FA8519B4C746000B2E66 /* Main.storyboard in Resources */,
+				F615197E1B94B8D3008614C7 /* electricity.json in Resources */,
 				FE2582AC1B0CC07200E36C05 /* ListItems.json in Resources */,
+				F66B0DB01BB5927A0005910C /* namesPhotos.json in Resources */,
+				F66B0DAC1BB58D540005910C /* countries.json in Resources */,
 				1B53723C1A97869E00707810 /* PhotosWithNames.json in Resources */,
 				FEAA9BF719B4CE1400D60D4C /* AppleStockPrices.json in Resources */,
 				FEAA9BDA19B4CD3B00D60D4C /* FeedbackExampleController.xib in Resources */,
@@ -753,12 +793,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEAA9BF119B4CDDA00D60D4C /* ExampleInfo.swift in Sources */,
+				F6D7A6D51BB45620006549F4 /* AutoCompleteGettingStartedViewController.swift in Sources */,
+				D04BCDCA1BB3DB750030F13F /* GaugeInteraction.swift in Sources */,
 				19B3C3E719DEB505000167D0 /* PointLabels.swift in Sources */,
 				199D1CDA1A83A0C4009708D6 /* SideDrawerGettingStarted.swift in Sources */,
 				F6B5959A1B38065A00846250 /* PasswordValidator.swift in Sources */,
+				1B33C9B51B9F16D600906C7E /* CustomAxis.swift in Sources */,
 				1923F41C1A84DE8700BB0D03 /* SideDrawerPositions.swift in Sources */,
 				FEAA9BEA19B4CD9A00D60D4C /* CustomCell.swift in Sources */,
 				1B5372381A9784B100707810 /* SimpleListViewCell.swift in Sources */,
+				D04BCDC21BB3DB120030F13F /* GaugeCustomization.swift in Sources */,
 				F69BE0421B2981C800B7AB95 /* AlertSettings.swift in Sources */,
 				FE28FF701A8D0E63000E0BDC /* ListViewAnimations.swift in Sources */,
 				FEAA9BE319B4CD7300D60D4C /* CalendarSelection.swift in Sources */,
@@ -767,6 +811,8 @@
 				F6B595981B38007300846250 /* CardInfo.swift in Sources */,
 				FEE6EE2B1A835245004895C1 /* DSCollectionViewCell.swift in Sources */,
 				F6B595A41B381FD300846250 /* ReservationForm.swift in Sources */,
+				D04BCDC61BB3DB3E0030F13F /* GaugeScales.swift in Sources */,
+				198A094F1BB3019500DCA4CA /* EmployeeInfo.swift in Sources */,
 				1B5372401A9B608E00707810 /* ListViewLayout.swift in Sources */,
 				FEAA9BE219B4CD7300D60D4C /* CalendarEventKitDataBinding.swift in Sources */,
 				F6B595A01B38137E00846250 /* DataFormValidation.swift in Sources */,
@@ -778,9 +824,11 @@
 				FEAA9B9C19B4CC1B00D60D4C /* LayerAnnotation.swift in Sources */,
 				FEAA9B9819B4CC1B00D60D4C /* BalloonAnnotation.swift in Sources */,
 				F6B595961B37FFCB00846250 /* DataFormReadOnly.swift in Sources */,
+				196EBD461BBBC0F900B1553D /* AxisRender.swift in Sources */,
 				FEAA9BF319B4CDDA00D60D4C /* OptionInfo.swift in Sources */,
 				FEAA9BD019B4CD0700D60D4C /* CustomAnimationPieChart.swift in Sources */,
 				FEAA9B9D19B4CC1B00D60D4C /* MyAnnotation.swift in Sources */,
+				D04BCDC01BB3DAEA0030F13F /* GaugeGettingStarted.swift in Sources */,
 				FE92FA8219B4C746000B2E66 /* ViewController.swift in Sources */,
 				19B8AA6F19E2B2400041D44A /* CustomPointLabelRender.swift in Sources */,
 				FEAA9BF919B4CE4C00D60D4C /* ChartDataSource.swift in Sources */,
@@ -788,12 +836,14 @@
 				1B5372331A97777800707810 /* ListViewGettingStarted.swift in Sources */,
 				FEAA9BCF19B4CD0700D60D4C /* CustomAnimationLineChart.swift in Sources */,
 				FEAA9BB019B4CC9000D60D4C /* ColumnAndBarChart.swift in Sources */,
+				F66B0DB41BB5986D0005910C /* PersonListViewCell.swift in Sources */,
 				FEAA9BC419B4CCD100D60D4C /* NumericAxis.swift in Sources */,
 				FE6F334E1A9C716F00BE301B /* OptionSection.swift in Sources */,
 				F69BE04A1B29CCAC00B7AB95 /* AlertCustomView.swift in Sources */,
 				F6B595911B37F67F00846250 /* DataFormGettingStarted.swift in Sources */,
 				FEAA9B9919B4CC1B00D60D4C /* BandAndLineAnnotations.swift in Sources */,
 				FEAA9BF219B4CDDA00D60D4C /* ExampleViewController.swift in Sources */,
+				198A09511BB3042500DCA4CA /* DataFormLabelsAlignment.swift in Sources */,
 				FEAA9BFD19B4CE7900D60D4C /* DataPointImpl.swift in Sources */,
 				1B5372361A977A9E00707810 /* ImageWithTextListViewCell.swift in Sources */,
 				1B46C91B1B304A490021B2A2 /* AlertNotifications.swift in Sources */,
@@ -803,24 +853,30 @@
 				FEAA9BEC19B4CD9A00D60D4C /* LocalizedCalendar.swift in Sources */,
 				FEE6EE231A8351E5004895C1 /* DataSourceDescriptorsAPI.swift in Sources */,
 				FEE6EE251A8351FB004895C1 /* DataSourceUIBindings.swift in Sources */,
+				D04BCDC81BB3DB570030F13F /* GaugeRanges.swift in Sources */,
 				FEAA9BF419B4CDDA00D60D4C /* SettingsViewController.swift in Sources */,
 				FEAA9BD919B4CD3B00D60D4C /* FeedbackExampleController.swift in Sources */,
 				1B53723E1A9797B100707810 /* LoremIpsumGenerator.swift in Sources */,
 				F6B595A61B38206000846250 /* CallEditor.swift in Sources */,
+				196EBD481BBBC97600B1553D /* MyAxis.swift in Sources */,
 				FEAA9BC819B4CCEB00D60D4C /* StackedColumnChart.swift in Sources */,
 				F6B595931B37F73E00846250 /* PersonalInfo.swift in Sources */,
 				19B8AA6D19E28ADD0041D44A /* MyPointLabelRender.swift in Sources */,
+				F6F51A751B8DBCF20065E055 /* LogarithmicAxis.swift in Sources */,
+				D04BCDC41BB3DB280030F13F /* GaugeAnimations.swift in Sources */,
 				FEAA9BD119B4CD0700D60D4C /* DefaultAnimation.swift in Sources */,
 				19B3C44C19DEDF8A000167D0 /* MyPointLabel.swift in Sources */,
 				FEAA9BA719B4CC6100D60D4C /* BindWithDelegate.swift in Sources */,
 				FEAA9BA519B4CC6100D60D4C /* BindWithCustomObject.swift in Sources */,
+				F66B0DAE1BB5922E0005910C /* AutoCompleteCustomization.swift in Sources */,
 				194B15721A84BD0F008E97F2 /* SideDrawerCustomContent.swift in Sources */,
 				FEAA9BC319B4CCD100D60D4C /* NegativeValues.swift in Sources */,
 				FE15E00C1A920FE700F2AB01 /* ListViewSwipe.swift in Sources */,
 				FEAA9BC219B4CCD100D60D4C /* MultipleAxes.swift in Sources */,
-				FE92FAA719B4C88B000B2E66 /* Bridge.m in Sources */,
 				FEAA9B9E19B4CC1B00D60D4C /* Trackball.swift in Sources */,
 				FEAA9BC719B4CCEB00D60D4C /* StackedAreaChart.swift in Sources */,
+				F66B0DB21BB597350005910C /* AutoCompleteTokens.swift in Sources */,
+				FE7FB6021B97279500753DF5 /* DateTimeCategoryAxis.swift in Sources */,
 				19B3C3E419DE90C8000167D0 /* LiveData.swift in Sources */,
 				FEE6EE291A835229004895C1 /* DSItem.swift in Sources */,
 				FE28FF741A8D0E95000E0BDC /* ListViewGroups.swift in Sources */,
@@ -842,6 +898,7 @@
 				F69BE0461B29AB8400B7AB95 /* AlertAnimations.swift in Sources */,
 				FEE6EE211A8351D1004895C1 /* DataSourceGettingStarted.swift in Sources */,
 				FE2582AA1B0CB79800E36C05 /* CustomListCell.swift in Sources */,
+				198A094D1BB3009A00DCA4CA /* DataFormCollapsibleGroups.swift in Sources */,
 				FEAA9BE619B4CD7300D60D4C /* CalendarWithEvents.swift in Sources */,
 				FEAA9BA619B4CC6100D60D4C /* BindWithDataPoint.swift in Sources */,
 				19B8AA6B19E2820A0041D44A /* SelectedPointLabel.swift in Sources */,
@@ -860,6 +917,7 @@
 				FEAA9BCE19B4CD0700D60D4C /* CustomAnimationAreaChart.swift in Sources */,
 				194B156D1A84A6E0008E97F2 /* SideDrawerTransitions.swift in Sources */,
 				F6B595A21B381D5C00846250 /* DataFormCustomization.swift in Sources */,
+				19DB73E71B594BE100680707 /* RangeBarColumnChart.swift in Sources */,
 				1B53723A1A97858700707810 /* CustomCardListViewCell.swift in Sources */,
 				FEAA9BE519B4CD7300D60D4C /* CalendarViewModes.swift in Sources */,
 			);
@@ -899,6 +957,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_FRAMEWORKS_DIR)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -913,7 +973,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -943,6 +1003,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_FRAMEWORKS_DIR)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -950,7 +1011,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -967,11 +1028,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = TelerikUIExamplesInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Telerik.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TelerikUIExamplesInSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -986,11 +1050,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				INFOPLIST_FILE = TelerikUIExamplesInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Telerik.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TelerikUIExamplesInSwift-Bridging-Header.h";
 			};
 			name = Release;

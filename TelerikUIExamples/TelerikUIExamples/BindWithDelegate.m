@@ -62,7 +62,7 @@
     _chart.dataSource = _chartDataSource;
     _chart.legend.hidden = NO;
     _chart.legend.style.position = TKChartLegendPositionTop;
-    _chart.legend.container.stack.orientation = TKStackLayoutOrientationHorizontal;
+    _chart.legend.container.stack.orientation = TKCoreStackLayoutOrientationHorizontal;
     [self.view addSubview:_chart];
 }
 

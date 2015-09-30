@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) NSString* message;
 
-@property (nonatomic) BOOL allowParallaxEffect;
+@property (nonatomic) BOOL allowParallax;
 
 @property (nonatomic) TKAlertBackgroundStyle backgroundStyle;
 

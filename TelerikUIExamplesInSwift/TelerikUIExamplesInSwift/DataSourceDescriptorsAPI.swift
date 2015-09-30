@@ -36,7 +36,7 @@ class DataSourceDescriptorsAPI: ExampleViewController {
         
         let tableView = UITableView(frame: self.view.bounds)
         tableView.dataSource = self.dataSource
-        tableView.autoresizingMask = ~UIViewAutoresizing.None
+        tableView.autoresizingMask = UIViewAutoresizing(rawValue: ~UIViewAutoresizing.None.rawValue)
         self.view.addSubview(tableView)
     }
 

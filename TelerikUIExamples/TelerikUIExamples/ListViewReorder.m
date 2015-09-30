@@ -8,7 +8,7 @@
 #import "ListViewReorder.h"
 #import <TelerikUI/TelerikUI.h>
 
-@interface ListViewReorder ()
+@interface ListViewReorder () <TKListViewDelegate>
 
 @end
 
@@ -18,11 +18,12 @@
     TKDataSource *_dataSource;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self addOption:@"Enable reorder mode" selector:@selector(enableReorderSelected)];
+        [self addOption:@"Reorder with handle" selector:@selector(reorderWithHandleSelected)];
+        [self addOption:@"Reorder with long press" selector:@selector(reorderWithLongPressSelected)];
         [self addOption:@"Disable reorder mode" selector:@selector(disableReorderSelected)];
     }
     
@@ -45,7 +46,7 @@
     }
     _listView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _listView.dataSource = _dataSource;
-    _listView.delegate = _dataSource;
+    _listView.delegate = self;
    _listView.allowsCellReorder = YES;
     [self.view addSubview:_listView];
 }
@@ -55,14 +56,36 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)enableReorderSelected
+- (void)reorderWithHandleSelected
 {
     _listView.allowsCellReorder = YES;
+    _listView.reorderMode = TKListViewReorderModeWithHandle;
+}
+
+- (void)reorderWithLongPressSelected
+{
+    _listView.allowsCellReorder = YES;
+    _listView.reorderMode = TKListViewReorderModeWithLongPress;
 }
 
 - (void)disableReorderSelected
 {
     _listView.allowsCellReorder = NO;
+}
+
+#pragma mark - TKListViewDelegate
+
+- (void)listView:(TKListView *)listView willReorderItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    TKListViewCell *cell = [listView cellForItemAtIndexPath:indexPath];
+    cell.backgroundView.backgroundColor = [UIColor yellowColor];
+}
+
+- (void)listView:(TKListView *)listView didReorderItemFromIndexPath:(NSIndexPath *)originalIndexPath toIndexPath:(NSIndexPath *)targetIndexPath
+{
+    TKListViewCell *cell = [listView cellForItemAtIndexPath:originalIndexPath];
+    cell.backgroundView.backgroundColor = [UIColor whiteColor];
+    [_dataSource listView:listView didReorderItemFromIndexPath:originalIndexPath toIndexPath:targetIndexPath];
 }
 
 @end

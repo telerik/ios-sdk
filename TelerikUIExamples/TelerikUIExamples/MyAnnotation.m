@@ -13,7 +13,7 @@
     CGPoint _center;
 }
 
-- (id)initWithShape:(TKShape*)shape X:(id)xValue Y:(id)yValue forSeries:(TKChartSeries *)series
+- (instancetype)initWithShape:(TKShape*)shape X:(id)xValue Y:(id)yValue forSeries:(TKChartSeries *)series
 {
     self = [super initWithX:xValue Y:yValue forSeries:series];
     if (self) {

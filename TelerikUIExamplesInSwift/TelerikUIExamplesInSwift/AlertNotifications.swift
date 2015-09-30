@@ -23,13 +23,13 @@ class AlertNotifications: ExampleViewController, TKListViewDelegate  {
         super.viewDidLoad()
         
         listView.frame = self.view.bounds
-        listView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        listView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         listView.dataSource = dataSource
         listView.delegate = self
         self.view.addSubview(listView)
     }
 
-    func listView(listView: TKListView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
+    func listView(listView: TKListView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let alert = TKAlert()
 
@@ -41,6 +41,7 @@ class AlertNotifications: ExampleViewController, TKListViewDelegate  {
         alert.style.showAnimation = TKAlertAnimation.SlideFromTop
         alert.style.dismissAnimation = TKAlertAnimation.SlideFromTop
         alert.style.backgroundStyle = TKAlertBackgroundStyle.None
+
         alert.alertView.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         alert.dismissMode = TKAlertDismissMode.Tap
         

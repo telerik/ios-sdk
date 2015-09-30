@@ -5,7 +5,7 @@
 //  Copyright (c) 2014 Telerik. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class IndicatorsTableView : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -17,7 +17,7 @@ class IndicatorsTableView : UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         
         table.frame = self.view.bounds
-        table.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
+        table.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleHeight.rawValue | UIViewAutoresizing.FlexibleWidth.rawValue)
         table.dataSource = self
         table.delegate = self
         table.allowsMultipleSelection = true
@@ -47,7 +47,7 @@ class IndicatorsTableView : UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var info: OptionInfo
-        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell!
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier)!
         let section = indexPath.section as NSInteger
         if section == 0 {
             info = example!.trendlines[indexPath.row] as! OptionInfo

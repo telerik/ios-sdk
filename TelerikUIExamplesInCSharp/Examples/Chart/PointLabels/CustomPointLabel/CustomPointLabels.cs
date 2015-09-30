@@ -78,15 +78,15 @@ namespace Examples
 				this.selectedDataPointIndex = selectedDataPointIndex;
 			}
 
-			public override TKChartPointLabel LabelForDataPoint (TKChart chart, TKChartData dataPoint, TKChartSeries series, nuint dataIndex)
+			public override TKChartPointLabel LabelForDataPoint (TKChart chart, TKChartData dataPoint, string propertyName, TKChartSeries series, nuint dataIndex)
 			{
 				TKChartDataPoint point = (TKChartDataPoint)dataPoint;
 				if (series.Index == (nuint)this.selectedSeriesIndex && dataIndex == (nuint)this.selectedDataPointIndex) {
-					return new MyPointLabel (point, series.Style.PointLabelStyle, String.Format ("{0}", point.DataYValue));
+					return new MyPointLabel (point, series, String.Format ("{0}", point.DataYValue));
 				}
 
 				
-				return new TKChartPointLabel (point, series.Style.PointLabelStyle, String.Format ("{0}", point.DataYValue));
+				return new TKChartPointLabel (point, series, String.Format ("{0}", point.DataYValue));
 			}
 				
 			public override TKChartPaletteItem PaletteItemForPoint (TKChart chart, nuint index, TKChartSeries series)

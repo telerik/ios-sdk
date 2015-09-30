@@ -9,25 +9,37 @@ import Foundation
 
 class StockDataPoint: TKChartFinancialDataPoint/*, NSCoding*/ {
     
-    class func stockPoints() -> NSArray {
-        let dataPoints = NSMutableArray()
+    class func stockPoints() -> [StockDataPoint] {
+        var dataPoints = [StockDataPoint]()
         let filePath = NSBundle.mainBundle().pathForResource("AppleStockPrices", ofType: "json")
         let json = NSData(contentsOfFile: filePath!)!
-        let data = NSJSONSerialization.JSONObjectWithData(json, options: NSJSONReadingOptions.AllowFragments, error: nil) as! NSArray
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
-        
-        for jsonPoint in data {
-            let datapoint = StockDataPoint()
-            datapoint.dataXValue = formatter.dateFromString(jsonPoint["date"] as! String)
-            datapoint.setOpen(jsonPoint["open"] as! NSNumber)
-            datapoint.setHigh(jsonPoint["high"] as! NSNumber)
-            datapoint.setLow(jsonPoint["low"] as! NSNumber)
-            datapoint.setClose(jsonPoint["close"] as! NSNumber)
-            datapoint.setVolume(jsonPoint["volume"] as! NSNumber)
-            dataPoints.addObject(datapoint)
+        do {
+            let data = try NSJSONSerialization.JSONObjectWithData(json, options: NSJSONReadingOptions.AllowFragments) as! [NSDictionary]
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "dd-MM-yyyy"
+            
+            for jsonPoint in data {
+                let datapoint = StockDataPoint()
+                datapoint.dataXValue = formatter.dateFromString(jsonPoint["date"] as! String)
+                datapoint.open = jsonPoint["open"] as? NSNumber
+                datapoint.high = jsonPoint["high"] as? NSNumber
+                datapoint.low = jsonPoint["low"] as? NSNumber
+                datapoint.close = jsonPoint["close"] as? NSNumber
+                datapoint.volume = jsonPoint["volume"] as? NSNumber
+                dataPoints.append(datapoint)
+            }
         }
-        
+        catch {
+        }
+        return dataPoints
+    }
+    
+    class func stockPoints(count: Int) -> [StockDataPoint] {
+        let data = StockDataPoint.stockPoints()
+        var dataPoints = [StockDataPoint]()
+        for i in 0..<count {
+            dataPoints.append(data[i])
+        }
         return dataPoints
     }
 }

@@ -25,7 +25,7 @@
     UIView *_contentView;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -52,7 +52,9 @@
 {
     [super viewDidLoad];
     
-    _contentView = [[UIView alloc] initWithFrame:self.exampleBounds];
+    self.navigationController.navigationBar.translucent = NO;
+
+    _contentView = [[UIView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:_contentView];
     
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_contentView.bounds) - 44, CGRectGetWidth(_contentView.bounds), 44)];
@@ -78,10 +80,18 @@
     _transitionMode = TKCalendarTransitionModeFlip;
 }
 
+- (void)willMoveToParentViewController:(UIViewController *)parent
+{
+    [super willMoveToParentViewController:parent];
+    if (parent == nil) {
+        self.navigationController.navigationBar.translucent = YES;
+    }
+}
+
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    _contentView.frame = self.exampleBounds;
+    _contentView.frame = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning

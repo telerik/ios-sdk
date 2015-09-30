@@ -15,7 +15,7 @@ class CalendarEventKitDataBinding: ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.calendarView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        self.calendarView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.calendarView.dataSource = self.dataSource
         self.view.addSubview(self.calendarView)
     }

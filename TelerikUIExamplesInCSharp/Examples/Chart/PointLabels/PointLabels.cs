@@ -15,7 +15,7 @@ namespace Examples
 		List<TKChartDataPoint> barData;
 		List<TKChartDataPoint> lineData;
 		List<TKChartDataPoint> pieDonutData;
-		List<TKChartDataPoint> ohlcData;
+		List<TKChartFinancialDataPoint> ohlcData;
 
 		public PointLabels ()
 		{
@@ -65,7 +65,7 @@ namespace Examples
 			int[] closePrices = new int[] { 85, 65, 135, 120, 80, 136 };
 			int[] lowPrices = new int[] { 50, 60, 65, 55, 75, 90 };
 			int[] highPrices = new int[] { 129, 142, 141, 123, 150, 161 };
-			ohlcData = new List<TKChartDataPoint> ();
+			ohlcData = new List<TKChartFinancialDataPoint> ();
 			for (int i = 0; i < openPrices.Length; i++) {
 				NSDate date = NSDate.FromTimeIntervalSinceNow (60 * 60 * 24 * i);
 				NSNumber open = new NSNumber (openPrices [i]);

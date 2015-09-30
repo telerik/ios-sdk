@@ -16,7 +16,7 @@
     NSInteger _selectedRow;
 }
 
-- (id)initWithExample:(ExampleInfo *)example
+- (instancetype)initWithExample:(ExampleInfo *)example
 {
     self = [self init];
     if (self) {

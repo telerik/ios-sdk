@@ -5,7 +5,7 @@
 //  Copyright (c) 2014 Telerik. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ExampleInfo : NSObject {
     
@@ -25,7 +25,7 @@ class ExampleInfo : NSObject {
     }
     
     func createController() -> UIViewController {
-        var controller = exampleFunc()
+        let controller = exampleFunc()
         if examples.count > 0 {
            (controller as! ViewController).initWithExample(self)
         }

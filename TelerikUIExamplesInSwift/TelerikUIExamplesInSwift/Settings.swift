@@ -10,7 +10,7 @@ import Foundation
 class Settings: NSObject {
     var title = "Alert"
     var message = "Hello world"
-    var allowParallaxEffect = false
+    var allowParallax = false
     var backgroundStyle = TKAlertBackgroundStyle.Dim
     var actionsLayout = TKAlertActionsLayout.Horizontal
     var dismissMode = TKAlertDismissMode.None

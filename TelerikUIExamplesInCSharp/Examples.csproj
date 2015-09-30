@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -98,9 +98,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="Telerik.Xamarin.iOS">
-      <HintPath>..\Telerik.Xamarin.iOS.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -278,6 +275,44 @@
     <BundleResource Include="Resources\time%403x.png" />
     <BundleResource Include="Resources\table-number%402x.png" />
     <BundleResource Include="Resources\table-number%403x.png" />
+    <BundleResource Include="Resources\electricity.json" />
+    <BundleResource Include="Resources\countries.json" />
+    <BundleResource Include="Resources\clear.png" />
+    <BundleResource Include="Resources\search.png" />
+    <BundleResource Include="Resources\namesPhotos.json" />
+    <BundleResource Include="Resources\MD.png" />
+    <BundleResource Include="Resources\AL.png" />
+    <BundleResource Include="Resources\AN.png" />
+    <BundleResource Include="Resources\AU.png" />
+    <BundleResource Include="Resources\BE.png" />
+    <BundleResource Include="Resources\BG.png" />
+    <BundleResource Include="Resources\CY.png" />
+    <BundleResource Include="Resources\CZ.png" />
+    <BundleResource Include="Resources\DK.png" />
+    <BundleResource Include="Resources\FI.png" />
+    <BundleResource Include="Resources\FR.png" />
+    <BundleResource Include="Resources\DE.png" />
+    <BundleResource Include="Resources\GR.png" />
+    <BundleResource Include="Resources\HU.png" />
+    <BundleResource Include="Resources\IE.png" />
+    <BundleResource Include="Resources\IT.png" />
+    <BundleResource Include="Resources\JP.png" />
+    <BundleResource Include="Resources\LV.png" />
+    <BundleResource Include="Resources\LU.png" />
+    <BundleResource Include="Resources\MK.png" />
+    <BundleResource Include="Resources\MC.png" />
+    <BundleResource Include="Resources\NL.png" />
+    <BundleResource Include="Resources\NO.png" />
+    <BundleResource Include="Resources\PL.png" />
+    <BundleResource Include="Resources\RO.png" />
+    <BundleResource Include="Resources\RU.png" />
+    <BundleResource Include="Resources\SK.png" />
+    <BundleResource Include="Resources\SI.png" />
+    <BundleResource Include="Resources\SE.png" />
+    <BundleResource Include="Resources\TR.png" />
+    <BundleResource Include="Resources\UA.png" />
+    <BundleResource Include="Resources\US.png" />
+    <BundleResource Include="Resources\VA.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -388,16 +423,33 @@
     <Compile Include="Examples\Alert\Classes\Settings.cs" />
     <Compile Include="Examples\Alert\Classes\UIButton_Circle.cs" />
     <Compile Include="Examples\DataForm\DataFormGettingStarted.cs" />
-    <Compile Include="Examples\DataForm\PersonalInfo.cs" />
     <Compile Include="Examples\DataForm\DataFormReadOnly.cs" />
-    <Compile Include="Examples\DataForm\CardInfo.cs" />
     <Compile Include="Examples\DataForm\DataFormCustomization.cs" />
     <Compile Include="Examples\DataForm\DataFormValidation.cs" />
-    <Compile Include="Examples\DataForm\RegistrationInfo.cs" />
-    <Compile Include="Examples\DataForm\EmailValidator.cs" />
-    <Compile Include="Examples\DataForm\PasswordValidator.cs" />
-    <Compile Include="Examples\DataForm\ReservationForm.cs" />
-    <Compile Include="Examples\DataForm\CallEditor.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\RangeColumnBarChart.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\LogarithmicAxis.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\DateTimeCategoryAxis.cs" />
+    <Compile Include="Examples\DataForm\Classes\PersonalInfo.cs" />
+    <Compile Include="Examples\DataForm\Classes\CallEditor.cs" />
+    <Compile Include="Examples\DataForm\Classes\CardInfo.cs" />
+    <Compile Include="Examples\DataForm\Classes\EmailValidator.cs" />
+    <Compile Include="Examples\DataForm\Classes\PasswordValidator.cs" />
+    <Compile Include="Examples\DataForm\Classes\RegistrationInfo.cs" />
+    <Compile Include="Examples\DataForm\Classes\ReservationForm.cs" />
+    <Compile Include="Examples\DataForm\Classes\EmployeeInfo.cs" />
+    <Compile Include="Examples\DataForm\DataFormAlignment.cs" />
+    <Compile Include="Examples\Gauges\GaugesGettingStarted.cs" />
+    <Compile Include="Examples\Gauges\GaugeCustomization.cs" />
+    <Compile Include="Examples\Gauges\GaugeValueAnimation.cs" />
+    <Compile Include="Examples\Gauges\GaugeInteraction.cs" />
+    <Compile Include="Examples\Gauges\GaugeMultipleRanges.cs" />
+    <Compile Include="Examples\Gauges\GaugeMultipleScales.cs" />
+    <Compile Include="Examples\AutoComplete\AutoCompleteGettingStarted.cs" />
+    <Compile Include="Examples\AutoComplete\AutoCompleteCustomize.cs" />
+    <Compile Include="Examples\AutoComplete\AutoCompleteTokens.cs" />
+    <Compile Include="Examples\AutoComplete\PersonListViewCell.cs" />
+    <Compile Include="Examples\Chart\AxisTypes\CustomAxis.cs" />
+    <Compile Include="Examples\DataForm\DataFormCollapsibleGroups.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -427,11 +479,18 @@
     <Folder Include="Examples\Alert\" />
     <Folder Include="Examples\Alert\Classes\" />
     <Folder Include="Examples\DataForm\" />
+    <Folder Include="Examples\DataForm\Classes\" />
+    <Folder Include="Examples\Gauges\" />
+    <Folder Include="Examples\AutoComplete\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <InterfaceDefinition Include="Examples\Feedback\FeedbackExampleController.xib" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Telerik.Xamarin.iOS\Telerik.Xamarin.iOS.csproj">
+      <Project>{813A9D66-625E-486C-84D8-6CEADB5A6CFD}</Project>
+      <Name>Telerik.Xamarin.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

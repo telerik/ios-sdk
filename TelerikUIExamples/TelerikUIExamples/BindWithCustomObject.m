@@ -53,7 +53,7 @@
         series.selectionMode = TKChartSeriesSelectionModeSeries;
         series.stackInfo = stackInfo;
     }
-
+    
     [_chart reloadData];
 }
 

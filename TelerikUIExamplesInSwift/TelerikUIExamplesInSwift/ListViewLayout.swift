@@ -15,7 +15,7 @@ class ListViewLayout: ExampleViewController, TKListViewStaggeredLayoutDelegate {
     var sizes = [Int]()
     var scrollDirection = TKListViewScrollDirection.Vertical
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Linear layout", inSection:"Layout") { self.linearLayoutSelected() }
@@ -41,7 +41,7 @@ class ListViewLayout: ExampleViewController, TKListViewStaggeredLayoutDelegate {
         dataSource.loadDataFromJSONResource("ListItems", ofType: "json", rootItemKeyPath: "items")
         dataSource.addFilterDescriptor(TKDataSourceFilterDescriptor(query: "category LIKE '\(categories[0])' OR category LIKE '\(categories[1])' OR category LIKE '\(categories[2])'"))
         
-        for i in 0..<dataSource.items.count {
+        for _ in 0..<dataSource.items.count {
             sizes.append(Int(50 + 5*(arc4random()%40)))
         }
         
@@ -60,12 +60,12 @@ class ListViewLayout: ExampleViewController, TKListViewStaggeredLayoutDelegate {
         
         dataSource.settings.listView.initHeader { (TKListView listView, NSIndexPath indexPath, TKListViewHeaderCell headerCell, TKDataSourceGroup group) -> Void in
             headerCell.textLabel.textAlignment = NSTextAlignment.Center
-            headerCell.textLabel.text = (group.key as? String)?.capitalizedString
+            headerCell.textLabel.text = (group!.key as? String)?.capitalizedString
             headerCell.backgroundColor = UIColor.lightGrayColor()
         }
         
         listView.frame = self.view.bounds
-        listView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        listView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         listView.dataSource = self.dataSource
         listView.registerClass(CustomListCell.classForCoder(), forCellWithReuseIdentifier: "custom")
 

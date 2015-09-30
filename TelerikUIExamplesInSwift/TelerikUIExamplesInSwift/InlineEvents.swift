@@ -18,11 +18,11 @@ class InlineEvents: ExampleViewController, TKCalendarDataSource, TKCalendarMonth
         self.createEvents()
         
         // Do any additional setup after loading the view.
-        self.calendarView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        self.calendarView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.calendarView.dataSource = self
         self.view.addSubview(self.calendarView)
         
-        let presenter = self.calendarView.presenter() as! TKCalendarMonthPresenter
+        let presenter = self.calendarView.presenter as! TKCalendarMonthPresenter
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             presenter.inlineEventsViewMode = TKCalendarInlineEventsViewMode.Popover
         }
@@ -45,7 +45,7 @@ class InlineEvents: ExampleViewController, TKCalendarDataSource, TKCalendarMonth
     }
     
     func createEvents() {
-        let locations = ["Sofia", "London", "Paris", "New York", "San Francisco", "Home"]
+
         let colors = [
             UIColor(red:88.0/255.0, green:86.0/255.0, blue:214.0/255.0, alpha:1.0),
             UIColor(red:255.0/255.0, green:149.0/255.0, blue:3.0/255.0, alpha:1.0),
@@ -71,7 +71,7 @@ class InlineEvents: ExampleViewController, TKCalendarDataSource, TKCalendarMonth
         e.eventColor = colors[Int(arc4random()%count)]
         events.addObject(e)
         
-        for i in 0..<3 {
+        for _ in 0..<3 {
             e = TKCalendarEvent()
             e.title = titles[Int(arc4random()%UInt32(titles.count-1))]
             e.startDate = self.dateWithOffset(7, hours: 1)
@@ -81,7 +81,7 @@ class InlineEvents: ExampleViewController, TKCalendarDataSource, TKCalendarMonth
             events.addObject(e)
         }
         
-        for i in 0..<5 {
+        for _ in 0..<5 {
             var dayOffset = Int(arc4random() % 20)
             if dayOffset < 10 {
                 dayOffset = dayOffset * 1
@@ -106,14 +106,14 @@ class InlineEvents: ExampleViewController, TKCalendarDataSource, TKCalendarMonth
         let components = NSDateComponents()
         components.day = days
         components.hour = hours
-        return calendar.dateByAddingComponents(components, toDate: NSDate(), options: NSCalendarOptions(0))!
+        return calendar.dateByAddingComponents(components, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))!
     }
     
 //MARK: - TKCalendarDataSource
 
-    func calendar(calendar: TKCalendar!, eventsForDate date: NSDate!) -> [AnyObject]! {
+    func calendar(calendar: TKCalendar, eventsForDate date: NSDate) -> [AnyObject]? {
         var components : NSDateComponents
-        components = self.calendarView.calendar.components(NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit, fromDate: date)
+        components = self.calendarView.calendar.components(NSCalendarUnit(rawValue: NSCalendarUnit.Year.rawValue | NSCalendarUnit.Month.rawValue | NSCalendarUnit.Day.rawValue), fromDate: date)
         components.hour = 23
         components.minute = 59
         components.second = 59
@@ -124,9 +124,9 @@ class InlineEvents: ExampleViewController, TKCalendarDataSource, TKCalendarMonth
     
 //MARK: - TKCalendarMonthPresenterDelegate
     
-    func monthPresenter(presenter: TKCalendarMonthPresenter!, inlineEventSelected event: TKCalendarEventProtocol!) {
+    func monthPresenter(presenter: TKCalendarMonthPresenter, inlineEventSelected event: TKCalendarEventProtocol) {
         
-        println("event selected: \(event.title)")
+        print("event selected: \(event.title)")
         
         dispatch_async(dispatch_get_main_queue(), {
             let alert = UIAlertView(title: "Event selected", message: event.title, delegate: nil, cancelButtonTitle: "Done")

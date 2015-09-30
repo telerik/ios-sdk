@@ -15,6 +15,6 @@
 
 @property (nonatomic, assign) NSInteger selectedOption;
 
-- (instancetype)initWithTitle:(NSString*)title;
+- (instancetype __nonnull)initWithTitle:(NSString*)title;
 
 @end

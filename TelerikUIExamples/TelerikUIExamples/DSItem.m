@@ -9,7 +9,7 @@
 
 @implementation DSItem
 
-- (id)initWithName:(NSString*)name value:(CGFloat)value group:(NSString *)group
+- (instancetype)initWithName:(NSString*)name value:(CGFloat)value group:(NSString *)group
 {
     self = [self init];
     if (self) {

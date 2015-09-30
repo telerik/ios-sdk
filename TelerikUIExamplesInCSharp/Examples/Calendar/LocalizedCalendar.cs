@@ -39,35 +39,40 @@ namespace Examples
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Gregorian);
 			this.CalendarView.Locale = new NSLocale ("ru_RU");
-			this.CalendarView.Presenter.Update (false);
+			this.CalendarView.ViewMode = TKCalendarViewMode.Month;
+			((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (false);
 		}
 
 		public void SelectGerman (object sender, EventArgs e)
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Gregorian);
 			this.CalendarView.Locale = new NSLocale ("de_DE");
-			this.CalendarView.Presenter.Update (false);
+			this.CalendarView.ViewMode = TKCalendarViewMode.Month;
+			((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (false);
 		}
 
 		public void SelectHebrew (object sender, EventArgs e)
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Hebrew);
 			this.CalendarView.Locale = new NSLocale ("he_IL");
-			this.CalendarView.Presenter.Update (false);
+			this.CalendarView.ViewMode = TKCalendarViewMode.Month;
+			((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (false);
 		}
 
 		public void SelectChinese (object sender, EventArgs e)
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Chinese);
 			this.CalendarView.Locale = new NSLocale ("zh_Hans_SG");
-			this.CalendarView.Presenter.Update (false);
+			this.CalendarView.ViewMode = TKCalendarViewMode.Month;
+			((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (false);
 		}
 
 		public void SelectIslamic (object sender, EventArgs e)
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Islamic);
 			this.CalendarView.Locale = new NSLocale ("ar-QA");
-			this.CalendarView.Presenter.Update (false);
+			this.CalendarView.ViewMode = TKCalendarViewMode.Month;
+			((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (false);
 		}
 	}
 }

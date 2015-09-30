@@ -9,4 +9,13 @@
 
 @implementation ReservationForm
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _guests = 5;
+    }
+    return self;
+}
+
 @end

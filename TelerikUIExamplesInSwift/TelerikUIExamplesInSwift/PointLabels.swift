@@ -34,7 +34,7 @@ class PointLabels: ExampleViewController, TKChartDelegate {
         super.viewDidLoad()
 
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleHeight.rawValue | UIViewAutoresizing.FlexibleWidth.rawValue)
         chart.delegate = self
         chart.allowAnimations = true
         self.view.addSubview(chart)
@@ -134,18 +134,18 @@ class PointLabels: ExampleViewController, TKChartDelegate {
         xAxis.setPlotMode(TKChartAxisPlotMode.BetweenTicks)
     }
     
-    func chart(chart: TKChart!, textForLabelAtPoint dataPoint: TKChartData!, inSeries series: TKChartSeries!, atIndex dataIndex: UInt) -> String! {
+    func chart(chart: TKChart, textForLabelAtPoint dataPoint: TKChartData, property propertyName: String?, inSeries series: TKChartSeries, atIndex dataIndex: UInt) -> String? {
         if series.isKindOfClass(TKChartPieSeries) {
-            return dataPoint.dataName!()
+            return dataPoint.dataName!
         }
         else if series.isKindOfClass(TKChartBarSeries) {
-            return "\(dataPoint.dataXValue())"
+            return "\(dataPoint.dataXValue)"
         }
         else if series.isKindOfClass(TKChartOhlcSeries) {
-            return "O:\(dataPoint.open!())\nH:\(dataPoint.high!())\nL:\(dataPoint.low!())\nC:\(dataPoint.close!())"
+            return "O:\(dataPoint.open!)\nH:\(dataPoint.high!)\nL:\(dataPoint.low!)\nC:\(dataPoint.close!)"
         }
         
-        return "\(dataPoint.dataYValue())"
+        return "\(dataPoint.dataYValue)"
     }
 
     override func didReceiveMemoryWarning() {

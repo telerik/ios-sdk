@@ -87,7 +87,7 @@ namespace Examples
 			}
 
 			this.isSelectedPoint = false;
-			return new TKChartPointLabel (dataPoint, series.Style.PointLabelStyle, String.Format ("{0}", point.DataYValue));
+			return new TKChartPointLabel (dataPoint, series, String.Format ("{0}", point.DataYValue));
 		}
 	}
 }

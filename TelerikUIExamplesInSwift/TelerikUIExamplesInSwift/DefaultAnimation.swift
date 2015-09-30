@@ -12,7 +12,7 @@ class DefaultAnimation: ExampleViewController {
     
     let chart = TKChart()
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         let names = ["Area Series", "Pie Series", "Line Series", "Scatter Series", "Bar Series", "Column Series"]
@@ -36,7 +36,7 @@ class DefaultAnimation: ExampleViewController {
         super.viewDidLoad()
         
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.allowAnimations = true
         self.view.addSubview(chart)
         
@@ -101,7 +101,7 @@ class DefaultAnimation: ExampleViewController {
         chart.removeAllData()
         
         var points = [TKChartDataPoint]()
-        for i in 0..<100 {
+        for _ in 0..<100 {
             points.append(TKChartDataPoint(x: Int(arc4random() % 1450), y: Int(arc4random() % 150)))
         }
         

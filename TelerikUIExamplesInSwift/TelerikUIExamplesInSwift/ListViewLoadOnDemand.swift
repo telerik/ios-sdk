@@ -15,7 +15,7 @@ class ListViewLoadOnDemand: ExampleViewController, TKListViewDataSource, TKListV
     let loremIpsumGenerator = LoremIpsumGenerator()
     var lastRetrievedDataIndex = 15
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         self.addOption("Manual", inSection:"Load on demand mode") { self.loadOnDemandManual() }
@@ -34,7 +34,7 @@ class ListViewLoadOnDemand: ExampleViewController, TKListViewDataSource, TKListV
         self.names.loadDataFromJSONResource("PhotosWithNames", ofType: "json", rootItemKeyPath: "names")
 
         listView.frame = self.view.bounds
-        listView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        listView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         listView.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
         listView.dataSource = self
         listView.delegate = self
@@ -59,7 +59,7 @@ class ListViewLoadOnDemand: ExampleViewController, TKListViewDataSource, TKListV
         self.lastRetrievedDataIndex = 15
         self.listView.loadOnDemandMode = TKListViewLoadOnDemandMode.Manual
         self.listView.reloadData()
-        self.listView.contentOffset = CGPoint.zeroPoint
+        self.listView.contentOffset = CGPoint.zero
     }
 
     
@@ -67,29 +67,29 @@ class ListViewLoadOnDemand: ExampleViewController, TKListViewDataSource, TKListV
         self.lastRetrievedDataIndex = 15
         self.listView.loadOnDemandMode = TKListViewLoadOnDemandMode.Auto
         self.listView.reloadData()
-        self.listView.contentOffset = CGPoint.zeroPoint
+        self.listView.contentOffset = CGPoint.zero
     }
     
 // MARK: TKListViewDataSource
     
-    func listView(listView: TKListView!, numberOfItemsInSection section: Int) -> Int {
+    func listView(listView: TKListView, numberOfItemsInSection section: Int) -> Int {
         return lastRetrievedDataIndex
     }
     
-    func listView(listView: TKListView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> TKListViewCell! {
+    func listView(listView: TKListView, cellForItemAtIndexPath indexPath: NSIndexPath) -> TKListViewCell? {
         
         var cell = listView.dequeueLoadOnDemandCellForIndexPath(indexPath)
         
         if (cell == nil) {
-            cell = listView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! TKListViewCell
-            cell.imageView.image = UIImage(named: self.photos.items[indexPath.row] as! String)
-            cell.textLabel.text = names.items[indexPath.row] as? String
-            cell.detailTextLabel.text = loremIpsumGenerator.randomString(10 + Int(arc4random_uniform(16)), indexPath: indexPath) as String
-            cell.detailTextLabel.textColor = UIColor.whiteColor()
+            cell = listView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as? TKListViewCell
+            cell!.imageView.image = UIImage(named: self.photos.items[indexPath.row] as! String)
+            cell!.textLabel.text = names.items[indexPath.row] as? String
+            cell!.detailTextLabel.text = loremIpsumGenerator.randomString(10 + Int(arc4random_uniform(16)), indexPath: indexPath) as String
+            cell!.detailTextLabel.textColor = UIColor.whiteColor()
         }
         
-        cell.backgroundView?.backgroundColor = UIColor(white: 0.3, alpha: 0.5)
-        let backgroundView = cell.backgroundView as! TKView
+        cell!.backgroundView?.backgroundColor = UIColor(white: 0.3, alpha: 0.5)
+        let backgroundView = cell!.backgroundView as! TKView
         backgroundView.stroke = nil
 
         return cell
@@ -97,7 +97,7 @@ class ListViewLoadOnDemand: ExampleViewController, TKListViewDataSource, TKListV
     
 // MARK: TKListViewDelegate
     
-    func listView(listView: TKListView!, shouldLoadMoreDataAtIndexPath indexPath: NSIndexPath!) -> Bool {
+    func listView(listView: TKListView, shouldLoadMoreDataAtIndexPath indexPath: NSIndexPath) -> Bool {
        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
         self.lastRetrievedDataIndex = min(self.names.items.count, self.lastRetrievedDataIndex + 10)
         

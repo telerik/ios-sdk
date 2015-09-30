@@ -11,7 +11,7 @@ class CalendarViewModes: ExampleViewController, TKCalendarDelegate {
     
     let calendarView = TKCalendar()
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("Week view") { self.selectWeekView() }
@@ -32,15 +32,15 @@ class CalendarViewModes: ExampleViewController, TKCalendarDelegate {
         self.view.backgroundColor = UIColor.lightGrayColor()
         
         let date = NSDate()
-        let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         calendar.firstWeekday = 2
         let components = NSDateComponents()
         components.year = -10
-        let minDate: NSDate = calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))!
+        let minDate: NSDate = calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(rawValue:0))!
         components.year = 10
-        let maxDate: NSDate = calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))!
+        let maxDate: NSDate = calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(rawValue:0))!
         
-        self.calendarView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        self.calendarView.autoresizingMask = UIViewAutoresizing(rawValue:UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(self.calendarView)
         
         self.calendarView.delegate = self
@@ -94,7 +94,7 @@ class CalendarViewModes: ExampleViewController, TKCalendarDelegate {
     
 //MARK: - TKCalendarDelegate
 
-    func calendar(calendar: TKCalendar!, didChangedViewModeFrom previousViewMode: TKCalendarViewMode, to viewMode: TKCalendarViewMode) {
+    func calendar(calendar: TKCalendar, didChangedViewModeFrom previousViewMode: TKCalendarViewMode, to viewMode: TKCalendarViewMode) {
         if viewMode == TKCalendarViewMode.Week || previousViewMode == TKCalendarViewMode.Week {
             self.view.setNeedsLayout()
         }

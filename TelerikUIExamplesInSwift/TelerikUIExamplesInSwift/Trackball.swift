@@ -11,7 +11,7 @@ class Trackball: ExampleViewController, TKChartDelegate {
     
     let chart = TKChart()
 
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         self.addOption("pin at top") { self.top() }
@@ -29,7 +29,7 @@ class Trackball: ExampleViewController, TKChartDelegate {
         super.viewDidLoad()
     
         chart.frame = self.exampleBoundsWithInset
-        chart.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
     
         var array1 = [TKChartDataPoint]()
@@ -64,13 +64,13 @@ class Trackball: ExampleViewController, TKChartDelegate {
     
     //MARK: TKChartDelegate
     
-    func chart(chart: TKChart!, trackballDidTrackSelection selection: [AnyObject]!) {
+    func chart(chart: TKChart, trackballDidTrackSelection selection: [AnyObject]) {
         let str = NSMutableString()
         var i = 0
-        var count = selection.count
+        let count = selection.count
         for info in selection as! [TKChartSelectionInfo] {
-            let data = info.dataPoint() as TKChartData!
-            str.appendFormat("Day %2.f series %d - %2.f", data.dataXValue() as! Float, info.series.index, data.dataYValue() as! Float)
+            let data = info.dataPoint as TKChartData!
+            str.appendFormat("Day %2.f series %d - %2.f", data.dataXValue as! Float, info.series!.index, data.dataYValue as! Float)
             if (i<count-1) {
                 str.appendString("\n");
             }

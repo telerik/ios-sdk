@@ -16,6 +16,18 @@
     return items;
 }
 
++ (NSArray *)stockPoints:(NSInteger)count
+{
+    NSArray *stockPoints = [StockDataPoint stockPoints];
+    
+    NSMutableArray *dataPoints = [[NSMutableArray alloc] init];
+    for (int i = 0; i < count; i++) {
+        [dataPoints addObject:stockPoints[i]];
+    }
+    
+    return dataPoints;
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [self init]) {

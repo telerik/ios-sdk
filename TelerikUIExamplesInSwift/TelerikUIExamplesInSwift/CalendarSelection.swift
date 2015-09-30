@@ -5,7 +5,7 @@
 //  Copyright (c) 2014 Telerik. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class CalendarSelection: ExampleViewController, TKCalendarDelegate {
     
@@ -36,21 +36,22 @@ class CalendarSelection: ExampleViewController, TKCalendarDelegate {
         let date = NSDate()
         let components = NSDateComponents()
         components.day = 1
-        self.unselectable = self.calendarView.calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))
+
+        self.unselectable = self.calendarView.calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(rawValue: 0))
         components.day = 3
-        let startDate = self.calendarView.calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))
+        let startDate = self.calendarView.calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(rawValue: 0))!
         components.day = 6
-        let endDate = self.calendarView.calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0));
+        let endDate = self.calendarView.calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(rawValue: 0))!
         
         components.year = -5
-        self.calendarView.minDate = self.calendarView.calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))
+        self.calendarView.minDate = self.calendarView.calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(rawValue: 0))!
 
         components.year = 5
-        self.calendarView.maxDate = self.calendarView.calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))
+        self.calendarView.maxDate = self.calendarView.calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(rawValue: 0))!
 
         self.calendarView.selectedDatesRange = TKDateRange(start: startDate, end: endDate)
         
-        let presenter = self.calendarView.presenter() as! TKCalendarMonthPresenter
+        let presenter = self.calendarView.presenter as! TKCalendarMonthPresenter
         presenter.headerIsSticky = true
     }
     
@@ -81,22 +82,22 @@ class CalendarSelection: ExampleViewController, TKCalendarDelegate {
 //MARK: - TKCalendarDelegate
     
     func calendar(calenadr:TKCalendar, didSelectDate date: NSDate) {
-        println("selected: %@", date)
+        print("selected: %@", date)
     }
     
     func calendar(calenadr:TKCalendar, didDeselectedDate date: NSDate) {
-        println("deselected: %@", date)
+        print("deselected: %@", date)
     }
     
     func calendar(calenadr:TKCalendar, shouldSelectDate date: NSDate)->Bool {
-        println("Trying to select the unselectable: %@", date)
-        return TKCalendar.isDate(self.unselectable, equalToDate: date, withComponents: NSCalendarUnit.YearCalendarUnit, withCalendar: calendarView.calendar)
+        print("Trying to select the unselectable: %@", date)
+        return TKCalendar.isDate(self.unselectable!, equalToDate: date, withComponents: NSCalendarUnit.Year, withCalendar: calendarView.calendar)
     }
     
-    func calendar(calendar: TKCalendar!, updateVisualsForCell cell: TKCalendarCell!) {
+    func calendar(calendar: TKCalendar, updateVisualsForCell cell: TKCalendarCell) {
         if cell.isKindOfClass(TKCalendarMonthTitleCell.self) {
             let monthTitleCell = cell as! TKCalendarMonthTitleCell
-            monthTitleCell.layoutMode = TKCalendarMonthTitleCellLayoutMode.MonthAndYearWithButotns
+            monthTitleCell.layoutMode = TKCalendarMonthTitleCellLayoutMode.MonthAndYearWithButtons
         }
     }
 }

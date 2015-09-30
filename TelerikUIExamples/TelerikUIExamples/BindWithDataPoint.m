@@ -10,20 +10,23 @@
 
 @interface DataPointImpl : NSObject<TKChartData>
 
+@property (nonatomic, strong) id dataXValue;
+
+@property (nonatomic, strong) id dataYValue;
+
 @property (nonatomic, assign) NSInteger objectID;
+
 @property (nonatomic, assign) CGFloat value;
 
-- (id)initWithID:(NSInteger)objectID withValue:(CGFloat)value;
-- (id)dataXValue;
-- (id)dataYValue;
+- (instancetype)initWithID:(NSInteger)objectID withValue:(CGFloat)value;
 
 @end
 
 @implementation DataPointImpl
 
-- (id)initWithID:(NSInteger)objectID withValue:(CGFloat)value
+- (instancetype)initWithID:(NSInteger)objectID withValue:(CGFloat)value
 {
-    self = [super init];
+    self = [self init];
     if (self) {
         _objectID = objectID;
         _value = value;

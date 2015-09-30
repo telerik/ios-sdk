@@ -12,7 +12,7 @@ class ListViewAnimations: ExampleViewController {
     let listView = TKListView()
     let dataSource = TKDataSource()
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         self.addOption("Scale in") { self.scaleInSelected() }
@@ -33,13 +33,13 @@ class ListViewAnimations: ExampleViewController {
         self.dataSource.settings.listView.createCell { (TKListView listView, NSIndexPath indexPath, AnyObject item) -> TKListViewCell! in
             return listView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! TKListViewCell
         }
-        
-        self.dataSource.settings.listView.initCell { (listView: TKListView!, indexPath: NSIndexPath!, cell: TKListViewCell!, item: AnyObject!) -> Void in
+
+        self.dataSource.settings.listView.initCell { (TKListView ListView, NSIndexPath indexPath, TKListViewCell cell, AnyObject item) -> Void in
             cell.imageView.image = UIImage(named: self.dataSource.items[indexPath.row] as! String)
         }
 
         self.listView.frame = self.view.bounds
-        self.listView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        self.listView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.listView.dataSource = self.dataSource
         self.listView.registerClass(AnimationListCell.self, forCellWithReuseIdentifier: "cell")
         self.view.addSubview(self.listView)
