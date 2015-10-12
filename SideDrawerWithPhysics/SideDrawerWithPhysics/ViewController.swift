@@ -38,7 +38,6 @@ class ViewController: UIViewController {
         section.addItemWithTitle("Starred")
         section.addItemWithTitle("Sent Mail")
         section.addItemWithTitle("Drafts")
-
     }
 
     func showSideDrawer()

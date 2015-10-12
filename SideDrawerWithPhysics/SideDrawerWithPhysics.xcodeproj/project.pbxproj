@@ -260,7 +260,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = /Users/slazarov/Desktop/TelerikUI/;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					"\"/Users/${USER}/Documents/Telerik/\"/**",
+				);
 				INFOPLIST_FILE = SideDrawerWithPhysics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SLT.SideDrawerWithPhysics;
@@ -275,7 +279,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = /Users/slazarov/Desktop/TelerikUI/;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					"\"/Users/${USER}/Documents/Telerik/\"/**",
+				);
 				INFOPLIST_FILE = SideDrawerWithPhysics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SLT.SideDrawerWithPhysics;
@@ -303,6 +311,7 @@
 				F6D0BDEE1BC67590004FAD63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
