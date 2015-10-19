@@ -1,0 +1,319 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F6D0BDDE1BC67590004FAD63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D0BDDD1BC67590004FAD63 /* AppDelegate.swift */; };
+		F6D0BDE01BC67590004FAD63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D0BDDF1BC67590004FAD63 /* ViewController.swift */; };
+		F6D0BDE31BC67590004FAD63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6D0BDE11BC67590004FAD63 /* Main.storyboard */; };
+		F6D0BDE51BC67590004FAD63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6D0BDE41BC67590004FAD63 /* Assets.xcassets */; };
+		F6D0BDE81BC67590004FAD63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6D0BDE61BC67590004FAD63 /* LaunchScreen.storyboard */; };
+		F6D0BDF61BC67D2A004FAD63 /* PhysicsTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D0BDF51BC67D2A004FAD63 /* PhysicsTransitionManager.swift */; settings = {ASSET_TAGS = (); }; };
+		F6D0BE0A1BC7ED09004FAD63 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D0BE091BC7ED09004FAD63 /* TelerikUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F6D0BDDA1BC67590004FAD63 /* SideDrawerWithPhysics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideDrawerWithPhysics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6D0BDDD1BC67590004FAD63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F6D0BDDF1BC67590004FAD63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F6D0BDE21BC67590004FAD63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F6D0BDE41BC67590004FAD63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F6D0BDE71BC67590004FAD63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F6D0BDE91BC67590004FAD63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6D0BDF11BC67BD1004FAD63 /* SideDrawerWithPhysics-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SideDrawerWithPhysics-Bridging-Header.h"; sourceTree = "<group>"; };
+		F6D0BDF51BC67D2A004FAD63 /* PhysicsTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsTransitionManager.swift; sourceTree = "<group>"; };
+		F6D0BE091BC7ED09004FAD63 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = ../TelerikUI/TelerikUI.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F6D0BDD71BC67590004FAD63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6D0BE0A1BC7ED09004FAD63 /* TelerikUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F6D0BDD11BC67590004FAD63 = {
+			isa = PBXGroup;
+			children = (
+				F6D0BE091BC7ED09004FAD63 /* TelerikUI.framework */,
+				F6D0BDDC1BC67590004FAD63 /* SideDrawerWithPhysics */,
+				F6D0BDDB1BC67590004FAD63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F6D0BDDB1BC67590004FAD63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F6D0BDDA1BC67590004FAD63 /* SideDrawerWithPhysics.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F6D0BDDC1BC67590004FAD63 /* SideDrawerWithPhysics */ = {
+			isa = PBXGroup;
+			children = (
+				F6D0BDDD1BC67590004FAD63 /* AppDelegate.swift */,
+				F6D0BDDF1BC67590004FAD63 /* ViewController.swift */,
+				F6D0BDE11BC67590004FAD63 /* Main.storyboard */,
+				F6D0BDE41BC67590004FAD63 /* Assets.xcassets */,
+				F6D0BDE61BC67590004FAD63 /* LaunchScreen.storyboard */,
+				F6D0BDE91BC67590004FAD63 /* Info.plist */,
+				F6D0BDF11BC67BD1004FAD63 /* SideDrawerWithPhysics-Bridging-Header.h */,
+				F6D0BDF51BC67D2A004FAD63 /* PhysicsTransitionManager.swift */,
+			);
+			path = SideDrawerWithPhysics;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F6D0BDD91BC67590004FAD63 /* SideDrawerWithPhysics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6D0BDEC1BC67590004FAD63 /* Build configuration list for PBXNativeTarget "SideDrawerWithPhysics" */;
+			buildPhases = (
+				F6D0BDD61BC67590004FAD63 /* Sources */,
+				F6D0BDD71BC67590004FAD63 /* Frameworks */,
+				F6D0BDD81BC67590004FAD63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SideDrawerWithPhysics;
+			productName = SideDrawerWithPhysics;
+			productReference = F6D0BDDA1BC67590004FAD63 /* SideDrawerWithPhysics.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F6D0BDD21BC67590004FAD63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Sophia Lazarova";
+				TargetAttributes = {
+					F6D0BDD91BC67590004FAD63 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = F6D0BDD51BC67590004FAD63 /* Build configuration list for PBXProject "SideDrawerWithPhysics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F6D0BDD11BC67590004FAD63;
+			productRefGroup = F6D0BDDB1BC67590004FAD63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F6D0BDD91BC67590004FAD63 /* SideDrawerWithPhysics */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F6D0BDD81BC67590004FAD63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6D0BDE81BC67590004FAD63 /* LaunchScreen.storyboard in Resources */,
+				F6D0BDE51BC67590004FAD63 /* Assets.xcassets in Resources */,
+				F6D0BDE31BC67590004FAD63 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F6D0BDD61BC67590004FAD63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6D0BDF61BC67D2A004FAD63 /* PhysicsTransitionManager.swift in Sources */,
+				F6D0BDE01BC67590004FAD63 /* ViewController.swift in Sources */,
+				F6D0BDDE1BC67590004FAD63 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F6D0BDE11BC67590004FAD63 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6D0BDE21BC67590004FAD63 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F6D0BDE61BC67590004FAD63 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6D0BDE71BC67590004FAD63 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F6D0BDEA1BC67590004FAD63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F6D0BDEB1BC67590004FAD63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F6D0BDED1BC67590004FAD63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					"\"/Users/${USER}/Documents/Telerik/\"/**",
+				);
+				INFOPLIST_FILE = SideDrawerWithPhysics/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SLT.SideDrawerWithPhysics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SideDrawerWithPhysics/SideDrawerWithPhysics-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F6D0BDEE1BC67590004FAD63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					"\"/Users/${USER}/Documents/Telerik/\"/**",
+				);
+				INFOPLIST_FILE = SideDrawerWithPhysics/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SLT.SideDrawerWithPhysics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SideDrawerWithPhysics/SideDrawerWithPhysics-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F6D0BDD51BC67590004FAD63 /* Build configuration list for PBXProject "SideDrawerWithPhysics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6D0BDEA1BC67590004FAD63 /* Debug */,
+				F6D0BDEB1BC67590004FAD63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6D0BDEC1BC67590004FAD63 /* Build configuration list for PBXNativeTarget "SideDrawerWithPhysics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6D0BDED1BC67590004FAD63 /* Debug */,
+				F6D0BDEE1BC67590004FAD63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F6D0BDD21BC67590004FAD63 /* Project object */;
+}
