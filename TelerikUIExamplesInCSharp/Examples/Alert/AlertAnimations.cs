@@ -18,15 +18,15 @@ namespace Examples
 		NSMutableArray showAnimations;
 		NSMutableArray dismissAnimations;
 		public TKAlert alert;
-
-		public AlertAnimations ()
-		{
-			AddOption ("Show Alert", Show);
-		}
+		ListViewDelegate listViewDelegate;
 
 		public override void ViewDidLoad ()
 		{
+			AddOption ("Show Alert", Show);
+
 			base.ViewDidLoad ();
+
+			this.listViewDelegate = new ListViewDelegate (this);
 
 			alert = new TKAlert ();
 			alert.Title = "Animations";
@@ -54,7 +54,7 @@ namespace Examples
 
 			appearAnimationsList = new TKListView ();
 			appearAnimationsList.WeakDataSource = appearAnimations;
-			appearAnimationsList.Delegate = new ListViewDelegate (this);
+			appearAnimationsList.Delegate = listViewDelegate;
 			appearAnimationsList.Tag = 0;
 			appearAnimationsList.AutoresizingMask = UIViewAutoresizing.None;
 			this.View.AddSubview (appearAnimationsList);
@@ -65,7 +65,7 @@ namespace Examples
 			hideAnimationsList = new TKListView ();
 			hideAnimationsList.WeakDataSource = hideAnimations;
 			hideAnimationsList.Tag = 1;
-			hideAnimationsList.Delegate = new ListViewDelegate (this);
+			hideAnimationsList.Delegate = listViewDelegate;
 			hideAnimationsList.AutoresizingMask = UIViewAutoresizing.None;
 			this.View.AddSubview (hideAnimationsList);
 

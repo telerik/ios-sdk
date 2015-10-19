@@ -12,6 +12,7 @@ namespace Examples
 {
 	public class CalendarTransitionEffects : ExampleViewController
 	{
+		CalendarDelegate calendarDelegate;
 		CalendarPresenterDelegate presenterDelegate;
 
 		public TKCalendar CalendarView { get; set; }
@@ -51,6 +52,8 @@ namespace Examples
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+			this.calendarDelegate  = new CalendarDelegate (this); 
 			this.presenterDelegate = new CalendarPresenterDelegate (this);
 
 			UIToolbar toolbar = new UIToolbar (new CGRect (0, this.View.Frame.Size.Height - 44, this.View.Bounds.Size.Width, 44));
@@ -65,7 +68,7 @@ namespace Examples
 			CGRect rect = new CGRect (0, 0, this.View.Bounds.Size.Width, this.View.Bounds.Size.Height - toolbar.Frame.Size.Height);
 			this.CalendarView = new TKCalendar (rect);
 			this.CalendarView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
-			this.CalendarView.Delegate = new CalendarDelegate (this);
+			this.CalendarView.Delegate = calendarDelegate;
 			this.CalendarView.AllowPinchZoom = false;
 			this.View.AddSubview (CalendarView);
 

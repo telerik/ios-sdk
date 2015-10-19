@@ -12,6 +12,10 @@ namespace Examples
 {
 	public class CalendarWithEvents : ExampleViewController
 	{
+		CalendarDelegate calendarDelegate;
+		CalendarDataSource calendarDataSource;
+		TableViewDataSource tableViewDataSource;
+
 		public TKCalendarEventProtocol[] Events {
 			get;
 			set;
@@ -41,10 +45,12 @@ namespace Examples
 		{
 			base.ViewDidLoad ();
 
+			this.tableViewDataSource = new TableViewDataSource (this);
+
 			this.TableView = new UITableView (new RectangleF ());
 			this.TableView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin;
 			this.TableView.RegisterClassForCellReuse (typeof(UITableViewCell), new NSString("cell"));
-			this.TableView.DataSource = new TableViewDataSource (this);
+			this.TableView.DataSource = this.tableViewDataSource;
 			this.View.AddSubview (this.TableView);
 
 			NSCalendar calendar = new NSCalendar (NSCalendarType.Gregorian);
@@ -56,11 +62,14 @@ namespace Examples
 			components.Year = 10;
 			NSDate maxDate = calendar.DateByAddingComponents (components, NSDate.Now, (NSCalendarOptions)0);
 
+			this.calendarDelegate = new CalendarDelegate (this);
+			this.calendarDataSource = new CalendarDataSource (this);
+
 			this.CalendarView = new TKCalendar (new RectangleF());
 			this.CalendarView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.CalendarView.Calendar = calendar;
-			this.CalendarView.Delegate = new CalendarDelegate (this);
-			this.CalendarView.DataSource = new CalendarDataSource (this);
+			this.CalendarView.Delegate = calendarDelegate;
+			this.CalendarView.DataSource = calendarDataSource;
 			this.CalendarView.MinDate = minDate;
 			this.CalendarView.MaxDate = maxDate;
 			this.CalendarView.AllowPinchZoom = true;

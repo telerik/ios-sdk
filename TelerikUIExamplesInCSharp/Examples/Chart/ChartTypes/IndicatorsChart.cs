@@ -17,6 +17,7 @@ namespace Examples
 		TKChartSeries series;
 		List<StockDataPoint> data;
 		IndicatorsTableView settings;
+		ChartDelegate chartDelegate = new ChartDelegate ();
 
 		public List<OptionInfo> Trendlines { get; set; }
 
@@ -26,7 +27,7 @@ namespace Examples
 
 		public int SelectedTrendLine { get; set; }
 
-		public IndicatorsChart ()
+		public override void ViewDidLoad ()
 		{
 			Trendlines = new List<OptionInfo> ();
 			Indicators = new List<OptionInfo> ();
@@ -71,10 +72,7 @@ namespace Examples
 			this.addIndicatorOption("Full stochastic indicator", (object o, EventArgs e) => { addIndicatorToChart(new TKChartFullStochasticIndicator(series)); });
 			this.addIndicatorOption("Market facilitation index", (object o, EventArgs e) => { addIndicatorToChart(new TKChartMarketFacilitationIndex(series)); });
 			this.addIndicatorOption("Chaikin oscillator", (object o, EventArgs e) => { addIndicatorToChart(new TKChartChaikinOscillator(series)); });
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			CGRect exampleBounds = this.ExampleBounds;
@@ -98,7 +96,7 @@ namespace Examples
 
 			series = new TKChartCandlestickSeries (data.ToArray ());
 
-			overlayChart.Delegate = new ChartDelegate (indicatorsChart);
+			overlayChart.Delegate = chartDelegate;
 
 			this.loadCharts ();
 		}
@@ -214,21 +212,14 @@ namespace Examples
 
 		class ChartDelegate: TKChartDelegate
 		{
-			TKChart indicatorsChart;
-
-			public ChartDelegate(TKChart indicatorsChart)
-			{
-				this.indicatorsChart = indicatorsChart;
-			}
-
 			public override void DidPan (TKChart chart)
 			{
-				indicatorsChart.XAxis.Pan = chart.XAxis.Pan;
+				chart.XAxis.Pan = chart.XAxis.Pan;
 			}
 
 			public override void DidZoom (TKChart chart)
 			{
-				indicatorsChart.XAxis.Zoom = chart.XAxis.Zoom;
+				chart.XAxis.Zoom = chart.XAxis.Zoom;
 			}
 		}
 	}

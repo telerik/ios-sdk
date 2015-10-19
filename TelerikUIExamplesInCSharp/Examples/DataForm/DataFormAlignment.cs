@@ -11,20 +11,17 @@ namespace Examples
 	{
 		TKDataForm dataForm;
 		TKDataFormEntityDataSourceHelper dataSource;
-		EmployeeInfo info;
 		DataFormAlignmentDelegate dataFormDelegate;
+		EmployeeInfo info;
 		public string alignment = "Top";
 
-		public DataFormAlignment ()
+		public override void ViewDidLoad ()
 		{
 			AddOption ("Top Alignment", PrepareTopAlignment);
 			AddOption ("Left Alignment", PrepareLeftAlignment);
 			AddOption ("Top Inline Alignment", PrepareTopInlineAlignment);
 			AddOption ("Table View Layout", PrepareTableLayout);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			this.info = new EmployeeInfo ();

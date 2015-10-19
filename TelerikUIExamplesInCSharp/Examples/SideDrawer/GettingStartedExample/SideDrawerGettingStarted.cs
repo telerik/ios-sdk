@@ -11,6 +11,7 @@ namespace Examples
 	{
 		private TKSideDrawerSection primarySection;
 		private TKSideDrawerSection labelsSection;
+		SideDrawerDelegate sideDrawerDelegate;
 
 		public UINavigationItem NavItem {
 			get;
@@ -54,11 +55,12 @@ namespace Examples
 			labelsSection.AddItem ("Sent Mail");
 			labelsSection.AddItem ("Drafts");
 
+			this.sideDrawerDelegate = new SideDrawerDelegate ();
 			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawer;
 			sideDrawer.HeaderView = new SideDrawerHeader (true, this, new Selector ("DismissSideDrawer"));
 			sideDrawer.AddSection (primarySection);
 			sideDrawer.AddSection (labelsSection);
-			sideDrawer.Delegate = new SideDrawerDelegate();
+			sideDrawer.Delegate = this.sideDrawerDelegate;
 			sideDrawer.Style.HeaderHeight = 44;
 		}
 

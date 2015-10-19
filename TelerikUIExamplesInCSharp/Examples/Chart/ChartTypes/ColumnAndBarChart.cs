@@ -12,14 +12,11 @@ namespace Examples
 	{
 		TKChart chart;
 
-		public ColumnAndBarChart ()
+		public override void ViewDidLoad ()
 		{
 			AddOption ("Column", columnSelected);
 			AddOption ("Bar", barSelected);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			chart = new TKChart (this.ExampleBounds);

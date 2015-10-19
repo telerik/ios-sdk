@@ -10,6 +10,8 @@ namespace Examples
 	public class SettingsViewController: UIViewController
 	{
 		public ExampleViewController owner;
+		TableViewDelegate tableViewDelegate;
+		TableViewDataSource tableViewDataSource;
 
 		public UITableView Table { get; set; }
 
@@ -25,10 +27,13 @@ namespace Examples
 			this.View.BackgroundColor = UIColor.White;
 			this.Title = "Settings";
 
+			this.tableViewDataSource = new TableViewDataSource(this);
+			this.tableViewDelegate = new TableViewDelegate (this);
+
 			this.Table = new UITableView(this.View.Bounds);
 			this.Table.RegisterClassForCellReuse (typeof(UITableViewCell), new NSString("cell"));
-			this.Table.DataSource = new TableViewDataSource(this);
-			this.Table.Delegate = new TableViewDelegate(this);
+			this.Table.DataSource = this.tableViewDataSource;
+			this.Table.Delegate = this.tableViewDelegate;
 			this.View.AddSubview(this.Table);
 
 			NSIndexPath path = NSIndexPath.FromRowSection(this.owner.SelectedOption, 0);

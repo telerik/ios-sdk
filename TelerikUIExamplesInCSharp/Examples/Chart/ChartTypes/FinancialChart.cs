@@ -13,14 +13,11 @@ namespace Examples
 		TKChart chart;
 		List<StockDataPoint> points;
 
-		public FinancialChart ()
+		public override void ViewDidLoad ()
 		{
 			this.AddOption ("Candlestick", reloadChart);
 			this.AddOption ("Ohlc", reloadChart);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			chart = new TKChart (this.ExampleBounds);

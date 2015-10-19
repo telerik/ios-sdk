@@ -12,6 +12,7 @@ namespace Examples
 	{
 		public TKDataSource Datasource { get; set;}
 		public TKAutoCompleteTextView Autocomplete { get; set;}
+		AutoCompleteTokensDelegate autocompleteDelegate = new AutoCompleteTokensDelegate();
 
 		public override void ViewDidLoad ()
 		{
@@ -48,7 +49,7 @@ namespace Examples
 			this.Autocomplete.NoResultsLabel.Text = "No Users Found";
 			this.Autocomplete.ImageView.Image = new UIImage (new NSString("search.png"));
 			this.Autocomplete.MinimumCharactersToSearch = 1;
-			this.Autocomplete.WeakDelegate = new AutoCompleteTokensDelegate();
+			this.Autocomplete.WeakDelegate = autocompleteDelegate;
 			this.Autocomplete.SuggestionViewHeight = this.ExampleBounds.Height - this.ExampleBounds.Y + 45;
 			this.View.AddSubview (this.Autocomplete);
 		}

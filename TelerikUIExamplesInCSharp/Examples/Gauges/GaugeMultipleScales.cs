@@ -14,6 +14,7 @@ namespace Examples
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
 			this.CreateLinearGauge ();
 			this.CreateRadialGauge ();
 		}

@@ -9,10 +9,6 @@ namespace Examples
 {
 	public class CustomAxis :ExampleViewController
 	{
-		public CustomAxis ()
-		{
-		}
-
 		TKChart chart = new TKChart();
 		Random r = new Random();
 

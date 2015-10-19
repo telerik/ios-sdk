@@ -12,15 +12,12 @@ namespace Examples
 	{
 		TKChart chart;
 
-		public StackedAreaChart ()
+		public override void ViewDidLoad ()
 		{
 			this.AddOption ("Stacked", reloadData);
 			this.AddOption ("Stacked 100", reloadData);
 			this.AddOption ("No Stacking", reloadData);
-		}
-			
-		public override void ViewDidLoad ()
-		{
+
 			base.ViewDidLoad ();
 
 			chart = new TKChart (this.ExampleBounds);

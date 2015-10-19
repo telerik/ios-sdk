@@ -9,6 +9,8 @@ namespace Examples
 {
 	public class AlertViewCustomize : ExampleViewController
 	{
+		AlertDelegate alertDelegate = new AlertDelegate();
+
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
@@ -19,7 +21,7 @@ namespace Examples
 		public void Show(Object sender, EventArgs e)
 		{
 			TKAlert alert = new TKAlert ();
-			alert.Delegate = new AlertDelegate();
+			alert.Delegate = alertDelegate;
 			alert.Style.CornerRadius = 3;
 			alert.Title = "Warning";
 			alert.Message = "Are you ready for TKAlert?";

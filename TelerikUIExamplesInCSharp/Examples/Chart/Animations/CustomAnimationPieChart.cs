@@ -13,19 +13,17 @@ namespace Examples
 	public class CustomAnimationPieChart: ExampleViewController
 	{
 		TKChart chart;
-
-		public CustomAnimationPieChart ()
-		{
-			this.AddOption ("Animate", animate);
-		}
+		ChartDelegate chartDelegate =  new ChartDelegate ();
 
 		public override void ViewDidLoad ()
 		{
+			this.AddOption ("Animate", animate);
+
 			base.ViewDidLoad ();
 
 			chart = new TKChart (this.ExampleBounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			chart.Delegate = new ChartDelegate ();
+			chart.Delegate = chartDelegate;
 			chart.AllowAnimations = true;
 			this.View.AddSubview (chart);
 

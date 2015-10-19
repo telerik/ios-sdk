@@ -244,6 +244,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
+    
     if (_popover && [_popover isPopoverVisible]) {
         [_popover dismissPopoverAnimated:NO];
     }

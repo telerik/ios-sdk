@@ -15,10 +15,6 @@ namespace Examples
 		List<TKChartDataPoint> dataPoints;
 		TKChartLineSeries lineSeries;
 
-		public LiveData ()
-		{
-		}
-
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();

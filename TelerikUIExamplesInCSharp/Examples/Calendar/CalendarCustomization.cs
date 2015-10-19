@@ -11,6 +11,7 @@ namespace Examples
 {
 	public class CalendarCustomization : ExampleViewController
 	{
+		CalendarDelegate calendarDelegate = new CalendarDelegate();
 		public TKCalendar CalendarView {
 			get;
 			set;
@@ -22,7 +23,7 @@ namespace Examples
 
 			this.CalendarView = new TKCalendar (new RectangleF ());
 			this.CalendarView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			this.CalendarView.Delegate = new CalendarDelegate ();
+			this.CalendarView.Delegate = calendarDelegate;
 			this.View.AddSubview (this.CalendarView);
 
 			UIImage img = new UIImage ("calendar_header.png");

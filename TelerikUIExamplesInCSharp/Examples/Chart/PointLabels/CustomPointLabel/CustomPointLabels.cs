@@ -12,14 +12,14 @@ namespace Examples
 	public class CustomPointLabels : ExampleViewController
 	{
 		TKChart chart;
-
+		ChartDelegate chartDelegate = new ChartDelegate (0, 3);
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
 			chart = new TKChart (this.ExampleBounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
-			chart.Delegate = new ChartDelegate (0, 3);
+			chart.Delegate = chartDelegate;
 			this.View.AddSubview (chart);
 
 			int[] values = new int[] { 58, 59, 61, 64, 66, 69, 72, 72, 69 };

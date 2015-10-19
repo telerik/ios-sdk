@@ -11,6 +11,8 @@ namespace Examples
 {
 	public class Customize: ExampleViewController
 	{
+		ChartDelegate chartDelegate = new ChartDelegate ();
+
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
@@ -18,7 +20,7 @@ namespace Examples
 			TKChart chart = new TKChart ();
 			chart.Frame = this.ExampleBounds;
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			chart.Delegate = new ChartDelegate ();
+			chart.Delegate = chartDelegate;
 			this.View.AddSubview (chart);
 
 			Random r = new Random ();

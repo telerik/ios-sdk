@@ -11,13 +11,14 @@ namespace Examples
 	public class CustomPointLabelRender : ExampleViewController
 	{
 		TKChart chart;
+		ChartDelegate chartDelegate = new ChartDelegate (0, 3);
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 			chart = new TKChart (this.ExampleBounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
-			chart.Delegate = new ChartDelegate (0, 3);
+			chart.Delegate = chartDelegate;
 			this.View.AddSubview (chart);
 
 			Random r = new Random ();

@@ -12,6 +12,8 @@ namespace Examples
 {
 	public class ListViewGettingStarted : ExampleViewController
 	{
+		ListViewDataSource listViewDataSource;
+
 		public TKDataSource Photos {
 			get;
 			set;
@@ -28,9 +30,11 @@ namespace Examples
 			this.Photos = new TKDataSource ("PhotosWithNames", "json", "photos");
 			this.Names = new TKDataSource ("PhotosWithNames", "json", "names");
 
+			this.listViewDataSource = new ListViewDataSource (this);
+
 			TKListView listView = new TKListView (this.View.Bounds);
 			listView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			listView.DataSource = new ListViewDataSource (this);
+			listView.DataSource = this.listViewDataSource;
 			this.View.AddSubview (listView);
 			listView.RegisterClassForCell (new Class(typeof(ImageWithTextListViewCell)), "cell");
 

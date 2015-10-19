@@ -11,13 +11,14 @@ namespace Examples
 {
 	public class CalendarViewModes : ExampleViewController
 	{
+		CalendarDelegate calendarDelegate;
 
 		public TKCalendar CalendarView {
 			get;
 			set;
 		}
 
-		public CalendarViewModes ()
+		public override void ViewDidLoad ()
 		{
 			this.AddOption ("Year", SelectYear);
 			this.AddOption ("Month", SelectMonth);
@@ -25,10 +26,7 @@ namespace Examples
 			this.AddOption ("Year Numbers", SelectYearNumbers);
 			this.AddOption ("Flow", SelectFlow);
 			this.AddOption ("Week view", SelectWeekView);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			NSCalendar calendar = new NSCalendar (NSCalendarType.Gregorian);
@@ -44,7 +42,9 @@ namespace Examples
 			this.CalendarView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.AddSubview (this.CalendarView);
 
-			this.CalendarView.Delegate = new CalendarDelegate (this);
+			this.calendarDelegate = new CalendarDelegate(this);
+
+			this.CalendarView.Delegate = calendarDelegate;
 			this.CalendarView.ViewMode = TKCalendarViewMode.Year;
 			this.CalendarView.Calendar = calendar;
 			this.CalendarView.MinDate = minDate;

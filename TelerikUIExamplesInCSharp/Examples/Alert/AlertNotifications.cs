@@ -15,10 +15,13 @@ namespace Examples
 		public NSMutableArray messages;
 		public NSMutableArray colors;
 		public TKAlert alert;
+		NotificationsListViewDelegate listViewDelegate;
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+			this.listViewDelegate = new NotificationsListViewDelegate(this);
 
 			NSMutableArray types = new NSMutableArray ();
 			types.Add (new NSString ("Error"));
@@ -31,7 +34,7 @@ namespace Examples
 			listView = new TKListView ();
 			listView.Frame = this.View.Bounds;
 			listView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			listView.Delegate = new NotificationsListViewDelegate (this);
+			listView.Delegate = listViewDelegate;
 			listView.WeakDataSource = dataSource;
 			this.View.AddSubview (listView);
 

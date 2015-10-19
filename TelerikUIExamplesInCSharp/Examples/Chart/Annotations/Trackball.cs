@@ -11,19 +11,17 @@ namespace Examples
 {
 	public class Trackball: ExampleViewController
 	{
+		ChartDelegate chartDelegate = new ChartDelegate ();
 		TKChart chart;
 
-		public Trackball ()
+		public override void ViewDidLoad ()
 		{
 			this.AddOption ("pin at top", top);
 			this.AddOption ("pin at left", left);
 			this.AddOption ("pin at right", right);
 			this.AddOption ("pin at bottom", bottom);
 			this.AddOption ("floating", floating);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			chart = new TKChart (this.ExampleBounds);
@@ -53,7 +51,7 @@ namespace Examples
 
 			chart.AllowTrackball = true;
 			chart.Trackball.SnapMode = TKChartTrackballSnapMode.AllClosestPoints;
-			chart.Delegate = new ChartDelegate ();
+			chart.Delegate = chartDelegate;
 			chart.Trackball.Tooltip.Style.TextAlignment = UITextAlignment.Left;
 		}
 

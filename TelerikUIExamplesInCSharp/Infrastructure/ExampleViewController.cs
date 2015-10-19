@@ -5,6 +5,7 @@ using System.Drawing;
 using Foundation;
 using UIKit;
 using CoreGraphics;
+using TelerikUI;
 
 namespace Examples
 {
@@ -50,11 +51,7 @@ namespace Examples
 		{
 			get { return settingsButton; }
 		}
-
-		public ExampleViewController ()
-		{
-		}
-
+			
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
@@ -72,6 +69,14 @@ namespace Examples
 			} 
 			this.UpdateLayoutConstraints ();
 
+		}
+
+		public override void WillMoveToParentViewController (UIViewController parent)
+		{
+			base.WillMoveToParentViewController (parent);
+			if (parent == null) {
+				this.Dispose ();
+			}
 		}
 
 		void UpdateHeaderHeight () 
@@ -130,14 +135,6 @@ namespace Examples
 			{
 				popover.Dismiss (false);
 			}
-		}
-
-		public override void DidReceiveMemoryWarning ()
-		{
-			// Releases the view if it doesn't have a superview.
-			base.DidReceiveMemoryWarning ();
-
-			// Release any cached data, images, etc that aren't in use.
 		}
 
 		public virtual void AddOption(OptionInfo option)

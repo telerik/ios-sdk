@@ -9,6 +9,8 @@ namespace Examples
 {
 	public class CalendarSelection : ExampleViewController
 	{
+		CalendarDelegate calendarDelegate;
+
 		public TKCalendar CalendarView {
 			get;
 			set;
@@ -19,22 +21,22 @@ namespace Examples
 			set;
 		}
 
-		public CalendarSelection ()
+		public override void ViewDidLoad ()
 		{
+
 			this.AddOption ("Single date selection", SelectSingleMode);
 			this.AddOption ("Multiple dates selection", SelectMultipleMode);
 			this.AddOption ("Date range selection", SelectRangeMode);
 
 			this.SelectedOption = 2;
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
+
+			this.calendarDelegate = new CalendarDelegate (this);
 
 			this.CalendarView = new TKCalendar (this.View.Bounds);
 			this.CalendarView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			this.CalendarView.Delegate = new CalendarDelegate (this);
+			this.CalendarView.Delegate = calendarDelegate;
 			this.CalendarView.SelectionMode = TKCalendarSelectionMode.Range;
 			this.View.AddSubview (this.CalendarView);
 

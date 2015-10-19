@@ -10,6 +10,7 @@ namespace Examples
 	{
 		TKLinearGauge linearGauge = new TKLinearGauge();
 		TKRadialGauge radialGauge = new TKRadialGauge();
+		GaugeDelegate gaugeDelegate = new GaugeDelegate();
 
 		public override void ViewDidLoad ()
 		{
@@ -50,7 +51,7 @@ namespace Examples
 		void CreateLinearGauge()
 		{
 			this.linearGauge = new TKLinearGauge();
-			this.linearGauge.WeakDelegate = new GaugeDelegate();
+			this.linearGauge.WeakDelegate = this.gaugeDelegate;
 			this.linearGauge.Orientation = TKLinearGaugeOrientation.Vertical;
 			this.View.AddSubview(this.linearGauge);
 
@@ -74,6 +75,7 @@ namespace Examples
 			};
 			this.AddSegments(scale, colors, 0.5f, 0.05f);
 		}
+
 		class GaugeDelegate: TKGaugeDelegate
 		{
 			public override string Text (TKGauge gauge, NSObject label)

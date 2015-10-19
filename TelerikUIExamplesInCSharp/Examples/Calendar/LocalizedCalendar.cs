@@ -13,8 +13,8 @@ namespace Examples
 			get;
 			set;
 		}
-
-		public LocalizedCalendar ()
+			
+		public override void ViewDidLoad ()
 		{
 			this.AddOption ("Russian", SelectRussian);
 			this.AddOption ("German", SelectGerman);
@@ -23,10 +23,7 @@ namespace Examples
 			this.AddOption ("Islamic", SelectIslamic);
 
 			this.SelectedOption = 2;
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			this.CalendarView = new TKCalendar (this.View.Bounds);

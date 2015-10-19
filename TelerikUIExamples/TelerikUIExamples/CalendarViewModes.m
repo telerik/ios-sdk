@@ -111,11 +111,6 @@
 
 #pragma mark TKCalendarDelegate
 
-- (TKCalendarCell *)calendar:(TKCalendar *)calendar viewForCellOfKind:(TKCalendarCellType)cellType
-{
-    return nil;
-}
-
 - (void)calendar:(TKCalendar *)calendar didChangedViewModeFrom:(TKCalendarViewMode)previousViewMode to:(TKCalendarViewMode)viewMode
 {
     if (viewMode == TKCalendarViewModeWeek || previousViewMode == TKCalendarViewModeWeek) {

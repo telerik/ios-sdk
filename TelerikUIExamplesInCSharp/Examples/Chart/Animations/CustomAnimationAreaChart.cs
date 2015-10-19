@@ -13,13 +13,15 @@ namespace Examples
 {
 	public class CustomAnimationAreaChart: ExampleViewController
 	{
+		ChartDelegate chartDelegate = new ChartDelegate ();
+
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
 			TKChart chart = new TKChart (this.ExampleBounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			chart.Delegate = new ChartDelegate ();
+			chart.Delegate = chartDelegate;
 			chart.AllowAnimations = true;
 			this.View.AddSubview (chart);
 

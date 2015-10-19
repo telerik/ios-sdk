@@ -45,6 +45,8 @@ namespace Examples
 
 		public override void ViewDidAppear (bool animated)
 		{
+			base.ViewDidAppear (animated);
+
 			this.Title = "iOS 7 style calendar";
 			this.NavigationController.Delegate = null;
 		}

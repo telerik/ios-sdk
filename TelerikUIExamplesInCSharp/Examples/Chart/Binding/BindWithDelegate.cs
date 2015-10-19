@@ -10,13 +10,15 @@ namespace Examples
 {
 	public class BindingWithDelegate: ExampleViewController
 	{
+		ChartDataSource dataSource = new ChartDataSource ();
+
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
 			TKChart chart = new TKChart (this.ExampleBounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			chart.DataSource = new ChartDataSource ();
+			chart.DataSource = dataSource;
 			chart.Legend.Hidden = false;
 			chart.Legend.Style.Position = TKChartLegendPosition.Top;
 			chart.Legend.Container.Stack.Orientation = TKCoreStackLayoutOrientation.Horizontal;

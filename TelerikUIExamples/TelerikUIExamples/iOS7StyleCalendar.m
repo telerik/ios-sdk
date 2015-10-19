@@ -49,6 +49,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
+    
     self.title = @"iOS 7 style calendar";
     self.navigationController.delegate = nil;
 }

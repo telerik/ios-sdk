@@ -18,6 +18,7 @@ namespace Examples
 		string[] categories = new string[] { "breakfast", "paleo", "desserts" };
 		int itemsCount;
 		TKListViewScrollDirection scrollDirection;
+		StaggeredLayoutDelegate staggeredLayoutDelegate;
 
 		public ListViewLayout () : base()
 		{
@@ -98,8 +99,10 @@ namespace Examples
 
 		void StaggeredLayoutSelected(object sender, EventArgs e)
 		{
+			this.staggeredLayoutDelegate = new StaggeredLayoutDelegate (itemsCount);
+			 
 			TKListViewStaggeredLayout layout = new TKListViewStaggeredLayout ();
-			layout.Delegate = new StaggeredLayoutDelegate(itemsCount);
+			layout.Delegate = this.staggeredLayoutDelegate;
 			layout.ItemSize = new CGSize(200, 100);
 			layout.HeaderReferenceSize = new CGSize(100, 30);
 			layout.SpanCount = 2;

@@ -14,20 +14,17 @@ namespace Examples
 	public class UIKitDynamicsAnimation: ExampleViewController
 	{
 		TKChart chart;
-		UIDynamicAnimator animator;
+		//UIDynamicAnimator animator;
 		TKChartVisualPoint selectedPoint;
 		CGPoint originalLocation;
 		CGPoint originalPosition;
-		List<TKChartDataPoint> points;
+		//List<TKChartDataPoint> points;
 		List<CGPoint> originalValues;
-
-		public UIKitDynamicsAnimation ()
-		{
-			this.AddOption ("Apply Gravity", applyGravity);
-		}
 
 		public override void ViewDidLoad ()
 		{
+			this.AddOption ("Apply Gravity", applyGravity);
+
 			base.ViewDidLoad ();
 
 			chart = new TKChart (this.ExampleBounds);
@@ -43,29 +40,31 @@ namespace Examples
 			base.ViewDidAppear (animated);
 
 			TKChartVisualPoint[] points = chart.VisualPointsForSeries (chart.Series [0]);
-			originalValues = new List<CGPoint> ();
-			foreach (TKChartVisualPoint p in points) {
-				originalValues.Add (p.CGPoint);
+			if (points != null) {
+				originalValues = new List<CGPoint> ();
+				foreach (TKChartVisualPoint p in points) {
+					originalValues.Add (p.CGPoint);
+				}
+				TKChartVisualPoint point = points [4];
+
+				UISnapBehavior snap = new UISnapBehavior (point, point.Center);
+				snap.Damping = 0.2f;
+
+				UIPushBehavior push = new UIPushBehavior (new IUIDynamicItem[] { point }, UIPushBehaviorMode.Instantaneous);
+				push.PushDirection = new CGVector (0.0f, -1.0f);
+				push.Magnitude = 0.003f;
+
+				UIDynamicAnimator animator = new UIDynamicAnimator ();
+				animator.AddBehavior (snap);
+				animator.AddBehavior (push);
+
+				point.Animator = animator;
 			}
-			TKChartVisualPoint point = points[4];
-
-			UISnapBehavior snap = new UISnapBehavior (point, point.Center);
-			snap.Damping = 0.2f;
-
-			UIPushBehavior push = new UIPushBehavior (new IUIDynamicItem[] { point }, UIPushBehaviorMode.Instantaneous);
-			push.PushDirection = new CGVector (0.0f, -1.0f);
-			push.Magnitude = 0.003f;
-
-			UIDynamicAnimator animator = new UIDynamicAnimator();
-			animator.AddBehavior(snap);
-			animator.AddBehavior(push);
-
-			point.Animator = animator;
 		}
 
 		public void applyGravity(object sender, EventArgs e)
 		{
-			animator = new UIDynamicAnimator (chart.PlotView);
+			UIDynamicAnimator animator = new UIDynamicAnimator (chart.PlotView);
 
 			TKChartVisualPoint[] points = chart.VisualPointsForSeries (chart.Series [0]);
 
@@ -96,7 +95,7 @@ namespace Examples
 		public void reloadChart(object sender, EventArgs e)
 		{
 			Random r = new Random ();
-			points = new List<TKChartDataPoint> ();
+			List<TKChartDataPoint> points = new List<TKChartDataPoint> ();
 			for (int i = 0; i < 10; i++) {
 				float x = i * 10;
 				float y = r.Next () % 100;
@@ -154,15 +153,11 @@ namespace Examples
 				return;
 			}
 
-			UITouch touch = (UITouch)touches.AnyObject;
-			CGPoint touchPoint = touch.LocationInView(chart.PlotView);
-			CGPoint delta = new CGPoint(originalLocation.X, originalLocation.Y - touchPoint.Y);
-
 			UISnapBehavior snap = new UISnapBehavior(selectedPoint, originalPosition);
 			snap.Damping = 0.2f;
 
 			UIPushBehavior push = new UIPushBehavior(new IUIDynamicItem[] { selectedPoint }, UIPushBehaviorMode.Instantaneous);
-			push.PushDirection = new CGVector(0.0f, delta.Y > 0 ? -1.0f : -1.0f);
+			push.PushDirection = new CGVector(0.0f, -1.0f);
 			push.Magnitude = 0.001f;
 
 			UIDynamicAnimator animator = new UIDynamicAnimator();

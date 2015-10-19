@@ -17,6 +17,7 @@ namespace Examples
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
 			this.View.BackgroundColor = UIColor.White;
 
 			this.reservationForm = new ReservationForm ();

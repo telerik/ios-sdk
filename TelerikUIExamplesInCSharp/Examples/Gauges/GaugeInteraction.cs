@@ -10,14 +10,14 @@ namespace Examples
 	{
 		TKLinearGauge linearGauge = new TKLinearGauge();
 		TKRadialGauge radialGauge = new TKRadialGauge();
-
-		public GaugeInteraction ()
-		{
-		}
+		GaugeDelegate gaugeDelegate;
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+			gaugeDelegate = new GaugeDelegate (this);
+
 			this.CreateLinearGauge ();
 			this.CreateRadialGauge ();
 		}
@@ -25,7 +25,7 @@ namespace Examples
 		void CreateRadialGauge()
 		{
 			this.radialGauge = new TKRadialGauge ();
-			this.radialGauge.Delegate = new GaugeDelegate(this);
+			this.radialGauge.Delegate = this.gaugeDelegate;
 			this.radialGauge.LabelTitle.Font = UIFont.SystemFontOfSize (30);
 			this.radialGauge.LabelTitle.Text = "28˚C";
 			this.radialGauge.LabelSubtitle.Text = "temperature";
@@ -58,7 +58,7 @@ namespace Examples
 			this.linearGauge.LabelTitle.Text = "85 %";
 			this.linearGauge.LabelSubtitle.Font = UIFont.SystemFontOfSize (12);
 			this.linearGauge.LabelSubtitle.Text = "humidity";
-			this.linearGauge.Delegate = new GaugeDelegate(this);
+			this.linearGauge.Delegate = this.gaugeDelegate;
 			this.View.AddSubview(this.linearGauge);
 
 			TKGaugeLinearScale scale = new TKGaugeLinearScale ();

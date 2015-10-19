@@ -13,17 +13,15 @@ namespace Examples
 	{
 		TKListView listView = new TKListView();
 		TKDataSource dataSource = new TKDataSource();
+		ListViewDelegate listViewDelegate;
 		LoremIpsumGenerator loremIpsum = new LoremIpsumGenerator();
 		bool buttonAnimationEnabled;
 
-		public ListViewSwipe()
+		public override void ViewDidLoad ()
 		{
 			this.AddOption ("YES", EnableButtonAnimation, "Animate buttons");
 			this.AddOption ("NO", DisableButtonAnimation, "Animate buttons");
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			buttonAnimationEnabled = true;
@@ -101,10 +99,12 @@ namespace Examples
 				cell.ContentInsets = new UIEdgeInsets(5,10,5,10);
 			});
 
+			this.listViewDelegate = new ListViewDelegate (this);
+
 			this.listView.Frame = this.View.Bounds;
 			this.listView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.listView.WeakDataSource = this.dataSource;
-			this.listView.Delegate = new ListViewDelegate (this);
+			this.listView.Delegate = this.listViewDelegate;
 			this.listView.AllowsCellSwipe = true;
 			this.listView.CellSwipeLimits = new UIEdgeInsets (0, 60, 0, 180);
 			this.listView.CellSwipeTreshold = 30;

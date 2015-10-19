@@ -13,17 +13,14 @@ namespace Examples
 	{
 		TKDataSource dataSource = new TKDataSource();
 
-		public DataSourceUIBindings()
+		public override void ViewDidLoad ()
 		{
 			AddOption ("TKChart", useChart);
 			AddOption ("TKCalendar", useCalendar);
 			AddOption ("UITableView", useTableView);
 			AddOption ("UICollectionView", useCollectionView);
 			AddOption ("TKListView", useListView);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			string[] imageNames = new string[] {"CENTCM.jpg", "FAMIAF.jpg", "CHOPSF.jpg", "DUMONF.jpg", "ERNSHM.jpg", "FOLIGF.jpg"};

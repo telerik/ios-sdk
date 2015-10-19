@@ -13,15 +13,12 @@ namespace Examples
 		TKDataSource dataSource = new TKDataSource();
 		TKListView listView = new TKListView();
 
-		public ListViewAnimations()
+		public override void ViewDidLoad ()
 		{
 			AddOption ("Scale in", ScaleInSelected);
 			AddOption ("Fade in", FadeInSelected);
 			AddOption ("Slide in", SlideInSelected);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			this.dataSource.LoadDataFromJSONResource ("ListViewSampleData", "json", "photos");

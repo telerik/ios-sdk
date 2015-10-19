@@ -13,18 +13,16 @@ namespace Examples
 		UILabel label = new UILabel();
 		TKListView listView = new TKListView();
 		TKDataSource dataSource = new TKDataSource();
+		ListViewDelegate listViewDelegage;
 
-		public ListViewSelection ()
+		public override void ViewDidLoad ()
 		{
 			this.AddOption ("Selection on press", SelectionOnPressSelected, "Selection type");
 			this.AddOption ("Selection on hold", SelectionOnHoldSelected, "Selection type");
 			this.AddOption ("No selection", NoSelectionSelected, "Selection type");
 			this.AddOption ("YES", MultipleSelectionSelected, "Multiple selection");
 			this.AddOption ("NO", SingleSelectionSelected, "Multiple selection");
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			this.dataSource.LoadDataFromJSONResource ("ListViewSampleData", "json", "players");
@@ -34,9 +32,11 @@ namespace Examples
 			this.label.TextAlignment = UITextAlignment.Center;
 			this.View.AddSubview (this.label);
 
+			this.listViewDelegage = new ListViewDelegate (this);
+
 			this.listView.Frame = new CGRect (0, 0, this.View.Bounds.Size.Width, this.View.Bounds.Size.Height - 55);
 			this.listView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			this.listView.Delegate = new ListViewDelegate (this);
+			this.listView.Delegate = this.listViewDelegage;
 			this.listView.WeakDataSource = this.dataSource;
 			this.listView.SelectionBehavior = TKListViewSelectionBehavior.Press;
 			this.listView.AllowsMultipleSelection = true;

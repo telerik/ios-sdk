@@ -13,16 +13,13 @@ namespace Examples
 	{
 		TKChart chart;
 
-		public CrossLineAnnotation ()
+		public override void ViewDidLoad ()
 		{
 			this.AddOption ("cross lines", crossLines);
 			this.AddOption ("horizontal line", horizontalLine);
 			this.AddOption ("vertical line", verticalLine);
 			this.AddOption ("disable lines", disableLines);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			chart = new TKChart (this.ExampleBounds);

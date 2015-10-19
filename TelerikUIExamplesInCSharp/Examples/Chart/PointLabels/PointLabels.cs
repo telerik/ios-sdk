@@ -11,29 +11,27 @@ namespace Examples
 	public class PointLabels : ExampleViewController
 	{
 		TKChart chart;
+		ChartDelegate chartDelegate = new ChartDelegate (); 
 		List<TKChartDataPoint> columnData;
 		List<TKChartDataPoint> barData;
 		List<TKChartDataPoint> lineData;
 		List<TKChartDataPoint> pieDonutData;
 		List<TKChartFinancialDataPoint> ohlcData;
 
-		public PointLabels ()
+		public override void ViewDidLoad ()
 		{
 			this.AddOption ("Bar Series", LoadBarSeries);
 			this.AddOption ("Column Series", LoadColumnSeries);
 			this.AddOption ("Line Series", LoadLineSeries);
 			this.AddOption ("Pie Series", LoadPieSeries);
 			this.AddOption ("Ohlc Series", LoadFinancialSeries);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			chart = new TKChart (this.ExampleBounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
 			chart.AllowAnimations = true;
-			chart.Delegate = new ChartDelegate ();
+			chart.Delegate = chartDelegate;
 			this.View.AddSubview (chart);
 
 			Random r = new Random ();

@@ -50,7 +50,7 @@
     <ConsolePause>false</ConsolePause>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: Tsvetan Raikov (9HQ827FLVK)</CodesignKey>
     <IpaPackageName>
     </IpaPackageName>
     <MtouchI18n>

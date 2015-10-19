@@ -16,14 +16,11 @@ namespace Examples
 		TKChart chart;
 		ChartDelegate chartDelegate = new ChartDelegate();
 
-		public CustomAnimationLineChart ()
+		public override void ViewDidLoad ()
 		{
 			this.AddOption ("Sequential animation", applySequential);
 			this.AddOption ("Grow animation", applyGrow);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			chart = new TKChart (this.ExampleBounds);
@@ -47,7 +44,7 @@ namespace Examples
 			lineSeries.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
 			chart.AddSeries (lineSeries);
 		}
-	
+			
 		public void applySequential(object sender, EventArgs e)
 		{
 			chartDelegate.Grow = false;

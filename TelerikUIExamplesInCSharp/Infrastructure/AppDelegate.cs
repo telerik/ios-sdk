@@ -25,7 +25,7 @@ namespace Examples
 
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
-			ViewController examplesController = new ViewController ();
+			ViewController examplesController = new ViewController (null);
 			UINavigationController navigationController = new UINavigationController (examplesController);
 			navigationController.NavigationBar.Translucent = false;
 

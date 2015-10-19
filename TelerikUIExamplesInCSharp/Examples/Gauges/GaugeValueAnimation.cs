@@ -126,6 +126,7 @@ namespace Examples
 			scale.AddIndicator(needle);
 
 		}
+
 		[Export ("SegmentTouched:")]
 		public void SegmentTouched(UISegmentedControl source) {
 			nfloat value = nfloat.Parse(this.segments[source.SelectedSegment]);

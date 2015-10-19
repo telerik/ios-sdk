@@ -12,6 +12,8 @@ namespace Examples
 {
 	public class InlineEvents : ExampleViewController
 	{
+		CalendarDataSource calendarDataSource;
+
 		public TKCalendarEventProtocol[] Events {
 			get;
 			set;
@@ -47,9 +49,11 @@ namespace Examples
 		{
 			base.ViewDidLoad ();
 
+			this.calendarDataSource = new CalendarDataSource (this);
+
 			this.CalendarView = new TKCalendar (this.View.Bounds);
 			this.CalendarView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			this.CalendarView.DataSource = new CalendarDataSource (this);
+			this.CalendarView.DataSource = this.calendarDataSource;
 			this.View.AddSubview (this.CalendarView);
 
 			TKCalendarMonthPresenter presenter = (TKCalendarMonthPresenter)this.CalendarView.Presenter;

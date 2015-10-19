@@ -15,30 +15,31 @@ namespace Examples
 	public class ListViewLoadOnDemand: ExampleViewController
 	{
 		TKListView listView = new TKListView();
+		ListViewDataSource listViewDataSource;
+		ListViewDelegate listViewDelegate;
 		TKDataSource names = new TKDataSource();
 		TKDataSource photos = new TKDataSource();
 		LoremIpsumGenerator loremIpsum = new LoremIpsumGenerator();
 		int lastRetrievedDataIndex = 15;
 
-		public ListViewLoadOnDemand ()
+		public override void ViewDidLoad ()
 		{
 			this.AddOption ("Manual", LoadOnDemandManual, "Load on demand mode");
 			this.AddOption ("Auto", LoadOnDemandAuto, "Load on demand mode");
-		}
 
-
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			this.photos.LoadDataFromJSONResource ("PhotosWithNames", "json", "photos");
 			this.names.LoadDataFromJSONResource ("PhotosWithNames", "json", "names");
 
+			this.listViewDataSource = new ListViewDataSource (this);
+			this.listViewDelegate = new ListViewDelegate (this);
+
 			listView.Frame = this.View.Bounds;
 			listView.BackgroundColor = new UIColor (0.0f, 1.0f, 0.0f, 0.5f);
 			listView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
-			listView.Delegate = new ListViewDelegate (this);
-			listView.DataSource = new ListViewDataSource (this);
+			listView.Delegate = this.listViewDelegate;
+			listView.DataSource = this.listViewDataSource;
 			listView.LoadOnDemandBufferSize = 5;
 			listView.LoadOnDemandMode = TKListViewLoadOnDemandMode.Manual;
 			listView.ContentInset = new UIEdgeInsets (10, 10, 10, 10);

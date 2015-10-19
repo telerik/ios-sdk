@@ -12,14 +12,11 @@ namespace Examples
 		NSNumber[] lowValues;
 		NSNumber[] highValues;
 
-		public RangeColumnBarChart ()
+		public override void ViewDidLoad ()
 		{
 			AddOption ("Range Column", rangeColumnSelected);
 			AddOption ("Range Bar", rangeBarSelected);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			chart = new TKChart (this.ExampleBounds);

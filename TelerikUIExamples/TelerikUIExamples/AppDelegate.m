@@ -160,6 +160,7 @@
 - (ExampleInfo*)createExamples
 {
     NSDictionary *examples = @{
+
                                @"1.Alert" : @{
                                        @"1. Getting started": [AlertViewGettingStarted class],
                                        @"2. Custom View": [AlertCustomView class],

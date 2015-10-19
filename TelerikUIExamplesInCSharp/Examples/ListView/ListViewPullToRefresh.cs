@@ -14,6 +14,8 @@ namespace Examples
 	{
 		List<string> data = new List<string> ();
 		TKDataSource dataSource = new TKDataSource();
+		ListViewDataSource listViewDataSource;
+		ListViewDelegate listViewDelegate;
 		int newItemsCount = 0;
 
 		public override void ViewDidLoad ()
@@ -27,11 +29,14 @@ namespace Examples
 
 			this.UpdateData (3);
 
+			this.listViewDataSource =  new ListViewDataSource (this);
+			this.listViewDelegate = new ListViewDelegate (this);
+
 			TKListView listView = new TKListView (this.View.Bounds);
 			listView.RegisterClassForCell (new ObjCRuntime.Class (typeof(TKListViewCell)), "cell");
 			listView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			listView.DataSource = new ListViewDataSource (this);
-			listView.Delegate = new ListViewDelegate (this);
+			listView.DataSource = this.listViewDataSource;
+			listView.Delegate = this.listViewDelegate;
 			listView.AllowsPullToRefresh = true;
 			listView.PullToRefreshTreshold = 70;
 			listView.PullToRefreshView.BackgroundColor = UIColor.Blue;

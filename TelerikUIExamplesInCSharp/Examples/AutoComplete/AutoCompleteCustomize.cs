@@ -12,6 +12,7 @@ namespace Examples
 	{
 		public TKDataSource Datasource { get; set;}
 		public TKAutoCompleteTextView Autocomplete { get; set;}
+		AutoCompleteDelegate autocompleteDelegate = new AutoCompleteDelegate();
 
 		public override void ViewDidLoad ()
 		{
@@ -61,7 +62,7 @@ namespace Examples
 			this.Autocomplete.CloseButton.SetImage (new UIImage ("clear.png"), UIControlState.Normal);
 			this.Autocomplete.ImageView.Image = new UIImage (new NSString ("search.png"));
 			this.Autocomplete.BackgroundColor = UIColor.White;
-			this.Autocomplete.WeakDelegate = new AutoCompleteDelegate ();
+			this.Autocomplete.WeakDelegate = autocompleteDelegate;
 			this.Autocomplete.ShowAllItemsInitially = true;
 			this.View.AddSubview (this.Autocomplete);
 		}

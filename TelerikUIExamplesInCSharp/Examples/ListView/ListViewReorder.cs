@@ -11,25 +11,25 @@ namespace Examples
 	{
 		TKListView listView = new TKListView();
 		TKDataSource dataSource = new TKDataSource();
+		ListViewDelegate listViewDelegate;
 
-		public ListViewReorder()
+		public override void ViewDidLoad ()
 		{
 			this.AddOption ("Reorder with handle", ReorderWithHandleSelected);
 			this.AddOption ("Reorder with long press", ReorderWithLongPressSelected);
 			this.AddOption ("Disable reorder mode", DisableReorderSelected);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			this.dataSource.AllowItemsReorder = true;
 			this.dataSource.LoadDataFromJSONResource ("PhotosWithNames", "json", "names");
 
+			this.listViewDelegate = new ListViewDelegate(this);
+
 			this.listView.Frame = this.View.Bounds;
 			this.listView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.listView.WeakDataSource = this.dataSource;
-			this.listView.WeakDelegate = new ListViewDelegate(this);
+			this.listView.WeakDelegate = this.listViewDelegate;
 			this.listView.AllowsCellReorder = true;
 			this.View.AddSubview (listView);
 		}

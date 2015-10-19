@@ -9,7 +9,6 @@ namespace Examples
 {
 	public class AutoCompleteGettingStarted : ExampleViewController
 	{
-
 		public TKDataSource Datasource { get; set;}
 		public TKAutoCompleteTextView Autocomplete { get; set;}
 

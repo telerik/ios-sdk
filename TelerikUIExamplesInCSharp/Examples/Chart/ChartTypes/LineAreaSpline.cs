@@ -12,16 +12,13 @@ namespace Examples
 	{
 		TKChart chart;
 
-		public LineAreaSpline ()
+		public override void ViewDidLoad ()
 		{
 			this.AddOption ("Line", reloadChart);
 			this.AddOption ("Spline", reloadChart);
 			this.AddOption ("Area", reloadChart);
 			this.AddOption ("Area Spline", reloadChart);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			chart = new TKChart (this.ExampleBounds);

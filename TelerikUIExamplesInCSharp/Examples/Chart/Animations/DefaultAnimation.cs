@@ -11,22 +11,17 @@ namespace Examples
 	public class DefaultAnimation: ExampleViewController
 	{
 		TKChart chart;
-		UIUserInterfaceIdiom idiom;
+		UIUserInterfaceIdiom idiom = UIDevice.CurrentDevice.UserInterfaceIdiom;
 
-		public DefaultAnimation ()
+		public override void ViewDidLoad ()
 		{
-			idiom = UIDevice.CurrentDevice.UserInterfaceIdiom;
-
 			this.AddOption ("Area Series", setupAreaSeries);
 			this.AddOption ("Pie Series", setupPieChart);
 			this.AddOption ("Line Series", setupLineSeries);
 			this.AddOption ("Scatter Series", setupScatterSeries);
 			this.AddOption ("Bar Series", setupBarSeries);
 			this.AddOption ("Column Series", setupColumnSeries);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			chart = new TKChart (this.ExampleBounds);
@@ -36,7 +31,7 @@ namespace Examples
 
 			this.setupAreaSeries (this, EventArgs.Empty);
 		}
-
+			
 		public override void AddOption (string text, EventHandler func)
 		{
 			if (idiom == UIUserInterfaceIdiom.Pad)
