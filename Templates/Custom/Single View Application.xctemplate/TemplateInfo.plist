@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.tkexample.dt.unit.singleViewApplication</string>
+    <key>Ancestors</key>
+    <array>
+        <string>com.apple.dt.unit.storyboardApplication</string>
+        <string>com.apple.dt.unit.coreDataCocoaTouchApplication</string>
+    </array>
+<!-- <key>Project</key>
+    <dict>
+        <key>SharedSettings</key>
+        <dict>
+            <key>FRAMEWORK_SEARCH_PATHS</key>
+            <array>
+               <string>"your path"</string>
+            </array>
+        </dict>
+    </dict> -->
+
+    <key>Targets</key>
+    <array>
+        <dict>
+            <key>Frameworks</key>
+            <array>
+            <string>CoreData</string>
+            </array>
+        </dict>
+    </array>
+
+	<key>Concrete</key>
+	<true/>
+	<key>Description</key>
+	<string>This template provides a starting point for an application that uses a single view.</string>
+	<key>SortOrder</key>
+	<integer>1</integer>
+	<key>Options</key>
+	<array>
+        <dict>
+            <key>Identifier</key>
+            <string>languageChoice</string>
+            <key>Units</key>
+            <dict>
+                <key>Objective-C</key>
+                <dict>
+                    <key>Nodes</key>
+                    <array>
+                        <string>ViewController.h:comments</string>
+                        <string>ViewController.h:imports:importCocoa</string>
+                        <string>ViewController.h:interface(___FILEBASENAME___ : UIViewController)</string>
+                        <string>ViewController.m:comments</string>
+                        <string>ViewController.m:imports:importHeader:ViewController.h</string>
+                        <string>ViewController.m:extension</string>
+                        <string>ViewController.m:implementation:methods:viewDidLoad(- (void\)viewDidLoad)</string>
+                        <string>ViewController.m:implementation:methods:viewDidLoad:super</string>
+                        <string>ViewController.m:implementation:methods:didReceiveMemoryWarning(- (void\)didReceiveMemoryWarning)</string>
+                        <string>ViewController.m:implementation:methods:didReceiveMemoryWarning:super</string>
+                        <string>TestClass.h</string>
+                        <string>TestClass.m</string>
+                    </array>
+                </dict>
+                <key>Swift</key>
+                <dict>
+                    <key>Nodes</key>
+                    <array>
+                        <string>ViewController.swift:comments</string>
+                        <string>ViewController.swift:imports:importCocoa</string>
+                        <string>ViewController.swift:implementation(___FILEBASENAME___: UIViewController)</string>
+                        <string>ViewController.swift:implementation:methods:viewDidLoad(override func viewDidLoad(\))</string>
+                        <string>ViewController.swift:implementation:methods:viewDidLoad:super</string>
+                        <string>ViewController.swift:implementation:methods:didReceiveMemoryWarning(override func didReceiveMemoryWarning(\))</string>
+                        <string>ViewController.swift:implementation:methods:didReceiveMemoryWarning:super</string>
+                        <string>TestClass.swift</string>
+                    </array>
+                </dict>
+            </dict>
+        </dict>
+	</array>
+    <key>Definitions</key>
+    <dict>
+        <key>Base.lproj/Main.storyboard</key>
+        <dict>
+            <key>Path</key>
+            <string>Main.storyboard</string>
+            <key>SortOrder</key>
+            <integer>99</integer>
+        </dict>
+        <key>TestClass.m</key>
+        <dict>
+                <key>Group</key>
+        <array>
+            <string>CustomClasses</string>
+        </array>
+            <key>Path</key>
+            <string>TestClass.m</string>
+        </dict>
+        <key>TestClass.h</key>
+        <dict>
+                <key>Group</key>
+        <array>
+            <string>CustomClasses</string>
+        </array>
+            <key>Path</key>
+            <string>TestClass.h</string>
+        </dict>
+        <key>TestClass.swift</key>
+        <dict>
+        <key>Group</key>
+        <array>
+            <string>CustomClasses</string>
+        </array>
+            <key>Path</key>
+            <string>TestClass.swift</string>
+        </dict>
+    </dict>
+</dict>
+</plist>
