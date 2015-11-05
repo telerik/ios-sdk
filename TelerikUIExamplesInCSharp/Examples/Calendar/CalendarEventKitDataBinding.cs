@@ -19,12 +19,7 @@ namespace Examples
 			get;
 			set;
 		}
-
-		public CalendarEventKitDataBinding ()
-		{
-
-		}
-
+			
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
@@ -34,6 +29,13 @@ namespace Examples
 			this.CalendarView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.CalendarView.DataSource = this.DataSource;
 			this.View.AddSubview (this.CalendarView);
+
+			NSDate date = NSDate.Now;
+			NSDateComponents components = new NSDateComponents ();
+			components.Year = -1;
+			this.CalendarView.MinDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, NSCalendarOptions.None);
+			components.Year = 1;
+			this.CalendarView.MaxDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, NSCalendarOptions.None);
 		}
 	}
 }

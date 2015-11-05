@@ -74,7 +74,7 @@
 
 - (TKSideDrawer *)sideDrawer
 {
-    return _sideDrawerView.sideDrawer;
+    return _sideDrawerView.sideDrawers[0];
 }
 
 #pragma mark TKSideDrawerDelegate

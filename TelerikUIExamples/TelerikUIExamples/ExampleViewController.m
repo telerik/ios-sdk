@@ -35,6 +35,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = NO;
     
     [self updateHeaderHeight];
     
@@ -49,6 +50,14 @@
     }
     
     [self updateLayoutConstraints];
+}
+
+- (void)willMoveToParentViewController:(UIViewController *)parent
+{
+    [super willMoveToParentViewController:parent];
+    if (parent == nil) {
+        self.navigationController.navigationBar.translucent = YES;
+    }
 }
 
 - (void)viewDidLayoutSubviews

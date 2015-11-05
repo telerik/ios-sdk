@@ -29,6 +29,8 @@ namespace Examples
 			alert.Style.ButtonsInset = new UIEdgeInsets (5, 5, 5, 5);
 			alert.Style.ContentSeparatorWidth = 0;
 			alert.Style.MessageColor = new UIColor(0.349f, 0.349f, 0.349f, 1.00f);
+			alert.Style.TitleSeparatorWidth = -0.5f;
+			alert.Style.ContentSeparatorWidth = 0;
 			alert.AlertView.Layer.ShadowOpacity = 0.6f;
 			alert.AlertView.Layer.ShadowRadius = 3;
 			alert.AlertView.Layer.ShadowOffset = new CGSize(0, 0);

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListViewLayout: ExampleViewController, TKListViewStaggeredLayoutDelegate {
+class ListViewLayout: ExampleViewController, TKListViewLinearLayoutDelegate {
     
     let dataSource = TKDataSource()
     let listView = TKListView()
@@ -132,8 +132,8 @@ class ListViewLayout: ExampleViewController, TKListViewStaggeredLayoutDelegate {
         listView.scrollDirection = TKListViewScrollDirection.Horizontal
         self.scrollDirection = TKListViewScrollDirection.Horizontal
     }
-    
-    func staggeredLayout(layout: TKListViewStaggeredLayout!, sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
+
+    func listView(listView: TKListView, layout: TKListViewLinearLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         if layout.scrollDirection == TKListViewScrollDirection.Vertical {
             return CGSizeMake(100, CGFloat(sizes[indexPath.row]))
         }

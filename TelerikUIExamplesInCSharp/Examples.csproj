@@ -50,7 +50,7 @@
     <ConsolePause>false</ConsolePause>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Developer: Tsvetan Raikov (9HQ827FLVK)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <IpaPackageName>
     </IpaPackageName>
     <MtouchI18n>
@@ -98,6 +98,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="Telerik.Xamarin.iOS">
+      <HintPath>..\Telerik.Xamarin.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -313,6 +316,7 @@
     <BundleResource Include="Resources\UA.png" />
     <BundleResource Include="Resources\US.png" />
     <BundleResource Include="Resources\VA.png" />
+    <BundleResource Include="Resources\user.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -450,6 +454,9 @@
     <Compile Include="Examples\AutoComplete\PersonListViewCell.cs" />
     <Compile Include="Examples\Chart\AxisTypes\CustomAxis.cs" />
     <Compile Include="Examples\DataForm\DataFormCollapsibleGroups.cs" />
+    <Compile Include="Examples\SideDrawer\MultipleSideDrawers\MultipleSideDrawers.cs" />
+    <Compile Include="Examples\Chart\ChartTypes\GapsLineSplineAreaChart.cs" />
+    <Compile Include="Examples\DataForm\DataFormJSONSupport.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -482,15 +489,12 @@
     <Folder Include="Examples\DataForm\Classes\" />
     <Folder Include="Examples\Gauges\" />
     <Folder Include="Examples\AutoComplete\" />
+    <Folder Include="Examples\SideDrawer\MultipleSideDrawers\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <InterfaceDefinition Include="Examples\Feedback\FeedbackExampleController.xib" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Telerik.Xamarin.iOS\Telerik.Xamarin.iOS.csproj">
-      <Project>{813A9D66-625E-486C-84D8-6CEADB5A6CFD}</Project>
-      <Name>Telerik.Xamarin.iOS</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

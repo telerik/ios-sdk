@@ -45,73 +45,81 @@ namespace Examples
 		[Export ("PushTransition")]
 		private void PushTransition() 
 		{
-			this.SideDrawerView.SideDrawer.TransitionType = TKSideDrawerTransitionType.Push;
-			this.SideDrawerView.SideDrawer.Fill = new TKSolidFill (UIColor.Gray);
-			this.SideDrawerView.SideDrawer.HeaderView = new SideDrawerHeader (false, null, null);
-			this.SideDrawerView.SideDrawer.Show ();
+			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawers [0];
+			sideDrawer.TransitionType = TKSideDrawerTransitionType.Push;
+			sideDrawer.Fill = new TKSolidFill (UIColor.Gray);
+			sideDrawer.HeaderView = new SideDrawerHeader (false, null, null);
+			sideDrawer.Show ();
 		}
 
 		[Export ("RevealTransition")]
 		private void RevealTransition()
 		{
-			this.SideDrawerView.SideDrawer.TransitionType = TKSideDrawerTransitionType.Reveal;
-			this.SideDrawerView.SideDrawer.Fill = new TKSolidFill (UIColor.Gray);
-			this.SideDrawerView.SideDrawer.HeaderView = new SideDrawerHeader (false, null, null);
-			this.SideDrawerView.SideDrawer.Show ();
+			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawers [0];
+			sideDrawer.TransitionType = TKSideDrawerTransitionType.Reveal;
+			sideDrawer.Fill = new TKSolidFill (UIColor.Gray);
+			sideDrawer.HeaderView = new SideDrawerHeader (false, null, null);
+			sideDrawer.Show ();
 		}
 
 		[Export ("ReverseSlideOutTransition")]
 		private void ReverseSlideOutTransition()
 		{
-			this.SideDrawerView.SideDrawer.TransitionType = TKSideDrawerTransitionType.ReverseSlideOut;
-			this.SideDrawerView.SideDrawer.Fill = new TKSolidFill (UIColor.Gray);
-			this.SideDrawerView.SideDrawer.HeaderView = new SideDrawerHeader (false, null, null);
-			this.SideDrawerView.SideDrawer.Show ();
+			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawers [0];
+			sideDrawer.TransitionType = TKSideDrawerTransitionType.ReverseSlideOut;
+			sideDrawer.Fill = new TKSolidFill (UIColor.Gray);
+			sideDrawer.HeaderView = new SideDrawerHeader (false, null, null);
+			sideDrawer.Show ();
 		}
 
 		[Export ("SlideAlongTransition")]
 		private void SlideAlongTransition()
 		{
-			this.SideDrawerView.SideDrawer.TransitionType = TKSideDrawerTransitionType.SlideAlong;
-			this.SideDrawerView.SideDrawer.Fill = new TKSolidFill (UIColor.Gray);
-			this.SideDrawerView.SideDrawer.HeaderView = new SideDrawerHeader (false, null, null);
-			this.SideDrawerView.SideDrawer.Show ();
+			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawers [0];
+			sideDrawer.TransitionType = TKSideDrawerTransitionType.SlideAlong;
+			sideDrawer.Fill = new TKSolidFill (UIColor.Gray);
+			sideDrawer.HeaderView = new SideDrawerHeader (false, null, null);
+			sideDrawer.Show ();
 		}
 
 		[Export ("SlideInOnTopTransition")]
 		private void SlideInOnTopTransition()
 		{
-			this.SideDrawerView.SideDrawer.TransitionType = TKSideDrawerTransitionType.SlideInOnTop;
-			this.SideDrawerView.SideDrawer.Fill = new TKSolidFill (UIColor.Clear);
-			this.SideDrawerView.SideDrawer.HeaderView = new SideDrawerHeader (true, this, new Selector("DismissSideDrawer"));
-			this.SideDrawerView.SideDrawer.Show ();
+			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawers [0];
+			sideDrawer.TransitionType = TKSideDrawerTransitionType.SlideInOnTop;
+			sideDrawer.Fill = new TKSolidFill (UIColor.Clear);
+			sideDrawer.HeaderView = new SideDrawerHeader (true, this, new Selector("DismissSideDrawer"));
+			sideDrawer.Show ();
 		}
 
 		[Export ("ScaleUpTransition")]
 		private void ScaleUpTransition()
 		{
-			this.SideDrawerView.SideDrawer.TransitionType = TKSideDrawerTransitionType.ScaleUp;
-			this.SideDrawerView.SideDrawer.Fill = new TKSolidFill (UIColor.Gray);
-			this.SideDrawerView.SideDrawer.HeaderView = new SideDrawerHeader (false, null, null);
-			this.SideDrawerView.SideDrawer.Show ();
+			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawers [0];
+			sideDrawer.TransitionType = TKSideDrawerTransitionType.ScaleUp;
+			sideDrawer.Fill = new TKSolidFill (UIColor.Gray);
+			sideDrawer.HeaderView = new SideDrawerHeader (false, null, null);
+			sideDrawer.Show ();
 		}
 
 		[Export ("FadeInTransition")]
 		private void FadeInTransition()
 		{
-			this.SideDrawerView.SideDrawer.TransitionType = TKSideDrawerTransitionType.FadeIn;
-			this.SideDrawerView.SideDrawer.Fill = new TKSolidFill (UIColor.Gray);
-			this.SideDrawerView.SideDrawer.HeaderView = new SideDrawerHeader (true, this, new Selector("DismissSideDrawer"));
-			this.SideDrawerView.SideDrawer.Show ();
+			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawers [0];
+			sideDrawer.TransitionType = TKSideDrawerTransitionType.FadeIn;
+			sideDrawer.Fill = new TKSolidFill (UIColor.Gray);
+			sideDrawer.HeaderView = new SideDrawerHeader (true, this, new Selector("DismissSideDrawer"));
+			sideDrawer.Show ();
 		}
 
 		[Export ("ScaleDownPusherTransition")]
 		private void ScaleDownPusherTransition () 
 		{
-			this.SideDrawerView.SideDrawer.Fill = new TKSolidFill (UIColor.Gray);
-			this.SideDrawerView.SideDrawer.TransitionType = TKSideDrawerTransitionType.ScaleDownPusher;
-			this.SideDrawerView.SideDrawer.HeaderView = new SideDrawerHeader (false, this, new Selector ("DismissSideDrawer"));
-			this.SideDrawerView.SideDrawer.Show ();
+			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawers [0];
+			sideDrawer.Fill = new TKSolidFill (UIColor.Gray);
+			sideDrawer.TransitionType = TKSideDrawerTransitionType.ScaleDownPusher;
+			sideDrawer.HeaderView = new SideDrawerHeader (false, this, new Selector ("DismissSideDrawer"));
+			sideDrawer.Show ();
 		}
 
 		public void CreateButton(string title, NSObject target, Selector selector)

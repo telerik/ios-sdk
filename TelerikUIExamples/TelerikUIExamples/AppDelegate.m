@@ -45,6 +45,7 @@
 #import "Trackball.h"
 #import "BubbleChart.h"
 #import "RangeBarColumnChart.h"
+#import "GapsLineSplineAreaChart.h"
 
 #import "IndicatorsViewController.h"
 
@@ -70,6 +71,7 @@
 #import "SideDrawerCustomContentController.h"
 #import "SideDrawerCustomTransition.h"
 #import "SideDrawerPositions.h"
+#import "MultipleSideDrawers.h"
 
 #import "DataSourceGettingStarted.h"
 #import "DataSourceDescriptorsAPI.h"
@@ -99,6 +101,7 @@
 #import "DataFormCustomization.h"
 #import "DataFormLabelAlignment.h"
 #import "DataFormCollapsibleGroups.h"
+#import "DataFormJSONController.h"
 
 #import "AutoCompleteGettingStarted.h"
 #import "AutoCompleteCustomization.h"
@@ -160,7 +163,6 @@
 - (ExampleInfo*)createExamples
 {
     NSDictionary *examples = @{
-
                                @"1.Alert" : @{
                                        @"1. Getting started": [AlertViewGettingStarted class],
                                        @"2. Custom View": [AlertCustomView class],
@@ -200,8 +202,9 @@
                                                @"6.Pie chart": [PieDonut class],
                                                @"7.Stacked Column chart": [StackedColumnChart class],
                                                @"8.Stacked Area chart": [StackedAreaChart class],
-                                               @"9.Financial chart": [FinancialChart class],
-                                               @"10.Indicators": [IndicatorsViewController class],
+                                               @"9.Gaps Line / Spline / Area chart": [GapsLineSplineAreaChart class],
+                                               @"10.Financial chart": [FinancialChart class],
+                                               @"11.Indicators": [IndicatorsViewController class],
                                                },
                                        
                                        @"2.Axis Types": @{
@@ -254,7 +257,8 @@
                                        @"3. Read Only Mode": [DataFormReadOnly class],
                                        @"4. Customization": [DataFormCustomization class],
                                        @"5. Alignment" : [DataFormLabelAlignment class],
-                                       @"6. Collapsible Groups" : [DataFormCollapsibleGroups class]
+                                       @"6. Collapsible Groups" : [DataFormCollapsibleGroups class],
+                                       @"7. JSON Support" : [DataFormJSONController class]
                                        },
                                
                                @"7.DataSource": @{
@@ -291,6 +295,7 @@
                                        @"3. Custom Content" : [SideDrawerCustomContentController class],
                                        @"4. Custom Transition" : [SideDrawerCustomTransition class],
                                        @"5. Positions" : [SideDrawerPositions class],
+                                       @"6. Multiple SideDrawers" : [MultipleSideDrawers class],
                                        }
                                };
     

@@ -35,8 +35,8 @@ class CustomAxis: ExampleViewController {
         
         for i in 0 ..< names.count {
             var items = [TKChartDataPoint]()
-            for j in 0 ..< 10 {
-                let date = self.date(j + 2001, month: 1, day: 1)
+            for j in 0 ..< 5 {
+                let date = self.date(j + 2002, month: 1, day: 1)
                 let offset = offsets[i]
                 let yValue = Double(arc4random_uniform(50)) + Double(offset)
                 let point = TKChartDataPoint(x: date, y: yValue)

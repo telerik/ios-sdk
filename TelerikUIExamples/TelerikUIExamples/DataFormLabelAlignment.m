@@ -50,8 +50,7 @@
     [_dataSource addGroupWithName:@"Contact Info" propertyNames:@[@"employeeId", @"phoneNumber"]];
     
     _dataSource[@"gender"].editorClass = [TKDataFormSegmentedEditor class];
-    _dataSource[@"gender"].valuesProvider = @[@"Male", @"Female"];
-    
+    _dataSource[@"gender"].valuesProvider = @[@"Male", @"Female"];    
     _dataSource[@"idNumber"].editorClass = [TKDataFormNumberEditor class];
     _dataSource[@"employeeId"].editorClass = [TKDataFormNumberEditor class];
     _dataSource[@"phoneNumber"].editorClass = [TKDataFormPhoneEditor class];

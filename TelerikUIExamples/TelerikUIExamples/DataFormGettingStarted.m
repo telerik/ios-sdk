@@ -30,9 +30,9 @@
     _dataSource[@"protocol"].valuesProvider = @[@"L2TP", @"PPTP", @"IPSec"];
     _dataSource[@"encryptionLevel"].valuesProvider = @[@"FIPS Compliant", @"High", @"Client Compatible", @"Low"];
     
-    [_dataSource addGroupWithName:@" " propertyNames:@[ @"protocol" ]];
+    [_dataSource addGroupWithName:@"  " propertyNames:@[ @"protocol" ]];
     [_dataSource addGroupWithName:@" " propertyNames:@[ @"details", @"server", @"account", @"secure", @"password", @"encryptionLevel", @"sendAllTraffic" ]];
-    
+
     self.dataForm.dataSource = _dataSource;
     self.dataForm.commitMode = TKDataFormCommitModeOnLostFocus;
     self.dataForm.groupSpacing = 20;

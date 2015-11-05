@@ -31,6 +31,8 @@
     alert.title = @"Warning";
     alert.message = @"Are you ready for TKAlert?";
     alert.style.buttonSpacing = 10;
+    alert.style.titleSeparatorWidth = -0.5;
+    alert.style.contentSeparatorWidth = 0;
     alert.style.buttonsInset = UIEdgeInsetsMake(5, 5, 5, 5);
     alert.style.contentSeparatorWidth = 0;
     alert.style.messageColor = [UIColor colorWithRed:0.349f green:0.349f blue:0.349f alpha:1.00f];

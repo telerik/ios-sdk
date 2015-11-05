@@ -34,7 +34,7 @@ class SideDrawerGettingStarted: ExampleViewController, TKSideDrawerDelegate {
         navigationBar.items = [navItem]
         mainView.addSubview(navigationBar)
         
-        let sideDrawer = sideDrawerView.sideDrawer
+        let sideDrawer = sideDrawerView.sideDrawers[0]
         sideDrawer.delegate = self
         sideDrawer.style.headerHeight = 44
         sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: Selector("dismissSideDrawer"))
@@ -65,11 +65,11 @@ class SideDrawerGettingStarted: ExampleViewController, TKSideDrawerDelegate {
     
     
     func showSideDrawer() {
-        sideDrawerView.sideDrawer.show()
+        sideDrawerView.sideDrawers[0].show()
     }
     
     func dismissSideDrawer() {
-        sideDrawerView.sideDrawer.dismiss()
+        sideDrawerView.sideDrawers[0].dismiss()
     }
     
     func sideDrawer(sideDrawer: TKSideDrawer!, updateVisualsForSection sectionIndex: Int) {

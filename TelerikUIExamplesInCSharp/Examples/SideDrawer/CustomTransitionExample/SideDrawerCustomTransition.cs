@@ -14,11 +14,12 @@ namespace Examples
 			base.ViewDidLoad ();
 
 			this.NavItem.Title = "Custom Transition";
-			this.SideDrawerView.SideDrawer.Width = 200;
-			this.SideDrawerView.SideDrawer.Fill = new TKSolidFill (UIColor.Gray);
-			this.SideDrawerView.SideDrawer.HeaderView = new SideDrawerHeader(false, this, new Selector("DismissSideDrawer"));
-			MyTransition transition = new MyTransition (this.SideDrawerView.SideDrawer);
-			this.SideDrawerView.SideDrawer.TransitionManager = transition;
+			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawers [0];
+			sideDrawer.Width = 200;
+			sideDrawer.Fill = new TKSolidFill (UIColor.Gray);
+			sideDrawer.HeaderView = new SideDrawerHeader(false, this, new Selector("DismissSideDrawer"));
+			MyTransition transition = new MyTransition (sideDrawer);
+			sideDrawer.TransitionManager = transition;
 		}
 	}
 }

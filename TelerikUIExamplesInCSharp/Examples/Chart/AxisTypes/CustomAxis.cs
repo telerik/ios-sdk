@@ -82,7 +82,7 @@ namespace Examples
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-
+			
 			this.chart.Frame = this.ExampleBounds;
 			this.chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.AddSubview (this.chart);
@@ -107,8 +107,8 @@ namespace Examples
 
 			for (int i = 0; i< names.Length; i++) {
 				
-				for (int j = 0; j<10; j++) {
-					NSDate date = this.DateWithYear(j + 2001, 1, 1);
+				for (int j = 0; j<5; j++) {
+					NSDate date = this.DateWithYear(j + 2002, 1, 1);
 					TKChartDataPoint point = new TKChartDataPoint(date, new NSNumber(this.r.Next(50) + offsets[i]));
 					items.Add (point);
 				}

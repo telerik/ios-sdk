@@ -24,7 +24,8 @@ class ColumnAndBarChart: ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        chart.frame = self.exampleBoundsWithInset
+        let frame = self.exampleBoundsWithInset
+        chart.frame = frame
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         

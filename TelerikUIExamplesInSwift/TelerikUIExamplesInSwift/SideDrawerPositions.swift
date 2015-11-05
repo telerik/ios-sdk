@@ -15,7 +15,7 @@ class SideDrawerPositions: SideDrawerGettingStarted {
         self.createButton("Top", target: self, selector: "topSideDrawer", origin: CGPointMake(15, 180))
         self.createButton("Bottom", target: self, selector: "bottomSideDrawer", origin: CGPointMake(15, 230))
         
-        let sideDrawer = self.sideDrawerView.sideDrawer
+        let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.Reveal
         sideDrawer.fill = TKSolidFill(color: UIColor.grayColor())
     }
@@ -35,21 +35,21 @@ class SideDrawerPositions: SideDrawerGettingStarted {
     }
     
     func leftSideDrawer() {
-        let sideDrawer = self.sideDrawerView.sideDrawer
+        let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.position = TKSideDrawerPosition.Left
         sideDrawer.headerView = SideDrawerHeaderView(addButton: false, target: nil, selector: nil)
         self.showSideDrawer()
     }
     
     func rightSideDrawer() {
-        let sideDrawer = self.sideDrawerView.sideDrawer
+        let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.position = TKSideDrawerPosition.Right
         sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: Selector("dismissSideDrawer"))
         self.showSideDrawer()
     }
     
     func topSideDrawer() {
-        let sideDrawer = self.sideDrawerView.sideDrawer
+        let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.position = TKSideDrawerPosition.Top
         (sideDrawer.content as! TKSideDrawerTableView) .setContentOffset(CGPointZero, animated: false)
         sideDrawer.headerView = SideDrawerHeaderView(addButton: false, target: nil, selector: nil)
@@ -58,7 +58,7 @@ class SideDrawerPositions: SideDrawerGettingStarted {
     }
     
     func bottomSideDrawer() {
-        let sideDrawer = self.sideDrawerView.sideDrawer
+        let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.position = TKSideDrawerPosition.Bottom
         (sideDrawer.content as! TKSideDrawerTableView).setContentOffset(CGPointZero, animated: false)
         sideDrawer.allowScroll = true

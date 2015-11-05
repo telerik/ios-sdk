@@ -9,7 +9,7 @@
 #import "ListViewLayout.h"
 #import "CustomListCell.h"
 
-@interface ListViewLayout () <TKListViewStaggeredLayoutDelegate>
+@interface ListViewLayout () <TKListViewLinearLayoutDelegate>
 
 @end
 
@@ -147,7 +147,7 @@
     _scrollDirection = TKListViewScrollDirectionHorizontal;
 }
 
-- (CGSize)staggeredLayout:(TKListViewStaggeredLayout *)layout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+- (CGSize)listView:(TKListView *)listView layout:(TKListViewLinearLayout *)layout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (layout.scrollDirection == TKListViewScrollDirectionVertical) {
         return CGSizeMake(100, [_sizes[indexPath.row] floatValue]);

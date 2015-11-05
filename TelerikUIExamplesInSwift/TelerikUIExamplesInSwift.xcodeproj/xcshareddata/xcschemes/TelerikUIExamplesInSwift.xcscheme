@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "016D295D17785EF100408814"
+               BuildableName = "libTelerikUI.a"
+               BlueprintName = "TelerikUI"
+               ReferencedContainer = "container:../TelerikUI.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "FE92FA7919B4C746000B2E66"
                BuildableName = "TelerikUIExamplesInSwift.app"
                BlueprintName = "TelerikUIExamplesInSwift"

@@ -56,6 +56,13 @@ namespace Examples
 			this.CalendarView.DataSource = this.calendarDataSource;
 			this.View.AddSubview (this.CalendarView);
 
+			NSDate date = NSDate.Now;
+			NSDateComponents components = new NSDateComponents ();
+			components.Year = -1;
+			this.CalendarView.MinDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, NSCalendarOptions.None);
+			components.Year = 1;
+			this.CalendarView.MaxDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, NSCalendarOptions.None);
+
 			TKCalendarMonthPresenter presenter = (TKCalendarMonthPresenter)this.CalendarView.Presenter;
 			if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) {
 				presenter.InlineEventsViewMode = TKCalendarInlineEventsViewMode.Popover;

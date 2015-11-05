@@ -17,19 +17,21 @@
 		19463A481B343C450022054C /* CallEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 19463A471B343C450022054C /* CallEditor.m */; };
 		194C56F41934C505006D7C4F /* IndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194C56F31934C505006D7C4F /* IndicatorsViewController.m */; };
 		1956644719C9C678002F77EB /* SelectedPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1956644619C9C678002F77EB /* SelectedPointLabel.m */; };
-		195F5CB01BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 195F5CAF1BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m */; settings = {ASSET_TAGS = (); }; };
+		195F5CB01BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 195F5CAF1BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m */; };
 		1960558F1940B12D00F0E4C0 /* IndicatorsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1960558E1940B12D00F0E4C0 /* IndicatorsTableView.m */; };
 		1977F8C31B285B110024ECB2 /* PersonalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977F8C21B285B110024ECB2 /* PersonalInfo.m */; };
 		1977F8C71B28666B0024ECB2 /* DataFormValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977F8C61B28666B0024ECB2 /* DataFormValidation.m */; };
 		1977F8CA1B2867370024ECB2 /* RegistrationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977F8C91B2867370024ECB2 /* RegistrationInfo.m */; };
 		19861127191A2E240026EFF7 /* AppleStockPrices.json in Resources */ = {isa = PBXBuildFile; fileRef = 19861126191A2E240026EFF7 /* AppleStockPrices.json */; };
 		1986112A191A2E550026EFF7 /* FinancialChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 19861129191A2E550026EFF7 /* FinancialChart.m */; };
-		1990679E1BAAB111002129EE /* DataFormLabelAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1990679D1BAAB111002129EE /* DataFormLabelAlignment.m */; settings = {ASSET_TAGS = (); }; };
-		199067A11BAAB140002129EE /* EmployeeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 199067A01BAAB140002129EE /* EmployeeInfo.m */; settings = {ASSET_TAGS = (); }; };
+		1990679E1BAAB111002129EE /* DataFormLabelAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1990679D1BAAB111002129EE /* DataFormLabelAlignment.m */; };
+		199067A11BAAB140002129EE /* EmployeeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 199067A01BAAB140002129EE /* EmployeeInfo.m */; };
 		19953A6F1A7BD26D001B9513 /* SideDrawerTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 19953A6E1A7BD26D001B9513 /* SideDrawerTransitions.m */; };
 		19A2A0201A80F63B00378C68 /* SideDrawerCustomContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A01F1A80F63B00378C68 /* SideDrawerCustomContentController.m */; };
 		19A2A02B1A811B6F00378C68 /* SideDrawerCustomTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A02A1A811B6F00378C68 /* SideDrawerCustomTransition.m */; };
 		19A2A0321A8124E400378C68 /* SideDrawerPositions.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A0311A8124E400378C68 /* SideDrawerPositions.m */; };
+		19A59AAA1BE7AC5D009B23F7 /* DataFormJSONController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A59AA91BE7AC5D009B23F7 /* DataFormJSONController.m */; };
+		19A59AAE1BE7B548009B23F7 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 19A59AAD1BE7B548009B23F7 /* user.json */; };
 		19B26F8A1A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B26F891A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m */; };
 		19BAD0F219D43A0500803C27 /* LiveData.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BAD0F119D43A0500803C27 /* LiveData.m */; };
 		19C152CC193F668800770199 /* BubbleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C152CB193F668800770199 /* BubbleChart.m */; };
@@ -50,12 +52,12 @@
 		1B52B9061B0E1E010005F916 /* AlertViewSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B9051B0E1E010005F916 /* AlertViewSettings.m */; };
 		1B52B9091B0E1E790005F916 /* AlertViewCustomize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B9081B0E1E790005F916 /* AlertViewCustomize.m */; };
 		1B52B90C1B0E1E880005F916 /* AlertViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B90B1B0E1E880005F916 /* AlertViewAnimations.m */; };
-		1B8F7A641BAACCA20022C222 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F7A631BAACCA20022C222 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		1B8F7A641BAACCA20022C222 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F7A631BAACCA20022C222 /* Images.xcassets */; };
 		1B96644C1BA851A8000804EA /* GaugeGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B96644B1BA851A8000804EA /* GaugeGettingStarted.m */; };
 		1B96644F1BA851ED000804EA /* GaugeCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B96644E1BA851ED000804EA /* GaugeCustomization.m */; };
-		1BA376D11BA9BAB000FA48A7 /* GaugeScales.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA376D01BA9BAB000FA48A7 /* GaugeScales.m */; settings = {ASSET_TAGS = (); }; };
+		1BA376D11BA9BAB000FA48A7 /* GaugeScales.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA376D01BA9BAB000FA48A7 /* GaugeScales.m */; };
 		1BBFAA011B208843006FB5A6 /* AlertNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFAA001B208843006FB5A6 /* AlertNotifications.m */; };
-		1BC90EE71BAC357600A5B6DC /* GaugeRanges.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC90EE61BAC357600A5B6DC /* GaugeRanges.m */; settings = {ASSET_TAGS = (); }; };
+		1BC90EE71BAC357600A5B6DC /* GaugeRanges.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC90EE61BAC357600A5B6DC /* GaugeRanges.m */; };
 		1BC928851B9D9A6C00937336 /* CustomAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC928841B9D9A6C00937336 /* CustomAxis.m */; };
 		7A0FD505194B1732004B5A8D /* FeedbackExampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FD504194B1732004B5A8D /* FeedbackExampleController.m */; };
 		7A0FD507194B1856004B5A8D /* FeedbackExampleController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A0FD506194B1856004B5A8D /* FeedbackExampleController.xib */; };
@@ -70,19 +72,21 @@
 		8DFB71C91A88B109005ACF59 /* ListViewGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB71C81A88B109005ACF59 /* ListViewGroups.m */; };
 		C1639F361A86B72500E86743 /* ListViewLoadOnDemand.m in Sources */ = {isa = PBXBuildFile; fileRef = C1639F351A86B72500E86743 /* ListViewLoadOnDemand.m */; };
 		C1639F3D1A909F2800E86743 /* ListViewReorder.m in Sources */ = {isa = PBXBuildFile; fileRef = C1639F3C1A909F2800E86743 /* ListViewReorder.m */; };
+		D00281C81BC7FA1D0002AEEA /* GapsLineSplineAreaChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D00281C71BC7FA1D0002AEEA /* GapsLineSplineAreaChart.m */; };
+		D09800091BDA517D00B989DC /* MultipleSideDrawers.m in Sources */ = {isa = PBXBuildFile; fileRef = D09800081BDA517D00B989DC /* MultipleSideDrawers.m */; };
 		F615197C1B94B02B008614C7 /* electricity.json in Resources */ = {isa = PBXBuildFile; fileRef = F615197B1B94B02B008614C7 /* electricity.json */; };
 		F620D59B1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = F620D59A1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m */; };
 		F620D5A01BA97CC00063F3C0 /* languages.json in Resources */ = {isa = PBXBuildFile; fileRef = F620D59F1BA97CC00063F3C0 /* languages.json */; };
-		F640C3CE1BAC2E7D001FEC95 /* AutoCompleteCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = F640C3CD1BAC2E7D001FEC95 /* AutoCompleteCustomization.m */; settings = {ASSET_TAGS = (); }; };
-		F640C3D11BAC3B00001FEC95 /* PersonListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F640C3D01BAC3B00001FEC95 /* PersonListViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		F67C57EA1BB157DA004B7FED /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = F67C57E91BB157DA004B7FED /* countries.json */; settings = {ASSET_TAGS = (); }; };
-		F6A266081BB1732C00742A69 /* AutoCompleteTokens.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A266071BB1732C00742A69 /* AutoCompleteTokens.m */; settings = {ASSET_TAGS = (); }; };
-		F6D7A6D71BB46656006549F4 /* emails.json in Resources */ = {isa = PBXBuildFile; fileRef = F6D7A6D61BB46656006549F4 /* emails.json */; settings = {ASSET_TAGS = (); }; };
-		F6D7A6D91BB54B48006549F4 /* namesPhotos.json in Resources */ = {isa = PBXBuildFile; fileRef = F6D7A6D81BB54B48006549F4 /* namesPhotos.json */; settings = {ASSET_TAGS = (); }; };
+		F640C3CE1BAC2E7D001FEC95 /* AutoCompleteCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = F640C3CD1BAC2E7D001FEC95 /* AutoCompleteCustomization.m */; };
+		F640C3D11BAC3B00001FEC95 /* PersonListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F640C3D01BAC3B00001FEC95 /* PersonListViewCell.m */; };
+		F67C57EA1BB157DA004B7FED /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = F67C57E91BB157DA004B7FED /* countries.json */; };
+		F6A266081BB1732C00742A69 /* AutoCompleteTokens.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A266071BB1732C00742A69 /* AutoCompleteTokens.m */; };
+		F6D7A6D71BB46656006549F4 /* emails.json in Resources */ = {isa = PBXBuildFile; fileRef = F6D7A6D61BB46656006549F4 /* emails.json */; };
+		F6D7A6D91BB54B48006549F4 /* namesPhotos.json in Resources */ = {isa = PBXBuildFile; fileRef = F6D7A6D81BB54B48006549F4 /* namesPhotos.json */; };
 		F6F51A721B8DB9820065E055 /* LogarithmicAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F51A711B8DB9820065E055 /* LogarithmicAxis.m */; };
 		FE0161CF192E57510064C284 /* CalendarWithEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0161CE192E57510064C284 /* CalendarWithEvents.m */; };
 		FE017A2B1945F571005C46D5 /* LocalizedCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = FE017A2A1945F571005C46D5 /* LocalizedCalendar.m */; };
-		FE0C968F1BA9C691005A7BA1 /* GaugeAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C968E1BA9C691005A7BA1 /* GaugeAnimations.m */; settings = {ASSET_TAGS = (); }; };
+		FE0C968F1BA9C691005A7BA1 /* GaugeAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C968E1BA9C691005A7BA1 /* GaugeAnimations.m */; };
 		FE17150F1A961B7F000EB4C9 /* CustomCardListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE17150E1A961B7F000EB4C9 /* CustomCardListViewCell.m */; };
 		FE1715121A962278000EB4C9 /* PhotosWithNames.json in Resources */ = {isa = PBXBuildFile; fileRef = FE1715111A962278000EB4C9 /* PhotosWithNames.json */; };
 		FE1715151A9625C3000EB4C9 /* LoremIpsumGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1715141A9625C3000EB4C9 /* LoremIpsumGenerator.m */; };
@@ -94,14 +98,13 @@
 		FE3CF58D1807F71800461E57 /* MultipleAxes.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF58C1807F71800461E57 /* MultipleAxes.m */; };
 		FE3CF5901807F74C00461E57 /* NegativeValues.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF58F1807F74C00461E57 /* NegativeValues.m */; };
 		FE3CF593180802D000461E57 /* PanZoom.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF592180802D000461E57 /* PanZoom.m */; };
-		FE49972E1BD5330200BAD0A8 /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE49972C1BD5330200BAD0A8 /* TelerikAppFeedback.framework */; };
-		FE49972F1BD5330200BAD0A8 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE49972D1BD5330200BAD0A8 /* TelerikUI.framework */; };
 		FE4F98221B0C9948001B51D8 /* ListItems.json in Resources */ = {isa = PBXBuildFile; fileRef = FE4F98211B0C9948001B51D8 /* ListItems.json */; };
 		FE4F98251B0C9CC9001B51D8 /* CustomListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4F98241B0C9CC9001B51D8 /* CustomListCell.m */; };
 		FE5386481A8E50DC00DE6941 /* ListViewSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = FE5386471A8E50DC00DE6941 /* ListViewSampleData.json */; };
 		FE5F963F1A93933100E70AF2 /* ListViewGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F963E1A93933100E70AF2 /* ListViewGettingStarted.m */; };
 		FE5F96421A93A68F00E70AF2 /* OptionSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F96411A93A68F00E70AF2 /* OptionSection.m */; };
 		FE7131B8192FA4E400B9C231 /* CalendarTransitonEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7131B7192FA4E400B9C231 /* CalendarTransitonEffects.m */; };
+		FE77380419ED5E44009F5C34 /* libTelerikAppFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */; };
 		FE8701831941E2A700AC1D05 /* CalendarCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701821941E2A700AC1D05 /* CalendarCustomization.m */; };
 		FE8701D119420E4000AC1D05 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701D019420E4000AC1D05 /* CustomCell.m */; };
 		FE8701D91942141400AC1D05 /* CalendarEventKitDataBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701D81942141400AC1D05 /* CalendarEventKitDataBinding.m */; };
@@ -128,7 +131,7 @@
 		FEB66DB51B132ECA00DC71AC /* AnimationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB66DB41B132ECA00DC71AC /* AnimationListCell.m */; };
 		FEBC2E2619372D92007C12B1 /* CalendarViewModes.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBC2E2519372D92007C12B1 /* CalendarViewModes.m */; };
 		FEC0CF2D1A975BA30088A158 /* SimpleListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC0CF2C1A975BA30088A158 /* SimpleListViewCell.m */; };
-		FEDBD4731BAAB5140018E9ED /* GaugeInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDBD4721BAAB5140018E9ED /* GaugeInteraction.m */; settings = {ASSET_TAGS = (); }; };
+		FEDBD4731BAAB5140018E9ED /* GaugeInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDBD4721BAAB5140018E9ED /* GaugeInteraction.m */; };
 		FEE2697B1806DBA300E52C37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE2697A1806DBA300E52C37 /* Foundation.framework */; };
 		FEE2697F1806DBA300E52C37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE2697E1806DBA300E52C37 /* UIKit.framework */; };
 		FEE269851806DBA300E52C37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEE269831806DBA300E52C37 /* InfoPlist.strings */; };
@@ -145,6 +148,7 @@
 		FEE269D11807066700E52C37 /* PieDonut.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D01807066700E52C37 /* PieDonut.m */; };
 		FEE269D7180708B900E52C37 /* StackedColumnChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D6180708B900E52C37 /* StackedColumnChart.m */; };
 		FEE269DA180708CD00E52C37 /* StackedAreaChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D9180708CD00E52C37 /* StackedAreaChart.m */; };
+		FEE8E7911887DF6E009D373B /* libTelerikUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE8E7901887DF6E009D373B /* libTelerikUI.a */; };
 		FEEAEBD318080A7600D75A5C /* DefaultAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD218080A7600D75A5C /* DefaultAnimation.m */; };
 		FEEAEBD618080A8900D75A5C /* CustomAnimationLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD518080A8900D75A5C /* CustomAnimationLineChart.m */; };
 		FEEAEBD918080A9A00D75A5C /* CustomAnimationPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD818080A9A00D75A5C /* CustomAnimationPieChart.m */; };
@@ -200,6 +204,9 @@
 		19A2A02A1A811B6F00378C68 /* SideDrawerCustomTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerCustomTransition.m; sourceTree = "<group>"; };
 		19A2A0301A8124E400378C68 /* SideDrawerPositions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerPositions.h; sourceTree = "<group>"; };
 		19A2A0311A8124E400378C68 /* SideDrawerPositions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerPositions.m; sourceTree = "<group>"; };
+		19A59AA81BE7AC5D009B23F7 /* DataFormJSONController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormJSONController.h; sourceTree = "<group>"; };
+		19A59AA91BE7AC5D009B23F7 /* DataFormJSONController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormJSONController.m; sourceTree = "<group>"; };
+		19A59AAD1BE7B548009B23F7 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		19B26F881A7A6B4D0081FEB1 /* SideDrawerGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerGettingStarted.h; sourceTree = "<group>"; };
 		19B26F891A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerGettingStarted.m; sourceTree = "<group>"; };
 		19BAD0F019D43A0500803C27 /* LiveData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveData.h; sourceTree = "<group>"; };
@@ -277,6 +284,10 @@
 		C1639F351A86B72500E86743 /* ListViewLoadOnDemand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewLoadOnDemand.m; sourceTree = "<group>"; };
 		C1639F3B1A909F2800E86743 /* ListViewReorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewReorder.h; sourceTree = "<group>"; };
 		C1639F3C1A909F2800E86743 /* ListViewReorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewReorder.m; sourceTree = "<group>"; };
+		D00281C61BC7FA1D0002AEEA /* GapsLineSplineAreaChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GapsLineSplineAreaChart.h; sourceTree = "<group>"; };
+		D00281C71BC7FA1D0002AEEA /* GapsLineSplineAreaChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GapsLineSplineAreaChart.m; sourceTree = "<group>"; };
+		D09800071BDA517D00B989DC /* MultipleSideDrawers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleSideDrawers.h; sourceTree = "<group>"; };
+		D09800081BDA517D00B989DC /* MultipleSideDrawers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleSideDrawers.m; sourceTree = "<group>"; };
 		F615197B1B94B02B008614C7 /* electricity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = electricity.json; sourceTree = "<group>"; };
 		F620D5991BA8767D0063F3C0 /* AutoCompleteGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompleteGettingStarted.h; sourceTree = "<group>"; };
 		F620D59A1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteGettingStarted.m; sourceTree = "<group>"; };
@@ -319,8 +330,6 @@
 		FE3CF58F1807F74C00461E57 /* NegativeValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NegativeValues.m; sourceTree = "<group>"; };
 		FE3CF591180802D000461E57 /* PanZoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanZoom.h; sourceTree = "<group>"; };
 		FE3CF592180802D000461E57 /* PanZoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanZoom.m; sourceTree = "<group>"; };
-		FE49972C1BD5330200BAD0A8 /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
-		FE49972D1BD5330200BAD0A8 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FE4F98211B0C9948001B51D8 /* ListItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListItems.json; sourceTree = "<group>"; };
 		FE4F98231B0C9CC9001B51D8 /* CustomListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomListCell.h; sourceTree = "<group>"; };
 		FE4F98241B0C9CC9001B51D8 /* CustomListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomListCell.m; sourceTree = "<group>"; };
@@ -331,6 +340,7 @@
 		FE5F96411A93A68F00E70AF2 /* OptionSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionSection.m; sourceTree = "<group>"; };
 		FE7131B6192FA4E400B9C231 /* CalendarTransitionEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTransitionEffects.h; sourceTree = "<group>"; };
 		FE7131B7192FA4E400B9C231 /* CalendarTransitonEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTransitonEffects.m; sourceTree = "<group>"; };
+		FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = "../TelerikAppFeedback.framework"; sourceTree = "<group>"; };
 		FE8701811941E2A700AC1D05 /* CalendarCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarCustomization.h; sourceTree = "<group>"; };
 		FE8701821941E2A700AC1D05 /* CalendarCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarCustomization.m; sourceTree = "<group>"; };
 		FE8701CF19420E4000AC1D05 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
@@ -414,6 +424,7 @@
 		FEE269D6180708B900E52C37 /* StackedColumnChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackedColumnChart.m; sourceTree = "<group>"; };
 		FEE269D8180708CD00E52C37 /* StackedAreaChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackedAreaChart.h; sourceTree = "<group>"; };
 		FEE269D9180708CD00E52C37 /* StackedAreaChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackedAreaChart.m; sourceTree = "<group>"; };
+		FEE8E7901887DF6E009D373B /* libTelerikUI.a */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../TelerikUI.framework"; sourceTree = "<group>"; };
 		FEEAEBD118080A7600D75A5C /* DefaultAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultAnimation.h; sourceTree = "<group>"; };
 		FEEAEBD218080A7600D75A5C /* DefaultAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultAnimation.m; sourceTree = "<group>"; };
 		FEEAEBD418080A8900D75A5C /* CustomAnimationLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimationLineChart.h; sourceTree = "<group>"; };
@@ -437,10 +448,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE49972E1BD5330200BAD0A8 /* TelerikAppFeedback.framework in Frameworks */,
-				FE49972F1BD5330200BAD0A8 /* TelerikUI.framework in Frameworks */,
+				FE77380419ED5E44009F5C34 /* libTelerikAppFeedback.a in Frameworks */,
 				FE8701E4194218AB00AC1D05 /* EventKit.framework in Frameworks */,
 				FE8701E5194218AB00AC1D05 /* EventKitUI.framework in Frameworks */,
+				FEE8E7911887DF6E009D373B /* libTelerikUI.a in Frameworks */,
 				FEE2697F1806DBA300E52C37 /* UIKit.framework in Frameworks */,
 				FEE2697B1806DBA300E52C37 /* Foundation.framework in Frameworks */,
 			);
@@ -579,9 +590,19 @@
 			name = PositionsExample;
 			sourceTree = "<group>";
 		};
+		19A59AA71BE7AC21009B23F7 /* JSONSupport */ = {
+			isa = PBXGroup;
+			children = (
+				19A59AA81BE7AC5D009B23F7 /* DataFormJSONController.h */,
+				19A59AA91BE7AC5D009B23F7 /* DataFormJSONController.m */,
+			);
+			name = JSONSupport;
+			sourceTree = "<group>";
+		};
 		19D74EE31A7942F800D51148 /* SideDrawer */ = {
 			isa = PBXGroup;
 			children = (
+				D09800061BDA513700B989DC /* MultipleSideDrawers */,
 				19A2A02F1A8124AE00378C68 /* PositionsExample */,
 				19A2A0241A81076B00378C68 /* CustomTransitionExample */,
 				19A2A01D1A80F61F00378C68 /* CustomContentExample */,
@@ -596,6 +617,7 @@
 		19D7E3201B0F6A7000235365 /* DataForm */ = {
 			isa = PBXGroup;
 			children = (
+				19A59AA71BE7AC21009B23F7 /* JSONSupport */,
 				1977F8C01B285AF20024ECB2 /* GettingStarted */,
 				195F5C491BAB1EFC003C5FA5 /* CollapsibleGroups */,
 				1990679B1BAAB0B7002129EE /* LabelAlignment */,
@@ -714,6 +736,15 @@
 				FE1715141A9625C3000EB4C9 /* LoremIpsumGenerator.m */,
 			);
 			name = ListView;
+			sourceTree = "<group>";
+		};
+		D09800061BDA513700B989DC /* MultipleSideDrawers */ = {
+			isa = PBXGroup;
+			children = (
+				D09800071BDA517D00B989DC /* MultipleSideDrawers.h */,
+				D09800081BDA517D00B989DC /* MultipleSideDrawers.m */,
+			);
+			name = MultipleSideDrawers;
 			sourceTree = "<group>";
 		};
 		F64FC1431BA07FE3007FF8D3 /* AutoComplete */ = {
@@ -869,8 +900,8 @@
 		FEE269791806DBA300E52C37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FE49972C1BD5330200BAD0A8 /* TelerikAppFeedback.framework */,
-				FE49972D1BD5330200BAD0A8 /* TelerikUI.framework */,
+				FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */,
+				FEE8E7901887DF6E009D373B /* libTelerikUI.a */,
 				FE8701E2194218AB00AC1D05 /* EventKit.framework */,
 				FE8701E3194218AB00AC1D05 /* EventKitUI.framework */,
 				FEE2697A1806DBA300E52C37 /* Foundation.framework */,
@@ -960,6 +991,8 @@
 				19861129191A2E550026EFF7 /* FinancialChart.m */,
 				7A56815219374195005FEC6D /* StockDataPoint.h */,
 				7A56815319374195005FEC6D /* StockDataPoint.m */,
+				D00281C61BC7FA1D0002AEEA /* GapsLineSplineAreaChart.h */,
+				D00281C71BC7FA1D0002AEEA /* GapsLineSplineAreaChart.m */,
 			);
 			name = ChartTypes;
 			sourceTree = "<group>";
@@ -1033,6 +1066,7 @@
 		FEEAEBEA18082B1D00D75A5C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				19A59AAD1BE7B548009B23F7 /* user.json */,
 				F620D59F1BA97CC00063F3C0 /* languages.json */,
 				FE4F98211B0C9948001B51D8 /* ListItems.json */,
 				FE5386471A8E50DC00DE6941 /* ListViewSampleData.json */,
@@ -1077,11 +1111,6 @@
 			attributes = {
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Telerik;
-				TargetAttributes = {
-					FEE269761806DBA300E52C37 = {
-						DevelopmentTeam = CHSQ3M3P37;
-					};
-				};
 			};
 			buildConfigurationList = FEE269721806DBA300E52C37 /* Build configuration list for PBXProject "TelerikUIExamples" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1106,6 +1135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19A59AAE1BE7B548009B23F7 /* user.json in Resources */,
 				FE4F98221B0C9948001B51D8 /* ListItems.json in Resources */,
 				F615197C1B94B02B008614C7 /* electricity.json in Resources */,
 				192004F6193C7285003B1BB8 /* applestock.plist in Resources */,
@@ -1140,6 +1170,7 @@
 				195F5CB01BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m in Sources */,
 				1B52B9091B0E1E790005F916 /* AlertViewCustomize.m in Sources */,
 				1977F8C71B28666B0024ECB2 /* DataFormValidation.m in Sources */,
+				D00281C81BC7FA1D0002AEEA /* GapsLineSplineAreaChart.m in Sources */,
 				7A56815419374195005FEC6D /* StockDataPoint.m in Sources */,
 				8DFB71C91A88B109005ACF59 /* ListViewGroups.m in Sources */,
 				FE2D10761A80CB2D00A787EB /* InlineEvents.m in Sources */,
@@ -1161,6 +1192,7 @@
 				19F648201B2EF3C40023A601 /* PasswordValidator.m in Sources */,
 				7A0FD505194B1732004B5A8D /* FeedbackExampleController.m in Sources */,
 				FE5F96421A93A68F00E70AF2 /* OptionSection.m in Sources */,
+				19A59AAA1BE7AC5D009B23F7 /* DataFormJSONController.m in Sources */,
 				FEE269B51806DC9000E52C37 /* ExampleInfo.m in Sources */,
 				FE3CF5871807F6F700461E57 /* CategoricalAxis.m in Sources */,
 				FEE269DA180708CD00E52C37 /* StackedAreaChart.m in Sources */,
@@ -1189,6 +1221,7 @@
 				FEE269941806DBA300E52C37 /* ViewController.m in Sources */,
 				FEE269C61806F3BC00E52C37 /* SettingsViewController.m in Sources */,
 				FEC0CF2D1A975BA30088A158 /* SimpleListViewCell.m in Sources */,
+				D09800091BDA517D00B989DC /* MultipleSideDrawers.m in Sources */,
 				1956644719C9C678002F77EB /* SelectedPointLabel.m in Sources */,
 				F640C3CE1BAC2E7D001FEC95 /* AutoCompleteCustomization.m in Sources */,
 				FEB42604193374A500C2A602 /* iOS7StyleCalendar.m in Sources */,
@@ -1364,7 +1397,6 @@
 					"$(inherited)",
 					"${SRCROOT}/**",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"\"/Users/${USER}/Documents/Telerik/\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TelerikUIExamples/TelerikUIExamples-Prefix.pch";
@@ -1373,7 +1405,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wno-nullability-completeness";
-				PRODUCT_BUNDLE_IDENTIFIER = "Telerik.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = Telerik.TelerikUIExamples1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -1392,7 +1424,6 @@
 					"$(inherited)",
 					"${SRCROOT}/**",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"\"/Users/${USER}/Documents/Telerik/\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TelerikUIExamples/TelerikUIExamples-Prefix.pch";
@@ -1401,7 +1432,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wno-nullability-completeness";
-				PRODUCT_BUNDLE_IDENTIFIER = "Telerik.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = Telerik.TelerikUIExamples1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

@@ -56,7 +56,7 @@ namespace Examples
 			labelsSection.AddItem ("Drafts");
 
 			this.sideDrawerDelegate = new SideDrawerDelegate ();
-			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawer;
+			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawers[0];
 			sideDrawer.HeaderView = new SideDrawerHeader (true, this, new Selector ("DismissSideDrawer"));
 			sideDrawer.AddSection (primarySection);
 			sideDrawer.AddSection (labelsSection);
@@ -73,13 +73,13 @@ namespace Examples
 		[Export ("ShowSideDrawer")]
 		public void ShowSideDrawer()
 		{
-			this.SideDrawerView.SideDrawer.Show();
+			this.SideDrawerView.SideDrawers[0].Show();
 		}
 
 		[Export ("DismissSideDrawer")]
 		public void DismissSideDrawer()
 		{
-			this.SideDrawerView.SideDrawer.Dismiss();
+			this.SideDrawerView.SideDrawers[0].Dismiss();
 		}
 
 		class SideDrawerDelegate : TKSideDrawerDelegate

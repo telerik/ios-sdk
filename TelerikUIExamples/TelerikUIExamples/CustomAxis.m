@@ -54,8 +54,8 @@
     
     for (int i = 0; i<names.count; i++) {
         NSMutableArray *items = [NSMutableArray new];
-        for (int j = 0; j<10; j++) {
-            NSDate *date = [self dateWithYear:j + 2001 month:1 day:1];
+        for (int j = 0; j<5; j++) {
+            NSDate *date = [self dateWithYear:j + 2002 month:1 day:1];
             TKChartDataPoint *point = [[TKChartDataPoint alloc] initWithX:date Y:@(arc4random_uniform(50) + [offsets[i] integerValue])];
             [items addObject:point];
         }

@@ -68,6 +68,7 @@ namespace Examples
 							new ExampleInfo("Pie chart", typeof(PieDonut)),
 							new ExampleInfo("Stacked Column chart", typeof(StackedColumnChart)),
 							new ExampleInfo("Stacked Area chart", typeof(StackedAreaChart)),
+							new ExampleInfo("Gaps Line / Spline / Area chart", typeof(GapsLineSplineAreaChart)),
 							new ExampleInfo("Financial chart", typeof(FinancialChart)),
 							new ExampleInfo("Indicators", typeof(IndicatorsChart)),
 						}),
@@ -124,7 +125,8 @@ namespace Examples
 						new ExampleInfo("Validation", typeof(DataFormValidation)),
 						new ExampleInfo("Customization", typeof(DataFormCustomization)),
 						new ExampleInfo("Collapsable Groups", typeof(DataFormCollapsibleGroups)),
-						new ExampleInfo("Alignment", typeof(DataFormAlignment))
+						new ExampleInfo("Alignment", typeof(DataFormAlignment)),
+						new ExampleInfo("JSON Support", typeof(DataFormJSONSupport))
 					}),
 
 					new ExampleInfo("DataSource", new ExampleInfo[] {
@@ -151,8 +153,10 @@ namespace Examples
 						new ExampleInfo("Transitions", typeof(SideDrawerTransitions)),
 						new ExampleInfo("Positions", typeof(SideDrawerPositions)),
 						new ExampleInfo("Custom Content", typeof(SideDrawerCustomContent)),
-						new ExampleInfo("Custom Transition", typeof(SideDrawerCustomTransition))
+						new ExampleInfo("Custom Transition", typeof(SideDrawerCustomTransition)),
+						new ExampleInfo("Multiple SideDrawers", typeof(MultipleSideDrawers))
 					}),
+
 					new ExampleInfo("Gauges (New)", new ExampleInfo[] {
 						new ExampleInfo("Getting Started", typeof(GaugesGettingStarted)),
 						new ExampleInfo("Customization", typeof(GaugeCustomization)),

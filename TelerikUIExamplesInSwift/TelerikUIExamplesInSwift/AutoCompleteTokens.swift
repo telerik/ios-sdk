@@ -18,7 +18,7 @@ class AutoCompleteTokens: ExampleViewController, TKAutoCompleteDelegate {
         
         self.automaticallyAdjustsScrollViewInsets = false
         
-        autocomplete = TKAutoCompleteTextView(frame: CGRect(x: 10, y: 70, width: self.exampleBounds.size.width-20, height: 30));
+        autocomplete = TKAutoCompleteTextView(frame: CGRect(x: 10, y:   65, width: self.exampleBounds.size.width-20, height: 30));
         
         datasource.settings.autocomplete.createToken { (dataIndex, item) -> TKAutoCompleteToken? in
             let token = TKAutoCompleteToken(text: item.valueForKey("name") as? String)

@@ -23,7 +23,7 @@
     [super viewDidLoad];
     
      self.automaticallyAdjustsScrollViewInsets = NO;
-    _autocomplete = [[TKAutoCompleteTextView alloc] initWithFrame:CGRectMake(10, 70, self.exampleBounds.size.width - 20, 30)];
+    _autocomplete = [[TKAutoCompleteTextView alloc] initWithFrame:CGRectMake(10, self.exampleBounds.origin.y, self.exampleBounds.size.width - 20, 30)];
     
     _autocomplete.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:_autocomplete];

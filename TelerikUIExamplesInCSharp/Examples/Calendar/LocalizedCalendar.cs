@@ -29,6 +29,14 @@ namespace Examples
 			this.CalendarView = new TKCalendar (this.View.Bounds);
 			this.CalendarView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
 			this.View.AddSubview (this.CalendarView);
+
+			NSDate date = NSDate.Now;
+			NSDateComponents components = new NSDateComponents ();
+			components.Year = -1;
+			this.CalendarView.MinDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, NSCalendarOptions.None);
+			components.Year = 1;
+			this.CalendarView.MaxDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, NSCalendarOptions.None);
+
 			this.SelectHebrew (this, EventArgs.Empty);
 		}
 

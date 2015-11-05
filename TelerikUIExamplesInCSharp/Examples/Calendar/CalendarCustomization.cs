@@ -26,6 +26,13 @@ namespace Examples
 			this.CalendarView.Delegate = calendarDelegate;
 			this.View.AddSubview (this.CalendarView);
 
+			NSDate date = NSDate.Now;
+			NSDateComponents components = new NSDateComponents ();
+			components.Year = -1;
+			this.CalendarView.MinDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, NSCalendarOptions.None);
+			components.Year = 1;
+			this.CalendarView.MaxDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, NSCalendarOptions.None);
+
 			UIImage img = new UIImage ("calendar_header.png");
 	    
 			TKCalendarMonthPresenter presenter = (TKCalendarMonthPresenter)this.CalendarView.Presenter;

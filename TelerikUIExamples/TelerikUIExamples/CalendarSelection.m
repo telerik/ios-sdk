@@ -22,7 +22,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-
+        
         [self addOption:@"Single date selection" selector:@selector(selectSingleMode)];
         [self addOption:@"Multiple dates selection" selector:@selector(selectMultipleMode)];
         [self addOption:@"Date range selection" selector:@selector(selectRangeMode)];
@@ -36,7 +36,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    
     self.calendarView = [[TKCalendar alloc] initWithFrame:self.exampleBounds];
     self.calendarView.delegate = self;
     self.calendarView.selectionMode = TKCalendarSelectionModeRange;
@@ -61,7 +61,7 @@
     self.calendarView.maxDate = [self.calendarView.calendar dateByAddingComponents:components toDate:date options:0];
     
     self.calendarView.selectedDatesRange = [[TKDateRange alloc] initWithStart:startDate end:endDate];
-
+    
     TKCalendarMonthPresenter *presenter = (TKCalendarMonthPresenter*)self.calendarView.presenter;
     presenter.headerIsSticky = YES;
 }
@@ -110,9 +110,9 @@
     NSLog(@"Trying to select the unselectable: %@", date);
     
     return ![TKCalendar isDate:self.unselectable
-                  equalToDate:date
-               withComponents:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay
-                 withCalendar:_calendarView.calendar];
+                   equalToDate:date
+                withComponents:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay
+                  withCalendar:_calendarView.calendar];
 }
 
 - (void)calendar:(TKCalendar *)calendar updateVisualsForCell:(TKCalendarCell *)cell

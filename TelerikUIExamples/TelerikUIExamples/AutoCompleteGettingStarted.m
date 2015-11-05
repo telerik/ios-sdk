@@ -44,7 +44,7 @@
 
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
     {
-        _autocomplete = [[TKAutoCompleteTextView alloc] initWithFrame:CGRectMake(10, self.exampleBounds.origin.y + 25, self.exampleBounds.size.width - 20, 30)];
+        _autocomplete = [[TKAutoCompleteTextView alloc] initWithFrame:CGRectMake(10, self.exampleBounds.origin.y, self.exampleBounds.size.width - 20, 30)];
          _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, self.exampleBounds.origin.y, self.exampleBounds.size.width - 20, 30)];
     }
     else {
@@ -58,7 +58,6 @@
     _autocomplete.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     
     _titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    _titleLabel.text = @"Shipping country:";
     [self.view addSubview:_titleLabel];
     
     self.automaticallyAdjustsScrollViewInsets = NO;

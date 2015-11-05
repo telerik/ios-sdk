@@ -91,7 +91,7 @@ class CalendarSelection: ExampleViewController, TKCalendarDelegate {
     
     func calendar(calenadr:TKCalendar, shouldSelectDate date: NSDate)->Bool {
         print("Trying to select the unselectable: %@", date)
-        return TKCalendar.isDate(self.unselectable!, equalToDate: date, withComponents: NSCalendarUnit.Year, withCalendar: calendarView.calendar)
+        return !TKCalendar.isDate(self.unselectable!, equalToDate: date, withComponents:[.Year, .Month, .Day], withCalendar: calendarView.calendar)
     }
     
     func calendar(calendar: TKCalendar, updateVisualsForCell cell: TKCalendarCell) {

@@ -13,7 +13,7 @@ namespace Examples
 		{
 			base.ViewDidLoad ();
 			this.NavItem.Title = "Custom Content";
-			this.SideDrawerView.SideDrawerContentView = this.SetupContent ();
+			this.SideDrawerView.SideDrawers[0].Content = this.SetupContent ();
 		}
 
 		public UIView SetupContent()
@@ -21,7 +21,7 @@ namespace Examples
 			UIView sideDrawerContent = new UIView ();
 			sideDrawerContent.BackgroundColor = UIColor.Clear;
 			UIImageView imageView = new UIImageView (new UIImage ("logo.png"));
-			imageView.Frame = new CGRect ((float)this.SideDrawerView.SideDrawer.Width / 2.0f - imageView.Frame.Size.Width / 2.0f, this.View.Frame.Size.Height / 2.0f - imageView.Frame.Size.Height, 
+			imageView.Frame = new CGRect ((float)this.SideDrawerView.SideDrawers[0].Width / 2.0f - imageView.Frame.Size.Width / 2.0f, this.View.Frame.Size.Height / 2.0f - imageView.Frame.Size.Height, 
 				imageView.Frame.Size.Width, imageView.Frame.Size.Height);
 			sideDrawerContent.AddSubview (imageView);
 

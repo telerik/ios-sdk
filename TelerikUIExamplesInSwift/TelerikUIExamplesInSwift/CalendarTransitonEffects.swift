@@ -40,7 +40,11 @@ class CalendarTransitonEffects: ExampleViewController, TKCalendarPresenterDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.contentView.frame = self.exampleBounds
+        self.navigationController?.navigationBar.translucent = false
+        
+        self.view.backgroundColor = UIColor.whiteColor()
+        self.contentView.backgroundColor = UIColor.whiteColor()
+        self.contentView.frame = self.view.bounds
         self.view.addSubview(self.contentView)
 
         self.toolbar.frame = CGRectMake(0, CGRectGetHeight(self.contentView.bounds) - 44, CGRectGetWidth(self.contentView.bounds), 44)
@@ -65,9 +69,16 @@ class CalendarTransitonEffects: ExampleViewController, TKCalendarPresenterDelega
         self.transitionMode = TKCalendarTransitionMode.Flip
     }
     
+    override func willMoveToParentViewController(parent: UIViewController?) {
+        super.willMoveToParentViewController(parent)
+        if (parent == nil) {
+            self.navigationController?.navigationBar.translucent = true
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.contentView.frame = self.exampleBounds
+        self.contentView.frame = self.view.bounds
     }
     
     override func didReceiveMemoryWarning() {

@@ -24,7 +24,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self addOption:@"Show Alert" selector:@selector(show:)];
+        [self addOption:@"Show Alert" selector:@selector(show)];
     }
     return self;
 }
@@ -67,7 +67,7 @@
     [_dataForm reloadData];
 }
 
-- (void)show:(id)sender
+- (void)show
 {
     [_dataForm commit];
     TKAlert *alert = [TKAlert new];

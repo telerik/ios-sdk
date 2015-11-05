@@ -36,7 +36,7 @@
     _view.fill = fill;
     [self.view addSubview:_view];
 
-    _autocomplete = [[TKAutoCompleteTextView alloc] initWithFrame:CGRectMake(10, 70, self.exampleBounds.size.width - 20, 30)];
+    _autocomplete = [[TKAutoCompleteTextView alloc] initWithFrame:CGRectMake(10,self.exampleBounds.origin.y + 5, self.exampleBounds.size.width - 20, 30)];
     _autocomplete.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:_autocomplete];
     
@@ -49,7 +49,7 @@
     
     TKListView *listView = (TKListView*)_autocomplete.suggestionView;
     
-    listView.frame = CGRectMake(10,110 , self.view.bounds.size.width - 20, self.exampleBounds.size.height - (15 + _autocomplete.bounds.size.height));
+    listView.frame = CGRectMake(10,self.exampleBounds.origin.y + 40, self.view.bounds.size.width - 20, self.exampleBounds.size.height - (15 + _autocomplete.bounds.size.height));
     listView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight ;
     [listView removeFromSuperview];
     [self.view addSubview:listView];

@@ -28,6 +28,8 @@ class AlertCustomize: ExampleViewController, TKAlertDelegate {
         alert.style.buttonsInset = UIEdgeInsetsMake(5, 5, 5, 5)
         alert.style.contentSeparatorWidth = 0
         alert.style.messageColor = UIColor(red:0.349, green:0.349, blue:0.349, alpha:1.00)
+        alert.style.titleSeparatorWidth = -0.5
+        alert.style.contentSeparatorWidth = 0
         alert.alertView.layer.shadowOpacity = 0.6
         alert.alertView.layer.shadowRadius = 3
         alert.alertView.layer.shadowOffset = CGSizeMake(0, 0)

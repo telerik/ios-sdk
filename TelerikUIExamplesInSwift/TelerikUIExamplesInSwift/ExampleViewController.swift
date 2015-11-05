@@ -27,7 +27,7 @@ class ExampleViewController: UIViewController {
         
         self.updateHeaderHeight()
         
-        let idiom = UIDevice.currentDevice().userInterfaceIdiom as UIUserInterfaceIdiom
+        let idiom = UIDevice.currentDevice().userInterfaceIdiom
         if sections.count > 0 || options.count > 0 {
             if (idiom == UIUserInterfaceIdiom.Pad) {
                 self.loadIPadLayout()
@@ -46,12 +46,18 @@ class ExampleViewController: UIViewController {
     }
     
     func updateHeaderHeight() {
-        if  self.navigationController != nil {
-            let navigationBar = self.navigationController!.navigationBar
+        if let navigationBar = self.navigationController?.navigationBar {
             if navigationBar.translucent {
                 let app = UIApplication.sharedApplication()
                 let isLandscape = UIInterfaceOrientationIsLandscape(app.statusBarOrientation)
-                self.headerHeight = navigationBar.intrinsicContentSize().height + (isLandscape ? app.statusBarFrame.size.width : app.statusBarFrame.size.height)
+                let idiom = UIDevice.currentDevice().userInterfaceIdiom
+                let version = (UIDevice.currentDevice().systemVersion as NSString).floatValue
+                if idiom == UIUserInterfaceIdiom.Pad && version >= 8.0 {
+                    self.headerHeight = navigationBar.intrinsicContentSize().height + app.statusBarFrame.size.height
+                }
+                else {
+                    self.headerHeight = navigationBar.intrinsicContentSize().height + (isLandscape ? app.statusBarFrame.size.width : app.statusBarFrame.size.height)
+                }
             }
         }
     }

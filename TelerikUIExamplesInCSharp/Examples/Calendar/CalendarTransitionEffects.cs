@@ -72,6 +72,13 @@ namespace Examples
 			this.CalendarView.AllowPinchZoom = false;
 			this.View.AddSubview (CalendarView);
 
+			NSDate date = NSDate.Now;
+			NSDateComponents components = new NSDateComponents ();
+			components.Year = -1;
+			this.CalendarView.MinDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, NSCalendarOptions.None);
+			components.Year = 1;
+			this.CalendarView.MaxDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, NSCalendarOptions.None);
+
 			TKCalendarMonthPresenter presenter = (TKCalendarMonthPresenter)this.CalendarView.Presenter;
 			presenter.TransitionMode = TKCalendarTransitionMode.Flip;
 			presenter.Delegate = new CalendarPresenterDelegate (this);
@@ -165,14 +172,14 @@ namespace Examples
 			{
 				main.OldColorIndex = main.ColorIndex;
 				main.ColorIndex = (main.ColorIndex + 1) % main.Colors.Length;
-				TKCalendarMonthPresenter monthPresenter = (TKCalendarMonthPresenter)presenter;
+				TKCalendarMonthPresenter monthPresenter = (TKCalendarMonthPresenter)(NSObject)presenter;
 				monthPresenter.ContentView.BackgroundColor = main.Colors [main.ColorIndex];
 			}
 
 			public override void FinishTransition (TKCalendarPresenter presenter, bool canceled)
 			{
 				if (canceled) {
-					TKCalendarMonthPresenter monthPresenter = (TKCalendarMonthPresenter)presenter;
+					TKCalendarMonthPresenter monthPresenter = (TKCalendarMonthPresenter)(NSObject)presenter;
 					monthPresenter.ContentView.BackgroundColor = main.Colors [main.OldColorIndex];
 					main.ColorIndex = main.OldColorIndex;
 				}

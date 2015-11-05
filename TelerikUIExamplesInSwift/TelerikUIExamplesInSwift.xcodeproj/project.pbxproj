@@ -13,12 +13,14 @@
 		1923F41C1A84DE8700BB0D03 /* SideDrawerPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1923F41B1A84DE8700BB0D03 /* SideDrawerPositions.swift */; };
 		194B156D1A84A6E0008E97F2 /* SideDrawerTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B156C1A84A6E0008E97F2 /* SideDrawerTransitions.swift */; };
 		194B15721A84BD0F008E97F2 /* SideDrawerCustomContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B15711A84BD0F008E97F2 /* SideDrawerCustomContent.swift */; };
-		196EBD461BBBC0F900B1553D /* AxisRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EBD451BBBC0F900B1553D /* AxisRender.swift */; settings = {ASSET_TAGS = (); }; };
-		196EBD481BBBC97600B1553D /* MyAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EBD471BBBC97600B1553D /* MyAxis.swift */; settings = {ASSET_TAGS = (); }; };
+		196EBD461BBBC0F900B1553D /* AxisRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EBD451BBBC0F900B1553D /* AxisRender.swift */; };
+		196EBD481BBBC97600B1553D /* MyAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EBD471BBBC97600B1553D /* MyAxis.swift */; };
 		198A094D1BB3009A00DCA4CA /* DataFormCollapsibleGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198A094C1BB3009A00DCA4CA /* DataFormCollapsibleGroups.swift */; };
 		198A094F1BB3019500DCA4CA /* EmployeeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198A094E1BB3019500DCA4CA /* EmployeeInfo.swift */; };
 		198A09511BB3042500DCA4CA /* DataFormLabelsAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198A09501BB3042500DCA4CA /* DataFormLabelsAlignment.swift */; };
 		199D1CDA1A83A0C4009708D6 /* SideDrawerGettingStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D1CD91A83A0C4009708D6 /* SideDrawerGettingStarted.swift */; };
+		19A59AB11BE8CE78009B23F7 /* DataFormJSONSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A59AB01BE8CE78009B23F7 /* DataFormJSONSupport.swift */; };
+		19A59AB31BE8CEB0009B23F7 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 19A59AB21BE8CEB0009B23F7 /* user.json */; };
 		19B3C3E419DE90C8000167D0 /* LiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B3C3E319DE90C8000167D0 /* LiveData.swift */; };
 		19B3C3E719DEB505000167D0 /* PointLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B3C3E619DEB505000167D0 /* PointLabels.swift */; };
 		19B3C44C19DEDF8A000167D0 /* MyPointLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B3C44B19DEDF8A000167D0 /* MyPointLabel.swift */; };
@@ -26,6 +28,7 @@
 		19B8AA6B19E2820A0041D44A /* SelectedPointLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8AA6A19E2820A0041D44A /* SelectedPointLabel.swift */; };
 		19B8AA6D19E28ADD0041D44A /* MyPointLabelRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8AA6C19E28ADD0041D44A /* MyPointLabelRender.swift */; };
 		19B8AA6F19E2B2400041D44A /* CustomPointLabelRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8AA6E19E2B2400041D44A /* CustomPointLabelRender.swift */; };
+		19C2D4A71BD7DB3A0015B85A /* libTelerikUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C2D4A61BD7DB3A0015B85A /* libTelerikUI.a */; };
 		19DB73E71B594BE100680707 /* RangeBarColumnChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DB73E61B594BE100680707 /* RangeBarColumnChart.swift */; };
 		1B33C9B51B9F16D600906C7E /* CustomAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B33C9B41B9F16D600906C7E /* CustomAxis.swift */; };
 		1B46C9191B30174E0021B2A2 /* UIButton_Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B46C9181B30174E0021B2A2 /* UIButton_Circle.swift */; };
@@ -40,12 +43,15 @@
 		1B53723C1A97869E00707810 /* PhotosWithNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B53723B1A97869E00707810 /* PhotosWithNames.json */; };
 		1B53723E1A9797B100707810 /* LoremIpsumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53723D1A9797B100707810 /* LoremIpsumGenerator.swift */; };
 		1B5372401A9B608E00707810 /* ListViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53723F1A9B608E00707810 /* ListViewLayout.swift */; };
+		A6D698901BBB4A14008CDC31 /* libTelerikAppFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D6988E1BBB4A14008CDC31 /* libTelerikAppFeedback.a */; };
 		D04BCDC01BB3DAEA0030F13F /* GaugeGettingStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDBF1BB3DAEA0030F13F /* GaugeGettingStarted.swift */; };
 		D04BCDC21BB3DB120030F13F /* GaugeCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDC11BB3DB120030F13F /* GaugeCustomization.swift */; };
 		D04BCDC41BB3DB280030F13F /* GaugeAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDC31BB3DB280030F13F /* GaugeAnimations.swift */; };
 		D04BCDC61BB3DB3E0030F13F /* GaugeScales.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDC51BB3DB3E0030F13F /* GaugeScales.swift */; };
 		D04BCDC81BB3DB570030F13F /* GaugeRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDC71BB3DB570030F13F /* GaugeRanges.swift */; };
 		D04BCDCA1BB3DB750030F13F /* GaugeInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDC91BB3DB750030F13F /* GaugeInteraction.swift */; };
+		D0B162911BCFD04E00A414FB /* GapsLineSplineAreaChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B162901BCFD04E00A414FB /* GapsLineSplineAreaChart.swift */; };
+		D0D065AF1BE12C6A006F583A /* MultipleSideDrawers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D065AE1BE12C6A006F583A /* MultipleSideDrawers.swift */; };
 		F615197E1B94B8D3008614C7 /* electricity.json in Resources */ = {isa = PBXBuildFile; fileRef = F615197D1B94B8D3008614C7 /* electricity.json */; };
 		F66B0DAC1BB58D540005910C /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = F66B0DAB1BB58D540005910C /* countries.json */; };
 		F66B0DAE1BB5922E0005910C /* AutoCompleteCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66B0DAD1BB5922E0005910C /* AutoCompleteCustomization.swift */; };
@@ -79,8 +85,6 @@
 		FE28FF721A8D0E77000E0BDC /* ListViewLoadOnDemand.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE28FF711A8D0E77000E0BDC /* ListViewLoadOnDemand.swift */; };
 		FE28FF741A8D0E95000E0BDC /* ListViewGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE28FF731A8D0E95000E0BDC /* ListViewGroups.swift */; };
 		FE2D10781A80FB4600A787EB /* InlineEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D10771A80FB4600A787EB /* InlineEvents.swift */; };
-		FE4997321BD5338500BAD0A8 /* TelerikAppFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4997301BD5338500BAD0A8 /* TelerikAppFeedback.framework */; };
-		FE4997331BD5338500BAD0A8 /* TelerikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4997311BD5338500BAD0A8 /* TelerikUI.framework */; };
 		FE6F334E1A9C716F00BE301B /* OptionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F334D1A9C716F00BE301B /* OptionSection.swift */; };
 		FE7FB6021B97279500753DF5 /* DateTimeCategoryAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7FB6011B97279500753DF5 /* DateTimeCategoryAxis.swift */; };
 		FE92FA8019B4C746000B2E66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92FA7F19B4C746000B2E66 /* AppDelegate.swift */; };
@@ -166,6 +170,8 @@
 		198A094E1BB3019500DCA4CA /* EmployeeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeInfo.swift; sourceTree = "<group>"; };
 		198A09501BB3042500DCA4CA /* DataFormLabelsAlignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormLabelsAlignment.swift; sourceTree = "<group>"; };
 		199D1CD91A83A0C4009708D6 /* SideDrawerGettingStarted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerGettingStarted.swift; sourceTree = "<group>"; };
+		19A59AB01BE8CE78009B23F7 /* DataFormJSONSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormJSONSupport.swift; sourceTree = "<group>"; };
+		19A59AB21BE8CEB0009B23F7 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		19B3C3E319DE90C8000167D0 /* LiveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveData.swift; sourceTree = "<group>"; };
 		19B3C3E619DEB505000167D0 /* PointLabels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLabels.swift; sourceTree = "<group>"; };
 		19B3C44B19DEDF8A000167D0 /* MyPointLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPointLabel.swift; sourceTree = "<group>"; };
@@ -173,6 +179,7 @@
 		19B8AA6A19E2820A0041D44A /* SelectedPointLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedPointLabel.swift; sourceTree = "<group>"; };
 		19B8AA6C19E28ADD0041D44A /* MyPointLabelRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPointLabelRender.swift; sourceTree = "<group>"; };
 		19B8AA6E19E2B2400041D44A /* CustomPointLabelRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointLabelRender.swift; sourceTree = "<group>"; };
+		19C2D4A61BD7DB3A0015B85A /* libTelerikUI.a */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../TelerikUI.framework"; sourceTree = "<group>"; };
 		19DB73E61B594BE100680707 /* RangeBarColumnChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeBarColumnChart.swift; sourceTree = "<group>"; };
 		1B33C9B41B9F16D600906C7E /* CustomAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAxis.swift; sourceTree = "<group>"; };
 		1B46C9181B30174E0021B2A2 /* UIButton_Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton_Circle.swift; sourceTree = "<group>"; };
@@ -188,12 +195,16 @@
 		1B53723D1A9797B100707810 /* LoremIpsumGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoremIpsumGenerator.swift; sourceTree = "<group>"; };
 		1B53723F1A9B608E00707810 /* ListViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewLayout.swift; sourceTree = "<group>"; };
 		A689F20F1BBB4B3C005F2B30 /* TelerikUIExamplesInSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TelerikUIExamplesInSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		A6D6988E1BBB4A14008CDC31 /* libTelerikAppFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = "../TelerikAppFeedback.framework"; sourceTree = "<group>"; };
+		A6D6988F1BBB4A14008CDC31 /* libTelerikUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikUI.a; path = "../build/Debug-iphoneos/libTelerikUI.a"; sourceTree = "<group>"; };
 		D04BCDBF1BB3DAEA0030F13F /* GaugeGettingStarted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaugeGettingStarted.swift; sourceTree = "<group>"; };
 		D04BCDC11BB3DB120030F13F /* GaugeCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaugeCustomization.swift; sourceTree = "<group>"; };
 		D04BCDC31BB3DB280030F13F /* GaugeAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaugeAnimations.swift; sourceTree = "<group>"; };
 		D04BCDC51BB3DB3E0030F13F /* GaugeScales.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaugeScales.swift; sourceTree = "<group>"; };
 		D04BCDC71BB3DB570030F13F /* GaugeRanges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaugeRanges.swift; sourceTree = "<group>"; };
 		D04BCDC91BB3DB750030F13F /* GaugeInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaugeInteraction.swift; sourceTree = "<group>"; };
+		D0B162901BCFD04E00A414FB /* GapsLineSplineAreaChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GapsLineSplineAreaChart.swift; sourceTree = "<group>"; };
+		D0D065AE1BE12C6A006F583A /* MultipleSideDrawers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleSideDrawers.swift; sourceTree = "<group>"; };
 		F615197D1B94B8D3008614C7 /* electricity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = electricity.json; sourceTree = "<group>"; };
 		F66B0DAB1BB58D540005910C /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		F66B0DAD1BB5922E0005910C /* AutoCompleteCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteCustomization.swift; sourceTree = "<group>"; };
@@ -227,8 +238,6 @@
 		FE28FF711A8D0E77000E0BDC /* ListViewLoadOnDemand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewLoadOnDemand.swift; sourceTree = "<group>"; };
 		FE28FF731A8D0E95000E0BDC /* ListViewGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewGroups.swift; sourceTree = "<group>"; };
 		FE2D10771A80FB4600A787EB /* InlineEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineEvents.swift; sourceTree = "<group>"; };
-		FE4997301BD5338500BAD0A8 /* TelerikAppFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = Library/Frameworks/TelerikAppFeedback.framework; sourceTree = DEVELOPER_DIR; };
-		FE4997311BD5338500BAD0A8 /* TelerikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = Library/Frameworks/TelerikUI.framework; sourceTree = DEVELOPER_DIR; };
 		FE6F334D1A9C716F00BE301B /* OptionSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionSection.swift; sourceTree = "<group>"; };
 		FE7FB6011B97279500753DF5 /* DateTimeCategoryAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeCategoryAxis.swift; sourceTree = "<group>"; };
 		FE92FA7A19B4C746000B2E66 /* TelerikUIExamplesInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelerikUIExamplesInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,8 +317,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE4997321BD5338500BAD0A8 /* TelerikAppFeedback.framework in Frameworks */,
-				FE4997331BD5338500BAD0A8 /* TelerikUI.framework in Frameworks */,
+				19C2D4A71BD7DB3A0015B85A /* libTelerikUI.a in Frameworks */,
+				A6D698901BBB4A14008CDC31 /* libTelerikAppFeedback.a in Frameworks */,
 				FEAA9C0919B4CF0B00D60D4C /* Foundation.framework in Frameworks */,
 				FEAA9C0719B4CF0200D60D4C /* UIKit.framework in Frameworks */,
 				FEAA9C0319B4CEF200D60D4C /* EventKitUI.framework in Frameworks */,
@@ -330,6 +339,7 @@
 				194B156C1A84A6E0008E97F2 /* SideDrawerTransitions.swift */,
 				199D1CD91A83A0C4009708D6 /* SideDrawerGettingStarted.swift */,
 				191453731A94D8D300B7670F /* SideDrawerHeaderView.swift */,
+				D0D065AE1BE12C6A006F583A /* MultipleSideDrawers.swift */,
 			);
 			name = SideDrawer;
 			sourceTree = "<group>";
@@ -412,6 +422,7 @@
 				F6B595A11B381D5C00846250 /* DataFormCustomization.swift */,
 				198A094C1BB3009A00DCA4CA /* DataFormCollapsibleGroups.swift */,
 				198A09501BB3042500DCA4CA /* DataFormLabelsAlignment.swift */,
+				19A59AB01BE8CE78009B23F7 /* DataFormJSONSupport.swift */,
 			);
 			name = DataForm;
 			sourceTree = "<group>";
@@ -514,8 +525,9 @@
 		FE92FAA419B4C800000B2E66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FE4997301BD5338500BAD0A8 /* TelerikAppFeedback.framework */,
-				FE4997311BD5338500BAD0A8 /* TelerikUI.framework */,
+				19C2D4A61BD7DB3A0015B85A /* libTelerikUI.a */,
+				A6D6988E1BBB4A14008CDC31 /* libTelerikAppFeedback.a */,
+				A6D6988F1BBB4A14008CDC31 /* libTelerikUI.a */,
 				FEAA9C0819B4CF0B00D60D4C /* Foundation.framework */,
 				FEAA9C0619B4CF0200D60D4C /* UIKit.framework */,
 				FEAA9C0219B4CEF200D60D4C /* EventKitUI.framework */,
@@ -635,6 +647,7 @@
 				FEAA9BAC19B4CC9000D60D4C /* PieDonut.swift */,
 				FEAA9BAD19B4CC9000D60D4C /* ScatterChart.swift */,
 				FEAA9BAE19B4CC9000D60D4C /* StockDataPoint.swift */,
+				D0B162901BCFD04E00A414FB /* GapsLineSplineAreaChart.swift */,
 			);
 			name = ChartTypes;
 			sourceTree = "<group>";
@@ -689,6 +702,7 @@
 		FEAA9BF519B4CDEB00D60D4C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				19A59AB21BE8CEB0009B23F7 /* user.json */,
 				FE2582AB1B0CC07200E36C05 /* ListItems.json */,
 				1B53723B1A97869E00707810 /* PhotosWithNames.json */,
 				FEB32CAA1A8DFCC80060ED82 /* ListViewSampleData.json */,
@@ -743,11 +757,6 @@
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Telerik;
-				TargetAttributes = {
-					FE92FA7919B4C746000B2E66 = {
-						CreatedOnToolsVersion = 6.0;
-					};
-				};
 			};
 			buildConfigurationList = FE92FA7519B4C746000B2E66 /* Build configuration list for PBXProject "TelerikUIExamplesInSwift" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -780,6 +789,7 @@
 				1B53723C1A97869E00707810 /* PhotosWithNames.json in Resources */,
 				FEAA9BF719B4CE1400D60D4C /* AppleStockPrices.json in Resources */,
 				FEAA9BDA19B4CD3B00D60D4C /* FeedbackExampleController.xib in Resources */,
+				19A59AB31BE8CEB0009B23F7 /* user.json in Resources */,
 				FE92FA8719B4C746000B2E66 /* Images.xcassets in Resources */,
 				FEB32CAB1A8DFCC80060ED82 /* ListViewSampleData.json in Resources */,
 			);
@@ -824,6 +834,7 @@
 				FEAA9B9C19B4CC1B00D60D4C /* LayerAnnotation.swift in Sources */,
 				FEAA9B9819B4CC1B00D60D4C /* BalloonAnnotation.swift in Sources */,
 				F6B595961B37FFCB00846250 /* DataFormReadOnly.swift in Sources */,
+				19A59AB11BE8CE78009B23F7 /* DataFormJSONSupport.swift in Sources */,
 				196EBD461BBBC0F900B1553D /* AxisRender.swift in Sources */,
 				FEAA9BF319B4CDDA00D60D4C /* OptionInfo.swift in Sources */,
 				FEAA9BD019B4CD0700D60D4C /* CustomAnimationPieChart.swift in Sources */,
@@ -865,6 +876,7 @@
 				F6F51A751B8DBCF20065E055 /* LogarithmicAxis.swift in Sources */,
 				D04BCDC41BB3DB280030F13F /* GaugeAnimations.swift in Sources */,
 				FEAA9BD119B4CD0700D60D4C /* DefaultAnimation.swift in Sources */,
+				D0B162911BCFD04E00A414FB /* GapsLineSplineAreaChart.swift in Sources */,
 				19B3C44C19DEDF8A000167D0 /* MyPointLabel.swift in Sources */,
 				FEAA9BA719B4CC6100D60D4C /* BindWithDelegate.swift in Sources */,
 				FEAA9BA519B4CC6100D60D4C /* BindWithCustomObject.swift in Sources */,
@@ -896,6 +908,7 @@
 				190DBC171A84D4A60017B623 /* MyTransition.swift in Sources */,
 				FEAA9B9B19B4CC1B00D60D4C /* CustomAnnotation.swift in Sources */,
 				F69BE0461B29AB8400B7AB95 /* AlertAnimations.swift in Sources */,
+				D0D065AF1BE12C6A006F583A /* MultipleSideDrawers.swift in Sources */,
 				FEE6EE211A8351D1004895C1 /* DataSourceGettingStarted.swift in Sources */,
 				FE2582AA1B0CB79800E36C05 /* CustomListCell.swift in Sources */,
 				198A094D1BB3009A00DCA4CA /* DataFormCollapsibleGroups.swift in Sources */,
@@ -958,7 +971,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_FRAMEWORKS_DIR)";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1003,7 +1016,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_FRAMEWORKS_DIR)";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -1026,10 +1039,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
 					"$(inherited)",
+					"${SRCROOT}",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"\"/Users/${USER}/Documents/Telerik/\"",
 				);
 				INFOPLIST_FILE = TelerikUIExamplesInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1049,10 +1061,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
 					"$(inherited)",
+					"${SRCROOT}",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"\"/Users/${USER}/Documents/Telerik/\"",
 				);
 				INFOPLIST_FILE = TelerikUIExamplesInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

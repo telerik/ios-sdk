@@ -28,8 +28,8 @@
     chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:chart];
 
-    NSString *url = @"http://www.telerik.com/docs/default-source/ui-for-ios/weather.json?sfvrsn=2";
-    [self.dataSource loadDataFromURL:url dataFormat:TKDataSourceDataFormatJSON rootItemKeyPath:@"dayList" completion:^(NSError *error) {
+    NSString *url = @"https://ajax.googleapis.com/ajax/services/search/news?v=1.0&rsz=8&q=Telerik";
+    [self.dataSource loadDataFromURL:url dataFormat:TKDataSourceDataFormatJSON rootItemKeyPath:@"responseData.results" completion:^(NSError *error) {
         
         if (error) {
             NSLog(@"Can't connect with the server");

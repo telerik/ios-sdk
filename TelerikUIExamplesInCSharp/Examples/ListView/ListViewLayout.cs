@@ -138,7 +138,7 @@ namespace Examples
 			this.scrollDirection = TKListViewScrollDirection.Horizontal;
 		}
 
-		public class StaggeredLayoutDelegate: TKListViewStaggeredLayoutDelegate 
+		public class StaggeredLayoutDelegate: TKListViewLinearLayoutDelegate 
 		{
 			List<float> sizes = new List<float>();
 
@@ -150,8 +150,8 @@ namespace Examples
 					sizes.Add((float)(50.0 + 5.0*r.Next(40)));
 				}
 			}
-
-			public override CGSize SizeForItem (TKListViewStaggeredLayout layout, NSIndexPath indexPath)
+				
+			public override CGSize SizeForItem (TKListView listView, TKListViewLinearLayout layout, NSIndexPath indexPath)
 			{
 				if (layout.ScrollDirection == TKListViewScrollDirection.Vertical) {
 					return new CGSize(100, sizes[indexPath.Row]);

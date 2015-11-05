@@ -52,7 +52,7 @@ class SideDrawerTransitions: SideDrawerGettingStarted {
     }
     
     func pushTransition() {
-        let sideDrawer = self.sideDrawerView.sideDrawer
+        let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.Push
         sideDrawer.fill = TKSolidFill(color: UIColor.grayColor())
         sideDrawer.headerView = SideDrawerHeaderView(addButton: false, target: nil, selector: nil)
@@ -60,7 +60,7 @@ class SideDrawerTransitions: SideDrawerGettingStarted {
     }
     
     func revealTransition() {
-        let sideDrawer = self.sideDrawerView.sideDrawer
+        let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.Reveal
         sideDrawer.fill = TKSolidFill(color: UIColor.grayColor())
         sideDrawer.headerView = SideDrawerHeaderView(addButton: false, target: nil, selector: nil)
@@ -68,7 +68,7 @@ class SideDrawerTransitions: SideDrawerGettingStarted {
     }
     
     func reverseSlideOutTransition() {
-        let sideDrawer = self.sideDrawerView.sideDrawer
+        let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.ReverseSlideOut
         sideDrawer.fill = TKSolidFill(color: UIColor.grayColor())
         sideDrawer.headerView = SideDrawerHeaderView(addButton: false, target: nil, selector: nil)
@@ -76,7 +76,7 @@ class SideDrawerTransitions: SideDrawerGettingStarted {
     }
     
     func slideAlongTransition() {
-        let sideDrawer = self.sideDrawerView.sideDrawer
+        let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.SlideAlong
         sideDrawer.fill = TKSolidFill(color: UIColor.grayColor())
         sideDrawer.headerView = SideDrawerHeaderView(addButton: false, target: nil, selector: nil)
@@ -84,7 +84,7 @@ class SideDrawerTransitions: SideDrawerGettingStarted {
     }
     
     func slideInOnTopTransition() {
-        let sideDrawer = self.sideDrawerView.sideDrawer
+        let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.SlideInOnTop
         sideDrawer.fill = TKSolidFill(color: UIColor.clearColor())
         sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: Selector("dismissSideDrawer"))
@@ -92,7 +92,7 @@ class SideDrawerTransitions: SideDrawerGettingStarted {
     }
     
     func scaleUpTransition() {
-        let sideDrawer = self.sideDrawerView.sideDrawer
+        let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.ScaleUp
         sideDrawer.fill = TKSolidFill(color: UIColor.grayColor())
         sideDrawer.headerView = SideDrawerHeaderView(addButton: false, target: nil, selector: nil)
@@ -100,7 +100,7 @@ class SideDrawerTransitions: SideDrawerGettingStarted {
     }
     
     func fadeInTransition() {
-        let sideDrawer = self.sideDrawerView.sideDrawer
+        let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.FadeIn
         sideDrawer.fill = TKSolidFill(color: UIColor.grayColor())
         sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: Selector("dismissSideDrawer"))
@@ -108,7 +108,7 @@ class SideDrawerTransitions: SideDrawerGettingStarted {
     }
     
     func scaleDownPusherTransition() {
-        let sideDrawer = self.sideDrawerView.sideDrawer
+        let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.ScaleDownPusher
         sideDrawer.fill = TKSolidFill(color: UIColor.grayColor())
         sideDrawer.headerView = SideDrawerHeaderView(addButton: false, target: self, selector: Selector("dismissSideDrawer"))

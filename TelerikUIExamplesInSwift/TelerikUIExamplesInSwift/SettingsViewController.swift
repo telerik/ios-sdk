@@ -15,11 +15,15 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     let table = UITableView()
     var sections = NSMutableArray()
     var selectedOption = 0
+    var translucent: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.whiteColor()
+        self.translucent = self.navigationController?.navigationBar.translucent
+        self.navigationController?.navigationBar.translucent = false
+        
         table.frame = self.view.bounds
         table.dataSource = self
         table.delegate = self
@@ -29,6 +33,13 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
         let indexPath = NSIndexPath(forRow: self.selectedOption, inSection: 0)
         table.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: UITableViewScrollPosition.Middle)
+    }
+    
+    override func willMoveToParentViewController(parent: UIViewController?) {
+        super.willMoveToParentViewController(parent)
+        if (parent == nil) {
+            self.navigationController?.navigationBar.translucent = self.translucent!
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -94,7 +105,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
 //MARK: - UITableViewDelegate
-  
+    
     func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
        
         var info:OptionInfo?
