@@ -22,8 +22,8 @@ class ViewController: UIViewController, TKGaugeDelegate {
         iv.image = UIImage(named: "time1.jpg")
         self.view.addSubview(iv)
         self.temperatureGauge()
-        self.humidityGauge()
-        self.windGauge()
+//        self.humidityGauge()
+//        self.windGauge()
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +62,24 @@ class ViewController: UIViewController, TKGaugeDelegate {
         temperature.labelTitle.text = "19C"
         temperature.labelTitle.font = UIFont(name: "HelveticaNeue-Light", size:35)
         temperature.labelTitle.textColor = UIColor.whiteColor()
+        
+//        let needle : TKGaugeNeedle = TKGaugeNeedle()
+//        radialScale.addIndicator(needle)
+//        needle.setValueAnimated(50, withDuration: 1, mediaTimingFunction: kCAMediaTimingFunctionEaseInEaseOut)
+//        
 
+//        let freezing : TKGaugeSegment = TKGaugeSegment(minimum: -10, maximum: 0)
+//        radialScale.addSegment(freezing)
+//        
+//        let liquid : TKGaugeSegment = TKGaugeSegment(minimum: 1, maximum: 99)
+//        liquid.fill = TKLinearGradientFill(colors: [UIColor(red: 0.24, green: 0.52, blue: 0.78, alpha: 1.0), UIColor(red: 1.00, green: 0.85, blue: 0.40, alpha: 1.0)], locations: [0, 1], startPoint: CGPointMake(0, 0.5), endPoint: CGPointMake(1, 0.5))
+//        radialScale.addSegment(liquid)
+//        
+//        let boiling = TKGaugeSegment(minimum: 100, maximum: 110)
+//        boiling.fill = TKSolidFill(color: UIColor(red: 0.90, green: 0.57, blue: 0.22, alpha: 1.0))
+//        radialScale.addSegment(boiling)
+        
+        
     }
     
     func humidityGauge()
