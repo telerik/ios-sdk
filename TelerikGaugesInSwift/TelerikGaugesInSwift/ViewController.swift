@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, TKGaugeDelegate {
-
+    
     let temperature: TKRadialGauge = TKRadialGauge()
     let humidity: TKRadialGauge = TKRadialGauge()
     let wind: TKRadialGauge = TKRadialGauge()
@@ -25,18 +25,13 @@ class ViewController: UIViewController, TKGaugeDelegate {
         self.humidityGauge()
         self.windGauge()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     func temperatureGauge()
     {
         temperature.delegate = self
         self.view.addSubview(temperature)
         
-        let radialScale = TKGaugeRadialScale(minimum: -30, maximum: 40)
+        let radialScale = TKGaugeRadialScale(minimum:-30, maximum:40)
         radialScale.ticks.hidden = true
         radialScale.labels.hidden = true
         temperature.addScale(radialScale)
@@ -56,30 +51,28 @@ class ViewController: UIViewController, TKGaugeDelegate {
         measureTemperatureSegment.shadowOpacity = 0.5
         measureTemperatureSegment.shadowOffset = CGSizeMake(0, 0)
         measureTemperatureSegment.setRangeAnimated(TKRange(minimum: -30, andMaximum:19),  withDuration:1.0,  mediaTimingFunction:kCAMediaTimingFunctionEaseInEaseOut)
-      
+        
         radialScale.addSegment(measureTemperatureSegment)
         
         temperature.labelTitle.text = "19C"
         temperature.labelTitle.font = UIFont(name: "HelveticaNeue-Light", size:35)
         temperature.labelTitle.textColor = UIColor.whiteColor()
         
-//        let needle : TKGaugeNeedle = TKGaugeNeedle()
-//        radialScale.addIndicator(needle)
-//        needle.setValueAnimated(50, withDuration: 1, mediaTimingFunction: kCAMediaTimingFunctionEaseInEaseOut)
-//        
-
-//        let freezing : TKGaugeSegment = TKGaugeSegment(minimum: -10, maximum: 0)
-//        radialScale.addSegment(freezing)
-//        
-//        let liquid : TKGaugeSegment = TKGaugeSegment(minimum: 1, maximum: 99)
-//        liquid.fill = TKLinearGradientFill(colors: [UIColor(red: 0.24, green: 0.52, blue: 0.78, alpha: 1.0), UIColor(red: 1.00, green: 0.85, blue: 0.40, alpha: 1.0)], locations: [0, 1], startPoint: CGPointMake(0, 0.5), endPoint: CGPointMake(1, 0.5))
-//        radialScale.addSegment(liquid)
-//        
-//        let boiling = TKGaugeSegment(minimum: 100, maximum: 110)
-//        boiling.fill = TKSolidFill(color: UIColor(red: 0.90, green: 0.57, blue: 0.22, alpha: 1.0))
-//        radialScale.addSegment(boiling)
+        //        let needle : TKGaugeNeedle = TKGaugeNeedle()
+        //        radialScale.addIndicator(needle)
+        //        needle.setValueAnimated(50, withDuration: 1, mediaTimingFunction: kCAMediaTimingFunctionEaseInEaseOut)
+        //
         
-        
+        //        let freezing : TKGaugeSegment = TKGaugeSegment(minimum: -10, maximum: 0)
+        //        radialScale.addSegment(freezing)
+        //
+        //        let liquid : TKGaugeSegment = TKGaugeSegment(minimum: 1, maximum: 99)
+        //        liquid.fill = TKLinearGradientFill(colors: [UIColor(red: 0.24, green: 0.52, blue: 0.78, alpha: 1.0), UIColor(red: 1.00, green: 0.85, blue: 0.40, alpha: 1.0)], locations: [0, 1], startPoint: CGPointMake(0, 0.5), endPoint: CGPointMake(1, 0.5))
+        //        radialScale.addSegment(liquid)
+        //
+        //        let boiling = TKGaugeSegment(minimum: 100, maximum: 110)
+        //        boiling.fill = TKSolidFill(color: UIColor(red: 0.90, green: 0.57, blue: 0.22, alpha: 1.0))
+        //        radialScale.addSegment(boiling)
     }
     
     func humidityGauge()
@@ -91,7 +84,7 @@ class ViewController: UIViewController, TKGaugeDelegate {
         radialScale.ticks.hidden = true
         radialScale.labels.hidden = true
         humidity.addScale(radialScale)
-
+        
         let mainTemperatureSegment = TKGaugeSegment(minimum:0, maximum:100)
         mainTemperatureSegment.cap = TKGaugeSegmentCap.Round
         mainTemperatureSegment.location = 0.87
@@ -119,6 +112,7 @@ class ViewController: UIViewController, TKGaugeDelegate {
     func windGauge()
     {
         wind.delegate = self
+
         self.view.addSubview(wind)
         
         let radialScale = TKGaugeRadialScale(minimum: 0, maximum: 32)
@@ -147,7 +141,6 @@ class ViewController: UIViewController, TKGaugeDelegate {
         wind.labelTitle.text = "5.7 m/s"
         wind.labelTitle.font = UIFont(name: "HelveticaNeue-Light", size:20)
         wind.labelTitle.textColor = UIColor.whiteColor()
-
     }
     
     func gauge(gauge: TKGauge, valueChanged value: CGFloat, forScale scale: TKGaugeScale) {
@@ -168,8 +161,7 @@ class ViewController: UIViewController, TKGaugeDelegate {
         super.viewDidLayoutSubviews()
         temperature.frame = CGRectMake(CGRectGetWidth(self.view.frame)/2 - 75, 20, 150, 150)
         humidity.frame = CGRectMake(10, 60, 100, 100)
-        wind.frame = CGRectMake(263, 60, 100, 100)
+        wind.frame = CGRectMake(460, 60, 100, 100)
     }
-
 }
 

@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  BlogExamplesInswift
+//  TelerikGaugesInSwift
 //
-//  Created by Yoanna Mareva on 27.10.15.
-//  Copyright © 2015 г. Yoanna Mareva. All rights reserved.
+//  Created by Nikolay Diyanov on 11/9/15.
+//  Copyright © 2015 Telerik. All rights reserved.
 //
 
 import UIKit
