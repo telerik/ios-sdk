@@ -22,8 +22,8 @@ class ViewController: UIViewController, TKGaugeDelegate {
         iv.image = UIImage(named: "time1.jpg")
         self.view.addSubview(iv)
         self.temperatureGauge()
-//        self.humidityGauge()
-//        self.windGauge()
+        self.humidityGauge()
+        self.windGauge()
     }
 
     override func didReceiveMemoryWarning() {
