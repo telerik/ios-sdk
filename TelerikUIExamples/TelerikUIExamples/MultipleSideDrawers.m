@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    sideDrawerView = [[TKSideDrawerView alloc] initWithFrame:self.exampleBounds];
+    sideDrawerView = [[TKSideDrawerView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:sideDrawerView];
     
     UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:sideDrawerView.mainView.bounds];
@@ -84,7 +84,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    sideDrawerView.frame = self.exampleBounds;
+    sideDrawerView.frame = self.view.bounds;
 }
 
 -(void)showLeftSideDrawer

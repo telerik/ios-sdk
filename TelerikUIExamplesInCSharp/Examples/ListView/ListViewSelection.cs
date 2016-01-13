@@ -8,7 +8,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class ListViewSelection: ExampleViewController
+	[Register("ListViewSelection")]
+	public class ListViewSelection: XamarinExampleViewController
 	{
 		UILabel label = new UILabel();
 		TKListView listView = new TKListView();
@@ -17,11 +18,11 @@ namespace Examples
 
 		public override void ViewDidLoad ()
 		{
-			this.AddOption ("Selection on press", SelectionOnPressSelected, "Selection type");
-			this.AddOption ("Selection on hold", SelectionOnHoldSelected, "Selection type");
-			this.AddOption ("No selection", NoSelectionSelected, "Selection type");
-			this.AddOption ("YES", MultipleSelectionSelected, "Multiple selection");
-			this.AddOption ("NO", SingleSelectionSelected, "Multiple selection");
+			this.AddOption ("Selection on press", "Selection type", SelectionOnPressSelected);
+			this.AddOption ("Selection on hold", "Selection type", SelectionOnHoldSelected);
+			this.AddOption ("No selection", "Selection type", NoSelectionSelected);
+			this.AddOption ("YES", "Multiple selection", MultipleSelectionSelected);
+			this.AddOption ("NO", "Multiple selection", SingleSelectionSelected);
 
 			base.ViewDidLoad ();
 
@@ -50,28 +51,28 @@ namespace Examples
 			this.listView.SelectItem (indexPath, false, UICollectionViewScrollPosition.None);
 		}
 
-		void SelectionOnPressSelected(object sender, EventArgs e)
+		void SelectionOnPressSelected()
 		{
 			this.listView.SelectionBehavior = TKListViewSelectionBehavior.Press;
 		}
 
-		void SelectionOnHoldSelected(object sender, EventArgs e)
+		void SelectionOnHoldSelected()
 		{
 			this.listView.SelectionBehavior = TKListViewSelectionBehavior.LongPress;
 		}
 
-		void NoSelectionSelected(object sender, EventArgs e)
+		void NoSelectionSelected()
 		{
 			this.listView.SelectionBehavior = TKListViewSelectionBehavior.None;
 			this.label.Text = "";
 		}
 
-		void MultipleSelectionSelected (object sender, EventArgs e)
+		void MultipleSelectionSelected ()
 		{
 			this.listView.AllowsMultipleSelection = true;
 		}
 
-		void SingleSelectionSelected (object sender, EventArgs e)
+		void SingleSelectionSelected ()
 		{
 			this.listView.AllowsMultipleSelection = false;
 		}

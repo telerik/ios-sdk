@@ -7,7 +7,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class ListViewReorder: ExampleViewController
+	[Register("ListViewReorder")]
+	public class ListViewReorder: XamarinExampleViewController
 	{
 		TKListView listView = new TKListView();
 		TKDataSource dataSource = new TKDataSource();
@@ -34,19 +35,19 @@ namespace Examples
 			this.View.AddSubview (listView);
 		}
 
-		void ReorderWithHandleSelected(object sender, EventArgs e)
+		void ReorderWithHandleSelected()
 		{
 			this.listView.AllowsCellReorder = true;
 			this.listView.ReorderMode = TKListViewReorderMode.WithHandle;
 		}
 
-		void ReorderWithLongPressSelected(object sender, EventArgs e)
+		void ReorderWithLongPressSelected()
 		{
 			this.listView.AllowsCellReorder = true;
 			this.listView.ReorderMode = TKListViewReorderMode.WithLongPress;
 		}
 
-		void DisableReorderSelected(object sender, EventArgs e)
+		void DisableReorderSelected()
 		{
 			this.listView.AllowsCellReorder = false;
 		}

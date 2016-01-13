@@ -64,7 +64,7 @@
                 }
             }
             
-            [label drawInContext:ctx inRect:labelRect forVisualPoint:nil];
+            [label drawInContext:ctx inRect:labelRect forVisualPoint:nil color:[UIColor whiteColor]];
         }
     }
 }

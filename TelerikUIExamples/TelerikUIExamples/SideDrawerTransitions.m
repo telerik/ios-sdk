@@ -127,7 +127,7 @@
     [button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
     [_scrollView addSubview:button];
     _buttonY += 50;
-    _scrollView.contentSize = CGSizeMake(fmax(CGRectGetWidth(button.frame), _scrollView.contentSize.width), _buttonY + 15 + self.exampleBounds.origin.y);
+    _scrollView.contentSize = CGSizeMake(fmax(CGRectGetWidth(button.frame), _scrollView.contentSize.width), _buttonY + 15 + self.view.bounds.origin.y);
 }
 
 #pragma mark TKSideDrawerDelegate

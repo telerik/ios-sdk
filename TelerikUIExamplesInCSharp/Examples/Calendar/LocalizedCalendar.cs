@@ -7,7 +7,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class LocalizedCalendar : ExampleViewController
+	[Register("LocalizedCalendar")]
+	public class LocalizedCalendar : XamarinExampleViewController
 	{
 		public TKCalendar CalendarView {
 			get;
@@ -37,10 +38,10 @@ namespace Examples
 			components.Year = 1;
 			this.CalendarView.MaxDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, NSCalendarOptions.None);
 
-			this.SelectHebrew (this, EventArgs.Empty);
+			this.SelectHebrew ();
 		}
 
-		public void SelectRussian (object sender, EventArgs e)
+		public void SelectRussian ()
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Gregorian);
 			this.CalendarView.Locale = new NSLocale ("ru_RU");
@@ -48,7 +49,7 @@ namespace Examples
 			((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (false);
 		}
 
-		public void SelectGerman (object sender, EventArgs e)
+		public void SelectGerman ()
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Gregorian);
 			this.CalendarView.Locale = new NSLocale ("de_DE");
@@ -56,7 +57,7 @@ namespace Examples
 			((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (false);
 		}
 
-		public void SelectHebrew (object sender, EventArgs e)
+		public void SelectHebrew ()
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Hebrew);
 			this.CalendarView.Locale = new NSLocale ("he_IL");
@@ -64,7 +65,7 @@ namespace Examples
 			((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (false);
 		}
 
-		public void SelectChinese (object sender, EventArgs e)
+		public void SelectChinese ()
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Chinese);
 			this.CalendarView.Locale = new NSLocale ("zh_Hans_SG");
@@ -72,7 +73,7 @@ namespace Examples
 			((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (false);
 		}
 
-		public void SelectIslamic (object sender, EventArgs e)
+		public void SelectIslamic ()
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Islamic);
 			this.CalendarView.Locale = new NSLocale ("ar-QA");

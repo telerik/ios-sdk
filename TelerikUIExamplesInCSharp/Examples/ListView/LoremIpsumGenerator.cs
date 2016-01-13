@@ -6,14 +6,11 @@ using Foundation;
 
 namespace Examples
 {
+	[Register("LoremIpsumGenerator")]
 	public class LoremIpsumGenerator
 	{
 		string[] words = new string[] {"lorem", "ipsum", "dolor", "sit", "amet", "consectetuer", "adipiscing", "elit", "integer", "in", "mi", "a", "mauris"};
 		Dictionary<NSIndexPath, string> rows = new Dictionary<NSIndexPath, string> ();
-
-		public LoremIpsumGenerator ()
-		{
-		}
 
 		public string GenerateString(int wordCount)
 		{

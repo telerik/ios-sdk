@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CalendarCustomization: ExampleViewController, TKCalendarDelegate {
+class CalendarCustomization: TKExamplesExampleViewController, TKCalendarDelegate {
     
     let calendarView = TKCalendar()
     
@@ -27,8 +27,8 @@ class CalendarCustomization: ExampleViewController, TKCalendarDelegate {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let width = min(CGRectGetWidth(self.exampleBounds), CGRectGetHeight(self.exampleBounds))
-        self.calendarView.frame = CGRectMake(self.exampleBounds.origin.x + (CGRectGetWidth(self.exampleBounds) - width)/2.0, self.exampleBounds.origin.y, width, width)
+        let width = min(CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))
+        self.calendarView.frame = CGRectMake(self.view.bounds.origin.x + (CGRectGetWidth(self.view.bounds) - width)/2.0, self.view.bounds.origin.y, width, width)
     }
     
     override func didReceiveMemoryWarning() {

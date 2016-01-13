@@ -24,7 +24,7 @@
     return labelSize;
 }
 
-- (void)drawInContext:(CGContextRef)ctx inRect:(CGRect)bounds forVisualPoint:(TKChartVisualPoint *)visualPoint
+- (void)drawInContext:(CGContextRef)ctx inRect:(CGRect)bounds forVisualPoint:(TKChartVisualPoint *)visualPoint color:(UIColor * _Nullable)paletteTextColor
 {
     UIGraphicsPushContext(ctx);
     TKFill *fill = self.style.fill;
@@ -38,7 +38,7 @@
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
     paragraphStyle.alignment = self.style.textAlignment;
     NSMutableDictionary *attributes = [@{ NSFontAttributeName: [UIFont systemFontOfSize:16],
-                                          NSForegroundColorAttributeName: self.style.textColor,
+                                          NSForegroundColorAttributeName: paletteTextColor,
                                           NSParagraphStyleAttributeName: paragraphStyle } mutableCopy];
     
     [self.text drawWithRect:textRect

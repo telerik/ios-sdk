@@ -17,14 +17,14 @@ class MyAnnotation:TKChartPointAnnotation {
     override init() {
         super.init()
     }
-
+    
     init(Shape shape: TKShape, X xValue: AnyObject, Y yValue: AnyObject, forSeries series: TKChartSeries) {
         super.init(x: xValue, y: yValue, forSeries: series)
         self.shape = shape
     }
 
-    override func layoutInRect(bounds: CGRect) {
-        center = self.locationInRect(bounds)
+    override func layoutInRect(bounds: CGRect, forChart chart: TKChart?, inLayer layer: CALayer) {
+        center = self.locationInRect(bounds, forChart: chart)
         if let s = shape {
             center.x -= s.size.width/2
             center.y -= s.size.height/2

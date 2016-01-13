@@ -41,6 +41,7 @@ class DataFormValidation: TKDataFormViewController {
 
         dataSource.addGroupWithName("Account", propertyNames: [ "email", "password", "repeatPassword", "rememberMe" ])
         dataSource.addGroupWithName("Details", propertyNames: [ "name", "dateOfBirth", "gender", "country" ])
+       
         dataForm.reloadData()
     }
     

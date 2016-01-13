@@ -9,7 +9,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class ListViewSwipe: ExampleViewController
+	[Register("ListViewSwipe")]
+	public class ListViewSwipe: XamarinExampleViewController
 	{
 		TKListView listView = new TKListView();
 		TKDataSource dataSource = new TKDataSource();
@@ -19,8 +20,8 @@ namespace Examples
 
 		public override void ViewDidLoad ()
 		{
-			this.AddOption ("YES", EnableButtonAnimation, "Animate buttons");
-			this.AddOption ("NO", DisableButtonAnimation, "Animate buttons");
+			this.AddOption ("YES", "Animate buttons", EnableButtonAnimation);
+			this.AddOption ("NO", "Animate buttons", DisableButtonAnimation);
 
 			base.ViewDidLoad ();
 
@@ -119,13 +120,13 @@ namespace Examples
 			this.listView.EndSwipe (true);
 		}
 
-		void EnableButtonAnimation(object sender, EventArgs e)
+		void EnableButtonAnimation()
 		{
 			this.buttonAnimationEnabled = true;
 			this.listView.ReloadData ();
 		}
 
-		void DisableButtonAnimation(object sender, EventArgs e)
+		void DisableButtonAnimation()
 		{
 			this.buttonAnimationEnabled = false;
 			this.listView.ReloadData ();

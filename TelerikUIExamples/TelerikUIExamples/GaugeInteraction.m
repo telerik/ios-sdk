@@ -61,6 +61,8 @@
     self.linearGauge.labelTitle.text = @"85 %";
     self.linearGauge.labelSubtitle.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12];
     self.linearGauge.labelSubtitle.text = @"humidity";
+    self.linearGauge.labelTitleOffset = CGPointMake(0, -25);
+    self.linearGauge.labelSubtitleOffset = CGPointMake(0, -25);
     self.linearGauge.delegate = self;
     [self.view addSubview:self.linearGauge];
     
@@ -102,7 +104,7 @@
 {
     [super viewDidLayoutSubviews];
     
-    CGRect bounds = self.exampleBounds;
+    CGRect bounds = self.view.bounds;
     CGSize size = self.view.bounds.size;
     CGFloat offset = 20;
     

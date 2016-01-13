@@ -5,6 +5,7 @@
 //  Copyright (c) 2014 Telerik. All rights reserved.
 //
 
+#import <TelerikUI/TKExamplesKit.h>
 #import <TelerikUI/TelerikUI.h>
 
 @interface MyAnnotation : TKChartPointAnnotation
@@ -14,4 +15,5 @@
 @property (nonatomic,strong) TKFill *fill;
 @property (nonatomic,strong) TKStroke *stroke;
 
+-(void)layoutInRect:(CGRect)bounds forChart:(TKChart *)chart;
 @end

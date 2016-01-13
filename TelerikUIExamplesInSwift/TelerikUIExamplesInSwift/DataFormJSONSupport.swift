@@ -7,11 +7,20 @@
 
 import UIKit
 
-class DataFormJSONSupport: UIViewController, TKDataFormDelegate {
+class DataFormJSONSupport: TKExamplesExampleViewController, TKDataFormDelegate {
 
     let dataForm = TKDataForm()
     var dataSource : TKDataFormEntityDataSource?
     var alert : TKAlert?
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.addOption("Save", action:commitDataForm)
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +40,14 @@ class DataFormJSONSupport: UIViewController, TKDataFormDelegate {
         dataSource!["gender"].valuesProvider = ["Male", "Female"]
         dataSource!["gender"].editorClass = TKDataFormSegmentedEditor.self
         dataSource!["gender"].index = 2
+        dataSource!["gender"].pickersUseIndexValue = false
+        
         
         dataSource!["email"].index = 3
         dataSource!["email"].editorClass = TKDataFormEmailEditor.self
         
         dataForm.dataSource = dataSource
         dataForm.commitMode = TKDataFormCommitMode.Manual
-        
-        let save = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Done, target: self, action: "commitDataForm")
-        self.navigationItem.rightBarButtonItem = save
-        
     }
     
     func commitDataForm () {

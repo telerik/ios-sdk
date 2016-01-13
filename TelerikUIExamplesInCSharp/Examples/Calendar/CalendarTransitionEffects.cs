@@ -10,7 +10,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class CalendarTransitionEffects : ExampleViewController
+	[Register("CalendarTransitionEffects")]
+	public class CalendarTransitionEffects : XamarinExampleViewController
 	{
 		CalendarDelegate calendarDelegate;
 		CalendarPresenterDelegate presenterDelegate;
@@ -41,16 +42,17 @@ namespace Examples
 				new UIColor (1f, 0f, 1f, 0.3f)
 			};
 
+		}
+
+		public override void ViewDidLoad ()
+		{
 			this.AddOption ("Flip Effect", SelectFlipEffect);
 			this.AddOption ("Float Effect", SelectedFloatEffect);
 			this.AddOption ("Fold Effect", SelectedFoldEffect);
 			this.AddOption ("Rotate Effect", SelectedRotateEffect);
 			this.AddOption ("Card Effect", SelectedCardEffect);
 			this.AddOption ("Scroll Effect", SelectedScrollEffect);
-		}
 
-		public override void ViewDidLoad ()
-		{
 			base.ViewDidLoad ();
 
 			this.calendarDelegate  = new CalendarDelegate (this); 
@@ -86,44 +88,44 @@ namespace Examples
 			this.TransitionMode = TKCalendarTransitionMode.Flip;
 		}
 
-		[Export ("PrevTouched")]
+		[Export("PrevTouched")]
 		public void PrevTouched ()
 		{
 			this.CalendarView.NavigateBack(true);
 		}
-
-		[Export ("NextTouched")]
+			
+		[Export("NextTouched")]
 		public void NextTouched ()
 		{
 			this.CalendarView.NavigateForward(true);
 		}
 
-		public void SelectFlipEffect (object sender, EventArgs e)
+		public void SelectFlipEffect ()
 		{
 			this.SetTransition (TKCalendarTransitionMode.Flip, false);
 		}
 
-		public void SelectedFloatEffect (object sender, EventArgs e)
+		public void SelectedFloatEffect ()
 		{
 			this.SetTransition (TKCalendarTransitionMode.Float, false);
 		}
 
-		public void SelectedFoldEffect (object sender, EventArgs e)
+		public void SelectedFoldEffect ()
 		{
 			this.SetTransition (TKCalendarTransitionMode.Fold, false);
 		}
 
-		public void SelectedRotateEffect (object sender, EventArgs e) 
+		public void SelectedRotateEffect () 
 		{
 			this.SetTransition (TKCalendarTransitionMode.Rotate, false);
 		}
 
-		public void SelectedCardEffect (object sender, EventArgs e)
+		public void SelectedCardEffect ()
 		{
 			this.SetTransition (TKCalendarTransitionMode.Card, true);
 		}
 
-		public void SelectedScrollEffect (object sender, EventArgs e)
+		public void SelectedScrollEffect ()
 		{
 			this.SetTransition (TKCalendarTransitionMode.Scroll, true);
 		}

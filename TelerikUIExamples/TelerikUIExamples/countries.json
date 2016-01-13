@@ -76,6 +76,10 @@
          "flag":"macedonia-flag.png"
          },
          {
+         "country":"Moldova",
+         "flag":"moldova-flag.png"
+         },
+         {
          "country":"Monaco",
          "flag":"monaco-flag.png"
          },

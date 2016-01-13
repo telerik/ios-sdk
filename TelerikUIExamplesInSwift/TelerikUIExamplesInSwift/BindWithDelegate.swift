@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BindWithDelegate : ExampleViewController {
+class BindWithDelegate : TKExamplesExampleViewController {
     
     let chart = TKChart()
     let chartDataSource = ChartDataSource()
@@ -16,7 +16,7 @@ class BindWithDelegate : ExampleViewController {
         
         super.viewDidLoad()
     
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.dataSource = chartDataSource
         self.view.addSubview(chart)

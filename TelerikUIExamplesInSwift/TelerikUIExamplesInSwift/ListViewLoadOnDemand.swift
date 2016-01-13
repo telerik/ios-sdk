@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListViewLoadOnDemand: ExampleViewController, TKListViewDataSource, TKListViewDelegate {
+class ListViewLoadOnDemand: TKExamplesExampleViewController, TKListViewDataSource, TKListViewDelegate {
 
     let listView = TKListView()
     let names = TKDataSource()
@@ -18,8 +18,8 @@ class ListViewLoadOnDemand: ExampleViewController, TKListViewDataSource, TKListV
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.addOption("Manual", inSection:"Load on demand mode") { self.loadOnDemandManual() }
-        self.addOption("Auto", inSection:"Load on demand mode") { self.loadOnDemandAuto() }
+        self.addOption("Manual", inSection:"Load on demand mode", withAction: loadOnDemandManual)
+        self.addOption("Auto", inSection:"Load on demand mode", withAction: loadOnDemandAuto)
     }
     
     required init(coder aDecoder: NSCoder) {

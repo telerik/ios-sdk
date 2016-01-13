@@ -5,8 +5,8 @@
 //  Copyright (c) 2015 г. Telerik. All rights reserved.
 //
 
-#import "ExampleViewController.h"
+#import <TelerikUI/TKExamplesKit.h>
 
-@interface CustomAxis : ExampleViewController
+@interface CustomAxis : TKExamplesExampleViewController
 
 @end

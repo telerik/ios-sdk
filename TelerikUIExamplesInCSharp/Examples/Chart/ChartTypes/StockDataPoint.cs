@@ -8,6 +8,7 @@ using TelerikUI;
 
 namespace Examples
 {
+	[Register("StockDataPoint")]
 	public class StockDataPoint: TKChartFinancialDataPoint
 	{
 		public static List<StockDataPoint> LoadStockPoints(int maxItems)
@@ -27,7 +28,7 @@ namespace Examples
 				}
 				NSDictionary jsonPoint = data.GetItem<NSDictionary> ((nuint)i);
 				StockDataPoint dataPoint = new StockDataPoint ();
-				dataPoint.DataXValue = formatter.Parse ( (NSString)jsonPoint ["date"]);
+				dataPoint.DataXValue = formatter.Parse ((NSString)jsonPoint ["date"]);
 				dataPoint.Open = (NSNumber)jsonPoint ["open"];
 				dataPoint.Low = (NSNumber)jsonPoint ["low"];
 				dataPoint.Close = (NSNumber)jsonPoint ["close"];

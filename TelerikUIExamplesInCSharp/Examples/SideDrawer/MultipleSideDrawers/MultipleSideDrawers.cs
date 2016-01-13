@@ -7,7 +7,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class MultipleSideDrawers : ExampleViewController
+	[Register("MultipleSideDrawers")]
+	public class MultipleSideDrawers : XamarinExampleViewController
 	{
 		private TKSideDrawerSection primarySection;
 		private TKSideDrawerSection labelsSection;
@@ -35,16 +36,16 @@ namespace Examples
 
 			UIImageView backgroundView = new UIImageView (this.SideDrawerView.MainView.Bounds);
 			backgroundView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			backgroundView.Image = new UIImage ("sdk-examples-bg.png");
+			backgroundView.Image = UIImage.FromBundle ("sdk-examples-bg.png");
 			this.SideDrawerView.MainView.AddSubview (backgroundView);
 
 			UINavigationBar navBar = new UINavigationBar (new CGRect (0, 0, this.SideDrawerView.MainView.Bounds.Width, 44));
 			navBar.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 			this.NavItem = new UINavigationItem ();
 
-			UIBarButtonItem showLeftSideDrawer = new UIBarButtonItem (new UIImage ("menu.png"), UIBarButtonItemStyle.Plain, this, new Selector ("ShowLeftSideDrawer"));
+			UIBarButtonItem showLeftSideDrawer = new UIBarButtonItem (UIImage.FromBundle ("menu.png"), UIBarButtonItemStyle.Plain, this, new Selector ("ShowLeftSideDrawer"));
 			this.NavItem.LeftBarButtonItem = showLeftSideDrawer;
-			UIBarButtonItem showRightSideDrawer = new UIBarButtonItem (new UIImage ("menu.png"), UIBarButtonItemStyle.Plain, this, new Selector ("ShowRightSideDrawer"));
+			UIBarButtonItem showRightSideDrawer = new UIBarButtonItem (UIImage.FromBundle ("menu.png"), UIBarButtonItemStyle.Plain, this, new Selector ("ShowRightSideDrawer"));
 			this.NavItem.RightBarButtonItem = showRightSideDrawer;
 
 			navBar.Items = new UINavigationItem[] { this.NavItem };

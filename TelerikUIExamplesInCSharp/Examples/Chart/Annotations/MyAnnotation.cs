@@ -7,9 +7,11 @@ using UIKit;
 using CoreGraphics;
 
 using TelerikUI;
+using CoreAnimation;
 
 namespace Examples
 {
+	[Register("MyAnnotation")]
 	public class MyAnnotation: TKChartPointAnnotation
 	{
 		CGPoint center;
@@ -26,9 +28,9 @@ namespace Examples
 			this.Shape = shape;
 		}
 
-		public override void LayoutInRect (CGRect bounds)
+		public override void LayoutInRect (CGRect bounds, TKChart chart, CALayer layer)
 		{
-			center = this.LocationInRect (bounds);
+			center = this.LocationInRect (bounds, chart);
 			center.X -= Shape.Size.Width / 2.0f;
 			center.Y -= Shape.Size.Height / 2.0f;
 		}

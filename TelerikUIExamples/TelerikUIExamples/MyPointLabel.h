@@ -7,7 +7,6 @@
 
 #import <TelerikUI/TKChartPointLabel.h>
 
-
 @interface MyPointLabel : TKChartPointLabel
 
 @end

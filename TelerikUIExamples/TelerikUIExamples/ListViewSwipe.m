@@ -200,4 +200,9 @@
     NSLog(@"swiped cell at index path: %ld", (long)indexPath.row);
 }
 
+- (void)listView:(TKListView *)listView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"deselected");
+}
+
 @end

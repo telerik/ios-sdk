@@ -40,7 +40,7 @@
     layout.lineSpacing = 60;
     layout.itemSpacing = 10;
     listView.layout = layout;
-
+    
     TKView *view = [TKView new];
     
     view.fill = [TKLinearGradientFill linearGradientFillWithColors:@[

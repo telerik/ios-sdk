@@ -2,13 +2,12 @@
 //  GaugeScales.swift
 //  TelerikUIExamplesInSwift
 //
-//  Created by Miroslava Ivanova on 9/24/15.
 //  Copyright © 2015 Telerik. All rights reserved.
 //
 
 import UIKit
 
-class GaugeScales: ExampleViewController {
+class GaugeScales: TKExamplesExampleViewController {
     
     let linearGauge = TKLinearGauge()
     let radialGauge = TKRadialGauge()
@@ -27,7 +26,7 @@ class GaugeScales: ExampleViewController {
         
         self.radialGauge.labelTitle.text = "celsius"
         self.radialGauge.labelSubtitle.text = "farenheit"
-        self.radialGauge.labelOffset = CGPointMake(0, 60)
+        self.radialGauge.labelTitleOffset = CGPointMake(0, 60)
         self.view.addSubview(self.radialGauge)
         
         let scale1 = TKGaugeRadialScale(minimum: 34, maximum: 40)
@@ -73,8 +72,8 @@ class GaugeScales: ExampleViewController {
         self.linearGauge.labelTitle.text = "celsius"
         self.linearGauge.labelSubtitle.text = "farenheit"
         self.linearGauge.labelOrientation = TKLinearGaugeOrientation.Vertical
-        self.linearGauge.labelSpacing = 75
-        self.linearGauge.labelOffset = CGPointMake(0, 85)
+        self.linearGauge.labelTitleOffset = CGPointMake(0, 35)
+        self.linearGauge.labelSubtitleOffset = CGPointMake(0, 100)
         self.view.addSubview(self.linearGauge)
         
         let scale1 = TKGaugeLinearScale(minimum: 34, maximum: 40)
@@ -131,7 +130,7 @@ class GaugeScales: ExampleViewController {
 
         super.viewDidLayoutSubviews()
         
-        let bounds = self.exampleBounds
+        let bounds = self.view.bounds
         let size = self.view.bounds.size
         let offset = CGFloat(20)
         let linearHeight = CGFloat(150)

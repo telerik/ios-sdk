@@ -7,7 +7,8 @@ using System.Collections.Generic;
 
 namespace Examples
 {
-	public class CustomAxis :ExampleViewController
+	[Register("CustomAxis")]
+	public class CustomAxis :XamarinExampleViewController
 	{
 		TKChart chart = new TKChart();
 		Random r = new Random();
@@ -83,7 +84,7 @@ namespace Examples
 		{
 			base.ViewDidLoad ();
 			
-			this.chart.Frame = this.ExampleBounds;
+			this.chart.Frame = this.View.Bounds;
 			this.chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.AddSubview (this.chart);
 

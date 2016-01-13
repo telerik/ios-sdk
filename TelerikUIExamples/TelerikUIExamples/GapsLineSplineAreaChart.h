@@ -5,8 +5,8 @@
 //  Copyright © 2015 Telerik. All rights reserved.
 //
 
-#import "ExampleViewController.h"
+#import <TelerikUI/TKExamplesKit.h>
 
-@interface GapsLineSplineAreaChart : ExampleViewController
+@interface GapsLineSplineAreaChart : TKExamplesExampleViewController
 
 @end

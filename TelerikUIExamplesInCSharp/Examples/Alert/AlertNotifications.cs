@@ -7,7 +7,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class AlertNotifications : ExampleViewController
+	[Register("AlertNotifications")]
+	public class AlertNotifications : XamarinExampleViewController
 	{
 		public TKListView listView;
 		public TKDataSource dataSource;

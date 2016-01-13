@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalendarSelection: ExampleViewController, TKCalendarDelegate {
+class CalendarSelection: TKExamplesExampleViewController, TKCalendarDelegate {
     
     let calendarView = TKCalendar()
     var unselectable:NSDate?
@@ -15,9 +15,9 @@ class CalendarSelection: ExampleViewController, TKCalendarDelegate {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.addOption("Single date selection") { self.selectSingleMode() }
-        self.addOption("Multiple dates selection") { self.selectMultipleMode() }
-        self.addOption("Date range selection") { self.selectRangeMode() }
+        self.addOption("Single date selection", action: selectSingleMode)
+        self.addOption("Multiple dates selection", action: selectMultipleMode)
+        self.addOption("Date range selection", action: selectRangeMode)
 
         self.selectedOption = 2
     }
@@ -57,7 +57,7 @@ class CalendarSelection: ExampleViewController, TKCalendarDelegate {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.calendarView.frame = self.exampleBounds
+        self.calendarView.frame = self.view.bounds
     }
     
     override func didReceiveMemoryWarning() {

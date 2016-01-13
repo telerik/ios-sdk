@@ -31,7 +31,7 @@
     self.radialGauge = [[TKRadialGauge alloc] initWithFrame:CGRectZero];
     self.radialGauge.labelTitle.text = @"celsius";
     self.radialGauge.labelSubtitle.text = @"farenheit";
-    self.radialGauge.labelOffset = CGPointMake(0, 60);
+    self.radialGauge.labelTitleOffset = CGPointMake(0, 60);
     [self.view addSubview:self.radialGauge];
 
     TKGaugeRadialScale* scale1 = [[TKGaugeRadialScale alloc] initWithMinimum:@34 maximum:@40];
@@ -79,8 +79,8 @@
     self.linearGauge.labelTitle.text = @"celsius";
     self.linearGauge.labelSubtitle.text = @"farenheit";
     self.linearGauge.labelOrientation = TKLinearGaugeOrientationVertical;
-    self.linearGauge.labelSpacing = 75;
-    self.linearGauge.labelOffset = CGPointMake(0, 85);
+    self.linearGauge.labelTitleOffset = CGPointMake(0, 35);
+    self.linearGauge.labelSubtitleOffset = CGPointMake(0, 100);
     [self.view addSubview:self.linearGauge];
 
     TKGaugeLinearScale* scale1 = [[TKGaugeLinearScale alloc] initWithMinimum:@34 maximum:@40];
@@ -140,7 +140,7 @@
 {
     [super viewDidLayoutSubviews];
     
-    CGRect bounds = self.exampleBounds;
+    CGRect bounds = self.view.bounds;
     CGSize size = self.view.bounds.size;
     CGFloat offset = 20;
     CGFloat linearHeight = 150;

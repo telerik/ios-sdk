@@ -36,8 +36,9 @@ class MyTransition: TKSideDrawerTransition {
         self.transitionBegan(false)
         UIView.animateWithDuration(Double(self.sideDrawer!.transitionDuration),
             animations: {
-                self.sideDrawer!.center = self.sideDrawerIdentityCenter
-                self.sideDrawer!.hostview!.center = self.hostviewIdentityCenter
+                self.sideDrawer!.center = CGPoint(x: self.sideDrawer!.width / 2.0, y: -self.sideDrawer!.frame.size.height / 2.0);
+                self.sideDrawer!.hostview!.center = CGPoint(x: CGRectGetMidX(self.sideDrawer!.hostview!.superview!.bounds),
+                    y: CGRectGetMidY(self.sideDrawer!.hostview!.superview!.bounds));
             },
             completion: {
                 (bool finished) -> Void in

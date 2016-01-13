@@ -5,8 +5,8 @@
 //  Copyright (c) 2014 Telerik. All rights reserved.
 //
 
-#import "ExampleViewController.h"
+#import <TelerikUI/TKExamplesKit.h>
 
-@interface iOS7StyleCalendar : ExampleViewController
+@interface iOS7StyleCalendar : TKExamplesExampleViewController
 
 @end

@@ -11,7 +11,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class CustomAnimationLineChart: ExampleViewController
+	[Register("CustomAnimationLineChart")]
+	public class CustomAnimationLineChart: XamarinExampleViewController
 	{
 		TKChart chart;
 		ChartDelegate chartDelegate = new ChartDelegate();
@@ -23,7 +24,7 @@ namespace Examples
 
 			base.ViewDidLoad ();
 
-			chart = new TKChart (this.ExampleBounds);
+			chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			chart.AllowAnimations = true;
 			chart.Delegate = chartDelegate;
@@ -45,13 +46,13 @@ namespace Examples
 			chart.AddSeries (lineSeries);
 		}
 			
-		public void applySequential(object sender, EventArgs e)
+		public void applySequential()
 		{
 			chartDelegate.Grow = false;
 			chart.Animate ();
 		}
 
-		public void applyGrow(object sender, EventArgs e)
+		public void applyGrow()
 		{
 			chartDelegate.Grow = true;
 			chart.Animate ();

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DataSourceDescriptorsAPI: ExampleViewController {
+class DataSourceDescriptorsAPI: TKExamplesExampleViewController {
 
     let dataSource = TKDataSource()
     

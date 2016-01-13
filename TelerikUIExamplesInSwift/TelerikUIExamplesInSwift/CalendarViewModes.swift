@@ -7,19 +7,19 @@
 
 import Foundation
 
-class CalendarViewModes: ExampleViewController, TKCalendarDelegate {
+class CalendarViewModes: TKExamplesExampleViewController, TKCalendarDelegate {
     
     let calendarView = TKCalendar()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("Week view") { self.selectWeekView() }
-        self.addOption("Month") { self.selectMonth() }
-        self.addOption("Month Names") { self.selectMonthNames() }
-        self.addOption("Year") { self.selectYear() }
-        self.addOption("Year Numbers") { self.selectYearNumbers() }
-        self.addOption("Flow") { self.selectFlow() }
+        self.addOption("Week view", action: selectWeekView)
+        self.addOption("Month", action: selectMonth)
+        self.addOption("Month Names", action: selectMonthNames)
+        self.addOption("Year", action: selectYear)
+        self.addOption("Year Numbers", action: selectYearNumbers)
+        self.addOption("Flow", action: selectFlow)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -54,10 +54,10 @@ class CalendarViewModes: ExampleViewController, TKCalendarDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.calendarView.viewMode == TKCalendarViewMode.Week {
-            self.calendarView.frame = CGRectMake(0, self.exampleBounds.origin.y, CGRectGetWidth(self.exampleBounds), 100)
+            self.calendarView.frame = CGRectMake(0, self.view.bounds.origin.y, CGRectGetWidth(self.view.bounds), 100)
         }
         else {
-            self.calendarView.frame = self.exampleBounds
+            self.calendarView.frame = self.view.bounds
         }
     }
     
@@ -99,6 +99,6 @@ class CalendarViewModes: ExampleViewController, TKCalendarDelegate {
             self.view.setNeedsLayout()
         }
         
-        self.selectedOption = viewMode.rawValue;
+        self.selectedOption = UInt(viewMode.rawValue);
     }
 }

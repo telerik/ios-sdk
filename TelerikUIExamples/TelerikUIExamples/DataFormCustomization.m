@@ -45,8 +45,9 @@
     _dataSource[@"time"].editorClass = [TKDataFormTimePickerEditor class];
     _dataSource[@"phone"].editorClass = [CallEditor class];
     _dataSource[@"origin"].editorClass = [TKDataFormSegmentedEditor class];
+    _dataSource[@"name"].editorClass = [TKDataFormTextFieldEditor class];
     
-    _dataSource[@"guests"].valuesProvider = [TKRange rangeWithMinimum:@1 andMaximum:@10];
+    _dataSource[@"guests"].range = [TKRange rangeWithMinimum:@1 andMaximum:@10];
     _dataSource[@"section"].valuesProvider = @[ @"Section 1", @"Section 2", @"Section 3", @"Section 4" ];
     _dataSource[@"table"].valuesProvider = @[ @1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12, @13, @14, @15 ];
     _dataSource[@"origin"].valuesProvider = @[ @"phone", @"in-person", @"online", @"other" ];
@@ -67,7 +68,7 @@
     self.dataForm.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 66);
     self.dataForm.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wood-pattern"]];
     self.dataForm.tintColor = [UIColor colorWithRed:0.780 green:0.2 blue:0.223 alpha:1.0];
-    
+    self.dataForm.validationMode = TKDataFormValidationModeOnLostFocus;
     _btn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.dataForm.frame.size.height, self.view.bounds.size.width, 66)];
     [_btn setTitle:@"Cancel reservation" forState:UIControlStateNormal];
     [_btn setTitleColor:[UIColor colorWithRed:0.780 green:0.2 blue:0.223 alpha:1.0] forState:UIControlStateNormal];

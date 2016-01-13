@@ -10,7 +10,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class CalendarWithEvents : ExampleViewController
+	[Register("CalendarWithEvents")]
+	public class CalendarWithEvents : XamarinExampleViewController
 	{
 		CalendarDelegate calendarDelegate;
 		CalendarDataSource calendarDataSource;

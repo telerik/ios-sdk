@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlertCustomize: ExampleViewController, TKAlertDelegate {
+class AlertCustomize: TKExamplesExampleViewController, TKAlertDelegate {
 
     override func viewDidLoad() {
 

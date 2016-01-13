@@ -7,7 +7,8 @@ using System.Collections.Generic;
 
 namespace Examples
 {
-	public class DataFormReadOnly : ExampleViewController
+	[Register("DataFormReadOnly")]	
+	public class DataFormReadOnly : XamarinExampleViewController
 	{
 		TKDataFormEntityDataSourceHelper dataSource;
 		ReadOnlyDataFormDelegate dataFormDelegate;
@@ -25,7 +26,6 @@ namespace Examples
 			dataSource["FirstName"].HintText = "First Name (Must match card)";
 			dataSource["LastName"].HintText = "Last Name (Must match card)";
 			dataSource["CardNumber"].HintText = "Card number";
-			dataSource ["CardNumber"].EditorClass = new Class (typeof(TKDataFormNumberEditor));
 
 			dataSource.AddGroup (" ", new string[] { "Edit" });
 			dataSource.AddGroup (" ", new string[] { "FirstName", "LastName", "CardNumber", "ZipCode", "ExpirationDate" });

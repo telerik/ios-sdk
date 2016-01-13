@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListViewPullToRefresh: ExampleViewController, TKListViewDataSource, TKListViewDelegate {
+class ListViewPullToRefresh: TKExamplesExampleViewController, TKListViewDataSource, TKListViewDelegate {
 
     let dataSource = TKDataSource()
     var data = [String]()

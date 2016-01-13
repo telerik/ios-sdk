@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlertNotifications: ExampleViewController, TKListViewDelegate  {
+class AlertNotifications: TKExamplesExampleViewController, TKListViewDelegate  {
 
     let listView = TKListView()
     let dataSource = TKDataSource(array: ["Error", "Warning", "Positive", "Info"])

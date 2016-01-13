@@ -7,18 +7,18 @@
 
 import Foundation
 
-class LocalizedCalendar: ExampleViewController {
+class LocalizedCalendar: TKExamplesExampleViewController {
     
     let calendarView = TKCalendar()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("Russian") { self.selectRussian() }
-        self.addOption("German") { self.selectGerman() }
-        self.addOption("Hebrew") { self.selectHebrew() }
-        self.addOption("Chinese") { self.selectChinese() }
-        self.addOption("Islamic") { self.selectIslamic() }
+        self.addOption("Russian", action: selectRussian)
+        self.addOption("German", action: selectGerman)
+        self.addOption("Hebrew", action: selectHebrew)
+        self.addOption("Chinese", action: selectChinese)
+        self.addOption("Islamic", action: selectIslamic)
         
         self.selectedOption = 2
     }
@@ -38,7 +38,7 @@ class LocalizedCalendar: ExampleViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.calendarView.frame = self.exampleBounds
+        self.calendarView.frame = self.view.bounds
     }
     
     func selectRussian() {

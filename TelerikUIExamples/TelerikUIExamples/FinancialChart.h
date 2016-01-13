@@ -5,8 +5,8 @@
 //  Copyright (c) 2014 Telerik. All rights reserved.
 //
 
-#import "ExampleViewController.h"
+#import <TelerikUI/TKExamplesKit.h>
 
-@interface FinancialChart : ExampleViewController
+@interface FinancialChart : TKExamplesExampleViewController
 
 @end

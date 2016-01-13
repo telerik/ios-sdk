@@ -39,7 +39,7 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>UILaunchStoryboardName</key>
+	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

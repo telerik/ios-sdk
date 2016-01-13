@@ -5,9 +5,9 @@
 //  Copyright (c) 2013 Telerik. All rights reserved.
 //
 
-#import "ExampleViewController.h"
+#import <TelerikUI/TKExamplesKit.h>
 #import <TelerikUI/TelerikUI.h>
 
-@interface CustomAnimationAreaChart : ExampleViewController<TKChartDelegate>
+@interface CustomAnimationAreaChart : TKExamplesExampleViewController<TKChartDelegate>
 
 @end

@@ -13,6 +13,7 @@ class DataFormCollapsibleGroups: UIViewController, TKDataFormDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         dataForm.frame = self.view.bounds
         dataForm.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         dataForm.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.960, alpha: 1.0)
@@ -31,6 +32,7 @@ class DataFormCollapsibleGroups: UIViewController, TKDataFormDelegate {
         dataSource["idNumber"].editorClass = TKDataFormNumberEditor.self
         dataSource["employeeId"].editorClass = TKDataFormNumberEditor.self
         dataSource["phoneNumber"].editorClass = TKDataFormPhoneEditor.self
+       
         dataForm.dataSource = dataSource
     }
     

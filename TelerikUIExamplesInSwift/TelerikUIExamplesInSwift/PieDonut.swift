@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PieDonut:ExampleViewController {
+class PieDonut:TKExamplesExampleViewController {
     
     let pieChart = TKChart()
     let donutChart = TKChart()
@@ -15,7 +15,7 @@ class PieDonut:ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let bounds = self.exampleBoundsWithInset
+        let bounds = self.view.bounds
         
         pieChart.frame = CGRectInset(CGRectMake(bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height / 2), 10, 10)
         pieChart.autoresizingMask = UIViewAutoresizing(rawValue:~UIViewAutoresizing.None.rawValue)
@@ -43,9 +43,7 @@ class PieDonut:ExampleViewController {
         series.selectionAngle = -M_PI_2
         series.expandRadius = 1.2
         pieChart.addSeries(series)
-        
-        series.style.pointLabelStyle.textHidden = false
-        
+                
         let donutSeries = TKChartDonutSeries(items:array)
         donutSeries.selectionMode = TKChartSeriesSelectionMode.DataPoint
         donutSeries.innerRadius = 0.6

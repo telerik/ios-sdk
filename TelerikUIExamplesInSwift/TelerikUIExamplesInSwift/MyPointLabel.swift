@@ -25,7 +25,7 @@ class MyPointLabel: TKChartPointLabel {
         return labelSize
     }
 
-    override func drawInContext(ctx: CGContext, inRect bounds: CGRect, forVisualPoint visualPoint: TKChartVisualPoint?) {
+    override func drawInContext(ctx: CGContext, inRect bounds: CGRect, forVisualPoint visualPoint: TKChartVisualPoint?, color paletteTextColor: UIColor?) {
         UIGraphicsPushContext(ctx)
         let fill = self.style.fill!
         let stroke = TKStroke(color: UIColor.blackColor())

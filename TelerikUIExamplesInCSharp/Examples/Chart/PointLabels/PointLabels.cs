@@ -8,7 +8,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class PointLabels : ExampleViewController
+	[Register("PointLabels")]
+	public class PointLabels : XamarinExampleViewController
 	{
 		TKChart chart;
 		ChartDelegate chartDelegate = new ChartDelegate (); 
@@ -28,7 +29,7 @@ namespace Examples
 
 			base.ViewDidLoad ();
 
-			chart = new TKChart (this.ExampleBounds);
+			chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
 			chart.AllowAnimations = true;
 			chart.Delegate = chartDelegate;
@@ -74,10 +75,10 @@ namespace Examples
 				ohlcData.Add (point);
 			}
 
-			this.LoadBarSeries (this, EventArgs.Empty);
+			this.LoadBarSeries ();
 		}
 
-		void LoadBarSeries(object sender, EventArgs e)
+		void LoadBarSeries()
 		{
 			chart.RemoveAllData ();
 			TKChartBarSeries barSeries = new TKChartBarSeries (barData.ToArray ());
@@ -87,7 +88,7 @@ namespace Examples
 			chart.ReloadData ();
 		}
 
-		void LoadColumnSeries(object sender, EventArgs e)
+		void LoadColumnSeries()
 		{
 			chart.RemoveAllData ();
 			TKChartColumnSeries columnSeries = new TKChartColumnSeries (columnData.ToArray ());
@@ -97,7 +98,7 @@ namespace Examples
 			chart.ReloadData ();
 		}
 
-		void LoadLineSeries(object sender, EventArgs e)
+		void LoadLineSeries()
 		{
 			chart.RemoveAllData ();
 			TKChartLineSeries lineSeries = new TKChartLineSeries (lineData.ToArray ());
@@ -108,7 +109,7 @@ namespace Examples
 			chart.ReloadData ();
 		}
 
-		void LoadPieSeries(object sender, EventArgs e)
+		void LoadPieSeries()
 		{
 			chart.RemoveAllData ();
 			TKChartPieSeries pieSeries = new TKChartPieSeries (pieDonutData.ToArray ());
@@ -118,7 +119,7 @@ namespace Examples
 			chart.ReloadData ();
 		}
 
-		void LoadFinancialSeries(object sender, EventArgs e)
+		void LoadFinancialSeries()
 		{
 			chart.RemoveAllData ();
 			TKChartOhlcSeries ohlcSeries = new TKChartOhlcSeries (ohlcData.ToArray ());

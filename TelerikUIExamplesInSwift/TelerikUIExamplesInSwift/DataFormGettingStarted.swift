@@ -14,6 +14,7 @@ class DataFormGettingStarted: TKDataFormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.dataForm.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.960, alpha: 1.0)
         dataSource.sourceObject = personalInfo
 

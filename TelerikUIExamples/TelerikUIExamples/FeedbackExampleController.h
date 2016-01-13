@@ -5,9 +5,9 @@
 //  Copyright (c) 2014 Telerik. All rights reserved.
 //
 
-#import "ExampleViewController.h"
+#import <TelerikUI/TKExamplesKit.h>
 
-@interface FeedbackExampleController : ExampleViewController
+@interface FeedbackExampleController : TKExamplesExampleViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 

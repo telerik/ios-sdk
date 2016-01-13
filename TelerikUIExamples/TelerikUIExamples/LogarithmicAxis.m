@@ -13,7 +13,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    TKChart *chart = [[TKChart alloc] initWithFrame:self.exampleBoundsWithInset];
+    TKChart *chart = [[TKChart alloc] initWithFrame:self.view.bounds];
     chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     chart.legend.hidden = NO;
     [self.view addSubview:chart];

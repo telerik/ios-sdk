@@ -2,13 +2,12 @@
 //  GaugeGettingStarted.swift
 //  TelerikUIExamplesInSwift
 //
-//  Created by Miroslava Ivanova on 9/24/15.
 //  Copyright © 2015 Telerik. All rights reserved.
 //
 
 import UIKit
 
-class GaugeGettingStarted: ExampleViewController, TKGaugeDelegate {
+class GaugeGettingStarted: TKExamplesExampleViewController, TKGaugeDelegate {
     
     let radialGauge = TKRadialGauge()
     let linearGauge = TKLinearGauge(frame: CGRectMake(0, 0, 150, 0))
@@ -99,7 +98,7 @@ class GaugeGettingStarted: ExampleViewController, TKGaugeDelegate {
         
         super.viewDidLayoutSubviews()
         
-        let bounds = self.exampleBoundsWithInset
+        let bounds = self.view.bounds
         let size = self.view.bounds.size
         let offset = CGFloat(20)
         let linearWidth = CGRectGetWidth(self.linearGauge.frame)
@@ -112,7 +111,7 @@ class GaugeGettingStarted: ExampleViewController, TKGaugeDelegate {
                 bounds.origin.y + offset, linearWidth, bounds.size.height - offset*2)
         }
         else {
-            let height = (self.exampleBounds.size.height - offset*3.0)/2.0
+            let height = (self.view.bounds.size.height - offset*3.0)/2.0
             radialGauge.frame = CGRectMake(offset, bounds.origin.y + offset, size.width - offset*2.0, height)
             linearGauge.frame = CGRectMake((bounds.size.width - linearWidth - offset*2.0)/2.0 + offset,
                 size.height - height - offset, linearWidth, height)

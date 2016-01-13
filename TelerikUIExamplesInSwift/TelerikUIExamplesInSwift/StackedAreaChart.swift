@@ -7,16 +7,16 @@
 
 import Foundation
 
-class StackedAreaChart: ExampleViewController {
+class StackedAreaChart: TKExamplesExampleViewController {
     
     let chart = TKChart()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("Stacked") { self.reloadData() }
-        self.addOption("Stack 100") { self.reloadData() }
-        self.addOption("No Stacking") { self.reloadData() }
+        self.addOption("Stacked", action: reloadData)
+        self.addOption("Stack 100", action: reloadData)
+        self.addOption("No Stacking", action: reloadData)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -26,7 +26,7 @@ class StackedAreaChart: ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         

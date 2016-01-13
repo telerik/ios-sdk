@@ -22,12 +22,12 @@
     return self;
 }
 
-- (void)layoutInRect:(CGRect)bounds
+- (void)layoutInRect:(CGRect)bounds forChart:(TKChart * _Nullable)chart
 {
-    _center = [self locationInRect:bounds];
+    _center = [self locationInRect:bounds forChart:chart];
     _center.x -= _shape.size.width/2;
     _center.y -= _shape.size.height/2;
-}
+  }
 
 - (void)drawInContext:(CGContextRef)context
 {
@@ -40,6 +40,5 @@
     }
     [_shape drawInContext:context withCenter:_center drawings:drawables];
 }
-
 
 @end

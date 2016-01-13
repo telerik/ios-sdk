@@ -17,8 +17,8 @@
 @implementation AutoCompleteCustomization
 {
     TKDataSource *_dataSource;
-    TKAutoCompleteTextView*_autocomplete;
     TKView *_view;
+    TKListView *_listView;
 }
 
 - (void)viewDidLoad
@@ -35,10 +35,20 @@
                                                                         ]];
     _view.fill = fill;
     [self.view addSubview:_view];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidHide:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
 
-    _autocomplete = [[TKAutoCompleteTextView alloc] initWithFrame:CGRectMake(10,self.exampleBounds.origin.y + 5, self.exampleBounds.size.width - 20, 30)];
-    _autocomplete.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    [self.view addSubview:_autocomplete];
+   self.autocomplete = [[TKAutoCompleteTextView alloc] initWithFrame:CGRectMake(10, self.view.bounds.origin.y + 5, self.view.bounds.size.width - 20, 44)];
+    self.autocomplete.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.autocomplete.suggestionViewOutOfFrame = YES;
     
     _dataSource = [[TKDataSource alloc] initWithDataFromJSONResource:@"namesPhotos" ofType:@"json" rootItemKeyPath:@"data"];
     [_dataSource.settings.autocomplete createToken:^TKAutoCompleteToken * _Nullable(NSUInteger dataIndex, id  _Nonnull item) {
@@ -47,14 +57,14 @@
         return token;
     }];
     
-    TKListView *listView = (TKListView*)_autocomplete.suggestionView;
+    _listView = (TKListView*)self.autocomplete.suggestionView;
     
-    listView.frame = CGRectMake(10,self.exampleBounds.origin.y + 40, self.view.bounds.size.width - 20, self.exampleBounds.size.height - (15 + _autocomplete.bounds.size.height));
-    listView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight ;
-    [listView removeFromSuperview];
-    [self.view addSubview:listView];
+    _listView.frame = CGRectMake(10, self.view.bounds.origin.y + 50, self.view.bounds.size.width - 20, self.view.bounds.size.height - (15 + self.autocomplete.bounds.size.height));
+    _listView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight ;
+    [_listView removeFromSuperview];
+    [self.view addSubview:_listView];
     
-    [listView registerClass:[ImageWithTextListViewCell class] forCellWithReuseIdentifier:@"cell"];
+    [_listView registerClass:[ImageWithTextListViewCell class] forCellWithReuseIdentifier:@"cell"];
 
     TKListViewGridLayout *layout = [TKListViewGridLayout new];
     layout.itemAlignment = TKListViewItemAlignmentCenter;
@@ -62,24 +72,26 @@
     layout.itemSize = CGSizeMake(150, 200);
     layout.lineSpacing = 60;
     layout.itemSpacing = 10;
-    listView.layout = layout;
-    listView.backgroundColor = [UIColor clearColor];
+    _listView.layout = layout;
+    _listView.backgroundColor = [UIColor clearColor];
     
-    _autocomplete.suggestMode = TKAutoCompleteSuggestModeSuggestAppend;
+    self.autocomplete.suggestMode = TKAutoCompleteSuggestModeSuggestAppend;
     
     UIImage *btnImage = [UIImage imageNamed:@"clear.png"];
-    [_autocomplete.closeButton setImage:btnImage forState:UIControlStateNormal];
+    [self.autocomplete.closeButton setImage:btnImage forState:UIControlStateNormal];
     
-    _autocomplete.maximumWrapHeight = 50;
-    _autocomplete.imageView.image = [UIImage imageNamed:@"search.png"];
+    self.autocomplete.maximumWrapHeight = 50;
+    self.autocomplete.imageView.image = [UIImage imageNamed:@"search.png"];
     
-    _autocomplete.textField.placeholder = @"Enter User";
-    _autocomplete.noResultsLabel.text = @"No Users Found";
+    self.autocomplete.textField.placeholder = @"Enter User";
+    self.autocomplete.noResultsLabel.text = @"No Users Found";
     
-    _autocomplete.dataSource = _dataSource;
-    _autocomplete.backgroundColor = [UIColor whiteColor];
-    _autocomplete.delegate = self;
-    _autocomplete.showAllItemsInitially = YES;
+    self.autocomplete.dataSource = _dataSource;
+    self.autocomplete.showAllItemsInitially = YES;
+    
+    self.autocomplete.backgroundColor = [UIColor whiteColor];
+    self.autocomplete.delegate = self;
+    
 }
 
 #pragma mark - TKAutoCompleteDelegate
@@ -95,7 +107,19 @@
 
 - (void)autoComplete:(TKAutoCompleteTextView *)autocomplete didAddToken:(TKAutoCompleteToken *)token
 {
-    [(TKListView *)_autocomplete.suggestionView scrollToItemAtIndexPath:((TKSuggestionListView *)_autocomplete.suggestionView).selectedIndexPath atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+    [(TKListView *)self.autocomplete.suggestionView scrollToItemAtIndexPath:((TKSuggestionListView *)self.autocomplete.suggestionView).selectedIndexPath atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+}
+
+- (void)keyboardDidShow:(NSNotification *) notification
+{
+    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    int height = MIN(keyboardSize.height,keyboardSize.width);
+    self.autocomplete.suggestionViewHeight = self.view.bounds.size.height - height - 50;
+}
+
+- (void)keyboardDidHide:(NSNotification *) notification
+{
+    self.autocomplete.suggestionViewHeight = self.view.bounds.size.height - 100;
 }
 
 @end

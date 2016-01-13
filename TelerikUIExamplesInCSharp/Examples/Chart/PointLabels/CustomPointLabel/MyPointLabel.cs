@@ -29,7 +29,7 @@ namespace Examples
 			return labelSize;
 		}
 
-		public override void DrawInContext (CGContext context, CGRect bounds, TKChartVisualPoint visualPoint)
+		public override void DrawInContext (CGContext context, CGRect bounds, TKChartVisualPoint visualPoint, UIColor color)
 		{
 			UIGraphics.PushContext (context);
 			TKFill fill = this.Style.Fill;

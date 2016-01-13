@@ -7,12 +7,12 @@
 
 import UIKit
 
-class DateTimeCategoryAxis: ExampleViewController {
+class DateTimeCategoryAxis: TKExamplesExampleViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let chart = TKChart(frame:self.exampleBoundsWithInset)
+        let chart = TKChart(frame:self.view.bounds)
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         

@@ -79,13 +79,13 @@ static NSString* const cellID = @"cell";
     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
     if ([self.calendarView.theme isKindOfClass:[TKCalendarIPadTheme class]] || UIDeviceOrientationIsLandscape(orientation)) {
         self.tableView.frame = CGRectZero;
-        self.calendarView.frame = self.exampleBounds;
+        self.calendarView.frame = self.view.bounds;
     }
     else {
-        CGFloat height =  CGRectGetHeight(self.exampleBounds);
+        CGFloat height =  CGRectGetHeight(self.view.bounds);
         CGFloat tableHeight = height/3.2;
-        self.calendarView.frame = CGRectMake(0, self.exampleBounds.origin.y, self.exampleBounds.size.width, height - tableHeight);
-        self.tableView.frame = CGRectMake(0, self.exampleBounds.origin.y + self.exampleBounds.size.height - tableHeight, self.exampleBounds.size.width, tableHeight);
+        self.calendarView.frame = CGRectMake(0, self.view.bounds.origin.y, self.view.bounds.size.width, height - tableHeight);
+        self.tableView.frame = CGRectMake(0, self.view.bounds.origin.y + self.view.bounds.size.height - tableHeight, self.view.bounds.size.width, tableHeight);
     }
 }
 

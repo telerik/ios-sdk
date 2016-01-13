@@ -1,131 +1,135 @@
 {"data":[
     {
          "country":"Albania",
-         "flag":"AL.png"
+         "flag":"albania-flag.png"
     },
          {
          "country":"Andorra",
-         "flag":"AN.png"
+         "flag":"andorra-flag.png"
          },
          {
          "country":"Australia",
-         "flag":"AU.png"
+         "flag":"australia-flag.png"
          },
          {
          "country":"Belgium",
-         "flag":"BE.png"
+         "flag":"belgium-flag.png"
          },
          {
          "country":"Bulgaria",
-         "flag":"BG.png"
+         "flag":"bulgaria-flag.png"
          },
          {
          "country":"Cyprus",
-         "flag":"CY.png"
+         "flag":"cyprus-flag.png"
          },
          {
          "country":"Czech Republic",
-         "flag":"CZ.png"
+         "flag":"czech republic-flag.png"
          },
          {
          "country":"Denmark",
-         "flag":"DK.png"
+         "flag":"denmark-flag.png"
          },
          {
          "country":"Finland",
-         "flag":"FI.png"
+         "flag":"finland-flag.png"
          },
          {
          "country":"France",
-         "flag":"FR.png"
+         "flag":"france-flag.png"
          },
          {
          "country":"Germany",
-         "flag":"DE.png"
+         "flag":"germany-flag.png"
          },
          {
          "country":"Greece",
-         "flag":"GR.png"
+         "flag":"greece-flag.png"
          },
          {
          "country":"Hungary",
-         "flag":"HU.png"
+         "flag":"hungary-flag.png"
          },
          {
          "country":"Ireland",
-         "flag":"IE.png"
+         "flag":"ireland-flag.png"
          },
          {
          "country":"Italy",
-         "flag":"IT.png"
+         "flag":"italy-flag.png"
          },
          {
          "country":"Japan",
-         "flag":"JP.png"
+         "flag":"japan-flag.png"
          },
          {
          "country":"Latvia",
-         "flag":"LV.png"
+         "flag":"latvia-flag.png"
          },
          {
          "country":"Luxembourg",
-         "flag":"LU.png"
+         "flag":"luxembourg-flag.png"
          },
          {
          "country":"Macedonia",
-         "flag":"MK.png"
+         "flag":"macedonia-flag.png"
+         },
+         {
+         "country":"Moldova",
+         "flag":"moldova-flag.png"
          },
          {
          "country":"Monaco",
-         "flag":"MC.png"
+         "flag":"monaco-flag.png"
          },
          {
          "country":"Netherlands",
-         "flag":"NL.png"
+         "flag":"netherlands-flag.png"
          },
          {
          "country":"Norway",
-         "flag":"NO.png"
+         "flag":"norway-flag.png"
          },
          {
          "country":"Poland",
-         "flag":"PL.png"
+         "flag":"poland-flag.png"
          },
          {
          "country":"Romania",
-         "flag":"RO.png"
+         "flag":"romania-flag.png"
          },
          {
          "country":"Russia",
-         "flag":"RU.png"
+         "flag":"russia-flag.png"
          },
          {
          "country":"Slovakia",
-         "flag":"SK.png"
+         "flag":"slovakia-flag.png"
          },
          {
          "country":"Slovenia",
-         "flag":"SI.png"
+         "flag":"slovenia-flag.png"
          },
          {
          "country":"Sweden",
-         "flag":"SE.png"
+         "flag":"sweden-flag.png"
          },
          {
          "country":"Turkey",
-         "flag":"TR.png"
+         "flag":"turkey-flag.png"
          },
          {
          "country":"Ukraine",
-         "flag":"UA.png"
+         "flag":"ukraine-flag.png"
          },
          {
          "country":"US",
-         "flag":"US.png"
+         "flag":"us-flag.png"
          },
          {
          "country":"Vatican City",
-         "flag":"VA.png"
+         "flag":"vatican-flag.png"
          }
     ]
 

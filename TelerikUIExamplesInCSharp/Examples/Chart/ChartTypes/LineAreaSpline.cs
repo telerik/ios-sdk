@@ -8,27 +8,28 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class LineAreaSpline: ExampleViewController
+	[Register("LineAreaSpline")]
+	public class LineAreaSpline: XamarinExampleViewController
 	{
 		TKChart chart;
 
 		public override void ViewDidLoad ()
 		{
-			this.AddOption ("Line", reloadChart);
-			this.AddOption ("Spline", reloadChart);
-			this.AddOption ("Area", reloadChart);
-			this.AddOption ("Area Spline", reloadChart);
+			this.AddOption ("Line", ReloadChart);
+			this.AddOption ("Spline", ReloadChart);
+			this.AddOption ("Area", ReloadChart);
+			this.AddOption ("Area Spline", ReloadChart);
 
 			base.ViewDidLoad ();
 
-			chart = new TKChart (this.ExampleBounds);
+			chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.AddSubview (chart);
 
-			this.reloadChart (this, EventArgs.Empty);
+			this.ReloadChart ();
 		}
 
-		public void reloadChart(object sender, EventArgs e)
+		public void ReloadChart()
 		{
 			chart.RemoveAllData ();
 

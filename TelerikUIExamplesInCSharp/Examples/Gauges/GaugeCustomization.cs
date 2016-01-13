@@ -7,7 +7,8 @@ using CoreAnimation;
 
 namespace Examples
 {
-	public class GaugeCustomization: ExampleViewController
+	[Register("GaugeCustomization")]
+	public class GaugeCustomization: XamarinExampleViewController
 	{
 		TKLinearGauge linearGauge = new TKLinearGauge();
 		TKRadialGauge radialGauge = new TKRadialGauge();
@@ -116,7 +117,7 @@ namespace Examples
 		{
 			base.ViewDidLayoutSubviews ();
 
-			CGRect bounds = this.ExampleBounds;
+			CGRect bounds = this.View.Bounds;
 			CGSize size = this.View.Bounds.Size;
 			nfloat offset = 20;
 			nfloat linearHeight = 130;

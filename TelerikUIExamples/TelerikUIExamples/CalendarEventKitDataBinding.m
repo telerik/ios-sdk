@@ -33,7 +33,7 @@
     
     self.dataSource = [TKCalendarEventKitDataSource new];
     
-    self.calendarView = [[TKCalendar alloc] initWithFrame:self.exampleBounds];
+    self.calendarView = [[TKCalendar alloc] initWithFrame:self.view.bounds];
     self.calendarView.dataSource = self.dataSource;
     [self.view addSubview:self.calendarView];
 }
@@ -41,7 +41,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    self.calendarView.frame = self.exampleBounds;
+    self.calendarView.frame = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning

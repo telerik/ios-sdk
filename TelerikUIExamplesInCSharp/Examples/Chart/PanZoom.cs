@@ -8,14 +8,15 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class PanZoom: ExampleViewController
+	[Register("PanZoom")]
+	public class PanZoom: XamarinExampleViewController
 	{
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
 			TKChart chart = new TKChart ();
-			chart.Frame = this.ExampleBounds;
+			chart.Frame = this.View.Bounds;
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			chart.AllowPanDeceleration = true;
 			chart.ZoomMode = TKChartZoomMode.Symmetric;

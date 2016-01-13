@@ -5,7 +5,7 @@
 //  Copyright © 2015 Telerik. All rights reserved.
 //
 
-class AutoCompleteCustomization: ExampleViewController, TKAutoCompleteDelegate {
+class AutoCompleteCustomization: TKAutoCompleteController, TKAutoCompleteDelegate {
 
     
     let datasource = TKDataSource(dataFromJSONResource: "namesPhotos", ofType: "json", rootItemKeyPath: "data")
@@ -13,10 +13,14 @@ class AutoCompleteCustomization: ExampleViewController, TKAutoCompleteDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let autocomplete = TKAutoCompleteTextView(frame: CGRect(x: 10, y: 70, width: self.exampleBounds.size.width - 20, height: 30));
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil);
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardDidHideNotification, object: nil);
+        
+        autocomplete = TKAutoCompleteTextView(frame: CGRect(x: 10, y: self.view.bounds.origin.y + 20, width: self.view.bounds.size.width - 20, height: 44));
         
         self.automaticallyAdjustsScrollViewInsets = false;
-        let view = TKView(frame: self.exampleBounds)
+        let view = TKView(frame: self.view.bounds)
         view.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         view.fill = TKLinearGradientFill(colors: [UIColor(red: 0.35, green: 0.68, blue: 0.89, alpha: 0.89),
             UIColor(red: 0.35, green: 0.68, blue: 1.00, alpha: 1.00),
@@ -29,6 +33,7 @@ class AutoCompleteCustomization: ExampleViewController, TKAutoCompleteDelegate {
             return token
         }
         
+          autocomplete.suggestionViewOutOfFrame = true
         let listView = autocomplete.suggestionView as! TKListView
         let layout = TKListViewGridLayout()
         layout.itemAlignment = TKListViewItemAlignment.Center
@@ -38,7 +43,7 @@ class AutoCompleteCustomization: ExampleViewController, TKAutoCompleteDelegate {
         layout.itemSpacing = 10
         listView.backgroundColor = UIColor.clearColor()
         listView.layout = layout
-        listView.frame = CGRect(x: 10, y: 110, width: self.exampleBounds.size.width - 20, height:self.exampleBounds.size.height - (15 + autocomplete.bounds.size.height))
+        listView.frame = CGRect(x: 10, y: self.view.bounds.origin.y + 70, width: self.view.bounds.size.width - 20, height:self.view.bounds.size.height - (20 + autocomplete.bounds.size.height + self.view.bounds.origin.y))
         listView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         listView.removeFromSuperview()
         self.view.addSubview(listView)
@@ -52,13 +57,10 @@ class AutoCompleteCustomization: ExampleViewController, TKAutoCompleteDelegate {
         let btnImage = UIImage(named: "clear")
         autocomplete.closeButton.setImage(btnImage, forState: UIControlState.Normal)
         autocomplete.imageView.image = UIImage(named: "search")
-        autocomplete.suggestionViewHeight = self.exampleBounds.size.height - self.exampleBounds.origin.y + 45
         autocomplete.showAllItemsInitially = true
         autocomplete.delegate = self
         autocomplete.backgroundColor = UIColor.whiteColor()
         autocomplete.suggestMode = TKAutoCompleteSuggestMode.SuggestAppend
-        
-        self.view.addSubview(autocomplete)
     }
     
     func autoComplete(autocomplete: TKAutoCompleteTextView, viewForToken token: TKAutoCompleteToken) -> TKAutoCompleteTokenView
@@ -72,5 +74,18 @@ class AutoCompleteCustomization: ExampleViewController, TKAutoCompleteDelegate {
     
     func autoComplete(autocomplete: TKAutoCompleteTextView, didAddToken token: TKAutoCompleteToken) {
         (autocomplete.suggestionView as! TKListView).scrollToItemAtIndexPath((autocomplete.suggestionView as! TKSuggestionListView).selectedIndexPath!, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
+    }
+    
+    func keyboardDidShow(notification: NSNotification)
+    {
+        let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()
+        autocomplete.suggestionViewHeight = self.view.bounds.size.height -  keyboardSize!.height - 75
+        
+    }
+    
+    func keyboardDidHide(notification: NSNotification)
+    {
+        autocomplete.suggestionViewHeight = self.view.bounds.size.height - 100;
+        
     }
 }

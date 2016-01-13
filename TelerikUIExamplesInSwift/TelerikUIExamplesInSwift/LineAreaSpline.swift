@@ -7,17 +7,17 @@
 
 import Foundation
 
-class LineAreaSpline: ExampleViewController {
+class LineAreaSpline: TKExamplesExampleViewController {
     
     let chart = TKChart()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("Line") { self.reloadChart() }
-        self.addOption("Spline") { self.reloadChart() }
-        self.addOption("Area") { self.reloadChart() }
-        self.addOption("Area Spline") { self.reloadChart() }
+        self.addOption("Line", action: reloadChart)
+        self.addOption("Spline", action: reloadChart)
+        self.addOption("Area", action: reloadChart)
+        self.addOption("Area Spline", action: reloadChart)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -27,7 +27,7 @@ class LineAreaSpline: ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         

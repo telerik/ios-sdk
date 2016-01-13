@@ -9,7 +9,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class DataSourceUIBindings: ExampleViewController
+	[Register("DataSourceUIBindings")]
+	public class DataSourceUIBindings: XamarinExampleViewController
 	{
 		TKDataSource dataSource = new TKDataSource();
 
@@ -28,7 +29,7 @@ namespace Examples
 			NSMutableArray array = new NSMutableArray ();
 			Random r = new Random ();
 			for (int i = 0; i < imageNames.Length; i++) {
-				UIImage image = new UIImage (imageNames [i]);
+				UIImage image = UIImage.FromBundle (imageNames [i]);
 				this.AddItem (array, names [i], r.Next (100), r.Next (100) > 50 ? "two" : "one", r.Next (10), image);
 			}
 
@@ -36,10 +37,10 @@ namespace Examples
 			this.dataSource.ValueKey = "Value";
 			this.dataSource.ItemSource = array;
 
-			this.useChart (this, EventArgs.Empty);
+			this.useChart ();
 		}
 
-		void useListView(object sender, EventArgs args)
+		void useListView()
 		{
 			if (this.View.Subviews.Length > 0) {
 				this.View.Subviews [0].RemoveFromSuperview ();
@@ -51,7 +52,7 @@ namespace Examples
 			this.View.AddSubview (listView);
 		}
 
-		void useChart(object sender, EventArgs args)
+		void useChart()
 		{
 			if (this.View.Subviews.Length > 0) {
 				this.View.Subviews [0].RemoveFromSuperview ();
@@ -70,7 +71,7 @@ namespace Examples
 			this.View.AddSubview (chart);
 		}
 
-		void useCalendar(object sender, EventArgs args)
+		void useCalendar()
 		{
 			if (this.View.Subviews.Length > 0) {
 				this.View.Subviews [0].RemoveFromSuperview ();
@@ -90,7 +91,7 @@ namespace Examples
 			this.dataSource.SetDataSourceFor (calendar);
 		}
 
-		void useTableView(object sender, EventArgs args)
+		void useTableView()
 		{
 			if (this.View.Subviews.Length > 0) {
 				this.View.Subviews [0].RemoveFromSuperview ();
@@ -118,7 +119,7 @@ namespace Examples
 			this.View.AddSubview (table);
 		}
 
-		void useCollectionView(object sender, EventArgs args)
+		void useCollectionView()
 		{
 			if (this.View.Subviews.Length > 0) {
 				this.View.Subviews [0].RemoveFromSuperview ();

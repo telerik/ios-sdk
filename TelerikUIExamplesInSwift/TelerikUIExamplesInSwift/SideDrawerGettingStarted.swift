@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SideDrawerGettingStarted: ExampleViewController, TKSideDrawerDelegate {
+class SideDrawerGettingStarted: TKExamplesExampleViewController, TKSideDrawerDelegate {
 
     let sideDrawerView = TKSideDrawerView()
     let navItem = UINavigationItem()
@@ -15,9 +15,7 @@ class SideDrawerGettingStarted: ExampleViewController, TKSideDrawerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController!.interactivePopGestureRecognizer!.enabled = false
-
-        self.sideDrawerView.frame = self.exampleBounds
+        self.sideDrawerView.frame = self.view.bounds
         self.view.addSubview(sideDrawerView)
         
         let mainView = sideDrawerView.mainView
@@ -52,14 +50,16 @@ class SideDrawerGettingStarted: ExampleViewController, TKSideDrawerDelegate {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.sideDrawerView.frame = self.exampleBounds
+        self.sideDrawerView.frame = self.view.bounds
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if (self.navigationController!.respondsToSelector("interactivePopGestureRecognizer")) {
-            self.navigationController!.interactivePopGestureRecognizer!.enabled = true
+        if let navController = self.navigationController {
+            if navController.respondsToSelector("interactivePopGestureRecognizer") {
+                self.navigationController!.interactivePopGestureRecognizer!.enabled = true
+            }
         }
     }
     

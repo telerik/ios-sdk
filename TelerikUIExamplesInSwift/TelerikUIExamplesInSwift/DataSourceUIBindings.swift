@@ -7,18 +7,18 @@
 
 import UIKit
 
-class DataSourceUIBindings: ExampleViewController {
+class DataSourceUIBindings: TKExamplesExampleViewController {
 
     let dataSource = TKDataSource()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.addOption("TKChart") { self.useChart() }
-        self.addOption("TKCalendar") { self.useCalendar() }
-        self.addOption("UITableView") { self.useTableView() }
-        self.addOption("UICollectionView") { self.useCollectionView() }
-        self.addOption("TKListView") { self.useListView() }
+        self.addOption("TKChart", action: useChart)
+        self.addOption("TKCalendar", action: useCalendar)
+        self.addOption("UITableView", action: useTableView)
+        self.addOption("UICollectionView", action: useCollectionView)
+        self.addOption("TKListView", action: useListView)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -60,7 +60,7 @@ class DataSourceUIBindings: ExampleViewController {
         super.viewDidLayoutSubviews()
         if self.view.subviews.count > 1 {
             let view = self.view.subviews[1] as UIView!
-            view.frame = self.exampleBounds
+            view.frame = self.view.bounds
         }
     }
     
@@ -81,7 +81,7 @@ class DataSourceUIBindings: ExampleViewController {
             return series
         }
         
-        let chart = TKChart(frame:self.exampleBounds)
+        let chart = TKChart(frame:self.view.bounds)
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.dataSource = self.dataSource
         self.view.addSubview(chart)
@@ -96,7 +96,7 @@ class DataSourceUIBindings: ExampleViewController {
         self.dataSource.settings.calendar.endDateKey = "date"
         self.dataSource.settings.calendar.defaultEventColor = UIColor.redColor()
         
-        let calendar = TKCalendar(frame:self.exampleBounds)
+        let calendar = TKCalendar(frame:self.view.bounds)
         calendar.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         calendar.dataSource = self.dataSource
         self.view.addSubview(calendar)
@@ -126,7 +126,7 @@ class DataSourceUIBindings: ExampleViewController {
             cell.detailTextLabel!.text = "\(dsitem.value)"
         }
         
-        let tableView = UITableView(frame:self.exampleBounds)
+        let tableView = UITableView(frame:self.view.bounds)
         tableView.dataSource = self.dataSource
         self.view.addSubview(tableView)
     }
@@ -151,7 +151,7 @@ class DataSourceUIBindings: ExampleViewController {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSizeMake(140, 140)
         
-        let collectionView = UICollectionView(frame:self.exampleBounds, collectionViewLayout:layout)
+        let collectionView = UICollectionView(frame:self.view.bounds, collectionViewLayout:layout)
         collectionView.registerClass(DSCollectionViewCell.self, forCellWithReuseIdentifier:"cell")
         collectionView.dataSource = self.dataSource
         collectionView.backgroundColor = UIColor.whiteColor()
@@ -163,7 +163,7 @@ class DataSourceUIBindings: ExampleViewController {
             self.view.subviews[1].removeFromSuperview();
         }
         
-        let listView = TKListView(frame: self.exampleBounds)
+        let listView = TKListView(frame: self.view.bounds)
         listView.dataSource = self.dataSource
         self.view.addSubview(listView)
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MultipleSideDrawers:ExampleViewController, TKSideDrawerDelegate {
+class MultipleSideDrawers:TKExamplesExampleViewController, TKSideDrawerDelegate {
     
     let sideDrawerView = TKSideDrawerView()
     let navItem = UINavigationItem()
@@ -16,7 +16,7 @@ class MultipleSideDrawers:ExampleViewController, TKSideDrawerDelegate {
         super.viewDidLoad()
         
         
-        sideDrawerView.frame = self.exampleBounds
+        sideDrawerView.frame = self.view.bounds
         self.view.addSubview(sideDrawerView)
         
         let mainView = sideDrawerView.mainView
@@ -72,7 +72,7 @@ class MultipleSideDrawers:ExampleViewController, TKSideDrawerDelegate {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.sideDrawerView.frame = self.exampleBounds
+        self.sideDrawerView.frame = self.view.bounds
     }
     
     

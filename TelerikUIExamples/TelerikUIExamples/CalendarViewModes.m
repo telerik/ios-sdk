@@ -53,7 +53,7 @@
     [self.view addSubview:self.calendarView];
 
     self.calendarView.delegate = self;
-    self.calendarView.viewMode = TKCalendarViewModeYear;
+    [self selectYear];
     self.calendarView.calendar = calendar;
     self.calendarView.minDate = minDate;
     self.calendarView.maxDate = maxDate;
@@ -66,10 +66,10 @@
 {
     [super viewDidLayoutSubviews];
     if (self.calendarView.viewMode == TKCalendarViewModeWeek) {
-        self.calendarView.frame = CGRectMake(self.exampleBounds.origin.x, self.exampleBounds.origin.y, CGRectGetWidth(self.exampleBounds), 100);
+        self.calendarView.frame = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, CGRectGetWidth(self.view.bounds), 100);
     }
     else {
-        self.calendarView.frame = self.exampleBounds;
+        self.calendarView.frame = self.view.bounds;
     }
 }
 

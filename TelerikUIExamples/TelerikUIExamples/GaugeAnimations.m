@@ -59,7 +59,7 @@
 {
     self.radialGauge = [[TKRadialGauge alloc] initWithFrame:CGRectZero];
     self.radialGauge.labelSubtitle.text = @"km/h";
-    self.radialGauge.labelOffset = CGPointMake(0, 20);
+    self.radialGauge.labelTitleOffset = CGPointMake(0, 20);
     [self.view addSubview:self.radialGauge];
     
     TKGaugeRadialScale* scale = [[TKGaugeRadialScale alloc] initWithMinimum:@0 maximum:@180];
@@ -157,7 +157,7 @@
 {
     [super viewDidLayoutSubviews];
     
-    CGRect bounds = self.exampleBounds;
+    CGRect bounds = self.view.bounds;
     CGSize size = self.view.bounds.size;
     CGFloat offset = 20;
     

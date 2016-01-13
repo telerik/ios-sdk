@@ -30,12 +30,12 @@
     NSArray* legendStrings = @[@"MOVE", @"EXCERCISE", @"STAND"];
     
     for (int i=0; i < 3; i++) {
-        TKView *view = [[TKView alloc] initWithFrame:CGRectMake(20, 80 + i*25, 22, 22)];
+        TKView *view = [[TKView alloc] initWithFrame:CGRectMake(20, 30 + i*25, 22, 22)];
         view.fill = [[TKLinearGradientFill alloc] initWithColors:@[_colors[i], _colors[i+3]]];
         view.shape = [TKPredefinedShape shapeWithType:TKShapeTypeCircle andSize:CGSizeZero];
         [self.view addSubview:view];
         
-        UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(50, 80 + i * 25, CGRectGetMaxX(self.view.frame) - 60, 20)];
+        UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(50, 30 + i * 25, CGRectGetMaxX(self.view.frame) - 60, 20)];
         label.text = legendStrings[i];
         label.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:15];
         label.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
@@ -121,7 +121,7 @@
 {
     [super viewDidLayoutSubviews];
     
-    CGRect bounds = self.exampleBounds;
+    CGRect bounds = self.view.bounds;
     CGSize size = self.view.bounds.size;
     CGFloat offset = 20;
     CGFloat linearHeight = 130;
@@ -130,13 +130,13 @@
         CGFloat width = (CGRectGetWidth(bounds)- offset* 3.)/2.;
         CGFloat height = CGRectGetHeight(bounds) - offset*2.;
         _linearGauge.frame = CGRectMake(offset, size.height/2., width, linearHeight);
-        _radialGauge.frame = CGRectMake(2* offset + width, offset*2., width, height);
+        _radialGauge.frame = CGRectMake(2* offset + width, offset*1.5, width, height);
     } else {
         CGFloat width = CGRectGetWidth(bounds) - offset*2.;
         CGFloat height = (CGRectGetHeight(bounds)- offset* 3.)/2.;
 
-        _linearGauge.frame = CGRectMake(offset, size.height/3., width, linearHeight);
-        _radialGauge.frame = CGRectMake(offset, size.height/3. + linearHeight, width, height);
+        _linearGauge.frame = CGRectMake(offset, size.height/4., width, linearHeight);
+        _radialGauge.frame = CGRectMake(offset, size.height/4. + linearHeight, width, height);
     }
 }
 

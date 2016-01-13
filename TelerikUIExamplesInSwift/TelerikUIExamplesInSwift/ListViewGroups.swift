@@ -7,14 +7,13 @@
 
 import UIKit
 
-class ListViewGroups: ExampleViewController {
+class ListViewGroups: TKExamplesExampleViewController {
 
     let dataSource = TKDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         self.dataSource.loadDataFromJSONResource("ListViewSampleData", ofType: "json", rootItemKeyPath: "teams")
         self.dataSource.groupItemSourceKey = "items"
         self.dataSource.groupWithKey("key")

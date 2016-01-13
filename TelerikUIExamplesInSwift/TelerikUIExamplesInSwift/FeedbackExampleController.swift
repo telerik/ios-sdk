@@ -7,7 +7,8 @@
 
 import Foundation
 
-class FeedbackExampleController: ExampleViewController {
+@objc(FeedbackExampleController)
+class FeedbackExampleController: TKExamplesExampleViewController {
     
     @IBOutlet var descriptionLabel: UILabel?
     

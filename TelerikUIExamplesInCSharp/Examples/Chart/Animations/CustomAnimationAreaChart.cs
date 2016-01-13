@@ -11,7 +11,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class CustomAnimationAreaChart: ExampleViewController
+	[Register("CustomAnimationAreaChart")]
+	public class CustomAnimationAreaChart: XamarinExampleViewController
 	{
 		ChartDelegate chartDelegate = new ChartDelegate ();
 
@@ -19,7 +20,7 @@ namespace Examples
 		{
 			base.ViewDidLoad ();
 
-			TKChart chart = new TKChart (this.ExampleBounds);
+			TKChart chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			chart.Delegate = chartDelegate;
 			chart.AllowAnimations = true;
@@ -34,7 +35,7 @@ namespace Examples
 			TKChartAreaSeries areaSeries = new TKChartAreaSeries (list.ToArray ());
 			chart.AddSeries (areaSeries);
 		}
-
+			
 		class ChartDelegate: TKChartDelegate
 		{
 			public override CAAnimation AnimationForSeries (TKChart chart, TKChartSeries series, TKChartSeriesRenderState state, CGRect rect)

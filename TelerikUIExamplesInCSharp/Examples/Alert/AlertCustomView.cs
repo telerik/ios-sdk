@@ -7,7 +7,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class AlertCustomView : ExampleViewController
+	[Register("AlertCustomView")]
+	public class AlertCustomView : XamarinExampleViewController
 	{
 		public override void ViewDidLoad ()
 		{

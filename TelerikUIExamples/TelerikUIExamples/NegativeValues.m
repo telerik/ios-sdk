@@ -17,7 +17,7 @@
 {
     [super viewDidLoad];
     
-    _chart = [[TKChart alloc] initWithFrame:self.exampleBoundsWithInset];
+    _chart = [[TKChart alloc] initWithFrame:self.view.bounds];
     _chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_chart];
     
@@ -42,6 +42,7 @@
     yAxis.baseline = @0;
     yAxis.style.labelStyle.fitMode = TKChartAxisLabelFitModeRotate;
     yAxis.style.labelStyle.firstLabelTextAlignment = TKChartAxisLabelAlignmentLeft;
+    yAxis.style.lineStroke = [TKStroke strokeWithColor:[UIColor colorWithWhite:0.85 alpha:1.] width:2];
     _chart.yAxis = yAxis;
     
     TKChartSplineAreaSeries *series = [[TKChartSplineAreaSeries alloc] initWithItems:dataPoints];

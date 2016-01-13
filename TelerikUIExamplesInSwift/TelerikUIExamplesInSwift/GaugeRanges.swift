@@ -2,13 +2,12 @@
 //  GaugeRanges.swift
 //  TelerikUIExamplesInSwift
 //
-//  Created by Miroslava Ivanova on 9/24/15.
 //  Copyright © 2015 Telerik. All rights reserved.
 //
 
 import UIKit
 
-class GaugeRanges: ExampleViewController {
+class GaugeRanges: TKExamplesExampleViewController {
     
     let linearGauge = TKLinearGauge()
     let radialGauge = TKRadialGauge()
@@ -146,7 +145,7 @@ class GaugeRanges: ExampleViewController {
 
         super.viewDidLayoutSubviews()
         
-        let bounds = self.exampleBounds
+        let bounds = self.view.bounds
         let size = self.view.bounds.size
         let offset = CGFloat(20)
         let linearHeight = CGFloat(150)

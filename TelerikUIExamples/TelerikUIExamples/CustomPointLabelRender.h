@@ -5,9 +5,9 @@
 //  Copyright (c) 2014 Telerik. All rights reserved.
 //
 
-#import "ExampleViewController.h"
+#import <TelerikUI/TKExamplesKit.h>
 #import <TelerikUI/TelerikUI.h>
 
-@interface CustomPointLabelRender : ExampleViewController <TKChartDelegate>
+@interface CustomPointLabelRender : TKExamplesExampleViewController <TKChartDelegate>
 
 @end

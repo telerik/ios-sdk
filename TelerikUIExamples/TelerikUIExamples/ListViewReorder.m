@@ -39,7 +39,7 @@
     [_dataSource loadDataFromJSONResource:@"PhotosWithNames" ofType:@"json" rootItemKeyPath:@"names"];
     
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        _listView = [[TKListView alloc] initWithFrame:self.exampleBounds];
+        _listView = [[TKListView alloc] initWithFrame:self.view.bounds];
     }
     else {
         _listView = [[TKListView alloc] initWithFrame:self.view.bounds];

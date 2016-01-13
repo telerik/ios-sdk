@@ -16,7 +16,7 @@
     
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     
-    self.sideDrawerView = [[TKSideDrawerView alloc] initWithFrame:self.exampleBounds];
+    self.sideDrawerView = [[TKSideDrawerView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:_sideDrawerView];
     
     UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:self.sideDrawerView.mainView.bounds];
@@ -53,7 +53,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    _sideDrawerView.frame = self.exampleBounds;
+    _sideDrawerView.frame = self.view.bounds;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -74,7 +74,7 @@
 
 - (TKSideDrawer *)sideDrawer
 {
-    return _sideDrawerView.sideDrawers[0];
+    return _sideDrawerView.defaultSideDrawer;
 }
 
 #pragma mark TKSideDrawerDelegate

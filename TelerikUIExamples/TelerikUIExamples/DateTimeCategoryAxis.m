@@ -18,10 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    TKChart *chart = [[TKChart alloc] initWithFrame:self.exampleBoundsWithInset];
+    TKChart *chart = [[TKChart alloc] initWithFrame:self.view.bounds];
     chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:chart];
-    
     
     TKChartDateTimeCategoryAxis *xAxis = [TKChartDateTimeCategoryAxis new];
     NSDateFormatter *formatter = [NSDateFormatter new];

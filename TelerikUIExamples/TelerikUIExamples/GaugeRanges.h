@@ -5,8 +5,8 @@
 //  Copyright © 2015 г. Telerik. All rights reserved.
 //
 
-#import "ExampleViewController.h"
+#import <TelerikUI/TKExamplesKit.h>
 
-@interface GaugeRanges : ExampleViewController
+@interface GaugeRanges : TKExamplesExampleViewController
 
 @end

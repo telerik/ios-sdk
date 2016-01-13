@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListViewAnimations: ExampleViewController {
+class ListViewAnimations: TKExamplesExampleViewController {
 
     let listView = TKListView()
     let dataSource = TKDataSource()
@@ -15,9 +15,9 @@ class ListViewAnimations: ExampleViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.addOption("Scale in") { self.scaleInSelected() }
-        self.addOption("Fade in") { self.fadeInSelected() }
-        self.addOption("Slide in") { self.slideInSelected() }
+        self.addOption("Scale in", action: scaleInSelected)
+        self.addOption("Fade in", action: fadeInSelected)
+        self.addOption("Slide in", action: slideInSelected)
     }
 
     required init(coder aDecoder: NSCoder) {

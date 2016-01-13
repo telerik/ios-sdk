@@ -7,13 +7,13 @@
 
 import Foundation
 
-class CustomAxis: ExampleViewController {
+class CustomAxis: TKExamplesExampleViewController {
     
     override func viewDidLoad() {
         var chart: TKChart!
 
         super.viewDidLoad()
-        chart = TKChart(frame: self.exampleBoundsWithInset)
+        chart = TKChart(frame: self.view.bounds)
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         

@@ -11,7 +11,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class ListViewLayout : ExampleViewController
+	[Register("ListViewLayout")]
+	public class ListViewLayout : XamarinExampleViewController
 	{
 		TKListView listView;
 		TKDataSource dataSource;
@@ -20,21 +21,18 @@ namespace Examples
 		TKListViewScrollDirection scrollDirection;
 		StaggeredLayoutDelegate staggeredLayoutDelegate;
 
-		public ListViewLayout () : base()
-		{
-			this.AddOption ("Linear", LinearLayoutSelected, "Layout");
-			this.AddOption ("Grid", GridLayoutSelected, "Layout");
-			this.AddOption ("Staggered", StaggeredLayoutSelected, "Layout");
-			this.AddOption ("Flow", FlowLayoutSelected, "Layout");
-
-			this.AddOption ("Horiontal", HorizontalSelected, "Orientation");
-			this.AddOption ("Vertical", VerticalSelected, "Orientation");
-
-			this.SetSelectedOptionInSection (1, 1);
-		}
-
 		public override void ViewDidLoad ()
 		{
+			this.AddOption ("Linear", "Layout", LinearLayoutSelected);
+			this.AddOption ("Grid", "Layout", GridLayoutSelected);
+			this.AddOption ("Staggered", "Layout", StaggeredLayoutSelected);
+			this.AddOption ("Flow",  "Layout", FlowLayoutSelected);
+
+			this.AddOption ("Horiontal", "Orientation", HorizontalSelected);
+			this.AddOption ("Vertical", "Orientation", VerticalSelected);
+
+			this.SetSelectedOption (1, 1);
+
 			base.ViewDidLoad ();
 
 			dataSource = new TKDataSource ();
@@ -53,7 +51,7 @@ namespace Examples
 			});
 
 			dataSource.Settings.ListView.InitCell ((TKListView listView, NSIndexPath indexPath, TKListViewCell cell, NSObject item) => {
-				cell.ImageView.Image = new UIImage((NSString)item.ValueForKey(new NSString("photo")));
+				cell.ImageView.Image = UIImage.FromBundle((NSString)item.ValueForKey(new NSString("photo")));
 				cell.TextLabel.Text = (NSString)item.ValueForKey(new NSString("title"));
 				cell.DetailTextLabel.Text = (NSString)item.ValueForKey(new NSString("author"));
 			});
@@ -70,10 +68,10 @@ namespace Examples
 			this.listView.RegisterClassForCell(new Class(typeof(CustomListCell)), "custom");
 			this.View.AddSubview (this.listView);
 
-			this.LinearLayoutSelected (this, EventArgs.Empty);
+			this.LinearLayoutSelected ();
 		}
 
-		void LinearLayoutSelected(object sender, EventArgs e)
+		void LinearLayoutSelected()
 		{
 			TKListViewLinearLayout layout = new TKListViewLinearLayout ();
 			layout.ItemSize = new CGSize(200, 200);
@@ -81,10 +79,10 @@ namespace Examples
 			layout.ItemSpacing = 1;
 			layout.ScrollDirection = this.scrollDirection;
 			this.listView.Layout = layout;
-			this.SetSelectedOptionInSection (1, 1);
+			this.SetSelectedOption (1, 1);
 		}
 
-		void GridLayoutSelected(object sender, EventArgs e)
+		void GridLayoutSelected()
 		{
 			TKListViewGridLayout layout = new TKListViewGridLayout ();
 			layout.ItemSize = new CGSize(200, 100);
@@ -94,10 +92,10 @@ namespace Examples
 			layout.LineSpacing = 1;
 			layout.ScrollDirection = this.scrollDirection;
 			this.listView.Layout = layout;
-			this.SetSelectedOptionInSection (1, 1);
+			this.SetSelectedOption (1, 1);
 		}
 
-		void StaggeredLayoutSelected(object sender, EventArgs e)
+		void StaggeredLayoutSelected()
 		{
 			this.staggeredLayoutDelegate = new StaggeredLayoutDelegate (itemsCount);
 			 
@@ -111,10 +109,10 @@ namespace Examples
 			layout.ScrollDirection = this.scrollDirection;
 			layout.AlignLastLine = true;
 			this.listView.Layout = layout;
-			this.SetSelectedOptionInSection (1, 1);
+			this.SetSelectedOption (1, 1);
 		}
 
-		void FlowLayoutSelected(object sender, EventArgs e)
+		void FlowLayoutSelected()
 		{
 			UICollectionViewFlowLayout layout = new UICollectionViewFlowLayout();
 			layout.ItemSize = new CGSize((this.listView.Bounds.Size.Width-3)/3.0, this.listView.Bounds.Size.Height/4.0);
@@ -123,16 +121,16 @@ namespace Examples
 			layout.MinimumLineSpacing = 1;
 			this.listView.Layout = layout;
 			this.scrollDirection = TKListViewScrollDirection.Vertical;
-			this.SetSelectedOptionInSection (1, 1);
+			this.SetSelectedOption (1, 1);
 		}
 
-		void VerticalSelected(object sender, EventArgs e)
+		void VerticalSelected()
 		{
 			this.listView.ScrollDirection = TKListViewScrollDirection.Vertical;
 			this.scrollDirection = TKListViewScrollDirection.Vertical;
 		}
 
-		void HorizontalSelected(object sender, EventArgs e)
+		void HorizontalSelected()
 		{
 			this.listView.ScrollDirection = TKListViewScrollDirection.Horizontal;
 			this.scrollDirection = TKListViewScrollDirection.Horizontal;

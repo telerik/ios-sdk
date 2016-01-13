@@ -10,74 +10,64 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class IndicatorsChart: ExampleViewController
+	[Register("IndicatorsChart")]
+	public class IndicatorsChart: XamarinExampleViewController
 	{
 		TKChart overlayChart;
 		TKChart indicatorsChart;
 		TKChartSeries series;
 		List<StockDataPoint> data;
-		IndicatorsTableView settings;
-		ChartDelegate chartDelegate = new ChartDelegate ();
-
-		public List<OptionInfo> Trendlines { get; set; }
-
-		public List<OptionInfo> Indicators { get; set; }
-
-		public int SelectedIndicator { get; set; }
-
-		public int SelectedTrendLine { get; set; }
 
 		public override void ViewDidLoad ()
 		{
-			Trendlines = new List<OptionInfo> ();
-			Indicators = new List<OptionInfo> ();
+			this.AddOption ("Simple moving average", "Trendlines", () => AddTrendline (new TKChartSimpleMovingAverageIndicator (this.series)));
+			this.AddOption ("Exponential moving average", "Trendlines", () => AddTrendline (new TKChartExponentialMovingAverageIndicator(this.series)));
+			this.AddOption ("Weighted moving average", "Trendlines", () => AddTrendline (new TKChartWeightedMovingAverageIndicator(this.series)));
+			this.AddOption ("Triangular moving average", "Trendlines", () => AddTrendline (new TKChartTriangularMovingAverageIndicator(this.series)));
+			this.AddOption ("Bollinger bands indicator", "Trendlines", () => AddTrendline (new TKChartBollingerBandIndicator(this.series)));
+			this.AddOption ("Moving average envelopes", "Trendlines", () => AddTrendline (new TKChartMovingAverageEnvelopesIndicator(this.series)));
+			this.AddOption ("Typical price", "Trendlines", () => AddTrendline (new TKChartTypicalPriceIndicator(this.series)));
+			this.AddOption ("Weighted close", "Trendlines", () => AddTrendline (new TKChartWeightedCloseIndicator(this.series)));
+			this.AddOption ("Median price", "Trendlines", () => AddTrendline (new TKChartMedianPriceIndicator(this.series)));
+			this.AddOption ("Modified moving average", "Trendlines", () => AddTrendline (new TKChartModifiedMovingAverageIndicator(this.series)));
+			this.AddOption ("Adaptive moving average", "Trendlines", () => AddTrendline (new TKChartAdaptiveMovingAverageIndicator(this.series)));
 
-			this.addTrendlineOption("Simple moving average", (object o, EventArgs e) => { addOverlayToChart(new TKChartSimpleMovingAverageIndicator(series)); });
-			this.addTrendlineOption("Exponential moving average", (object o, EventArgs e) => { addOverlayToChart(new TKChartExponentialMovingAverageIndicator(series)); });
-			this.addTrendlineOption("Weighted moving average", (object o, EventArgs e) => { addOverlayToChart(new TKChartWeightedMovingAverageIndicator(series)); });
-			this.addTrendlineOption("Triangular moving average", (object o, EventArgs e) => { addOverlayToChart(new TKChartTriangularMovingAverageIndicator(series)); });
-			this.addTrendlineOption("Bollinger bands indicator", (object o, EventArgs e) => { addOverlayToChart(new TKChartBollingerBandIndicator(series)); });
-			this.addTrendlineOption("Moving average envelopes", (object o, EventArgs e) => { addOverlayToChart(new TKChartMovingAverageEnvelopesIndicator(series)); });
-			this.addIndicatorOption("Percentage volume oscillator", (object o, EventArgs e) => { addIndicatorToChart(new TKChartPercentageVolumeOscillator(series)); });
-			this.addIndicatorOption("Percentage price oscillator", (object o, EventArgs e) => { addIndicatorToChart(new TKChartPercentagePriceOscillator(series)); });
-			this.addIndicatorOption("Absolute volume oscillator", (object o, EventArgs e) => { addIndicatorToChart(new TKChartAbsoluteVolumeOscillator(series)); });
-			this.addIndicatorOption("MACD indicator", (object o, EventArgs e) => { addIndicatorToChart(new TKChartMACDIndicator(series)); });
-			this.addIndicatorOption("RSI", (object o, EventArgs e) => { addIndicatorToChart(new TKChartRelativeStrengthIndex(series)); });
-			this.addIndicatorOption("Accumulation distribution line", (object o, EventArgs e) => { addIndicatorToChart(new TKChartAccumulationDistributionLine(series)); });
-			this.addIndicatorOption("True range", (object o, EventArgs e) => { addIndicatorToChart(new TKChartTrueRangeIndicator(series)); });
-			this.addIndicatorOption("Average true range", (object o, EventArgs e) => { addIndicatorToChart(new TKChartAverageTrueRangeIndicator(series)); });
-			this.addIndicatorOption("Commodity channel index", (object o, EventArgs e) => { addIndicatorToChart(new TKChartCommodityChannelIndex(series)); });
-			this.addIndicatorOption("Fast stochastic indicator", (object o, EventArgs e) => { addIndicatorToChart(new TKChartFastStochasticIndicator(series)); });
-			this.addIndicatorOption("Slow stochastic indicator", (object o, EventArgs e) => { addIndicatorToChart(new TKChartSlowStochasticIndicator(series)); });
-			this.addIndicatorOption("Rate of change", (object o, EventArgs e) => { addIndicatorToChart(new TKChartRateOfChangeIndicator(series)); });
-			this.addIndicatorOption("TRIX", (object o, EventArgs e) => { addIndicatorToChart(new TKChartTRIXIndicator(series)); });
-			this.addIndicatorOption("Williams percent", (object o, EventArgs e) => { addIndicatorToChart(new TKChartWilliamsPercentIndicator(series)); });
-			this.addTrendlineOption("Typical price", (object o, EventArgs e) => { addOverlayToChart(new TKChartTypicalPriceIndicator(series)); });
-			this.addTrendlineOption("Weighted close", (object o, EventArgs e) => { addOverlayToChart(new TKChartWeightedCloseIndicator(series)); });
-			this.addIndicatorOption("Ease of movement", (object o, EventArgs e) => { addIndicatorToChart(new TKChartEaseOfMovementIndicator(series)); });
-			this.addTrendlineOption("Median price", (object o, EventArgs e) => { addIndicatorToChart(new TKChartMedianPriceIndicator(series)); });
-			this.addIndicatorOption("Detrended price oscillator", (object o, EventArgs e) => { addIndicatorToChart(new TKChartDetrendedPriceOscillator(series)); });
-			this.addIndicatorOption("Force index", (object o, EventArgs e) => { addIndicatorToChart(new TKChartForceIndexIndicator(series)); });
-			this.addIndicatorOption("Rapid adaptive variance", (object o, EventArgs e) => { addIndicatorToChart(new TKChartRapidAdaptiveVarianceIndicator(series)); });
-			this.addTrendlineOption("Modified moving average", (object o, EventArgs e) => { addOverlayToChart(new TKChartModifiedMovingAverageIndicator(series)); });
-			this.addTrendlineOption("Adaptive moving average", (object o, EventArgs e) => { addOverlayToChart(new TKChartAdaptiveMovingAverageIndicator(series)); });
-			this.addIndicatorOption("Standard deviation", (object o, EventArgs e) => { addIndicatorToChart(new TKChartStandardDeviationIndicator(series)); });
-			this.addIndicatorOption("Relative momentum index", (object o, EventArgs e) => { addIndicatorToChart(new TKChartRelativeMomentumIndex(series)); });
-			this.addIndicatorOption("On balance volume", (object o, EventArgs e) => { addIndicatorToChart(new TKChartOnBalanceVolumeIndicator(series)); });
-			this.addIndicatorOption("Price volume trend", (object o, EventArgs e) => { addIndicatorToChart(new TKChartPriceVolumeTrendIndicator(series)); });
-			this.addIndicatorOption("Positive volume index", (object o, EventArgs e) => { addIndicatorToChart(new TKChartPositiveVolumeIndexIndicator(series)); });
-			this.addIndicatorOption("Negative volume index", (object o, EventArgs e) => { addIndicatorToChart(new TKChartNegativeVolumeIndexIndicator(series)); });
-			this.addIndicatorOption("Money flow index", (object o, EventArgs e) => { addIndicatorToChart(new TKChartMoneyFlowIndexIndicator(series)); });
-			this.addIndicatorOption("Ultimate oscillator", (object o, EventArgs e) => { addIndicatorToChart(new TKChartUltimateOscillator(series)); });
-			this.addIndicatorOption("Full stochastic indicator", (object o, EventArgs e) => { addIndicatorToChart(new TKChartFullStochasticIndicator(series)); });
-			this.addIndicatorOption("Market facilitation index", (object o, EventArgs e) => { addIndicatorToChart(new TKChartMarketFacilitationIndex(series)); });
-			this.addIndicatorOption("Chaikin oscillator", (object o, EventArgs e) => { addIndicatorToChart(new TKChartChaikinOscillator(series)); });
+			this.AddOption ("Percentage volume oscillator", "Indicators", () => AddIndicator (new TKChartPercentageVolumeOscillator (this.series)));
+			this.AddOption ("Percentage price oscillator", "Indicators", () => AddIndicator (new TKChartPercentagePriceOscillator(this.series)));
+			this.AddOption ("Absolute volume oscillator", "Indicators", () => AddIndicator (new TKChartAbsoluteVolumeOscillator(this.series)));
+			this.AddOption ("MACD indicator", "Indicators", () => AddIndicator (new TKChartMACDIndicator(this.series)));
+			this.AddOption ("RSI", "Indicators", () => AddIndicator (new TKChartRelativeStrengthIndex(this.series)));
+			this.AddOption ("Accumulation distribution line", "Indicators", () => AddIndicator (new TKChartAccumulationDistributionLine(this.series)));
+			this.AddOption ("True range", "Indicators", () => AddIndicator (new TKChartTrueRangeIndicator(this.series)));
+			this.AddOption ("Average true range", "Indicators", () => AddIndicator (new TKChartAverageTrueRangeIndicator(this.series)));
+			this.AddOption ("Commodity channel index", "Indicators", () => AddIndicator (new TKChartCommodityChannelIndex(this.series)));
+			this.AddOption ("Fast stochastic indicator", "Indicators", () => AddIndicator (new TKChartFastStochasticIndicator(this.series)));
+			this.AddOption ("Slow stochastic indicator", "Indicators", () => AddIndicator (new TKChartSlowStochasticIndicator(this.series)));
+			this.AddOption ("Rate of change", "Indicators", () => AddIndicator (new TKChartRateOfChangeIndicator(this.series)));
+			this.AddOption ("TRIX", "Indicators", () => AddIndicator (new TKChartTRIXIndicator(this.series)));
+			this.AddOption ("Williams percent", "Indicators", () => AddIndicator (new TKChartWilliamsPercentIndicator(this.series)));
+			this.AddOption ("Ease of movement", "Indicators", () => AddIndicator (new TKChartEaseOfMovementIndicator(this.series)));
+			this.AddOption ("Detrended price oscillator", "Indicators", () => AddIndicator (new TKChartDetrendedPriceOscillator(this.series)));
+			this.AddOption ("Force index", "Indicators", () => AddIndicator (new TKChartForceIndexIndicator(this.series)));
+			this.AddOption ("Rapid adaptive variance", "Indicators", () => AddIndicator (new TKChartRapidAdaptiveVarianceIndicator(this.series)));
+			this.AddOption ("Standard deviation", "Indicators", () => AddIndicator (new TKChartStandardDeviationIndicator(this.series)));
+			this.AddOption ("Relative momentum index", "Indicators", () => AddIndicator (new TKChartRelativeMomentumIndex(this.series)));
+			this.AddOption ("On balance volume", "Indicators", () => AddIndicator (new TKChartOnBalanceVolumeIndicator(this.series)));
+			this.AddOption ("Price volume trend", "Indicators", () => AddIndicator (new TKChartPriceVolumeTrendIndicator(this.series)));
+			this.AddOption ("Positive volume index", "Indicators", () => AddIndicator (new TKChartPositiveVolumeIndexIndicator(this.series)));
+			this.AddOption ("Negative volume index", "Indicators", () => AddIndicator (new TKChartNegativeVolumeIndexIndicator(this.series)));
+			this.AddOption ("Money flow index", "Indicators", () => AddIndicator (new TKChartMoneyFlowIndexIndicator(this.series)));
+			this.AddOption ("Ultimate oscillator", "Indicators", () => AddIndicator (new TKChartUltimateOscillator(this.series)));
+			this.AddOption ("Full stochastic indicator", "Indicators", () => AddIndicator (new TKChartFullStochasticIndicator(this.series)));
+			this.AddOption ("Market facilitation index", "Indicators", () => AddIndicator (new TKChartMarketFacilitationIndex(this.series)));
+			this.AddOption ("Chaikin oscillator", "Indicators", () => AddIndicator (new TKChartChaikinOscillator(this.series)));
 
 			base.ViewDidLoad ();
 
-			CGRect exampleBounds = this.ExampleBounds;
+			CGRect exampleBounds = this.View.Bounds;
 			CGRect overlayChartBounds = new CGRect (exampleBounds.X, exampleBounds.Y, exampleBounds.Width, exampleBounds.Height/1.5f);
-			CGRect indicatorsChartBounds = new CGRect (exampleBounds.X, overlayChartBounds.Height + 15, exampleBounds.Width, exampleBounds.Height / 3.0f);
+			nfloat indicatorsOffset = exampleBounds.Y + overlayChartBounds.Height + 15;
+			CGRect indicatorsChartBounds = new CGRect (exampleBounds.X, indicatorsOffset, exampleBounds.Width, exampleBounds.Height - indicatorsOffset);
 
 			overlayChart = new TKChart (overlayChartBounds);
 			overlayChart.GridStyle.VerticalLinesHidden = false;
@@ -89,62 +79,22 @@ namespace Examples
 			this.View.AddSubview (indicatorsChart);
 
 			data = StockDataPoint.LoadStockPoints(-1);
-			settings = new IndicatorsTableView (this);
-
-			SelectedIndicator = 0;
-			SelectedTrendLine = 0;
-
 			series = new TKChartCandlestickSeries (data.ToArray ());
-
-			overlayChart.Delegate = chartDelegate;
 
 			this.loadCharts ();
 		}
 
-		public override void settingsTouched (object sender, EventArgs e)
+		void AddTrendline(TKChartFinancialIndicator indicator)
 		{
-			UIUserInterfaceIdiom idiom = UIDevice.CurrentDevice.UserInterfaceIdiom;
-			if (idiom == UIUserInterfaceIdiom.Pad) {
-				if (this.Popover != null && this.Popover.PopoverVisible) {
-					this.Popover.Dismiss (true);
-					return;
-				}
-				this.Popover = new UIPopoverController (settings);
-				CGRect settingBounds = settings.View.Bounds;
-				this.Popover.PopoverContentSize = new CGSize (320, settingBounds.Height);
-				this.Popover.PresentFromBarButtonItem (this.SettingsButton, UIPopoverArrowDirection.Up, true);
-			} else {
-				this.NavigationController.PushViewController (settings, true);
-			}
-		}
-
-		void addTrendlineOption(string text, EventHandler handler)
-		{
-			OptionInfo option = new OptionInfo (text, handler);
-			Trendlines.Add (option);
-			this.AddOption (option);
-		}
-
-		void addIndicatorOption(string text, EventHandler handler)
-		{
-			OptionInfo option = new OptionInfo (text, handler);
-			Indicators.Add (option);
-			this.AddOption (option);
-		}
-
-		void addOverlayToChart(TKChartFinancialIndicator indicator)
-		{
+			indicator.SelectionMode = TKChartSeriesSelectionMode.Series;
 			overlayChart.RemoveAllData ();
 			overlayChart.AddSeries (series);
-			indicator.SelectionMode = TKChartSeriesSelectionMode.Series;
 			overlayChart.AddSeries (indicator);
-			overlayChart.ReloadData ();
 		}
 
-		void addIndicatorToChart(TKChartFinancialIndicator indicator)
+		void AddIndicator(TKChartFinancialIndicator indicator)
 		{
 			indicatorsChart.RemoveAllData ();
-			indicator.SelectionMode = TKChartSeriesSelectionMode.Series;
 			indicatorsChart.AddSeries (indicator);
 
 			TKChartNumericAxis yAxis = (TKChartNumericAxis)indicatorsChart.YAxis;
@@ -173,9 +123,6 @@ namespace Examples
 
 		void loadCharts()
 		{
-			overlayChart.RemoveAllData ();
-			indicatorsChart.RemoveAllData ();
-
 			TKChartNumericAxis yAxis = new TKChartNumericAxis ();
 			yAxis.Range = new TKRange (new NSNumber (250), new NSNumber (750));
 			yAxis.Style.LabelStyle.TextAlignment = TKChartAxisLabelAlignment.Right | TKChartAxisLabelAlignment.Bottom;
@@ -203,24 +150,8 @@ namespace Examples
 			xAxis.AllowPan = true;
 			series.XAxis = xAxis;
 
-			OptionInfo info = Trendlines [SelectedTrendLine];
-			info.Handler (info, EventArgs.Empty);
-
-			info = Indicators [SelectedIndicator];
-			info.Handler (info, EventArgs.Empty);
-		}
-
-		class ChartDelegate: TKChartDelegate
-		{
-			public override void DidPan (TKChart chart)
-			{
-				chart.XAxis.Pan = chart.XAxis.Pan;
-			}
-
-			public override void DidZoom (TKChart chart)
-			{
-				chart.XAxis.Zoom = chart.XAxis.Zoom;
-			}
+			AddTrendline (new TKChartSimpleMovingAverageIndicator (this.series));
+			AddIndicator (new TKChartPercentageVolumeOscillator (this.series));
 		}
 	}
 }

@@ -6,6 +6,7 @@ using UIKit;
 
 namespace Examples
 {
+	[Register("DataFormCollapsibleGroups")]
 	public class DataFormCollapsibleGroups : UIViewController
 	{
 		TKDataForm dataForm;

@@ -7,7 +7,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public partial class AlertGettingStarted : ExampleViewController
+	[Register("AlertGettingStarted")]
+	public partial class AlertGettingStarted : XamarinExampleViewController
 	{
 		UILabel TextLabel = new UILabel();
 

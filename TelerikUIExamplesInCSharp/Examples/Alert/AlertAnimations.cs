@@ -7,7 +7,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class AlertAnimations : ExampleViewController
+	[Register("AlertAnimations")]
+	public class AlertAnimations : XamarinExampleViewController
 	{
 		UILabel appearLabel;
 		UILabel hideLabel;
@@ -107,7 +108,7 @@ namespace Examples
 			hideAnimationsList.Frame = new CGRect(halfWidth, titleHeight + 40, halfWidth, height);
 		}
 
-		public void Show (Object sender, EventArgs e)
+		public void Show ()
 		{
 			NSMutableString message = new NSMutableString ();
 			NSIndexPath[] selected = appearAnimationsList.IndexPathsForSelectedItems();

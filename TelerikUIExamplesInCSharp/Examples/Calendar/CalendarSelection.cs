@@ -7,7 +7,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class CalendarSelection : ExampleViewController
+	[Register("CalendarSelection")]
+	public class CalendarSelection : XamarinExampleViewController
 	{
 		CalendarDelegate calendarDelegate;
 
@@ -23,7 +24,6 @@ namespace Examples
 
 		public override void ViewDidLoad ()
 		{
-
 			this.AddOption ("Single date selection", SelectSingleMode);
 			this.AddOption ("Multiple dates selection", SelectMultipleMode);
 			this.AddOption ("Date range selection", SelectRangeMode);
@@ -61,17 +61,17 @@ namespace Examples
 			this.CalendarView.SelectedDatesRange = new TKDateRange (startDate, endDate);
 		}
 
-		public void SelectSingleMode (object sender, EventArgs e)
+		public void SelectSingleMode ()
 		{
 			this.CalendarView.SelectionMode = TKCalendarSelectionMode.Single;
 		}
 
-		public void SelectMultipleMode (object sender, EventArgs e)
+		public void SelectMultipleMode ()
 		{
 			this.CalendarView.SelectionMode = TKCalendarSelectionMode.Multiple;
 		}
 
-		public void SelectRangeMode (object sender, EventArgs e)
+		public void SelectRangeMode ()
 		{
 			this.CalendarView.SelectionMode = TKCalendarSelectionMode.Range;
 		}

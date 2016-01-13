@@ -8,26 +8,27 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class StackedColumnChart: ExampleViewController
+	[Register("StackedColumnChart")]
+	public class StackedColumnChart: XamarinExampleViewController
 	{
 		TKChart chart;
 
 		public override void ViewDidLoad ()
 		{
-			this.AddOption ("Stacked", reloadData);
-			this.AddOption ("Stacked 100", reloadData);
-			this.AddOption ("No Stacking", reloadData);
+			this.AddOption ("Stacked", ReloadData);
+			this.AddOption ("Stacked 100", ReloadData);
+			this.AddOption ("No Stacking", ReloadData);
 
 			base.ViewDidLoad ();
 
-			chart = new TKChart (this.ExampleBounds);
+			chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.AddSubview (chart);
 
-			this.reloadData (this, EventArgs.Empty);
+			this.ReloadData ();
 		}
 
-		void reloadData(object sender, EventArgs e) 
+		void ReloadData() 
 		{
 			chart.RemoveAllData ();
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlertGettingStarted: ExampleViewController {
+class AlertGettingStarted: TKExamplesExampleViewController {
 
     let textLabel = UILabel()
     

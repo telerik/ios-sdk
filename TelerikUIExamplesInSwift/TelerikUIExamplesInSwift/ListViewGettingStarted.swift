@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListViewGettingStarted: ExampleViewController, TKListViewDataSource {
+class ListViewGettingStarted: TKExamplesExampleViewController, TKListViewDataSource {
     
     let names = TKDataSource()
     let photos = TKDataSource()
@@ -33,8 +33,8 @@ class ListViewGettingStarted: ExampleViewController, TKListViewDataSource {
         
         let view = TKView()
         view.fill = TKLinearGradientFill(colors: [UIColor(red: 0.35, green: 0.68, blue: 0.89, alpha: 0.89),
-                                                      UIColor(red: 0.35, green: 0.68, blue: 1.00, alpha: 1.00),
-                                                      UIColor(red: 0.85, green: 0.80, blue: 0.20, alpha: 0.80)])
+            UIColor(red: 0.35, green: 0.68, blue: 1.00, alpha: 1.00),
+            UIColor(red: 0.85, green: 0.80, blue: 0.20, alpha: 0.80)])
         listView.backgroundView = view
     }
     
@@ -47,6 +47,6 @@ class ListViewGettingStarted: ExampleViewController, TKListViewDataSource {
         cell.imageView.image =  UIImage(named: photos.items[indexPath.row] as! String)
         cell.textLabel.text = names.items[indexPath.row] as? String
         return cell
-    
+        
     }
 }

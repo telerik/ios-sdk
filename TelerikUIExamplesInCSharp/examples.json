@@ -1,0 +1,144 @@
+{
+    "examples": [
+                 
+        { "title": "Alert", "examples": [
+                                         { "title": "Getting started", "exampleClass": "AlertGettingStarted" },
+                                         { "title": "Custom View", "exampleClass": "AlertCustomView" },
+                                         { "title": "Animations", "exampleClass": "AlertAnimations" },
+                                         { "title": "Notifications", "exampleClass": "AlertNotifications" },
+                                         { "title": "Customize", "exampleClass": "AlertCustomize" },
+                                         { "title": "Settings", "exampleClass": "AlertSettings" },
+                                         ] },
+                 
+        { "title": "AppFeedback", "exampleClass": "FeedbackExampleController" },
+
+        { "title": "AutoCompleteTextView (New)", "examples": [
+                                                               { "title": "Getting Started", "exampleClass": "AutoCompleteGettingStarted" },
+                                                               { "title": "Customization", "exampleClass": "AutoCompleteCustomization" },
+                                                               { "title": "Tokens", "exampleClass": "AutoCompleteTokens" },
+                                                               { "title": "Load Data", "exampleClass": "AutoCompleteLoadData" },
+                                                               ] },
+
+        { "title": "Calendar", "examples": [
+                                            { "title": "Calendar with events", "exampleClass": "CalendarWithEvents" },
+                                            { "title": "View modes", "exampleClass": "CalendarViewModes" },
+                                            { "title": "Transition effects", "exampleClass": "CalendarTransitionEffects" },
+                                            { "title": "Selection", "exampleClass": "CalendarSelection" },
+                                            { "title": "iOS 7 style calendar", "exampleClass": "iOS7StyleCalendar" },
+                                            { "title": "Customization", "exampleClass": "CalendarCustomization" },
+                                            { "title": "EventKit data binding", "exampleClass": "CalendarEventKitDataBinding" },
+                                            { "title": "Localized calendar", "exampleClass": "LocalizedCalendar" },
+                                            { "title": "Inline events", "exampleClass": "CalendarInlineEvents" },
+                                            ] },
+
+        { "title": "Chart", "examples": [
+                                         { "title": "Chart Types", "examples": [
+                                                                                 { "title": "Column / Bar chart", "exampleClass": "ColumnAndBarChart" },
+                                                                                 { "title": "Range Column / Bar chart", "exampleClass": "RangeBarColumnChart" },
+                                                                                 { "title": "Line / Area / Spline chart", "exampleClass": "LineAreaSpline" },
+                                                                                 { "title": "Scatter chart", "exampleClass": "ScatterChart" },
+                                                                                 { "title": "Bubble chart", "exampleClass": "BubbleChart" },
+                                                                                 { "title": "Pie chart", "exampleClass": "PieDonut" },
+                                                                                 { "title": "Stacked Column chart", "exampleClass": "StackedColumnChart" },
+                                                                                 { "title": "Stacked Area chart", "exampleClass": "StackedAreaChart" },
+                                                                                 { "title": "Gaps Line / Spline / Area chart", "exampleClass": "GapsLineSplineAreaChart" },
+                                                                                 { "title": "Financial chart", "exampleClass": "FinancialChart" },
+                                                                                 { "title": "Indicators", "exampleClass": "IndicatorsChart" },
+                                                                                ] },
+            
+                                         { "title": "Axis Types", "examples": [
+                                                                               { "title": "Numeric axis", "exampleClass": "NumericAxis" },
+                                                                               { "title": "Categorical axis", "exampleClass": "CategoricalAxis" },
+                                                                               { "title": "Date/Time axis", "exampleClass": "DateTimeAxis" },
+                                                                               { "title": "Date/Time category axis", "exampleClass": "DateTimeCategoryAxis" },
+                                                                               { "title": "Multiple axes", "exampleClass": "MultipleAxes" },
+                                                                               { "title": "Negative values", "exampleClass": "NegativeValues" },
+                                                                               { "title": "Logarithmic axis", "exampleClass": "LogarithmicAxis" },
+                                                                               { "title": "Custom axis", "exampleClass": "CustomAxis" },
+                                                                               ] },
+            
+                                         { "title": "Animations", "examples": [
+                                                                               { "title": "Default animations", "exampleClass": "DefaultAnimation" },
+                                                                               { "title": "Custom animation - line chart", "exampleClass": "CustomAnimationLineChart" },
+                                                                               { "title": "Custom animation - area chart", "exampleClass": "CustomAnimationAreaChart" },
+                                                                               { "title": "Custom animation - pie chart", "exampleClass": "CustomAnimationPieChart" },
+                                                                               { "title": "UIKit dynamics animation", "exampleClass": "UIKitDynamicsAnimation" },
+                                                                               ] },
+            
+                                         { "title": "Binding", "examples": [
+                                                                            { "title": "Bind with data point", "exampleClass": "BindWithDataPoint" },
+                                                                            { "title": "Bind with custom object", "exampleClass": "BindWithCustomObject" },
+                                                                            { "title": "Bind with delegate", "exampleClass": "BindWithDelegate" },
+                                                                            ] },
+            
+                                         { "title": "Pan/Zoom", "exampleClass": "PanZoom" },
+                                         { "title": "Customize", "exampleClass": "Customize" },
+                                         { "title": "Annotations", "examples": [
+                                                                                { "title": "Band and line annotations", "exampleClass": "BandAndLineAnnotations" },
+                                                                                { "title": "Balloon annotation", "exampleClass": "BalloonAnnotation" },
+                                                                                { "title": "Layer annotation", "exampleClass": "LayerAnnotation" },
+                                                                                { "title": "View annotation", "exampleClass": "ViewAnnotation" },
+                                                                                { "title": "Cross line annotation", "exampleClass": "CrossLineAnnotation" },
+                                                                                { "title": "Custom annotation", "exampleClass": "CustomAnnotation" },
+                                                                                { "title": "Trackball", "exampleClass": "Trackball" },
+                                                                                { "title": "Pie Chart Annotations", "exampleClass": "PieChartAnnotations" },
+                                                                                ] },
+                                         { "title": "Point Labels", "examples": [
+                                                                                 { "title": "Point Labels", "exampleClass": "PointLabels" },
+                                                                                 { "title": "Custom Label", "exampleClass": "CustomPointLabels" },
+                                                                                 { "title": "Custom Label Render", "exampleClass": "CustomPointLabelRender" },
+                                                                                 ] },
+                                         { "title": "Live Data", "exampleClass": "LiveData" },
+                                         ] },
+
+        { "title": "DataForm", "examples": [
+                                                  { "title": "Getting started", "exampleClass": "DataFormGettingStarted" },
+                                                  { "title": "Validation", "exampleClass": "DataFormValidation" },
+                                                  { "title": "Read Only Mode", "exampleClass": "DataFormReadOnly" },
+                                                  { "title": "Customization", "exampleClass": "DataFormCustomization" },
+                                                  { "title": "Alignment", "exampleClass": "DataFormLabelAlignment" },
+                                                  { "title": "Collapsible Groups", "exampleClass": "DataFormCollapsibleGroups" },
+                                                  { "title": "JSON Support", "exampleClass": "DataFormJSONSupport" },
+                                                  ] },
+
+        { "title": "DataSource", "examples": [
+                                              { "title": "Getting started", "exampleClass": "DataSourceGettingStarted" },
+                                              { "title": "Descriptors API", "exampleClass": "DataSourceDescriptorsAPI" },
+                                              { "title": "Bind with UI controls", "exampleClass": "DataSourceUIBindings" },
+                                              { "title": "Consume web service", "exampleClass": "DataSourceWithWebService" },
+                                              ] },
+
+        { "title": "Gauges", "examples": [
+                                                { "title": "Getting started", "exampleClass": "GaugeGettingStarted" },
+                                                { "title": "Customization", "exampleClass": "GaugeCustomization" },
+                                                { "title": "Interaction", "exampleClass": "GaugeInteraction" },
+                                                { "title": "Animations", "exampleClass": "GaugeAnimations" },
+                                                { "title": "Scales", "exampleClass": "GaugeScales" },
+                                                { "title": "Ranges", "exampleClass": "GaugeRanges" },
+                                                ] },
+
+        { "title": "ListView", "examples": [
+                                            { "title": "Getting started", "exampleClass": "ListViewGettingStarted" },
+                                            { "title": "Swipe cell", "exampleClass": "ListViewSwipe" },
+                                            { "title": "Items reorder", "exampleClass": "ListViewReorder" },
+                                            { "title": "Selection", "exampleClass": "ListViewSelection" },
+                                            { "title": "Grouping", "exampleClass": "ListViewGroups" },
+                                            { "title": "Layouts", "exampleClass": "ListViewLayout" },
+                                            { "title": "Animations", "exampleClass": "ListViewAnimations" },
+                                            { "title": "Load on demand", "exampleClass": "ListViewLoadOnDemand" },
+                                            { "title": "Pull to refresh", "exampleClass": "ListViewPullToRefresh" },
+                                            { "title": "Variable item height", "exampleClass": "ListViewVariableHeight" },
+                                            { "title": "Performance", "exampleClass": "ListViewPerformance" },
+                                            { "title": "Add/Remove/Update items", "exampleClass": "ListViewUpdate" },
+                                            ] },
+
+        { "title": "SideDrawer", "examples": [
+                                              { "title": "Getting Started", "exampleClass": "SideDrawerGettingStarted" },
+                                              { "title": "Transitions", "exampleClass": "SideDrawerTransitions" },
+                                              { "title": "Custom Content", "exampleClass": "SideDrawerCustomContent" },
+                                              { "title": "Custom Transition", "exampleClass": "SideDrawerCustomTransition" },
+                                              { "title": "Positions", "exampleClass": "SideDrawerPositions" },
+                                              { "title": "Multiple Side Drawers", "exampleClass": "MultipleSideDrawers" },
+                                              ] },
+                 ]
+}

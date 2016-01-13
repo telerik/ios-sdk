@@ -6,8 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ExampleViewController.h"
+#import <TelerikUI/TKExamplesKit.h>
 
-@interface DataFormLabelAlignment : ExampleViewController
+@interface DataFormLabelAlignment : TKExamplesExampleViewController
 
 @end

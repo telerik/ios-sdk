@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListViewLayout: ExampleViewController, TKListViewLinearLayoutDelegate {
+class ListViewLayout: TKExamplesExampleViewController, TKListViewLinearLayoutDelegate {
     
     let dataSource = TKDataSource()
     let listView = TKListView()
@@ -18,15 +18,15 @@ class ListViewLayout: ExampleViewController, TKListViewLinearLayoutDelegate {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("Linear layout", inSection:"Layout") { self.linearLayoutSelected() }
-        self.addOption("Grid layout", inSection:"Layout") { self.gridLayoutSelected() }
-        self.addOption("Staggered layout", inSection:"Layout") { self.staggeredLayoutSelected() }
-        self.addOption("Flow layout", inSection:"Layout") { self.wrapLayoutSelected() }
+        self.addOption("Linear layout", inSection:"Layout", withAction: linearLayoutSelected)
+        self.addOption("Grid layout", inSection:"Layout", withAction: gridLayoutSelected)
+        self.addOption("Staggered layout", inSection:"Layout", withAction: staggeredLayoutSelected)
+        self.addOption("Flow layout", inSection:"Layout", withAction: wrapLayoutSelected)
         
-        self.addOption("Horizontal", inSection:"Orientation") { self.horizontalSelected() }
-        self.addOption("Vertical", inSection:"Orientation") { self.verticalSelected() }
+        self.addOption("Horizontal", inSection:"Orientation", withAction: horizontalSelected)
+        self.addOption("Vertical", inSection:"Orientation", withAction: verticalSelected)
         
-        self.setSelectedOption(1, section: 1)
+        self.setSelectedOption(1, inSection: 1)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -120,7 +120,7 @@ class ListViewLayout: ExampleViewController, TKListViewLinearLayoutDelegate {
         layout.minimumLineSpacing = 1
         listView.layout = layout
         self.scrollDirection = TKListViewScrollDirection.Vertical
-        self.setSelectedOption(1, section: 1)
+        self.setSelectedOption(1, inSection: 1)
     }
     
     func verticalSelected() {

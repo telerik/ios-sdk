@@ -7,14 +7,14 @@
 
 import Foundation
 
-class CustomAnnotation: ExampleViewController {
+class CustomAnnotation: TKExamplesExampleViewController {
     
     let chart = TKChart()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         

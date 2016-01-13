@@ -8,7 +8,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class DataSourceGettingStarted: ExampleViewController
+	[Register("DataSourceGettingStarted")]
+	public class DataSourceGettingStarted: XamarinExampleViewController
 	{
 		TKDataSource dataSource;
 

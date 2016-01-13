@@ -9,13 +9,14 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class MultipleAxes: ExampleViewController
+	[Register("MultipleAxes")]
+	public class MultipleAxes: XamarinExampleViewController
 	{
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
-			TKChart chart = new TKChart (this.ExampleBounds);
+			TKChart chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.AddSubview (chart);
 

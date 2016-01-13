@@ -2,13 +2,12 @@
 //  GaugeCustomization.swift
 //  TelerikUIExamplesInSwift
 //
-//  Created by Miroslava Ivanova on 9/24/15.
 //  Copyright © 2015 Telerik. All rights reserved.
 //
 
 import UIKit
 
-class GaugeCustomization: ExampleViewController {
+class GaugeCustomization: TKExamplesExampleViewController {
     
     let linearGauge = TKLinearGauge()
     let radialGauge = TKRadialGauge()
@@ -24,12 +23,12 @@ class GaugeCustomization: ExampleViewController {
         
         let legedStrings = ["MOVE", "EXCERCISE", "STAND"]
         for i in 0..<3 {
-            let view = TKView(frame: CGRectMake(20, 80 + CGFloat(i)*25, 22, 22))
+            let view = TKView(frame: CGRectMake(20, 30 + CGFloat(i)*25, 22, 22))
             view.fill = TKLinearGradientFill(colors: [colors[i], colors[i+3]])
             view.shape = TKPredefinedShape(type: TKShapeType.Circle, andSize: CGSizeZero)
             self.view.addSubview(view)
             
-            let label = UILabel(frame: CGRectMake(50, 80 + CGFloat(i)*25, CGRectGetMaxX(self.view.frame) - 60, 20))
+            let label = UILabel(frame: CGRectMake(50, 30 + CGFloat(i)*25, CGRectGetMaxX(self.view.frame) - 60, 20))
             label.text = legedStrings[i]
             label.font = UIFont(name: "HelveticaNeue-Light", size: 15)
             label.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
@@ -110,7 +109,7 @@ class GaugeCustomization: ExampleViewController {
         
         super.viewDidLayoutSubviews()
         
-        let bounds = self.exampleBoundsWithInset
+        let bounds = self.view.bounds
         let size = self.view.bounds.size
         let offset = CGFloat(20)
         let linearHeight = CGFloat(130)
@@ -119,13 +118,13 @@ class GaugeCustomization: ExampleViewController {
             let width = (CGRectGetWidth(bounds) - offset*3.0)/2.0
             let height = CGRectGetHeight(bounds) - offset*2.0
             linearGauge.frame = CGRectMake(offset, size.height/2.0, width, linearHeight)
-            radialGauge.frame = CGRectMake(2*offset + width, offset*2.0, width, height)
+            radialGauge.frame = CGRectMake(2*offset + width, offset*1.5, width, height)
         }
         else {
             let width = CGRectGetWidth(bounds) - offset*2.0
             let height = (CGRectGetHeight(bounds) - offset*3.0)/2.0
-            linearGauge.frame = CGRectMake(offset, size.height/3.0, width, linearHeight)
-            radialGauge.frame = CGRectMake(offset, size.height/3.0 + linearHeight, width, height)
+            linearGauge.frame = CGRectMake(offset, size.height/4.0, width, linearHeight)
+            radialGauge.frame = CGRectMake(offset, size.height/4.0 + linearHeight, width, height)
         }
     }
 }

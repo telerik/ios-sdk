@@ -10,7 +10,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class CustomAnimationPieChart: ExampleViewController
+	[Register("CustomAnimationPieChart")]
+	public class CustomAnimationPieChart: XamarinExampleViewController
 	{
 		TKChart chart;
 		ChartDelegate chartDelegate =  new ChartDelegate ();
@@ -21,7 +22,7 @@ namespace Examples
 
 			base.ViewDidLoad ();
 
-			chart = new TKChart (this.ExampleBounds);
+			chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			chart.Delegate = chartDelegate;
 			chart.AllowAnimations = true;
@@ -38,8 +39,8 @@ namespace Examples
 			series.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
 			chart.AddSeries (series);
 		}
-
-		public void animate(object sender, EventArgs e)
+			
+		public void animate()
 		{
 			chart.Animate ();
 		}

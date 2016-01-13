@@ -9,6 +9,10 @@ class CallEditor: TKDataFormPhoneEditor {
 
     let actionButton = UIButton()
     
+    override init(property: TKEntityProperty, owner: TKDataForm) {
+        super.init(property: property, owner: owner)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

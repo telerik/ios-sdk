@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DataSourceGettingStarted: ExampleViewController {
+class DataSourceGettingStarted: TKExamplesExampleViewController {
 
     var dataSource: TKDataSource?
     
@@ -20,10 +20,9 @@ class DataSourceGettingStarted: ExampleViewController {
         let dataSource = TKDataSource(array: [ 10, 5, 12, 7, 44 ])
         
         // filter all values less or equal to 5
-//TODO
-//        dataSource.filter { (Int i) -> ObjCBool in
-//            return i > 5
-//        }
+        dataSource.filter { (i:AnyObject) -> Bool in
+            return (i as! NSNumber).intValue > 5
+        }
         
         // sort ascending
         dataSource.sort {

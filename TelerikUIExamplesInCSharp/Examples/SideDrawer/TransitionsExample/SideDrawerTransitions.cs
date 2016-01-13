@@ -7,6 +7,7 @@ using TelerikUI;
 
 namespace Examples
 {
+	[Register("SideDrawerTransitions")]
 	public class SideDrawerTransitions : SideDrawerGettingStarted
 	{
 		UIScrollView scrollView = new UIScrollView();
@@ -137,7 +138,7 @@ namespace Examples
 			button.AddTarget (target, selector, UIControlEvent.TouchUpInside);
 			scrollView.AddSubview (button);
 			buttonY += 50;
-			scrollView.ContentSize = new CGSize (Math.Max (button.Frame.Width, scrollView.ContentSize.Width), buttonY + 15 + this.ExampleBounds.Y);
+			scrollView.ContentSize = new CGSize (Math.Max (button.Frame.Width, scrollView.ContentSize.Width), buttonY + 15 + this.View.Bounds.Y);
 		}
 	}
 }

@@ -5,10 +5,10 @@
 //  Copyright (c) 2015 Telerik. All rights reserved.
 //
 
-#import "ExampleViewController.h"
+#import <TelerikUI/TKExamplesKit.h>
 #import <TelerikUI/TelerikUI.h>
 
-@interface SideDrawerGettingStarted : ExampleViewController <TKSideDrawerDelegate>
+@interface SideDrawerGettingStarted : TKExamplesExampleViewController <TKSideDrawerDelegate>
 
 @property (nonatomic,strong) TKSideDrawerView *sideDrawerView;
 

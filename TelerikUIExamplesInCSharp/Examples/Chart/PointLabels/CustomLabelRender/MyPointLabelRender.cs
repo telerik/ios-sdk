@@ -67,7 +67,7 @@ namespace Examples
 						labelRect.Y = (float)(location.Y - labelSize.Height / 2.0 + Math.Abs (labelStyle.LabelOffset.Vertical));
 					}
 
-					label.DrawInContext (ctx, labelRect, new TKChartVisualPoint(new PointF(0, 0)));
+					label.DrawInContext (ctx, labelRect, new TKChartVisualPoint(new PointF(0, 0)), UIColor.White);
 				}
 			}
 		}

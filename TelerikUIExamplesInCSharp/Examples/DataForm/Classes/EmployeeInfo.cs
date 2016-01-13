@@ -15,10 +15,10 @@ namespace Examples
 		public int Gender { get; set; }
 
 		[Export ("IdNumber")]
-		public string IdNumber { get; set; }
+		public NSNumber IdNumber { get; set; }
 
 		[Export ("EmployeeId")]
-		public string EmployeeId { get; set; }
+		public NSNumber EmployeeId { get; set; }
 
 		[Export ("DateOfBirth")]
 		public NSDate DateOfBirth { get; set; }
@@ -31,8 +31,8 @@ namespace Examples
 			this.GivenNames = "";
 			this.Surname = "";
 			this.Gender = 0;
-			this.IdNumber = "";
-			this.EmployeeId = "";
+			this.IdNumber = new NSNumber (123456);
+			this.EmployeeId = new NSNumber(123456);
 			this.DateOfBirth = new NSDate ();
 			this.PhoneNumber = "";
 		}

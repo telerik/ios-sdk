@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DataSourceWithWebService: ExampleViewController {
+class DataSourceWithWebService: TKExamplesExampleViewController {
 
     let dataSource = TKDataSource()
     
@@ -17,7 +17,7 @@ class DataSourceWithWebService: ExampleViewController {
         // Do any additional setup after loading the view.
         self.title = "Consume web service"
         
-        let chart = TKChart(frame: self.exampleBoundsWithInset)
+        let chart = TKChart(frame: self.view.bounds)
         chart.autoresizingMask = UIViewAutoresizing(rawValue: ~UIViewAutoresizing.None.rawValue)
         self.view.addSubview(chart)
 

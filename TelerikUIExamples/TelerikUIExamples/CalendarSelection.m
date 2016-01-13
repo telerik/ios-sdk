@@ -37,7 +37,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.calendarView = [[TKCalendar alloc] initWithFrame:self.exampleBounds];
+    self.calendarView = [[TKCalendar alloc] initWithFrame:self.view.bounds];
     self.calendarView.delegate = self;
     self.calendarView.selectionMode = TKCalendarSelectionModeRange;
     [self.view addSubview:self.calendarView];
@@ -69,7 +69,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    self.calendarView.frame = self.exampleBounds;
+    self.calendarView.frame = self.view.bounds;
 }
 
 - (void)selectSingleMode

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LiveData: ExampleViewController {
+class LiveData: TKExamplesExampleViewController {
 
     let chart = TKChart()
     var dataPoints = [TKChartDataPoint]()
@@ -15,7 +15,7 @@ class LiveData: ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
 

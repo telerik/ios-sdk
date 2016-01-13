@@ -7,14 +7,14 @@
 
 import Foundation
 
-class ScatterChart: ExampleViewController {
+class ScatterChart: TKExamplesExampleViewController {
     
     let chart = TKChart()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         

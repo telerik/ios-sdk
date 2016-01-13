@@ -7,7 +7,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class DataSourceDescriptorsAPI: ExampleViewController
+	[Register("DataSourceDescriptorsAPI")]
+	public class DataSourceDescriptorsAPI: XamarinExampleViewController
 	{
 		TKDataSource dataSource;
 

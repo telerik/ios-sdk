@@ -7,16 +7,16 @@
 
 import UIKit
 
-class AlertSettings: ExampleViewController, TKAlertDelegate, TKDataFormDelegate {
+class AlertSettings: TKExamplesExampleViewController, TKAlertDelegate, TKDataFormDelegate {
     
-    let settings: Settings = Settings()
+    let settings: AlertSettingsInfo = AlertSettingsInfo()
     let dataForm: TKDataForm = TKDataForm()
     let dataSource: TKDataFormEntityDataSource = TKDataFormEntityDataSource()
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("Show Alert") { self.show() }
+        self.addOption("Show Alert", action: show)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -28,24 +28,31 @@ class AlertSettings: ExampleViewController, TKAlertDelegate, TKDataFormDelegate 
         super.viewDidLoad()
 
         if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
-            dataForm.frame = self.exampleBounds
+            dataForm.frame = self.view.bounds
             self.view.backgroundColor = UIColor(red:0.937, green:0.937, blue:0.957, alpha:1.00)
         }
         else {
             dataForm.frame = self.view.bounds
         }
+        
+        dataSource.sourceObject = self.settings
+        
+         dataSource["dismissDirection"].editorClass = TKDataFormSegmentedEditor.self
+        dataSource["dismissDirection"].valuesProvider = ["Horizontal", "Vertical"]
+         dataSource["dismissMode"].editorClass = TKDataFormSegmentedEditor.self
+ dataSource["dismissMode"].valuesProvider = ["None", "Tap", "Swipe"]
+         dataSource["actionsLayout"].editorClass = TKDataFormSegmentedEditor.self
+         dataSource["actionsLayout"].valuesProvider =  ["Horizontal", "Vertical"]
+         dataSource["backgroundStyle"].editorClass = TKDataFormSegmentedEditor.self
+         dataSource["backgroundStyle"].valuesProvider = ["Blur", "Dim"]
+         dataSource["allowParallax"].editorClass = TKDataFormSegmentedEditor.self
+        
         dataForm.delegate = self
         dataForm.commitMode = TKDataFormCommitMode.Manual
         dataForm.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         self.view.addSubview(dataForm)
         
-        dataSource.sourceObject = self.settings
 
-        dataForm.registerEditor(TKDataFormSegmentedEditor.self, forProperty: "dismissDirection")
-        dataForm.registerEditor(TKDataFormSegmentedEditor.self, forProperty: "dismissMode")
-        dataForm.registerEditor(TKDataFormSegmentedEditor.self, forProperty: "actionsLayout")
-        dataForm.registerEditor(TKDataFormSegmentedEditor.self, forProperty: "backgroundStyle")
-        dataForm.registerEditor(TKDataFormSwitchEditor.self, forProperty: "allowParallax")
         dataForm.dataSource = dataSource;
     }
     
@@ -79,30 +86,5 @@ class AlertSettings: ExampleViewController, TKAlertDelegate, TKDataFormDelegate 
         }
         
         alert.show(true);
-    }
-    
-    //MARK: - TKDataFormDelegate
- 
-    func dataForm(dataForm: TKDataForm, updateEditor editor: TKDataFormEditor, forProperty property: TKEntityProperty) {
-        if(property.name == "actionsLayout") {
-            let segmentedEditor = editor as! TKDataFormSegmentedEditor
-            segmentedEditor.options = ["Horizontal", "Vertical"]
-        }
-        
-        if(property.name == "backgroundStyle") {
-            let segmentedEditor = editor as! TKDataFormSegmentedEditor
-            segmentedEditor.options = ["Blur", "Dim"];
-        }
-        
-        if(property.name == "dismissMode") {
-            let segmentedEditor = editor as! TKDataFormSegmentedEditor
-            segmentedEditor.options = ["None", "Tap", "Swipe"];
-        }
-
-        if(property.name == "dismissDirection"){
-
-            let segmentedEditor = editor as! TKDataFormSegmentedEditor
-            segmentedEditor.options = ["Horizontal", "Vertical"];
-        }
     }
 }

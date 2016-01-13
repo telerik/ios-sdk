@@ -9,7 +9,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class Customize: ExampleViewController
+	[Register("Customize")]
+	public class Customize: XamarinExampleViewController
 	{
 		ChartDelegate chartDelegate = new ChartDelegate ();
 
@@ -18,7 +19,7 @@ namespace Examples
 			base.ViewDidLoad ();
 
 			TKChart chart = new TKChart ();
-			chart.Frame = this.ExampleBounds;
+			chart.Frame = this.View.Bounds;
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			chart.Delegate = chartDelegate;
 			this.View.AddSubview (chart);
@@ -65,7 +66,7 @@ namespace Examples
 					TKLinearGradientFill gradient = new TKLinearGradientFill(colors, new PointF (0.5f, 0.0f), new PointF (0.5f, 1.0f));
 					item = new TKChartPaletteItem (gradient);
 				} else {
-					TKImageFill image = new TKImageFill(new UIImage ("pattern1.png"), 5.0f);
+					TKImageFill image = new TKImageFill(UIImage.FromBundle ("pattern1.png"), 5.0f);
 					image.ResizingMode = TKImageFillResizingMode.Tile;
 					TKStroke stroke = new TKStroke (UIColor.Black, 1.0f);
 					stroke.CornerRadius = 5.0f;

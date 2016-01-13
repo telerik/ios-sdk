@@ -11,15 +11,16 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class UIKitDynamicsAnimation: ExampleViewController
+	[Register("UIKitDynamicsAnimation")]
+	public class UIKitDynamicsAnimation: XamarinExampleViewController
 	{
 		TKChart chart;
-		//UIDynamicAnimator animator;
 		TKChartVisualPoint selectedPoint;
 		CGPoint originalLocation;
 		CGPoint originalPosition;
-		//List<TKChartDataPoint> points;
 		List<CGPoint> originalValues;
+		bool firstTime = true;
+		UIDynamicAnimator animator;
 
 		public override void ViewDidLoad ()
 		{
@@ -27,56 +28,42 @@ namespace Examples
 
 			base.ViewDidLoad ();
 
-			chart = new TKChart (this.ExampleBounds);
+			chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			chart.AllowAnimations = true;
 			this.View.AddSubview (chart);
 
 			this.reloadChart (this, EventArgs.Empty);
 		}
-
-		public override void ViewDidAppear (bool animated)
+			
+		public void applyGravity()
 		{
-			base.ViewDidAppear (animated);
+			if (firstTime) {
+				firstTime = false;
 
-			TKChartVisualPoint[] points = chart.VisualPointsForSeries (chart.Series [0]);
-			if (points != null) {
+				TKChartVisualPoint[] points1 = chart.VisualPointsForSeries (chart.Series [0]);
 				originalValues = new List<CGPoint> ();
-				foreach (TKChartVisualPoint p in points) {
+				foreach (TKChartVisualPoint p in points1) {
 					originalValues.Add (p.CGPoint);
 				}
-				TKChartVisualPoint point = points [4];
-
-				UISnapBehavior snap = new UISnapBehavior (point, point.Center);
-				snap.Damping = 0.2f;
-
-				UIPushBehavior push = new UIPushBehavior (new IUIDynamicItem[] { point }, UIPushBehaviorMode.Instantaneous);
-				push.PushDirection = new CGVector (0.0f, -1.0f);
-				push.Magnitude = 0.003f;
-
-				UIDynamicAnimator animator = new UIDynamicAnimator ();
-				animator.AddBehavior (snap);
-				animator.AddBehavior (push);
-
-				point.Animator = animator;
+				TKChartVisualPoint point1 = points1 [4];
+				originalLocation = point1.Center;
 			}
-		}
 
-		public void applyGravity(object sender, EventArgs e)
-		{
-			UIDynamicAnimator animator = new UIDynamicAnimator (chart.PlotView);
-
+			animator = new UIDynamicAnimator (chart.PlotView);
 			TKChartVisualPoint[] points = chart.VisualPointsForSeries (chart.Series [0]);
+			TKChartVisualPoint point = points [4];
 
-			for (int i=0; i<points.Length; i++) {
-				TKChartVisualPoint point = points [i];
-				CGPoint center = originalValues [i];
-				if (point.Animator != null) {
-					point.Animator.RemoveAllBehaviors();
-					point.Animator = null;
+			for (int i=0; i<originalValues.Count; i++) {
+				TKChartVisualPoint pt = points [i];
+				if (pt.Animator != null) {
+					pt.Animator.RemoveAllBehaviors();
+					pt.Animator = null;
 				}
-				point.Center = center;
+				pt.Center = ((CGPoint)originalValues[i]);
 			}
+
+			point.Center = new CGPoint (originalLocation.X, 0);
 
 			UICollisionBehavior collision = new UICollisionBehavior (points);
 			collision.TranslatesReferenceBoundsIntoBoundary = true;

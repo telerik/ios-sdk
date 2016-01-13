@@ -10,7 +10,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class ListViewGettingStarted : ExampleViewController
+	[Register("ListViewGettingStarted")]
+	public class ListViewGettingStarted : XamarinExampleViewController
 	{
 		ListViewDataSource listViewDataSource;
 
@@ -73,7 +74,7 @@ namespace Examples
 			{
 				TKListViewCell cell = (TKListViewCell)listView.DequeueReusableCell ("cell", indexPath);
 				NSString imageName = (NSString)this.owner.Photos.Items [indexPath.Row];
-				cell.ImageView.Image = new UIImage (imageName);
+				cell.ImageView.Image = UIImage.FromBundle (imageName);
 				cell.TextLabel.Text = (NSString)this.owner.Names.Items [indexPath.Row];
 				return cell;
 			}

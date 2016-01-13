@@ -7,15 +7,14 @@
 
 import Foundation
 
-class NegativeValues: ExampleViewController {
+class NegativeValues: TKExamplesExampleViewController {
     
     let chart = TKChart()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         
@@ -40,6 +39,7 @@ class NegativeValues: ExampleViewController {
         yAxis.baseline = 0
         yAxis.style.labelStyle.fitMode = TKChartAxisLabelFitMode.Rotate
         yAxis.style.labelStyle.firstLabelTextAlignment = TKChartAxisLabelAlignment.Left
+        yAxis.style.lineStroke = TKStroke(color:UIColor(white:0.85, alpha:1.0), width:2)
         chart.yAxis = yAxis
         
         let series = TKChartSplineAreaSeries(items:dataPoints)

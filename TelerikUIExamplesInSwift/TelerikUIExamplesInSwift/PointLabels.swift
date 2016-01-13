@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PointLabels: ExampleViewController, TKChartDelegate {
+class PointLabels: TKExamplesExampleViewController, TKChartDelegate {
 
     let chart = TKChart()
     var columnData = [TKChartDataPoint]()
@@ -19,11 +19,11 @@ class PointLabels: ExampleViewController, TKChartDelegate {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.addOption("Bar Series") { self.barSeries() }
-        self.addOption("Column Series") { self.columnSeries() }
-        self.addOption("Line Series") { self.lineSeries() }
-        self.addOption("Pie Series") { self.pieSeries() }
-        self.addOption("Ohlc Series") { self.ohlcSeries() }
+        self.addOption("Bar Series", action: barSeries)
+        self.addOption("Column Series", action: columnSeries)
+        self.addOption("Line Series", action: lineSeries)
+        self.addOption("Pie Series", action: pieSeries)
+        self.addOption("Ohlc Series", action: ohlcSeries)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -33,7 +33,7 @@ class PointLabels: ExampleViewController, TKChartDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleHeight.rawValue | UIViewAutoresizing.FlexibleWidth.rawValue)
         chart.delegate = self
         chart.allowAnimations = true

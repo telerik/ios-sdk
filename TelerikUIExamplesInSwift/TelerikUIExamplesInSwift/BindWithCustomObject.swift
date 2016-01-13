@@ -31,14 +31,14 @@ class CustomObject : NSObject
     }
 }
 
-class BindWithCustomObject: ExampleViewController {
+class BindWithCustomObject: TKExamplesExampleViewController {
     
     let chart = TKChart()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         

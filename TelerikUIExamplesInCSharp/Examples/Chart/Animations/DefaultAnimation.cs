@@ -8,10 +8,10 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class DefaultAnimation: ExampleViewController
+	[Register("DefaultAnimation")]
+	public class DefaultAnimation: XamarinExampleViewController
 	{
 		TKChart chart;
-		UIUserInterfaceIdiom idiom = UIDevice.CurrentDevice.UserInterfaceIdiom;
 
 		public override void ViewDidLoad ()
 		{
@@ -24,22 +24,15 @@ namespace Examples
 
 			base.ViewDidLoad ();
 
-			chart = new TKChart (this.ExampleBounds);
+			chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			chart.AllowAnimations = true;
 			this.View.AddSubview (chart);
 
-			this.setupAreaSeries (this, EventArgs.Empty);
+			this.setupAreaSeries ();
 		}
 			
-		public override void AddOption (string text, EventHandler func)
-		{
-			if (idiom == UIUserInterfaceIdiom.Pad)
-				text += " Animation";
-			base.AddOption (text, func);
-		}
-
-		public void setupLineSeries(object sender, EventArgs e)
+		public void setupLineSeries()
 		{
 			chart.RemoveAllData ();
 
@@ -52,7 +45,7 @@ namespace Examples
 			chart.AddSeries (new TKChartLineSeries (list.ToArray()));
 		}
 
-		public void setupAreaSeries(object sender, EventArgs e)
+		public void setupAreaSeries()
 		{
 			chart.RemoveAllData ();
 
@@ -67,7 +60,7 @@ namespace Examples
 			chart.AddSeries (areaSeries);
 		}
 
-		public void setupPieChart(object sender, EventArgs e)
+		public void setupPieChart()
 		{
 			chart.RemoveAllData ();
 
@@ -82,7 +75,7 @@ namespace Examples
 			chart.AddSeries (series);
 		}
 
-		public void setupScatterSeries(object sender, EventArgs e)
+		public void setupScatterSeries()
 		{
 			chart.RemoveAllData ();
 
@@ -97,7 +90,7 @@ namespace Examples
 			chart.AddSeries (scatterSeries);
 		}
 
-		public void setupBarSeries(object sender, EventArgs e)
+		public void setupBarSeries()
 		{
 			chart.RemoveAllData ();
 
@@ -112,7 +105,7 @@ namespace Examples
 			chart.AddSeries (barSeries);
 		}
 
-		public void setupColumnSeries(object sender, EventArgs e)
+		public void setupColumnSeries()
 		{
 			chart.RemoveAllData ();
 

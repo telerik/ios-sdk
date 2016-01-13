@@ -5,9 +5,8 @@
 //  Copyright (c) 2013 Telerik. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "ExampleViewController.h"
+#import <TelerikUI/TKExamplesKit.h>
 
-@interface CategoricalAxis : ExampleViewController
+@interface CategoricalAxis : TKExamplesExampleViewController
 
 @end

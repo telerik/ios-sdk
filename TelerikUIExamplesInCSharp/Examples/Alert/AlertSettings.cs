@@ -7,19 +7,17 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class AlertSettings : ExampleViewController
+	[Register("AlertSettings")]
+	public class AlertSettings : XamarinExampleViewController
 	{
 		TKDataFormEntityDataSourceHelper dataSource;
 		TKDataForm dataForm;
 		Settings settings;
-
-		public AlertSettings()
-		{
-			this.AddOption ("Show Alert", ShowAlert);
-		}
 			
 		public override void ViewDidLoad ()
 		{
+			this.AddOption ("Show Alert", ShowAlert);
+
 			base.ViewDidLoad ();
 
 			this.AutomaticallyAdjustsScrollViewInsets = false;
@@ -49,14 +47,14 @@ namespace Examples
 			this.View.AddSubview (dataForm);
 
 			if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) {
-				dataForm.Frame = this.ExampleBounds;
+				dataForm.Frame = this.View.Bounds;
 				this.View.BackgroundColor = new UIColor(0.937f, 0.937f, 0.957f, 1.00f);
 			}
 
 			this.View.BackgroundColor = new UIColor(0.937f, 0.937f, 0.957f, 1.00f);
 		}
 
-		public void ShowAlert(Object sender, EventArgs e)
+		public void ShowAlert()
 		{
 			dataForm.Commit ();
 

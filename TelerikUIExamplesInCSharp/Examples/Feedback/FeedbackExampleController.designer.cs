@@ -10,7 +10,6 @@ using System.CodeDom.Compiler;
 
 namespace Examples
 {
-	[Register ("FeedbackExampleController")]
 	partial class FeedbackExampleController
 	{
 		

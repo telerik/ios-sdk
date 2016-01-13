@@ -5,7 +5,7 @@
 //  Copyright (c) 2015 Telerik. All rights reserved.
 //
 
-class RangeBarColumnChart: ExampleViewController {
+class RangeBarColumnChart: TKExamplesExampleViewController {
     let chart = TKChart()
     let lowValues = [33, 29, 55, 21, 10, 39, 40, 11]
     let highValues = [47, 61, 64, 40, 33, 90, 87, 69];
@@ -13,8 +13,8 @@ class RangeBarColumnChart: ExampleViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.addOption("Range Column") { self.rangeColumnSelected() }
-        self.addOption("Range Bar") { self.rangeBarSelected() }
+        self.addOption("Range Column", action: rangeColumnSelected)
+        self.addOption("Range Bar", action: rangeBarSelected)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,7 +24,7 @@ class RangeBarColumnChart: ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         

@@ -8,7 +8,7 @@
 import Foundation
 import QuartzCore
 
-class CustomAnimationLineChart: ExampleViewController, TKChartDelegate {
+class CustomAnimationLineChart: TKExamplesExampleViewController, TKChartDelegate {
     
     let chart = TKChart()
     var grow = false
@@ -16,8 +16,8 @@ class CustomAnimationLineChart: ExampleViewController, TKChartDelegate {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("Sequential animation") { self.applySequential() }
-        self.addOption("Grow animation") { self.applyGrow() }
+        self.addOption("Sequential animation", action: applySequential)
+        self.addOption("Grow animation", action: applyGrow)
         
         self.selectedOption = 0
     }
@@ -29,7 +29,7 @@ class CustomAnimationLineChart: ExampleViewController, TKChartDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.allowAnimations = true
         chart.delegate = self

@@ -5,9 +5,12 @@
 //  Copyright (c) 2013 Telerik. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "ExampleViewController.h"
 
-@interface NumericAxis : ExampleViewController
+#import <TelerikUI/TKExamplesKit.h>
+#import <UIKit/UIKit.h>
+#import <TelerikUI/TelerikUI.h>
+
+
+@interface NumericAxis : TKExamplesExampleViewController
 
 @end

@@ -36,41 +36,43 @@
 {
     [super viewDidLoad];
     
-    _chart = [[TKChart alloc] initWithFrame:self.exampleBoundsWithInset];
+    _chart = [[TKChart alloc] initWithFrame:self.view.bounds];
     _chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    _chart.allowAnimations = YES;
     _chart.delegate = self;
+    _chart.allowAnimations = YES;
     [self.view addSubview:_chart];
-    
+
     [self reloadChart];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
-    NSArray *points = [_chart visualPointsForSeries:_chart.series[0]];
-    _originalValues = [NSMutableArray new];
-    for (TKChartVisualPoint *p in points) {
-        [_originalValues addObject:[NSValue valueWithCGPoint:p.CGPoint]];
-    }
     
-    TKChartVisualPoint *point = points[4];
-    
-    _location = point.center;
-    
-    UISnapBehavior *snap = [[UISnapBehavior alloc] initWithItem:point snapToPoint:point.center];
-    snap.damping = 0.2f;
-    
-    UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[point] mode:UIPushBehaviorModeInstantaneous];
-    push.pushDirection = CGVectorMake(0.f, -1.f);
-    push.magnitude = 0.003;
-    
-    UIDynamicAnimator *animator = [[UIDynamicAnimator alloc] init];
-    [animator addBehavior:snap];
-    [animator addBehavior:push];
-    
-    point.animator = animator;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSArray *points = [_chart visualPointsForSeries:_chart.series[0]];
+        _originalValues = [NSMutableArray new];
+        for (TKChartVisualPoint *p in points) {
+            [_originalValues addObject:[NSValue valueWithCGPoint:p.CGPoint]];
+        }
+        
+        TKChartVisualPoint *point = points[4];
+        
+        _location = point.center;
+        
+        UISnapBehavior *snap = [[UISnapBehavior alloc] initWithItem:point snapToPoint:point.center];
+        snap.damping = 0.2f;
+        
+        UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[point] mode:UIPushBehaviorModeInstantaneous];
+        push.pushDirection = CGVectorMake(0.f, -1.f);
+        push.magnitude = 0.003;
+        
+        UIDynamicAnimator *animator = [[UIDynamicAnimator alloc] init];
+        [animator addBehavior:snap];
+        [animator addBehavior:push];
+        
+        point.animator = animator;
+    });
 }
 
 - (void)didReceiveMemoryWarning

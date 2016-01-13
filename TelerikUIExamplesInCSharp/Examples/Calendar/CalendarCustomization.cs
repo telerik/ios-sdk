@@ -9,7 +9,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class CalendarCustomization : ExampleViewController
+	[Register("CalendarCustomization")]
+	public class CalendarCustomization : XamarinExampleViewController
 	{
 		CalendarDelegate calendarDelegate = new CalendarDelegate();
 		public TKCalendar CalendarView {
@@ -33,7 +34,7 @@ namespace Examples
 			components.Year = 1;
 			this.CalendarView.MaxDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, NSCalendarOptions.None);
 
-			UIImage img = new UIImage ("calendar_header.png");
+			UIImage img = UIImage.FromBundle ("calendar_header.png");
 	    
 			TKCalendarMonthPresenter presenter = (TKCalendarMonthPresenter)this.CalendarView.Presenter;
 			presenter.Style.TitleCellHeight = 20;

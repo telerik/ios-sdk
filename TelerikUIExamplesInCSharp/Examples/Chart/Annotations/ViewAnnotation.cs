@@ -10,13 +10,14 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class ViewAnnotation: ExampleViewController
+	[Register("ViewAnnotation")]
+	public class ViewAnnotation: XamarinExampleViewController
 	{
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
-			TKChart chart = new TKChart (this.ExampleBounds);
+			TKChart chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.AddSubview (chart);
 
@@ -30,7 +31,7 @@ namespace Examples
 			}
 
 			UIImageView imageView = new UIImageView ();
-			imageView.Image = new UIImage ("logo.png");
+			imageView.Image = UIImage.FromBundle ("logo.png");
 			imageView.Bounds = new CGRect (0, 0, imageView.Image.Size.Width, imageView.Image.Size.Height);
 			imageView.Alpha = 0.7f;
 			chart.AddAnnotation (new TKChartViewAnnotation(imageView, new NSNumber(550), new NSNumber(90), chart.Series[0]));

@@ -8,7 +8,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class CalendarEventKitDataBinding : ExampleViewController
+	[Register("CalendarEventKitDataBinding")]
+	public class CalendarEventKitDataBinding : XamarinExampleViewController
 	{
 		public TKCalendar CalendarView {
 			get;

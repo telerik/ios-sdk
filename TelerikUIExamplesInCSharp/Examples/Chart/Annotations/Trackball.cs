@@ -9,7 +9,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class Trackball: ExampleViewController
+	[Register("Trackball")]
+	public class Trackball: XamarinExampleViewController
 	{
 		ChartDelegate chartDelegate = new ChartDelegate ();
 		TKChart chart;
@@ -24,7 +25,7 @@ namespace Examples
 
 			base.ViewDidLoad ();
 
-			chart = new TKChart (this.ExampleBounds);
+			chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.AddSubview (chart);
 
@@ -55,7 +56,7 @@ namespace Examples
 			chart.Trackball.Tooltip.Style.TextAlignment = UITextAlignment.Left;
 		}
 
-		public void left(object sender, EventArgs e)
+		public void left()
 		{
 			chart.Trackball.Hide();
 			chart.Trackball.Orientation = TKChartTrackballOrientation.Horizontal;
@@ -64,7 +65,7 @@ namespace Examples
 			chart.Trackball.SnapMode = TKChartTrackballSnapMode.AllClosestPoints;
 		}
 
-		public void right(object sender, EventArgs e)
+		public void right()
 		{
 			chart.Trackball.Hide();
 			chart.Trackball.Orientation = TKChartTrackballOrientation.Horizontal;
@@ -73,7 +74,7 @@ namespace Examples
 			chart.Trackball.SnapMode = TKChartTrackballSnapMode.AllClosestPoints;
 		}
 
-		public void top(object sender, EventArgs e)
+		public void top()
 		{
 			chart.Trackball.Hide();
 			chart.Trackball.Orientation = TKChartTrackballOrientation.Vertical;
@@ -82,7 +83,7 @@ namespace Examples
 			chart.Trackball.SnapMode = TKChartTrackballSnapMode.AllClosestPoints;
 		}
 
-		public void bottom(object sender, EventArgs e)
+		public void bottom()
 		{
 			chart.Trackball.Hide();
 			chart.Trackball.Orientation = TKChartTrackballOrientation.Vertical;
@@ -91,7 +92,7 @@ namespace Examples
 			chart.Trackball.SnapMode = TKChartTrackballSnapMode.AllClosestPoints;
 		}
 
-		public void floating(object sender, EventArgs e)
+		public void floating()
 		{
 			chart.Trackball.Hide();
 			chart.Trackball.Orientation = TKChartTrackballOrientation.Vertical;

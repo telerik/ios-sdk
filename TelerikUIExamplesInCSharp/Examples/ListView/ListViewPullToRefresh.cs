@@ -10,7 +10,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class ListViewPullToRefresh: ExampleViewController
+	[Register("ListViewPullToRefresh")]
+	public class ListViewPullToRefresh: XamarinExampleViewController
 	{
 		List<string> data = new List<string> ();
 		TKDataSource dataSource = new TKDataSource();

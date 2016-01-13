@@ -9,7 +9,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public partial class FeedbackExampleController : ExampleViewController
+	[Register("FeedbackExampleController")]
+	public partial class FeedbackExampleController : XamarinExampleViewController
 	{
 		[Outlet("DescriptionLabel")]
 		public UILabel DescriptionLabel {

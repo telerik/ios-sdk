@@ -18,7 +18,7 @@ namespace Examples
 			sideDrawerHeader.ContentInsets = new UIEdgeInsets (0, 0, 0, 0);
 			if (addButton) {
 				UIButton button = UIButton.FromType (UIButtonType.System);
-				button.SetImage (new UIImage ("menu.png"), UIControlState.Normal);
+				button.SetImage (UIImage.FromBundle ("menu.png"), UIControlState.Normal);
 				button.AddTarget (target, selector, UIControlEvent.TouchUpInside);
 				sideDrawerHeader.ActionButton = button;
 				sideDrawerHeader.ContentInsets = new UIEdgeInsets (0, -20, 0, 0);

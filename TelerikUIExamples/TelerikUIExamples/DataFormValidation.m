@@ -50,7 +50,8 @@
     [_dataSource addGroupWithName:@"Details" propertyNames:@[ @"name", @"dateOfBirth", @"gender", @"country" ]];
 
     self.dataForm.dataSource = _dataSource;
-    self.dataForm.validationMode = TKDataFormValidationModeImmediate;
+    self.dataForm.validationMode = TKDataFormValidationModeOnLostFocus;
+    self.dataForm.commitMode = TKDataFormCommitModeImmediate;
     self.dataForm.backgroundColor = [UIColor colorWithRed:0.937 green:0.937 blue:0.960 alpha:1.0];
 }
 

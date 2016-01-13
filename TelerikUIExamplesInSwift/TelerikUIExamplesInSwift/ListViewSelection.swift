@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListViewSelection: ExampleViewController, TKListViewDelegate {
+class ListViewSelection: TKExamplesExampleViewController, TKListViewDelegate {
 
     let label = UILabel()
     let listView = TKListView()
@@ -16,12 +16,12 @@ class ListViewSelection: ExampleViewController, TKListViewDelegate {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.addOption("Selection on press", inSection:"Selection type") { self.selectionOnPressSelected() }
-        self.addOption("Selection on hold", inSection:"Selection type") { self.selectionOnHoldSelected() }
-        self.addOption("No selection", inSection:"Selection type") { self.noSelectionSelected() }
+        self.addOption("Selection on press", inSection:"Selection type", withAction: selectionOnPressSelected)
+        self.addOption("Selection on hold", inSection:"Selection type", withAction:selectionOnHoldSelected)
+        self.addOption("No selection", inSection:"Selection type", withAction:noSelectionSelected)
         
-        self.addOption("YES", inSection:"Multiple selection") { self.multipleSelectionSelected() }
-        self.addOption("NO", inSection:"Multiple selection") { self.singleSelectionSelected() }
+        self.addOption("YES", inSection:"Multiple selection", withAction:multipleSelectionSelected)
+        self.addOption("NO", inSection:"Multiple selection", withAction:singleSelectionSelected)
     }
 
     required init(coder aDecoder: NSCoder) {

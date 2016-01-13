@@ -7,7 +7,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class DataSourceWithWebService: ExampleViewController
+	[Register("DataSourceWithWebService")]
+	public class DataSourceWithWebService: XamarinExampleViewController
 	{
 		TKDataSource dataSource = new TKDataSource();
 

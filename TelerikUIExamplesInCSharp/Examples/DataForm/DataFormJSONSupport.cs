@@ -7,9 +7,9 @@ using ObjCRuntime;
 
 namespace Examples
 {
-	public partial class DataFormJSONSupport : UIViewController
+	[Register("DataFormJSONSupport")]	
+	public partial class DataFormJSONSupport : XamarinExampleViewController
 	{
-
 		DataFormDelegate dataFormDelegate;
 		TKAlert alert;
 		public TKDataForm DataForm {
@@ -21,17 +21,11 @@ namespace Examples
 			get;
 			set;
 		}
-			
-		public override void DidReceiveMemoryWarning ()
-		{
-			// Releases the view if it doesn't have a superview.
-			base.DidReceiveMemoryWarning ();
-			// Release any cached data, images, etc that aren't in use.
-		}
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			AddOption ("Save", CommitDataForm);
 			
 			// Perform any additional setup after loading the view, typically from a nib.
 			this.DataForm = new TKDataForm (this.View.Bounds);
@@ -48,6 +42,7 @@ namespace Examples
 			this.DataSource ["gender"].ValuesProvider = NSArray.FromStrings (new string[] { "Male", "Female" });
 			this.DataSource ["gender"].EditorClass = new Class (typeof(TKDataFormSegmentedEditor));
 			this.DataSource ["gender"].Index = 2;
+			this.DataSource ["gender"].PickersUseIndexValue = false;
 
 			this.DataSource ["email"].Index = 3;
 			this.DataSource ["email"].EditorClass = new Class (typeof(TKDataFormEmailEditor));

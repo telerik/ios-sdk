@@ -7,6 +7,7 @@ using TelerikUI;
 
 namespace Examples
 {
+	[Register("SideDrawerCustomTransition")]
 	public class SideDrawerCustomTransition : SideDrawerGettingStarted
 	{
 		public override void ViewDidLoad ()

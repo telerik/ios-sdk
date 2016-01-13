@@ -8,14 +8,14 @@
 import Foundation
 import QuartzCore
 
-class CustomAnimationAreaChart: ExampleViewController, TKChartDelegate {
+class CustomAnimationAreaChart: TKExamplesExampleViewController, TKChartDelegate {
     
     let chart = TKChart()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.allowAnimations = true
         chart.delegate = self

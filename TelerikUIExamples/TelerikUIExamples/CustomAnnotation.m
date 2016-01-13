@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     
-    _chart = [[TKChart alloc] initWithFrame:self.exampleBoundsWithInset];
+    _chart = [[TKChart alloc] initWithFrame:self.view.bounds];
     _chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_chart];
     
@@ -37,17 +37,18 @@
     for (int i = 0; i<months.count; i++) {
         [array addObject:[[TKChartDataPoint alloc] initWithX:months[i] Y:values[i]]];
     }
-    TKChartAreaSeries *series = [[TKChartAreaSeries alloc] initWithItems:array];
+    TKChartLineSeries *series = [[TKChartLineSeries alloc] initWithItems:array];
     series.style.pointShape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeCircle andSize:CGSizeMake(10, 10)];
     [_chart addSeries:series];
     
     // Add my custom annotation
     TKPredefinedShape *shape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeStar andSize:CGSizeMake(20, 20)];
-    MyAnnotation *a = [[MyAnnotation alloc] initWithShape:shape X:@"Mar" Y:@60 forSeries:series];
+    MyAnnotation *a = [[MyAnnotation alloc] initWithShape:shape X:@"Mar" Y:@65 forSeries:series];
     a.fill = [TKSolidFill solidFillWithColor:[UIColor blueColor]];
     a.stroke = [TKStroke strokeWithColor:[UIColor yellowColor] width:3];
     [_chart addAnnotation:a];
-    
+    [a layoutInRect:self.view.bounds forChart:_chart];
+
 }
 
 - (void)didReceiveMemoryWarning

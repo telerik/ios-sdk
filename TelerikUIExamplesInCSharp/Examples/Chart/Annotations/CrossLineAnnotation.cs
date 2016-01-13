@@ -9,7 +9,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class CrossLineAnnotation: ExampleViewController
+	[Register("CrossLineAnnotation")]
+	public class CrossLineAnnotation: XamarinExampleViewController
 	{
 		TKChart chart;
 
@@ -22,7 +23,7 @@ namespace Examples
 
 			base.ViewDidLoad ();
 
-			chart = new TKChart (this.ExampleBounds);
+			chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.AddSubview (chart);
 
@@ -37,7 +38,7 @@ namespace Examples
 			chart.AddAnnotation (new TKChartCrossLineAnnotation(new NSNumber(900), new NSNumber(60), chart.Series[0]));
 		}
 
-		public void crossLines(object sender, EventArgs e)
+		public void crossLines()
 		{
 			TKChartCrossLineAnnotation a = (TKChartCrossLineAnnotation)chart.Annotations [0];
 			a.Style.VerticalLineStroke = new TKStroke (UIColor.Black);
@@ -46,7 +47,7 @@ namespace Examples
 			chart.UpdateAnnotations();
 		}
 
-		public void horizontalLine(object sender, EventArgs e)
+		public void horizontalLine()
 		{
 			TKChartCrossLineAnnotation a = (TKChartCrossLineAnnotation)chart.Annotations [0];
 			a.Style.VerticalLineStroke = null;
@@ -55,7 +56,7 @@ namespace Examples
 			chart.UpdateAnnotations ();
 		}
 
-		public void verticalLine(object sender, EventArgs e)
+		public void verticalLine()
 		{
 			TKChartCrossLineAnnotation a = (TKChartCrossLineAnnotation)chart.Annotations [0];
 			a.Style.VerticalLineStroke = new TKStroke (UIColor.Black);
@@ -64,7 +65,7 @@ namespace Examples
 			chart.UpdateAnnotations ();
 		}
 
-		public void disableLines(object sender, EventArgs e)
+		public void disableLines()
 		{
 			TKChartCrossLineAnnotation a = (TKChartCrossLineAnnotation)chart.Annotations [0];
 			a.Style.VerticalLineStroke = null;

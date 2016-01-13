@@ -15,10 +15,9 @@
 		19463A421B343A290022054C /* DataFormCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 19463A411B343A290022054C /* DataFormCustomization.m */; };
 		19463A451B343A5D0022054C /* ReservationForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 19463A441B343A5D0022054C /* ReservationForm.m */; };
 		19463A481B343C450022054C /* CallEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 19463A471B343C450022054C /* CallEditor.m */; };
-		194C56F41934C505006D7C4F /* IndicatorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194C56F31934C505006D7C4F /* IndicatorsViewController.m */; };
+		194C56F41934C505006D7C4F /* IndicatorsChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 194C56F31934C505006D7C4F /* IndicatorsChart.m */; };
 		1956644719C9C678002F77EB /* SelectedPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1956644619C9C678002F77EB /* SelectedPointLabel.m */; };
 		195F5CB01BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 195F5CAF1BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m */; };
-		1960558F1940B12D00F0E4C0 /* IndicatorsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1960558E1940B12D00F0E4C0 /* IndicatorsTableView.m */; };
 		1977F8C31B285B110024ECB2 /* PersonalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977F8C21B285B110024ECB2 /* PersonalInfo.m */; };
 		1977F8C71B28666B0024ECB2 /* DataFormValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977F8C61B28666B0024ECB2 /* DataFormValidation.m */; };
 		1977F8CA1B2867370024ECB2 /* RegistrationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1977F8C91B2867370024ECB2 /* RegistrationInfo.m */; };
@@ -27,10 +26,10 @@
 		1990679E1BAAB111002129EE /* DataFormLabelAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1990679D1BAAB111002129EE /* DataFormLabelAlignment.m */; };
 		199067A11BAAB140002129EE /* EmployeeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 199067A01BAAB140002129EE /* EmployeeInfo.m */; };
 		19953A6F1A7BD26D001B9513 /* SideDrawerTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 19953A6E1A7BD26D001B9513 /* SideDrawerTransitions.m */; };
-		19A2A0201A80F63B00378C68 /* SideDrawerCustomContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A01F1A80F63B00378C68 /* SideDrawerCustomContentController.m */; };
+		19A2A0201A80F63B00378C68 /* SideDrawerCustomContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A01F1A80F63B00378C68 /* SideDrawerCustomContent.m */; };
 		19A2A02B1A811B6F00378C68 /* SideDrawerCustomTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A02A1A811B6F00378C68 /* SideDrawerCustomTransition.m */; };
 		19A2A0321A8124E400378C68 /* SideDrawerPositions.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A2A0311A8124E400378C68 /* SideDrawerPositions.m */; };
-		19A59AAA1BE7AC5D009B23F7 /* DataFormJSONController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A59AA91BE7AC5D009B23F7 /* DataFormJSONController.m */; };
+		19A59AAA1BE7AC5D009B23F7 /* DataFormJSONSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A59AA91BE7AC5D009B23F7 /* DataFormJSONSupport.m */; };
 		19A59AAE1BE7B548009B23F7 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 19A59AAD1BE7B548009B23F7 /* user.json */; };
 		19B26F8A1A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B26F891A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m */; };
 		19BAD0F219D43A0500803C27 /* LiveData.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BAD0F119D43A0500803C27 /* LiveData.m */; };
@@ -46,13 +45,10 @@
 		19F648201B2EF3C40023A601 /* PasswordValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6481F1B2EF3C40023A601 /* PasswordValidator.m */; };
 		19F9188F1B298163008C10F2 /* DataFormGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F9188E1B298163008C10F2 /* DataFormGettingStarted.m */; };
 		1B3258731B272AC800EAC1DF /* AlertCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3258721B272AC800EAC1DF /* AlertCustomView.m */; };
-		1B3258761B272E5100EAC1DF /* AlertSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3258751B272E5100EAC1DF /* AlertSettings.m */; };
 		1B33C9B31B9EDC4700906C7E /* AxisRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B33C9B21B9EDC4700906C7E /* AxisRender.m */; };
-		1B52B8C61B0DF1000005F916 /* AlertViewGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B8C51B0DF1000005F916 /* AlertViewGettingStarted.m */; };
-		1B52B9061B0E1E010005F916 /* AlertViewSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B9051B0E1E010005F916 /* AlertViewSettings.m */; };
-		1B52B9091B0E1E790005F916 /* AlertViewCustomize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B9081B0E1E790005F916 /* AlertViewCustomize.m */; };
-		1B52B90C1B0E1E880005F916 /* AlertViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B90B1B0E1E880005F916 /* AlertViewAnimations.m */; };
-		1B8F7A641BAACCA20022C222 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F7A631BAACCA20022C222 /* Images.xcassets */; };
+		1B52B8C61B0DF1000005F916 /* AlertGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B8C51B0DF1000005F916 /* AlertGettingStarted.m */; };
+		1B52B9091B0E1E790005F916 /* AlertCustomize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B9081B0E1E790005F916 /* AlertCustomize.m */; };
+		1B52B90C1B0E1E880005F916 /* AlertAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52B90B1B0E1E880005F916 /* AlertAnimations.m */; };
 		1B96644C1BA851A8000804EA /* GaugeGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B96644B1BA851A8000804EA /* GaugeGettingStarted.m */; };
 		1B96644F1BA851ED000804EA /* GaugeCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B96644E1BA851ED000804EA /* GaugeCustomization.m */; };
 		1BA376D11BA9BAB000FA48A7 /* GaugeScales.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA376D01BA9BAB000FA48A7 /* GaugeScales.m */; };
@@ -70,6 +66,8 @@
 		8DDC67051A8CFEC600FDE377 /* ListViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC67041A8CFEC600FDE377 /* ListViewLayout.m */; };
 		8DDC67081A8E1D4C00FDE377 /* ListViewPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC67071A8E1D4C00FDE377 /* ListViewPullToRefresh.m */; };
 		8DFB71C91A88B109005ACF59 /* ListViewGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB71C81A88B109005ACF59 /* ListViewGroups.m */; };
+		A6FE910D1C119BCC00799CCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6FE910C1C119BCC00799CCD /* Main.storyboard */; };
+		A6FE91151C11A1A800799CCD /* examples.json in Resources */ = {isa = PBXBuildFile; fileRef = A6FE91141C11A1A800799CCD /* examples.json */; };
 		C1639F361A86B72500E86743 /* ListViewLoadOnDemand.m in Sources */ = {isa = PBXBuildFile; fileRef = C1639F351A86B72500E86743 /* ListViewLoadOnDemand.m */; };
 		C1639F3D1A909F2800E86743 /* ListViewReorder.m in Sources */ = {isa = PBXBuildFile; fileRef = C1639F3C1A909F2800E86743 /* ListViewReorder.m */; };
 		D00281C81BC7FA1D0002AEEA /* GapsLineSplineAreaChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D00281C71BC7FA1D0002AEEA /* GapsLineSplineAreaChart.m */; };
@@ -79,19 +77,23 @@
 		F620D5A01BA97CC00063F3C0 /* languages.json in Resources */ = {isa = PBXBuildFile; fileRef = F620D59F1BA97CC00063F3C0 /* languages.json */; };
 		F640C3CE1BAC2E7D001FEC95 /* AutoCompleteCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = F640C3CD1BAC2E7D001FEC95 /* AutoCompleteCustomization.m */; };
 		F640C3D11BAC3B00001FEC95 /* PersonListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F640C3D01BAC3B00001FEC95 /* PersonListViewCell.m */; };
+		F65C346F1C21A20E000417BD /* AutoCompleteLoadData.m in Sources */ = {isa = PBXBuildFile; fileRef = F65C346E1C21A20E000417BD /* AutoCompleteLoadData.m */; };
 		F67C57EA1BB157DA004B7FED /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = F67C57E91BB157DA004B7FED /* countries.json */; };
 		F6A266081BB1732C00742A69 /* AutoCompleteTokens.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A266071BB1732C00742A69 /* AutoCompleteTokens.m */; };
+		F6C5FBDF1C22DA870047CEE4 /* AirportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C5FBDE1C22DA870047CEE4 /* AirportModel.m */; };
 		F6D7A6D71BB46656006549F4 /* emails.json in Resources */ = {isa = PBXBuildFile; fileRef = F6D7A6D61BB46656006549F4 /* emails.json */; };
 		F6D7A6D91BB54B48006549F4 /* namesPhotos.json in Resources */ = {isa = PBXBuildFile; fileRef = F6D7A6D81BB54B48006549F4 /* namesPhotos.json */; };
 		F6F51A721B8DB9820065E055 /* LogarithmicAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F51A711B8DB9820065E055 /* LogarithmicAxis.m */; };
 		FE0161CF192E57510064C284 /* CalendarWithEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0161CE192E57510064C284 /* CalendarWithEvents.m */; };
 		FE017A2B1945F571005C46D5 /* LocalizedCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = FE017A2A1945F571005C46D5 /* LocalizedCalendar.m */; };
 		FE0C968F1BA9C691005A7BA1 /* GaugeAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C968E1BA9C691005A7BA1 /* GaugeAnimations.m */; };
+		FE0FD7C11C1728C900728DED /* AlertSettingsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0FD7BF1C1728C900728DED /* AlertSettingsInfo.m */; };
+		FE0FD7C31C17292600728DED /* AlertSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0FD7C21C17292600728DED /* AlertSettings.m */; };
 		FE17150F1A961B7F000EB4C9 /* CustomCardListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE17150E1A961B7F000EB4C9 /* CustomCardListViewCell.m */; };
 		FE1715121A962278000EB4C9 /* PhotosWithNames.json in Resources */ = {isa = PBXBuildFile; fileRef = FE1715111A962278000EB4C9 /* PhotosWithNames.json */; };
 		FE1715151A9625C3000EB4C9 /* LoremIpsumGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1715141A9625C3000EB4C9 /* LoremIpsumGenerator.m */; };
 		FE17151B1A963D81000EB4C9 /* ImageWithTextListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE17151A1A963D81000EB4C9 /* ImageWithTextListViewCell.m */; };
-		FE2D10761A80CB2D00A787EB /* InlineEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2D10751A80CB2D00A787EB /* InlineEvents.m */; };
+		FE2D10761A80CB2D00A787EB /* CalendarInlineEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2D10751A80CB2D00A787EB /* CalendarInlineEvents.m */; };
 		FE3CF5841807F6E900461E57 /* NumericAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF5831807F6E900461E57 /* NumericAxis.m */; };
 		FE3CF5871807F6F700461E57 /* CategoricalAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF5861807F6F700461E57 /* CategoricalAxis.m */; };
 		FE3CF58A1807F70800461E57 /* DateTimeAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3CF5891807F70800461E57 /* DateTimeAxis.m */; };
@@ -102,14 +104,12 @@
 		FE4F98251B0C9CC9001B51D8 /* CustomListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4F98241B0C9CC9001B51D8 /* CustomListCell.m */; };
 		FE5386481A8E50DC00DE6941 /* ListViewSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = FE5386471A8E50DC00DE6941 /* ListViewSampleData.json */; };
 		FE5F963F1A93933100E70AF2 /* ListViewGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F963E1A93933100E70AF2 /* ListViewGettingStarted.m */; };
-		FE5F96421A93A68F00E70AF2 /* OptionSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F96411A93A68F00E70AF2 /* OptionSection.m */; };
+		FE666F871BFF564400B1D561 /* ListViewPerformance.m in Sources */ = {isa = PBXBuildFile; fileRef = FE666F861BFF564400B1D561 /* ListViewPerformance.m */; };
 		FE7131B8192FA4E400B9C231 /* CalendarTransitonEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7131B7192FA4E400B9C231 /* CalendarTransitonEffects.m */; };
 		FE77380419ED5E44009F5C34 /* libTelerikAppFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */; };
 		FE8701831941E2A700AC1D05 /* CalendarCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701821941E2A700AC1D05 /* CalendarCustomization.m */; };
 		FE8701D119420E4000AC1D05 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701D019420E4000AC1D05 /* CustomCell.m */; };
 		FE8701D91942141400AC1D05 /* CalendarEventKitDataBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701D81942141400AC1D05 /* CalendarEventKitDataBinding.m */; };
-		FE8701E4194218AB00AC1D05 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8701E2194218AB00AC1D05 /* EventKit.framework */; };
-		FE8701E5194218AB00AC1D05 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8701E3194218AB00AC1D05 /* EventKitUI.framework */; };
 		FE8A36CF18A3E4AE0081EECA /* BalloonAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36CE18A3E4AE0081EECA /* BalloonAnnotation.m */; };
 		FE8A36D218A3E4BA0081EECA /* Trackball.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36D118A3E4BA0081EECA /* Trackball.m */; };
 		FE8A36D518A3E65B0081EECA /* LayerAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36D418A3E65B0081EECA /* LayerAnnotation.m */; };
@@ -119,12 +119,14 @@
 		FE8A36E118A4009A0081EECA /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36E018A4009A0081EECA /* CustomAnnotation.m */; };
 		FE8A36E518A401590081EECA /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A36E418A401590081EECA /* MyAnnotation.m */; };
 		FE8FE8FE1B29EB8A00485201 /* AlertCustomContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8FE8FD1B29EB8A00485201 /* AlertCustomContentView.m */; };
+		FE9356541C0318590064BD0C /* ListViewUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9356531C0318590064BD0C /* ListViewUpdate.m */; };
 		FEA0D2D91A820C7D0014CD96 /* DataSourceGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2D81A820C7D0014CD96 /* DataSourceGettingStarted.m */; };
 		FEA0D2DC1A82174C0014CD96 /* DataSourceDescriptorsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2DB1A82174C0014CD96 /* DataSourceDescriptorsAPI.m */; };
 		FEA0D2DF1A821C340014CD96 /* DataSourceUIBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2DE1A821C340014CD96 /* DataSourceUIBindings.m */; };
 		FEA0D2E21A8245920014CD96 /* DSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2E11A8245920014CD96 /* DSItem.m */; };
 		FEA0D2E51A8280CF0014CD96 /* DSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2E41A8280CF0014CD96 /* DSCollectionViewCell.m */; };
 		FEA0D2E81A8286970014CD96 /* DataSourceWithWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA0D2E71A8286970014CD96 /* DataSourceWithWebService.m */; };
+		FEAC73041C05EEA80030A924 /* PieChartAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAC73031C05EEA80030A924 /* PieChartAnnotations.m */; };
 		FEAF8DC31B94AD7700AD77E0 /* DateTimeCategoryAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAF8DC21B94AD7700AD77E0 /* DateTimeCategoryAxis.m */; };
 		FEB4260119336F1D00C2A602 /* CalendarSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB4260019336F1D00C2A602 /* CalendarSelection.m */; };
 		FEB42604193374A500C2A602 /* iOS7StyleCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB42603193374A500C2A602 /* iOS7StyleCalendar.m */; };
@@ -132,23 +134,19 @@
 		FEBC2E2619372D92007C12B1 /* CalendarViewModes.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBC2E2519372D92007C12B1 /* CalendarViewModes.m */; };
 		FEC0CF2D1A975BA30088A158 /* SimpleListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC0CF2C1A975BA30088A158 /* SimpleListViewCell.m */; };
 		FEDBD4731BAAB5140018E9ED /* GaugeInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDBD4721BAAB5140018E9ED /* GaugeInteraction.m */; };
-		FEE2697B1806DBA300E52C37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE2697A1806DBA300E52C37 /* Foundation.framework */; };
-		FEE2697F1806DBA300E52C37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE2697E1806DBA300E52C37 /* UIKit.framework */; };
 		FEE269851806DBA300E52C37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEE269831806DBA300E52C37 /* InfoPlist.strings */; };
 		FEE269871806DBA300E52C37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269861806DBA300E52C37 /* main.m */; };
 		FEE2698B1806DBA300E52C37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE2698A1806DBA300E52C37 /* AppDelegate.m */; };
-		FEE269941806DBA300E52C37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269931806DBA300E52C37 /* ViewController.m */; };
-		FEE269B51806DC9000E52C37 /* ExampleInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269B41806DC9000E52C37 /* ExampleInfo.m */; };
 		FEE269BA1806E17D00E52C37 /* ColumnAndBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269B91806E17D00E52C37 /* ColumnAndBarChart.m */; };
-		FEE269BD1806E20300E52C37 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269BC1806E20300E52C37 /* ExampleViewController.m */; };
-		FEE269C01806E28500E52C37 /* OptionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269BF1806E28500E52C37 /* OptionInfo.m */; };
-		FEE269C61806F3BC00E52C37 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269C51806F3BC00E52C37 /* SettingsViewController.m */; };
 		FEE269CB1806FE9E00E52C37 /* LineAreaSpline.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269CA1806FE9E00E52C37 /* LineAreaSpline.m */; };
 		FEE269CE180704F200E52C37 /* ScatterChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269CD180704F200E52C37 /* ScatterChart.m */; };
 		FEE269D11807066700E52C37 /* PieDonut.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D01807066700E52C37 /* PieDonut.m */; };
 		FEE269D7180708B900E52C37 /* StackedColumnChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D6180708B900E52C37 /* StackedColumnChart.m */; };
 		FEE269DA180708CD00E52C37 /* StackedAreaChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D9180708CD00E52C37 /* StackedAreaChart.m */; };
+		FEE389581C1887970032440B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE389571C1887970032440B /* Images.xcassets */; };
 		FEE8E7911887DF6E009D373B /* libTelerikUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE8E7901887DF6E009D373B /* libTelerikUI.a */; };
+		FEE948FC1BF36723000DA8CE /* ListViewVariableHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE948FB1BF36723000DA8CE /* ListViewVariableHeight.m */; };
+		FEE948FF1BF36771000DA8CE /* ListViewDynamicHeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE948FE1BF36771000DA8CE /* ListViewDynamicHeightCell.m */; };
 		FEEAEBD318080A7600D75A5C /* DefaultAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD218080A7600D75A5C /* DefaultAnimation.m */; };
 		FEEAEBD618080A8900D75A5C /* CustomAnimationLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD518080A8900D75A5C /* CustomAnimationLineChart.m */; };
 		FEEAEBD918080A9A00D75A5C /* CustomAnimationPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD818080A9A00D75A5C /* CustomAnimationPieChart.m */; };
@@ -175,14 +173,12 @@
 		19463A441B343A5D0022054C /* ReservationForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationForm.m; sourceTree = "<group>"; };
 		19463A461B343C450022054C /* CallEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallEditor.h; sourceTree = "<group>"; };
 		19463A471B343C450022054C /* CallEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallEditor.m; sourceTree = "<group>"; };
-		194C56F21934C505006D7C4F /* IndicatorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorsViewController.h; sourceTree = "<group>"; };
-		194C56F31934C505006D7C4F /* IndicatorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorsViewController.m; sourceTree = "<group>"; };
+		194C56F21934C505006D7C4F /* IndicatorsChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorsChart.h; sourceTree = "<group>"; };
+		194C56F31934C505006D7C4F /* IndicatorsChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorsChart.m; sourceTree = "<group>"; };
 		1956644519C9C678002F77EB /* SelectedPointLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedPointLabel.h; sourceTree = "<group>"; };
 		1956644619C9C678002F77EB /* SelectedPointLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedPointLabel.m; sourceTree = "<group>"; };
 		195F5CAE1BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormCollapsibleGroups.h; sourceTree = "<group>"; };
 		195F5CAF1BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormCollapsibleGroups.m; sourceTree = "<group>"; };
-		1960558D1940B12D00F0E4C0 /* IndicatorsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorsTableView.h; sourceTree = "<group>"; };
-		1960558E1940B12D00F0E4C0 /* IndicatorsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorsTableView.m; sourceTree = "<group>"; };
 		1977F8C11B285B110024ECB2 /* PersonalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfo.h; sourceTree = "<group>"; };
 		1977F8C21B285B110024ECB2 /* PersonalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfo.m; sourceTree = "<group>"; };
 		1977F8C51B28666B0024ECB2 /* DataFormValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormValidation.h; sourceTree = "<group>"; };
@@ -198,20 +194,19 @@
 		199067A01BAAB140002129EE /* EmployeeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeInfo.m; sourceTree = "<group>"; };
 		19953A6D1A7BD26D001B9513 /* SideDrawerTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerTransitions.h; sourceTree = "<group>"; };
 		19953A6E1A7BD26D001B9513 /* SideDrawerTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerTransitions.m; sourceTree = "<group>"; };
-		19A2A01E1A80F63B00378C68 /* SideDrawerCustomContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerCustomContentController.h; sourceTree = "<group>"; };
-		19A2A01F1A80F63B00378C68 /* SideDrawerCustomContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerCustomContentController.m; sourceTree = "<group>"; };
+		19A2A01E1A80F63B00378C68 /* SideDrawerCustomContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerCustomContent.h; sourceTree = "<group>"; };
+		19A2A01F1A80F63B00378C68 /* SideDrawerCustomContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerCustomContent.m; sourceTree = "<group>"; };
 		19A2A0291A811B6F00378C68 /* SideDrawerCustomTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerCustomTransition.h; sourceTree = "<group>"; };
 		19A2A02A1A811B6F00378C68 /* SideDrawerCustomTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerCustomTransition.m; sourceTree = "<group>"; };
 		19A2A0301A8124E400378C68 /* SideDrawerPositions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerPositions.h; sourceTree = "<group>"; };
 		19A2A0311A8124E400378C68 /* SideDrawerPositions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerPositions.m; sourceTree = "<group>"; };
-		19A59AA81BE7AC5D009B23F7 /* DataFormJSONController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormJSONController.h; sourceTree = "<group>"; };
-		19A59AA91BE7AC5D009B23F7 /* DataFormJSONController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormJSONController.m; sourceTree = "<group>"; };
+		19A59AA91BE7AC5D009B23F7 /* DataFormJSONSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormJSONSupport.m; sourceTree = "<group>"; };
 		19A59AAD1BE7B548009B23F7 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		19B26F881A7A6B4D0081FEB1 /* SideDrawerGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerGettingStarted.h; sourceTree = "<group>"; };
 		19B26F891A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerGettingStarted.m; sourceTree = "<group>"; };
 		19BAD0F019D43A0500803C27 /* LiveData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveData.h; sourceTree = "<group>"; };
 		19BAD0F119D43A0500803C27 /* LiveData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveData.m; sourceTree = "<group>"; };
-		19C152CA193F668800770199 /* BubbleChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleChart.h; sourceTree = "<group>"; };
+		19C152CA193F668800770199 /* BubbleChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BubbleChart.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		19C152CB193F668800770199 /* BubbleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleChart.m; sourceTree = "<group>"; };
 		19DB73E31B59472000680707 /* RangeBarColumnChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RangeBarColumnChart.h; sourceTree = "<group>"; };
 		19DB73E41B59472000680707 /* RangeBarColumnChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RangeBarColumnChart.m; sourceTree = "<group>"; };
@@ -233,28 +228,23 @@
 		19F6481F1B2EF3C40023A601 /* PasswordValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordValidator.m; sourceTree = "<group>"; };
 		19F9188D1B298163008C10F2 /* DataFormGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormGettingStarted.h; sourceTree = "<group>"; };
 		19F9188E1B298163008C10F2 /* DataFormGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormGettingStarted.m; sourceTree = "<group>"; };
-		1B3258711B272AC800EAC1DF /* AlertCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertCustomView.h; sourceTree = "<group>"; };
+		1B3258711B272AC800EAC1DF /* AlertCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AlertCustomView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1B3258721B272AC800EAC1DF /* AlertCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertCustomView.m; sourceTree = "<group>"; };
-		1B3258741B272E5100EAC1DF /* AlertSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertSettings.h; sourceTree = "<group>"; };
-		1B3258751B272E5100EAC1DF /* AlertSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertSettings.m; sourceTree = "<group>"; };
 		1B33C9B11B9EDC4700906C7E /* AxisRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxisRender.h; sourceTree = "<group>"; };
 		1B33C9B21B9EDC4700906C7E /* AxisRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxisRender.m; sourceTree = "<group>"; };
-		1B52B8C41B0DF1000005F916 /* AlertViewGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewGettingStarted.h; sourceTree = "<group>"; };
-		1B52B8C51B0DF1000005F916 /* AlertViewGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewGettingStarted.m; sourceTree = "<group>"; };
-		1B52B9041B0E1E010005F916 /* AlertViewSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewSettings.h; sourceTree = "<group>"; };
-		1B52B9051B0E1E010005F916 /* AlertViewSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewSettings.m; sourceTree = "<group>"; };
-		1B52B9071B0E1E790005F916 /* AlertViewCustomize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewCustomize.h; sourceTree = "<group>"; };
-		1B52B9081B0E1E790005F916 /* AlertViewCustomize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewCustomize.m; sourceTree = "<group>"; };
-		1B52B90A1B0E1E880005F916 /* AlertViewAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewAnimations.h; sourceTree = "<group>"; };
-		1B52B90B1B0E1E880005F916 /* AlertViewAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewAnimations.m; sourceTree = "<group>"; };
-		1B8F7A631BAACCA20022C222 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1B52B8C41B0DF1000005F916 /* AlertGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AlertGettingStarted.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		1B52B8C51B0DF1000005F916 /* AlertGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertGettingStarted.m; sourceTree = "<group>"; };
+		1B52B9071B0E1E790005F916 /* AlertCustomize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AlertCustomize.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		1B52B9081B0E1E790005F916 /* AlertCustomize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertCustomize.m; sourceTree = "<group>"; };
+		1B52B90A1B0E1E880005F916 /* AlertAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AlertAnimations.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		1B52B90B1B0E1E880005F916 /* AlertAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertAnimations.m; sourceTree = "<group>"; };
 		1B96644A1BA851A8000804EA /* GaugeGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaugeGettingStarted.h; sourceTree = "<group>"; };
 		1B96644B1BA851A8000804EA /* GaugeGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaugeGettingStarted.m; sourceTree = "<group>"; };
 		1B96644D1BA851ED000804EA /* GaugeCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaugeCustomization.h; sourceTree = "<group>"; };
 		1B96644E1BA851ED000804EA /* GaugeCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaugeCustomization.m; sourceTree = "<group>"; };
 		1BA376CF1BA9BAB000FA48A7 /* GaugeScales.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaugeScales.h; sourceTree = "<group>"; };
 		1BA376D01BA9BAB000FA48A7 /* GaugeScales.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaugeScales.m; sourceTree = "<group>"; };
-		1BBFA9FF1B208843006FB5A6 /* AlertNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertNotifications.h; sourceTree = "<group>"; };
+		1BBFA9FF1B208843006FB5A6 /* AlertNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AlertNotifications.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1BBFAA001B208843006FB5A6 /* AlertNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertNotifications.m; sourceTree = "<group>"; };
 		1BC90EE51BAC357600A5B6DC /* GaugeRanges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaugeRanges.h; sourceTree = "<group>"; };
 		1BC90EE61BAC357600A5B6DC /* GaugeRanges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaugeRanges.m; sourceTree = "<group>"; };
@@ -280,6 +270,8 @@
 		8DFB71C71A88B109005ACF59 /* ListViewGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewGroups.h; sourceTree = "<group>"; };
 		8DFB71C81A88B109005ACF59 /* ListViewGroups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewGroups.m; sourceTree = "<group>"; };
 		A6238D701B2DAD830050378A /* UIButton_Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButton_Circle.h; sourceTree = "<group>"; };
+		A6FE910C1C119BCC00799CCD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A6FE91141C11A1A800799CCD /* examples.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = examples.json; sourceTree = "<group>"; };
 		C1639F341A86B72500E86743 /* ListViewLoadOnDemand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewLoadOnDemand.h; sourceTree = "<group>"; };
 		C1639F351A86B72500E86743 /* ListViewLoadOnDemand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewLoadOnDemand.m; sourceTree = "<group>"; };
 		C1639F3B1A909F2800E86743 /* ListViewReorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewReorder.h; sourceTree = "<group>"; };
@@ -292,13 +284,17 @@
 		F620D5991BA8767D0063F3C0 /* AutoCompleteGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompleteGettingStarted.h; sourceTree = "<group>"; };
 		F620D59A1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteGettingStarted.m; sourceTree = "<group>"; };
 		F620D59F1BA97CC00063F3C0 /* languages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = languages.json; sourceTree = "<group>"; };
-		F640C3CC1BAC2E7D001FEC95 /* AutoCompleteCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompleteCustomization.h; sourceTree = "<group>"; };
+		F640C3CC1BAC2E7D001FEC95 /* AutoCompleteCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AutoCompleteCustomization.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F640C3CD1BAC2E7D001FEC95 /* AutoCompleteCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteCustomization.m; sourceTree = "<group>"; };
 		F640C3CF1BAC3B00001FEC95 /* PersonListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonListViewCell.h; sourceTree = "<group>"; };
 		F640C3D01BAC3B00001FEC95 /* PersonListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonListViewCell.m; sourceTree = "<group>"; };
+		F65C346D1C21A20E000417BD /* AutoCompleteLoadData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompleteLoadData.h; sourceTree = "<group>"; };
+		F65C346E1C21A20E000417BD /* AutoCompleteLoadData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteLoadData.m; sourceTree = "<group>"; };
 		F67C57E91BB157DA004B7FED /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		F6A266061BB1732C00742A69 /* AutoCompleteTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompleteTokens.h; sourceTree = "<group>"; };
 		F6A266071BB1732C00742A69 /* AutoCompleteTokens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteTokens.m; sourceTree = "<group>"; };
+		F6C5FBDD1C22DA870047CEE4 /* AirportModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirportModel.h; sourceTree = "<group>"; };
+		F6C5FBDE1C22DA870047CEE4 /* AirportModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirportModel.m; sourceTree = "<group>"; };
 		F6D7A6D61BB46656006549F4 /* emails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emails.json; sourceTree = "<group>"; };
 		F6D7A6D81BB54B48006549F4 /* namesPhotos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = namesPhotos.json; sourceTree = "<group>"; };
 		F6F51A701B8DB9820065E055 /* LogarithmicAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogarithmicAxis.h; sourceTree = "<group>"; };
@@ -309,6 +305,11 @@
 		FE017A2A1945F571005C46D5 /* LocalizedCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizedCalendar.m; sourceTree = "<group>"; };
 		FE0C968D1BA9C691005A7BA1 /* GaugeAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaugeAnimations.h; sourceTree = "<group>"; };
 		FE0C968E1BA9C691005A7BA1 /* GaugeAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaugeAnimations.m; sourceTree = "<group>"; };
+		FE0FD7BD1C1727B100728DED /* DataFormJSONSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormJSONSupport.h; sourceTree = "<group>"; };
+		FE0FD7BE1C1728C900728DED /* AlertSettingsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertSettingsInfo.h; sourceTree = "<group>"; };
+		FE0FD7BF1C1728C900728DED /* AlertSettingsInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertSettingsInfo.m; sourceTree = "<group>"; };
+		FE0FD7C01C1728C900728DED /* AlertSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertSettings.h; sourceTree = "<group>"; };
+		FE0FD7C21C17292600728DED /* AlertSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertSettings.m; sourceTree = "<group>"; };
 		FE17150D1A961B7F000EB4C9 /* CustomCardListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCardListViewCell.h; sourceTree = "<group>"; };
 		FE17150E1A961B7F000EB4C9 /* CustomCardListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCardListViewCell.m; sourceTree = "<group>"; };
 		FE1715111A962278000EB4C9 /* PhotosWithNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PhotosWithNames.json; sourceTree = "<group>"; };
@@ -316,8 +317,8 @@
 		FE1715141A9625C3000EB4C9 /* LoremIpsumGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoremIpsumGenerator.m; sourceTree = "<group>"; };
 		FE1715191A963D81000EB4C9 /* ImageWithTextListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageWithTextListViewCell.h; sourceTree = "<group>"; };
 		FE17151A1A963D81000EB4C9 /* ImageWithTextListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageWithTextListViewCell.m; sourceTree = "<group>"; };
-		FE2D10741A80CB2D00A787EB /* InlineEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InlineEvents.h; sourceTree = "<group>"; };
-		FE2D10751A80CB2D00A787EB /* InlineEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InlineEvents.m; sourceTree = "<group>"; };
+		FE2D10741A80CB2D00A787EB /* CalendarInlineEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarInlineEvents.h; sourceTree = "<group>"; };
+		FE2D10751A80CB2D00A787EB /* CalendarInlineEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarInlineEvents.m; sourceTree = "<group>"; };
 		FE3CF5821807F6E900461E57 /* NumericAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumericAxis.h; sourceTree = "<group>"; };
 		FE3CF5831807F6E900461E57 /* NumericAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumericAxis.m; sourceTree = "<group>"; };
 		FE3CF5851807F6F700461E57 /* CategoricalAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoricalAxis.h; sourceTree = "<group>"; };
@@ -336,20 +337,18 @@
 		FE5386471A8E50DC00DE6941 /* ListViewSampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListViewSampleData.json; sourceTree = "<group>"; };
 		FE5F963D1A93933100E70AF2 /* ListViewGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewGettingStarted.h; sourceTree = "<group>"; };
 		FE5F963E1A93933100E70AF2 /* ListViewGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewGettingStarted.m; sourceTree = "<group>"; };
-		FE5F96401A93A68F00E70AF2 /* OptionSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionSection.h; sourceTree = "<group>"; };
-		FE5F96411A93A68F00E70AF2 /* OptionSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionSection.m; sourceTree = "<group>"; };
+		FE666F851BFF564400B1D561 /* ListViewPerformance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewPerformance.h; sourceTree = "<group>"; };
+		FE666F861BFF564400B1D561 /* ListViewPerformance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewPerformance.m; sourceTree = "<group>"; };
 		FE7131B6192FA4E400B9C231 /* CalendarTransitionEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTransitionEffects.h; sourceTree = "<group>"; };
 		FE7131B7192FA4E400B9C231 /* CalendarTransitonEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTransitonEffects.m; sourceTree = "<group>"; };
-		FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikAppFeedback.framework; path = "../TelerikAppFeedback.framework"; sourceTree = "<group>"; };
-		FE8701811941E2A700AC1D05 /* CalendarCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarCustomization.h; sourceTree = "<group>"; };
+		FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikAppFeedback.a; path = "../AppFeedback/build/Debug-iphoneos/libTelerikAppFeedback.a"; sourceTree = "<group>"; };
+		FE8701811941E2A700AC1D05 /* CalendarCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CalendarCustomization.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FE8701821941E2A700AC1D05 /* CalendarCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarCustomization.m; sourceTree = "<group>"; };
 		FE8701CF19420E4000AC1D05 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		FE8701D019420E4000AC1D05 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		FE8701D71942141400AC1D05 /* CalendarEventKitDataBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarEventKitDataBinding.h; sourceTree = "<group>"; };
 		FE8701D81942141400AC1D05 /* CalendarEventKitDataBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarEventKitDataBinding.m; sourceTree = "<group>"; };
-		FE8701E2194218AB00AC1D05 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		FE8701E3194218AB00AC1D05 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
-		FE8A36CD18A3E4AE0081EECA /* BalloonAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalloonAnnotation.h; sourceTree = "<group>"; };
+		FE8A36CD18A3E4AE0081EECA /* BalloonAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BalloonAnnotation.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FE8A36CE18A3E4AE0081EECA /* BalloonAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalloonAnnotation.m; sourceTree = "<group>"; };
 		FE8A36D018A3E4BA0081EECA /* Trackball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trackball.h; sourceTree = "<group>"; };
 		FE8A36D118A3E4BA0081EECA /* Trackball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trackball.m; sourceTree = "<group>"; };
@@ -359,7 +358,7 @@
 		FE8A36D718A3E6690081EECA /* ViewAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewAnnotation.m; sourceTree = "<group>"; };
 		FE8A36D918A3E6780081EECA /* CrossLineAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrossLineAnnotation.h; sourceTree = "<group>"; };
 		FE8A36DA18A3E6780081EECA /* CrossLineAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrossLineAnnotation.m; sourceTree = "<group>"; };
-		FE8A36DC18A3E68A0081EECA /* BandAndLineAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BandAndLineAnnotations.h; sourceTree = "<group>"; };
+		FE8A36DC18A3E68A0081EECA /* BandAndLineAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BandAndLineAnnotations.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FE8A36DD18A3E68A0081EECA /* BandAndLineAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandAndLineAnnotations.m; sourceTree = "<group>"; };
 		FE8A36DF18A4009A0081EECA /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
 		FE8A36E018A4009A0081EECA /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
@@ -367,6 +366,8 @@
 		FE8A36E418A401590081EECA /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		FE8FE8FC1B29EB8A00485201 /* AlertCustomContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertCustomContentView.h; sourceTree = "<group>"; };
 		FE8FE8FD1B29EB8A00485201 /* AlertCustomContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertCustomContentView.m; sourceTree = "<group>"; };
+		FE9356521C0318590064BD0C /* ListViewUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewUpdate.h; sourceTree = "<group>"; };
+		FE9356531C0318590064BD0C /* ListViewUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewUpdate.m; sourceTree = "<group>"; };
 		FEA0D2D71A820C7D0014CD96 /* DataSourceGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceGettingStarted.h; sourceTree = "<group>"; };
 		FEA0D2D81A820C7D0014CD96 /* DataSourceGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceGettingStarted.m; sourceTree = "<group>"; };
 		FEA0D2DA1A82174C0014CD96 /* DataSourceDescriptorsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceDescriptorsAPI.h; sourceTree = "<group>"; };
@@ -379,6 +380,8 @@
 		FEA0D2E41A8280CF0014CD96 /* DSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSCollectionViewCell.m; sourceTree = "<group>"; };
 		FEA0D2E61A8286970014CD96 /* DataSourceWithWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceWithWebService.h; sourceTree = "<group>"; };
 		FEA0D2E71A8286970014CD96 /* DataSourceWithWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceWithWebService.m; sourceTree = "<group>"; };
+		FEAC73021C05EEA80030A924 /* PieChartAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartAnnotations.h; sourceTree = "<group>"; };
+		FEAC73031C05EEA80030A924 /* PieChartAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartAnnotations.m; sourceTree = "<group>"; };
 		FEAF8DC11B94AD7700AD77E0 /* DateTimeCategoryAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTimeCategoryAxis.h; sourceTree = "<group>"; };
 		FEAF8DC21B94AD7700AD77E0 /* DateTimeCategoryAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTimeCategoryAxis.m; sourceTree = "<group>"; };
 		FEB425FF19336F1D00C2A602 /* CalendarSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSelection.h; sourceTree = "<group>"; };
@@ -394,26 +397,14 @@
 		FEDBD4711BAAB5140018E9ED /* GaugeInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaugeInteraction.h; sourceTree = "<group>"; };
 		FEDBD4721BAAB5140018E9ED /* GaugeInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaugeInteraction.m; sourceTree = "<group>"; };
 		FEE269771806DBA300E52C37 /* TelerikUIExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelerikUIExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEE2697A1806DBA300E52C37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		FEE2697E1806DBA300E52C37 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FEE269821806DBA300E52C37 /* TelerikUIExamples-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TelerikUIExamples-Info.plist"; sourceTree = "<group>"; };
 		FEE269841806DBA300E52C37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FEE269861806DBA300E52C37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEE269881806DBA300E52C37 /* TelerikUIExamples-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TelerikUIExamples-Prefix.pch"; sourceTree = "<group>"; };
 		FEE269891806DBA300E52C37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FEE2698A1806DBA300E52C37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FEE269921806DBA300E52C37 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FEE269931806DBA300E52C37 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FEE269B31806DC9000E52C37 /* ExampleInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleInfo.h; sourceTree = "<group>"; };
-		FEE269B41806DC9000E52C37 /* ExampleInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleInfo.m; sourceTree = "<group>"; };
 		FEE269B81806E17D00E52C37 /* ColumnAndBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColumnAndBarChart.h; sourceTree = "<group>"; };
 		FEE269B91806E17D00E52C37 /* ColumnAndBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColumnAndBarChart.m; sourceTree = "<group>"; };
-		FEE269BB1806E20300E52C37 /* ExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleViewController.h; sourceTree = "<group>"; };
-		FEE269BC1806E20300E52C37 /* ExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleViewController.m; sourceTree = "<group>"; };
-		FEE269BE1806E28500E52C37 /* OptionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionInfo.h; sourceTree = "<group>"; };
-		FEE269BF1806E28500E52C37 /* OptionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionInfo.m; sourceTree = "<group>"; };
-		FEE269C41806F3BC00E52C37 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		FEE269C51806F3BC00E52C37 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		FEE269C91806FE9E00E52C37 /* LineAreaSpline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineAreaSpline.h; sourceTree = "<group>"; };
 		FEE269CA1806FE9E00E52C37 /* LineAreaSpline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineAreaSpline.m; sourceTree = "<group>"; };
 		FEE269CC180704F200E52C37 /* ScatterChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScatterChart.h; sourceTree = "<group>"; };
@@ -424,7 +415,12 @@
 		FEE269D6180708B900E52C37 /* StackedColumnChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackedColumnChart.m; sourceTree = "<group>"; };
 		FEE269D8180708CD00E52C37 /* StackedAreaChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackedAreaChart.h; sourceTree = "<group>"; };
 		FEE269D9180708CD00E52C37 /* StackedAreaChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackedAreaChart.m; sourceTree = "<group>"; };
-		FEE8E7901887DF6E009D373B /* libTelerikUI.a */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelerikUI.framework; path = "../TelerikUI.framework"; sourceTree = "<group>"; };
+		FEE389571C1887970032440B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../Images.xcassets; sourceTree = "<group>"; };
+		FEE8E7901887DF6E009D373B /* libTelerikUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikUI.a; path = "../../../../../Library/Developer/Xcode/DerivedData/TelerikUI-dwzcvftbvbwddjbzzdyodshibupb/Build/Products/Debug-iphoneos/libTelerikUI.a"; sourceTree = "<group>"; };
+		FEE948FA1BF36723000DA8CE /* ListViewVariableHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewVariableHeight.h; sourceTree = "<group>"; };
+		FEE948FB1BF36723000DA8CE /* ListViewVariableHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewVariableHeight.m; sourceTree = "<group>"; };
+		FEE948FD1BF36771000DA8CE /* ListViewDynamicHeightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewDynamicHeightCell.h; sourceTree = "<group>"; };
+		FEE948FE1BF36771000DA8CE /* ListViewDynamicHeightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewDynamicHeightCell.m; sourceTree = "<group>"; };
 		FEEAEBD118080A7600D75A5C /* DefaultAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultAnimation.h; sourceTree = "<group>"; };
 		FEEAEBD218080A7600D75A5C /* DefaultAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultAnimation.m; sourceTree = "<group>"; };
 		FEEAEBD418080A8900D75A5C /* CustomAnimationLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimationLineChart.h; sourceTree = "<group>"; };
@@ -433,9 +429,9 @@
 		FEEAEBD818080A9A00D75A5C /* CustomAnimationPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnimationPieChart.m; sourceTree = "<group>"; };
 		FEEAEBDA18080AAC00D75A5C /* UIKitDynamicsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitDynamicsAnimation.h; sourceTree = "<group>"; };
 		FEEAEBDB18080AAC00D75A5C /* UIKitDynamicsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitDynamicsAnimation.m; sourceTree = "<group>"; };
-		FEEAEBDE1808160000D75A5C /* BindWithDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindWithDataPoint.h; sourceTree = "<group>"; };
+		FEEAEBDE1808160000D75A5C /* BindWithDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BindWithDataPoint.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FEEAEBDF1808160000D75A5C /* BindWithDataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindWithDataPoint.m; sourceTree = "<group>"; };
-		FEEAEBE11808161000D75A5C /* BindWithCustomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindWithCustomObject.h; sourceTree = "<group>"; };
+		FEEAEBE11808161000D75A5C /* BindWithCustomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BindWithCustomObject.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FEEAEBE21808161000D75A5C /* BindWithCustomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindWithCustomObject.m; sourceTree = "<group>"; };
 		FEEAEBE41808162600D75A5C /* BindWithDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindWithDelegate.h; sourceTree = "<group>"; };
 		FEEAEBE51808162600D75A5C /* BindWithDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindWithDelegate.m; sourceTree = "<group>"; };
@@ -449,11 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE77380419ED5E44009F5C34 /* libTelerikAppFeedback.a in Frameworks */,
-				FE8701E4194218AB00AC1D05 /* EventKit.framework in Frameworks */,
-				FE8701E5194218AB00AC1D05 /* EventKitUI.framework in Frameworks */,
 				FEE8E7911887DF6E009D373B /* libTelerikUI.a in Frameworks */,
-				FEE2697F1806DBA300E52C37 /* UIKit.framework in Frameworks */,
-				FEE2697B1806DBA300E52C37 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,17 +485,6 @@
 				195F5CAF1BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m */,
 			);
 			name = CollapsibleGroups;
-			sourceTree = "<group>";
-		};
-		1960558C1940A87E00F0E4C0 /* IndicatorsExample */ = {
-			isa = PBXGroup;
-			children = (
-				194C56F21934C505006D7C4F /* IndicatorsViewController.h */,
-				194C56F31934C505006D7C4F /* IndicatorsViewController.m */,
-				1960558D1940B12D00F0E4C0 /* IndicatorsTableView.h */,
-				1960558E1940B12D00F0E4C0 /* IndicatorsTableView.m */,
-			);
-			name = IndicatorsExample;
 			sourceTree = "<group>";
 		};
 		1977F8C01B285AF20024ECB2 /* GettingStarted */ = {
@@ -564,8 +545,8 @@
 		19A2A01D1A80F61F00378C68 /* CustomContentExample */ = {
 			isa = PBXGroup;
 			children = (
-				19A2A01E1A80F63B00378C68 /* SideDrawerCustomContentController.h */,
-				19A2A01F1A80F63B00378C68 /* SideDrawerCustomContentController.m */,
+				19A2A01E1A80F63B00378C68 /* SideDrawerCustomContent.h */,
+				19A2A01F1A80F63B00378C68 /* SideDrawerCustomContent.m */,
 			);
 			name = CustomContentExample;
 			sourceTree = "<group>";
@@ -593,8 +574,8 @@
 		19A59AA71BE7AC21009B23F7 /* JSONSupport */ = {
 			isa = PBXGroup;
 			children = (
-				19A59AA81BE7AC5D009B23F7 /* DataFormJSONController.h */,
-				19A59AA91BE7AC5D009B23F7 /* DataFormJSONController.m */,
+				FE0FD7BD1C1727B100728DED /* DataFormJSONSupport.h */,
+				19A59AA91BE7AC5D009B23F7 /* DataFormJSONSupport.m */,
 			);
 			name = JSONSupport;
 			sourceTree = "<group>";
@@ -665,18 +646,18 @@
 			isa = PBXGroup;
 			children = (
 				FE8FE8FB1B29E4F000485201 /* Classes */,
-				1B52B8C41B0DF1000005F916 /* AlertViewGettingStarted.h */,
-				1B52B8C51B0DF1000005F916 /* AlertViewGettingStarted.m */,
+				1B52B8C41B0DF1000005F916 /* AlertGettingStarted.h */,
+				1B52B8C51B0DF1000005F916 /* AlertGettingStarted.m */,
 				1B3258711B272AC800EAC1DF /* AlertCustomView.h */,
 				1B3258721B272AC800EAC1DF /* AlertCustomView.m */,
-				1B52B90A1B0E1E880005F916 /* AlertViewAnimations.h */,
-				1B52B90B1B0E1E880005F916 /* AlertViewAnimations.m */,
+				1B52B90A1B0E1E880005F916 /* AlertAnimations.h */,
+				1B52B90B1B0E1E880005F916 /* AlertAnimations.m */,
 				1BBFA9FF1B208843006FB5A6 /* AlertNotifications.h */,
 				1BBFAA001B208843006FB5A6 /* AlertNotifications.m */,
-				1B52B9071B0E1E790005F916 /* AlertViewCustomize.h */,
-				1B52B9081B0E1E790005F916 /* AlertViewCustomize.m */,
-				1B52B9041B0E1E010005F916 /* AlertViewSettings.h */,
-				1B52B9051B0E1E010005F916 /* AlertViewSettings.m */,
+				1B52B9071B0E1E790005F916 /* AlertCustomize.h */,
+				1B52B9081B0E1E790005F916 /* AlertCustomize.m */,
+				FE0FD7C01C1728C900728DED /* AlertSettings.h */,
+				FE0FD7C21C17292600728DED /* AlertSettings.m */,
 			);
 			name = Alert;
 			sourceTree = "<group>";
@@ -716,6 +697,8 @@
 				FE1715101A961CFD000EB4C9 /* CustomCells */,
 				FE5F963D1A93933100E70AF2 /* ListViewGettingStarted.h */,
 				FE5F963E1A93933100E70AF2 /* ListViewGettingStarted.m */,
+				FEE948FA1BF36723000DA8CE /* ListViewVariableHeight.h */,
+				FEE948FB1BF36723000DA8CE /* ListViewVariableHeight.m */,
 				8DDC67031A8CFEC600FDE377 /* ListViewLayout.h */,
 				8DDC67041A8CFEC600FDE377 /* ListViewLayout.m */,
 				8D6F5B781A8615E2008A8EF2 /* ListViewAnimations.h */,
@@ -728,10 +711,14 @@
 				C1639F3C1A909F2800E86743 /* ListViewReorder.m */,
 				8D69A2DF1A91F544008315D1 /* ListViewSwipe.h */,
 				8D69A2E01A91F544008315D1 /* ListViewSwipe.m */,
+				FE666F851BFF564400B1D561 /* ListViewPerformance.h */,
+				FE666F861BFF564400B1D561 /* ListViewPerformance.m */,
 				C1639F341A86B72500E86743 /* ListViewLoadOnDemand.h */,
 				C1639F351A86B72500E86743 /* ListViewLoadOnDemand.m */,
 				8DDC67061A8E1D4C00FDE377 /* ListViewPullToRefresh.h */,
 				8DDC67071A8E1D4C00FDE377 /* ListViewPullToRefresh.m */,
+				FE9356521C0318590064BD0C /* ListViewUpdate.h */,
+				FE9356531C0318590064BD0C /* ListViewUpdate.m */,
 				FE1715131A9625C3000EB4C9 /* LoremIpsumGenerator.h */,
 				FE1715141A9625C3000EB4C9 /* LoremIpsumGenerator.m */,
 			);
@@ -758,6 +745,10 @@
 				F6A266071BB1732C00742A69 /* AutoCompleteTokens.m */,
 				F640C3CF1BAC3B00001FEC95 /* PersonListViewCell.h */,
 				F640C3D01BAC3B00001FEC95 /* PersonListViewCell.m */,
+				F65C346D1C21A20E000417BD /* AutoCompleteLoadData.h */,
+				F65C346E1C21A20E000417BD /* AutoCompleteLoadData.m */,
+				F6C5FBDD1C22DA870047CEE4 /* AirportModel.h */,
+				F6C5FBDE1C22DA870047CEE4 /* AirportModel.m */,
 			);
 			name = AutoComplete;
 			sourceTree = "<group>";
@@ -803,8 +794,8 @@
 				FE8701D81942141400AC1D05 /* CalendarEventKitDataBinding.m */,
 				FE017A291945F571005C46D5 /* LocalizedCalendar.h */,
 				FE017A2A1945F571005C46D5 /* LocalizedCalendar.m */,
-				FE2D10741A80CB2D00A787EB /* InlineEvents.h */,
-				FE2D10751A80CB2D00A787EB /* InlineEvents.m */,
+				FE2D10741A80CB2D00A787EB /* CalendarInlineEvents.h */,
+				FE2D10751A80CB2D00A787EB /* CalendarInlineEvents.m */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -822,6 +813,8 @@
 				FE4F98241B0C9CC9001B51D8 /* CustomListCell.m */,
 				FEB66DB31B132ECA00DC71AC /* AnimationListCell.h */,
 				FEB66DB41B132ECA00DC71AC /* AnimationListCell.m */,
+				FEE948FD1BF36771000DA8CE /* ListViewDynamicHeightCell.h */,
+				FEE948FE1BF36771000DA8CE /* ListViewDynamicHeightCell.m */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -845,6 +838,8 @@
 				FE8A36E018A4009A0081EECA /* CustomAnnotation.m */,
 				FE8A36E318A401590081EECA /* MyAnnotation.h */,
 				FE8A36E418A401590081EECA /* MyAnnotation.m */,
+				FEAC73021C05EEA80030A924 /* PieChartAnnotations.h */,
+				FEAC73031C05EEA80030A924 /* PieChartAnnotations.m */,
 			);
 			name = Annotations;
 			sourceTree = "<group>";
@@ -852,8 +847,8 @@
 		FE8FE8FB1B29E4F000485201 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1B3258741B272E5100EAC1DF /* AlertSettings.h */,
-				1B3258751B272E5100EAC1DF /* AlertSettings.m */,
+				FE0FD7BE1C1728C900728DED /* AlertSettingsInfo.h */,
+				FE0FD7BF1C1728C900728DED /* AlertSettingsInfo.m */,
 				FE8FE8FC1B29EB8A00485201 /* AlertCustomContentView.h */,
 				FE8FE8FD1B29EB8A00485201 /* AlertCustomContentView.m */,
 				A6238D701B2DAD830050378A /* UIButton_Circle.h */,
@@ -902,10 +897,6 @@
 			children = (
 				FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */,
 				FEE8E7901887DF6E009D373B /* libTelerikUI.a */,
-				FE8701E2194218AB00AC1D05 /* EventKit.framework */,
-				FE8701E3194218AB00AC1D05 /* EventKitUI.framework */,
-				FEE2697A1806DBA300E52C37 /* Foundation.framework */,
-				FEE2697E1806DBA300E52C37 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -914,10 +905,11 @@
 			isa = PBXGroup;
 			children = (
 				FEE269B21806DC7500E52C37 /* Examples */,
-				FEE269C71806F9D800E52C37 /* Infrastructure */,
 				FEE269891806DBA300E52C37 /* AppDelegate.h */,
 				FEE2698A1806DBA300E52C37 /* AppDelegate.m */,
-				1B8F7A631BAACCA20022C222 /* Images.xcassets */,
+				A6FE910C1C119BCC00799CCD /* Main.storyboard */,
+				A6FE91141C11A1A800799CCD /* examples.json */,
+				FEE389571C1887970032440B /* Images.xcassets */,
 				FEE269811806DBA300E52C37 /* Supporting Files */,
 				FEEAEBEA18082B1D00D75A5C /* Resources */,
 			);
@@ -952,29 +944,9 @@
 			name = Examples;
 			sourceTree = "<group>";
 		};
-		FEE269C71806F9D800E52C37 /* Infrastructure */ = {
-			isa = PBXGroup;
-			children = (
-				FEE269921806DBA300E52C37 /* ViewController.h */,
-				FEE269931806DBA300E52C37 /* ViewController.m */,
-				FEE269B31806DC9000E52C37 /* ExampleInfo.h */,
-				FEE269B41806DC9000E52C37 /* ExampleInfo.m */,
-				FEE269BE1806E28500E52C37 /* OptionInfo.h */,
-				FEE269BF1806E28500E52C37 /* OptionInfo.m */,
-				FE5F96401A93A68F00E70AF2 /* OptionSection.h */,
-				FE5F96411A93A68F00E70AF2 /* OptionSection.m */,
-				FEE269BB1806E20300E52C37 /* ExampleViewController.h */,
-				FEE269BC1806E20300E52C37 /* ExampleViewController.m */,
-				FEE269C41806F3BC00E52C37 /* SettingsViewController.h */,
-				FEE269C51806F3BC00E52C37 /* SettingsViewController.m */,
-			);
-			name = Infrastructure;
-			sourceTree = "<group>";
-		};
 		FEE269C81806FE8A00E52C37 /* ChartTypes */ = {
 			isa = PBXGroup;
 			children = (
-				1960558C1940A87E00F0E4C0 /* IndicatorsExample */,
 				FEE269B81806E17D00E52C37 /* ColumnAndBarChart.h */,
 				FEE269B91806E17D00E52C37 /* ColumnAndBarChart.m */,
 				19DB73E31B59472000680707 /* RangeBarColumnChart.h */,
@@ -989,6 +961,8 @@
 				FEE269D01807066700E52C37 /* PieDonut.m */,
 				19861128191A2E550026EFF7 /* FinancialChart.h */,
 				19861129191A2E550026EFF7 /* FinancialChart.m */,
+				194C56F21934C505006D7C4F /* IndicatorsChart.h */,
+				194C56F31934C505006D7C4F /* IndicatorsChart.m */,
 				7A56815219374195005FEC6D /* StockDataPoint.h */,
 				7A56815319374195005FEC6D /* StockDataPoint.m */,
 				D00281C61BC7FA1D0002AEEA /* GapsLineSplineAreaChart.h */,
@@ -1135,19 +1109,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6FE91151C11A1A800799CCD /* examples.json in Resources */,
 				19A59AAE1BE7B548009B23F7 /* user.json in Resources */,
 				FE4F98221B0C9948001B51D8 /* ListItems.json in Resources */,
 				F615197C1B94B02B008614C7 /* electricity.json in Resources */,
 				192004F6193C7285003B1BB8 /* applestock.plist in Resources */,
 				7A0FD507194B1856004B5A8D /* FeedbackExampleController.xib in Resources */,
+				A6FE910D1C119BCC00799CCD /* Main.storyboard in Resources */,
 				F6D7A6D71BB46656006549F4 /* emails.json in Resources */,
 				FE5386481A8E50DC00DE6941 /* ListViewSampleData.json in Resources */,
+				FEE389581C1887970032440B /* Images.xcassets in Resources */,
 				FE1715121A962278000EB4C9 /* PhotosWithNames.json in Resources */,
 				19861127191A2E240026EFF7 /* AppleStockPrices.json in Resources */,
 				FEE269851806DBA300E52C37 /* InfoPlist.strings in Resources */,
 				F620D5A01BA97CC00063F3C0 /* languages.json in Resources */,
 				F67C57EA1BB157DA004B7FED /* countries.json in Resources */,
-				1B8F7A641BAACCA20022C222 /* Images.xcassets in Resources */,
 				7ABD7167180C1841009C726F /* DowJonesData.csv in Resources */,
 				F6D7A6D91BB54B48006549F4 /* namesPhotos.json in Resources */,
 				7AC1895019791AC400F13E8B /* dto.json in Resources */,
@@ -1162,22 +1138,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				F620D59B1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m in Sources */,
-				1960558F1940B12D00F0E4C0 /* IndicatorsTableView.m in Sources */,
 				19C152CC193F668800770199 /* BubbleChart.m in Sources */,
-				1B52B9061B0E1E010005F916 /* AlertViewSettings.m in Sources */,
 				FE017A2B1945F571005C46D5 /* LocalizedCalendar.m in Sources */,
 				FE8A36CF18A3E4AE0081EECA /* BalloonAnnotation.m in Sources */,
 				195F5CB01BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m in Sources */,
-				1B52B9091B0E1E790005F916 /* AlertViewCustomize.m in Sources */,
+				1B52B9091B0E1E790005F916 /* AlertCustomize.m in Sources */,
 				1977F8C71B28666B0024ECB2 /* DataFormValidation.m in Sources */,
 				D00281C81BC7FA1D0002AEEA /* GapsLineSplineAreaChart.m in Sources */,
 				7A56815419374195005FEC6D /* StockDataPoint.m in Sources */,
+				FEE948FC1BF36723000DA8CE /* ListViewVariableHeight.m in Sources */,
 				8DFB71C91A88B109005ACF59 /* ListViewGroups.m in Sources */,
-				FE2D10761A80CB2D00A787EB /* InlineEvents.m in Sources */,
+				FE2D10761A80CB2D00A787EB /* CalendarInlineEvents.m in Sources */,
 				FE3CF5901807F74C00461E57 /* NegativeValues.m in Sources */,
 				FE0161CF192E57510064C284 /* CalendarWithEvents.m in Sources */,
 				1977F8CA1B2867370024ECB2 /* RegistrationInfo.m in Sources */,
 				8D69A2E11A91F544008315D1 /* ListViewSwipe.m in Sources */,
+				FE0FD7C31C17292600728DED /* AlertSettings.m in Sources */,
 				FE5F963F1A93933100E70AF2 /* ListViewGettingStarted.m in Sources */,
 				19A2A02B1A811B6F00378C68 /* SideDrawerCustomTransition.m in Sources */,
 				FEE269BA1806E17D00E52C37 /* ColumnAndBarChart.m in Sources */,
@@ -1191,14 +1167,13 @@
 				19DCA00F1ABB1457009C5D62 /* MyTransition.m in Sources */,
 				19F648201B2EF3C40023A601 /* PasswordValidator.m in Sources */,
 				7A0FD505194B1732004B5A8D /* FeedbackExampleController.m in Sources */,
-				FE5F96421A93A68F00E70AF2 /* OptionSection.m in Sources */,
-				19A59AAA1BE7AC5D009B23F7 /* DataFormJSONController.m in Sources */,
-				FEE269B51806DC9000E52C37 /* ExampleInfo.m in Sources */,
+				19A59AAA1BE7AC5D009B23F7 /* DataFormJSONSupport.m in Sources */,
 				FE3CF5871807F6F700461E57 /* CategoricalAxis.m in Sources */,
 				FEE269DA180708CD00E52C37 /* StackedAreaChart.m in Sources */,
-				1B52B8C61B0DF1000005F916 /* AlertViewGettingStarted.m in Sources */,
+				1B52B8C61B0DF1000005F916 /* AlertGettingStarted.m in Sources */,
 				19F9188F1B298163008C10F2 /* DataFormGettingStarted.m in Sources */,
 				19BAD0F219D43A0500803C27 /* LiveData.m in Sources */,
+				FEE948FF1BF36771000DA8CE /* ListViewDynamicHeightCell.m in Sources */,
 				8DDC67051A8CFEC600FDE377 /* ListViewLayout.m in Sources */,
 				19463A421B343A290022054C /* DataFormCustomization.m in Sources */,
 				FEB66DB51B132ECA00DC71AC /* AnimationListCell.m in Sources */,
@@ -1211,6 +1186,7 @@
 				FE8701D119420E4000AC1D05 /* CustomCell.m in Sources */,
 				193BB86119C1A8F000143087 /* CustomPointLabelRender.m in Sources */,
 				FE7131B8192FA4E400B9C231 /* CalendarTransitonEffects.m in Sources */,
+				F65C346F1C21A20E000417BD /* AutoCompleteLoadData.m in Sources */,
 				FE4F98251B0C9CC9001B51D8 /* CustomListCell.m in Sources */,
 				19DD17591B304D490001CCC0 /* CardInfo.m in Sources */,
 				FEA0D2DF1A821C340014CD96 /* DataSourceUIBindings.m in Sources */,
@@ -1218,8 +1194,6 @@
 				1B96644F1BA851ED000804EA /* GaugeCustomization.m in Sources */,
 				199067A11BAAB140002129EE /* EmployeeInfo.m in Sources */,
 				FEEAEBD618080A8900D75A5C /* CustomAnimationLineChart.m in Sources */,
-				FEE269941806DBA300E52C37 /* ViewController.m in Sources */,
-				FEE269C61806F3BC00E52C37 /* SettingsViewController.m in Sources */,
 				FEC0CF2D1A975BA30088A158 /* SimpleListViewCell.m in Sources */,
 				D09800091BDA517D00B989DC /* MultipleSideDrawers.m in Sources */,
 				1956644719C9C678002F77EB /* SelectedPointLabel.m in Sources */,
@@ -1230,18 +1204,18 @@
 				19B26F8A1A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m in Sources */,
 				F6F51A721B8DB9820065E055 /* LogarithmicAxis.m in Sources */,
 				FEEAEBD318080A7600D75A5C /* DefaultAnimation.m in Sources */,
-				FEE269BD1806E20300E52C37 /* ExampleViewController.m in Sources */,
-				1B52B90C1B0E1E880005F916 /* AlertViewAnimations.m in Sources */,
+				1B52B90C1B0E1E880005F916 /* AlertAnimations.m in Sources */,
 				0113350118151E47008E6477 /* CustomAnimationAreaChart.m in Sources */,
 				FEE269CE180704F200E52C37 /* ScatterChart.m in Sources */,
 				FEE2698B1806DBA300E52C37 /* AppDelegate.m in Sources */,
 				19E9055619BF11FB00A325D8 /* PointLabels.m in Sources */,
+				FE9356541C0318590064BD0C /* ListViewUpdate.m in Sources */,
 				FE8FE8FE1B29EB8A00485201 /* AlertCustomContentView.m in Sources */,
 				1B96644C1BA851A8000804EA /* GaugeGettingStarted.m in Sources */,
 				C1639F3D1A909F2800E86743 /* ListViewReorder.m in Sources */,
 				FE3CF58D1807F71800461E57 /* MultipleAxes.m in Sources */,
 				1B33C9B31B9EDC4700906C7E /* AxisRender.m in Sources */,
-				194C56F41934C505006D7C4F /* IndicatorsViewController.m in Sources */,
+				194C56F41934C505006D7C4F /* IndicatorsChart.m in Sources */,
 				1B3258731B272AC800EAC1DF /* AlertCustomView.m in Sources */,
 				F6A266081BB1732C00742A69 /* AutoCompleteTokens.m in Sources */,
 				19E9055A19BF38F700A325D8 /* CustomPointLabels.m in Sources */,
@@ -1253,6 +1227,8 @@
 				FE3CF58A1807F70800461E57 /* DateTimeAxis.m in Sources */,
 				FEA0D2E21A8245920014CD96 /* DSItem.m in Sources */,
 				FEA0D2D91A820C7D0014CD96 /* DataSourceGettingStarted.m in Sources */,
+				FE0FD7C11C1728C900728DED /* AlertSettingsInfo.m in Sources */,
+				FEAC73041C05EEA80030A924 /* PieChartAnnotations.m in Sources */,
 				FE8A36E518A401590081EECA /* MyAnnotation.m in Sources */,
 				1BA376D11BA9BAB000FA48A7 /* GaugeScales.m in Sources */,
 				8D6F5B741A8509A8008A8EF2 /* ListViewSelection.m in Sources */,
@@ -1265,8 +1241,7 @@
 				1986112A191A2E550026EFF7 /* FinancialChart.m in Sources */,
 				FEEAEBE01808160000D75A5C /* BindWithDataPoint.m in Sources */,
 				F640C3D11BAC3B00001FEC95 /* PersonListViewCell.m in Sources */,
-				19A2A0201A80F63B00378C68 /* SideDrawerCustomContentController.m in Sources */,
-				FEE269C01806E28500E52C37 /* OptionInfo.m in Sources */,
+				19A2A0201A80F63B00378C68 /* SideDrawerCustomContent.m in Sources */,
 				19F6481B1B2EE3F70023A601 /* EmailValidator.m in Sources */,
 				FE8A36E118A4009A0081EECA /* CustomAnnotation.m in Sources */,
 				FE17151B1A963D81000EB4C9 /* ImageWithTextListViewCell.m in Sources */,
@@ -1280,11 +1255,12 @@
 				FEEAEBE61808162600D75A5C /* BindWithDelegate.m in Sources */,
 				FE8A36D818A3E6690081EECA /* ViewAnnotation.m in Sources */,
 				C1639F361A86B72500E86743 /* ListViewLoadOnDemand.m in Sources */,
-				1B3258761B272E5100EAC1DF /* AlertSettings.m in Sources */,
+				FE666F871BFF564400B1D561 /* ListViewPerformance.m in Sources */,
 				8D6F5B7A1A8615E2008A8EF2 /* ListViewAnimations.m in Sources */,
 				19DD17561B3049360001CCC0 /* DataFormReadOnly.m in Sources */,
 				19DB73E51B59472000680707 /* RangeBarColumnChart.m in Sources */,
 				FEE269871806DBA300E52C37 /* main.m in Sources */,
+				F6C5FBDF1C22DA870047CEE4 /* AirportModel.m in Sources */,
 				8DDC67081A8E1D4C00FDE377 /* ListViewPullToRefresh.m in Sources */,
 				FE8A36D218A3E4BA0081EECA /* Trackball.m in Sources */,
 				FEEAEBE918081E5400D75A5C /* Customize.m in Sources */,
@@ -1340,7 +1316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
@@ -1376,7 +1352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1405,6 +1381,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wno-nullability-completeness";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Telerik.TelerikUIExamples1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1432,6 +1409,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wno-nullability-completeness";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Telerik.TelerikUIExamples1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

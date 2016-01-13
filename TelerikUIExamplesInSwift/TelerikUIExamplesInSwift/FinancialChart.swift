@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FinancialChart: ExampleViewController {
+class FinancialChart: TKExamplesExampleViewController {
 
     let chart = TKChart()
     var dataPoints = [TKChartData]()
@@ -15,8 +15,8 @@ class FinancialChart: ExampleViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("Candlestick") { self.reloadChart() }
-        self.addOption("Ohlc") { self.reloadChart() }
+        self.addOption("Candlestick", action: reloadChart)
+        self.addOption("Ohlc", action: reloadChart)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -26,7 +26,7 @@ class FinancialChart: ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         

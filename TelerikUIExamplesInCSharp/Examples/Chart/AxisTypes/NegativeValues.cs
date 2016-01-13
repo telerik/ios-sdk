@@ -9,13 +9,14 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class NegativeValues: ExampleViewController
+	[Register("NegativeValues")]
+	public class NegativeValues: XamarinExampleViewController
 	{
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
-			TKChart chart = new TKChart (this.ExampleBounds);
+			TKChart chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.AddSubview (chart);
 
@@ -40,6 +41,7 @@ namespace Examples
 			yAxis.Baseline = 0;
 			yAxis.Style.LabelStyle.FitMode = TKChartAxisLabelFitMode.Rotate;
 			yAxis.Style.LabelStyle.FirstLabelTextAlignment = TKChartAxisLabelAlignment.Left;
+			yAxis.Style.LineStroke = new TKStroke (UIColor.FromWhiteAlpha (0.85f, 1.0f), 2.0f);
 			chart.YAxis = yAxis;
 
 			TKChartSplineAreaSeries series = new TKChartSplineAreaSeries (list.ToArray ());

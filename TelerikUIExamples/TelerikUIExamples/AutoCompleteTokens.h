@@ -5,7 +5,9 @@
 //  Copyright © 2015 Telerik. All rights reserved.
 //
 
-#import "ExampleViewController.h"
+#import <TelerikUI/TKExamplesKit.h>
+#import <TelerikUI/TelerikUI.h>
 
-@interface AutoCompleteTokens : ExampleViewController
+
+@interface AutoCompleteTokens : TKAutoCompleteController
 @end

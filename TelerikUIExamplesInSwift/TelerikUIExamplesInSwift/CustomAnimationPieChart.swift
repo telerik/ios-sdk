@@ -8,14 +8,14 @@
 import Foundation
 import QuartzCore
 
-class CustomAnimationPieChart: ExampleViewController, TKChartDelegate {
+class CustomAnimationPieChart: TKExamplesExampleViewController, TKChartDelegate {
     
     let chart = TKChart()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("Animate") { self.animate() }
+        self.addOption("Animate", action: animate)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -25,7 +25,7 @@ class CustomAnimationPieChart: ExampleViewController, TKChartDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.allowAnimations = true
         chart.delegate = self

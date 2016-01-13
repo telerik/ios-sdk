@@ -8,19 +8,20 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class FinancialChart: ExampleViewController
+	[Register("FinancialChart")]
+	public class FinancialChart: XamarinExampleViewController
 	{
 		TKChart chart;
 		List<StockDataPoint> points;
 
 		public override void ViewDidLoad ()
 		{
-			this.AddOption ("Candlestick", reloadChart);
-			this.AddOption ("Ohlc", reloadChart);
+			this.AddOption ("Candlestick", ReloadChart);
+			this.AddOption ("Ohlc", ReloadChart);
 
 			base.ViewDidLoad ();
 
-			chart = new TKChart (this.ExampleBounds);
+			chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			chart.GridStyle.VerticalLinesHidden = false;
 			chart.GridStyle.HorizontalLinesHidden = false;
@@ -28,10 +29,10 @@ namespace Examples
 
 			points = StockDataPoint.LoadStockPoints (42);
 
-			this.reloadChart (this, EventArgs.Empty);
+			this.ReloadChart ();
 		}
 
-		void reloadChart(object sender, EventArgs e)
+		void ReloadChart()
 		{
 			chart.RemoveAllData ();
 

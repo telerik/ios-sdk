@@ -9,7 +9,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class CustomPointLabels : ExampleViewController
+	[Register("CustomPointLabels")]
+	public class CustomPointLabels : XamarinExampleViewController
 	{
 		TKChart chart;
 		ChartDelegate chartDelegate = new ChartDelegate (0, 3);
@@ -17,7 +18,7 @@ namespace Examples
 		{
 			base.ViewDidLoad ();
 
-			chart = new TKChart (this.ExampleBounds);
+			chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
 			chart.Delegate = chartDelegate;
 			this.View.AddSubview (chart);

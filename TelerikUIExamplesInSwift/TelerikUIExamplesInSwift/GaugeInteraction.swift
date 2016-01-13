@@ -2,13 +2,12 @@
 //  GaugeInteraction.swift
 //  TelerikUIExamplesInSwift
 //
-//  Created by Miroslava Ivanova on 9/24/15.
 //  Copyright © 2015 Telerik. All rights reserved.
 //
 
 import UIKit
 
-class GaugeInteraction: ExampleViewController, TKGaugeDelegate {
+class GaugeInteraction: TKExamplesExampleViewController, TKGaugeDelegate {
     
     let linearGauge = TKLinearGauge()
     let radialGauge = TKRadialGauge()
@@ -55,6 +54,8 @@ class GaugeInteraction: ExampleViewController, TKGaugeDelegate {
         self.linearGauge.labelTitle.text = "85 %"
         self.linearGauge.labelSubtitle.font = UIFont(name: "HelveticaNeue-Light", size: 12)
         self.linearGauge.labelSubtitle.text = "humidity"
+        self.linearGauge.labelTitleOffset = CGPointMake(0, -25)
+        self.linearGauge.labelSubtitleOffset = CGPointMake(0, -25)
         self.linearGauge.delegate = self
         self.view.addSubview(self.linearGauge)
         
@@ -91,16 +92,16 @@ class GaugeInteraction: ExampleViewController, TKGaugeDelegate {
     
     override func viewDidLayoutSubviews() {
         
-        let bounds = self.exampleBounds
+        let bounds = self.view.bounds
         let size = self.view.bounds.size
         let offset = CGFloat(20)
         
         if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation)) {
+            
             let width = CGFloat((size.width - offset*2.0)/2.0)
             linearGauge.frame = CGRectMake(offset + offset/2.0 + width, (size.height - offset*3 - bounds.origin.y)/2.0, width, linearGauge.frame.size.height)
             radialGauge.frame = CGRectMake(offset, bounds.origin.y + 20, width, size.height - bounds.origin.y - offset*3)
-        }
-        else {
+        } else {
             linearGauge.frame = CGRectMake(offset, size.height - linearGauge.frame.size.height - offset*2, size.width - offset*2, linearGauge.frame.size.height)
             radialGauge.frame = CGRectMake(offset, bounds.origin.y + 20, size.width - offset*2, linearGauge.frame.origin.y - bounds.origin.y - offset*2)
         }

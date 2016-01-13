@@ -8,7 +8,7 @@
 import Foundation
 import QuartzCore
 
-class DefaultAnimation: ExampleViewController {
+class DefaultAnimation: TKExamplesExampleViewController {
     
     let chart = TKChart()
     
@@ -18,12 +18,12 @@ class DefaultAnimation: ExampleViewController {
         let names = ["Area Series", "Pie Series", "Line Series", "Scatter Series", "Bar Series", "Column Series"]
         let idiom = UIDevice.currentDevice().userInterfaceIdiom
         
-        self.addOption(self.nameForOption(0, names: names, idiom: idiom)) { self.setupAreaSeries() }
-        self.addOption(self.nameForOption(1, names: names, idiom: idiom)) { self.setupPieSeries() }
-        self.addOption(self.nameForOption(2, names: names, idiom: idiom)) { self.setupLineSeries() }
-        self.addOption(self.nameForOption(3, names: names, idiom: idiom)) { self.setupScatterSeries() }
-        self.addOption(self.nameForOption(4, names: names, idiom: idiom)) { self.setupBarSeries() }
-        self.addOption(self.nameForOption(5, names: names, idiom: idiom)) { self.setupColumnSeries() }
+        self.addOption(self.nameForOption(0, names: names, idiom: idiom), action: setupAreaSeries)
+        self.addOption(self.nameForOption(1, names: names, idiom: idiom), action: setupPieSeries)
+        self.addOption(self.nameForOption(2, names: names, idiom: idiom), action: setupLineSeries)
+        self.addOption(self.nameForOption(3, names: names, idiom: idiom), action: setupScatterSeries)
+        self.addOption(self.nameForOption(4, names: names, idiom: idiom), action: setupBarSeries)
+        self.addOption(self.nameForOption(5, names: names, idiom: idiom), action: setupColumnSeries)
         
         self.selectedOption = 2
     }
@@ -35,7 +35,7 @@ class DefaultAnimation: ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.allowAnimations = true
         self.view.addSubview(chart)

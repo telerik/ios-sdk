@@ -12,7 +12,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class ListViewLoadOnDemand: ExampleViewController
+	[Register("ListViewLoadOnDemand")]
+	public class ListViewLoadOnDemand: XamarinExampleViewController
 	{
 		TKListView listView = new TKListView();
 		ListViewDataSource listViewDataSource;
@@ -24,8 +25,8 @@ namespace Examples
 
 		public override void ViewDidLoad ()
 		{
-			this.AddOption ("Manual", LoadOnDemandManual, "Load on demand mode");
-			this.AddOption ("Auto", LoadOnDemandAuto, "Load on demand mode");
+			this.AddOption ("Manual", "Load on demand mode", LoadOnDemandManual);
+			this.AddOption ("Auto", "Load on demand mode", LoadOnDemandAuto);
 
 			base.ViewDidLoad ();
 
@@ -52,7 +53,7 @@ namespace Examples
 			layout.ItemAlignment = TKListViewItemAlignment.Stretch;
 		}
 
-		void LoadOnDemandManual(object sender, EventArgs e) {
+		void LoadOnDemandManual() {
 			this.lastRetrievedDataIndex = 15;
 			this.listView.LoadOnDemandMode = TKListViewLoadOnDemandMode.Manual;
 			this.listView.ReloadData ();
@@ -60,7 +61,7 @@ namespace Examples
 		}
 
 
-		void LoadOnDemandAuto(object sender, EventArgs e) {
+		void LoadOnDemandAuto() {
 			this.lastRetrievedDataIndex = 15;
 			this.listView.LoadOnDemandMode = TKListViewLoadOnDemandMode.Auto;
 			this.listView.ReloadData ();
@@ -87,7 +88,7 @@ namespace Examples
 
 				if (cell == null) {
 					cell = listView.DequeueReusableCell ("cell", indexPath) as TKListViewCell;
-					cell.ImageView.Image = new UIImage (this.owner.photos.Items [indexPath.Row] as NSString);
+					cell.ImageView.Image = UIImage.FromBundle (this.owner.photos.Items [indexPath.Row] as NSString);
 					cell.TextLabel.Text = this.owner.names.Items [indexPath.Row] as NSString;
 					Random r = new Random ();
 					cell.DetailTextLabel.Text = this.owner.loremIpsum.RandomString (10 + r.Next (0, 16), indexPath);

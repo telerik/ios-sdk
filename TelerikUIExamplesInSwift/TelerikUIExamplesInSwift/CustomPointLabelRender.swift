@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomPointLabelRender: ExampleViewController, TKChartDelegate {
+class CustomPointLabelRender: TKExamplesExampleViewController, TKChartDelegate {
 
     let chart = TKChart()
     var selectedSeriesIndex = 0
@@ -17,7 +17,7 @@ class CustomPointLabelRender: ExampleViewController, TKChartDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.delegate = self
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)

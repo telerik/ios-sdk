@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CalendarEventKitDataBinding: ExampleViewController {
+class CalendarEventKitDataBinding: TKExamplesExampleViewController {
     
     let calendarView = TKCalendar()
     let dataSource = TKCalendarEventKitDataSource()
@@ -22,7 +22,7 @@ class CalendarEventKitDataBinding: ExampleViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.calendarView.frame = self.exampleBounds
+        self.calendarView.frame = self.view.bounds
     }
     
     override func didReceiveMemoryWarning() {

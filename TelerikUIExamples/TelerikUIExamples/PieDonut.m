@@ -18,10 +18,10 @@
 {
     [super viewDidLoad];
     
-    CGRect bounds = self.exampleBoundsWithInset;
+    CGRect bounds = self.view.bounds;
     
     _pieChart = [[TKChart alloc] initWithFrame:CGRectInset(CGRectMake(bounds.origin.x, bounds.origin.y,
-                                                                       bounds.size.width, bounds.size.height / 2), 10, 10)];
+                                                                      bounds.size.width, bounds.size.height / 2), 10, 10)];
     _pieChart.autoresizingMask = ~UIViewAutoresizingNone;
     _pieChart.allowAnimations = YES;
     _pieChart.legend.hidden = NO;
@@ -29,13 +29,13 @@
     [self.view addSubview:_pieChart];
     
     _donutChart = [[TKChart alloc] initWithFrame:CGRectInset(CGRectMake(bounds.origin.x, bounds.origin.y + bounds.size.height/2,
-                                                                       bounds.size.width, bounds.size.height/2), 10, 10)];
+                                                                        bounds.size.width, bounds.size.height/2), 10, 10)];
     _donutChart.autoresizingMask = ~UIViewAutoresizingNone;
     _donutChart.allowAnimations = YES;
     _donutChart.legend.hidden = NO;
     _donutChart.legend.style.position = TKChartLegendPositionRight;
     [self.view addSubview:_donutChart];
-
+    
     NSMutableArray *array = [[NSMutableArray alloc] init];
     [array addObject:[[TKChartDataPoint alloc] initWithName:@"Google" value:@20]];
     [array addObject:[[TKChartDataPoint alloc] initWithName:@"Apple" value:@30]];

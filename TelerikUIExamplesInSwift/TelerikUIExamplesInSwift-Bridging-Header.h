@@ -4,5 +4,6 @@
 
 #import <UIKit/UIKit.h>
 
+#import <TelerikUI/TKExamplesKit.h>
 #import <TelerikUI/TelerikUI.h>
 #import <TelerikAppFeedback/TelerikAppFeedback.h>

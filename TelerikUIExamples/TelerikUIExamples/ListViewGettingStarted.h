@@ -5,8 +5,8 @@
 //  Copyright (c) 2015 Telerik. All rights reserved.
 //
 
-#import "ExampleViewController.h"
+#import <TelerikUI/TKExamplesKit.h>
 
-@interface ListViewGettingStarted : ExampleViewController
+@interface ListViewGettingStarted : TKExamplesExampleViewController
 
 @end

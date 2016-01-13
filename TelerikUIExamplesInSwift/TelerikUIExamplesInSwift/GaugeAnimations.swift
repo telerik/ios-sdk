@@ -2,13 +2,12 @@
 //  GaugeAnimations.swift
 //  TelerikUIExamplesInSwift
 //
-//  Created by Miroslava Ivanova on 9/24/15.
 //  Copyright © 2015 Telerik. All rights reserved.
 //
 
 import UIKit
 
-class GaugeAnimations: ExampleViewController {
+class GaugeAnimations: TKExamplesExampleViewController {
     
     var segmentedControl: UISegmentedControl?
     let radialGauge = TKRadialGauge()
@@ -45,7 +44,6 @@ class GaugeAnimations: ExampleViewController {
     func addRadialGauge() {
 
         self.radialGauge.labelSubtitle.text = "km/h"
-        self.radialGauge.labelOffset = CGPointMake(0, 20)
         self.view.addSubview(self.radialGauge)
         
         let scale = TKGaugeRadialScale(minimum: 0, maximum: 180)
@@ -134,7 +132,7 @@ class GaugeAnimations: ExampleViewController {
     
     override func viewDidLayoutSubviews() {
         
-        let bounds = self.exampleBounds
+        let bounds = self.view.bounds
         let size = self.view.bounds.size
         let offset = CGFloat(20)
         

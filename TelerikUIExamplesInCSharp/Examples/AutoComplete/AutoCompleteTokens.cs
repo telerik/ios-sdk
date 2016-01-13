@@ -8,24 +8,28 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class AutoCompleteTokens : ExampleViewController
+	[Register("AutoCompleteTokens")]
+	public class AutoCompleteTokens : XamarinExampleViewController
 	{
 		public TKDataSource Datasource { get; set;}
 		public TKAutoCompleteTextView Autocomplete { get; set;}
 		AutoCompleteTokensDelegate autocompleteDelegate = new AutoCompleteTokensDelegate();
+		NSObject didShowObserver;
+		NSObject didHideObserver;
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			this.View.BackgroundColor = UIColor.FromRGB (239, 239, 244);
 
-			this.Autocomplete = new TKAutoCompleteTextView(new CGRect(10, this.ExampleBounds.Y, this.ExampleBounds.Size.Width - 10, 30));
+			this.Autocomplete = new TKAutoCompleteTextView(new CGRect(10, this.View.Bounds.Y + 10, this.View.Bounds.Size.Width - 10, 30));
 			this.AutomaticallyAdjustsScrollViewInsets = false;
 
 			this.Datasource = new TKDataSource ();
 			this.Datasource.LoadDataFromJSONResource("namesPhotos", "json", "data");
 			this.Datasource.Settings.AutoComplete.CreateToken (delegate(nuint index, NSObject item) {
 				TKAutoCompleteToken token = new TKAutoCompleteToken((NSString)(item.ValueForKey(new NSString("name"))));
-				token.Image = new UIImage((NSString)item.ValueForKey(new NSString("photo")));
+				token.Image = UIImage.FromBundle((NSString)item.ValueForKey(new NSString("photo")));
 				return token;
 			});
 
@@ -43,15 +47,37 @@ namespace Examples
 			this.Autocomplete.DisplayMode = TKAutoCompleteDisplayMode.Tokens;
 			this.Autocomplete.LayoutMode = TKAutoCompleteLayoutMode.Wrap;
 			this.Autocomplete.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
-			this.Autocomplete.MaximumWrapHeight = 80;
+			this.Autocomplete.MaximumWrapHeight = 150;
 			this.Autocomplete.WeakDataSource = this.Datasource;
 			this.Autocomplete.TextField.Placeholder = "Enter Users";
 			this.Autocomplete.NoResultsLabel.Text = "No Users Found";
-			this.Autocomplete.ImageView.Image = new UIImage (new NSString("search.png"));
+			this.Autocomplete.ImageView.Image = UIImage.FromBundle (new NSString("search.png"));
 			this.Autocomplete.MinimumCharactersToSearch = 1;
 			this.Autocomplete.WeakDelegate = autocompleteDelegate;
-			this.Autocomplete.SuggestionViewHeight = this.ExampleBounds.Height - this.ExampleBounds.Y + 45;
+			this.Autocomplete.SuggestionViewHeight = this.View.Bounds.Height - this.View.Bounds.Y + 45;
 			this.View.AddSubview (this.Autocomplete);
+		}
+
+		public override void ViewDidAppear (bool animated)
+		{
+			base.ViewDidAppear (animated);
+
+			didShowObserver = NSNotificationCenter.DefaultCenter.AddObserver(UIKeyboard.DidShowNotification, (notification) => {
+				NSValue nsKeyboardBounds = (NSValue)notification.UserInfo.ObjectForKey(UIKeyboard.BoundsUserInfoKey);
+				CGRect keyboardBounds = nsKeyboardBounds.RectangleFValue;
+				var height = keyboardBounds.Height;
+				this.Autocomplete.SuggestionViewHeight = this.View.Bounds.Height - (this.Autocomplete.CurrentWrapHeight + height + 30);
+			});
+			didHideObserver = NSNotificationCenter.DefaultCenter.AddObserver(UIKeyboard.DidHideNotification, (notification) => {
+				this.Autocomplete.SuggestionViewHeight = this.View.Bounds.Height - (15 + this.Autocomplete.Bounds.Height);
+			});
+		}
+
+		public override void ViewWillDisappear (bool animated)
+		{
+			NSNotificationCenter.DefaultCenter.RemoveObserver (didShowObserver);
+			NSNotificationCenter.DefaultCenter.RemoveObserver (didHideObserver);
+			base.ViewWillDisappear (animated);
 		}
 	}
 
@@ -60,9 +86,9 @@ namespace Examples
 		public override TKAutoCompleteTokenView ViewForToken(TKAutoCompleteTextView autocomplete, TKAutoCompleteToken token)
 		{
 			TKAutoCompleteTokenView tokenView = new TKAutoCompleteTokenView(token);
-			tokenView.BackgroundColor = new UIColor(0.090f, 0.537f, 0.965f, 1.00f);
+			tokenView.BackgroundColor = UIColor.LightGray;
 			tokenView.Layer.CornerRadius = 10;
-			tokenView.ImageView.Layer.CornerRadius = 10;
+			tokenView.ImageView.Layer.CornerRadius = 3;
 			return tokenView;
 		}
 	}

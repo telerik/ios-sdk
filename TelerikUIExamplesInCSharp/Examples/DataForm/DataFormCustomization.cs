@@ -7,6 +7,7 @@ using CoreGraphics;
 
 namespace Examples
 {
+	[Register("DataFormCustomization")]
 	public class DataFormCustomization : TKDataFormViewController
 	{
 		CustomizationDataFormDelegate dataFormDelegate;
@@ -28,12 +29,12 @@ namespace Examples
 			formatter.DateFormat = "h:mm a";
 			this.dataSource.PropertyWithName ("Time").Formatter = formatter;
 
-			this.dataSource["Name"].Image = new UIImage ("guest-name.png");
-			this.dataSource["Phone"].Image = new UIImage ("phone.png");
-			this.dataSource["Date"].Image = new UIImage ("calendar.png");
-			this.dataSource["Time"].Image = new UIImage ("time.png");
-			this.dataSource["Guests"].Image = new UIImage ("guest-number.png");
-			this.dataSource["Table"].Image = new UIImage ("table-number.png");
+			this.dataSource["Name"].Image = UIImage.FromBundle ("guest-name.png");
+			this.dataSource["Phone"].Image = UIImage.FromBundle ("phone.png");
+			this.dataSource["Date"].Image = UIImage.FromBundle ("calendar.png");
+			this.dataSource["Time"].Image = UIImage.FromBundle ("time.png");
+			this.dataSource["Guests"].Image = UIImage.FromBundle ("guest-number.png");
+			this.dataSource["Table"].Image = UIImage.FromBundle ("table-number.png");
 
 			this.dataSource["Name"].HintText = "Name";
 			this.dataSource["Name"].ErrorMessage = @"Please fill in the guest name";
@@ -42,7 +43,7 @@ namespace Examples
 			this.dataSource ["Phone"].HintText = "Phone";
 			this.dataSource["Origin"].EditorClass = new ObjCRuntime.Class(typeof(TKDataFormSegmentedEditor));
 
-			this.dataSource["Guests"].ValuesProvider = new TKRange (new NSNumber(1), new NSNumber(10));
+			this.dataSource["Guests"].Range = new TKRange (new NSNumber(1), new NSNumber(10));
 			this.dataSource["Section"].ValuesProvider = NSArray.FromStrings (new string[] {
 				"Section 1",
 				"Section 2",
@@ -61,7 +62,7 @@ namespace Examples
 			this.dataSource.AddGroup ("TABLE DETAILS", new string[] { "Section", "Table" });
 			this.dataSource.AddGroup ("ORIGIN", new string[] { "Origin" });
 				
-			this.DataForm.BackgroundColor = UIColor.FromPatternImage (new UIImage ("wood-pattern.png"));
+			this.DataForm.BackgroundColor = UIColor.FromPatternImage (UIImage.FromBundle ("wood-pattern.png"));
 			this.DataForm.Frame = new CGRect (0, 0, this.View.Bounds.Size.Width, this.View.Bounds.Size.Height - 66);
 			this.DataForm.TintColor = new UIColor (0.780f, 0.2f, 0.223f, 1.0f);
 			this.DataForm.Delegate = this.dataFormDelegate;
@@ -138,7 +139,7 @@ namespace Examples
 			}
 
 			if (property.Name == "Section") {
-				UIImage img = new UIImage ("guest-name.png");
+				UIImage img = UIImage.FromBundle ("guest-name.png");
 				editor.Style.TextLabelOffset = new UIOffset (img.Size.Width + 10, 0);
 			}
 

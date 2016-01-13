@@ -60,7 +60,7 @@
 {
     [super viewDidLayoutSubviews];
     if (self.view.subviews.count > 1) {
-        ((UIView*)self.view.subviews[1]).frame = self.exampleBounds;
+        ((UIView*)self.view.subviews[1]).frame = self.view.bounds;
     }
 }
 
@@ -99,7 +99,7 @@
         return series;
     }];
     
-    TKChart *chart = [[TKChart alloc] initWithFrame:self.exampleBounds];
+    TKChart *chart = [[TKChart alloc] initWithFrame:self.view.bounds];
     chart.dataSource = self.dataSource;
     [self.view addSubview:chart];
 }
@@ -114,7 +114,7 @@
     self.dataSource.settings.calendar.endDateKey = @"date";
     self.dataSource.settings.calendar.defaultEventColor = [UIColor redColor];
     
-    TKCalendar *calendar = [[TKCalendar alloc] initWithFrame:self.exampleBounds];
+    TKCalendar *calendar = [[TKCalendar alloc] initWithFrame:self.view.bounds];
     calendar.dataSource = self.dataSource;
     [self.view addSubview:calendar];
     
@@ -144,7 +144,7 @@
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", dsitem.value];
     }];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.exampleBounds];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     tableView.dataSource = self.dataSource;
     [self.view addSubview:tableView];
 }
@@ -170,7 +170,7 @@
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.itemSize = CGSizeMake(140, 140);
     
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.exampleBounds collectionViewLayout:layout];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     [collectionView registerClass:[DSCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     collectionView.dataSource = self.dataSource;
     collectionView.backgroundColor = [UIColor whiteColor];
@@ -183,7 +183,7 @@
         [self.view.subviews[1] removeFromSuperview];
     }
     
-    TKListView *listView = [[TKListView alloc] initWithFrame:self.exampleBounds];
+    TKListView *listView = [[TKListView alloc] initWithFrame:self.view.bounds];
     listView.dataSource = self.dataSource;
     [self.view addSubview:listView];
 }

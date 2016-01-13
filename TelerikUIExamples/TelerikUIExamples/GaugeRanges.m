@@ -170,7 +170,7 @@
 {
     [super viewDidLayoutSubviews];
     
-    CGRect bounds = self.exampleBounds;
+    CGRect bounds = self.view.bounds;
     CGSize size = self.view.bounds.size;
     CGFloat offset = 20;
     CGFloat linearHeight = 135;

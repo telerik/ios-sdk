@@ -52,7 +52,7 @@
 {
     [super viewDidLoad];
     
-    _contentView = [[UIView alloc] initWithFrame:self.exampleBounds];
+    _contentView = [[UIView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:_contentView];
     
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_contentView.bounds) - 44, CGRectGetWidth(_contentView.bounds), 44)];
@@ -81,7 +81,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    _contentView.frame = self.exampleBounds;
+    _contentView.frame = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning

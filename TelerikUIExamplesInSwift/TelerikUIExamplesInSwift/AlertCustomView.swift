@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AlertCustomView: ExampleViewController, TKAlertDelegate {
+class AlertCustomView: TKExamplesExampleViewController, TKAlertDelegate {
     
     override func viewDidLoad() {
         

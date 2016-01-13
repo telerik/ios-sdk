@@ -8,13 +8,14 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class LogarithmicAxis : ExampleViewController
+	[Register("LogarithmicAxis")]
+	public class LogarithmicAxis : XamarinExampleViewController
 	{
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
-			TKChart chart = new TKChart (this.ExampleBounds);
+			TKChart chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			chart.Legend.Hidden = false;
 			this.View.AddSubview (chart);
@@ -38,7 +39,6 @@ namespace Examples
 
 			datasource.Settings.Chart.CreateSeries((TKDataSourceGroup group) => {
 				TKChartAreaSeries areaSeries = new TKChartAreaSeries();
-				areaSeries.YAxis = new TKChartLogarithmicAxis();
 				areaSeries.Title = group.ValueKey.ToUpper();
 				for (int i = 0; i < datasource.Items.Length; i++) {
 					TKDataSourceGroup current = (TKDataSourceGroup)datasource.Items[i];
@@ -48,7 +48,7 @@ namespace Examples
 				} 
 				return areaSeries;
 			});
-				
+			chart.YAxis = new TKChartLogarithmicAxis();
 			chart.DataSource = datasource;
 		}
 	}

@@ -8,7 +8,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class ListViewGroups: ExampleViewController
+	[Register("ListViewGroups")]
+	public class ListViewGroups: XamarinExampleViewController
 	{
 		TKDataSource dataSource = new TKDataSource();
 

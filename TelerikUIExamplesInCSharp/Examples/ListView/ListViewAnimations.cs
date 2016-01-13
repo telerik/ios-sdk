@@ -8,7 +8,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class ListViewAnimations: ExampleViewController
+	[Register("ListViewAnimations")]
+	public class ListViewAnimations: XamarinExampleViewController
 	{
 		TKDataSource dataSource = new TKDataSource();
 		TKListView listView = new TKListView();
@@ -27,7 +28,7 @@ namespace Examples
 				return listView.DequeueReusableCell("cell", indexPath) as TKListViewCell;
 			});
 			this.dataSource.Settings.ListView.InitCell (delegate (TKListView listView, NSIndexPath indexPath, TKListViewCell cell, NSObject item) {
-				cell.ImageView.Image = new UIImage (this.dataSource.Items[indexPath.Row] as NSString);
+				cell.ImageView.Image = UIImage.FromBundle (this.dataSource.Items[indexPath.Row] as NSString);
 			});
 
 			this.listView.Frame = this.View.Bounds;
@@ -52,19 +53,19 @@ namespace Examples
 			this.listView.Layout = layout;
 		}
 
-		void ScaleInSelected(object sender, EventArgs e)
+		void ScaleInSelected()
 		{
 			TKListViewLinearLayout layout = (TKListViewLinearLayout)this.listView.Layout;
 			layout.ItemAppearAnimation = TKListViewItemAnimation.Scale;
 		}
 
-		void FadeInSelected(object sender, EventArgs e)
+		void FadeInSelected()
 		{
 			TKListViewLinearLayout layout = (TKListViewLinearLayout)this.listView.Layout;
 			layout.ItemAppearAnimation = TKListViewItemAnimation.Fade;
 		}
 
-		void SlideInSelected(object sender, EventArgs e)
+		void SlideInSelected()
 		{
 			TKListViewLinearLayout layout = (TKListViewLinearLayout)this.listView.Layout;
 			layout.ItemAppearAnimation = TKListViewItemAnimation.Slide;

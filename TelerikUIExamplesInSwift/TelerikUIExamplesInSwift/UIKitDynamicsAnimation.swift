@@ -8,7 +8,7 @@
 import Foundation
 import QuartzCore
 
-class UIKitDynamicsAnimation: ExampleViewController, TKChartDelegate
+class UIKitDynamicsAnimation: TKExamplesExampleViewController, TKChartDelegate
 {
     let chart = TKChart()
     var animator:UIDynamicAnimator?
@@ -22,7 +22,7 @@ class UIKitDynamicsAnimation: ExampleViewController, TKChartDelegate
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("Apply Gravity") { self.applyGravity() }
+        self.addOption("Apply Gravity", action: applyGravity)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -32,7 +32,7 @@ class UIKitDynamicsAnimation: ExampleViewController, TKChartDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         chart.allowAnimations = true
         chart.delegate = self
@@ -86,7 +86,9 @@ class UIKitDynamicsAnimation: ExampleViewController, TKChartDelegate
                     animator.removeAllBehaviors()
                 }
                 point.animator = nil
-                point.center = originalValues[i]
+                if i < originalValues.count {
+                    point.center = originalValues[i]
+                }
                 i++
             }
             

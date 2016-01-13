@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListViewSwipe: ExampleViewController, TKListViewDelegate {
+class ListViewSwipe: TKExamplesExampleViewController, TKListViewDelegate {
 
     let listView = TKListView()
     let dataSource = TKDataSource()
@@ -17,8 +17,8 @@ class ListViewSwipe: ExampleViewController, TKListViewDelegate {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("YES", inSection:"Animate buttons") { self.enableButtonAnimation() }
-        self.addOption("NO", inSection:"Animate buttons") { self.disableButtonAnimation() }
+        self.addOption("YES", inSection:"Animate buttons", withAction:enableButtonAnimation)
+        self.addOption("NO", inSection:"Animate buttons", withAction:disableButtonAnimation)
     }
 
     required init(coder aDecoder: NSCoder) {

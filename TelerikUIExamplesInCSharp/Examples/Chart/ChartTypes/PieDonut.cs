@@ -10,7 +10,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class PieDonut: ExampleViewController
+	[Register("PieDonut")]
+	public class PieDonut: XamarinExampleViewController
 	{
 		TKChart pieChart;
 		TKChart donutChart;
@@ -23,15 +24,14 @@ namespace Examples
 			donutChart = new TKChart ();
 
 			CGRect bounds = this.View.Bounds;
-			pieChart.Frame = CGRect.Inflate (new CGRect (this.ExampleBounds.X, this.ExampleBounds.Y, this.ExampleBounds.Width, this.ExampleBounds.Height / 2), 10, 10);
+			pieChart.Frame = new CGRect(this.View.Bounds.X, this.View.Bounds.Y, this.View.Bounds.Width - 10, this.View.Bounds.Height / 2 - 10);
 			pieChart.AutoresizingMask = ~UIViewAutoresizing.None;
 			pieChart.AllowAnimations = true;
 			pieChart.Legend.Hidden = false;
 			pieChart.Legend.Style.Position = TKChartLegendPosition.Right;
 			this.View.AddSubview (pieChart);
 
-			donutChart.Frame = CGRect.Inflate(new CGRect (this.ExampleBounds.X, this.ExampleBounds.Y + this.ExampleBounds.Height/2, 
-				this.ExampleBounds.Width, this.ExampleBounds.Height/2), 10, 10);
+			donutChart.Frame = new CGRect(this.View.Bounds.X, this.View.Bounds.Y + this.View.Bounds.Height/2, this.View.Bounds.Width - 10, this.View.Bounds.Height / 2 - 10);
 			donutChart.AutoresizingMask = ~UIViewAutoresizing.None;
 			donutChart.AllowAnimations = true;
 			donutChart.Legend.Hidden = false;

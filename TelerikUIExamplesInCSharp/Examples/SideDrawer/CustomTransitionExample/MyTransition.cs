@@ -37,8 +37,9 @@ namespace Examples
 		{
 			this.TransitionBegan (false);
 			UIView.Animate (this.SideDrawer.TransitionDuration, delegate {
-				this.SideDrawer.Center = sideDrawerIdentityCenter;
-				this.SideDrawer.Hostview.Center = hostviewIdentityCenter;
+				this.SideDrawer.Center = new CGPoint(this.SideDrawer.Width / 2.0, -this.SideDrawer.Frame.Size.Height / 2.0);
+				this.SideDrawer.Hostview.Center = new CGPoint(this.SideDrawer.Hostview.Superview.Bounds.Width / 2.0,
+					this.SideDrawer.Hostview.Superview.Bounds.Height / 2.0);
 			}, delegate {
 				this.TransitionEnded(false);
 			});

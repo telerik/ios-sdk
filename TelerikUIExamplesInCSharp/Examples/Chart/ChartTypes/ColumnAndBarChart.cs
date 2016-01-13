@@ -8,25 +8,26 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class ColumnAndBarChart: ExampleViewController
+	[Register("ColumnAndBarChart")]
+	public class ColumnAndBarChart: XamarinExampleViewController
 	{
 		TKChart chart;
 
 		public override void ViewDidLoad ()
 		{
-			AddOption ("Column", columnSelected);
-			AddOption ("Bar", barSelected);
+			AddOption ("Column", ColumnSelected);
+			AddOption ("Bar", BarSelected);
 
 			base.ViewDidLoad ();
 
-			chart = new TKChart (this.ExampleBounds);
+			chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.AddSubview (chart);
 
-			this.columnSelected (this, EventArgs.Empty);
+			this.ColumnSelected ();
 		}
 
-		public void columnSelected(object sender, EventArgs e) 
+		public void ColumnSelected() 
 		{
 			chart.RemoveAllData ();
 
@@ -45,7 +46,7 @@ namespace Examples
 			chart.ReloadData ();
 		}
 
-		public void barSelected(object sender, EventArgs e)
+		public void BarSelected()
 		{
 			chart.RemoveAllData ();
 

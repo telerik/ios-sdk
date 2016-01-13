@@ -5,20 +5,20 @@
 //  Copyright © 2015 Telerik. All rights reserved.
 //
 
-class AutoCompleteTokens: ExampleViewController, TKAutoCompleteDelegate {
+class AutoCompleteTokens: TKAutoCompleteController, TKAutoCompleteDelegate {
 
-    var autocomplete = TKAutoCompleteTextView()
     let datasource = TKDataSource(dataFromJSONResource: "namesPhotos", ofType: "json", rootItemKeyPath: "data")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil);
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil);        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardDidHideNotification, object: nil);
         
         self.automaticallyAdjustsScrollViewInsets = false
-        
-        autocomplete = TKAutoCompleteTextView(frame: CGRect(x: 10, y:   65, width: self.exampleBounds.size.width-20, height: 30));
+        self.view.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.957, alpha: 1.0)
+        autocomplete = TKAutoCompleteTextView()
+        autocomplete = TKAutoCompleteTextView(frame: CGRect(x: 10, y: 30, width: self.view.bounds.size.width-20, height: 44));
         
         datasource.settings.autocomplete.createToken { (dataIndex, item) -> TKAutoCompleteToken? in
             let token = TKAutoCompleteToken(text: item.valueForKey("name") as? String)
@@ -42,16 +42,14 @@ class AutoCompleteTokens: ExampleViewController, TKAutoCompleteDelegate {
         autocomplete.noResultsLabel.text = "No Users Found"
         autocomplete.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         autocomplete.imageView.image = UIImage(named: "search")
-        autocomplete.suggestionViewHeight = self.exampleBounds.size.height - self.exampleBounds.origin.y + 45
+        autocomplete.suggestionViewHeight = self.view.bounds.size.height - self.view.bounds.origin.y + 45
         autocomplete.delegate = self
-        autocomplete.backgroundColor = UIColor.whiteColor()
         autocomplete.displayMode = TKAutoCompleteDisplayMode.Tokens
         autocomplete.layoutMode = TKAutoCompleteLayoutMode.Wrap
         autocomplete.minimumCharactersToSearch = 1
-        
-        self.view.addSubview(autocomplete)
+        autocomplete.maximumWrapHeight = 200;
     }
-    
+     
     func autoComplete(autocomplete: TKAutoCompleteTextView, viewForToken token: TKAutoCompleteToken) -> TKAutoCompleteTokenView
     {
         let tokenView = TKAutoCompleteTokenView(token: token)
@@ -64,13 +62,12 @@ class AutoCompleteTokens: ExampleViewController, TKAutoCompleteDelegate {
     func keyboardDidShow(notification: NSNotification)
     {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-            autocomplete.suggestionViewHeight = self.exampleBounds.size.height -  keyboardSize.height - 10
+            autocomplete.suggestionViewHeight = self.view.bounds.size.height -  keyboardSize.height - 80
         }
     }
     
     func keyboardDidHide(notification: NSNotification)
     {
-        autocomplete.suggestionViewHeight = self.exampleBounds.size.height - 100;
-        
+        autocomplete.suggestionViewHeight = self.view.bounds.size.height - 100;
     }
 }

@@ -50,10 +50,6 @@
         TKGridLayoutCellDefinition *textLabelDef = [editor.gridLayout definitionForView:editor.textLabel];
         [editor.gridLayout setWidth:0 forColumn:[textLabelDef.column integerValue]];
     }
-    
-    if ([editor isKindOfClass:TKDataFormTextFieldEditor.class] && ![property.name isEqualToString:@"password"]) {
-       property.hintText = @"Required";
-    }
 }
 
 - (void)dataForm:(TKDataForm *)dataForm updateGroupView:(TKEntityPropertyGroupView *)groupView forGroupAtIndex:(NSUInteger)groupIndex

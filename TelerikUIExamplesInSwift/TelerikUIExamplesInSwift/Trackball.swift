@@ -7,18 +7,18 @@
 
 import Foundation
 
-class Trackball: ExampleViewController, TKChartDelegate {
+class Trackball: TKExamplesExampleViewController, TKChartDelegate {
     
     let chart = TKChart()
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("pin at top") { self.top() }
-        self.addOption("pin at left") { self.left() }
-        self.addOption("pin at right") { self.right() }
-        self.addOption("pin at bottom") { self.bottom() }
-        self.addOption("floating") { self.floating() }
+        self.addOption("pin at top", action: top)
+        self.addOption("pin at left", action: left)
+        self.addOption("pin at right", action: right)
+        self.addOption("pin at bottom", action: bottom)
+        self.addOption("floating", action: floating)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -28,7 +28,7 @@ class Trackball: ExampleViewController, TKChartDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
     

@@ -10,12 +10,9 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class iOS7StyleCalendar : ExampleViewController
+	[Register("iOS7StyleCalendar")]
+	public class iOS7StyleCalendar : XamarinExampleViewController
 	{
-		public iOS7StyleCalendar ()
-		{
-		}
-
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();

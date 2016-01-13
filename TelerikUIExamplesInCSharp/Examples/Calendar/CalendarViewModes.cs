@@ -9,7 +9,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class CalendarViewModes : ExampleViewController
+	[Register("CalendarViewModes")]
+	public class CalendarViewModes : XamarinExampleViewController
 	{
 		CalendarDelegate calendarDelegate;
 
@@ -62,32 +63,32 @@ namespace Examples
 			}
 		}
 
-		public void SelectYear (object sender, EventArgs e)
+		public void SelectYear ()
 		{
 			this.CalendarView.ViewMode = TKCalendarViewMode.Year;
 		}
 
-		public void SelectMonth (object sender, EventArgs e)
+		public void SelectMonth ()
 		{
 			this.CalendarView.ViewMode = TKCalendarViewMode.Month;
 		}
 
-		public void SelectMonthNames (object sender, EventArgs e)
+		public void SelectMonthNames ()
 		{
 			this.CalendarView.ViewMode = TKCalendarViewMode.MonthNames;
 		}
 
-		public void SelectYearNumbers (object sender, EventArgs e)
+		public void SelectYearNumbers ()
 		{
 			this.CalendarView.ViewMode = TKCalendarViewMode.YearNumbers;
 		}
 
-		public void SelectFlow (object sender, EventArgs e)
+		public void SelectFlow ()
 		{
 			this.CalendarView.ViewMode = TKCalendarViewMode.Flow;
 		}
 
-		public void SelectWeekView (object sender, EventArgs e)
+		public void SelectWeekView ()
 		{
 			this.CalendarView.ViewMode = TKCalendarViewMode.Week;
 		}

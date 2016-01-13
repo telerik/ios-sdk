@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AlertAnimations: ExampleViewController, TKListViewDelegate {
+class AlertAnimations: TKExamplesExampleViewController, TKListViewDelegate {
 
     let alert = TKAlert()
 
@@ -21,7 +21,7 @@ class AlertAnimations: ExampleViewController, TKListViewDelegate {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("Show Alert") { self.show() }
+        self.addOption("Show Alert", action: show)
     }
 
     required init(coder aDecoder: NSCoder) {

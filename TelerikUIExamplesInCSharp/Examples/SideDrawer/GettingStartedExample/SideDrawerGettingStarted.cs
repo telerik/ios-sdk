@@ -7,7 +7,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class SideDrawerGettingStarted : ExampleViewController
+	[Register("SideDrawerGettingStarted")]
+	public class SideDrawerGettingStarted : XamarinExampleViewController
 	{
 		private TKSideDrawerSection primarySection;
 		private TKSideDrawerSection labelsSection;
@@ -26,7 +27,6 @@ namespace Examples
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			this.NavigationController.InteractivePopGestureRecognizer.Enabled = false;
 		
 			this.SideDrawerView = new TKSideDrawerView (this.View.Bounds);
 			this.SideDrawerView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
@@ -34,13 +34,13 @@ namespace Examples
 
 			UIImageView backgroundView = new UIImageView (this.SideDrawerView.MainView.Bounds);
 			backgroundView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			backgroundView.Image = new UIImage ("sdk-examples-bg.png");
+			backgroundView.Image = UIImage.FromBundle ("sdk-examples-bg.png");
 			this.SideDrawerView.MainView.AddSubview (backgroundView);
 
 			UINavigationBar navBar = new UINavigationBar (new CGRect (0, 0, this.SideDrawerView.MainView.Bounds.Width, 44));
 			navBar.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 			this.NavItem = new UINavigationItem ();
-			UIBarButtonItem showSideDrawer = new UIBarButtonItem (new UIImage ("menu.png"), UIBarButtonItemStyle.Plain, this, new Selector ("ShowSideDrawer"));
+			UIBarButtonItem showSideDrawer = new UIBarButtonItem (UIImage.FromBundle ("menu.png"), UIBarButtonItemStyle.Plain, this, new Selector ("ShowSideDrawer"));
 			this.NavItem.LeftBarButtonItem = showSideDrawer;
 			navBar.Items = new UINavigationItem[] { this.NavItem };
 			this.SideDrawerView.MainView.AddSubview (navBar);
@@ -67,7 +67,10 @@ namespace Examples
 		public override void ViewWillDisappear (bool animated)
 		{
 			base.ViewWillDisappear (animated);
-			this.NavigationController.InteractivePopGestureRecognizer.Enabled = true;
+			if (this.NavigationController != null) {
+				this.NavigationController.InteractivePopGestureRecognizer.Enabled = true;
+			}
+
 		}
 			
 		[Export ("ShowSideDrawer")]

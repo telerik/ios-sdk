@@ -5,7 +5,8 @@ using ObjCRuntime;
 using UIKit;
 
 namespace Examples
-{
+{	
+	[Register("DataFormGettingStarted")]	
 	public class DataFormGettingStarted : TKDataFormViewController
 	{
 		TKDataFormEntityDataSourceHelper dataSource;

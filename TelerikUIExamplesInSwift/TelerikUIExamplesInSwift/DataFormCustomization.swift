@@ -40,7 +40,7 @@ class DataFormCustomization: TKDataFormViewController {
         dataSource["phone"].editorClass = CallEditor.self
         dataSource["origin"].editorClass = TKDataFormSegmentedEditor.self
         
-        dataSource["guests"].valuesProvider = TKRange(minimum: 1, andMaximum: 10)
+        dataSource["guests"].range = TKRange(minimum: 1, andMaximum: 10)
         dataSource["section"].valuesProvider = [ "Section 1", "Section 2", "Section 3", "Section 4" ]
         dataSource["table"].valuesProvider = [Int](1...15)
         dataSource["origin"].valuesProvider = [ "phone", "in-person", "online", "other" ]

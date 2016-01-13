@@ -9,7 +9,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class LiveData : ExampleViewController
+	[Register("LiveData")]
+	public class LiveData : XamarinExampleViewController
 	{
 		TKChart chart;
 		List<TKChartDataPoint> dataPoints;
@@ -18,7 +19,7 @@ namespace Examples
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			this.chart = new TKChart (this.ExampleBounds);
+			this.chart = new TKChart (this.View.Bounds);
 			this.chart.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
 			this.View.AddSubview (chart);
 			this.dataPoints = new List<TKChartDataPoint> ();

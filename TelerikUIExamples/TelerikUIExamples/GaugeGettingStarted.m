@@ -110,7 +110,7 @@
 {
     [super viewDidLayoutSubviews];
     
-    CGRect bounds = self.exampleBounds;
+    CGRect bounds = self.view.bounds;
     CGSize size = self.view.bounds.size;
     CGFloat offset = 20;
     CGFloat linearWidth = CGRectGetWidth(_linearGauge.frame);
@@ -123,7 +123,7 @@
                                         bounds.origin.y + offset, linearWidth, bounds.size.height - offset*2);
     }
     else {
-        CGFloat height = (self.exampleBounds.size.height - offset*3)/2.;
+        CGFloat height = (self.view.bounds.size.height - offset*3)/2.;
         _radialGauge.frame = CGRectMake(offset, bounds.origin.y + offset, size.width - offset*2, height);
         _linearGauge.frame = CGRectMake((bounds.size.width - linearWidth - offset*2)/2. + offset,
                                         size.height - height - offset, linearWidth, height);

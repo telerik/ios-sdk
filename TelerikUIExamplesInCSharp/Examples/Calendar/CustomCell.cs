@@ -7,6 +7,7 @@ using CoreGraphics;
 
 using TelerikUI;
 
+
 namespace Examples
 {
 	public class CustomCell : TKCalendarDayCell
@@ -31,13 +32,13 @@ namespace Examples
 
 		public void Initialize ()
 		{
-			gDayImage = new UIImage ("calendar_cell.png");
+			gDayImage = UIImage.FromBundle ("calendar_cell.png");
 			gDayImage = gDayImage.CreateResizableImage (new UIEdgeInsets (4, 4, 4, 4), UIImageResizingMode.Stretch);
 
-			gCurrentDayImage = new UIImage ("calendar_current_cell.png");
+			gCurrentDayImage = UIImage.FromBundle ("calendar_current_cell.png");
 			gCurrentDayImage = gCurrentDayImage.CreateResizableImage (new UIEdgeInsets (4, 4, 4, 4), UIImageResizingMode.Stretch);
 
-			gSelectedDayImage = new UIImage ("calendar_selected_cell.png");
+			gSelectedDayImage = UIImage.FromBundle ("calendar_selected_cell.png");
 			gSelectedDayImage = gSelectedDayImage.CreateResizableImage (new UIEdgeInsets (4, 4, 4, 4), UIImageResizingMode.Stretch);
 		}
 

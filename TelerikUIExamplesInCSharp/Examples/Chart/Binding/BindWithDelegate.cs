@@ -8,7 +8,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class BindingWithDelegate: ExampleViewController
+	[Register("BindWithDelegate")]
+	public class BindWithDelegate: XamarinExampleViewController
 	{
 		ChartDataSource dataSource = new ChartDataSource ();
 
@@ -16,7 +17,7 @@ namespace Examples
 		{
 			base.ViewDidLoad ();
 
-			TKChart chart = new TKChart (this.ExampleBounds);
+			TKChart chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			chart.DataSource = dataSource;
 			chart.Legend.Hidden = false;

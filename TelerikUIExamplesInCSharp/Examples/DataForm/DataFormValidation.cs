@@ -7,6 +7,7 @@ using ObjCRuntime;
 
 namespace Examples
 {
+	[Register("DataFormValidation")]	
 	public class DataFormValidation : TKDataFormViewController
 	{
 		ValidationDataFormDelegate validationDelegate;

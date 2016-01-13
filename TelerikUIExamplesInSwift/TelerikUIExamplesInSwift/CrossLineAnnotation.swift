@@ -7,17 +7,17 @@
 
 import Foundation
 
-class CrossLineAnnotation: ExampleViewController {
+class CrossLineAnnotation: TKExamplesExampleViewController {
     
     let chart = TKChart()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("cross lines") { self.crossLine() }
-        self.addOption("horizontal line") { self.horizontalLine() }
-        self.addOption("vertical line") { self.verticalLine() }
-        self.addOption("disable lines") { self.disableLines() }
+        self.addOption("cross lines", action: crossLine)
+        self.addOption("horizontal line", action: horizontalLine)
+        self.addOption("vertical line", action: verticalLine)
+        self.addOption("disable lines", action: disableLines)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -27,7 +27,7 @@ class CrossLineAnnotation: ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        chart.frame = self.exampleBoundsWithInset
+        chart.frame = self.view.bounds
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         

@@ -53,7 +53,7 @@
 
     TKListViewLinearLayout *layout = (TKListViewLinearLayout*)_listView.layout;
     layout.itemSpacing = 0;
-
+    
     // select the second row
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     [_listView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];

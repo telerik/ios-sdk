@@ -8,7 +8,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class StackedAreaChart: ExampleViewController
+	[Register("StackedAreaChart")]
+	public class StackedAreaChart: XamarinExampleViewController
 	{
 		TKChart chart;
 
@@ -20,14 +21,14 @@ namespace Examples
 
 			base.ViewDidLoad ();
 
-			chart = new TKChart (this.ExampleBounds);
+			chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.AddSubview (chart);
 
-			this.reloadData (this, EventArgs.Empty);
+			this.reloadData ();
 		}
 
-		void reloadData(object sender, EventArgs e)
+		void reloadData()
 		{
 			chart.RemoveAllData ();
 

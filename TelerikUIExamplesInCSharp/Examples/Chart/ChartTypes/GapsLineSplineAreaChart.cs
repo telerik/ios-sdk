@@ -8,7 +8,8 @@ using TelerikUI;
 
 namespace Examples
 {
-	public class GapsLineSplineAreaChart: ExampleViewController
+	[Register("GapsLineSplineAreaChart")]
+	public class GapsLineSplineAreaChart: XamarinExampleViewController
 	{
 		TKChart chart;
 
@@ -21,14 +22,14 @@ namespace Examples
 
 			base.ViewDidLoad ();
 
-			chart = new TKChart (this.ExampleBounds);
+			chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.AddSubview (chart);
 
-			this.reloadChart (this, EventArgs.Empty);
+			this.reloadChart ();
 		}
-
-		public void reloadChart(object sender, EventArgs e)
+			
+		public void reloadChart()
 		{
 			chart.RemoveAllData ();
 

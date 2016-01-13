@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DataFormReadOnly: ExampleViewController, TKDataFormDelegate {
+class DataFormReadOnly: TKExamplesExampleViewController, TKDataFormDelegate {
 
     let dataSource = TKDataFormEntityDataSource()
     let cardInfo = CardInfo()

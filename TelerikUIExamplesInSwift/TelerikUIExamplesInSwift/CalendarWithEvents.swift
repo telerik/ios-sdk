@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CalendarWithEvents: ExampleViewController, TKCalendarDataSource, TKCalendarDelegate, UITableViewDataSource {
+class CalendarWithEvents: TKExamplesExampleViewController, TKCalendarDataSource, TKCalendarDelegate, UITableViewDataSource {
     
     let kCellID = "cell"
     let calendarView = TKCalendar()
@@ -61,13 +61,13 @@ class CalendarWithEvents: ExampleViewController, TKCalendarDataSource, TKCalenda
         
         if (self.calendarView.theme.isKindOfClass(TKCalendarIPadTheme.self) || UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation)) {
             self.tableView.frame = CGRectZero
-            self.calendarView.frame = self.exampleBounds
+            self.calendarView.frame = self.view.bounds
         }
         else {
-            let height =  CGRectGetHeight(self.exampleBounds)
+            let height =  CGRectGetHeight(self.view.bounds)
             let tableHeight = height/3.2
-            self.calendarView.frame = CGRectMake(0, self.exampleBounds.origin.y, self.exampleBounds.size.width, height - tableHeight)
-            self.tableView.frame = CGRectMake(0, self.exampleBounds.origin.y + self.exampleBounds.size.height - tableHeight, self.exampleBounds.size.width, tableHeight)
+            self.calendarView.frame = CGRectMake(0, self.view.bounds.origin.y, self.view.bounds.size.width, height - tableHeight)
+            self.tableView.frame = CGRectMake(0, self.view.bounds.origin.y + self.view.bounds.size.height - tableHeight, self.view.bounds.size.width, tableHeight)
         }
     }
     

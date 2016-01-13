@@ -7,14 +7,14 @@
 
 import Foundation
 
-class ColumnAndBarChart: ExampleViewController {
+class ColumnAndBarChart: TKExamplesExampleViewController {
     
     let chart = TKChart()
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.addOption("Column") { self.columnSelected() }
-        self.addOption("Bar") { self.barSelected() }
+        self.addOption("Column", action: columnSelected);
+        self.addOption("Bar", action: barSelected);
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -24,7 +24,7 @@ class ColumnAndBarChart: ExampleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let frame = self.exampleBoundsWithInset
+        let frame = self.view.bounds
         chart.frame = frame
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)

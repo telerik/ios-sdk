@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListViewReorder: ExampleViewController, TKListViewDelegate {
+class ListViewReorder: TKExamplesExampleViewController, TKListViewDelegate {
 
     let listView = TKListView()
     let dataSource = TKDataSource()
@@ -15,9 +15,9 @@ class ListViewReorder: ExampleViewController, TKListViewDelegate {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
-        self.addOption("Reorder with handle") { self.reorderWithHandleSelected() }
-        self.addOption("Reorder with long press") { self.reorderWithLongPressSelected() }
-        self.addOption("Disable reorder mode") { self.disableReorderSelected() }
+        self.addOption("Reorder with handle", action:reorderWithHandleSelected)
+        self.addOption("Reorder with long press", action:reorderWithLongPressSelected)
+        self.addOption("Disable reorder mode", action:disableReorderSelected)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -32,7 +32,7 @@ class ListViewReorder: ExampleViewController, TKListViewDelegate {
         self.dataSource.loadDataFromJSONResource("PhotosWithNames", ofType: "json", rootItemKeyPath: "names")
         
         if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
-            self.listView.frame = self.exampleBounds
+            self.listView.frame = self.view.bounds
         }
         else {
             self.listView.frame = self.view.bounds

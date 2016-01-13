@@ -7,7 +7,7 @@
 
 import Foundation
 
-class iOS7StyleCalendar:ExampleViewController {
+class iOS7StyleCalendar:TKExamplesExampleViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

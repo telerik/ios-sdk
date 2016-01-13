@@ -6,7 +6,8 @@ using CoreGraphics;
 
 namespace Examples
 {
-	public class GaugeInteraction : ExampleViewController
+	[Register("GaugeInteraction")]
+	public class GaugeInteraction : XamarinExampleViewController
 	{
 		TKLinearGauge linearGauge = new TKLinearGauge();
 		TKRadialGauge radialGauge = new TKRadialGauge();
@@ -58,6 +59,8 @@ namespace Examples
 			this.linearGauge.LabelTitle.Text = "85 %";
 			this.linearGauge.LabelSubtitle.Font = UIFont.SystemFontOfSize (12);
 			this.linearGauge.LabelSubtitle.Text = "humidity";
+			this.linearGauge.LabelTitleOffset = new CGPoint(0, -25);
+			this.linearGauge.LabelSubtitleOffset = new CGPoint(0, -25);
 			this.linearGauge.Delegate = this.gaugeDelegate;
 			this.View.AddSubview(this.linearGauge);
 
@@ -105,7 +108,7 @@ namespace Examples
 		{
 			base.ViewDidLayoutSubviews ();
 
-			CGRect bounds = this.ExampleBounds;
+			CGRect bounds = this.View.Bounds;
 			CGSize size = this.View.Bounds.Size;
 			nfloat offset = 20;
 			nfloat linearHeight = 100;
