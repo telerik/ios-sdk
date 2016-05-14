@@ -31,17 +31,17 @@ class ListViewGroups: TKExamplesExampleViewController {
         layout.headerReferenceSize = CGSizeMake(100, 44);
         layout.footerReferenceSize = CGSizeMake(100, 44);
 
-        self.dataSource.settings.listView.initCell { (TKListView listView, NSIndexPath indexPath, TKListViewCell cell, AnyObject item) -> Void in
+        self.dataSource.settings.listView.initCell { (listView: TKListView, indexPath: NSIndexPath, cell: TKListViewCell, item: AnyObject) -> Void in
             let group = self.dataSource.items[indexPath.section] as! TKDataSourceGroup
             cell.textLabel.text = group.items[indexPath.row] as? String
         }
         
-        self.dataSource.settings.listView.initHeader { (TKListView listView, NSIndexPath indexPath, TKListViewHeaderCell headerCell, TKDataSourceGroup group) -> Void in
+        self.dataSource.settings.listView.initHeader { (listView: TKListView, indexPath: NSIndexPath, headerCell: TKListViewHeaderCell, group: TKDataSourceGroup?) -> Void in
             headerCell.textLabel.text = "\(group!.key)"
             headerCell.textLabel.textAlignment = NSTextAlignment.Center
         }
         
-        self.dataSource.settings.listView.initFooter { (TKListView listView, NSIndexPath indexPath, TKListViewFooterCell footerCell, TKDataSourceGroup group) -> Void in
+        self.dataSource.settings.listView.initFooter { (listView: TKListView, indexPath: NSIndexPath, footerCell: TKListViewFooterCell, group: TKDataSourceGroup?) -> Void in
             footerCell.textLabel.text = "Members count: \(group!.items.count)"
             footerCell.textLabel.textAlignment = NSTextAlignment.Left
             footerCell.textLabel.frame = CGRectMake(5, 10, 200, 22)

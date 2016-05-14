@@ -8,8 +8,6 @@
 #import "DataFormValidation.h"
 #import <TelerikUI/TelerikUI.h>
 #import "RegistrationInfo.h"
-#import "EmailValidator.h"
-#import "PasswordValidator.h"
 
 @interface DataFormValidation()
 @end
@@ -31,7 +29,7 @@
     _dataSource[@"email"].hintText = @"E-mail (Required)";
     _dataSource[@"email"].editorClass = [TKDataFormEmailEditor class];
     _dataSource[@"name"].hintText = @"Name (Optional)";
-    _dataSource[@"password"].hintText = @"Password (Minimum 6 characters)";
+    _dataSource[@"password"].hintText = @"Password";
     _dataSource[@"password"].editorClass = [TKDataFormPasswordEditor class];
     
     TKEntityProperty *property = _dataSource[@"repeatPassword"];
@@ -39,8 +37,17 @@
     property.errorMessage =  @"The password does not match!";
     property.editorClass = [TKDataFormPasswordEditor class];
 
-    _dataSource[@"email"].validators = @[ [EmailValidator new] ];
-    _dataSource[@"password"].validators = @[ [PasswordValidator new] ];
+    
+    TKDataFormEmailValidator *emailValidator = [[TKDataFormEmailValidator alloc] init];
+    _dataSource[@"email"].validators = @[emailValidator];
+    
+    TKDataFormMinimumLengthValidator *passwordValidator = [[TKDataFormMinimumLengthValidator alloc] initWithMinimumLength:6];
+    passwordValidator.errorMessage = @"Password must be at least 6 characters!";
+    _dataSource[@"password"].validators = @[passwordValidator];
+    
+    TKDataFormNonEmptyValidator *nonEmptyValidator = [[TKDataFormNonEmptyValidator alloc] init];
+    nonEmptyValidator.errorMessage = @"Confirm password should not be empty!";
+    _dataSource[@"repeatPassword"].validators = @[nonEmptyValidator];
 
     _dataSource[@"gender"].valuesProvider = @[ @"Male", @"Female" ];
     _dataSource[@"country"].valuesProvider = @[ @"Bulgaria", @"France", @"Germany", @"Italy", @"United Kingdom" ];
@@ -59,8 +66,10 @@
 
 - (BOOL)dataForm:(TKDataForm *)dataForm validateProperty:(TKEntityProperty *)property editor:(TKDataFormEditor *)editor
 {
-    if ([property.name isEqualToString:@"repeatPassword"]) {
-        return property.isValid && [property.valueCandidate isEqualToString:_dataSource[@"password"].valueCandidate];
+    if ([property.name isEqualToString:@"repeatPassword"]  && property.valueCandidate &&
+        ![property.valueCandidate isEqualToString:_dataSource[@"password"].valueCandidate] && ![property.valueCandidate isEqualToString:@""]) {
+        property.errorMessage = @"Passwords do not match!";
+        return NO;
     }
     return property.isValid;
 }

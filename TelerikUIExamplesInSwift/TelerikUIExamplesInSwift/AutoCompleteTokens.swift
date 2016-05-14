@@ -12,8 +12,8 @@ class AutoCompleteTokens: TKAutoCompleteController, TKAutoCompleteDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil);        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardDidHideNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AutoCompleteTokens.keyboardDidShow(_:)), name: UIKeyboardDidShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AutoCompleteTokens.keyboardDidHide(_:)), name: UIKeyboardDidHideNotification, object: nil);
         
         self.automaticallyAdjustsScrollViewInsets = false
         self.view.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.957, alpha: 1.0)

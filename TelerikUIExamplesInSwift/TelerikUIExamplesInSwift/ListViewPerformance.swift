@@ -25,7 +25,7 @@ class ListViewPerformance: TKExamplesExampleViewController, TKListViewDataSource
         button.frame = CGRectMake(20, self.view.center.y - 22, CGRectGetWidth(self.view.frame)-40, 44);
         button.autoresizingMask = [ .FlexibleWidth, .FlexibleTopMargin, .FlexibleBottomMargin ]
         button.setTitle("Load 10000 items", forState:UIControlState.Normal)
-        button.addTarget(self, action:"loadItemsTouched:", forControlEvents:.TouchUpInside)
+        button.addTarget(self, action:#selector(ListViewPerformance.loadItemsTouched(_:)), forControlEvents:.TouchUpInside)
         self.view.addSubview(button)
     }
     

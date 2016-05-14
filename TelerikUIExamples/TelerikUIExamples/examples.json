@@ -12,7 +12,7 @@
                  
         { "title": "AppFeedback", "exampleClass": "FeedbackExampleController" },
 
-        { "title": "AutoCompleteTextView (New)", "examples": [
+        { "title": "AutoCompleteTextView", "examples": [
                                                                { "title": "Getting Started", "exampleClass": "AutoCompleteGettingStarted" },
                                                                { "title": "Customization", "exampleClass": "AutoCompleteCustomization" },
                                                                { "title": "Tokens", "exampleClass": "AutoCompleteTokens" },

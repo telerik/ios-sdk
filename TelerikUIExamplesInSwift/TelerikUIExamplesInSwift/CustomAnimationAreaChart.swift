@@ -31,7 +31,7 @@ class CustomAnimationAreaChart: TKExamplesExampleViewController, TKChartDelegate
         chart.addSeries(areaSeries)
         
         UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "deviceOrientationDidChange:",
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CustomAnimationAreaChart.deviceOrientationDidChange(_:)),
             name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     

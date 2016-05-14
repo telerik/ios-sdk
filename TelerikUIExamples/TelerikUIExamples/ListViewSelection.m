@@ -115,6 +115,8 @@
     NSLog(@"Did select item at row %ld", (long)indexPath.row);
     TKListViewCell *cell = [listView cellForItemAtIndexPath:indexPath];
     cell.selectedBackgroundView.hidden = NO;
+    cell.selectedBackgroundView.backgroundColor = [UIColor greenColor];
+    
 }
 
 - (void)listView:(TKListView *)listView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath

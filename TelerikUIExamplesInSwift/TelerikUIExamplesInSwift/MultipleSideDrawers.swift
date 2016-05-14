@@ -29,9 +29,9 @@ class MultipleSideDrawers:TKExamplesExampleViewController, TKSideDrawerDelegate 
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, mainView.bounds.size.width, 44))
         navigationBar.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         
-        let leftSideDrawerButton = UIBarButtonItem(image: UIImage(named: "menu"), style: UIBarButtonItemStyle.Plain, target: self, action: "showLeftSideDrawer")
+        let leftSideDrawerButton = UIBarButtonItem(image: UIImage(named: "menu"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MultipleSideDrawers.showLeftSideDrawer))
         
-        let rightSideDrawerButton = UIBarButtonItem(image: UIImage(named: "menu"), style: UIBarButtonItemStyle.Plain, target: self, action: "showRightSideDrawer")
+        let rightSideDrawerButton = UIBarButtonItem(image: UIImage(named: "menu"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MultipleSideDrawers.showRightSideDrawer))
         
         navItem.leftBarButtonItem = leftSideDrawerButton
         navItem.rightBarButtonItem = rightSideDrawerButton
@@ -41,7 +41,7 @@ class MultipleSideDrawers:TKExamplesExampleViewController, TKSideDrawerDelegate 
         let sideDrawerRight = sideDrawerView.addSideDrawerAtPosition(TKSideDrawerPosition.Right)
         sideDrawerRight.delegate = self
         sideDrawerRight.style.headerHeight = 44
-        sideDrawerRight.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: Selector("dismissRightSideDrawer"))
+        sideDrawerRight.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: #selector(MultipleSideDrawers.dismissRightSideDrawer))
         
         var sectionRight = sideDrawerRight.addSectionWithTitle("Primary")
         sectionRight.addItemWithTitle("Social")
@@ -56,7 +56,7 @@ class MultipleSideDrawers:TKExamplesExampleViewController, TKSideDrawerDelegate 
         let sideDrawerLeft = sideDrawerView.sideDrawers[0]
         sideDrawerLeft.delegate = self
         sideDrawerLeft.style.headerHeight = 44
-        sideDrawerLeft.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: Selector("dismissRightSideDrawer"))
+        sideDrawerLeft.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: #selector(MultipleSideDrawers.dismissRightSideDrawer))
         
         var sectionLeft = sideDrawerLeft.addSectionWithTitle("Inbox")
         sectionLeft.addItemWithTitle("Sent Items")

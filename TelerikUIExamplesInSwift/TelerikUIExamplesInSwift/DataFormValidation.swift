@@ -24,7 +24,7 @@ class DataFormValidation: TKDataFormViewController {
         dataSource["email"].hintText = "E-mail (Required)"
         dataSource["email"].editorClass = TKDataFormEmailEditor.self
         dataSource["name"].hintText = "Name (Optional)"
-        dataSource["password"].hintText = "Password (Minimum 6 characters)"
+        dataSource["password"].hintText = "Password"
         dataSource["password"].editorClass = TKDataFormPasswordEditor.self
 
         let property = dataSource["repeatPassword"]
@@ -32,8 +32,14 @@ class DataFormValidation: TKDataFormViewController {
         property.errorMessage = "Incorrect password!"
         property.editorClass = TKDataFormPasswordEditor.self
 
-        dataSource["email"].validators = [EmailValidator()]
-        dataSource["password"].validators = [PasswordValidator()]
+        let nonEmptyValidator = TKDataFormNonEmptyValidator()
+        nonEmptyValidator.errorMessage = "Confirm password should not be empty!"
+        dataSource["repeatPassword"].validators = [nonEmptyValidator]
+        dataSource["email"].validators = [TKDataFormEmailValidator()]
+        
+        let passwordValidator = TKDataFormMinimumLengthValidator(minimumLength: 6)
+        passwordValidator.errorMessage = "Password must be at least 6 characters!";
+        dataSource["password"].validators = [passwordValidator]
 
         dataSource["gender"].valuesProvider = [ "Male", "Female" ]
         dataSource["country"].valuesProvider = [ "Bulgaria", "France", "Germany", "Italy", "United Kingdom" ];
@@ -48,8 +54,10 @@ class DataFormValidation: TKDataFormViewController {
     //MARK:- TKDataFormDelegate
     
     override func dataForm(dataForm: TKDataForm, validateProperty property: TKEntityProperty, editor: TKDataFormEditor) -> Bool {
-        if property.name == "repeatPassword" {
-            return property.isValid && property.valueCandidate as! String == self.dataSource.propertyWithName("password").valueCandidate as! String
+        if property.name == "repeatPassword" && property.valueCandidate != nil &&
+            property.valueCandidate as! String != dataSource["password"].valueCandidate as! String && property.valueCandidate as! String != "" {
+            property.errorMessage = "Passwords do not match!"
+            return false
         }
         return property.isValid
     }

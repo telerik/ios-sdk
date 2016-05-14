@@ -89,7 +89,7 @@ class UIKitDynamicsAnimation: TKExamplesExampleViewController, TKChartDelegate
                 if i < originalValues.count {
                     point.center = originalValues[i]
                 }
-                i++
+                i+=1
             }
             
             let collision = UICollisionBehavior(items: points)

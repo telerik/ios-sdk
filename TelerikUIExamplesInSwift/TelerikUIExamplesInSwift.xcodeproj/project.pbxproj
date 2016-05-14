@@ -52,6 +52,10 @@
 		A6B95B0C1C0E1DC000DF5A95 /* ListViewPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B95B0B1C0E1DC000DF5A95 /* ListViewPerformance.swift */; };
 		A6B95B0E1C0E20DE00DF5A95 /* ListViewUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B95B0D1C0E20DE00DF5A95 /* ListViewUpdate.swift */; };
 		A6D698901BBB4A14008CDC31 /* libTelerikAppFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D6988E1BBB4A14008CDC31 /* libTelerikAppFeedback.a */; };
+		A6EAE0FA1C103A3700BD7F93 /* ListViewDynamicSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAE0F61C103A3700BD7F93 /* ListViewDynamicSizeCell.swift */; };
+		A6EAE0FB1C103A3700BD7F93 /* ListViewPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAE0F71C103A3700BD7F93 /* ListViewPerformance.swift */; };
+		A6EAE0FC1C103A3700BD7F93 /* ListViewUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAE0F81C103A3700BD7F93 /* ListViewUpdate.swift */; };
+		A6EAE0FD1C103A3700BD7F93 /* ListViewVariableHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAE0F91C103A3700BD7F93 /* ListViewVariableHeight.swift */; };
 		D04BCDC01BB3DAEA0030F13F /* GaugeGettingStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDBF1BB3DAEA0030F13F /* GaugeGettingStarted.swift */; };
 		D04BCDC21BB3DB120030F13F /* GaugeCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDC11BB3DB120030F13F /* GaugeCustomization.swift */; };
 		D04BCDC41BB3DB280030F13F /* GaugeAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BCDC31BB3DB280030F13F /* GaugeAnimations.swift */; };
@@ -72,8 +76,6 @@
 		F6B595931B37F73E00846250 /* PersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595921B37F73E00846250 /* PersonalInfo.swift */; };
 		F6B595961B37FFCB00846250 /* DataFormReadOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595951B37FFCB00846250 /* DataFormReadOnly.swift */; };
 		F6B595981B38007300846250 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595971B38007300846250 /* CardInfo.swift */; };
-		F6B5959A1B38065A00846250 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595991B38065A00846250 /* PasswordValidator.swift */; };
-		F6B5959C1B380ED000846250 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B5959B1B380ED000846250 /* EmailValidator.swift */; };
 		F6B5959E1B38124000846250 /* RegistrationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B5959D1B38124000846250 /* RegistrationInfo.swift */; };
 		F6B595A01B38137E00846250 /* DataFormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B5959F1B38137E00846250 /* DataFormValidation.swift */; };
 		F6B595A21B381D5C00846250 /* DataFormCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B595A11B381D5C00846250 /* DataFormCustomization.swift */; };
@@ -220,8 +222,6 @@
 		F6B595921B37F73E00846250 /* PersonalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalInfo.swift; sourceTree = "<group>"; };
 		F6B595951B37FFCB00846250 /* DataFormReadOnly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormReadOnly.swift; sourceTree = "<group>"; };
 		F6B595971B38007300846250 /* CardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
-		F6B595991B38065A00846250 /* PasswordValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
-		F6B5959B1B380ED000846250 /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		F6B5959D1B38124000846250 /* RegistrationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationInfo.swift; sourceTree = "<group>"; };
 		F6B5959F1B38137E00846250 /* DataFormValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormValidation.swift; sourceTree = "<group>"; };
 		F6B595A11B381D5C00846250 /* DataFormCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormCustomization.swift; sourceTree = "<group>"; };
@@ -418,8 +418,6 @@
 		F6B595941B37FF8900846250 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F6B5959B1B380ED000846250 /* EmailValidator.swift */,
-				F6B595991B38065A00846250 /* PasswordValidator.swift */,
 				F6B595921B37F73E00846250 /* PersonalInfo.swift */,
 				F6B595971B38007300846250 /* CardInfo.swift */,
 				F6B5959D1B38124000846250 /* RegistrationInfo.swift */,
@@ -778,7 +776,6 @@
 				D04BCDCA1BB3DB750030F13F /* GaugeInteraction.swift in Sources */,
 				19B3C3E719DEB505000167D0 /* PointLabels.swift in Sources */,
 				199D1CDA1A83A0C4009708D6 /* SideDrawerGettingStarted.swift in Sources */,
-				F6B5959A1B38065A00846250 /* PasswordValidator.swift in Sources */,
 				1B33C9B51B9F16D600906C7E /* CustomAxis.swift in Sources */,
 				1923F41C1A84DE8700BB0D03 /* SideDrawerPositions.swift in Sources */,
 				FEAA9BEA19B4CD9A00D60D4C /* CustomCell.swift in Sources */,
@@ -862,6 +859,7 @@
 				FE28FF741A8D0E95000E0BDC /* ListViewGroups.swift in Sources */,
 				1B46C91D1B30599E0021B2A2 /* AlertCustomize.swift in Sources */,
 				FEAA9BE119B4CD7300D60D4C /* CalendarCustomization.swift in Sources */,
+				A6EAE0FD1C103A3700BD7F93 /* ListViewVariableHeight.swift in Sources */,
 				191453741A94D8D300B7670F /* SideDrawerHeaderView.swift in Sources */,
 				FEAA9BAF19B4CC9000D60D4C /* BubbleChart.swift in Sources */,
 				FEAA9BB419B4CC9000D60D4C /* ScatterChart.swift in Sources */,
@@ -889,13 +887,13 @@
 				FE15E00A1A91EDF200F2AB01 /* ListViewReorder.swift in Sources */,
 				F6157EBB1C25E07800C579E2 /* AutoCompleteLoadData.swift in Sources */,
 				FEAA9BB219B4CC9000D60D4C /* LineAreaSpline.swift in Sources */,
-				F6B5959C1B380ED000846250 /* EmailValidator.swift in Sources */,
 				FEAA9BB519B4CC9000D60D4C /* StockDataPoint.swift in Sources */,
 				FE15E0081A91EDDC00F2AB01 /* ListViewPullToRefresh.swift in Sources */,
 				FEAA9BD219B4CD0700D60D4C /* UIKitDynamicsAnimation.swift in Sources */,
 				1B46C91F1B3066250021B2A2 /* AlertGettingStarted.swift in Sources */,
 				FEB66DB71B13399500DC71AC /* AnimationListCell.swift in Sources */,
 				FEAA9BD519B4CD2100D60D4C /* Customize.swift in Sources */,
+				A6EAE0FB1C103A3700BD7F93 /* ListViewPerformance.swift in Sources */,
 				FEAA9BEB19B4CD9A00D60D4C /* iOS7StyleCalendar.swift in Sources */,
 				FEAA9BCE19B4CD0700D60D4C /* CustomAnimationAreaChart.swift in Sources */,
 				FEE949031BF3696D000DA8CE /* ListViewVariableHeight.swift in Sources */,
@@ -904,6 +902,7 @@
 				19DB73E71B594BE100680707 /* RangeBarColumnChart.swift in Sources */,
 				1B53723A1A97858700707810 /* CustomCardListViewCell.swift in Sources */,
 				FEAA9BE519B4CD7300D60D4C /* CalendarViewModes.swift in Sources */,
+				A6EAE0FC1C103A3700BD7F93 /* ListViewUpdate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

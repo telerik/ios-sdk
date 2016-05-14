@@ -62,11 +62,11 @@ class IndicatorsChart : TKExamplesExampleViewController, UIPopoverControllerDele
         self.indicators.append(("Chaikin oscillator", TKChartChaikinOscillator.self))
         
         for (title, _) in self.trendlines {
-            self.addOption(title, selector: "addOverlayToChart", inSection: "Trendlines")
+            self.addOption(title, selector: #selector(IndicatorsChart.addOverlayToChart), inSection: "Trendlines")
         }
 
         for (title, _) in self.indicators {
-            self.addOption(title, selector: "addIndicatorToChart", inSection: "Indicators")
+            self.addOption(title, selector: #selector(IndicatorsChart.addIndicatorToChart), inSection: "Indicators")
         }
     }
 

@@ -22,14 +22,14 @@ class DataSourceWithWebService: TKExamplesExampleViewController {
         self.view.addSubview(chart)
 
         let url = "http://www.telerik.com/docs/default-source/ui-for-ios/weather.json?sfvrsn=2"
-        dataSource.loadDataFromURL(url, dataFormat: TKDataSourceDataFormat.JSON, rootItemKeyPath: "dayList") { (NSError err) -> Void in
+        dataSource.loadDataFromURL(url, dataFormat: TKDataSourceDataFormat.JSON, rootItemKeyPath: "dayList") { (err: NSError?) -> Void in
 
             if err != nil {
                 print("Can't connect with the server!")
                 return
             }
             
-            self.dataSource.settings.chart.createSeries { (TKDataSourceGroup group) -> TKChartSeries! in
+            self.dataSource.settings.chart.createSeries { (group: TKDataSourceGroup?) -> TKChartSeries! in
                 let series:TKChartSeries
                 if group!.valueKey == "clouds" {
                     series = TKChartColumnSeries()

@@ -13,9 +13,9 @@ class AutoCompleteCustomization: TKAutoCompleteController, TKAutoCompleteDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AutoCompleteCustomization.keyboardDidShow(_:)), name: UIKeyboardDidShowNotification, object: nil);
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardDidHideNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AutoCompleteCustomization.keyboardDidHide(_:)), name: UIKeyboardDidHideNotification, object: nil);
         
         autocomplete = TKAutoCompleteTextView(frame: CGRect(x: 10, y: self.view.bounds.origin.y + 20, width: self.view.bounds.size.width - 20, height: 44));
         

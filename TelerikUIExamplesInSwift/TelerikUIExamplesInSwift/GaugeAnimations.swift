@@ -24,7 +24,7 @@ class GaugeAnimations: TKExamplesExampleViewController {
         self.segmentedControl = UISegmentedControl(items: segments)
         self.segmentedControl!.selectedSegmentIndex = 0
         self.view.addSubview(self.segmentedControl!)
-        self.segmentedControl!.addTarget(self, action: "segmentTouched:", forControlEvents: UIControlEvents.ValueChanged)
+        self.segmentedControl!.addTarget(self, action: #selector(GaugeAnimations.segmentTouched(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
         self.label.text = "km/h"
         self.label.font = UIFont.systemFontOfSize(12)

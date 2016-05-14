@@ -14,7 +14,7 @@ class iOS7StyleCalendar:TKExamplesExampleViewController {
         
         let button = UIButton(type:UIButtonType.System)
         button.setTitle("Tap to load iOS 7 style calendar", forState: UIControlState.Normal)
-        button.addTarget(self, action: "buttonTouched:", forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: #selector(iOS7StyleCalendar.buttonTouched(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         button.frame = CGRectMake(0, self.view.bounds.size.height/2.0 - 20, self.view.bounds.size.width, 40)
         self.view.addSubview(button)
     }

@@ -20,8 +20,10 @@ class DataFormCustomization: TKDataFormViewController {
     
         let name = dataSource["name"]
         name.hintText = "Name"
-        name.errorMessage = "Please fill in the guest name"
         name.image = UIImage(named: "guest-name")
+        let nonEmptyValidator = TKDataFormNonEmptyValidator()
+        nonEmptyValidator.errorMessage = "Please fill in the guest name"
+        name.validators = [nonEmptyValidator]
         
         let phone = dataSource["phone"]
         phone.hintText = "Phone"
@@ -66,7 +68,7 @@ class DataFormCustomization: TKDataFormViewController {
         btn.frame = CGRect(x: 0, y: self.dataForm.frame.size.height, width: self.view.bounds.size.width, height: 66)
         btn.setTitle("Cancel reservation", forState: .Normal)
         btn.setTitleColor(UIColor(red: 0.780, green: 0.2, blue: 0.223, alpha: 1.0), forState: .Normal)
-        btn.addTarget(self, action: "cancelReservation", forControlEvents: .TouchUpInside)
+        btn.addTarget(self, action: #selector(DataFormCustomization.cancelReservation), forControlEvents: .TouchUpInside)
         self.view.addSubview(btn)
     }
     
@@ -82,7 +84,7 @@ class DataFormCustomization: TKDataFormViewController {
         alert.title = "Cancel Reservation";
         alert.message = "Reservation Canceled!";
         
-        alert.addActionWithTitle("OK") { (TKAlert alert, TKAlertAction action) -> Bool in
+        alert.addActionWithTitle("OK") { (alert: TKAlert, action: TKAlertAction) -> Bool in
             return true
         }
         
@@ -90,13 +92,6 @@ class DataFormCustomization: TKDataFormViewController {
     }
     
     //MARK:- TKDataFormDelegate
-    
-    override func dataForm(dataForm: TKDataForm, validateProperty propery: TKEntityProperty, editor: TKDataFormEditor) -> Bool {
-        if propery.name == "name" {
-            return (propery.valueCandidate as! NSString).length > 0
-        }
-        return true
-    }
     
     override func dataForm(dataForm: TKDataForm, updateEditor editor: TKDataFormEditor, forProperty property: TKEntityProperty) {
 

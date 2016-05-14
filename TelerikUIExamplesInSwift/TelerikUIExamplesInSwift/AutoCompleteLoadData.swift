@@ -12,7 +12,7 @@ class AutoCompleteLoadData: TKAutoCompleteController, TKAutoCompleteDataSource
     
     override func viewDidLoad()
     {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AutoCompleteLoadData.keyboardDidShow(_:)), name: UIKeyboardDidShowNotification, object: nil);
 
         autocomplete = TKAutoCompleteTextView(frame:CGRect(x: 10, y: 20, width: self.view.bounds.size.width-20, height: 44))
         self.automaticallyAdjustsScrollViewInsets = false

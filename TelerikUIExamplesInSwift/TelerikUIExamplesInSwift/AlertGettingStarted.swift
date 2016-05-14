@@ -21,7 +21,7 @@ class AlertGettingStarted: TKExamplesExampleViewController {
         textLabel.text = "Please, answer the question?"
         self.view.addSubview(textLabel);
         
-        UIButton.circleButtonInView(self.view, title: "Answer me", target: self, action: "show:")
+        UIButton.circleButtonInView(self.view, title: "Answer me", target: self, action: #selector(AlertGettingStarted.show(_:)))
     }
     
     func show(sender: AnyObject) {

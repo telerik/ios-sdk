@@ -23,11 +23,14 @@
     _reservationForm = [ReservationForm new];
     
     _dataSource = [[TKDataFormEntityDataSource alloc] initWithObject:_reservationForm];
-    
+
     TKEntityProperty *name = _dataSource[@"name"];
     name.hintText = @"Name";
-    name.errorMessage = @"Please fill in the guest name";
     name.image = [UIImage imageNamed:@"guest-name"];
+    
+    TKDataFormNonEmptyValidator *nonEmptyValidator = [[TKDataFormNonEmptyValidator alloc] init];
+    nonEmptyValidator.errorMessage = @"Please fill in the guest name";
+    name.validators = @[nonEmptyValidator];
     
     TKEntityProperty *phone = _dataSource[@"phone"];
     phone.hintText = @"Phone";
@@ -100,14 +103,6 @@
 
 #pragma mark TKDataFormDelegate
 
-- (BOOL)dataForm:(TKDataForm *)dataForm validateProperty:(TKEntityProperty *)property editor:(TKDataFormEditor *)editor
-{
-    if ([property.name isEqualToString:@"name"]) {
-        return ((NSString*)property.valueCandidate).length > 0;
-    }
-    return YES;
-}
-
 - (void)dataForm:(TKDataForm *)dataForm updateEditor:(TKDataFormEditor *)editor forProperty:(TKEntityProperty *)property
 {
     editor.style.textLabelOffset = UIOffsetMake(10, 0);
@@ -119,12 +114,12 @@
         [editor.gridLayout setWidth:0 forColumn:[titleDef.column integerValue]];
         editor.style.editorOffset = UIOffsetMake(10, 0);
     }
-
+    
     if ([property.name isEqualToString:@"origin"]) {
         editor.style.editorOffset = UIOffsetMake(0, 0);
         editor.style.separatorColor = nil;
     }
-
+    
     if ([property.name isEqualToString:@"name"]) {
         editor.style.feedbackLabelOffset = UIOffsetMake(10, 0);
         editor.feedbackLabel.font = [UIFont fontWithName:@"Verdana-Italic" size:10];
@@ -134,7 +129,7 @@
         TKGridLayoutCellDefinition *labelDef = [editor.gridLayout definitionForView:((TKDataFormStepperEditor *)editor).valueLabel];
         labelDef.contentOffset = UIOffsetMake(-25, 0);
     }
-
+    
     if ([property.name isEqualToString:@"section"]) {
         UIImage *img = [UIImage imageNamed:@"guest-name"];
         editor.style.textLabelOffset = UIOffsetMake(img.size.width + 10, 0);

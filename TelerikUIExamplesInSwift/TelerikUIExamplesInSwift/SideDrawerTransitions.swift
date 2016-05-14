@@ -17,14 +17,14 @@ class SideDrawerTransitions: SideDrawerGettingStarted {
         scrollView = UIScrollView(frame: CGRectZero)
         scrollView.scrollEnabled = true
         
-        self.addButtonWithTitle("Push", target: self, selector: "pushTransition")
-        self.addButtonWithTitle("Reveal", target: self, selector: "revealTransition")
-        self.addButtonWithTitle("Reverse Slide Out", target: self, selector: "reverseSlideOutTransition")
-        self.addButtonWithTitle("Slide Along", target: self, selector: "slideAlongTransition")
-        self.addButtonWithTitle("Slide In On Top", target: self, selector: "slideInOnTopTransition")
-        self.addButtonWithTitle("Scale Up", target: self, selector: "scaleUpTransition")
-        self.addButtonWithTitle("Fade In", target: self, selector: "fadeInTransition")
-        self.addButtonWithTitle("Scale Down Pusher", target: self, selector: "scaleDownPusherTransition")
+        self.addButtonWithTitle("Push", target: self, selector: #selector(SideDrawerTransitions.pushTransition))
+        self.addButtonWithTitle("Reveal", target: self, selector: #selector(SideDrawerTransitions.revealTransition))
+        self.addButtonWithTitle("Reverse Slide Out", target: self, selector: #selector(SideDrawerTransitions.reverseSlideOutTransition))
+        self.addButtonWithTitle("Slide Along", target: self, selector: #selector(SideDrawerTransitions.slideAlongTransition))
+        self.addButtonWithTitle("Slide In On Top", target: self, selector: #selector(SideDrawerTransitions.slideInOnTopTransition))
+        self.addButtonWithTitle("Scale Up", target: self, selector: #selector(SideDrawerTransitions.scaleUpTransition))
+        self.addButtonWithTitle("Fade In", target: self, selector: #selector(SideDrawerTransitions.fadeInTransition))
+        self.addButtonWithTitle("Scale Down Pusher", target: self, selector: #selector(SideDrawerTransitions.scaleDownPusherTransition))
         
         self.sideDrawerView.mainView.addSubview(scrollView)
         self.sideDrawerView.backgroundColor = UIColor.grayColor()
@@ -87,7 +87,7 @@ class SideDrawerTransitions: SideDrawerGettingStarted {
         let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.SlideInOnTop
         sideDrawer.fill = TKSolidFill(color: UIColor.clearColor())
-        sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: Selector("dismissSideDrawer"))
+        sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: #selector(SideDrawerTransitions.dismissSideDrawer))
         self.showSideDrawer()
     }
     
@@ -103,7 +103,7 @@ class SideDrawerTransitions: SideDrawerGettingStarted {
         let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.FadeIn
         sideDrawer.fill = TKSolidFill(color: UIColor.grayColor())
-        sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: Selector("dismissSideDrawer"))
+        sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: #selector(SideDrawerTransitions.dismissSideDrawer))
         self.showSideDrawer()
     }
     
@@ -111,7 +111,7 @@ class SideDrawerTransitions: SideDrawerGettingStarted {
         let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.ScaleDownPusher
         sideDrawer.fill = TKSolidFill(color: UIColor.grayColor())
-        sideDrawer.headerView = SideDrawerHeaderView(addButton: false, target: self, selector: Selector("dismissSideDrawer"))
+        sideDrawer.headerView = SideDrawerHeaderView(addButton: false, target: self, selector: #selector(SideDrawerTransitions.dismissSideDrawer))
         self.showSideDrawer()
     }
 }

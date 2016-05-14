@@ -19,7 +19,7 @@ class LiveData: TKExamplesExampleViewController {
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
 
-        NSTimer.scheduledTimerWithTimeInterval(0.127, target: self, selector: "updateChart", userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(0.127, target: self, selector: #selector(LiveData.updateChart), userInfo: nil, repeats: true)
     }
     
     func updateChart () -> Void {

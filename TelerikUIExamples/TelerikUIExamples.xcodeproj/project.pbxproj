@@ -41,8 +41,6 @@
 		19E9055619BF11FB00A325D8 /* PointLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E9055519BF11FB00A325D8 /* PointLabels.m */; };
 		19E9055A19BF38F700A325D8 /* CustomPointLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E9055919BF38F700A325D8 /* CustomPointLabels.m */; };
 		19E9055D19BF391800A325D8 /* MyPointLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E9055C19BF391800A325D8 /* MyPointLabel.m */; };
-		19F6481B1B2EE3F70023A601 /* EmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6481A1B2EE3F70023A601 /* EmailValidator.m */; };
-		19F648201B2EF3C40023A601 /* PasswordValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6481F1B2EF3C40023A601 /* PasswordValidator.m */; };
 		19F9188F1B298163008C10F2 /* DataFormGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F9188E1B298163008C10F2 /* DataFormGettingStarted.m */; };
 		1B3258731B272AC800EAC1DF /* AlertCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3258721B272AC800EAC1DF /* AlertCustomView.m */; };
 		1B33C9B31B9EDC4700906C7E /* AxisRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B33C9B21B9EDC4700906C7E /* AxisRender.m */; };
@@ -222,10 +220,6 @@
 		19E9055919BF38F700A325D8 /* CustomPointLabels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPointLabels.m; sourceTree = "<group>"; };
 		19E9055B19BF391800A325D8 /* MyPointLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPointLabel.h; sourceTree = "<group>"; };
 		19E9055C19BF391800A325D8 /* MyPointLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPointLabel.m; sourceTree = "<group>"; };
-		19F648191B2EE3F70023A601 /* EmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailValidator.h; sourceTree = "<group>"; };
-		19F6481A1B2EE3F70023A601 /* EmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailValidator.m; sourceTree = "<group>"; };
-		19F6481E1B2EF3C40023A601 /* PasswordValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordValidator.h; sourceTree = "<group>"; };
-		19F6481F1B2EF3C40023A601 /* PasswordValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordValidator.m; sourceTree = "<group>"; };
 		19F9188D1B298163008C10F2 /* DataFormGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormGettingStarted.h; sourceTree = "<group>"; };
 		19F9188E1B298163008C10F2 /* DataFormGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormGettingStarted.m; sourceTree = "<group>"; };
 		1B3258711B272AC800EAC1DF /* AlertCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AlertCustomView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -505,10 +499,6 @@
 				1977F8C61B28666B0024ECB2 /* DataFormValidation.m */,
 				1977F8C81B2867370024ECB2 /* RegistrationInfo.h */,
 				1977F8C91B2867370024ECB2 /* RegistrationInfo.m */,
-				19F648191B2EE3F70023A601 /* EmailValidator.h */,
-				19F6481A1B2EE3F70023A601 /* EmailValidator.m */,
-				19F6481E1B2EF3C40023A601 /* PasswordValidator.h */,
-				19F6481F1B2EF3C40023A601 /* PasswordValidator.m */,
 			);
 			name = Validation;
 			sourceTree = "<group>";
@@ -721,6 +711,14 @@
 				FE9356531C0318590064BD0C /* ListViewUpdate.m */,
 				FE1715131A9625C3000EB4C9 /* LoremIpsumGenerator.h */,
 				FE1715141A9625C3000EB4C9 /* LoremIpsumGenerator.m */,
+				A6EAE0EA1C103A1200BD7F93 /* ListViewDynamicHeightCell.h */,
+				A6EAE0EB1C103A1200BD7F93 /* ListViewDynamicHeightCell.m */,
+				A6EAE0EC1C103A1200BD7F93 /* ListViewPerformance.h */,
+				A6EAE0ED1C103A1200BD7F93 /* ListViewPerformance.m */,
+				A6EAE0EE1C103A1200BD7F93 /* ListViewUpdate.h */,
+				A6EAE0EF1C103A1200BD7F93 /* ListViewUpdate.m */,
+				A6EAE0F01C103A1200BD7F93 /* ListViewVariableHeight.h */,
+				A6EAE0F11C103A1200BD7F93 /* ListViewVariableHeight.m */,
 			);
 			name = ListView;
 			sourceTree = "<group>";
@@ -1165,7 +1163,6 @@
 				FEEAEBDC18080AAC00D75A5C /* UIKitDynamicsAnimation.m in Sources */,
 				1BC928851B9D9A6C00937336 /* CustomAxis.m in Sources */,
 				19DCA00F1ABB1457009C5D62 /* MyTransition.m in Sources */,
-				19F648201B2EF3C40023A601 /* PasswordValidator.m in Sources */,
 				7A0FD505194B1732004B5A8D /* FeedbackExampleController.m in Sources */,
 				19A59AAA1BE7AC5D009B23F7 /* DataFormJSONSupport.m in Sources */,
 				FE3CF5871807F6F700461E57 /* CategoricalAxis.m in Sources */,
@@ -1242,7 +1239,6 @@
 				FEEAEBE01808160000D75A5C /* BindWithDataPoint.m in Sources */,
 				F640C3D11BAC3B00001FEC95 /* PersonListViewCell.m in Sources */,
 				19A2A0201A80F63B00378C68 /* SideDrawerCustomContent.m in Sources */,
-				19F6481B1B2EE3F70023A601 /* EmailValidator.m in Sources */,
 				FE8A36E118A4009A0081EECA /* CustomAnnotation.m in Sources */,
 				FE17151B1A963D81000EB4C9 /* ImageWithTextListViewCell.m in Sources */,
 				193BB85E19C1A8CD00143087 /* MyPointLabelRender.m in Sources */,

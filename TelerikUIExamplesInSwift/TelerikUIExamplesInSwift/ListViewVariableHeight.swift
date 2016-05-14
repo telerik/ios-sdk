@@ -16,7 +16,7 @@ class ListViewVariableHeight: TKExamplesExampleViewController {
         super.viewDidLoad()
 
         let loremGenerator = LoremIpsumGenerator()
-        for (var i = 0; i<20; i++) {
+        for _ in 0..<20 {
             items.append(loremGenerator.generateString(2 + Int(arc4random()%30)) as String)
         }
         

@@ -130,8 +130,10 @@ class PointLabels: TKExamplesExampleViewController, TKChartDelegate {
         chart.addSeries(ohlcSeries)
         let xAxis = chart.xAxis as! TKChartDateTimeAxis
         xAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Days
-        xAxis.majorTickInterval = 1
         xAxis.setPlotMode(TKChartAxisPlotMode.BetweenTicks)
+        xAxis.majorTickInterval = 1
+        xAxis.setMajorTickCount(6)
+        chart.update()
     }
     
     func chart(chart: TKChart, textForLabelAtPoint dataPoint: TKChartData, property propertyName: String?, inSeries series: TKChartSeries, atIndex dataIndex: UInt) -> String? {

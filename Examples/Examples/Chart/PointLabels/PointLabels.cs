@@ -129,8 +129,10 @@ namespace Examples
 			chart.AddSeries (ohlcSeries);
 			TKChartDateTimeAxis xAxis = (TKChartDateTimeAxis)chart.XAxis;
 			xAxis.MinorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Days;
-			xAxis.MajorTickInterval = 1;
 			xAxis.PlotMode = TKChartAxisPlotMode.BetweenTicks;
+			xAxis.MajorTickInterval = 1;
+			xAxis.MajorTickCount = 6;
+			chart.Update ();
 		}
 
 		class ChartDelegate : TKChartDelegate

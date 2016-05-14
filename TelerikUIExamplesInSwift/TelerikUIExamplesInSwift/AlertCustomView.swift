@@ -12,7 +12,7 @@ class AlertCustomView: TKExamplesExampleViewController, TKAlertDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        UIButton.circleButtonInView(self.view, title: "Show Alert", target: self, action: "show:")
+        UIButton.circleButtonInView(self.view, title: "Show Alert", target: self, action: #selector(AlertCustomView.show(_:)))
     }
     
     func show(sender: AnyObject) {

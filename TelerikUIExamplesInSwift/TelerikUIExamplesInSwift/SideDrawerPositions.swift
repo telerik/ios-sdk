@@ -10,10 +10,10 @@ class SideDrawerPositions: SideDrawerGettingStarted {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.createButton("Left", target: self, selector: "leftSideDrawer", origin: CGPointMake(15, 80))
-        self.createButton("Right", target: self, selector: "rightSideDrawer", origin: CGPointMake(15, 130))
-        self.createButton("Top", target: self, selector: "topSideDrawer", origin: CGPointMake(15, 180))
-        self.createButton("Bottom", target: self, selector: "bottomSideDrawer", origin: CGPointMake(15, 230))
+        self.createButton("Left", target: self, selector: #selector(leftSideDrawer), origin: CGPointMake(15, 80))
+        self.createButton("Right", target: self, selector: #selector(rightSideDrawer), origin: CGPointMake(15, 130))
+        self.createButton("Top", target: self, selector: #selector(topSideDrawer), origin: CGPointMake(15, 180))
+        self.createButton("Bottom", target: self, selector: #selector(bottomSideDrawer), origin: CGPointMake(15, 230))
         
         let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.Reveal
@@ -44,7 +44,7 @@ class SideDrawerPositions: SideDrawerGettingStarted {
     func rightSideDrawer() {
         let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.position = TKSideDrawerPosition.Right
-        sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: Selector("dismissSideDrawer"))
+        sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: #selector(dismissSideDrawer))
         self.showSideDrawer()
     }
     
@@ -62,7 +62,7 @@ class SideDrawerPositions: SideDrawerGettingStarted {
         sideDrawer.position = TKSideDrawerPosition.Bottom
         (sideDrawer.content as! TKSideDrawerTableView).setContentOffset(CGPointZero, animated: false)
         sideDrawer.allowScroll = true
-        sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: Selector("dismissSideDrawer"))
+        sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: #selector(dismissSideDrawer))
         self.showSideDrawer()
     }
 }

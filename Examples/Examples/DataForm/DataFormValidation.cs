@@ -25,12 +25,15 @@ namespace Examples
 			TKEntityProperty emailProperty = this.dataSource["Email"];
 			emailProperty.HintText = "E-mail (Required)";
 			emailProperty.EditorClass = new Class (typeof(TKDataFormEmailEditor));
-			emailProperty.Validators = new NSObject[] { new EmailValidator() };
+			TKDataFormEmailValidator emailValidator = new TKDataFormEmailValidator ();
+			emailProperty.Validators = new NSObject[] { emailValidator };
 
 			TKEntityProperty password = this.dataSource.PropertyWithName("Password");
-			password.HintText = "Password (Minimum 6 characters)";
+			password.HintText = "Password";
 			password.EditorClass = new Class (typeof(TKDataFormPasswordEditor));
-			password.Validators = new NSObject[] { new PasswordValidator () };
+			TKDataFormMinimumLengthValidator passwordValidator = new TKDataFormMinimumLengthValidator (6);
+			passwordValidator.ErrorMessage = "Password must be at least 6 characters!";
+			password.Validators = new NSObject[] { passwordValidator };
 
 			TKEntityProperty repeatPassword = this.dataSource.PropertyWithName ("RepeatPassword");
 			repeatPassword.HintText = "Confirm password";

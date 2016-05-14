@@ -146,8 +146,11 @@
     [_chart addSeries:ohlcSeries];
     TKChartDateTimeAxis *xAxis = (TKChartDateTimeAxis *)_chart.xAxis;
     xAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnitDays;
-    xAxis.majorTickInterval = 1;
     xAxis.plotMode = TKChartAxisPlotModeBetweenTicks;
+    xAxis.majorTickInterval = 1;
+    xAxis.majorTickCount = 6;
+    [_chart update];
+    
 }
 
 - (NSString *)chart:(TKChart *)chart textForLabelAtPoint:(id<TKChartData>)dataPoint property:(NSString *)propertyName inSeries:(TKChartSeries *)series atIndex:(NSUInteger)dataIndex

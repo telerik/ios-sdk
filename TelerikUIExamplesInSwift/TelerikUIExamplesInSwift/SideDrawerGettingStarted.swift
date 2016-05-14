@@ -27,7 +27,7 @@ class SideDrawerGettingStarted: TKExamplesExampleViewController, TKSideDrawerDel
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, mainView.bounds.size.width, 44))
         navigationBar.autoresizingMask = UIViewAutoresizing.FlexibleWidth
-        let showSideDrawerButton = UIBarButtonItem(image: UIImage(named: "menu"), style: UIBarButtonItemStyle.Plain, target: self, action: "showSideDrawer")
+        let showSideDrawerButton = UIBarButtonItem(image: UIImage(named: "menu"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(SideDrawerGettingStarted.showSideDrawer))
         navItem.leftBarButtonItem = showSideDrawerButton
         navigationBar.items = [navItem]
         mainView.addSubview(navigationBar)
@@ -35,7 +35,7 @@ class SideDrawerGettingStarted: TKExamplesExampleViewController, TKSideDrawerDel
         let sideDrawer = sideDrawerView.sideDrawers[0]
         sideDrawer.delegate = self
         sideDrawer.style.headerHeight = 44
-        sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: Selector("dismissSideDrawer"))
+        sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: #selector(SideDrawerGettingStarted.dismissSideDrawer))
         
         var section = sideDrawer.addSectionWithTitle("Primary")
         section.addItemWithTitle("Social")
@@ -57,7 +57,7 @@ class SideDrawerGettingStarted: TKExamplesExampleViewController, TKSideDrawerDel
         super.viewWillDisappear(animated)
         
         if let navController = self.navigationController {
-            if navController.respondsToSelector("interactivePopGestureRecognizer") {
+            if navController.respondsToSelector(Selector("interactivePopGestureRecognizer")) {
                 self.navigationController!.interactivePopGestureRecognizer!.enabled = true
             }
         }

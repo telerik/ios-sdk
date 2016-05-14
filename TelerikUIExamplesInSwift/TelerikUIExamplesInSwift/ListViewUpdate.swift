@@ -28,11 +28,11 @@ class ListViewUpdate: TKExamplesExampleViewController, TKListViewDelegate {
         self.toolbar.frame = CGRectMake(0, self.view.bounds.origin.y, CGRectGetWidth(self.view.frame), 44)
         self.toolbar.items = [
             UIBarButtonItem(barButtonSystemItem:.FlexibleSpace, target:nil, action:nil),
-            UIBarButtonItem(title:"Add", style:.Plain, target:self, action:"addTouched"),
+            UIBarButtonItem(title:"Add", style:.Plain, target:self, action:#selector(ListViewUpdate.addTouched)),
             UIBarButtonItem(barButtonSystemItem:.FlexibleSpace, target:nil, action:nil),
-            UIBarButtonItem(title:"Remove", style:.Plain, target:self, action:"removeTouched"),
+            UIBarButtonItem(title:"Remove", style:.Plain, target:self, action:#selector(ListViewUpdate.removeTouched)),
             UIBarButtonItem(barButtonSystemItem:.FlexibleSpace, target:nil, action:nil),
-            UIBarButtonItem(title:"Update", style:.Plain, target:self, action:"updateTouched"),
+            UIBarButtonItem(title:"Update", style:.Plain, target:self, action:#selector(ListViewUpdate.updateTouched)),
             UIBarButtonItem(barButtonSystemItem:.FlexibleSpace, target:nil, action:nil),
         ]
         self.toolbar.autoresizingMask = UIViewAutoresizing.FlexibleWidth

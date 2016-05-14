@@ -37,15 +37,14 @@ class AlertSettings: TKExamplesExampleViewController, TKAlertDelegate, TKDataFor
         
         dataSource.sourceObject = self.settings
         
-         dataSource["dismissDirection"].editorClass = TKDataFormSegmentedEditor.self
+        dataSource["dismissDirection"].editorClass = TKDataFormSegmentedEditor.self
         dataSource["dismissDirection"].valuesProvider = ["Horizontal", "Vertical"]
-         dataSource["dismissMode"].editorClass = TKDataFormSegmentedEditor.self
- dataSource["dismissMode"].valuesProvider = ["None", "Tap", "Swipe"]
-         dataSource["actionsLayout"].editorClass = TKDataFormSegmentedEditor.self
-         dataSource["actionsLayout"].valuesProvider =  ["Horizontal", "Vertical"]
-         dataSource["backgroundStyle"].editorClass = TKDataFormSegmentedEditor.self
-         dataSource["backgroundStyle"].valuesProvider = ["Blur", "Dim"]
-         dataSource["allowParallax"].editorClass = TKDataFormSegmentedEditor.self
+        dataSource["dismissMode"].editorClass = TKDataFormSegmentedEditor.self
+        dataSource["dismissMode"].valuesProvider = ["None", "Tap", "Swipe"]
+        dataSource["actionsLayout"].editorClass = TKDataFormSegmentedEditor.self
+        dataSource["actionsLayout"].valuesProvider =  ["Horizontal", "Vertical"]
+        dataSource["backgroundStyle"].editorClass = TKDataFormSegmentedEditor.self
+        dataSource["backgroundStyle"].valuesProvider = ["Blur", "Dim"]
         
         dataForm.delegate = self
         dataForm.commitMode = TKDataFormCommitMode.Manual

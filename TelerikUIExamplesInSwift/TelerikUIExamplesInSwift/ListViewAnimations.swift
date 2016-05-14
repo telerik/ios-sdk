@@ -30,11 +30,11 @@ class ListViewAnimations: TKExamplesExampleViewController {
         // Do any additional setup after loading the view.
         self.dataSource.loadDataFromJSONResource("ListViewSampleData", ofType: "json", rootItemKeyPath: "photos")
         
-        self.dataSource.settings.listView.createCell { (TKListView listView, NSIndexPath indexPath, AnyObject item) -> TKListViewCell! in
+        self.dataSource.settings.listView.createCell { (listView: TKListView, indexPath: NSIndexPath, item: AnyObject) -> TKListViewCell! in
             return listView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! TKListViewCell
         }
 
-        self.dataSource.settings.listView.initCell { (TKListView ListView, NSIndexPath indexPath, TKListViewCell cell, AnyObject item) -> Void in
+        self.dataSource.settings.listView.initCell { (listView: TKListView, indexPath: NSIndexPath, cell: TKListViewCell, item: AnyObject) -> Void in
             cell.imageView.image = UIImage(named: self.dataSource.items[indexPath.row] as! String)
         }
 

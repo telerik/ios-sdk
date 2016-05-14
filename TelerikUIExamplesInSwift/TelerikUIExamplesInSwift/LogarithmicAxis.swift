@@ -30,7 +30,7 @@ class LogarithmicAxis: TKExamplesExampleViewController {
         UIColor(red: 0.039, green: 0.631, blue: 0.933, alpha: 1.00),
         UIColor(red: 0.271, green: 0.678, blue: 0.373, alpha: 1.00)]
         
-        datasource.settings.chart.createSeries { (TKDataSourceGroup group) -> TKChartSeries! in
+        datasource.settings.chart.createSeries { (group: TKDataSourceGroup?) -> TKChartSeries! in
             let series = TKChartAreaSeries()
             series.title = group!.valueKey!.capitalizedString
             series.style.fill = TKSolidFill(color:colors[datasource.itemSource!.indexOfObject(group!)])

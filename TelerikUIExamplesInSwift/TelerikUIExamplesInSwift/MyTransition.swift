@@ -25,7 +25,7 @@ class MyTransition: TKSideDrawerTransition {
                 self.sideDrawer!.hostview!.center = CGPointMake(self.hostviewIdentityCenter.x + self.sideDrawer!.width, self.hostviewIdentityCenter.y)
             },
             completion: {
-                (bool finished) -> Void in
+                (finished) -> Void in
                 self.transitionEnded(true)
         })
         
@@ -41,7 +41,7 @@ class MyTransition: TKSideDrawerTransition {
                     y: CGRectGetMidY(self.sideDrawer!.hostview!.superview!.bounds));
             },
             completion: {
-                (bool finished) -> Void in
+                (finished) -> Void in
                 self.transitionEnded(false)
         })
     }
@@ -60,12 +60,12 @@ class MyTransition: TKSideDrawerTransition {
         if !showing {
             self.sideDrawer!.hidden = true
             self.sideDrawer!.hostview!.userInteractionEnabled = true
-            if self.sideDrawer!.delegate != nil && self.sideDrawer!.delegate!.respondsToSelector("didDismissSideDrawer:") {
+            if self.sideDrawer!.delegate != nil && self.sideDrawer!.delegate!.respondsToSelector(#selector(TKSideDrawerDelegate.didDismissSideDrawer(_:))) {
                 self.sideDrawer!.delegate!.didDismissSideDrawer!(self.sideDrawer)
             }
         }
         else {
-            if self.sideDrawer!.delegate != nil && self.sideDrawer!.delegate!.respondsToSelector("didShowSideDrawer:") {
+            if self.sideDrawer!.delegate != nil && self.sideDrawer!.delegate!.respondsToSelector(#selector(TKSideDrawerDelegate.didShowSideDrawer(_:))) {
                 self.sideDrawer!.delegate!.didShowSideDrawer!(self.sideDrawer)
             }
         }

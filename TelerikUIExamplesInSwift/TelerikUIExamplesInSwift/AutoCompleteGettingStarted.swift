@@ -29,9 +29,9 @@ class AutoCompleteGettingStarted: TKExamplesExampleViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AutoCompleteGettingStarted.keyboardDidShow(_:)), name: UIKeyboardDidShowNotification, object: nil);
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardDidHideNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AutoCompleteGettingStarted.keyboardDidHide(_:)), name: UIKeyboardDidHideNotification, object: nil);
         
         self.automaticallyAdjustsScrollViewInsets = false
         

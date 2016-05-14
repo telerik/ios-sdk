@@ -74,7 +74,7 @@ class DataSourceUIBindings: TKExamplesExampleViewController {
             self.view.subviews[1].removeFromSuperview()
         }
         
-        self.dataSource.settings.chart.createSeries { (TKDataSourceGroup group) -> TKChartSeries! in
+        self.dataSource.settings.chart.createSeries { (group: TKDataSourceGroup?) -> TKChartSeries! in
             let series = TKChartColumnSeries()
             series.selectionMode = TKChartSeriesSelectionMode.DataPoint
             series.style.paletteMode = TKChartSeriesStylePaletteMode.UseItemIndex
@@ -111,7 +111,7 @@ class DataSourceUIBindings: TKExamplesExampleViewController {
         }
         
         // optional
-        self.dataSource.settings.tableView.createCell { (UITableView tableView, NSIndexPath indexPath, AnyObject item) -> UITableViewCell in
+        self.dataSource.settings.tableView.createCell { (tableView: UITableView, indexPath: NSIndexPath, item: AnyObject) -> UITableViewCell in
             var cell = tableView.dequeueReusableCellWithIdentifier("cell")
             if cell == nil {
                 cell = UITableViewCell(style:UITableViewCellStyle.Value1, reuseIdentifier:"cell")
@@ -120,7 +120,7 @@ class DataSourceUIBindings: TKExamplesExampleViewController {
         }
         
         // optional
-        self.dataSource.settings.tableView.initCell { (UITableView tableView, NSIndexPath indexPath, UITableViewCell cell, AnyObject item) in
+        self.dataSource.settings.tableView.initCell { (tableView: UITableView, indexPath: NSIndexPath, cell: UITableViewCell, item:AnyObject) in
             let dsitem = item as! DSItem
             cell.textLabel!.text = dsitem.name
             cell.detailTextLabel!.text = "\(dsitem.value)"
@@ -136,12 +136,12 @@ class DataSourceUIBindings: TKExamplesExampleViewController {
             self.view.subviews[1].removeFromSuperview()
         }
 
-        self.dataSource.settings.collectionView.createCell { (UICollectionView collectionView, NSIndexPath indexPath, AnyObject item) -> UICollectionViewCell in
+        self.dataSource.settings.collectionView.createCell { (collectionView: UICollectionView, indexPath: NSIndexPath, item: AnyObject) -> UICollectionViewCell in
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath:indexPath)
             return cell
         }
         
-        self.dataSource.settings.collectionView.initCell { (UICollectionView collectionView, NSIndexPath indexPath, UICollectionViewCell cell, AnyObject item) in
+        self.dataSource.settings.collectionView.initCell { (collectionView: UICollectionView, indexPath: NSIndexPath, cell: UICollectionViewCell, item: AnyObject) in
             let dscell = cell as! DSCollectionViewCell
             let dsitem = item as! DSItem
             dscell.label.text = self.dataSource.textFromItem(item, inGroup: nil)

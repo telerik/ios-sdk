@@ -74,7 +74,7 @@ class Trackball: TKExamplesExampleViewController, TKChartDelegate {
             if (i<count-1) {
                 str.appendString("\n");
             }
-            i++
+            i += 1
         }
         chart.trackball.tooltip.text = str as String
     }

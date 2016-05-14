@@ -14,7 +14,7 @@ class LoremIpsumGenerator: NSObject {
     
     func generateString(wordCount: NSInteger) -> NSString {
         let randomString = NSMutableString()
-        for var i = 0; i < wordCount; ++i {
+        for _ in 0 ..< wordCount {
             let index : Int = Int(arc4random_uniform(UInt32(words.count)))
             randomString.appendString(words[index])
             randomString.appendString(" ")

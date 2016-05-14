@@ -49,8 +49,8 @@ class CalendarTransitionEffects: TKExamplesExampleViewController, TKCalendarPres
 
         self.toolbar.frame = CGRectMake(0, CGRectGetHeight(self.contentView.bounds) - 44, CGRectGetWidth(self.contentView.bounds), 44)
         self.toolbar.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleTopMargin.rawValue)
-        let buttonPrev = UIBarButtonItem(title: "Prev month", style: UIBarButtonItemStyle.Plain, target: self, action: "prevTouched:")
-        let buttonNext = UIBarButtonItem(title: "Next month", style: UIBarButtonItemStyle.Plain, target: self, action: "nextTouched:")
+        let buttonPrev = UIBarButtonItem(title: "Prev month", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CalendarTransitionEffects.prevTouched(_:)))
+        let buttonNext = UIBarButtonItem(title: "Next month", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CalendarTransitionEffects.nextTouched(_:)))
         let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: self, action: nil)
         self.toolbar.items = [buttonPrev, space, buttonNext]
         self.contentView.addSubview(self.toolbar)

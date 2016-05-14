@@ -212,8 +212,6 @@
     <Compile Include="Examples\DataForm\Classes\PersonalInfo.cs" />
     <Compile Include="Examples\DataForm\Classes\CallEditor.cs" />
     <Compile Include="Examples\DataForm\Classes\CardInfo.cs" />
-    <Compile Include="Examples\DataForm\Classes\EmailValidator.cs" />
-    <Compile Include="Examples\DataForm\Classes\PasswordValidator.cs" />
     <Compile Include="Examples\DataForm\Classes\RegistrationInfo.cs" />
     <Compile Include="Examples\DataForm\Classes\ReservationForm.cs" />
     <Compile Include="Examples\DataForm\Classes\EmployeeInfo.cs" />

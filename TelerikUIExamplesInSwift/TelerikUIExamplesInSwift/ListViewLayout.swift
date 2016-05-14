@@ -52,13 +52,13 @@ class ListViewLayout: TKExamplesExampleViewController, TKListViewLinearLayoutDel
             return listView.dequeueReusableCellWithReuseIdentifier("custom", forIndexPath: indexPath) as! TKListViewCell
         }
 
-        dataSource.settings.listView.initCell { (TKListView listView, NSIndexPath indexPath, TKListViewCell cell, AnyObject item) -> Void in
+        dataSource.settings.listView.initCell { (listView: TKListView, indexPath: NSIndexPath, cell: TKListViewCell, item: AnyObject) -> Void in
             cell.imageView.image = UIImage(named:item.objectForKey("photo") as! String)
             cell.textLabel.text = item.objectForKey("title") as? String
             cell.detailTextLabel.text = item.objectForKey("author") as? String
         }
         
-        dataSource.settings.listView.initHeader { (TKListView listView, NSIndexPath indexPath, TKListViewHeaderCell headerCell, TKDataSourceGroup group) -> Void in
+        dataSource.settings.listView.initHeader { (listView: TKListView, indexPath: NSIndexPath, headerCell: TKListViewHeaderCell, group: TKDataSourceGroup?) -> Void in
             headerCell.textLabel.textAlignment = NSTextAlignment.Center
             headerCell.textLabel.text = (group!.key as? String)?.capitalizedString
             headerCell.backgroundColor = UIColor.lightGrayColor()

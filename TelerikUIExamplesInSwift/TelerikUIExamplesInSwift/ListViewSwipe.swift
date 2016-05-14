@@ -66,7 +66,7 @@ class ListViewSwipe: TKExamplesExampleViewController, TKListViewDelegate {
                 bMore.setTitle("More", forState: UIControlState.Normal)
                 bMore.backgroundColor = UIColor.lightGrayColor()
                 bMore.titleLabel?.font = font
-                bMore.addTarget(self, action: "buttonTouched", forControlEvents: UIControlEvents.TouchUpInside)
+                bMore.addTarget(self, action: #selector(ListViewSwipe.buttonTouched), forControlEvents: UIControlEvents.TouchUpInside)
                 cell.swipeBackgroundView.addSubview(bMore)
                 
                 let bFlag = UIButton()
@@ -74,7 +74,7 @@ class ListViewSwipe: TKExamplesExampleViewController, TKListViewDelegate {
                 bFlag.setTitle("Flag", forState: UIControlState.Normal)
                 bFlag.backgroundColor = UIColor.orangeColor()
                 bFlag.titleLabel?.font = font
-                bFlag.addTarget(self, action: "buttonTouched", forControlEvents: UIControlEvents.TouchUpInside)
+                bFlag.addTarget(self, action: #selector(ListViewSwipe.buttonTouched), forControlEvents: UIControlEvents.TouchUpInside)
                 cell.swipeBackgroundView.addSubview(bFlag)
                 
                 let bTrash = UIButton()
@@ -82,7 +82,7 @@ class ListViewSwipe: TKExamplesExampleViewController, TKListViewDelegate {
                 bTrash.setTitle("Trash", forState: UIControlState.Normal)
                 bTrash.backgroundColor = UIColor.redColor()
                 bTrash.titleLabel?.font = font
-                bTrash.addTarget(self, action: "buttonTouched", forControlEvents: UIControlEvents.TouchUpInside)
+                bTrash.addTarget(self, action: #selector(ListViewSwipe.buttonTouched), forControlEvents: UIControlEvents.TouchUpInside)
                 cell.swipeBackgroundView.addSubview(bTrash)
 
                 let bUnread = UIButton()
@@ -92,7 +92,7 @@ class ListViewSwipe: TKExamplesExampleViewController, TKListViewDelegate {
                 bUnread.titleLabel?.font = font
                 bUnread.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
                 bUnread.titleLabel?.textAlignment = NSTextAlignment.Center
-                bUnread.addTarget(self, action: "buttonTouched", forControlEvents: UIControlEvents.TouchUpInside)
+                bUnread.addTarget(self, action: #selector(ListViewSwipe.buttonTouched), forControlEvents: UIControlEvents.TouchUpInside)
                 cell.swipeBackgroundView.addSubview(bUnread)
                 
             }

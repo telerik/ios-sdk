@@ -51,15 +51,16 @@ class ListViewPullToRefresh: TKExamplesExampleViewController, TKListViewDataSour
     func updateData(count: NSInteger) -> Int {
         let group = dataSource.items[0] as! TKDataSourceGroup
         let startIndex = data.count
-        var i = 0
-        for ; i < count; i++ {
+        var j = 0
+        for i in 0..<count {
             if(i + startIndex >= group.items.count){
                 return i
             }
             let points = arc4random() % 100
             data.insert("\(group.items[i + startIndex]) \(points) points", atIndex: 0)
+            j+=1
          }
-         return i
+         return j
     }
     
     func isUpdated(indexPath: NSIndexPath) -> Bool {
