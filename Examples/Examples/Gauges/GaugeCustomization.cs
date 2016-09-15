@@ -18,7 +18,7 @@ namespace Examples
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-
+			// >> gauge-customize-cs
 			this.colors = new UIColor[] { 
 				new UIColor (0.00f, 0.70f, 0.90f ,1.00f),
 				new UIColor (0.38f, 0.73f, 0.00f, 1.00f),
@@ -27,7 +27,7 @@ namespace Examples
 				new UIColor (0.77f, 1.00f, 0.00f, 1.00f),
 				new UIColor (1.00f, 0.85f, 0.00f, 1.00f)
 			};
-
+			// << gauge-customize-cs
 			string[] legendStrings = new string[] { "MOVE", "EXCERCISE", "STAND" };
 
 			for (int i = 0; i < 3; i++) {
@@ -60,7 +60,7 @@ namespace Examples
 			scale.Stroke = new TKStroke (UIColor.Clear);
 			scale.Ticks.Hidden = true;
 			scale.Labels.Hidden = true;
-
+			// >> gauge-customize-cs
 			for (int i=0; i < 3; i++) {
 				TKGaugeSegment segment = new TKGaugeSegment (new NSNumber (0), new NSNumber (100));
 				segment.Fill = new TKSolidFill(this.colors[i].ColorWithAlpha(0.4f));
@@ -78,6 +78,7 @@ namespace Examples
 				scale.AddSegment (gradientSegment);
 				gradientSegment.SetRange(new TKRange(new NSNumber(0), new NSNumber(20+ this.r.Next(50)) ), 0.5f, CAMediaTimingFunction.EaseInEaseOut);
 			}
+			// << gauge-customize-cs
 		}
 
 		void CreateLinearGauge()

@@ -7,11 +7,13 @@
 
 import UIKit
 
+// >> dataform-ctrl-swift
 class DataFormGettingStarted: TKDataFormViewController {
-
+// << dataform-ctrl-swift
     let dataSource = TKDataFormEntityDataSource()
     let personalInfo = PersonalInfo()
     
+// >> dataform-ctrl-setup-swift
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,9 +32,11 @@ class DataFormGettingStarted: TKDataFormViewController {
         self.dataForm.commitMode = TKDataFormCommitMode.OnLostFocus
         self.dataForm.groupSpacing = 20
     }
+// << dataform-ctrl-setup-swift
     
     //MARK: - TKDataFormDelegate
     
+    // >> dataform-delegate-swift
     override func dataForm(dataForm: TKDataForm, updateEditor editor: TKDataFormEditor, forProperty property: TKEntityProperty) {
         let feedbackDef = editor.gridLayout.definitionForView(editor.feedbackLabel)
         editor.gridLayout.setHeight(0, forRow: feedbackDef.row.integerValue)
@@ -47,8 +51,11 @@ class DataFormGettingStarted: TKDataFormViewController {
             property.hintText = "Required"
         }
     }
+    // << dataform-delegate-swift
     
     override func dataForm(dataForm: TKDataForm, updateGroupView groupView: TKEntityPropertyGroupView, forGroupAtIndex groupIndex: UInt) {
         groupView.titleView.hidden = true
     }
+// >> dataform-ctrl-swift
 }
+// << dataform-ctrl-swift

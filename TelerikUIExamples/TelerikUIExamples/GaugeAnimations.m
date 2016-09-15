@@ -86,6 +86,7 @@
         i++;
     }
 
+    // >> gauge-needle
     TKGaugeNeedle* needle = [TKGaugeNeedle new];
     needle.length = .8;
     needle.width = 3;
@@ -94,6 +95,7 @@
     needle.shadowOpacity = 0.8;
     needle.shadowRadius = 1.5;
     [scale addIndicator:needle];
+    // << gauge-needle
 }
 
 - (void)addLinearGauge

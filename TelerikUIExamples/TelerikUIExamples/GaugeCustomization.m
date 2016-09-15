@@ -19,14 +19,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    // >> gauge-customize
     _colors = @[[UIColor colorWithRed:0.00 green:0.70 blue:0.90 alpha:1.0],
                 [UIColor colorWithRed:0.38 green:0.73 blue:0.00 alpha:1.0],
                 [UIColor colorWithRed:0.96 green:0.56 blue:0.00 alpha:1.0],
                 [UIColor colorWithRed:0.00 green:1.00 blue:1.00 alpha:1.0],
                 [UIColor colorWithRed:0.77 green:1.00 blue:0.00 alpha:1.0],
                 [UIColor colorWithRed:1.00 green:0.85 blue:0.00 alpha:1.0]];
-    
+    // << gauge-customize
     NSArray* legendStrings = @[@"MOVE", @"EXCERCISE", @"STAND"];
     
     for (int i=0; i < 3; i++) {
@@ -56,7 +56,7 @@
     scale.ticks.hidden = YES;
     scale.labels.hidden = YES;
     [_linearGauge addScale:scale];
-    
+    // >> gauge-customize
     for (int i=0; i < 3; i++) {
         TKGaugeSegment* segment = [[TKGaugeSegment alloc] initWithMinimum:@0 maximum:@100];
         segment.fill = [TKSolidFill solidFillWithColor:[_colors[i] colorWithAlphaComponent:0.4]];
@@ -78,6 +78,7 @@
                              withDuration:0.5 + arc4random_uniform(200)/200.
                       mediaTimingFunction:kCAMediaTimingFunctionEaseInEaseOut];
     }
+    // << gauge-customize
 }
 
 - (void)setupRadialGauge

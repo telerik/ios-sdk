@@ -33,17 +33,25 @@ class CalendarWithEvents: TKExamplesExampleViewController, TKCalendarDataSource,
         self.calendarView.calendar = calendar
         self.calendarView.dataSource = self
         self.calendarView.delegate = self
+// >> navigation-minmaxdate-swift
         self.calendarView.minDate = minDate!
         self.calendarView.maxDate = maxDate!
+// <<  navigation-minmaxdate-swift        
+// >> view-modes-presenter-pinchzoom-swift
         self.calendarView.allowPinchZoom = true
+// << view-modes-presenter-pinchzoom-swift
         
+// >> view-modes-presenter-monthpresenter-swift
         let presenter = self.calendarView.presenter as! TKCalendarMonthPresenter
         presenter.style.titleCellHeight = 40
         presenter.headerIsSticky = true
+// << view-modes-presenter-monthpresenter-swift
         
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             presenter.weekNumbersHidden = true
+// >> customizations-ipad-swift
             self.calendarView.theme = TKCalendarIPadTheme()
+// << customizations-ipad-swift
             self.calendarView.presenter.update(true)
         }
         else {
@@ -141,7 +149,7 @@ class CalendarWithEvents: TKExamplesExampleViewController, TKCalendarDataSource,
     }
     
 //MARK: - TKCalendarDataSource
-
+// >> populating-with-data-event-swift
     func calendar(calendar: TKCalendar, eventsForDate date: NSDate) -> [AnyObject]? {
         let components = self.calendarView.calendar.components(NSCalendarUnit(rawValue:NSCalendarUnit.Year.rawValue | NSCalendarUnit.Month.rawValue | NSCalendarUnit.Day.rawValue), fromDate: date)
         components.hour = 23
@@ -152,6 +160,7 @@ class CalendarWithEvents: TKExamplesExampleViewController, TKCalendarDataSource,
         let result:NSArray = self.events.filteredArrayUsingPredicate(predicate)
         return result as [AnyObject]
     }
+// << populating-with-data-event-swift
     
 //MARK: - TKCalendarDelegate
 

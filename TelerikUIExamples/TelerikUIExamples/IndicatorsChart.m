@@ -155,7 +155,7 @@
     [_overlayChart addSeries:_series];
     IndicatorInfo *info = _trendlines[section.selectedOption];
     TKChartFinancialIndicator *indicator = [[info.class alloc] initWithSeries:_series];
-    indicator.selectionMode = TKChartSeriesSelectionModeSeries;
+    indicator.selection = TKChartSeriesSelectionSeries;
     [_overlayChart addSeries:indicator];
 }
 
@@ -166,7 +166,7 @@
     [_indicatorsChart removeAllData];
     IndicatorInfo *info = _indicators[section.selectedOption];
     TKChartFinancialIndicator *indicator = [[info.class alloc] initWithSeries:_series];
-    indicator.selectionMode = TKChartSeriesSelectionModeSeries;
+    indicator.selection = TKChartSeriesSelectionSeries;
     [_indicatorsChart addSeries:indicator];
     TKChartNumericAxis *yAxis = (TKChartNumericAxis *)_indicatorsChart.yAxis;
     
@@ -198,8 +198,13 @@
     [_indicatorsChart removeAllData];
     
     TKChartNumericAxis *yAxis = [[TKChartNumericAxis alloc] initWithMinimum:@250 andMaximum:@750];
+    
+    // >> chart-text-align
     yAxis.style.labelStyle.textAlignment = TKChartAxisLabelAlignmentRight | TKChartAxisLabelAlignmentBottom;
     yAxis.style.labelStyle.firstLabelTextAlignment = TKChartAxisLabelAlignmentRight | TKChartAxisLabelAlignmentTop;
+    yAxis.style.labelStyle.textOffset = UIOffsetMake(0, 0);
+    yAxis.style.labelStyle.firstLabelTextOffset = UIOffsetMake(0, 0);
+    // << chart-text-align
     yAxis.allowZoom = YES;
     _series.yAxis = yAxis;
     

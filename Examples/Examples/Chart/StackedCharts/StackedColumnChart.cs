@@ -37,6 +37,7 @@ namespace Examples
 				stackInfo = new TKChartStackInfo (new NSNumber(1), this.SelectedOption == 0 ? TKChartStackMode.Stack : TKChartStackMode.Stack100);
 			}
 
+			// >> chart-column-cls-cs
 			Random r = new Random();
 			for (int i = 0; i < 4; i++) {
 				List<TKChartDataPoint> list = new List<TKChartDataPoint>();
@@ -47,9 +48,10 @@ namespace Examples
 				TKChartColumnSeries series = new TKChartColumnSeries (list.ToArray ());
 				series.Title = String.Format ("Series %d", i);
 				series.StackInfo = stackInfo;
-				series.SelectionMode = TKChartSeriesSelectionMode.Series;
+				series.Selection = TKChartSeriesSelection.Series;
 				chart.AddSeries (series);
 			}
+			// << chart-column-cls-cs
 		}
 	}
 }

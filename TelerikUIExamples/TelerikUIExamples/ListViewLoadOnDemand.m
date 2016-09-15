@@ -46,8 +46,15 @@
     _listView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _listView.delegate = self;
     _listView.dataSource = self;
+    
+    // >> listview-buffer
     _listView.loadOnDemandBufferSize = 5;
+    // << listview-buffer
+    
+    // >> listview-load-on-demand
     _listView.loadOnDemandMode = TKListViewLoadOnDemandModeManual;
+    // << listview-load-on-demand
+    
     _listView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10);
     [self.view addSubview:_listView];
     [_listView registerClass:[CustomCardListViewCell class] forCellWithReuseIdentifier:@"cell"];
@@ -86,6 +93,7 @@
     return _lastRetrievedDataIndex;
 }
 
+// >> listview-load-on-demand-deque
 - (TKListViewCell*)listView:(TKListView *)listView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     TKListViewCell *cell = [listView dequeueLoadOnDemandCellForIndexPath:indexPath];
@@ -101,9 +109,11 @@
 
     return cell;
 }
+// << listview-load-on-demand-deque
 
 #pragma mark - TKListViewDelegate
 
+// >> listview-should-load
 - (BOOL)listView:(TKListView *)listView shouldLoadMoreDataAtIndexPath:(NSIndexPath *)indexPath
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
@@ -123,5 +133,6 @@
     
     return YES;
 }
+// << listview-should-load
 
 @end

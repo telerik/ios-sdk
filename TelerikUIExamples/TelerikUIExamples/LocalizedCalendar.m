@@ -52,7 +52,9 @@
 - (void)selectRussian
 {
     self.calendarView.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+// >> localization-localeproperty
     self.calendarView.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"ru_RU"];
+// << localization-localeproperty    
     [self.calendarView.presenter update:NO];
 }
 
@@ -72,7 +74,9 @@
 
 - (void)selectChinese
 {
+// >> localization-chinesecalendar
     self.calendarView.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierChinese];
+// << localization-chinesecalendar
     self.calendarView.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_Hans_SG"];
     [self.calendarView.presenter update:NO];
 }
@@ -81,7 +85,9 @@
 {
     self.calendarView.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierIslamic];
     self.calendarView.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"ar-QA"];
+// >> localization-update
     [self.calendarView.presenter update:NO];
+// << localization-update
 }
 
 @end

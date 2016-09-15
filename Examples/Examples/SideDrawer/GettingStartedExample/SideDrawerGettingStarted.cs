@@ -7,6 +7,7 @@ using TelerikUI;
 
 namespace Examples
 {
+	// >> drawer-attached-cs
 	[Register("SideDrawerGettingStarted")]
 	public class SideDrawerGettingStarted : XamarinExampleViewController
 	{
@@ -61,7 +62,13 @@ namespace Examples
 			sideDrawer.AddSection (primarySection);
 			sideDrawer.AddSection (labelsSection);
 			sideDrawer.Delegate = this.sideDrawerDelegate;
+
+			// >> drawer-style-cs
 			sideDrawer.Style.HeaderHeight = 44;
+			sideDrawer.Style.ShadowMode = TKSideDrawerShadowMode.Hostview;
+			sideDrawer.Style.ShadowOffset = new CGSize (-2f, -0.5f);
+			sideDrawer.Style.ShadowRadius = 5;
+			// << drawer-style-cs
 		}
 
 		public override void ViewWillDisappear (bool animated)
@@ -84,21 +91,32 @@ namespace Examples
 		{
 			this.SideDrawerView.SideDrawers[0].Dismiss();
 		}
-
+		// << drawer-attached-cs
 		class SideDrawerDelegate : TKSideDrawerDelegate
 		{
+			// >> drawer-update-section-cs
 			public override void UpdateVisualsForSection (TKSideDrawer sideDrawer, int sectionIndex)
 			{
 				TKSideDrawerSection section = sideDrawer.Sections[sectionIndex];
 				section.Style.ContentInsets = new UIEdgeInsets (0, -15, 0, 0);
 			}
+			// << drawer-update-section-cs
 
+			// >> drawer-update-cs
 			public override void UpdateVisualsForItem (TKSideDrawer sideDrawer, NSIndexPath indexPath)
 			{
 				TKSideDrawerItem item = sideDrawer.Sections[indexPath.Section].Items[indexPath.Item];
 				item.Style.ContentInsets = new UIEdgeInsets (0, -5, 0, 0);
 				item.Style.SeparatorColor = new TKSolidFill (UIColor.Clear);
 			}
+			// << drawer-update-cs
+
+			// >> drawer-did-select-cs
+			public override void DidSelectItem (TKSideDrawer sideDrawer, NSIndexPath indexPath)
+			{
+				Console.WriteLine ("Selected item in section: {0} at index: {1}", indexPath.Section, indexPath.Row);
+			}
+			// << drawer-did-select-cs
 		}
 	}
 }

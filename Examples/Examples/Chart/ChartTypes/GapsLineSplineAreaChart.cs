@@ -65,7 +65,7 @@ namespace Examples
 				break;
 			}
 
-			series.SelectionMode = TKChartSeriesSelectionMode.Series;
+			series.Selection = TKChartSeriesSelection.Series;
 			series.DisplayNilValuesAsGaps = true;
 			chart.AddSeries (series);
 		}

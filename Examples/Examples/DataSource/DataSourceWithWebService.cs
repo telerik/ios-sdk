@@ -15,7 +15,7 @@ namespace Examples
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-
+			// >> remote-data-cs
 			var chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.Add (chart);
@@ -73,6 +73,7 @@ namespace Examples
 				xAxis.Title = "date";
 				xAxis.MinorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Days;
 			});
+			// << remote-data-cs
 		}
 	}
 }

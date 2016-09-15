@@ -65,7 +65,7 @@ class DefaultAnimation: TKExamplesExampleViewController {
         }
         
         let lineSeries = TKChartLineSeries(items: array)
-        lineSeries.selectionMode = TKChartSeriesSelectionMode.Series
+        lineSeries.selection = TKChartSeriesSelection.Series
         chart.addSeries(lineSeries)
     }
     
@@ -78,7 +78,7 @@ class DefaultAnimation: TKExamplesExampleViewController {
         }
         
         let areaSeries = TKChartAreaSeries(items: array)
-        areaSeries.selectionMode = TKChartSeriesSelectionMode.Series
+        areaSeries.selection = TKChartSeriesSelection.Series
         chart.addSeries(areaSeries)
     }
     
@@ -93,7 +93,7 @@ class DefaultAnimation: TKExamplesExampleViewController {
         array.append(TKChartDataPoint(name: "Oracle", value: 8))
         
         let series = TKChartPieSeries(items: array)
-        series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        series.selection = TKChartSeriesSelection.DataPoint
         chart.addSeries(series)
     }
     
@@ -106,7 +106,7 @@ class DefaultAnimation: TKExamplesExampleViewController {
         }
         
         let scatterSeries = TKChartScatterSeries(items: points)
-        scatterSeries.selectionMode = TKChartSeriesSelectionMode.Series
+        scatterSeries.selection = TKChartSeriesSelection.Series
         chart.addSeries(scatterSeries)
     }
     
@@ -119,7 +119,7 @@ class DefaultAnimation: TKExamplesExampleViewController {
         }
         
         let barSeries = TKChartBarSeries(items: array)
-        barSeries.selectionMode = TKChartSeriesSelectionMode.Series
+        barSeries.selection = TKChartSeriesSelection.Series
         chart.addSeries(barSeries)
     }
     
@@ -132,7 +132,7 @@ class DefaultAnimation: TKExamplesExampleViewController {
         }
         
         let columnSeries = TKChartColumnSeries(items: array)
-        columnSeries.selectionMode = TKChartSeriesSelectionMode.Series
+        columnSeries.selection = TKChartSeriesSelection.Series
         chart.addSeries(columnSeries)
     }
 }

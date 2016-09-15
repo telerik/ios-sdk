@@ -76,7 +76,7 @@ class DataSourceUIBindings: TKExamplesExampleViewController {
         
         self.dataSource.settings.chart.createSeries { (group: TKDataSourceGroup?) -> TKChartSeries! in
             let series = TKChartColumnSeries()
-            series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+            series.selection = TKChartSeriesSelection.DataPoint
             series.style.paletteMode = TKChartSeriesStylePaletteMode.UseItemIndex
             return series
         }

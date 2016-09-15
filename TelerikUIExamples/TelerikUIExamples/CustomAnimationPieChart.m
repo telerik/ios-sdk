@@ -43,7 +43,7 @@
     [array addObject:[[TKChartDataPoint alloc] initWithName:@"Oracle" value:@8]];
     
     TKChartPieSeries *series = [[TKChartPieSeries alloc] initWithItems:array];
-    series.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    series.selection = TKChartSeriesSelectionDataPoint;
     [_chart addSeries:series];
 }
 
@@ -60,6 +60,7 @@
 
 #pragma mark TKChartDelegate
 
+// >> chart-anim-pie
 - (CAAnimation *)chart:(TKChart *)chart animationForSeries:(TKChartSeries *)series withState:(TKChartSeriesRenderState *)state inRect:(CGRect)rect
 {
     CFTimeInterval duration = 0;
@@ -88,5 +89,6 @@
     g.animations = animations;
     return g;
 }
+// << chart-anim-pie
 
 @end

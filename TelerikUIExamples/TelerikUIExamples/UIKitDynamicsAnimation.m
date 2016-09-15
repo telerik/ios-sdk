@@ -88,6 +88,7 @@
 
 - (void)applyGravity
 {
+    // >> chart-anim-gravity
     _animator = [[UIDynamicAnimator alloc] initWithReferenceView:_chart.plotView];
     
     NSArray *points = [_chart visualPointsForSeries:_chart.series[0]];
@@ -114,6 +115,7 @@
     [_animator addBehavior:dynamic];
     [_animator addBehavior:gravity];
     [_animator addBehavior:collision];
+    // << chart-anim-gravity
 }
 
 - (void)reloadChart
@@ -128,7 +130,7 @@
     
     TKChartLineSeries *lineSeries = [[TKChartLineSeries alloc] initWithItems:_points];
     CGFloat shapeSize = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) ? 14 : 17;
-    lineSeries.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    lineSeries.selection = TKChartSeriesSelectionDataPoint;
     lineSeries.style.pointShape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeRhombus andSize:CGSizeMake(shapeSize, shapeSize)];
     lineSeries.style.shapeMode = TKChartSeriesStyleShapeModeAlwaysShow;
     [_chart addSeries:lineSeries];

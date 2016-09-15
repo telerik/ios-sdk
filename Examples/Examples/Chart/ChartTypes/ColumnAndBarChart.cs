@@ -31,6 +31,7 @@ namespace Examples
 		{
 			chart.RemoveAllData ();
 
+			// >> chart-column-cs
 			Random r = new Random ();
 			List<TKChartDataPoint> list = new List<TKChartDataPoint> ();
 			for (int i = 0; i < 8; i++) {
@@ -39,9 +40,15 @@ namespace Examples
 
 			TKChartColumnSeries series = new TKChartColumnSeries (list.ToArray());
 			series.Style.PaletteMode = TKChartSeriesStylePaletteMode.UseItemIndex;
-			series.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			series.Selection = TKChartSeriesSelection.DataPoint;
+
+			// >> chart-width-cl-cs
+			series.MaxColumnWidth = 50;
+			series.MinColumnWidth = 20;
+			// << chart-width-cl-cs
 
 			chart.AddSeries(series);
+			// << chart-column-cs
 
 			chart.ReloadData ();
 		}
@@ -49,7 +56,7 @@ namespace Examples
 		public void BarSelected()
 		{
 			chart.RemoveAllData ();
-
+			// >> chart-bar-cs
 			Random r = new Random ();
 			List<TKChartDataPoint> list = new List<TKChartDataPoint> ();
 			for (int i = 0; i < 8; i++) {
@@ -58,9 +65,9 @@ namespace Examples
 
 			TKChartBarSeries series = new TKChartBarSeries (list.ToArray());
 			series.Style.PaletteMode = TKChartSeriesStylePaletteMode.UseItemIndex;
-			series.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			series.Selection = TKChartSeriesSelection.DataPoint;
 			chart.AddSeries (series);
-
+			// << chart-bar-cs
 			chart.ReloadData ();
 		}
 	}

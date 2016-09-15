@@ -70,7 +70,7 @@ class GapsLineSplineAreaChart: TKExamplesExampleViewController {
             break;
         }
         
-        series.selectionMode = TKChartSeriesSelectionMode.Series
+        series.selection = TKChartSeriesSelection.Series
         series.displayNilValuesAsGaps = true
         chart.addSeries(series)
     }

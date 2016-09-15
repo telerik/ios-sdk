@@ -46,7 +46,7 @@
     CGFloat shapeSize = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) ? 14 : 17;
     lineSeries.style.pointShape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeCircle andSize:CGSizeMake(shapeSize, shapeSize)];
     lineSeries.style.shapeMode = TKChartSeriesStyleShapeModeAlwaysShow;
-    lineSeries.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    lineSeries.selection = TKChartSeriesSelectionDataPoint;
     [_chart addSeries:lineSeries];
 }
 
@@ -70,11 +70,11 @@
 
 #pragma mark TKChartDelegate
 
+ // >> chart-anim-line
 - (CAAnimation *)chart:(TKChart *)chart animationForSeries:(TKChartSeries *)series withState:(TKChartSeriesRenderState *)state inRect:(CGRect)rect
 {
     CFTimeInterval duration = 0;
     NSMutableArray *animations = [[NSMutableArray alloc] init];
-    
     for (int i = 0; i<state.points.count; i++) {
         
         if (_grow) {
@@ -121,5 +121,6 @@
     
     return group;
 }
+ // << chart-anim-line
 
 @end

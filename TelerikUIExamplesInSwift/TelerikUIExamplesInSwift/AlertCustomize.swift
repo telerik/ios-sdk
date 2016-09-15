@@ -37,6 +37,9 @@ class AlertCustomize: TKExamplesExampleViewController, TKAlertDelegate {
         alert.style.backgroundColor = UIColor.whiteColor()
         alert.buttonsView.backgroundColor = UIColor.whiteColor()
         alert.style.showAnimation = TKAlertAnimation.SlideFromTop
+        // >> alert-parallax-swift
+        alert.allowParallaxEffect = true
+        // << alert-parallax-swift
         
         var action = alert.addActionWithTitle("Yes") { (TKAlert, TKAlertAction) -> Bool in
             return true

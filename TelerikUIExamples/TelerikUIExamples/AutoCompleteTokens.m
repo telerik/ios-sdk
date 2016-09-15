@@ -55,8 +55,15 @@
     [listView registerClass:[PersonListViewCell class] forCellWithReuseIdentifier:@"cell"];
     
     self.autocomplete.dataSource = _dataSource;
+    
+    // >> autocmp-display-mode
     self.autocomplete.displayMode = TKAutoCompleteDisplayModeTokens;
+    // << autocmp-display-mode
+    
+    
+    // >> autocmp-layout-mode
     self.autocomplete.layoutMode = TKAutoCompleteLayoutModeWrap;
+    // << autocmp-layout-mode
     
     self.autocomplete.imageView.image = [UIImage imageNamed:@"search.png"];
     self.autocomplete.delegate = self;
@@ -70,12 +77,14 @@
 
 #pragma mark - TKAutoCompleteDelegate
 
+// >> autocmp-token-custom
 -(TKAutoCompleteTokenView *)autoComplete:(TKAutoCompleteTextView*)autocomplete viewForToken:(TKAutoCompleteToken *)token
 {
     TKAutoCompleteTokenView *tokenView = [[TKAutoCompleteTokenView alloc] initWithToken:token];
     tokenView.backgroundColor = [UIColor colorWithRed:0.910 green:0.910 blue:0.910 alpha:1.00];
     return tokenView;
 }
+// << autocmp-token-custom
 
 - (void)keyboardDidShow:(NSNotification *) notification
 {

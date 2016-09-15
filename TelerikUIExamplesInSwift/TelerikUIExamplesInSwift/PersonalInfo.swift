@@ -6,7 +6,7 @@
 //
 
 import Foundation;
-
+// >> dataform-info-swift
 class PersonalInfo: NSObject {
 
     var infoProtocol = 0;
@@ -18,3 +18,4 @@ class PersonalInfo: NSObject {
     var encryptionLevel = 0;
     var sendAllTraffic = true;
 }
+// << dataform-info-swift

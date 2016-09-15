@@ -21,14 +21,19 @@ class iOS7StyleCalendar:TKExamplesExampleViewController {
     
     func buttonTouched(sender: AnyObject) {
         self.title = "Back"
+// >> localization-firstweekday-swift
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         calendar.firstWeekday = 2
+// << localization-firstweekday-swift
         let date = NSDate()
+        
+// >> view-modes-viewcontroller-swift
         let controller = TKCalendarYearViewController()
         controller.contentView.minDate = TKCalendar.dateWithYear(2012, month: 1, day: 1, withCalendar: calendar)
         controller.contentView.maxDate = TKCalendar.dateWithYear(2018, month: 12, day: 31, withCalendar: calendar)
         controller.contentView.navigateToDate(date, animated: false)
         self.navigationController?.pushViewController(controller, animated: true)
+// << view-modes-viewcontroller-swift
     }
     
     override func viewDidAppear(animated: Bool) {

@@ -40,10 +40,20 @@ class AlertNotifications: TKExamplesExampleViewController, TKListViewDelegate  {
         alert.style.cornerRadius = 0
         alert.style.showAnimation = TKAlertAnimation.SlideFromTop
         alert.style.dismissAnimation = TKAlertAnimation.SlideFromTop
+        
+        // >> alert-bg-swift
         alert.style.backgroundStyle = TKAlertBackgroundStyle.None
-
+        // << alert-bg-swift
+        
+        // >> alert-layout-swift
+        alert.actionsLayout = TKAlertActionsLayout.Vertical
+        // << alert-layout-swift
+        
         alert.alertView.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+        
+        // >> alert-dismiss-swift
         alert.dismissMode = TKAlertDismissMode.Tap
+        // << alert-dismiss-swift
         
         alert.title = titles[indexPath.row]
         alert.message = messages[indexPath.row]

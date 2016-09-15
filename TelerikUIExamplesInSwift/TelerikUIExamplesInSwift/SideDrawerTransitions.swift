@@ -54,6 +54,9 @@ class SideDrawerTransitions: SideDrawerGettingStarted {
     func pushTransition() {
         let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.Push
+        // >> drawer-transitions-duration-swift
+        sideDrawer.transitionDuration = 0.5
+        // << drawer-transitions-duration-swift
         sideDrawer.fill = TKSolidFill(color: UIColor.grayColor())
         sideDrawer.headerView = SideDrawerHeaderView(addButton: false, target: nil, selector: nil)
         self.showSideDrawer()
@@ -61,7 +64,9 @@ class SideDrawerTransitions: SideDrawerGettingStarted {
     
     func revealTransition() {
         let sideDrawer = self.sideDrawerView.sideDrawers[0]
+        // >> drawer-transition-swift
         sideDrawer.transition = TKSideDrawerTransitionType.Reveal
+        // << drawer-transition-swift
         sideDrawer.fill = TKSolidFill(color: UIColor.grayColor())
         sideDrawer.headerView = SideDrawerHeaderView(addButton: false, target: nil, selector: nil)
         self.showSideDrawer()

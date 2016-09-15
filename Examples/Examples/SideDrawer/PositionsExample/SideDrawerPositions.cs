@@ -16,7 +16,11 @@ namespace Examples
 			this.NavItem.Title = "Positions";
 			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawers [0];
 			sideDrawer.TransitionType = TKSideDrawerTransitionType.Reveal;
+
+			// >> drawer-blur-cs
 			sideDrawer.Fill = new TKSolidFill (UIColor.Gray);
+			sideDrawer.Style.BlurType = TKSideDrawerBlurType.None;
+			// << drawer-blur-cs
 		}
 
 		public override void AddButtons ()
@@ -31,7 +35,11 @@ namespace Examples
 		private void LeftSideDrawer()
 		{
 			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawers [0];
+
+			// >> drawer-position-cs
 			sideDrawer.Position = TKSideDrawerPosition.Left;
+			// << drawer-position-cs
+
 			sideDrawer.HeaderView = new SideDrawerHeader (false, null, null);
 			sideDrawer.Show ();
 		}

@@ -64,8 +64,18 @@ namespace Examples
 			alert.Style.CornerRadius = 0;
 			alert.Style.ShowAnimation = TKAlertAnimation.SlideFromTop;
 			alert.Style.DismissAnimation = TKAlertAnimation.SlideFromTop;
+
+			// >> alert-bg-cs
 			alert.Style.BackgroundStyle = TKAlertBackgroundStyle.None;
+			// << alert-bg-cs
+
+			// >> alert-dismiss-cs
 			alert.DismissMode = TKAlertDismissMode.Tap;
+			// << alert-dismiss-cs
+
+			// >> alert-layout-cs
+			alert.ActionsLayout = TKAlertActionsLayout.Vertical;
+			// << alert-layout-cs
 		}
 	}
 

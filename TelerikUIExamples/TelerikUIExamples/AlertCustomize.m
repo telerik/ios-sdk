@@ -42,7 +42,9 @@
     alert.buttonsView.backgroundColor = [UIColor whiteColor];
     alert.style.backgroundColor = [UIColor whiteColor];
     alert.style.showAnimation = TKAlertAnimationSlideFromTop;
-    
+    // >> alert-parallax
+    alert.allowParallaxEffect = YES;
+    // << alert-parallax
     TKAlertAction *action = [alert addActionWithTitle:@"Yes" handler:^BOOL(TKAlert *alert, TKAlertAction* action) {
         return YES;
     }];

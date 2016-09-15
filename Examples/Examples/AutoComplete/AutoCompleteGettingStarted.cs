@@ -34,7 +34,9 @@ namespace Examples
 			this.AutomaticallyAdjustsScrollViewInsets = false;
 
 			this.Datasource = new TKDataSource ();
+
 			this.Datasource.Settings.AutoComplete.CompletionMode = TKAutoCompleteCompletionMode.Contains;
+
 			this.Datasource.LoadDataFromJSONResource("countries", "json", "data");
 			this.Datasource.Settings.AutoComplete.CreateToken (delegate(nuint index, NSObject item) {
 				TKAutoCompleteToken token = new TKAutoCompleteToken((NSString)(item.ValueForKey(new NSString("country"))));
@@ -83,7 +85,10 @@ namespace Examples
 		public void ContainsSelected()
 		{
 			this.Datasource.Settings.AutoComplete.CompletionMode = TKAutoCompleteCompletionMode.Contains;
+
+			// >> autocmp-suggest-mode-cs
 			this.Autocomplete.SuggestMode = TKAutoCompleteSuggestMode.Suggest;
+			// << autocmp-suggest-mode-cs
 			this.SetSelectedOption (2, 1);
 			this.Autocomplete.ResetAutocomplete ();
 		}

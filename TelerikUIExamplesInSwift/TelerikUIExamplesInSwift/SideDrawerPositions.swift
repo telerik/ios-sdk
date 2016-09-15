@@ -17,7 +17,11 @@ class SideDrawerPositions: SideDrawerGettingStarted {
         
         let sideDrawer = self.sideDrawerView.sideDrawers[0]
         sideDrawer.transition = TKSideDrawerTransitionType.Reveal
+        
+        // >> drawer-blur-swift
         sideDrawer.fill = TKSolidFill(color: UIColor.grayColor())
+        sideDrawer.style.blurType = TKSideDrawerBlurType.None
+        // << drawer-blur-swift
     }
     
     func createButton(title: String, target: AnyObject, selector: Selector, origin: CGPoint) {
@@ -36,7 +40,9 @@ class SideDrawerPositions: SideDrawerGettingStarted {
     
     func leftSideDrawer() {
         let sideDrawer = self.sideDrawerView.sideDrawers[0]
+        // >> drawer-position-swift
         sideDrawer.position = TKSideDrawerPosition.Left
+        // << drawer-position-swift
         sideDrawer.headerView = SideDrawerHeaderView(addButton: false, target: nil, selector: nil)
         self.showSideDrawer()
     }

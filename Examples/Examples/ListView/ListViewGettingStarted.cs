@@ -28,8 +28,13 @@ namespace Examples
 		{
 			base.ViewDidLoad ();
 
+			// >> datasource-file-cs
 			this.Photos = new TKDataSource ("PhotosWithNames", "json", "photos");
+			// << datasource-file-cs
+
+			// >> listview-sample-data-cs
 			this.Names = new TKDataSource ("PhotosWithNames", "json", "names");
+			// << listview-sample-data-cs
 
 			this.listViewDataSource = new ListViewDataSource (this);
 

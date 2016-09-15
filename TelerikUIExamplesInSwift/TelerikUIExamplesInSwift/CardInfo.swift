@@ -12,7 +12,7 @@ class CardInfo: NSObject {
     var edit = false
     var firstName = ""
     var lastName = ""
-    var cardNumber = ""
+    var cardNumber = NSNumber()
     var zipCode = ""
     var expirationDate = NSDate()
 }

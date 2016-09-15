@@ -28,7 +28,8 @@ class ListViewReorder: TKExamplesExampleViewController, TKListViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.dataSource.allowItemsReorder = true
+        
+        
         self.dataSource.loadDataFromJSONResource("PhotosWithNames", ofType: "json", rootItemKeyPath: "names")
         
         if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
@@ -38,9 +39,20 @@ class ListViewReorder: TKExamplesExampleViewController, TKListViewDelegate {
             self.listView.frame = self.view.bounds
         }
         self.listView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
-        self.listView.dataSource = self.dataSource
+        
+        // >> listview-delegate-set-swift
         self.listView.delegate = self
+        // << listview-delegate-set-swift
+        
+        // >> listview-datasource-reorder-swift
+        self.listView.dataSource = self.dataSource
+        self.dataSource.allowItemsReorder = true
+        // << listview-datasource-reorder-swift
+        
+        // >> listview-reorder-swift
         self.listView.allowsCellReorder = true
+        // << listview-reorder-swift
+        
         self.view.addSubview(self.listView)
     }
 
@@ -70,9 +82,11 @@ class ListViewReorder: TKExamplesExampleViewController, TKListViewDelegate {
         cell!.backgroundView?.backgroundColor = UIColor.yellowColor()
     }
     
+    // >> listview-did-reorder-swift
     func listView(listView: TKListView, didReorderItemFromIndexPath originalIndexPath: NSIndexPath, toIndexPath targetIndexPath: NSIndexPath) {
         let cell = listView.cellForItemAtIndexPath(originalIndexPath)
         cell!.backgroundView?.backgroundColor = UIColor.whiteColor()
         self.dataSource .listView(listView, didReorderItemFromIndexPath: originalIndexPath, toIndexPath: targetIndexPath)
     }
+    // << listview-did-reorder-swift
 }

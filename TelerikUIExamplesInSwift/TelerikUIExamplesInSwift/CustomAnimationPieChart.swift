@@ -39,7 +39,7 @@ class CustomAnimationPieChart: TKExamplesExampleViewController, TKChartDelegate 
         array.append(TKChartDataPoint(name: "Oracle", value: 8))
         
         let series = TKChartPieSeries(items: array)
-        series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        series.selection = TKChartSeriesSelection.DataPoint
         chart.addSeries(series)
     }
     
@@ -55,6 +55,7 @@ class CustomAnimationPieChart: TKExamplesExampleViewController, TKChartDelegate 
     
     //MARK: - TKChartDelegate
     
+    // >> chart-anim-pie-swift
     func chart(chart: TKChart, animationForSeries series: TKChartSeries, withState state: TKChartSeriesRenderState, inRect rect: CGRect) -> CAAnimation? {
         var duration = 0.0
         var animations = [CAAnimation]()
@@ -82,4 +83,5 @@ class CustomAnimationPieChart: TKExamplesExampleViewController, TKChartDelegate 
         g.animations = animations
         return g
     }
+    // << chart-anim-pie-swift
 }

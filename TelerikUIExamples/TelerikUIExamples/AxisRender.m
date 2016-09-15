@@ -7,6 +7,7 @@
 
 #import "AxisRender.h"
 
+// >> chart-custom-axis-draw
 @implementation AxisRender
 
 -(void)drawInContext:(CGContextRef)ctx
@@ -64,3 +65,4 @@
 }
 
 @end
+// << chart-custom-axis-draw

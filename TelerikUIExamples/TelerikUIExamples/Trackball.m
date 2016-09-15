@@ -60,10 +60,14 @@
     [_chart addSeries:series];
     
     // enable the trackball
+    // >> chart-trackball
     _chart.allowTrackball = YES;
     _chart.trackball.snapMode = TKChartTrackballSnapModeAllClosestPoints;
+    // << chart-trackball
     _chart.delegate = self;
     _chart.trackball.tooltip.style.textAlignment = NSTextAlignmentLeft;
+    _chart.plotViewInsets = UIEdgeInsetsMake(20, 20, 20, 20);
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,6 +78,7 @@
 
 #pragma mark TKChartDelegate
 
+// >> chart-trackball-delegate
 - (void)chart:(TKChart *)chart trackballDidTrackSelection:(NSArray *)selection
 {
     NSMutableString *str = [NSMutableString new];
@@ -89,6 +94,7 @@
     }
     chart.trackball.tooltip.text = str;
 }
+// << chart-trackball-delegate
 
 - (void)chart:(TKChart *)chart trackballDidHideSelection:(NSArray *)selection
 {

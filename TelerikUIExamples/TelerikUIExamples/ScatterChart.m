@@ -23,19 +23,22 @@
     [self.view addSubview:_chart];
     
     [_chart beginUpdates];
+    
     for (int i = 0; i < 2; i++) {
+        // >> chart-scatter
         NSMutableArray *points = [[NSMutableArray alloc] init];
         for (int i = 0; i < 20; i++) {
             [points addObject:[[TKChartDataPoint alloc] initWithX:@(arc4random() % 1450) Y:@(arc4random()%150)]];
         }
         TKChartScatterSeries *series = [[TKChartScatterSeries alloc] initWithItems:points];
+        // << chart-scatter
         series.title = [NSString stringWithFormat:@"Series %d", (i+1)];
         if (2 == i) {
             // the last series data can be selected individually
-            series.selectionMode = TKChartSeriesSelectionModeDataPoint;
+            series.selection = TKChartSeriesSelectionDataPoint;
         }
         else {
-            series.selectionMode = TKChartSeriesSelectionModeSeries;
+            series.selection = TKChartSeriesSelectionSeries;
         }
         
         series.style.paletteMode = TKChartSeriesStylePaletteModeUseItemIndex;

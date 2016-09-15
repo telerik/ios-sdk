@@ -56,17 +56,25 @@ namespace Examples
 		void AddTouched(object sender, EventArgs e) 
 		{
 			this.AddItem ();
+
+			// >> listview-insert-item-cs
 			this.listView.InsertItems (new NSIndexPath[] { NSIndexPath.FromItemSection ((nint)(this.items.Count - 1), 0) });
+			// << listview-insert-item-cs
+
 			this.listView.SelectItem (NSIndexPath.FromItemSection (this.dataSource.Items.Length - 1, 0), false, UICollectionViewScrollPosition.CenteredVertically);
 		}
 
 		void RemoveTouched(object sender, EventArgs e) 
 		{
-			var selectedItems = this.listView.IndexPathsForSelectedItems();
-			if (selectedItems.Length > 0) {
-				var indexPath = selectedItems[0];
+			var selectedItemsPaths = this.listView.IndexPathsForSelectedItems();
+			if (selectedItemsPaths.Length > 0) {
+				var indexPath = selectedItemsPaths[0];
 				this.items.RemoveObject (indexPath.Row);
-				this.listView.DeleteItems(selectedItems);
+
+				// >> listview-delete-item-cs
+				this.listView.DeleteItems(selectedItemsPaths);
+				// << listview-delete-item-cs
+
 				if (indexPath.Row < this.dataSource.Items.Length) {
 					this.listView.SelectItem (indexPath, false, UICollectionViewScrollPosition.None);
 				} else if (this.dataSource.Items.Length > 0) {

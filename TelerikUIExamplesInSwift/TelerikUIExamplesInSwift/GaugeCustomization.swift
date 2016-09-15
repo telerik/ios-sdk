@@ -11,12 +11,14 @@ class GaugeCustomization: TKExamplesExampleViewController {
     
     let linearGauge = TKLinearGauge()
     let radialGauge = TKRadialGauge()
+    // >> gauge-customize-swift
     let colors = [ UIColor(red: 0.00, green: 0.70, blue: 0.90, alpha: 1.00),
                    UIColor(red: 0.38, green: 0.73, blue: 0.00, alpha: 1.00),
                    UIColor(red: 0.96, green: 0.56, blue: 0.00, alpha: 1.00),
                    UIColor(red: 0.00, green: 1.00, blue: 1.00, alpha: 1.00),
                    UIColor(red: 0.77, green: 1.00, blue: 0.00, alpha: 1.00),
                    UIColor(red: 1.00, green: 0.85, blue: 0.00, alpha: 1.00) ]
+    // << gauge-customize-swift
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +52,7 @@ class GaugeCustomization: TKExamplesExampleViewController {
         scale.ticks.hidden = true
         scale.labels.hidden = true
         radialGauge.addScale(scale)
-        
+        // >> gauge-customize-swift
         for i in 0..<3 {
             let segment = TKGaugeSegment(minimum: 0, maximum: 100)
             segment.fill = TKSolidFill(color:colors[i].colorWithAlphaComponent(0.4))
@@ -69,6 +71,7 @@ class GaugeCustomization: TKExamplesExampleViewController {
             gradientSegment.setRangeAnimated(TKRange(minimum: 0.0, andMaximum: Double(arc4random_uniform(50)) + 30.0),
                 withDuration: 0.5 + CGFloat(arc4random_uniform(200))/200.0, mediaTimingFunction: kCAMediaTimingFunctionEaseInEaseOut)
         }
+        // << gauge-customize-swift
     }
     
     func setupLinearGauge() {

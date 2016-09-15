@@ -60,7 +60,7 @@ namespace Examples
 
 			this.dataSource.Settings.Chart.CreateSeries ((TKDataSourceGroup group) => {
 				TKChartColumnSeries series = new TKChartColumnSeries();
-				series.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+				series.Selection = TKChartSeriesSelection.DataPoint;
 				series.Style.PaletteMode = TKChartSeriesStylePaletteMode.UseItemIndex;
 				return series;
 			});

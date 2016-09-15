@@ -5,6 +5,7 @@
 //  Copyright © 2015 Telerik. All rights reserved.
 //
 
+// >> chart-custom-axis-draw-swift
 class AxisRender: TKChartAxisRender {
 
     override func drawInContext(ctx: CGContext) {
@@ -52,3 +53,4 @@ class AxisRender: TKChartAxisRender {
     }
     
 }
+// << chart-custom-axis-draw-swift

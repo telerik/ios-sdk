@@ -26,11 +26,13 @@ class ViewAnnotation:TKExamplesExampleViewController {
             chart.addSeries(TKChartScatterSeries(items: points))
         }
         
+        // >> chart-layer-annotation-swift
         let image = UIImage(named: "logo")!
         let imageView = UIImageView(image: image)
         imageView.bounds = CGRectMake(0, 0, image.size.width, image.size.height)
         imageView.alpha = 0.7
         chart.addAnnotation(TKChartViewAnnotation(view: imageView, x: 550, y: 90, forSeries: chart.series[0]))
+        // << chart-layer-annotation-swift
     }
     
     override func didReceiveMemoryWarning() {

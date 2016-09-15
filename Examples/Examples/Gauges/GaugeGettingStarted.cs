@@ -10,7 +10,7 @@ namespace Examples
 	public class GaugeGettingStarted : XamarinExampleViewController
 	{
 		TKLinearGauge linearGauge = new TKLinearGauge();
-		TKRadialGauge radialGauge = new TKRadialGauge();
+		TKRadialGauge radialGauge = null;
 		GaugeDelegate gaugeDelegate = new GaugeDelegate();
 
 		public override void ViewDidLoad ()
@@ -22,11 +22,17 @@ namespace Examples
 
 		void CreateRadialGauge()
 		{
+			// >> gauge-radial-cs
+			radialGauge = new TKRadialGauge ();
 			this.radialGauge.Delegate = new GaugeDelegate ();
 			this.View.AddSubview (this.radialGauge);
+			// << gauge-radial-cs
 
+			// >> gauge-radial-scale-cs
 			TKGaugeRadialScale scale = new TKGaugeRadialScale (new NSNumber (0), new NSNumber (6));
 			this.radialGauge.AddScale (scale);
+			// << gauge-radial-scale-cs
+
 			scale.AddIndicator(new TKGaugeNeedle(2.3f, 0.6f));
 
 			UIColor[] colors = new UIColor[] { 
@@ -51,19 +57,26 @@ namespace Examples
 
 		void CreateLinearGauge()
 		{
+			// >> linear-gauge-start-cs
 			this.linearGauge = new TKLinearGauge();
+			this.View.AddSubview(this.linearGauge);
+			// << linear-gauge-start-cs
+
 			this.linearGauge.WeakDelegate = this.gaugeDelegate;
 			this.linearGauge.Orientation = TKLinearGaugeOrientation.Vertical;
-			this.View.AddSubview(this.linearGauge);
 
+			// >> linear-gauge-scale-cs
 			TKGaugeLinearScale scale = new TKGaugeLinearScale (new NSNumber(-10), new NSNumber(40));	
 			this.linearGauge.AddScale (scale);
+			// << linear-gauge-scale-cs
 
+			// >> gauge-segment-cs
 			TKGaugeSegment segment = new TKGaugeSegment (new NSNumber(-10), new NSNumber(18));
 			segment.Location = 0.56f;
 			segment.Width = 0.05f;
 			segment.Width2 = 0.05f;
 			segment.Cap = TKGaugeSegmentCap.Round;
+			// << gauge-segment-cs
 
 			scale.AddSegment (segment);
 

@@ -44,12 +44,20 @@ class AutoCompleteTokens: TKAutoCompleteController, TKAutoCompleteDelegate {
         autocomplete.imageView.image = UIImage(named: "search")
         autocomplete.suggestionViewHeight = self.view.bounds.size.height - self.view.bounds.origin.y + 45
         autocomplete.delegate = self
+        
+        // >> autocmp-display-mode-swift
         autocomplete.displayMode = TKAutoCompleteDisplayMode.Tokens
+        // << autocmp-display-mode-swift
+        
+        // >> autocmp-layout-mode-swift
         autocomplete.layoutMode = TKAutoCompleteLayoutMode.Wrap
+        // << autocmp-layout-mode-swift
+        
         autocomplete.minimumCharactersToSearch = 1
         autocomplete.maximumWrapHeight = 200;
     }
-     
+    
+    // >> autocmp-token-custom-swift
     func autoComplete(autocomplete: TKAutoCompleteTextView, viewForToken token: TKAutoCompleteToken) -> TKAutoCompleteTokenView
     {
         let tokenView = TKAutoCompleteTokenView(token: token)
@@ -58,6 +66,7 @@ class AutoCompleteTokens: TKAutoCompleteController, TKAutoCompleteDelegate {
         tokenView.imageView.layer.cornerRadius = 3
         return tokenView
     }
+    // << autocmp-token-custom-swift
     
     func keyboardDidShow(notification: NSNotification)
     {

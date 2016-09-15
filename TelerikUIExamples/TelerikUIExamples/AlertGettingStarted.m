@@ -32,24 +32,31 @@
 
 -(void)show:(id)sender
 {
+// >> getting-started-alert
     TKAlert *alert = [TKAlert new];
     alert.title = @"Chicken or the egg";
     alert.message = @"Which came first, the chicken or the egg?";
+// << getting-started-alert
+    
     alert.style.maxWidth = 210;
     alert.dismissMode = TKAlertDismissModeSwipe;
     alert.swipeDismissDirection = TKAlertSwipeDismissDirectionVertical;
     
+// >> getting-started-alert-action
     [alert addActionWithTitle:@"Egg" handler:^BOOL (TKAlert *alert, TKAlertAction* action) {
         _textLabel.text = @"It was the egg!";
         return YES;
     }];
-    
+
     [alert addActionWithTitle:@"Chicken" handler:^BOOL (TKAlert *alert, TKAlertAction* action) {
         _textLabel.text = @"It was the chicken!";
         return YES;
     }];
-   
+// << getting-started-alert-action
+    
+// >> getting-started-alert-show
     [alert show:YES];
+// << getting-started-alert-show
 }
 
 

@@ -3,6 +3,7 @@ using Foundation;
 
 namespace Examples
 {
+	// >> dataform-info-cs
 	public class PersonalInfo : NSObject
 	{
 		[Export("Server")]
@@ -41,5 +42,6 @@ namespace Examples
 			this.SendAllTraffic = true;
 		}
 	}
+	// << dataform-info-cs
 }
 

@@ -34,8 +34,9 @@ namespace Examples
 				dataPoints1.Add (point1);
 			}
 
+			// >> chart-pointlabels-cs
 			TKChartLineSeries lineSeries = new TKChartLineSeries (dataPoints.ToArray ());
-			lineSeries.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			lineSeries.Selection = TKChartSeriesSelection.DataPoint;
 			lineSeries.Style.PointShape = new TKPredefinedShape (TKShapeType.Circle, new SizeF (8, 8));
 			lineSeries.Style.PointLabelStyle.TextHidden = false;
 			lineSeries.Style.PointLabelStyle.LabelOffset = new UIOffset (0, -24);
@@ -46,9 +47,10 @@ namespace Examples
 			lineSeries.Style.PointLabelStyle.TextColor = UIColor.White;
 			lineSeries.Style.PointLabelStyle.Fill = new TKSolidFill (new UIColor ((float)(108 / 255.0), (float)(181 / 255.0), (float)(250 / 255.0), (float)1.0));
 			lineSeries.Style.PointLabelStyle.ClipMode = TKChartPointLabelClipMode.Hidden;
+			// << chart-pointlabels-cs
 
 			TKChartLineSeries lineSeries1 = new TKChartLineSeries (dataPoints1.ToArray ());
-			lineSeries1.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			lineSeries1.Selection = TKChartSeriesSelection.DataPoint;
 			lineSeries1.Style.PointShape = new TKPredefinedShape (TKShapeType.Circle, new SizeF (8, 8));
 			lineSeries1.Style.PointLabelStyle.TextHidden = false;
 			lineSeries1.Style.PointLabelStyle.LabelOffset = new UIOffset (0, -24);
@@ -79,6 +81,7 @@ namespace Examples
 				this.selectedDataPointIndex = selectedDataPointIndex;
 			}
 
+			// >> chart-custom-label-cs
 			public override TKChartPointLabel LabelForDataPoint (TKChart chart, TKChartData dataPoint, string propertyName, TKChartSeries series, nuint dataIndex)
 			{
 				TKChartDataPoint point = (TKChartDataPoint)dataPoint;
@@ -89,7 +92,8 @@ namespace Examples
 				
 				return new TKChartPointLabel (point, series, String.Format ("{0}", point.DataYValue));
 			}
-				
+			// << chart-custom-label-cs
+
 			public override TKChartPaletteItem PaletteItemForPoint (TKChart chart, nuint index, TKChartSeries series)
 			{
 				if (series.Index == (nuint)this.selectedSeriesIndex && index == (nuint)this.selectedDataPointIndex) {

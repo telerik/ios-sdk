@@ -45,7 +45,7 @@ namespace Examples
 					series = new TKChartLineSeries ();
 				}
 
-				series.SelectionMode = TKChartSeriesSelectionMode.Series;
+				series.Selection = TKChartSeriesSelection.Series;
 				series.Style.PointShape = new TKPredefinedShape (TKShapeType.Circle, new System.Drawing.SizeF (10, 10));
 				series.Title = string.Format ("Series: {0}", index + 1);
 				return series;

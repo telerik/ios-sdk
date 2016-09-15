@@ -111,8 +111,14 @@ class IndicatorsChart : TKExamplesExampleViewController, UIPopoverControllerDele
         indicatorsChart.removeAllData()
         
         let yAxis = TKChartNumericAxis(minimum: 250, andMaximum: 750)
+        
+        // >> chart-text-align-swift
         yAxis.style.labelStyle.textAlignment = TKChartAxisLabelAlignment(rawValue:TKChartAxisLabelAlignment.Right.rawValue | TKChartAxisLabelAlignment.Bottom.rawValue)
         yAxis.style.labelStyle.firstLabelTextAlignment = TKChartAxisLabelAlignment(rawValue:TKChartAxisLabelAlignment.Right.rawValue | TKChartAxisLabelAlignment.Top.rawValue)
+        yAxis.style.labelStyle.textOffset = UIOffsetMake(0, 0)
+        yAxis.style.labelStyle.firstLabelTextOffset = UIOffsetMake(0, 0)
+        // << chart-text-align-swift
+        
         yAxis.allowZoom = true
         series!.yAxis = yAxis
         
@@ -146,7 +152,7 @@ class IndicatorsChart : TKExamplesExampleViewController, UIPopoverControllerDele
         let section = self.sections![0] as! TKExamplesSectionInfo
         let indicatorClass = self.trendlines[section.selectedOption].1 as! TKChartFinancialIndicator.Type
         let indicator = indicatorClass.init(series:self.series!)
-        indicator.selectionMode = TKChartSeriesSelectionMode.Series
+        indicator.selection = TKChartSeriesSelection.Series
 
         overlayChart.removeAllData()
         overlayChart.addSeries(self.series!)
@@ -157,7 +163,7 @@ class IndicatorsChart : TKExamplesExampleViewController, UIPopoverControllerDele
         let section = self.sections![1] as! TKExamplesSectionInfo
         let indicatorClass = self.indicators[section.selectedOption].1 as! TKChartFinancialIndicator.Type
         let indicator = indicatorClass.init(series:self.series!)
-        indicator.selectionMode = TKChartSeriesSelectionMode.Series
+        indicator.selection = TKChartSeriesSelection.Series
 
         indicatorsChart.removeAllData()
         indicatorsChart.addSeries(indicator)

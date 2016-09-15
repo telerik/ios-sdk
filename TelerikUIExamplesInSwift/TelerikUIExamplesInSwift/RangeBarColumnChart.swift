@@ -7,8 +7,9 @@
 
 class RangeBarColumnChart: TKExamplesExampleViewController {
     let chart = TKChart()
+    
     let lowValues = [33, 29, 55, 21, 10, 39, 40, 11]
-    let highValues = [47, 61, 64, 40, 33, 90, 87, 69];
+    let highValues = [47, 61, 64, 40, 33, 90, 87, 69]
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -41,7 +42,7 @@ class RangeBarColumnChart: TKExamplesExampleViewController {
         
         let series = TKChartRangeColumnSeries(items:items)
         series.style.paletteMode = TKChartSeriesStylePaletteMode.UseItemIndex
-        series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        series.selection = TKChartSeriesSelection.DataPoint
         chart.addSeries(series)
         chart.reloadData()
     }
@@ -56,7 +57,7 @@ class RangeBarColumnChart: TKExamplesExampleViewController {
         
         let series = TKChartRangeBarSeries(items:items)
         series.style.paletteMode = TKChartSeriesStylePaletteMode.UseItemIndex
-        series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        series.selection = TKChartSeriesSelection.DataPoint
         chart.addSeries(series)
         chart.reloadData()
     }

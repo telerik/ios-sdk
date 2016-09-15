@@ -17,6 +17,7 @@ class DataSourceWithWebService: TKExamplesExampleViewController {
         // Do any additional setup after loading the view.
         self.title = "Consume web service"
         
+        // >> remote-data-swift
         let chart = TKChart(frame: self.view.bounds)
         chart.autoresizingMask = UIViewAutoresizing(rawValue: ~UIViewAutoresizing.None.rawValue)
         self.view.addSubview(chart)
@@ -74,6 +75,7 @@ class DataSourceWithWebService: TKExamplesExampleViewController {
             xAxis.title = "date"
             xAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Days
         }
+        // << remote-data-swift
     }
 
     override func didReceiveMemoryWarning() {

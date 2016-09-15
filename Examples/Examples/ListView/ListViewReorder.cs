@@ -22,16 +22,25 @@ namespace Examples
 
 			base.ViewDidLoad ();
 
+			// >> listview-datasource-reorder-cs
+			this.listView.WeakDataSource = this.dataSource;
 			this.dataSource.AllowItemsReorder = true;
+			// << listview-datasource-reorder-cs
+
 			this.dataSource.LoadDataFromJSONResource ("PhotosWithNames", "json", "names");
 
+			// >> listview-delegate-set-cs
 			this.listViewDelegate = new ListViewDelegate(this);
+			// << listview-delegate-set-cs
 
 			this.listView.Frame = this.View.Bounds;
 			this.listView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-			this.listView.WeakDataSource = this.dataSource;
 			this.listView.WeakDelegate = this.listViewDelegate;
+
+			// >> listview-reorder-cs
 			this.listView.AllowsCellReorder = true;
+			// << listview-reorder-cs
+
 			this.View.AddSubview (listView);
 		}
 
@@ -67,12 +76,14 @@ namespace Examples
 				cell.BackgroundView.BackgroundColor = UIColor.Yellow;
 			}
 
+			// >> listview-did-reorder-cs
 			public override void DidReorderItemFromIndexPath (TKListView listView, NSIndexPath originalIndexPath, NSIndexPath targetIndexPath)
 			{
 				TKListViewCell cell = listView.CellForItem(originalIndexPath);
 				cell.BackgroundView.BackgroundColor = UIColor.White;
 				this.owner.dataSource.DidReorderItemFromTo (listView, originalIndexPath, targetIndexPath);
 			}
+			// << listview-did-reorder-cs
 		}
 	}
 }

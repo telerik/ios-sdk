@@ -94,7 +94,7 @@
     
     [self.dataSource.settings.chart createSeries:^TKChartSeries *(TKDataSourceGroup *group) {
         TKChartColumnSeries *series = [TKChartColumnSeries new];
-        series.selectionMode = TKChartSeriesSelectionModeDataPoint;
+        series.selection = TKChartSeriesSelectionDataPoint;
         series.style.paletteMode = TKChartSeriesStylePaletteModeUseItemIndex;
         return series;
     }];
@@ -143,6 +143,7 @@
         cell.textLabel.text = dsitem.name;
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", dsitem.value];
     }];
+    
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     tableView.dataSource = self.dataSource;

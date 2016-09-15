@@ -30,7 +30,7 @@ namespace Examples
 			}
 
 			TKChartColumnSeries columnSeries = new TKChartColumnSeries (dataPoints.ToArray ());
-			columnSeries.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			columnSeries.Selection = TKChartSeriesSelection.DataPoint;
 			columnSeries.Style.PointLabelStyle.TextHidden = false;
 			columnSeries.Style.PointLabelStyle.LayoutMode = TKChartPointLabelLayoutMode.Manual;
 			columnSeries.Style.PointLabelStyle.LabelOffset = new UIOffset (0, -10);

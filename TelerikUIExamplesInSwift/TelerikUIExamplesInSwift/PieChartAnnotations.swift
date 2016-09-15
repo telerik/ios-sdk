@@ -28,7 +28,7 @@ class PieChartAnnotations: TKExamplesExampleViewController {
         array.append(TKChartDataPoint(name:"Personal\nCare", value:12.5))
         
         let series = TKChartPieSeries(items:array)
-        series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        series.selection = TKChartSeriesSelection.DataPoint
         series.expandRadius = 1.04
         series.rotationAngle = -CGFloat(M_PI_2 + M_PI_4)
         series.radiusInset = 50

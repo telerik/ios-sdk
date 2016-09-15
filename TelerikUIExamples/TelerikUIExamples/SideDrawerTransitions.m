@@ -47,6 +47,9 @@
     TKSideDrawer *sideDrawer = self.sideDrawer;
     sideDrawer.fill = [TKSolidFill solidFillWithColor:[UIColor grayColor]];
     sideDrawer.transition = TKSideDrawerTransitionTypePush;
+    // >> drawer-transitions-duration
+    sideDrawer.transitionDuration = 0.5;
+    // << drawer-transitions-duration
     sideDrawer.headerView = [[SideDrawerHeaderView alloc] initWithButton:NO target:nil selector:nil];
     [self showSideDrawer];
 }
@@ -55,7 +58,11 @@
 {
     TKSideDrawer *sideDrawer = self.sideDrawer;
     sideDrawer.fill = [TKSolidFill solidFillWithColor:[UIColor grayColor]];
+    
+    // >> drawer-transition
     sideDrawer.transition = TKSideDrawerTransitionTypeReveal;
+    // << drawer-transition
+    
     sideDrawer.headerView = [[SideDrawerHeaderView alloc] initWithButton:NO target:nil selector:nil];
     [self showSideDrawer];
 }

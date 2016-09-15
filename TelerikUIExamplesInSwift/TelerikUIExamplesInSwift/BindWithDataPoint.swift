@@ -24,7 +24,7 @@ class BindWithDataPoint : TKExamplesExampleViewController {
         }
         
         let columnSeries = TKChartColumnSeries(items: data)
-        columnSeries.selectionMode = TKChartSeriesSelectionMode.Series
+        columnSeries.selection = TKChartSeriesSelection.Series
         chart.addSeries(columnSeries)
     }
     

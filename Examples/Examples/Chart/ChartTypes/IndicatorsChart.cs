@@ -86,7 +86,7 @@ namespace Examples
 
 		void AddTrendline(TKChartFinancialIndicator indicator)
 		{
-			indicator.SelectionMode = TKChartSeriesSelectionMode.Series;
+			indicator.Selection = TKChartSeriesSelection.Series;
 			overlayChart.RemoveAllData ();
 			overlayChart.AddSeries (series);
 			overlayChart.AddSeries (indicator);
@@ -125,8 +125,14 @@ namespace Examples
 		{
 			TKChartNumericAxis yAxis = new TKChartNumericAxis ();
 			yAxis.Range = new TKRange (new NSNumber (250), new NSNumber (750));
+
+			// >> chart-text-align-cs
 			yAxis.Style.LabelStyle.TextAlignment = TKChartAxisLabelAlignment.Right | TKChartAxisLabelAlignment.Bottom;
 			yAxis.Style.LabelStyle.FirstLabelTextAlignment = TKChartAxisLabelAlignment.Right | TKChartAxisLabelAlignment.Top;
+			yAxis.Style.LabelStyle.TextOffset = new UIOffset (0, 0);
+			yAxis.Style.LabelStyle.FirstLabelTextOffset = new UIOffset (0, 0);
+			// << chart-text-align-cs
+
 			yAxis.AllowZoom = true;
 			yAxis.AllowPan = true;
 			series.YAxis = yAxis;

@@ -61,10 +61,18 @@ class CalendarTransitionEffects: TKExamplesExampleViewController, TKCalendarPres
         self.calendarView.allowPinchZoom = false
         self.contentView.addSubview(self.calendarView)
         
+// >> transitions-monthpresenter-swift
         let presenter = self.calendarView.presenter as! TKCalendarMonthPresenter
         presenter.transitionMode = TKCalendarTransitionMode.Flip
+// << transitions-monthpresenter-swift
         presenter.delegate = self
         presenter.headerIsSticky = true
+// >> transitions-transitionvertical-swift
+        presenter.transitionIsVertical = false
+// << transitions-transitionvertical-swift
+// >> transitions-transitionduration-swift
+        presenter.transitionDuration = 2
+// << transitions-transitionduration-swift        
         presenter.contentView.backgroundColor = colors[colorIndex]
         self.transitionMode = TKCalendarTransitionMode.Flip
     }
@@ -93,7 +101,9 @@ class CalendarTransitionEffects: TKExamplesExampleViewController, TKCalendarPres
     }
     
     func nextTouched(sender: AnyObject) {
+// >> navigation-navigateforward-swift
         calendarView.navigateForward(true)
+// << navigation-navigateforward-swift
     }
     
     func selectFlipEffect() {

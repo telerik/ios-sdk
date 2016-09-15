@@ -38,7 +38,12 @@
         return series;
     }];
     
-    chart.yAxis = [TKChartLogarithmicAxis new];
+    // >> chart-axis-logarithmic
+    TKChartLogarithmicAxis *yAxis = [TKChartLogarithmicAxis new];
+    yAxis.logarithmBase = @2;
+    chart.yAxis = yAxis;
+    // << chart-axis-logarithmic
+    
     chart.dataSource = dataSource;
 }
 

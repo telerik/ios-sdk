@@ -27,12 +27,16 @@
 
 - (void)setRadialGauge
 {
+    // >> gauge-radial
     self.radialGauge = [[TKRadialGauge alloc] initWithFrame:CGRectZero];
     self.radialGauge.delegate = self;
     [self.view addSubview:self.radialGauge];
+    // << gauge-radial
     
+    // >> gauge-radial-scale
     TKGaugeRadialScale *scale = [[TKGaugeRadialScale alloc] initWithMinimum:@0 maximum:@6];
     [self.radialGauge addScale:scale];
+    // << gauge-radial-scale
     
     [scale addIndicator:[[TKGaugeNeedle alloc] initWithValue:2.3 length:0.6]];
     
@@ -54,20 +58,26 @@
 
 - (void)setLinearGauge
 {
+    // >> linear-gauge-start
     self.linearGauge = [[TKLinearGauge alloc] initWithFrame:CGRectMake(0, 0, 150, 0)];
     self.linearGauge.delegate = self;
     self.linearGauge.orientation = TKLinearGaugeOrientationVertical;
     [self.view addSubview:self.linearGauge];
+    // << linear-gauge-start
     
+    // >> linear-gauge-scale
     TKGaugeLinearScale* scale = [[TKGaugeLinearScale alloc] initWithMinimum:@-10 maximum:@40];
     [self.linearGauge addScale:scale];
+    // << linear-gauge-scale
     
+    // >> gauge-segment
     TKGaugeSegment* segment = [[TKGaugeSegment alloc] initWithMinimum:@-10 maximum:@18];
     segment.location = 0.60;
     segment.width = 0.05;
     segment.width2 = 0.05;
     segment.cap = TKGaugeSegmentCapRound;
     [scale addSegment: segment];
+    // << gauge-segment
     
     NSArray *colors = @[ [UIColor colorWithRed:0.149f green:0.580f blue:0.776f alpha:1.00f],
                          [UIColor colorWithRed:0.537f green:0.796f blue:0.290f alpha:1.00f],

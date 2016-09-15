@@ -42,8 +42,15 @@
     _listView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _listView.delegate = self;
     _listView.dataSource = _dataSource;
+    
+    // >> listview-selection-behavior
     _listView.selectionBehavior = TKListViewSelectionBehaviorPress;
+    // << listview-selection-behavior
+    
+    // >> listview-multiple-selection
     _listView.allowsMultipleSelection = YES;
+    // << listview-multiple-selection
+    
     [self.view addSubview:_listView];
     
     _label = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-44, self.view.bounds.size.width, 44)];
@@ -55,8 +62,11 @@
     layout.itemSpacing = 0;
     
     // select the second row
+    
+    // >> listview-selection-programatically
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     [_listView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+    // << listview-selection-programatically
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,12 +83,16 @@
 
 - (void)selectionOnHoldSelected
 {
+    // >> listview-selection-behavior-long
     _listView.selectionBehavior = TKListViewSelectionBehaviorLongPress;
+    // << listview-selection-behavior-long
 }
 
 - (void)noSelectionSelected
 {
+    // >> listview-selection-behavior-none
     _listView.selectionBehavior = TKListViewSelectionBehaviorNone;
+    // << listview-selection-behavior-none
     _label.text = @"";
     [_listView clearSelectedItems];
 }
@@ -109,6 +123,7 @@
     NSLog(@"Did unhighlight item at row %ld", (long)indexPath.row);
 }
 
+// >> listview-respond
 - (void)listView:(TKListView *)listView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     _label.text = [NSString stringWithFormat:@"Selected: %@", _dataSource.items[indexPath.row]];
@@ -123,5 +138,6 @@
 {
     NSLog(@"Did deselect item at row %ld", (long)indexPath.row);
 }
+// << listview-respond
 
 @end

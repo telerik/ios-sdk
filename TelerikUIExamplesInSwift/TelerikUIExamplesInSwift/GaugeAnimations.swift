@@ -70,6 +70,7 @@ class GaugeAnimations: TKExamplesExampleViewController {
             scale.addSegment(segment)
         }
 
+        // >> gauge-needle-swift
         let needle = TKGaugeNeedle()
         needle.length = 0.8
         needle.width = 3
@@ -78,6 +79,7 @@ class GaugeAnimations: TKExamplesExampleViewController {
         needle.shadowOpacity = 0.8;
         needle.shadowRadius = 1.5;
         scale.addIndicator(needle)
+        // << gauge-needle-swift
     }
     
     func addLinearGauge() {

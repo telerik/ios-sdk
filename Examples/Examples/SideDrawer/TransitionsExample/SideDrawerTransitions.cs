@@ -48,6 +48,9 @@ namespace Examples
 		{
 			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawers [0];
 			sideDrawer.TransitionType = TKSideDrawerTransitionType.Push;
+			// >> drawer-transitions-duration-cs
+			sideDrawer.TransitionDuration = 0.5f;
+			// << drawer-transitions-duration-cs
 			sideDrawer.Fill = new TKSolidFill (UIColor.Gray);
 			sideDrawer.HeaderView = new SideDrawerHeader (false, null, null);
 			sideDrawer.Show ();
@@ -57,7 +60,11 @@ namespace Examples
 		private void RevealTransition()
 		{
 			TKSideDrawer sideDrawer = this.SideDrawerView.SideDrawers [0];
+
+			// >> drawer-transition-cs
 			sideDrawer.TransitionType = TKSideDrawerTransitionType.Reveal;
+			// << drawer-transition-cs
+
 			sideDrawer.Fill = new TKSolidFill (UIColor.Gray);
 			sideDrawer.HeaderView = new SideDrawerHeader (false, null, null);
 			sideDrawer.Show ();

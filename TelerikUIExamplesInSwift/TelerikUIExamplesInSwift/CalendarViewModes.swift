@@ -48,7 +48,15 @@ class CalendarViewModes: TKExamplesExampleViewController, TKCalendarDelegate {
         self.calendarView.calendar = calendar
         self.calendarView.minDate = minDate
         self.calendarView.maxDate = maxDate
+// >> view-modes-pinchzoom-swift
+        self.calendarView.allowPinchZoom = true
+// << view-modes-pinchzoom-swift
         self.calendarView.navigateToDate(date, animated: false)
+
+// >> view-modes-presenter-swift
+        let presenter = self.calendarView.presenter as! TKCalendarYearPresenter
+        presenter.columns = 3
+// << view-modes-presenter-swift
     }
     
     override func viewDidLayoutSubviews() {
@@ -69,31 +77,44 @@ class CalendarViewModes: TKExamplesExampleViewController, TKCalendarDelegate {
 //MARK: - Events
     
     func selectYear() {
+// >> getting-started-viewmodeyear-swift
         self.calendarView.viewMode = TKCalendarViewMode.Year
+// << getting-started-viewmodeyear-swift        
     }
     
     func selectMonth() {
+// >> view-modes-month-swift
         self.calendarView.viewMode = TKCalendarViewMode.Month
+// << view-modes-month-swift        
     }
     
     func selectMonthNames() {
+// >> view-modes-monthnames-swift
         self.calendarView.viewMode = TKCalendarViewMode.MonthNames
+// << view-modes-monthnames-swift
     }
     
     func selectYearNumbers() {
+// >> view-modes-yearnumber-swift
         self.calendarView.viewMode = TKCalendarViewMode.YearNumbers
+// << view-modes-yearnumber-swift
     }
     
     func selectFlow() {
+// >> view-modes-flow-swift
         self.calendarView.viewMode = TKCalendarViewMode.Flow
+// << view-modes-flow-swift        
     }
     
     func selectWeekView() {
+// >> view-modes-week-swift
         self.calendarView.viewMode = TKCalendarViewMode.Week
+// << view-modes-week-swift        
     }
     
 //MARK: - TKCalendarDelegate
 
+// >> view-modes-changeviewmode-swift
     func calendar(calendar: TKCalendar, didChangedViewModeFrom previousViewMode: TKCalendarViewMode, to viewMode: TKCalendarViewMode) {
         if viewMode == TKCalendarViewMode.Week || previousViewMode == TKCalendarViewMode.Week {
             self.view.setNeedsLayout()
@@ -102,3 +123,4 @@ class CalendarViewModes: TKExamplesExampleViewController, TKCalendarDelegate {
         self.selectedOption = UInt(viewMode.rawValue);
     }
 }
+// << view-modes-changeviewmode-swift

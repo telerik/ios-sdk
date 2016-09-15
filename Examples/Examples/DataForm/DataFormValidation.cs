@@ -31,9 +31,12 @@ namespace Examples
 			TKEntityProperty password = this.dataSource.PropertyWithName("Password");
 			password.HintText = "Password";
 			password.EditorClass = new Class (typeof(TKDataFormPasswordEditor));
+
+			// >> dataform-password-cs
 			TKDataFormMinimumLengthValidator passwordValidator = new TKDataFormMinimumLengthValidator (6);
 			passwordValidator.ErrorMessage = "Password must be at least 6 characters!";
 			password.Validators = new NSObject[] { passwordValidator };
+			// << dataform-password-cs
 
 			TKEntityProperty repeatPassword = this.dataSource.PropertyWithName ("RepeatPassword");
 			repeatPassword.HintText = "Confirm password";
@@ -51,7 +54,9 @@ namespace Examples
 			this.DataForm.BackgroundColor = new UIColor (0.937f, 0.937f, 0.960f, 1.0f);
 			this.DataForm.Delegate = this.validationDelegate;
 			this.DataForm.WeakDataSource = dataSource.NativeObject;
+			// >> dataform-validation-cs
 			this.DataForm.ValidationMode = TKDataFormValidationMode.Immediate;
+			// << dataform-validation-cs
 		}
 
 		class ValidationDataFormDelegate: TKDataFormDelegate
@@ -64,14 +69,18 @@ namespace Examples
 				this.owner = owner;
 			}
 
+			// >> dataform-validate-cs
 			public override bool ValidateProperty (TKDataForm dataForm, TKEntityProperty property, TKDataFormEditor editor)
 			{
+			// << dataform-validate-cs
 				if (property.Name == "RepeatPassword") {
 					return property.IsValid && property.ValueCandidate.IsEqual (this.owner.dataSource.PropertyWithName ("Password").ValueCandidate);
 				}
 
 				return property.IsValid;
+			// >> dataform-validate-cs
 			}
+			// << dataform-validate-cs
 
 			public override void UpdateEditor (TKDataForm dataForm, TKDataFormEditor editor, TKEntityProperty property)
 			{

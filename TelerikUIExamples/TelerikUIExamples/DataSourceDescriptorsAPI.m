@@ -10,6 +10,7 @@
 #import "DataSourceDescriptorsAPI.h"
 #import "DSItem.h"
 
+// >> datasource-descriptor
 @interface DataSourceDescriptorsAPI ()
 
 @property (nonatomic, strong) TKDataSource *dataSource;
@@ -30,6 +31,7 @@
     [self.dataSource addSortDescriptor:[[TKDataSourceSortDescriptor alloc] initWithProperty:@"name" ascending:YES]];
     [self.dataSource addGroupDescriptor:[[TKDataSourceGroupDescriptor alloc] initWithProperty:@"group"]];
     
+    // >> datasource-feed-object
     NSMutableArray *items = [NSMutableArray new];
     [items addObject:[[DSItem alloc] initWithName:@"John" value:22.0 group:@"one"]];
     [items addObject:[[DSItem alloc] initWithName:@"Peter" value:15.0 group:@"one"]];
@@ -41,16 +43,26 @@
     self.dataSource.displayKey = @"name";
     self.dataSource.valueKey = @"value";
     self.dataSource.itemSource = items;
+    // << datasource-feed-object
+    
+    // >> datasource-text
+    [self.dataSource formatText:^NSString *(id item, TKDataSourceGroup *group) {
+        DSItem *dsItem = (DSItem*)item;
+        return [NSString stringWithFormat:@"%@ has %f points", dsItem.name, dsItem.value];
+    }];
+    // << datasource-text
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     tableView.dataSource = self.dataSource;
     tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:tableView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+// << datasource-descriptor
 
 @end

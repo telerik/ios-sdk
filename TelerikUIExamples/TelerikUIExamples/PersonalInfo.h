@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
+// >> dataform-info
 @interface PersonalInfo : NSObject
 
 @property (nonatomic) NSInteger protocol;
@@ -26,3 +27,4 @@
 @property (nonatomic) BOOL sendAllTraffic;
 
 @end
+// << dataform-info

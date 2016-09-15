@@ -29,9 +29,11 @@ class GaugeScales: TKExamplesExampleViewController {
         self.radialGauge.labelTitleOffset = CGPointMake(0, 60)
         self.view.addSubview(self.radialGauge)
         
+        // >> gauge-radial-scale-swift
         let scale1 = TKGaugeRadialScale(minimum: 34, maximum: 40)
         scale1.ticks.position = TKGaugeTicksPosition.Inner
         self.radialGauge.addScale(scale1)
+        // << gauge-radial-scale-swift
         
         let blueSegment = TKGaugeSegment(minimum: 34, maximum: 36)
         blueSegment.location = 0.70
@@ -76,15 +78,20 @@ class GaugeScales: TKExamplesExampleViewController {
         self.linearGauge.labelSubtitleOffset = CGPointMake(0, 100)
         self.view.addSubview(self.linearGauge)
         
+        // >> gauge-linear-scale-swift
         let scale1 = TKGaugeLinearScale(minimum: 34, maximum: 40)
         scale1.ticks.position = TKGaugeTicksPosition.Inner
         self.linearGauge.addScale(scale1)
+        // << gauge-linear-scale-swift
         
+        // >> gauge-segments-swift
+        // >> gauge-segment-add-swift
         let blueSegment = TKGaugeSegment(minimum: 34, maximum: 36)
         blueSegment.width = 0.08
         blueSegment.width2 = 0.08
         blueSegment.location = 0.62
         scale1.addSegment(blueSegment)
+        // << gauge-segment-add-swift
         
         let redSegment = TKGaugeSegment(minimum: 36.05, maximum: 40)
         redSegment.location = 0.62
@@ -92,9 +99,10 @@ class GaugeScales: TKExamplesExampleViewController {
         redSegment.width2 = 0.08
         redSegment.fill = TKSolidFill(color: UIColor.redColor())
         scale1.addSegment(redSegment)
-        
+        // << gauge-segments-swift
         self.setNeedle(scale1)
 
+        // >> gauge-second-add-swift
         let scale2 = TKGaugeLinearScale(minimum: 93.2, maximum: 104)
         self.linearGauge.addScale(scale2)
 
@@ -113,6 +121,8 @@ class GaugeScales: TKExamplesExampleViewController {
             s.ticks.offset = 0
             s.offset = CGFloat(i)*0.12 + 0.60
         }
+        
+        // << gauge-second-add-swift
     }
     
     func setNeedle(scale:TKGaugeScale) -> Void {

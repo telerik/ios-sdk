@@ -43,7 +43,9 @@ class LocalizedCalendar: TKExamplesExampleViewController {
     
     func selectRussian() {
         self.calendarView.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+// >> localization-localeproperty-swift
         self.calendarView.locale = NSLocale(localeIdentifier: "ru_RU")
+// << localization-localeproperty-swift
         self.calendarView.presenter.update(false)
     }
     
@@ -60,7 +62,9 @@ class LocalizedCalendar: TKExamplesExampleViewController {
     }
     
     func selectChinese() {
+// >> localization-chinesecalendar-swift
         self.calendarView.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierChinese)!
+// << localization-chinesecalendar-swift
         self.calendarView.locale = NSLocale(localeIdentifier: "zh_Hans_SG")
         self.calendarView.presenter.update(false)
     }
@@ -68,7 +72,9 @@ class LocalizedCalendar: TKExamplesExampleViewController {
     func selectIslamic() {
         self.calendarView.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierIslamic)!
         self.calendarView.locale = NSLocale(localeIdentifier:"ar-QA")
+// >> localization-update-swift
         self.calendarView.presenter.update(false)
+// << localization-update-swift
     }
     
     override func didReceiveMemoryWarning() {

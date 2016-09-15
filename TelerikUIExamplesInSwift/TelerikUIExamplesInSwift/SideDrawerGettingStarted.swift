@@ -7,6 +7,7 @@
 
 import UIKit
 
+// >> drawer-attached-swift
 class SideDrawerGettingStarted: TKExamplesExampleViewController, TKSideDrawerDelegate {
 
     let sideDrawerView = TKSideDrawerView()
@@ -34,8 +35,14 @@ class SideDrawerGettingStarted: TKExamplesExampleViewController, TKSideDrawerDel
         
         let sideDrawer = sideDrawerView.sideDrawers[0]
         sideDrawer.delegate = self
-        sideDrawer.style.headerHeight = 44
         sideDrawer.headerView = SideDrawerHeaderView(addButton: true, target: self, selector: #selector(SideDrawerGettingStarted.dismissSideDrawer))
+        
+        // >> drawer-style-swift
+        sideDrawer.style.headerHeight = 44
+        sideDrawer.style.shadowMode = TKSideDrawerShadowMode.Hostview
+        sideDrawer.style.shadowOffset = CGSizeMake(-2, -0.5)
+        sideDrawer.style.shadowRadius = 5
+        // << drawer-style-swift
         
         var section = sideDrawer.addSectionWithTitle("Primary")
         section.addItemWithTitle("Social")
@@ -71,15 +78,26 @@ class SideDrawerGettingStarted: TKExamplesExampleViewController, TKSideDrawerDel
     func dismissSideDrawer() {
         sideDrawerView.sideDrawers[0].dismiss()
     }
+    // << drawer-attached-swift
     
+    // >> drawer-update-section-swift
     func sideDrawer(sideDrawer: TKSideDrawer!, updateVisualsForSection sectionIndex: Int) {
         let section = sideDrawer.sections[sectionIndex] as! TKSideDrawerSection
         section.style.contentInsets = UIEdgeInsetsMake(0, -15, 0, 0)
     }
+    // << drawer-update-section-swift
     
+    // >> drawer-update-swift
     func sideDrawer(sideDrawer: TKSideDrawer!, updateVisualsForItemAtIndexPath indexPath: NSIndexPath!) {
         let currentItem = (sideDrawer.sections[indexPath.section] as! TKSideDrawerSection).items[indexPath.item] as! TKSideDrawerItem
         currentItem.style.contentInsets = UIEdgeInsetsMake(0, -10, 0, 0)
         currentItem.style.separatorColor = TKSolidFill(color: UIColor.clearColor())
     }
+    // << drawer-update-swift
+    
+    // >> drawer-did-select-swift
+    func sideDrawer(sideDrawer: TKSideDrawer!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
+        NSLog("Selected item in section: %ld at index: %ld ", indexPath.section, indexPath.row)
+    }
+    // << drawer-did-select-swift
 }

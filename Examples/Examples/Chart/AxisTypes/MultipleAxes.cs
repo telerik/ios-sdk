@@ -29,6 +29,7 @@ namespace Examples
 			chart.AddAxis (gdpInPoundsYAxis);
 			chart.YAxis = gdpInPoundsYAxis;
 
+			// >> chart-axis-position-cs
 			TKChartDateTimeAxis periodXAxis = new TKChartDateTimeAxis ();
 			periodXAxis.MajorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Years;
 			periodXAxis.MinorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Years;
@@ -44,6 +45,7 @@ namespace Examples
 			gdpInvestmentYAxis.Style.MajorTickStyle.TicksHidden = false;
 			gdpInvestmentYAxis.Style.LineHidden = false;
 			chart.AddAxis (gdpInvestmentYAxis);
+			// << chart-axis-position-cs
 
 			TKChartNumericAxis gdpGrowthUpAnnualChangeYAxis = new TKChartNumericAxis (new NSNumber(-6), new NSNumber(4));
 			gdpGrowthUpAnnualChangeYAxis.MajorTickInterval = 1;
@@ -78,7 +80,7 @@ namespace Examples
 			TKChartColumnSeries gdpInPoundsSeries = new TKChartColumnSeries  (gdpInPounds);
 			gdpInPoundsSeries.XAxis = periodXAxis;
 			gdpInPoundsSeries.YAxis = gdpInPoundsYAxis;
-			gdpInPoundsSeries.SelectionMode = TKChartSeriesSelectionMode.Series;
+			gdpInPoundsSeries.Selection = TKChartSeriesSelection.Series;
 			chart.AddSeries (gdpInPoundsSeries);
 
 			TKChartDataPoint[] gdpGrowthUpAnnual = new TKChartDataPoint[] {
@@ -95,7 +97,7 @@ namespace Examples
 			gdpGrowthUpSeries.Style.PointShape = new TKPredefinedShape (TKShapeType.Circle, new SizeF (shapeSize, shapeSize));
 			gdpGrowthUpSeries.XAxis = periodXAxis;
 			gdpGrowthUpSeries.YAxis = gdpGrowthUpAnnualChangeYAxis;
-			gdpGrowthUpSeries.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			gdpGrowthUpSeries.Selection = TKChartSeriesSelection.DataPoint;
 			gdpGrowthUpSeries.Style.ShapeMode = TKChartSeriesStyleShapeMode.AlwaysShow;
 			chart.AddSeries (gdpGrowthUpSeries);
 
@@ -111,7 +113,7 @@ namespace Examples
 			grossAnualSavingsSeries.Style.PointShape = new TKPredefinedShape (TKShapeType.Circle, new SizeF(shapeSize, shapeSize));
 			grossAnualSavingsSeries.XAxis = periodXAxis;
 			grossAnualSavingsSeries.YAxis = grossNationalSavingsAnnualGrowthUpYAxis;
-			grossAnualSavingsSeries.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			grossAnualSavingsSeries.Selection = TKChartSeriesSelection.DataPoint;
 			grossAnualSavingsSeries.Style.ShapeMode = TKChartSeriesStyleShapeMode.AlwaysShow;
 			chart.AddSeries (grossAnualSavingsSeries);
 
@@ -127,7 +129,7 @@ namespace Examples
 			gdpInvestmentSeries.Style.PointShape = new TKPredefinedShape (TKShapeType.Circle, new SizeF(shapeSize, shapeSize));
 			gdpInvestmentSeries.XAxis = periodXAxis;
 			gdpInvestmentSeries.YAxis = gdpInvestmentYAxis;
-			gdpInvestmentSeries.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			gdpInvestmentSeries.Selection = TKChartSeriesSelection.DataPoint;
 			gdpInvestmentSeries.Style.ShapeMode = TKChartSeriesStyleShapeMode.AlwaysShow;
 			chart.AddSeries (gdpInvestmentSeries);
 
@@ -157,8 +159,11 @@ namespace Examples
 				series.YAxis.Style.LineStroke = new TKStroke(item.Stroke.Fill);
 			}
 			series.YAxis.Style.MajorTickStyle.TicksFill = series.YAxis.Style.LineStroke.Fill;
+
+			// >> chart-tick-style-clipping-cs
 			series.YAxis.Style.MajorTickStyle.MaxTickClippingMode = TKChartAxisClippingMode.Visible;
 			series.YAxis.Style.MajorTickStyle.MinTickClippingMode = TKChartAxisClippingMode.Visible;
+			// << chart-tick-style-clipping-cs
 
 			if (series.YAxis.Style.MajorTickStyle.TicksFill is TKSolidFill) {
 				TKSolidFill solidFill = series.YAxis.Style.MajorTickStyle.TicksFill as TKSolidFill;

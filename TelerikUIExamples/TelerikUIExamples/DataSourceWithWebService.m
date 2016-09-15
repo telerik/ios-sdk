@@ -24,6 +24,7 @@
     
     self.dataSource = [TKDataSource new];
     
+    // >> remote-data
     TKChart *chart = [[TKChart alloc] initWithFrame:self.view.bounds];
     chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:chart];
@@ -81,6 +82,7 @@
         xAxis.title = @"date";
         xAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnitDays;
     }];
+    // << remote-data
 }
 
 - (void)didReceiveMemoryWarning {

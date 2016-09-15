@@ -35,8 +35,8 @@
     [super viewDidLoad];
 
     _dataSource = [TKDataSource new];
-    _dataSource.allowItemsReorder = YES;
-    [_dataSource loadDataFromJSONResource:@"PhotosWithNames" ofType:@"json" rootItemKeyPath:@"names"];
+    
+    
     
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         _listView = [[TKListView alloc] initWithFrame:self.view.bounds];
@@ -45,9 +45,22 @@
         _listView = [[TKListView alloc] initWithFrame:self.view.bounds];
     }
     _listView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    _listView.dataSource = _dataSource;
+    
+    // >> listview-delegate-set
     _listView.delegate = self;
+    // << listview-delegate-set
+    
+    // >> listview-datasource-reorder
+    _listView.dataSource = _dataSource;
+    _dataSource.allowItemsReorder = YES;
+    // << listview-datasource-reorder
+    
+    [_dataSource loadDataFromJSONResource:@"PhotosWithNames" ofType:@"json" rootItemKeyPath:@"names"];
+    
+    // >> listview-reorder
    _listView.allowsCellReorder = YES;
+    // << listview-reorder
+    
     [self.view addSubview:_listView];
 }
 
@@ -81,11 +94,13 @@
     cell.backgroundView.backgroundColor = [UIColor yellowColor];
 }
 
+// >> listview-did-reorder
 - (void)listView:(TKListView *)listView didReorderItemFromIndexPath:(NSIndexPath *)originalIndexPath toIndexPath:(NSIndexPath *)targetIndexPath
 {
     TKListViewCell *cell = [listView cellForItemAtIndexPath:originalIndexPath];
     cell.backgroundView.backgroundColor = [UIColor whiteColor];
     [_dataSource listView:listView didReorderItemFromIndexPath:originalIndexPath toIndexPath:targetIndexPath];
 }
+// << listview-did-reorder
 
 @end

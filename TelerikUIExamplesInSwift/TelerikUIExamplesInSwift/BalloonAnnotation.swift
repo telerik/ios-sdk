@@ -25,9 +25,22 @@ class BalloonAnnotation:TKExamplesExampleViewController {
             array.append(TKChartDataPoint(x: months[i], y: values[i]))
         }
         let series = TKChartLineSeries(items: array)
+        
+        // >> chart-point-shape-swift
         series.style.pointShape = TKPredefinedShape(type: TKShapeType.Circle, andSize: CGSizeMake(10, 10))
+        // << chart-point-shape-swift
+        
+        // >> chart-point-pallete-swift
+        let paletteItem = TKChartPaletteItem()
+        paletteItem.fill = TKSolidFill(color: UIColor.redColor())
+        let palette = TKChartPalette()
+        palette.addPaletteItem(paletteItem)
+        series.style.shapePalette = palette
+        // << chart-point-pallete-swift
+        
         chart.addSeries(series)
         
+        // >> chart-balloon-annotation-swift
         let paragraphStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
         paragraphStyle.alignment = NSTextAlignment.Center
         
@@ -40,6 +53,7 @@ class BalloonAnnotation:TKExamplesExampleViewController {
         balloon.style.distanceFromPoint = 20
         balloon.style.arrowSize = CGSizeMake(10, 10)
         chart.addAnnotation(balloon)
+        // << chart-balloon-annotation-swift
         
         balloon = TKChartBalloonAnnotation(text: "The lowest value:\n $30000", x: "Apr", y: 30, forSeries: series)
         balloon.style.verticalAlign = TKChartBalloonVerticalAlignment.Bottom

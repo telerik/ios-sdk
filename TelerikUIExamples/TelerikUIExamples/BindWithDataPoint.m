@@ -66,7 +66,7 @@
     }
     
     TKChartColumnSeries *columnSeries = [[TKChartColumnSeries alloc] initWithItems:data];
-    columnSeries.selectionMode = TKChartSeriesSelectionModeSeries;
+    columnSeries.selection = TKChartSeriesSelectionSeries;
     [_chart addSeries: columnSeries];
 }
 

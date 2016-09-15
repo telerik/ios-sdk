@@ -71,7 +71,7 @@
     }
     
     TKChartLineSeries *lineSeries = [[TKChartLineSeries alloc] initWithItems:array];
-    lineSeries.selectionMode = TKChartSeriesSelectionModeSeries;
+    lineSeries.selection = TKChartSeriesSelectionSeries;
     [_chart addSeries: lineSeries];
 }
 
@@ -86,7 +86,7 @@
     }
     
     TKChartAreaSeries *areaSeries = [[TKChartAreaSeries alloc] initWithItems:array];
-    areaSeries.selectionMode = TKChartSeriesSelectionModeSeries;
+    areaSeries.selection = TKChartSeriesSelectionSeries;
     [_chart addSeries: areaSeries];
 }
 
@@ -101,7 +101,7 @@
     [array addObject:[[TKChartDataPoint alloc] initWithName:@"IBM" value:@5]];
     [array addObject:[[TKChartDataPoint alloc] initWithName:@"Oracle" value:@8]];
     TKChartPieSeries *series = [[TKChartPieSeries alloc] initWithItems:array];
-    series.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    series.selection = TKChartSeriesSelectionDataPoint;
     [_chart addSeries:series];
 }
 
@@ -115,7 +115,7 @@
     }
     
     TKChartScatterSeries *scatterSeries = [[TKChartScatterSeries alloc] initWithItems:points];
-    scatterSeries.selectionMode = TKChartSeriesSelectionModeSeries;
+    scatterSeries.selection = TKChartSeriesSelectionSeries;
     [_chart addSeries: scatterSeries];
 }
 
@@ -130,7 +130,7 @@
     }
     
     TKChartBarSeries *barSeries = [[TKChartBarSeries alloc] initWithItems:array];
-    barSeries.selectionMode = TKChartSeriesSelectionModeSeries;
+    barSeries.selection = TKChartSeriesSelectionSeries;
     [_chart addSeries: barSeries];
 }
 
@@ -145,7 +145,7 @@
     }
     
     TKChartColumnSeries *columnSeries = [[TKChartColumnSeries alloc] initWithItems:array];
-    columnSeries.selectionMode = TKChartSeriesSelectionModeSeries;
+    columnSeries.selection = TKChartSeriesSelectionSeries;
     [_chart addSeries:columnSeries];
 }
 

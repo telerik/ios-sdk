@@ -33,10 +33,12 @@
     self.radialGauge.labelSubtitle.text = @"farenheit";
     self.radialGauge.labelTitleOffset = CGPointMake(0, 60);
     [self.view addSubview:self.radialGauge];
-
+    
+    // >> gauge-radial-scale
     TKGaugeRadialScale* scale1 = [[TKGaugeRadialScale alloc] initWithMinimum:@34 maximum:@40];
     scale1.ticks.position = TKGaugeTicksPositionInner;
     [self.radialGauge addScale:scale1];
+    // << gauge-radial-scale
     
     TKGaugeSegment* blueSegment = [TKGaugeSegment new];
     blueSegment.range = [[TKRange alloc] initWithMinimum:@(34) andMaximum:@(36)];
@@ -83,16 +85,21 @@
     self.linearGauge.labelSubtitleOffset = CGPointMake(0, 100);
     [self.view addSubview:self.linearGauge];
 
+    // >> gauge-linear-scale
     TKGaugeLinearScale* scale1 = [[TKGaugeLinearScale alloc] initWithMinimum:@34 maximum:@40];
     scale1.ticks.position = TKGaugeTicksPositionInner;
     [self.linearGauge addScale:scale1];
+    // << gauge-linear-scale
     
+    // >> gauge-segments
+    // >> gauge-segment-add
     TKGaugeSegment* blueSegment = [TKGaugeSegment new];
     blueSegment.range = [[TKRange alloc] initWithMinimum:@(34) andMaximum:@(36)];
     blueSegment.location = .62;
     blueSegment.width = 0.08;
     blueSegment.width2 = 0.08;
     [scale1 addSegment: blueSegment];
+    // << gauge-segment-add
     
     TKGaugeSegment* redSegment = [TKGaugeSegment new];
     redSegment.range = [[TKRange alloc] initWithMinimum:@(36.05) andMaximum:@(40)];
@@ -101,9 +108,10 @@
     redSegment.width2 = 0.08;
     redSegment.fill = [TKSolidFill solidFillWithColor:[UIColor redColor]];
     [scale1 addSegment: redSegment];
-    
+    // << gauge-segments
     [self setNeedle:scale1];
     
+    // >> gauge-second-add
     TKGaugeLinearScale* scale2 = [[TKGaugeLinearScale alloc] initWithMinimum:@93.2 maximum:@104];
     scale2.ticks.position = TKGaugeTicksPositionOuter;
     scale2.ticks.majorTicksCount = 6;
@@ -121,6 +129,7 @@
         scale.ticks.offset = 0;
         scale.offset = i*.12 + .60;
     }
+    // << gauge-second-add
 }
 
 - (void)setNeedle:(TKGaugeScale *)scale

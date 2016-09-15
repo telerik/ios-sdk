@@ -83,7 +83,7 @@
             break;
     }
     
-    series.selectionMode = TKChartSeriesSelectionModeSeries;
+    series.selection = TKChartSeriesSelectionSeries;
     series.displayNilValuesAsGaps = YES;
     [_chart addSeries:series];
 }

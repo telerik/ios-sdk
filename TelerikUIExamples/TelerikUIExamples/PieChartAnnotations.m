@@ -33,7 +33,7 @@
     [array addObject:[[TKChartDataPoint alloc] initWithName:@"Personal\nCare" value:@12.5]];
     
     TKChartPieSeries *series = [[TKChartPieSeries alloc] initWithItems:array];
-    series.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    series.selection = TKChartSeriesSelectionDataPoint;
     series.expandRadius = 1.04;
     series.rotationAngle = -(M_PI_2 + M_PI_4);
     series.radiusInset = 50;

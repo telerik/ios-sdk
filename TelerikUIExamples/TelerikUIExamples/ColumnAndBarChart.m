@@ -43,16 +43,23 @@
 {
    [_chart removeAllData];
     
+    // >> chart-column
     NSMutableArray *array = [[NSMutableArray alloc] init];
     for (int i = 0; i<8; i++) {
         [array addObject:[[TKChartDataPoint alloc] initWithX:@(i+1) Y:@(arc4random() % 100)]];
     }
     
-    TKChartSeries *series = [[TKChartColumnSeries alloc] initWithItems:array];
+    TKChartColumnSeries *series = [[TKChartColumnSeries alloc] initWithItems:array];
     series.style.paletteMode = TKChartSeriesStylePaletteModeUseItemIndex;
-    series.selectionMode = TKChartSeriesSelectionModeDataPoint;
-
+    series.selection = TKChartSeriesSelectionDataPoint;
+    
+    // >> chart-width-cl
+    series.maxColumnWidth = @50;
+    series.minColumnWidth = @20;
+    // << chart-width-cl
+    
     [_chart addSeries:series];
+    // << chart-column
     
     [_chart reloadData];
 }
@@ -61,6 +68,7 @@
 {
     [_chart removeAllData];
     
+    // >> chart-bar
     NSMutableArray *array = [[NSMutableArray alloc] init];
     for (int i = 0; i<8; i++) {
         [array addObject:[[TKChartDataPoint alloc] initWithX:@(arc4random() % 100) Y:@(i+1)]];
@@ -68,9 +76,9 @@
     
     TKChartSeries *series = [[TKChartBarSeries alloc] initWithItems:array];
     series.style.paletteMode = TKChartSeriesStylePaletteModeUseItemIndex;
-    series.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    series.selection = TKChartSeriesSelectionDataPoint;
     [_chart addSeries:series];
-    
+    // << chart-bar
     [_chart reloadData];
 }
 

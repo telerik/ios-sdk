@@ -67,9 +67,17 @@
     layout.itemSize = CGSizeMake(130, 180);
     layout.itemSpacing = 10;
     layout.lineSpacing = 10;
+    
+    // >> listview-alignment
     layout.itemAlignment = TKListViewItemAlignmentCenter;
+    // << listview-alignment
+    
     layout.itemAppearAnimation = TKListViewItemAnimationScale;
+    
+    // >> listview-animation-duration
     layout.animationDuration = 0.4;
+    // << listview-animation-duration
+    
     _listView.layout = layout;
 }
 
@@ -83,18 +91,33 @@
 {
     TKListViewLinearLayout *layout = (TKListViewLinearLayout*)_listView.layout;
     layout.itemAppearAnimation = TKListViewItemAnimationFade;
+    layout.itemInsertAnimation = TKListViewItemAnimationFade;
+    layout.itemInsertAnimation = TKListViewItemAnimationFade;
 }
 
 - (void)slideInSelected
 {
     TKListViewLinearLayout *layout = (TKListViewLinearLayout*)_listView.layout;
     layout.itemAppearAnimation = TKListViewItemAnimationSlide;
+    layout.itemInsertAnimation = TKListViewItemAnimationSlide;
+    layout.itemDeleteAnimation = TKListViewItemAnimationSlide;
 }
 
 - (void)scaleInSelected
 {
     TKListViewLinearLayout *layout = (TKListViewLinearLayout*)_listView.layout;
+    // >> listview-appear
     layout.itemAppearAnimation = TKListViewItemAnimationScale;
+    // << listview-appear
+    
+    // >> listview-insert
+    layout.itemInsertAnimation = TKListViewItemAnimationScale;
+    // << listview-insert
+    
+    // >> listview-delete
+    layout.itemDeleteAnimation = TKListViewItemAnimationScale;
+    // << listview-delete
+    
 }
 
 @end

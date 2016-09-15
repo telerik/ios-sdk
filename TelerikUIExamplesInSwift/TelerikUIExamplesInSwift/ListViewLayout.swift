@@ -80,15 +80,18 @@ class ListViewLayout: TKExamplesExampleViewController, TKListViewLinearLayoutDel
     }
     
     func linearLayoutSelected() {
+        // >> listview-linear-swift
         let layout = TKListViewLinearLayout()
         layout.itemSize = CGSizeMake(200, 200)
         layout.headerReferenceSize = CGSizeMake(100, 30)
         layout.itemSpacing = 1
         layout.scrollDirection = self.scrollDirection
         listView.layout = layout
+        // << listview-linear-swift
     }
     
     func gridLayoutSelected() {
+        // >> listview-grid-swift
         let layout = TKListViewGridLayout()
         layout.itemSize = CGSizeMake(200, 100)
         layout.headerReferenceSize = CGSizeMake(100, 30)
@@ -97,9 +100,11 @@ class ListViewLayout: TKExamplesExampleViewController, TKListViewLinearLayoutDel
         layout.lineSpacing = 1
         layout.scrollDirection = self.scrollDirection
         listView.layout = layout
+        // << listview-grid-swift
     }
 
     func staggeredLayoutSelected() {
+        // >> listview-staggered-swift
         let layout = TKListViewStaggeredLayout()
         layout.delegate = self
         layout.itemSize = CGSizeMake(200, 100)
@@ -110,6 +115,7 @@ class ListViewLayout: TKExamplesExampleViewController, TKListViewLinearLayoutDel
         layout.scrollDirection = self.scrollDirection
         layout.alignLastLine = true
         listView.layout = layout
+        // << listview-staggered-swift
     }
     
     func wrapLayoutSelected() {
@@ -133,6 +139,7 @@ class ListViewLayout: TKExamplesExampleViewController, TKListViewLinearLayoutDel
         self.scrollDirection = TKListViewScrollDirection.Horizontal
     }
 
+    // >> listview-staggered-size-swift
     func listView(listView: TKListView, layout: TKListViewLinearLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         if layout.scrollDirection == TKListViewScrollDirection.Vertical {
             return CGSizeMake(100, CGFloat(sizes[indexPath.row]))
@@ -141,4 +148,5 @@ class ListViewLayout: TKExamplesExampleViewController, TKListViewLinearLayoutDel
             return CGSizeMake(CGFloat(sizes[indexPath.row]), 100)
         }
     }
+    // << listview-staggered-size-swift
 }

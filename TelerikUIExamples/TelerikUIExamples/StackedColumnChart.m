@@ -29,6 +29,7 @@
     [super viewDidLoad];
     
     _chart = [[TKChart alloc] initWithFrame:self.view.bounds];
+    _chart.seriesSelectionMode = TKChartSelectionModeSingle;
     _chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _chart.allowAnimations = YES;
     [self.view addSubview:_chart];
@@ -45,6 +46,7 @@
         stackInfo = [[TKChartStackInfo alloc] initWithID:@(1) withStackMode:stackMode];
     }
     
+    // >> chart-column-cls
     for (int i = 0; i < 4; i++) {
         NSMutableArray *points = [[NSMutableArray alloc] init];
         for (int j = 1; j < 8; j++) {
@@ -55,9 +57,9 @@
         
         series.title = [NSString stringWithFormat:@"Series %d", i];
         series.stackInfo = stackInfo;
-        series.selectionMode = TKChartSeriesSelectionModeSeries;
         [_chart addSeries:series];
     }
+    // << chart-column-cls
     [_chart reloadData];
 }
 

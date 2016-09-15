@@ -27,19 +27,24 @@ class Customize: TKExamplesExampleViewController, TKChartDelegate {
         }
         
         let columnSeries = TKChartColumnSeries(items: array1)
-        columnSeries.selectionMode = TKChartSeriesSelectionMode.Series
+        columnSeries.selection = TKChartSeriesSelection.Series
         chart.addSeries(columnSeries)
         
         let areaSeries = TKChartAreaSeries(items: array2)
         areaSeries.style.pointShape = TKPredefinedShape(type: TKShapeType.Star, andSize: CGSizeMake(20, 20))
         areaSeries.style.shapeMode = TKChartSeriesStyleShapeMode.AlwaysShow
-        areaSeries.selectionMode = TKChartSeriesSelectionMode.Series
+        areaSeries.selection = TKChartSeriesSelection.Series
         chart.addSeries(areaSeries)
         
+        // >> chart-label-style-swift
         chart.yAxis!.style.labelStyle.font = UIFont.systemFontOfSize(18)
         chart.yAxis!.style.labelStyle.textColor = UIColor.blackColor()
+        // << chart-label-style-swift
         
+        // >> chart-customize-axis-swift
         chart.xAxis!.style.labelStyle.font = UIFont.systemFontOfSize(18)
+        // << chart-customize-axis-swift
+        
         chart.xAxis!.style.labelStyle.textColor = UIColor.blackColor()
         chart.gridStyle.horizontalAlternateFill = TKSolidFill(color: UIColor(white: 0.9, alpha: 0.8))
     }

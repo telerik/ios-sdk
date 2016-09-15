@@ -41,9 +41,11 @@
     TKDataFormEmailValidator *emailValidator = [[TKDataFormEmailValidator alloc] init];
     _dataSource[@"email"].validators = @[emailValidator];
     
+    // >> dataform-password
     TKDataFormMinimumLengthValidator *passwordValidator = [[TKDataFormMinimumLengthValidator alloc] initWithMinimumLength:6];
     passwordValidator.errorMessage = @"Password must be at least 6 characters!";
     _dataSource[@"password"].validators = @[passwordValidator];
+    // << dataform-password
     
     TKDataFormNonEmptyValidator *nonEmptyValidator = [[TKDataFormNonEmptyValidator alloc] init];
     nonEmptyValidator.errorMessage = @"Confirm password should not be empty!";
@@ -57,22 +59,28 @@
     [_dataSource addGroupWithName:@"Details" propertyNames:@[ @"name", @"dateOfBirth", @"gender", @"country" ]];
 
     self.dataForm.dataSource = _dataSource;
-    self.dataForm.validationMode = TKDataFormValidationModeOnLostFocus;
+    // >> dataform-validation
+    self.dataForm.validationMode = TKDataFormValidationModeImmediate;
+    // << dataform-validation
     self.dataForm.commitMode = TKDataFormCommitModeImmediate;
     self.dataForm.backgroundColor = [UIColor colorWithRed:0.937 green:0.937 blue:0.960 alpha:1.0];
 }
 
 #pragma mark TKDataFormDelegate
 
+// >> dataform-validate
 - (BOOL)dataForm:(TKDataForm *)dataForm validateProperty:(TKEntityProperty *)property editor:(TKDataFormEditor *)editor
 {
+// << dataform-validate
     if ([property.name isEqualToString:@"repeatPassword"]  && property.valueCandidate &&
         ![property.valueCandidate isEqualToString:_dataSource[@"password"].valueCandidate] && ![property.valueCandidate isEqualToString:@""]) {
         property.errorMessage = @"Passwords do not match!";
         return NO;
     }
     return property.isValid;
+// >> dataform-validate
 }
+// << dataform-validate
 
 - (void)dataForm:(TKDataForm *)dataForm updateEditor:(TKDataFormEditor *)editor forProperty:(TKEntityProperty *)property
 {

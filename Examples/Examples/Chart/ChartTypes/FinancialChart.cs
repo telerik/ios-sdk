@@ -42,7 +42,7 @@ namespace Examples
 			} else {
 				series = new TKChartOhlcSeries (points.ToArray ());
 			}
-			series.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			series.Selection = TKChartSeriesSelection.DataPoint;
 
 			TKChartNumericAxis yAxis = new TKChartNumericAxis (new NSNumber (300), new NSNumber (380));
 			yAxis.MajorTickInterval = 20;
@@ -57,12 +57,21 @@ namespace Examples
 			xAxis.Style.MajorTickStyle.TicksWidth = 1.5f;
 			xAxis.Style.MajorTickStyle.TicksFill = new TKSolidFill (UIColor.FromRGB (203, 203, 203));
 			xAxis.Style.MajorTickStyle.MaxTickClippingMode = TKChartAxisClippingMode.Visible;
-			xAxis.AllowPan = true;
+
+
+			// >> chart-zoom-cs
 			xAxis.AllowZoom = true;
+			yAxis.AllowZoom = true;
+			// << chart-zoom-cs
+
+			// >> chart-pan-cs
+			xAxis.AllowPan = true;
+			yAxis.AllowPan = true;
+			// << chart-pan-cs
 
 			yAxis.Style.LabelStyle.TextAlignment = TKChartAxisLabelAlignment.Bottom | TKChartAxisLabelAlignment.Right;
-			yAxis.AllowPan = true;
-			yAxis.AllowZoom = true;
+
+
 
 			chart.ReloadData ();
 		}

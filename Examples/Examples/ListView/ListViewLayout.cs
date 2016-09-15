@@ -73,6 +73,7 @@ namespace Examples
 
 		void LinearLayoutSelected()
 		{
+			// >> listview-linear-cs
 			TKListViewLinearLayout layout = new TKListViewLinearLayout ();
 			layout.ItemSize = new CGSize(200, 200);
 			layout.HeaderReferenceSize = new CGSize(100, 30);
@@ -80,10 +81,12 @@ namespace Examples
 			layout.ScrollDirection = this.scrollDirection;
 			this.listView.Layout = layout;
 			this.SetSelectedOption (1, 1);
+			// << listview-linear-cs
 		}
 
 		void GridLayoutSelected()
 		{
+			// >> listview-grid-cs
 			TKListViewGridLayout layout = new TKListViewGridLayout ();
 			layout.ItemSize = new CGSize(200, 100);
 			layout.HeaderReferenceSize = new CGSize(100, 30);
@@ -92,13 +95,14 @@ namespace Examples
 			layout.LineSpacing = 1;
 			layout.ScrollDirection = this.scrollDirection;
 			this.listView.Layout = layout;
+			// << listview-grid-cs
 			this.SetSelectedOption (1, 1);
 		}
 
 		void StaggeredLayoutSelected()
 		{
 			this.staggeredLayoutDelegate = new StaggeredLayoutDelegate (itemsCount);
-			 
+			// >> listview-staggered-cs
 			TKListViewStaggeredLayout layout = new TKListViewStaggeredLayout ();
 			layout.Delegate = this.staggeredLayoutDelegate;
 			layout.ItemSize = new CGSize(200, 100);
@@ -109,6 +113,7 @@ namespace Examples
 			layout.ScrollDirection = this.scrollDirection;
 			layout.AlignLastLine = true;
 			this.listView.Layout = layout;
+			// << listview-staggered-cs
 			this.SetSelectedOption (1, 1);
 		}
 
@@ -148,7 +153,8 @@ namespace Examples
 					sizes.Add((float)(50.0 + 5.0*r.Next(40)));
 				}
 			}
-				
+
+			// >> listview-staggered-size-cs
 			public override CGSize SizeForItem (TKListView listView, TKListViewLinearLayout layout, NSIndexPath indexPath)
 			{
 				if (layout.ScrollDirection == TKListViewScrollDirection.Vertical) {
@@ -158,6 +164,7 @@ namespace Examples
 					return new CGSize(sizes[indexPath.Row], 100);
 				}
 			}
+			// << listview-staggered-size-cs
 		}
 	}
 }

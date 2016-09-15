@@ -57,6 +57,7 @@ class ListViewSwipe: TKExamplesExampleViewController, TKListViewDelegate {
         dataSource.settings.listView.createCell { (listView: TKListView!, indexPath: NSIndexPath!, item: AnyObject!) -> TKListViewCell! in
             let cell = listView.dequeueReusableCellWithReuseIdentifier("defaultCell", forIndexPath: indexPath) as! TKListViewCell
             
+            // >> listview-swipe-view-swift
             if(cell.swipeBackgroundView.subviews.count == 0){
                 let size = cell.frame.size
                 let font = UIFont.systemFontOfSize(14)
@@ -96,6 +97,7 @@ class ListViewSwipe: TKExamplesExampleViewController, TKListViewDelegate {
                 cell.swipeBackgroundView.addSubview(bUnread)
                 
             }
+            // << listview-swipe-view-swift
             return cell
         }
         
@@ -111,9 +113,19 @@ class ListViewSwipe: TKExamplesExampleViewController, TKListViewDelegate {
         listView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         listView.delegate = self
         listView.dataSource = self.dataSource
+        
+        // >> listview-swipe-swift
         listView.allowsCellSwipe = true
-        listView.cellSwipeLimits = UIEdgeInsetsMake(0, 60, 0, 180)//how far the cell may swipe
-        listView.cellSwipeTreshold = 30 // the treshold after which the cell will autoswipe to the end and will not jump back to the center.
+        // << listview-swipe-swift
+        
+        // >> listview-swipe-limits-swift
+        listView.cellSwipeLimits = UIEdgeInsetsMake(0, 60, 0, 180)
+        // << listview-swipe-limits-swift
+        
+        // >> listview-swipe-treshold-swift
+        listView.cellSwipeTreshold = 30
+        // << listview-swipe-treshold-swift
+        
         let layout = listView.layout as! TKListViewLinearLayout
         layout.itemSize = CGSizeMake(100, 80)
         self.view.addSubview(listView)
@@ -174,6 +186,7 @@ class ListViewSwipe: TKExamplesExampleViewController, TKListViewDelegate {
 
 // MARK: - TKListViewDelegate
     
+    // >> listview-delegate-swift
     func listView(listView: TKListView, didSwipeCell cell: TKListViewCell, atIndexPath indexPath: NSIndexPath, withOffset offset: CGPoint) {
         animateButtonsInCell(cell, offset: offset)
     }
@@ -181,4 +194,5 @@ class ListViewSwipe: TKExamplesExampleViewController, TKListViewDelegate {
     func listView(listView: TKListView, didFinishSwipeCell cell: TKListViewCell, atIndexPath indexPath: NSIndexPath, withOffset offset: CGPoint) {
         print("Swiped cell at indexPath: %d", indexPath.row)
     }
+    // << listview-delegate-swift
 }

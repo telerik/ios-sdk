@@ -67,7 +67,10 @@
 - (void)addTouched
 {
     [self addItem];
+    
+    // >> listview-insert-item
     [self.listView insertItemsAtIndexPaths:@[ [NSIndexPath indexPathForItem:self.items.count-1 inSection:0] ]];
+    // << listview-insert-item
     [self.listView selectItemAtIndexPath:[NSIndexPath indexPathForItem:self.items.count-1 inSection:0]
                                 animated:NO
                           scrollPosition:UICollectionViewScrollPositionCenteredVertically];
@@ -75,11 +78,15 @@
 
 - (void)removeTouched
 {
-    NSArray *selectedItems = [self.listView indexPathsForSelectedItems];
-    if (selectedItems.count > 0) {
-        NSIndexPath *indexPath = selectedItems[0];
+    NSArray *selectedItemsPaths = [self.listView indexPathsForSelectedItems];
+    if (selectedItemsPaths.count > 0) {
+        NSIndexPath *indexPath = selectedItemsPaths[0];
         [self.items removeObjectAtIndex:indexPath.row];
-        [self.listView deleteItemsAtIndexPaths:selectedItems];
+        
+        // >> listview-delete-item
+        [self.listView deleteItemsAtIndexPaths:selectedItemsPaths];
+        // << listview-delete-item
+        
         if (indexPath.row < self.dataSource.items.count) {
             [self.listView selectItemAtIndexPath:indexPath
                                         animated:NO

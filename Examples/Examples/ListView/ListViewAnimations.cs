@@ -22,6 +22,8 @@ namespace Examples
 
 			base.ViewDidLoad ();
 
+			string s = TKChart.VersionString;
+
 			this.dataSource.LoadDataFromJSONResource ("ListViewSampleData", "json", "photos");
 
 			this.dataSource.Settings.ListView.CreateCell ((TKListView listView, NSIndexPath indexPath, NSObject item) => {
@@ -47,28 +49,50 @@ namespace Examples
 			layout.ItemSize = new CGSize(130, 180);
 			layout.ItemSpacing = 10;
 			layout.LineSpacing = 10;
+
+			// >> listview-alignment-cs
 			layout.ItemAlignment = TKListViewItemAlignment.Center;
+			// << listview-alignment-cs
+
 			layout.ItemAppearAnimation = TKListViewItemAnimation.Scale;
+
+			// >> listview-animation-duration-cs
 			layout.AnimationDuration = 0.4f;
+			// << listview-animation-duration-cs
+
 			this.listView.Layout = layout;
 		}
 
 		void ScaleInSelected()
 		{
 			TKListViewLinearLayout layout = (TKListViewLinearLayout)this.listView.Layout;
+			// >> listview-appear-cs
 			layout.ItemAppearAnimation = TKListViewItemAnimation.Scale;
+			// << listview-appear-cs
+
+			// >> listview-insert-cs
+			layout.ItemInsertAnimation = TKListViewItemAnimation.Scale;
+			// << listview-insert-cs
+
+			// >> listview-delete-cs
+			layout.ItemDeleteAnimation = TKListViewItemAnimation.Slide;
+			// << listview-delete-cs
 		}
 
 		void FadeInSelected()
 		{
 			TKListViewLinearLayout layout = (TKListViewLinearLayout)this.listView.Layout;
 			layout.ItemAppearAnimation = TKListViewItemAnimation.Fade;
+			layout.ItemInsertAnimation = TKListViewItemAnimation.Fade;
+			layout.ItemDeleteAnimation = TKListViewItemAnimation.Fade;
 		}
 
 		void SlideInSelected()
 		{
 			TKListViewLinearLayout layout = (TKListViewLinearLayout)this.listView.Layout;
 			layout.ItemAppearAnimation = TKListViewItemAnimation.Slide;
+			layout.ItemInsertAnimation = TKListViewItemAnimation.Slide;
+			layout.ItemDeleteAnimation = TKListViewItemAnimation.Slide;
 		}
 	}
 }

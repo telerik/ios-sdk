@@ -31,13 +31,18 @@ namespace Examples
 		public void ButtonTouched ()
 		{
 			this.Title = "Back";
-
+			// >> localization-firstweekday-cs
 			NSCalendar calendar = new NSCalendar (NSCalendarType.Gregorian);
+			calendar.FirstWeekDay = 2;
+			// << localization-firstweekday-cs
+
+			// >> view-modes-viewcontroller-cs
 			TKCalendarYearViewController controller = new TKCalendarYearViewController ();
 			controller.ContentView.MinDate = TKCalendar.DateWithYear (2012, 1, 1, calendar);
 			controller.ContentView.MaxDate = TKCalendar.DateWithYear (2018, 12, 31, calendar);
 			controller.ContentView.NavigateToDate (NSDate.Now, false);
 			this.NavigationController.PushViewController (controller, true);
+			// << view-modes-viewcontroller-cs
 		}
 
 		public override void ViewDidAppear (bool animated)

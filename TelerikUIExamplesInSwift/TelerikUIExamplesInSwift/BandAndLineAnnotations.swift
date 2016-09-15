@@ -27,14 +27,22 @@ class BandAndLineAnnotations:TKExamplesExampleViewController {
         }
         
         // Add some grid line annotations
+        // >> chart-line-annotation-swift
         chart.addAnnotation(TKChartGridLineAnnotation(value: 80, forAxis: chart.yAxis!, withStroke: TKStroke(color: UIColor.redColor(), width: 0.5)))
+        // << chart-line-annotation-swift
+        
+        // >> chart-add-annotation-swift
         chart.addAnnotation(TKChartGridLineAnnotation(value: 600, forAxis: chart.xAxis!))
+        // << chart-add-annotation-swift
 
         // Add two band annotations
         let color = UIColor(red: 1, green: 0, blue: 0, alpha: 0.4)
+        
+        // >> chart-plot-annotation-swift
         chart.addAnnotation(TKChartBandAnnotation(range: (TKRange(minimum: 10, andMaximum: 40)),
                 forAxis: chart.yAxis!, withFill: TKSolidFill(color: color), withStroke: nil))
-            
+        // << chart-plot-annotation-swift
+        
         let a = TKChartBandAnnotation(range: TKRange(minimum: 900, andMaximum: 1500), forAxis: chart.xAxis!)
         a.style.fill = TKSolidFill(color: UIColor(red: 0, green: 1, blue: 0, alpha: 0.3))
         chart.addAnnotation(a)

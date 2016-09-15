@@ -28,24 +28,28 @@ namespace Examples
 			this.radialGauge.LabelTitleOffset = new CGPoint(0, 60);
 			this.View.AddSubview(this.radialGauge);
 
+			// >> gauge-radial-scale-cs
 			TKGaugeRadialScale scale1 = new TKGaugeRadialScale ();
 			scale1.Range = new TKRange (new NSNumber(34), new NSNumber(40));
 			scale1.Ticks.Position = TKGaugeTicksPosition.Inner;
 			this.radialGauge.AddScale(scale1);
+			// << gauge-radial-scale-cs
 
+			// >>gauge-segments-cs
+			// >> gauge-segment-add-cs
 			TKGaugeSegment blueSegment = new TKGaugeSegment ();
 			blueSegment.Range = new TKRange (new NSNumber(34), new NSNumber(36));
 			blueSegment.Location = 0.70f;
 			blueSegment.Width = 0.08f;
 			scale1.AddSegment(blueSegment);
-
+			// << gauge-segment-add-cs
 			TKGaugeSegment redSegment = new TKGaugeSegment();
 			redSegment.Range = new TKRange (new NSNumber(36.05), new NSNumber(40));
 			redSegment.Location = 0.70f;
 			redSegment.Width = 0.08f;
 			redSegment.Fill = new TKSolidFill(UIColor.Red);
 			scale1.AddSegment(redSegment);
-
+			// << gauge-segments-cs
 			this.SetNeedle(scale1);
 
 			TKGaugeRadialScale scale2 = new TKGaugeRadialScale ();
@@ -80,17 +84,21 @@ namespace Examples
 			this.linearGauge.LabelSubtitleOffset = new CGPoint(0, 100);
 			this.View.AddSubview(this.linearGauge);
 
+			// >> gauge-linear-scale-cs
 			TKGaugeLinearScale scale1 = new TKGaugeLinearScale ();
 			scale1.Range = new TKRange (new NSNumber(34), new NSNumber(40));
 			scale1.Ticks.Position = TKGaugeTicksPosition.Inner;
 			this.linearGauge.AddScale(scale1);
+			// << gauge-linear-scale-cs
 
+			// >> gauge-segment-add-cs
 			TKGaugeSegment blueSegment = new TKGaugeSegment ();
 			blueSegment.Range = new TKRange (new NSNumber(34), new NSNumber(36));
 			blueSegment.Location = 0.62f;
 			blueSegment.Width = 0.08f;
 			blueSegment.Width2 = 0.08f;
 			scale1.AddSegment(blueSegment);
+			// << gauge-segment-add-cs
 
 			TKGaugeSegment redSegment = new TKGaugeSegment();
 			redSegment.Range = new TKRange (new NSNumber(36.05), new NSNumber(40));
@@ -102,6 +110,7 @@ namespace Examples
 
 			this.SetNeedle(scale1);
 
+			// >> gauge-second-add-cs
 			TKGaugeLinearScale scale2 = new TKGaugeLinearScale ();
 			scale2.Range = new TKRange (new NSNumber(93.2), new NSNumber(104));
 			scale2.Ticks.Position = TKGaugeTicksPosition.Outer;
@@ -121,6 +130,7 @@ namespace Examples
 				scale.Ticks.Offset = 0;
 				scale.Offset = i*0.12f + 0.60f;
 			}
+			// << gauge-second-add-cs
 		}
 
 		void SetNeedle(TKGaugeScale scale)

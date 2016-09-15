@@ -42,7 +42,14 @@
     }
 
     // Add a cross line annotation
+    
+    // >> chart-line-stroke
+    _chart.xAxis.style.lineStroke = [TKStroke strokeWithColor:[UIColor blackColor]];
+    // << chart-line-stroke
+    
+    // >> chart-cross-annotation
     [_chart addAnnotation:[[TKChartCrossLineAnnotation alloc] initWithX:@900 Y:@60 forSeries:_chart.series[0]]];
+    // << chart-cross-annotation
     
 }
 

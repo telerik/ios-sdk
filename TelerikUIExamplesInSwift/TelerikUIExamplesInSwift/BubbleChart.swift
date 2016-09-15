@@ -18,6 +18,7 @@ class BubbleChart: TKExamplesExampleViewController {
         chart.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.view.addSubview(chart)
         
+        // >> chart-bubble-swift
         for i in 0..<2 {
             var points = [TKChartBubbleDataPoint]()
             for _ in 0..<20 {
@@ -27,13 +28,14 @@ class BubbleChart: TKExamplesExampleViewController {
                 points.append(TKChartBubbleDataPoint(x:randomX, y:randomY, area:area))
             }
             let series = TKChartBubbleSeries(items: points)
+            // << chart-bubble-swift
             series.title = String(format:"Series %d", (i+1))
             series.scale = 1.5
             series.marginForHitDetection = CGFloat(2)
             if (i == 0) {
-                series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+                series.selection = TKChartSeriesSelection.DataPoint
             } else {
-                series.selectionMode = TKChartSeriesSelectionMode.Series
+                series.selection = TKChartSeriesSelection.Series
             }
             
             chart.addSeries(series)

@@ -24,6 +24,9 @@ namespace Examples
 			TKAlert alert = new TKAlert ();
 			alert.Delegate = alertDelegate;
 			alert.Style.CornerRadius = 3;
+			// >> alert-parallax-cs
+			alert.AllowParallaxEffect = true;
+			// << alert-parallax-cs
 			alert.Title = "Warning";
 			alert.Message = "Are you ready for TKAlert?";
 			alert.Style.ButtonSpacing = 10;

@@ -36,7 +36,7 @@ namespace Examples
 			list.Add (new TKChartDataPoint(new NSNumber(8), null, "Oracle"));
 
 			TKChartPieSeries series = new TKChartPieSeries (list.ToArray());
-			series.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			series.Selection = TKChartSeriesSelection.DataPoint;
 			chart.AddSeries (series);
 		}
 			
@@ -47,6 +47,7 @@ namespace Examples
 
 		class ChartDelegate: TKChartDelegate
 		{
+			// >> chart-anim-pie-cs
 			public override CAAnimation AnimationForSeries (TKChart chart, TKChartSeries series, TKChartSeriesRenderState state, CGRect rect)
 			{
 				double duration = 0;
@@ -75,6 +76,7 @@ namespace Examples
 				g.Animations = animations.ToArray();
 				return g;
 			}
+			// << chart-anim-pie-cs
 		}
 	}
 }

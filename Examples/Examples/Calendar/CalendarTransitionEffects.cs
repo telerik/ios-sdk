@@ -81,10 +81,18 @@ namespace Examples
 			components.Year = 1;
 			this.CalendarView.MaxDate = this.CalendarView.Calendar.DateByAddingComponents (components, date, NSCalendarOptions.None);
 
+			// >> transitions-monthpresenter-cs
 			TKCalendarMonthPresenter presenter = (TKCalendarMonthPresenter)this.CalendarView.Presenter;
 			presenter.TransitionMode = TKCalendarTransitionMode.Flip;
+			// << transitions-monthpresenter-cs
 			presenter.Delegate = new CalendarPresenterDelegate (this);
+			// >> transitions-transitionvertical-cs
+			presenter.TransitionIsVertical = true;
+			// << transitions-transitionvertical-cs
 			presenter.ContentView.BackgroundColor = this.Colors [ColorIndex];
+			// >> transitions-transitionduration-cs
+			presenter.TransitionDuration = 2;
+			// << transitions-transitionduration-cs
 			this.TransitionMode = TKCalendarTransitionMode.Flip;
 		}
 
@@ -97,7 +105,9 @@ namespace Examples
 		[Export("NextTouched")]
 		public void NextTouched ()
 		{
+			// >> navigation-navigateforward-cs
 			this.CalendarView.NavigateForward(true);
+			// << navigation-navigateforward-cs
 		}
 
 		public void SelectFlipEffect ()

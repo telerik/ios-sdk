@@ -32,7 +32,7 @@ namespace Examples
 			}
 
 			TKChartSplineAreaSeries series = new TKChartSplineAreaSeries (list.ToArray());
-			series.SelectionMode = TKChartSeriesSelectionMode.Series;
+			series.Selection = TKChartSeriesSelection.Series;
 
 			dateTimeComponents.Month = 1;
 			NSDate minDate = new NSDate ();
@@ -41,9 +41,16 @@ namespace Examples
 			dateTimeComponents.Month = 6;
 			maxDate = calendar.DateFromComponents (dateTimeComponents);
 
+			// >> chart-axis-datetime-cs
 			TKChartDateTimeAxis xAxis = new TKChartDateTimeAxis (minDate, maxDate);
 			xAxis.MajorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Months;
 			xAxis.MajorTickInterval = 1;
+			// << chart-axis-datetime-cs
+
+			// >> chart-category-plot-onticks-cs
+			xAxis.PlotMode = TKChartAxisPlotMode.OnTicks;
+			// << chart-category-plot-onticks-cs
+
 			chart.XAxis = xAxis;
 
 			chart.AddSeries (series);

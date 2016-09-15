@@ -15,7 +15,10 @@ class ListViewGettingStarted: TKExamplesExampleViewController, TKListViewDataSou
     override func viewDidLoad() {
         
         self.names.loadDataFromJSONResource("PhotosWithNames", ofType: "json", rootItemKeyPath: "names")
+        
+        // >> datasource-file-swift
         self.photos.loadDataFromJSONResource("PhotosWithNames", ofType: "json", rootItemKeyPath: "photos")
+        // << datasource-file-swift
         
         let listView = TKListView(frame: self.view.bounds)
         listView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)

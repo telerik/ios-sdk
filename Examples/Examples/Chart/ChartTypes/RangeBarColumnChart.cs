@@ -44,6 +44,7 @@ namespace Examples
 		public void rangeColumnSelected() 
 		{
 			chart.RemoveAllData ();
+
 			List<TKChartRangeDataPoint> list = new List<TKChartRangeDataPoint> ();
 			for (int i = 0; i < 8; i++) {
 				list.Add(TKChartRangeDataPoint.RangeColumnDataPoint(new NSNumber(i), lowValues[i], highValues[i]));
@@ -51,7 +52,7 @@ namespace Examples
 
 			TKChartRangeColumnSeries series = new TKChartRangeColumnSeries (list.ToArray());
 			series.Style.PaletteMode = TKChartSeriesStylePaletteMode.UseItemIndex;
-			series.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			series.Selection = TKChartSeriesSelection.DataPoint;
 			chart.AddSeries(series);
 			chart.ReloadData ();
 		}
@@ -66,7 +67,7 @@ namespace Examples
 
 			TKChartRangeBarSeries series = new TKChartRangeBarSeries (list.ToArray());
 			series.Style.PaletteMode = TKChartSeriesStylePaletteMode.UseItemIndex;
-			series.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			series.Selection = TKChartSeriesSelection.DataPoint;
 			chart.AddSeries(series);
 			chart.ReloadData ();
 		}

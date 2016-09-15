@@ -59,10 +59,13 @@ class LineAreaSpline: TKExamplesExampleViewController {
                 default:
                     series = TKChartLineSeries(items:items)
                     break;
+
             }
-            series.selectionMode = TKChartSeriesSelectionMode.Series
             chart.addSeries(series)
-        }
+
+            series.selection = TKChartSeriesSelection.Series
+
+                    }
         chart.reloadData()
     }
     

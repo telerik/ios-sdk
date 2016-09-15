@@ -69,15 +69,48 @@
 		C1639F361A86B72500E86743 /* ListViewLoadOnDemand.m in Sources */ = {isa = PBXBuildFile; fileRef = C1639F351A86B72500E86743 /* ListViewLoadOnDemand.m */; };
 		C1639F3D1A909F2800E86743 /* ListViewReorder.m in Sources */ = {isa = PBXBuildFile; fileRef = C1639F3C1A909F2800E86743 /* ListViewReorder.m */; };
 		D00281C81BC7FA1D0002AEEA /* GapsLineSplineAreaChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D00281C71BC7FA1D0002AEEA /* GapsLineSplineAreaChart.m */; };
+		D00CDC9D1CFED8FF001A7ADB /* CalendarDocsWithSimpleEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D00CDC9C1CFED8FF001A7ADB /* CalendarDocsWithSimpleEvent.m */; };
+		D00CDCA51D055962001A7ADB /* CalendarDocsSimpleCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = D00CDCA41D055962001A7ADB /* CalendarDocsSimpleCustomization.m */; };
 		D09800091BDA517D00B989DC /* MultipleSideDrawers.m in Sources */ = {isa = PBXBuildFile; fileRef = D09800081BDA517D00B989DC /* MultipleSideDrawers.m */; };
+		D0983ED41D05694F00D7F23B /* DocsCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0983ED31D05694F00D7F23B /* DocsCustomCell.m */; };
 		F615197C1B94B02B008614C7 /* electricity.json in Resources */ = {isa = PBXBuildFile; fileRef = F615197B1B94B02B008614C7 /* electricity.json */; };
 		F620D59B1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = F620D59A1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m */; };
 		F620D5A01BA97CC00063F3C0 /* languages.json in Resources */ = {isa = PBXBuildFile; fileRef = F620D59F1BA97CC00063F3C0 /* languages.json */; };
+		F62E9B2D1CFC515E007FB3AC /* AutoCompleteBasicSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = F62E9B2C1CFC515E007FB3AC /* AutoCompleteBasicSetup.m */; };
+		F62E9B321CFC8213007FB3AC /* ListViewBasicSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = F62E9B311CFC8213007FB3AC /* ListViewBasicSetup.m */; };
+		F62E9B3A1CFC9398007FB3AC /* ListViewDocsGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = F62E9B391CFC9398007FB3AC /* ListViewDocsGroups.m */; };
+		F62E9B3D1CFD73CD007FB3AC /* DataSourceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F62E9B3C1CFD73CD007FB3AC /* DataSourceItem.m */; };
+		F62E9B441CFD802C007FB3AC /* ListViewDocsGroupsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F62E9B431CFD802C007FB3AC /* ListViewDocsGroupsDelegate.m */; };
+		F62E9B4B1CFEFFFD007FB3AC /* ListViewDocsSetupDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F62E9B4A1CFEFFFD007FB3AC /* ListViewDocsSetupDataSource.m */; };
 		F640C3CE1BAC2E7D001FEC95 /* AutoCompleteCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = F640C3CD1BAC2E7D001FEC95 /* AutoCompleteCustomization.m */; };
 		F640C3D11BAC3B00001FEC95 /* PersonListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F640C3D01BAC3B00001FEC95 /* PersonListViewCell.m */; };
 		F65C346F1C21A20E000417BD /* AutoCompleteLoadData.m in Sources */ = {isa = PBXBuildFile; fileRef = F65C346E1C21A20E000417BD /* AutoCompleteLoadData.m */; };
 		F67C57EA1BB157DA004B7FED /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = F67C57E91BB157DA004B7FED /* countries.json */; };
 		F6A266081BB1732C00742A69 /* AutoCompleteTokens.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A266071BB1732C00742A69 /* AutoCompleteTokens.m */; };
+		F6BB46611CFF1B1B0044A7F3 /* DataSourceDocsQueries.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB46601CFF1B1B0044A7F3 /* DataSourceDocsQueries.m */; };
+		F6BB472C1D01C9430044A7F3 /* DataSourceDocsDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB472B1D01C9430044A7F3 /* DataSourceDocsDictionary.m */; };
+		F6BB47311D01D0950044A7F3 /* DataSourceDocsAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB47301D01D0950044A7F3 /* DataSourceDocsAuth.m */; };
+		F6BB47361D01D39A0044A7F3 /* DataSourceDocsUIBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB47351D01D39A0044A7F3 /* DataSourceDocsUIBinding.m */; };
+		F6BB473B1D02EE540044A7F3 /* SideDrawerDocsSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB473A1D02EE540044A7F3 /* SideDrawerDocsSetup.m */; };
+		F6BB47471D0302430044A7F3 /* ChartDocsGridCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB47461D0302430044A7F3 /* ChartDocsGridCustomization.m */; };
+		F6BB474F1D030CB00044A7F3 /* ChartDocsLegend.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB474E1D030CB00044A7F3 /* ChartDocsLegend.m */; };
+		F6BB47521D0311A60044A7F3 /* ChartDocsPopulatingWithData.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB47511D0311A60044A7F3 /* ChartDocsPopulatingWithData.m */; };
+		F6BB47571D0397760044A7F3 /* ChartDocsSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB47561D0397760044A7F3 /* ChartDocsSelection.m */; };
+		F6BB475C1D039A480044A7F3 /* ChartDocsStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB475B1D039A480044A7F3 /* ChartDocsStructure.m */; };
+		F6BB47631D039EB20044A7F3 /* ChartDocsCustomDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB47621D039EB20044A7F3 /* ChartDocsCustomDrawing.m */; };
+		F6BB47681D0417F30044A7F3 /* ChartDocsBarSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB47671D0417F30044A7F3 /* ChartDocsBarSeries.m */; };
+		F6BB476D1D041C230044A7F3 /* ChartDocsCandlestick.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB476C1D041C230044A7F3 /* ChartDocsCandlestick.m */; };
+		F6BB47721D0431CF0044A7F3 /* ChartDocsIndicators.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB47711D0431CF0044A7F3 /* ChartDocsIndicators.m */; };
+		F6BB47751D04552B0044A7F3 /* ChartDocsLineSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB47741D04552B0044A7F3 /* ChartDocsLineSeries.m */; };
+		F6BB477A1D0467E50044A7F3 /* ChartDocsOhlc.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB47791D0467E50044A7F3 /* ChartDocsOhlc.m */; };
+		F6BB47811D046A740044A7F3 /* ChartDocsPie.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB47801D046A740044A7F3 /* ChartDocsPie.m */; };
+		F6BB47841D0480AE0044A7F3 /* ChartDocsRangeColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB47831D0480AE0044A7F3 /* ChartDocsRangeColumn.m */; };
+		F6BB478B1D0485C00044A7F3 /* ChartDocsScatter.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB478A1D0485C00044A7F3 /* ChartDocsScatter.m */; };
+		F6BB478E1D04C5840044A7F3 /* DataFormDocsGroupLayouts.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB478D1D04C5840044A7F3 /* DataFormDocsGroupLayouts.m */; };
+		F6BB479D1D05559D0044A7F3 /* ChartDocsSplineSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB479C1D05559D0044A7F3 /* ChartDocsSplineSeries.m */; };
+		F6BB47A01D0555B00044A7F3 /* ChartDocsAreaSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB479F1D0555B00044A7F3 /* ChartDocsAreaSeries.m */; };
+		F6BB47A31D05562C0044A7F3 /* ChartDocsSplineArea.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB47A21D05562C0044A7F3 /* ChartDocsSplineArea.m */; };
+		F6BB47AC1D055D2C0044A7F3 /* ChartDocsDonut.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BB47AB1D055D2C0044A7F3 /* ChartDocsDonut.m */; };
 		F6C5FBDF1C22DA870047CEE4 /* AirportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C5FBDE1C22DA870047CEE4 /* AirportModel.m */; };
 		F6D7A6D71BB46656006549F4 /* emails.json in Resources */ = {isa = PBXBuildFile; fileRef = F6D7A6D61BB46656006549F4 /* emails.json */; };
 		F6D7A6D91BB54B48006549F4 /* namesPhotos.json in Resources */ = {isa = PBXBuildFile; fileRef = F6D7A6D81BB54B48006549F4 /* namesPhotos.json */; };
@@ -272,12 +305,30 @@
 		C1639F3C1A909F2800E86743 /* ListViewReorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewReorder.m; sourceTree = "<group>"; };
 		D00281C61BC7FA1D0002AEEA /* GapsLineSplineAreaChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GapsLineSplineAreaChart.h; sourceTree = "<group>"; };
 		D00281C71BC7FA1D0002AEEA /* GapsLineSplineAreaChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GapsLineSplineAreaChart.m; sourceTree = "<group>"; };
+		D00CDC9B1CFED8FF001A7ADB /* CalendarDocsWithSimpleEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDocsWithSimpleEvent.h; sourceTree = "<group>"; };
+		D00CDC9C1CFED8FF001A7ADB /* CalendarDocsWithSimpleEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDocsWithSimpleEvent.m; sourceTree = "<group>"; };
+		D00CDCA31D055962001A7ADB /* CalendarDocsSimpleCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDocsSimpleCustomization.h; sourceTree = "<group>"; };
+		D00CDCA41D055962001A7ADB /* CalendarDocsSimpleCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDocsSimpleCustomization.m; sourceTree = "<group>"; };
 		D09800071BDA517D00B989DC /* MultipleSideDrawers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleSideDrawers.h; sourceTree = "<group>"; };
 		D09800081BDA517D00B989DC /* MultipleSideDrawers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleSideDrawers.m; sourceTree = "<group>"; };
+		D0983ED21D05694F00D7F23B /* DocsCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocsCustomCell.h; sourceTree = "<group>"; };
+		D0983ED31D05694F00D7F23B /* DocsCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocsCustomCell.m; sourceTree = "<group>"; };
 		F615197B1B94B02B008614C7 /* electricity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = electricity.json; sourceTree = "<group>"; };
 		F620D5991BA8767D0063F3C0 /* AutoCompleteGettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompleteGettingStarted.h; sourceTree = "<group>"; };
 		F620D59A1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteGettingStarted.m; sourceTree = "<group>"; };
 		F620D59F1BA97CC00063F3C0 /* languages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = languages.json; sourceTree = "<group>"; };
+		F62E9B2B1CFC515E007FB3AC /* AutoCompleteBasicSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompleteBasicSetup.h; sourceTree = "<group>"; };
+		F62E9B2C1CFC515E007FB3AC /* AutoCompleteBasicSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteBasicSetup.m; sourceTree = "<group>"; };
+		F62E9B301CFC8213007FB3AC /* ListViewBasicSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewBasicSetup.h; sourceTree = "<group>"; };
+		F62E9B311CFC8213007FB3AC /* ListViewBasicSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewBasicSetup.m; sourceTree = "<group>"; };
+		F62E9B381CFC9398007FB3AC /* ListViewDocsGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewDocsGroups.h; sourceTree = "<group>"; };
+		F62E9B391CFC9398007FB3AC /* ListViewDocsGroups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewDocsGroups.m; sourceTree = "<group>"; };
+		F62E9B3B1CFD73CD007FB3AC /* DataSourceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceItem.h; sourceTree = "<group>"; };
+		F62E9B3C1CFD73CD007FB3AC /* DataSourceItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceItem.m; sourceTree = "<group>"; };
+		F62E9B421CFD802C007FB3AC /* ListViewDocsGroupsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewDocsGroupsDelegate.h; sourceTree = "<group>"; };
+		F62E9B431CFD802C007FB3AC /* ListViewDocsGroupsDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewDocsGroupsDelegate.m; sourceTree = "<group>"; };
+		F62E9B491CFEFFFD007FB3AC /* ListViewDocsSetupDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewDocsSetupDataSource.h; sourceTree = "<group>"; };
+		F62E9B4A1CFEFFFD007FB3AC /* ListViewDocsSetupDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewDocsSetupDataSource.m; sourceTree = "<group>"; };
 		F640C3CC1BAC2E7D001FEC95 /* AutoCompleteCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AutoCompleteCustomization.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F640C3CD1BAC2E7D001FEC95 /* AutoCompleteCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteCustomization.m; sourceTree = "<group>"; };
 		F640C3CF1BAC3B00001FEC95 /* PersonListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonListViewCell.h; sourceTree = "<group>"; };
@@ -287,6 +338,54 @@
 		F67C57E91BB157DA004B7FED /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		F6A266061BB1732C00742A69 /* AutoCompleteTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompleteTokens.h; sourceTree = "<group>"; };
 		F6A266071BB1732C00742A69 /* AutoCompleteTokens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteTokens.m; sourceTree = "<group>"; };
+		F6BB465F1CFF1B1B0044A7F3 /* DataSourceDocsQueries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceDocsQueries.h; sourceTree = "<group>"; };
+		F6BB46601CFF1B1B0044A7F3 /* DataSourceDocsQueries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceDocsQueries.m; sourceTree = "<group>"; };
+		F6BB472A1D01C9430044A7F3 /* DataSourceDocsDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceDocsDictionary.h; sourceTree = "<group>"; };
+		F6BB472B1D01C9430044A7F3 /* DataSourceDocsDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceDocsDictionary.m; sourceTree = "<group>"; };
+		F6BB472F1D01D0950044A7F3 /* DataSourceDocsAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceDocsAuth.h; sourceTree = "<group>"; };
+		F6BB47301D01D0950044A7F3 /* DataSourceDocsAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceDocsAuth.m; sourceTree = "<group>"; };
+		F6BB47341D01D39A0044A7F3 /* DataSourceDocsUIBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceDocsUIBinding.h; sourceTree = "<group>"; };
+		F6BB47351D01D39A0044A7F3 /* DataSourceDocsUIBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceDocsUIBinding.m; sourceTree = "<group>"; };
+		F6BB47391D02EE540044A7F3 /* SideDrawerDocsSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDrawerDocsSetup.h; sourceTree = "<group>"; };
+		F6BB473A1D02EE540044A7F3 /* SideDrawerDocsSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDrawerDocsSetup.m; sourceTree = "<group>"; };
+		F6BB47451D0302430044A7F3 /* ChartDocsGridCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsGridCustomization.h; sourceTree = "<group>"; };
+		F6BB47461D0302430044A7F3 /* ChartDocsGridCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsGridCustomization.m; sourceTree = "<group>"; };
+		F6BB474D1D030CB00044A7F3 /* ChartDocsLegend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsLegend.h; sourceTree = "<group>"; };
+		F6BB474E1D030CB00044A7F3 /* ChartDocsLegend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsLegend.m; sourceTree = "<group>"; };
+		F6BB47501D0311A60044A7F3 /* ChartDocsPopulatingWithData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsPopulatingWithData.h; sourceTree = "<group>"; };
+		F6BB47511D0311A60044A7F3 /* ChartDocsPopulatingWithData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsPopulatingWithData.m; sourceTree = "<group>"; };
+		F6BB47551D0397760044A7F3 /* ChartDocsSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsSelection.h; sourceTree = "<group>"; };
+		F6BB47561D0397760044A7F3 /* ChartDocsSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsSelection.m; sourceTree = "<group>"; };
+		F6BB475A1D039A480044A7F3 /* ChartDocsStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsStructure.h; sourceTree = "<group>"; };
+		F6BB475B1D039A480044A7F3 /* ChartDocsStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsStructure.m; sourceTree = "<group>"; };
+		F6BB47611D039EB20044A7F3 /* ChartDocsCustomDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsCustomDrawing.h; sourceTree = "<group>"; };
+		F6BB47621D039EB20044A7F3 /* ChartDocsCustomDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsCustomDrawing.m; sourceTree = "<group>"; };
+		F6BB47661D0417F30044A7F3 /* ChartDocsBarSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsBarSeries.h; sourceTree = "<group>"; };
+		F6BB47671D0417F30044A7F3 /* ChartDocsBarSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsBarSeries.m; sourceTree = "<group>"; };
+		F6BB476B1D041C230044A7F3 /* ChartDocsCandlestick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsCandlestick.h; sourceTree = "<group>"; };
+		F6BB476C1D041C230044A7F3 /* ChartDocsCandlestick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsCandlestick.m; sourceTree = "<group>"; };
+		F6BB47701D0431CF0044A7F3 /* ChartDocsIndicators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsIndicators.h; sourceTree = "<group>"; };
+		F6BB47711D0431CF0044A7F3 /* ChartDocsIndicators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsIndicators.m; sourceTree = "<group>"; };
+		F6BB47731D04552B0044A7F3 /* ChartDocsLineSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsLineSeries.h; sourceTree = "<group>"; };
+		F6BB47741D04552B0044A7F3 /* ChartDocsLineSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsLineSeries.m; sourceTree = "<group>"; };
+		F6BB47781D0467E50044A7F3 /* ChartDocsOhlc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsOhlc.h; sourceTree = "<group>"; };
+		F6BB47791D0467E50044A7F3 /* ChartDocsOhlc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsOhlc.m; sourceTree = "<group>"; };
+		F6BB477F1D046A740044A7F3 /* ChartDocsPie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsPie.h; sourceTree = "<group>"; };
+		F6BB47801D046A740044A7F3 /* ChartDocsPie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsPie.m; sourceTree = "<group>"; };
+		F6BB47821D0480AE0044A7F3 /* ChartDocsRangeColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsRangeColumn.h; sourceTree = "<group>"; };
+		F6BB47831D0480AE0044A7F3 /* ChartDocsRangeColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsRangeColumn.m; sourceTree = "<group>"; };
+		F6BB47891D0485C00044A7F3 /* ChartDocsScatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsScatter.h; sourceTree = "<group>"; };
+		F6BB478A1D0485C00044A7F3 /* ChartDocsScatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsScatter.m; sourceTree = "<group>"; };
+		F6BB478C1D04C5840044A7F3 /* DataFormDocsGroupLayouts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormDocsGroupLayouts.h; sourceTree = "<group>"; };
+		F6BB478D1D04C5840044A7F3 /* DataFormDocsGroupLayouts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormDocsGroupLayouts.m; sourceTree = "<group>"; };
+		F6BB479B1D05559D0044A7F3 /* ChartDocsSplineSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsSplineSeries.h; sourceTree = "<group>"; };
+		F6BB479C1D05559D0044A7F3 /* ChartDocsSplineSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsSplineSeries.m; sourceTree = "<group>"; };
+		F6BB479E1D0555B00044A7F3 /* ChartDocsAreaSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsAreaSeries.h; sourceTree = "<group>"; };
+		F6BB479F1D0555B00044A7F3 /* ChartDocsAreaSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsAreaSeries.m; sourceTree = "<group>"; };
+		F6BB47A11D05562C0044A7F3 /* ChartDocsSplineArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsSplineArea.h; sourceTree = "<group>"; };
+		F6BB47A21D05562C0044A7F3 /* ChartDocsSplineArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsSplineArea.m; sourceTree = "<group>"; };
+		F6BB47AA1D055D2C0044A7F3 /* ChartDocsDonut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDocsDonut.h; sourceTree = "<group>"; };
+		F6BB47AB1D055D2C0044A7F3 /* ChartDocsDonut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDocsDonut.m; sourceTree = "<group>"; };
 		F6C5FBDD1C22DA870047CEE4 /* AirportModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirportModel.h; sourceTree = "<group>"; };
 		F6C5FBDE1C22DA870047CEE4 /* AirportModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirportModel.m; sourceTree = "<group>"; };
 		F6D7A6D61BB46656006549F4 /* emails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emails.json; sourceTree = "<group>"; };
@@ -573,6 +672,7 @@
 		19D74EE31A7942F800D51148 /* SideDrawer */ = {
 			isa = PBXGroup;
 			children = (
+				F6BB473C1D02EE5F0044A7F3 /* Documentation Snippets */,
 				D09800061BDA513700B989DC /* MultipleSideDrawers */,
 				19A2A02F1A8124AE00378C68 /* PositionsExample */,
 				19A2A0241A81076B00378C68 /* CustomTransitionExample */,
@@ -588,6 +688,7 @@
 		19D7E3201B0F6A7000235365 /* DataForm */ = {
 			isa = PBXGroup;
 			children = (
+				F6BB478F1D04C6F70044A7F3 /* Documentation Snippets */,
 				19A59AA71BE7AC21009B23F7 /* JSONSupport */,
 				1977F8C01B285AF20024ECB2 /* GettingStarted */,
 				195F5C491BAB1EFC003C5FA5 /* CollapsibleGroups */,
@@ -684,6 +785,7 @@
 		8D6F5B6E1A84F195008A8EF2 /* ListView */ = {
 			isa = PBXGroup;
 			children = (
+				F6BB47931D04C9890044A7F3 /* Documentation Snippets */,
 				FE1715101A961CFD000EB4C9 /* CustomCells */,
 				FE5F963D1A93933100E70AF2 /* ListViewGettingStarted.h */,
 				FE5F963E1A93933100E70AF2 /* ListViewGettingStarted.m */,
@@ -711,14 +813,8 @@
 				FE9356531C0318590064BD0C /* ListViewUpdate.m */,
 				FE1715131A9625C3000EB4C9 /* LoremIpsumGenerator.h */,
 				FE1715141A9625C3000EB4C9 /* LoremIpsumGenerator.m */,
-				A6EAE0EA1C103A1200BD7F93 /* ListViewDynamicHeightCell.h */,
-				A6EAE0EB1C103A1200BD7F93 /* ListViewDynamicHeightCell.m */,
-				A6EAE0EC1C103A1200BD7F93 /* ListViewPerformance.h */,
-				A6EAE0ED1C103A1200BD7F93 /* ListViewPerformance.m */,
-				A6EAE0EE1C103A1200BD7F93 /* ListViewUpdate.h */,
-				A6EAE0EF1C103A1200BD7F93 /* ListViewUpdate.m */,
-				A6EAE0F01C103A1200BD7F93 /* ListViewVariableHeight.h */,
-				A6EAE0F11C103A1200BD7F93 /* ListViewVariableHeight.m */,
+				F62E9B3B1CFD73CD007FB3AC /* DataSourceItem.h */,
+				F62E9B3C1CFD73CD007FB3AC /* DataSourceItem.m */,
 			);
 			name = ListView;
 			sourceTree = "<group>";
@@ -735,6 +831,7 @@
 		F64FC1431BA07FE3007FF8D3 /* AutoComplete */ = {
 			isa = PBXGroup;
 			children = (
+				F6BB47951D04CA0E0044A7F3 /* Documentation Snippets */,
 				F620D5991BA8767D0063F3C0 /* AutoCompleteGettingStarted.h */,
 				F620D59A1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m */,
 				F640C3CC1BAC2E7D001FEC95 /* AutoCompleteCustomization.h */,
@@ -751,9 +848,123 @@
 			name = AutoComplete;
 			sourceTree = "<group>";
 		};
+		F6BB473C1D02EE5F0044A7F3 /* Documentation Snippets */ = {
+			isa = PBXGroup;
+			children = (
+				F6BB473A1D02EE540044A7F3 /* SideDrawerDocsSetup.m */,
+				F6BB47391D02EE540044A7F3 /* SideDrawerDocsSetup.h */,
+			);
+			name = "Documentation Snippets";
+			sourceTree = "<group>";
+		};
+		F6BB47441D0302070044A7F3 /* Documentation Snippets */ = {
+			isa = PBXGroup;
+			children = (
+				F6BB47451D0302430044A7F3 /* ChartDocsGridCustomization.h */,
+				F6BB47461D0302430044A7F3 /* ChartDocsGridCustomization.m */,
+				F6BB474D1D030CB00044A7F3 /* ChartDocsLegend.h */,
+				F6BB474E1D030CB00044A7F3 /* ChartDocsLegend.m */,
+				F6BB47501D0311A60044A7F3 /* ChartDocsPopulatingWithData.h */,
+				F6BB47511D0311A60044A7F3 /* ChartDocsPopulatingWithData.m */,
+				F6BB47551D0397760044A7F3 /* ChartDocsSelection.h */,
+				F6BB47561D0397760044A7F3 /* ChartDocsSelection.m */,
+				F6BB475A1D039A480044A7F3 /* ChartDocsStructure.h */,
+				F6BB475B1D039A480044A7F3 /* ChartDocsStructure.m */,
+				F6BB47611D039EB20044A7F3 /* ChartDocsCustomDrawing.h */,
+				F6BB47621D039EB20044A7F3 /* ChartDocsCustomDrawing.m */,
+				F6BB47661D0417F30044A7F3 /* ChartDocsBarSeries.h */,
+				F6BB47671D0417F30044A7F3 /* ChartDocsBarSeries.m */,
+				F6BB476B1D041C230044A7F3 /* ChartDocsCandlestick.h */,
+				F6BB476C1D041C230044A7F3 /* ChartDocsCandlestick.m */,
+				F6BB47701D0431CF0044A7F3 /* ChartDocsIndicators.h */,
+				F6BB47711D0431CF0044A7F3 /* ChartDocsIndicators.m */,
+				F6BB47731D04552B0044A7F3 /* ChartDocsLineSeries.h */,
+				F6BB47741D04552B0044A7F3 /* ChartDocsLineSeries.m */,
+				F6BB47781D0467E50044A7F3 /* ChartDocsOhlc.h */,
+				F6BB47791D0467E50044A7F3 /* ChartDocsOhlc.m */,
+				F6BB477F1D046A740044A7F3 /* ChartDocsPie.h */,
+				F6BB47801D046A740044A7F3 /* ChartDocsPie.m */,
+				F6BB47821D0480AE0044A7F3 /* ChartDocsRangeColumn.h */,
+				F6BB47831D0480AE0044A7F3 /* ChartDocsRangeColumn.m */,
+				F6BB47891D0485C00044A7F3 /* ChartDocsScatter.h */,
+				F6BB478A1D0485C00044A7F3 /* ChartDocsScatter.m */,
+				F6BB479B1D05559D0044A7F3 /* ChartDocsSplineSeries.h */,
+				F6BB479C1D05559D0044A7F3 /* ChartDocsSplineSeries.m */,
+				F6BB479E1D0555B00044A7F3 /* ChartDocsAreaSeries.h */,
+				F6BB479F1D0555B00044A7F3 /* ChartDocsAreaSeries.m */,
+				F6BB47A11D05562C0044A7F3 /* ChartDocsSplineArea.h */,
+				F6BB47A21D05562C0044A7F3 /* ChartDocsSplineArea.m */,
+				F6BB47AA1D055D2C0044A7F3 /* ChartDocsDonut.h */,
+				F6BB47AB1D055D2C0044A7F3 /* ChartDocsDonut.m */,
+			);
+			name = "Documentation Snippets";
+			sourceTree = "<group>";
+		};
+		F6BB478F1D04C6F70044A7F3 /* Documentation Snippets */ = {
+			isa = PBXGroup;
+			children = (
+				F6BB478C1D04C5840044A7F3 /* DataFormDocsGroupLayouts.h */,
+				F6BB478D1D04C5840044A7F3 /* DataFormDocsGroupLayouts.m */,
+			);
+			name = "Documentation Snippets";
+			sourceTree = "<group>";
+		};
+		F6BB47931D04C9890044A7F3 /* Documentation Snippets */ = {
+			isa = PBXGroup;
+			children = (
+				F62E9B421CFD802C007FB3AC /* ListViewDocsGroupsDelegate.h */,
+				F62E9B431CFD802C007FB3AC /* ListViewDocsGroupsDelegate.m */,
+				F62E9B491CFEFFFD007FB3AC /* ListViewDocsSetupDataSource.h */,
+				F62E9B4A1CFEFFFD007FB3AC /* ListViewDocsSetupDataSource.m */,
+				F62E9B301CFC8213007FB3AC /* ListViewBasicSetup.h */,
+				F62E9B311CFC8213007FB3AC /* ListViewBasicSetup.m */,
+				F62E9B381CFC9398007FB3AC /* ListViewDocsGroups.h */,
+				F62E9B391CFC9398007FB3AC /* ListViewDocsGroups.m */,
+			);
+			name = "Documentation Snippets";
+			sourceTree = "<group>";
+		};
+		F6BB47941D04C9C20044A7F3 /* Documentation Snippets */ = {
+			isa = PBXGroup;
+			children = (
+				F6BB465F1CFF1B1B0044A7F3 /* DataSourceDocsQueries.h */,
+				F6BB46601CFF1B1B0044A7F3 /* DataSourceDocsQueries.m */,
+				F6BB472A1D01C9430044A7F3 /* DataSourceDocsDictionary.h */,
+				F6BB472B1D01C9430044A7F3 /* DataSourceDocsDictionary.m */,
+				F6BB472F1D01D0950044A7F3 /* DataSourceDocsAuth.h */,
+				F6BB47301D01D0950044A7F3 /* DataSourceDocsAuth.m */,
+				F6BB47341D01D39A0044A7F3 /* DataSourceDocsUIBinding.h */,
+				F6BB47351D01D39A0044A7F3 /* DataSourceDocsUIBinding.m */,
+			);
+			name = "Documentation Snippets";
+			sourceTree = "<group>";
+		};
+		F6BB47951D04CA0E0044A7F3 /* Documentation Snippets */ = {
+			isa = PBXGroup;
+			children = (
+				F62E9B2B1CFC515E007FB3AC /* AutoCompleteBasicSetup.h */,
+				F62E9B2C1CFC515E007FB3AC /* AutoCompleteBasicSetup.m */,
+			);
+			name = "Documentation Snippets";
+			sourceTree = "<group>";
+		};
+		F6BB47991D04D10F0044A7F3 /* Documentation Snippets */ = {
+			isa = PBXGroup;
+			children = (
+				D00CDCA31D055962001A7ADB /* CalendarDocsSimpleCustomization.h */,
+				D00CDCA41D055962001A7ADB /* CalendarDocsSimpleCustomization.m */,
+				D00CDC9B1CFED8FF001A7ADB /* CalendarDocsWithSimpleEvent.h */,
+				D00CDC9C1CFED8FF001A7ADB /* CalendarDocsWithSimpleEvent.m */,
+				D0983ED21D05694F00D7F23B /* DocsCustomCell.h */,
+				D0983ED31D05694F00D7F23B /* DocsCustomCell.m */,
+			);
+			name = "Documentation Snippets";
+			sourceTree = "<group>";
+		};
 		FE0161CB192E54F50064C284 /* Chart */ = {
 			isa = PBXGroup;
 			children = (
+				F6BB47441D0302070044A7F3 /* Documentation Snippets */,
 				19E9055319BF100F00A325D8 /* PointLabels */,
 				FE8A36CC18A3E4970081EECA /* Annotations */,
 				FEEAEBDD180815CD00D75A5C /* Binding */,
@@ -774,6 +985,7 @@
 		FE0161CC192E54FE0064C284 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				F6BB47991D04D10F0044A7F3 /* Documentation Snippets */,
 				FE0161CD192E57510064C284 /* CalendarWithEvents.h */,
 				FE0161CE192E57510064C284 /* CalendarWithEvents.m */,
 				FE7131B6192FA4E400B9C231 /* CalendarTransitionEffects.h */,
@@ -858,6 +1070,7 @@
 			isa = PBXGroup;
 			children = (
 				FEA0D2D71A820C7D0014CD96 /* DataSourceGettingStarted.h */,
+				F6BB47941D04C9C20044A7F3 /* Documentation Snippets */,
 				FEA0D2D81A820C7D0014CD96 /* DataSourceGettingStarted.m */,
 				FEA0D2DA1A82174C0014CD96 /* DataSourceDescriptorsAPI.h */,
 				FEA0D2DB1A82174C0014CD96 /* DataSourceDescriptorsAPI.m */,
@@ -1083,6 +1296,11 @@
 			attributes = {
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Telerik;
+				TargetAttributes = {
+					FEE269761806DBA300E52C37 = {
+						DevelopmentTeam = BJN5LM2FDB;
+					};
+				};
 			};
 			buildConfigurationList = FEE269721806DBA300E52C37 /* Build configuration list for PBXProject "TelerikUIExamples" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1135,22 +1353,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6BB47311D01D0950044A7F3 /* DataSourceDocsAuth.m in Sources */,
 				F620D59B1BA8767D0063F3C0 /* AutoCompleteGettingStarted.m in Sources */,
 				19C152CC193F668800770199 /* BubbleChart.m in Sources */,
 				FE017A2B1945F571005C46D5 /* LocalizedCalendar.m in Sources */,
 				FE8A36CF18A3E4AE0081EECA /* BalloonAnnotation.m in Sources */,
 				195F5CB01BAC1DBA003C5FA5 /* DataFormCollapsibleGroups.m in Sources */,
 				1B52B9091B0E1E790005F916 /* AlertCustomize.m in Sources */,
+				F6BB47A31D05562C0044A7F3 /* ChartDocsSplineArea.m in Sources */,
 				1977F8C71B28666B0024ECB2 /* DataFormValidation.m in Sources */,
 				D00281C81BC7FA1D0002AEEA /* GapsLineSplineAreaChart.m in Sources */,
 				7A56815419374195005FEC6D /* StockDataPoint.m in Sources */,
+				F6BB47811D046A740044A7F3 /* ChartDocsPie.m in Sources */,
 				FEE948FC1BF36723000DA8CE /* ListViewVariableHeight.m in Sources */,
+				F6BB47721D0431CF0044A7F3 /* ChartDocsIndicators.m in Sources */,
 				8DFB71C91A88B109005ACF59 /* ListViewGroups.m in Sources */,
 				FE2D10761A80CB2D00A787EB /* CalendarInlineEvents.m in Sources */,
 				FE3CF5901807F74C00461E57 /* NegativeValues.m in Sources */,
 				FE0161CF192E57510064C284 /* CalendarWithEvents.m in Sources */,
+				F6BB47841D0480AE0044A7F3 /* ChartDocsRangeColumn.m in Sources */,
 				1977F8CA1B2867370024ECB2 /* RegistrationInfo.m in Sources */,
+				F62E9B441CFD802C007FB3AC /* ListViewDocsGroupsDelegate.m in Sources */,
+				F6BB47361D01D39A0044A7F3 /* DataSourceDocsUIBinding.m in Sources */,
 				8D69A2E11A91F544008315D1 /* ListViewSwipe.m in Sources */,
+				F6BB472C1D01C9430044A7F3 /* DataSourceDocsDictionary.m in Sources */,
 				FE0FD7C31C17292600728DED /* AlertSettings.m in Sources */,
 				FE5F963F1A93933100E70AF2 /* ListViewGettingStarted.m in Sources */,
 				19A2A02B1A811B6F00378C68 /* SideDrawerCustomTransition.m in Sources */,
@@ -1161,13 +1387,17 @@
 				FE17150F1A961B7F000EB4C9 /* CustomCardListViewCell.m in Sources */,
 				FE8A36D518A3E65B0081EECA /* LayerAnnotation.m in Sources */,
 				FEEAEBDC18080AAC00D75A5C /* UIKitDynamicsAnimation.m in Sources */,
+				F6BB479D1D05559D0044A7F3 /* ChartDocsSplineSeries.m in Sources */,
 				1BC928851B9D9A6C00937336 /* CustomAxis.m in Sources */,
+				F6BB478E1D04C5840044A7F3 /* DataFormDocsGroupLayouts.m in Sources */,
 				19DCA00F1ABB1457009C5D62 /* MyTransition.m in Sources */,
 				7A0FD505194B1732004B5A8D /* FeedbackExampleController.m in Sources */,
+				F6BB47471D0302430044A7F3 /* ChartDocsGridCustomization.m in Sources */,
 				19A59AAA1BE7AC5D009B23F7 /* DataFormJSONSupport.m in Sources */,
 				FE3CF5871807F6F700461E57 /* CategoricalAxis.m in Sources */,
 				FEE269DA180708CD00E52C37 /* StackedAreaChart.m in Sources */,
 				1B52B8C61B0DF1000005F916 /* AlertGettingStarted.m in Sources */,
+				F6BB477A1D0467E50044A7F3 /* ChartDocsOhlc.m in Sources */,
 				19F9188F1B298163008C10F2 /* DataFormGettingStarted.m in Sources */,
 				19BAD0F219D43A0500803C27 /* LiveData.m in Sources */,
 				FEE948FF1BF36771000DA8CE /* ListViewDynamicHeightCell.m in Sources */,
@@ -1177,19 +1407,24 @@
 				FEE269D7180708B900E52C37 /* StackedColumnChart.m in Sources */,
 				FE8701D91942141400AC1D05 /* CalendarEventKitDataBinding.m in Sources */,
 				1BC90EE71BAC357600A5B6DC /* GaugeRanges.m in Sources */,
+				D00CDCA51D055962001A7ADB /* CalendarDocsSimpleCustomization.m in Sources */,
 				FEB4260119336F1D00C2A602 /* CalendarSelection.m in Sources */,
 				FEEAEBD918080A9A00D75A5C /* CustomAnimationPieChart.m in Sources */,
 				FE3CF5841807F6E900461E57 /* NumericAxis.m in Sources */,
 				FE8701D119420E4000AC1D05 /* CustomCell.m in Sources */,
 				193BB86119C1A8F000143087 /* CustomPointLabelRender.m in Sources */,
 				FE7131B8192FA4E400B9C231 /* CalendarTransitonEffects.m in Sources */,
+				F6BB475C1D039A480044A7F3 /* ChartDocsStructure.m in Sources */,
 				F65C346F1C21A20E000417BD /* AutoCompleteLoadData.m in Sources */,
 				FE4F98251B0C9CC9001B51D8 /* CustomListCell.m in Sources */,
 				19DD17591B304D490001CCC0 /* CardInfo.m in Sources */,
+				F6BB47751D04552B0044A7F3 /* ChartDocsLineSeries.m in Sources */,
 				FEA0D2DF1A821C340014CD96 /* DataSourceUIBindings.m in Sources */,
 				FEAF8DC31B94AD7700AD77E0 /* DateTimeCategoryAxis.m in Sources */,
 				1B96644F1BA851ED000804EA /* GaugeCustomization.m in Sources */,
 				199067A11BAAB140002129EE /* EmployeeInfo.m in Sources */,
+				F6BB47571D0397760044A7F3 /* ChartDocsSelection.m in Sources */,
+				F6BB47521D0311A60044A7F3 /* ChartDocsPopulatingWithData.m in Sources */,
 				FEEAEBD618080A8900D75A5C /* CustomAnimationLineChart.m in Sources */,
 				FEC0CF2D1A975BA30088A158 /* SimpleListViewCell.m in Sources */,
 				D09800091BDA517D00B989DC /* MultipleSideDrawers.m in Sources */,
@@ -1198,8 +1433,11 @@
 				FEB42604193374A500C2A602 /* iOS7StyleCalendar.m in Sources */,
 				1977F8C31B285B110024ECB2 /* PersonalInfo.m in Sources */,
 				19E9055D19BF391800A325D8 /* MyPointLabel.m in Sources */,
+				F62E9B321CFC8213007FB3AC /* ListViewBasicSetup.m in Sources */,
 				19B26F8A1A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m in Sources */,
 				F6F51A721B8DB9820065E055 /* LogarithmicAxis.m in Sources */,
+				F6BB47631D039EB20044A7F3 /* ChartDocsCustomDrawing.m in Sources */,
+				F6BB474F1D030CB00044A7F3 /* ChartDocsLegend.m in Sources */,
 				FEEAEBD318080A7600D75A5C /* DefaultAnimation.m in Sources */,
 				1B52B90C1B0E1E880005F916 /* AlertAnimations.m in Sources */,
 				0113350118151E47008E6477 /* CustomAnimationAreaChart.m in Sources */,
@@ -1209,25 +1447,34 @@
 				FE9356541C0318590064BD0C /* ListViewUpdate.m in Sources */,
 				FE8FE8FE1B29EB8A00485201 /* AlertCustomContentView.m in Sources */,
 				1B96644C1BA851A8000804EA /* GaugeGettingStarted.m in Sources */,
+				D0983ED41D05694F00D7F23B /* DocsCustomCell.m in Sources */,
 				C1639F3D1A909F2800E86743 /* ListViewReorder.m in Sources */,
 				FE3CF58D1807F71800461E57 /* MultipleAxes.m in Sources */,
 				1B33C9B31B9EDC4700906C7E /* AxisRender.m in Sources */,
 				194C56F41934C505006D7C4F /* IndicatorsChart.m in Sources */,
+				F62E9B3D1CFD73CD007FB3AC /* DataSourceItem.m in Sources */,
 				1B3258731B272AC800EAC1DF /* AlertCustomView.m in Sources */,
 				F6A266081BB1732C00742A69 /* AutoCompleteTokens.m in Sources */,
 				19E9055A19BF38F700A325D8 /* CustomPointLabels.m in Sources */,
 				FEA0D2E51A8280CF0014CD96 /* DSCollectionViewCell.m in Sources */,
 				FEBC2E2619372D92007C12B1 /* CalendarViewModes.m in Sources */,
 				FEA0D2DC1A82174C0014CD96 /* DataSourceDescriptorsAPI.m in Sources */,
+				F6BB47AC1D055D2C0044A7F3 /* ChartDocsDonut.m in Sources */,
+				F6BB47A01D0555B00044A7F3 /* ChartDocsAreaSeries.m in Sources */,
 				19953A6F1A7BD26D001B9513 /* SideDrawerTransitions.m in Sources */,
+				F6BB476D1D041C230044A7F3 /* ChartDocsCandlestick.m in Sources */,
 				1BBFAA011B208843006FB5A6 /* AlertNotifications.m in Sources */,
 				FE3CF58A1807F70800461E57 /* DateTimeAxis.m in Sources */,
 				FEA0D2E21A8245920014CD96 /* DSItem.m in Sources */,
+				F6BB478B1D0485C00044A7F3 /* ChartDocsScatter.m in Sources */,
 				FEA0D2D91A820C7D0014CD96 /* DataSourceGettingStarted.m in Sources */,
+				F62E9B4B1CFEFFFD007FB3AC /* ListViewDocsSetupDataSource.m in Sources */,
 				FE0FD7C11C1728C900728DED /* AlertSettingsInfo.m in Sources */,
 				FEAC73041C05EEA80030A924 /* PieChartAnnotations.m in Sources */,
+				D00CDC9D1CFED8FF001A7ADB /* CalendarDocsWithSimpleEvent.m in Sources */,
 				FE8A36E518A401590081EECA /* MyAnnotation.m in Sources */,
 				1BA376D11BA9BAB000FA48A7 /* GaugeScales.m in Sources */,
+				F62E9B2D1CFC515E007FB3AC /* AutoCompleteBasicSetup.m in Sources */,
 				8D6F5B741A8509A8008A8EF2 /* ListViewSelection.m in Sources */,
 				19463A481B343C450022054C /* CallEditor.m in Sources */,
 				FEDBD4731BAAB5140018E9ED /* GaugeInteraction.m in Sources */,
@@ -1240,8 +1487,10 @@
 				F640C3D11BAC3B00001FEC95 /* PersonListViewCell.m in Sources */,
 				19A2A0201A80F63B00378C68 /* SideDrawerCustomContent.m in Sources */,
 				FE8A36E118A4009A0081EECA /* CustomAnnotation.m in Sources */,
+				F6BB46611CFF1B1B0044A7F3 /* DataSourceDocsQueries.m in Sources */,
 				FE17151B1A963D81000EB4C9 /* ImageWithTextListViewCell.m in Sources */,
 				193BB85E19C1A8CD00143087 /* MyPointLabelRender.m in Sources */,
+				F6BB47681D0417F30044A7F3 /* ChartDocsBarSeries.m in Sources */,
 				1990679E1BAAB111002129EE /* DataFormLabelAlignment.m in Sources */,
 				19A2A0321A8124E400378C68 /* SideDrawerPositions.m in Sources */,
 				FEE269D11807066700E52C37 /* PieDonut.m in Sources */,
@@ -1256,11 +1505,13 @@
 				19DD17561B3049360001CCC0 /* DataFormReadOnly.m in Sources */,
 				19DB73E51B59472000680707 /* RangeBarColumnChart.m in Sources */,
 				FEE269871806DBA300E52C37 /* main.m in Sources */,
+				F62E9B3A1CFC9398007FB3AC /* ListViewDocsGroups.m in Sources */,
 				F6C5FBDF1C22DA870047CEE4 /* AirportModel.m in Sources */,
 				8DDC67081A8E1D4C00FDE377 /* ListViewPullToRefresh.m in Sources */,
 				FE8A36D218A3E4BA0081EECA /* Trackball.m in Sources */,
 				FEEAEBE918081E5400D75A5C /* Customize.m in Sources */,
 				FEEAEBE31808161000D75A5C /* BindWithCustomObject.m in Sources */,
+				F6BB473B1D02EE540044A7F3 /* SideDrawerDocsSetup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

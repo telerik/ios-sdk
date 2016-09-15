@@ -73,6 +73,7 @@ namespace Examples
 			segment.Width2 = 0.01f;
 			scale.AddSegment(segment);
 
+			// >> gauge-needle-cs
 			TKGaugeNeedle needle = new TKGaugeNeedle();
 			needle.Width = 3;
 			needle.TopWidth = 3;
@@ -81,6 +82,7 @@ namespace Examples
 			needle.ShadowOpacity = 0.8f;
 			needle.ShadowRadius = 1.5f;
 			scale.AddIndicator(needle);
+			// << gauge-needle-cs
 
 		}
 

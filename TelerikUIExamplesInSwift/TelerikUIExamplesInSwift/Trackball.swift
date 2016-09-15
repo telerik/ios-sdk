@@ -51,10 +51,14 @@ class Trackball: TKExamplesExampleViewController, TKChartDelegate {
         series.xAxis = xAxis
         chart.addSeries(series)
     
+        // >> chart-trackball-swift
         chart.allowTrackball = true
         chart.trackball.snapMode = TKChartTrackballSnapMode.AllClosestPoints
+        // << chart-trackball-swift
+        
         chart.delegate = self
         chart.trackball.tooltip.style.textAlignment = NSTextAlignment.Left
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,6 +68,7 @@ class Trackball: TKExamplesExampleViewController, TKChartDelegate {
     
     //MARK: TKChartDelegate
     
+    // >> chart-trackball-delegate-swift
     func chart(chart: TKChart, trackballDidTrackSelection selection: [AnyObject]) {
         let str = NSMutableString()
         var i = 0
@@ -78,6 +83,8 @@ class Trackball: TKExamplesExampleViewController, TKChartDelegate {
         }
         chart.trackball.tooltip.text = str as String
     }
+    
+    // << chart-trackball-delegate-swift
     
     //MARK: Events
     

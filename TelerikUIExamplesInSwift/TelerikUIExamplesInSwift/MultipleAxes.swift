@@ -27,6 +27,7 @@ class MultipleAxes:TKExamplesExampleViewController {
         chart.addAxis(gdpInPoundsYAxis)
         chart.yAxis = gdpInPoundsYAxis
         
+        // >> chart-axis-position-swift
         let periodXAxis = TKChartDateTimeAxis()
         periodXAxis.majorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Years
         periodXAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Years
@@ -42,6 +43,7 @@ class MultipleAxes:TKExamplesExampleViewController {
         gdpInvestmentYAxis.style.majorTickStyle.ticksHidden = false
         gdpInvestmentYAxis.style.lineHidden = false
         chart.addAxis(gdpInvestmentYAxis)
+        // << chart-axis-position-swift
         
         let gdpGrowthUpAnnualChangeYAxis = TKChartNumericAxis(minimum:-6, andMaximum:4)
         gdpGrowthUpAnnualChangeYAxis.majorTickInterval = 1
@@ -74,7 +76,7 @@ class MultipleAxes:TKExamplesExampleViewController {
         let gdpInPoundsSeries = TKChartColumnSeries(items: gdpInPounds)
         gdpInPoundsSeries.xAxis = periodXAxis
         gdpInPoundsSeries.yAxis = gdpInPoundsYAxis
-        gdpInPoundsSeries.selectionMode = TKChartSeriesSelectionMode.Series
+        gdpInPoundsSeries.selection = TKChartSeriesSelection.Series
         chart.addSeries(gdpInPoundsSeries)
         
         let gdpGrowthUpAnnual = [TKChartDataPoint(x:date2001, y:4),
@@ -88,7 +90,7 @@ class MultipleAxes:TKExamplesExampleViewController {
         gdpGrowthUpSeries.style.pointShape = TKPredefinedShape(type:TKShapeType.Circle, andSize: CGSizeMake(shapeSize, shapeSize))
         gdpGrowthUpSeries.xAxis = periodXAxis
         gdpGrowthUpSeries.yAxis = gdpGrowthUpAnnualChangeYAxis
-        gdpGrowthUpSeries.selectionMode = TKChartSeriesSelectionMode.Series
+        gdpGrowthUpSeries.selection = TKChartSeriesSelection.Series
         gdpGrowthUpSeries.style.shapeMode = TKChartSeriesStyleShapeMode.AlwaysShow
         chart.addSeries(gdpGrowthUpSeries)
         
@@ -102,7 +104,7 @@ class MultipleAxes:TKExamplesExampleViewController {
         grossAnualSavingsSeries.style.pointShape = TKPredefinedShape(type:TKShapeType.Circle, andSize:CGSizeMake(shapeSize, shapeSize))
         grossAnualSavingsSeries.xAxis = periodXAxis
         grossAnualSavingsSeries.yAxis = grossNationalSavingsAnnualGrowthUpYAxis
-        grossAnualSavingsSeries.selectionMode = TKChartSeriesSelectionMode.Series
+        grossAnualSavingsSeries.selection = TKChartSeriesSelection.Series
         grossAnualSavingsSeries.style.shapeMode = TKChartSeriesStyleShapeMode.AlwaysShow
         chart.addSeries(grossAnualSavingsSeries)
         
@@ -116,7 +118,7 @@ class MultipleAxes:TKExamplesExampleViewController {
         gdpInvestmentSeries.style.pointShape = TKPredefinedShape(type:TKShapeType.Circle, andSize:CGSizeMake(shapeSize, shapeSize))
         gdpInvestmentSeries.xAxis = periodXAxis
         gdpInvestmentSeries.yAxis = gdpInPoundsYAxis
-        gdpInvestmentSeries.selectionMode = TKChartSeriesSelectionMode.Series
+        gdpInvestmentSeries.selection = TKChartSeriesSelection.Series
         gdpInvestmentSeries.style.shapeMode = TKChartSeriesStyleShapeMode.AlwaysShow
         chart.addSeries(gdpInvestmentSeries)
         
@@ -156,8 +158,11 @@ class MultipleAxes:TKExamplesExampleViewController {
         }
         
         series.yAxis!.style.majorTickStyle.ticksFill = series.yAxis!.style.lineStroke.fill
+        
+        // >> chart-tick-style-clipping-swift
         series.yAxis!.style.majorTickStyle.maxTickClippingMode = TKChartAxisClippingMode.Visible
         series.yAxis!.style.majorTickStyle.minTickClippingMode = TKChartAxisClippingMode.Visible
+        // << chart-tick-style-clipping-swift
         
         if series.yAxis!.style.majorTickStyle.ticksFill!.isKindOfClass(TKSolidFill) {
             let solidFill = series.yAxis!.style.majorTickStyle.ticksFill as! TKSolidFill

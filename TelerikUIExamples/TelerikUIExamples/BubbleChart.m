@@ -22,6 +22,7 @@
     [self.view addSubview:_chart];
     
     [_chart beginUpdates];
+    // >> chart-bubble
     for (int i = 0; i < 2; i++) {
         NSMutableArray *points = [[NSMutableArray alloc] init];
         for (int i = 0; i < 20; i++) {
@@ -29,13 +30,14 @@
         }
         
         TKChartBubbleSeries *series = [[TKChartBubbleSeries alloc] initWithItems:points];
+        // << chart-bubble
         series.title = [NSString stringWithFormat:@"Series %d", (i + 1)];
         series.scale = @1.5;
         series.marginForHitDetection = 2.f;
         if (i == 0) {
-            series.selectionMode = TKChartSeriesSelectionModeDataPoint;
+            series.selection = TKChartSeriesSelectionDataPoint;
         } else {
-            series.selectionMode = TKChartSeriesSelectionModeSeries;
+            series.selection = TKChartSeriesSelectionSeries;
         }
         
         [_chart addSeries:series];

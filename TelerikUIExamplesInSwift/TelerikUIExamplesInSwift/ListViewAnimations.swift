@@ -54,9 +54,17 @@ class ListViewAnimations: TKExamplesExampleViewController {
         layout.itemSize = CGSizeMake(130, 180)
         layout.itemSpacing = 10
         layout.lineSpacing = 10
+        
+        // >> listview-alignment-swift
         layout.itemAlignment = TKListViewItemAlignment.Center
+        // << listview-alignment-swift
+        
         layout.itemAppearAnimation = TKListViewItemAnimation.Scale
+        
+        // >> listview-animation-duration-swift
         layout.animationDuration = 0.4
+        // << listview-animation-duration-swift
+        
         self.listView.layout = layout
     }
 
@@ -68,15 +76,30 @@ class ListViewAnimations: TKExamplesExampleViewController {
     func fadeInSelected() {
         let layout = listView.layout as! TKListViewLinearLayout
         layout.itemAppearAnimation = TKListViewItemAnimation.Fade
+        layout.itemInsertAnimation = TKListViewItemAnimation.Fade
+        layout.itemDeleteAnimation = TKListViewItemAnimation.Fade
     }
     
     func slideInSelected() {
         let layout = listView.layout as! TKListViewLinearLayout
         layout.itemAppearAnimation = TKListViewItemAnimation.Slide
+         layout.itemInsertAnimation = TKListViewItemAnimation.Slide
+        layout.itemInsertAnimation = TKListViewItemAnimation.Slide
     }
     
     func scaleInSelected() {
         let layout = listView.layout as! TKListViewLinearLayout
+        // >> listview-appear-swift
         layout.itemAppearAnimation = TKListViewItemAnimation.Scale
+        // << listview-appear-swift
+        
+        // >> listview-insert-swift
+        layout.itemInsertAnimation = TKListViewItemAnimation.Scale
+        // << listview-insert-swift
+        
+        // >> listview-delete-swift
+        layout.itemInsertAnimation = TKListViewItemAnimation.Scale
+        // << listview-delete-swift
+        
     }
 }

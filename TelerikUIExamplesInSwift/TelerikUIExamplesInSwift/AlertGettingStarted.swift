@@ -25,25 +25,30 @@ class AlertGettingStarted: TKExamplesExampleViewController {
     }
     
     func show(sender: AnyObject) {
-
+// >> getting-started-alert-swift
         let alert = TKAlert()
-        
         alert.title = "Chicken or the egg?"
         alert.message = "Which came first, the chicken or the egg?"
+// << getting-started-alert-swift
+        
         alert.style.maxWidth = 210
         alert.dismissMode = TKAlertDismissMode.Swipe
-
+        
+// >> getting-started-alert-action-swift
         alert.addActionWithTitle("Egg") { (TKAlert, TKAlertAction) -> Bool in
             self.textLabel.text = "It was the egg"
             return true
         }
-        
+
         alert.addActionWithTitle("Chicken") { (TKAlert, TKAlertAction) -> Bool in
             self.textLabel.text = "It was the chiken"
             return true
         }
-
+// << getting-started-alert-action-swift
+        
+// >> getting-started-alert-show-swift
         alert.show(true)
+// << getting-started-alert-show-swift
     }
     
 }

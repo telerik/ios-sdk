@@ -39,16 +39,25 @@ namespace Examples
 			this.listView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.listView.Delegate = this.listViewDelegage;
 			this.listView.WeakDataSource = this.dataSource;
+
+			// >> listview-selection-behavior-cs
 			this.listView.SelectionBehavior = TKListViewSelectionBehavior.Press;
+			// << listview-selection-behavior-cs
+
+			// >> listview-multiple-selection-cs
 			this.listView.AllowsMultipleSelection = true;
+			// << listview-multiple-selection-cs
+
 			this.View.AddSubview (this.listView);
 
 			TKListViewLinearLayout layout = new TKListViewLinearLayout ();
 			layout.ItemAlignment = TKListViewItemAlignment.Stretch;
 			layout.ItemSpacing = 0;
 
+			// >> listview-selection-programatically-cs
 			NSIndexPath indexPath = NSIndexPath.FromRowSection (1, 0);
 			this.listView.SelectItem (indexPath, false, UICollectionViewScrollPosition.None);
+			// << listview-selection-programatically-cs
 		}
 
 		void SelectionOnPressSelected()
@@ -58,12 +67,16 @@ namespace Examples
 
 		void SelectionOnHoldSelected()
 		{
+			// >> listview-selection-behavior-long-cs
 			this.listView.SelectionBehavior = TKListViewSelectionBehavior.LongPress;
+			// << listview-selection-behavior-long-cs
 		}
 
 		void NoSelectionSelected()
 		{
+			// >> listview-selection-behavior-none-cs
 			this.listView.SelectionBehavior = TKListViewSelectionBehavior.None;
+			// << listview-selection-behavior-none-cs
 			this.label.Text = "";
 		}
 
@@ -101,6 +114,7 @@ namespace Examples
 				Console.WriteLine ("Did unhighlight item at row {0}", this.owner.dataSource.Items [indexPath.Row]);
 			}
 
+			// >> listview-respond-cs
 			public override void DidSelectItemAtIndexPath (TKListView listView, NSIndexPath indexPath)
 			{
 				this.owner.label.Text = string.Format("Selected: {0}", this.owner.dataSource.Items[indexPath.Row]);
@@ -115,6 +129,8 @@ namespace Examples
 			{
 				Console.WriteLine("Did deselect item at row {0}", this.owner.dataSource.Items[indexPath.Row]);
 			}
+
+			// << listview-respond-cs
 		}
 	}
 }

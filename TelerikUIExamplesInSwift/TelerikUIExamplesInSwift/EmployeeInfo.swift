@@ -11,8 +11,8 @@ class EmployeeInfo: NSObject {
     var givenNames = ""
     var surname = ""
     var gender = 0
-    var idNumber = ""
-    var employeeId = ""
+    var idNumber = NSNumber()
+    var employeeId = NSNumber()
     var dateOfBirth = NSDate()
     var phoneNumber = ""
 }

@@ -33,19 +33,24 @@ namespace Examples
 			}
 
 			TKChartColumnSeries columnSeries = new TKChartColumnSeries (list1.ToArray());
-			columnSeries.SelectionMode = TKChartSeriesSelectionMode.Series;
+			columnSeries.Selection = TKChartSeriesSelection.Series;
 			chart.AddSeries (columnSeries);
 
 			TKChartAreaSeries areaSeries = new TKChartAreaSeries (list2.ToArray());
 			areaSeries.Style.PointShape = new TKPredefinedShape (TKShapeType.Star, new SizeF(20, 20));
 			areaSeries.Style.ShapeMode = TKChartSeriesStyleShapeMode.AlwaysShow;
-			areaSeries.SelectionMode = TKChartSeriesSelectionMode.Series;
+			areaSeries.Selection = TKChartSeriesSelection.Series;
 			chart.AddSeries (areaSeries);
 
+			// >> chart-label-style-cs
 			chart.YAxis.Style.LabelStyle.Font = UIFont.SystemFontOfSize (18);
 			chart.YAxis.Style.LabelStyle.TextColor = UIColor.Black;
+			// << chart-label-style-cs
 
+			// >> chart-customize-axis-cs
 			chart.XAxis.Style.LabelStyle.Font = UIFont.SystemFontOfSize (18);
+			// << chart-customize-axis-cs
+
 			chart.XAxis.Style.LabelStyle.TextColor = UIColor.Black;
 
 			chart.GridStyle.HorizontalAlternateFill = new TKSolidFill (UIColor.FromWhiteAlpha (0.9f, 0.8f));

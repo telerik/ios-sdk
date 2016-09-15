@@ -38,7 +38,7 @@ namespace Examples
 			TKChartStackInfo stackInfo = new TKChartStackInfo (new NSNumber (1), TKChartStackMode.Stack);
 			for (int i = 0; i < chart.Series.Length; i++) {
 				TKChartSeries series = chart.Series [i];
-				series.SelectionMode = TKChartSeriesSelectionMode.Series;
+				series.Selection = TKChartSeriesSelection.Series;
 				series.StackInfo = stackInfo;
 			}
 

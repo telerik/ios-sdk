@@ -12,7 +12,20 @@ namespace Examples
 	{
 		TKChart chart = new TKChart();
 		Random r = new Random();
+		string[] names = new string[] { "Upper class", "Upper middle class", "Middle class", "Lower middle class" };
+		nfloat[] offsets = new nfloat[] { 350, 250, 150, 100 };
+		UIColor[] strokes = new UIColor[]{ new UIColor(0.5f, 0.5f, 0.5f, 0.5f),
+			new UIColor(0.3f, 0.3f, 0.3f, 0.6f),
+			new UIColor(0.1f, 0.1f, 0.1f, 0.6f),
+			new UIColor(0.1f, 0.1f, 0.1f, 0.6f)
+		};
+		UIColor[][] fills = new UIColor[][]{ new UIColor[]{ new UIColor(0.78f, 0.81f, 0.86f, 0.5f), new UIColor(0.5f, 0.5f, 0.5f, 0.5f) },
+			new UIColor[] { new UIColor(0.78f, 0.76f, 0.70f, 1.0f), new UIColor(0.5f, 0.5f, 0.5f, 0.5f) },
+			new UIColor[] { new UIColor(0.80f, 0.73f, 0.67f, 1.0f), new UIColor(0.5f, 0.5f, 0.5f, 0.5f) },
+			new UIColor[] { new UIColor(0.70f, 0.58f, 0.58f, 1.0f), new UIColor(0.5f, 0.5f, 0.5f, 0.5f) }
+		};
 
+		// >> chart-custom-axis-render-cs
 		class MyAxis : TKChartNumericAxis
 		{
 			public MyAxis (NSNumber minimum, NSNumber maximum)
@@ -24,7 +37,9 @@ namespace Examples
 			{				return new AxisRender (this, chart);
 			}
 		}
+		// << chart-custom-axis-render-cs
 
+		// >> chart-custom-axis-draw-cs
 		public class AxisRender: TKChartAxisRender
 		{
 			public AxisRender (TKChartAxis axis, TKChart chart)
@@ -78,36 +93,36 @@ namespace Examples
 
 				base.DrawInContext (ctx);
 			}
-		}
 
+		}
+		// << chart-custom-axis-draw-cs
+			
 		public override void ViewDidLoad ()
 		{
+			AddOption ("Custom Labels", CustomLabelsSelected);
+			AddOption ("Custom Axis Drawing", CustomDrawingSelected);
+
 			base.ViewDidLoad ();
 			
 			this.chart.Frame = this.View.Bounds;
 			this.chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
+			chart.Legend.Hidden = false;
 			this.View.AddSubview (this.chart);
+
+			this.CustomLabelsSelected();
+		}
+
+		private void CustomDrawingSelected() 
+		{
+			chart.RemoveAllData ();
 
 			MyAxis axis = new MyAxis (new NSNumber (100), new NSNumber (450));
 			chart.YAxis = axis;
-			chart.Legend.Hidden = false;
 
-			string[] names = new string[] { "Upper class", "Upper middle class", "Middle class", "Lower middle class" };
-			nfloat[] offsets = new nfloat[] { 350, 250, 150, 100 };
-			UIColor[] strokes = new UIColor[]{ new UIColor(0.5f, 0.5f, 0.5f, 0.5f),
-				new UIColor(0.3f, 0.3f, 0.3f, 0.6f),
-				new UIColor(0.1f, 0.1f, 0.1f, 0.6f),
-				new UIColor(0.1f, 0.1f, 0.1f, 0.6f)
-			};
-			UIColor[][] fills = new UIColor[][]{ new UIColor[]{ new UIColor(0.78f, 0.81f, 0.86f, 0.5f), new UIColor(0.5f, 0.5f, 0.5f, 0.5f) },
-				new UIColor[] { new UIColor(0.78f, 0.76f, 0.70f, 1.0f), new UIColor(0.5f, 0.5f, 0.5f, 0.5f) },
-				new UIColor[] { new UIColor(0.80f, 0.73f, 0.67f, 1.0f), new UIColor(0.5f, 0.5f, 0.5f, 0.5f) },
-				new UIColor[] { new UIColor(0.70f, 0.58f, 0.58f, 1.0f), new UIColor(0.5f, 0.5f, 0.5f, 0.5f) }
-			};
 			List<TKChartDataPoint> items = new List<TKChartDataPoint> ();
 
 			for (int i = 0; i< names.Length; i++) {
-				
+
 				for (int j = 0; j<5; j++) {
 					NSDate date = this.DateWithYear(j + 2002, 1, 1);
 					TKChartDataPoint point = new TKChartDataPoint(date, new NSNumber(this.r.Next(50) + offsets[i]));
@@ -116,14 +131,44 @@ namespace Examples
 
 				TKChartSplineAreaSeries series = new TKChartSplineAreaSeries(items.ToArray());
 				series.Title = names[i];
+				// >> chart-style-fill-cs
 				series.Style.Palette = new TKChartPalette ();
 				TKChartPaletteItem palleteItem = new TKChartPaletteItem ();
 				palleteItem.Stroke = new TKStroke(strokes[i], 1.5f);
 				palleteItem.Fill = new TKLinearGradientFill (fills[i], new CGPoint(0, 0), new CGPoint(1, 1));
 				series.Style.Palette.AddPaletteItem(palleteItem);
+				// << chart-style-fill-cs
 				chart.AddSeries(series);
 				items.Clear ();
 			}
+
+		}
+
+		private void CustomLabelsSelected()
+		{
+			chart.RemoveAllData ();
+
+			List<TKChartDataPoint> items = new List<TKChartDataPoint> ();
+
+			for (int i = 0; i< names.Length; i++) {
+
+				for (int j = 0; j<5; j++) {
+					NSDate date = this.DateWithYear(j + 2002, 1, 1);
+					TKChartDataPoint point = new TKChartDataPoint(date, new NSNumber(this.r.Next(50) + offsets[i]));
+					items.Add (point);
+				}
+
+				TKChartSplineAreaSeries series = new TKChartSplineAreaSeries(items.ToArray());
+				series.Title = names[i];
+				chart.AddSeries(series);
+				items.Clear ();
+			}
+
+			// >> chart-custom-axis-labels-cs
+			this.chart.YAxis.CustomLabels = new NSDictionary(new NSNumber(100), UIColor.Blue, 
+				new NSNumber(200), UIColor.Yellow, 
+				new NSNumber(400), UIColor.Red);
+			// << chart-custom-axis-labels-cs
 		}
 
 		public NSDate DateWithYear(int year, int month, int day)

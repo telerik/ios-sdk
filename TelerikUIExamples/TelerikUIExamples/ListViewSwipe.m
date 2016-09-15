@@ -70,6 +70,7 @@
        
         TKListViewCell *cell = [listView dequeueReusableCellWithReuseIdentifier:@"defaultCell" forIndexPath:indexPath];
 
+        // >> listview-swipe-view
         if (cell.swipeBackgroundView.subviews.count == 0) {
            
             CGSize size = cell.frame.size;
@@ -105,6 +106,7 @@
             [bUnread addTarget:self action:@selector(buttonTouched) forControlEvents:UIControlEventTouchUpInside];
             [cell.swipeBackgroundView addSubview:bUnread];
         }
+        // << listview-swipe-view
         
         return cell;
     }];
@@ -120,9 +122,19 @@
     _listView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _listView.delegate = self;
     _listView.dataSource = _dataSource;
+    
+    // >> listview-swipe
     _listView.allowsCellSwipe = YES;
-    _listView.cellSwipeLimits = UIEdgeInsetsMake(0, 60, 0, 180);//how far the cell may swipe
-    _listView.cellSwipeTreshold = 30; //the treshold after which the cell will autoswipe to the end and will not jump back to the center.
+    // << listview-swipe
+    
+    // >> listview-swipe-limits
+    _listView.cellSwipeLimits = UIEdgeInsetsMake(0, 60, 0, 180);
+    // << listview-swipe-limits
+    
+    // >> listview-swipe-treshold
+    _listView.cellSwipeTreshold = 30;
+    // << listview-swipe-treshold
+    
     ((TKListViewLinearLayout*)_listView.layout).itemSize = CGSizeMake(100, 80);
     
     [self.view addSubview:_listView];
@@ -190,6 +202,7 @@
 
 #pragma mark - TKListViewDelegate
 
+// >> listview-delegate
 - (void)listView:(TKListView *)listView didSwipeCell:(TKListViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withOffset:(CGPoint)offset
 {
     [self animateButtonsInCell:cell widthOffset:offset];
@@ -199,6 +212,8 @@
 {
     NSLog(@"swiped cell at index path: %ld", (long)indexPath.row);
 }
+
+// << listview-delegate
 
 - (void)listView:(TKListView *)listView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {

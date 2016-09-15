@@ -8,6 +8,7 @@ using TelerikUI;
 namespace Examples
 {
 	[Register("DataSourceDescriptorsAPI")]
+	// >> datasource-descriptor-cs
 	public class DataSourceDescriptorsAPI: XamarinExampleViewController
 	{
 		TKDataSource dataSource;
@@ -22,6 +23,7 @@ namespace Examples
 			dataSource.AddSortDescriptor (new TKDataSourceSortDescriptor ("Name", true));
 			dataSource.AddGroupDescriptor (new TKDataSourceGroupDescriptor ("Group"));
 
+			// >> datasource-feed-object-cs
 			var array = new NSMutableArray ();
 			array.Add (new DSItem () { Name = "John", Value = 22.0f, Group = "one" });
 			array.Add (new DSItem () { Name = "Peter", Value = 15.0f, Group = "one" });
@@ -33,11 +35,20 @@ namespace Examples
 			dataSource.DisplayKey = "Name";
 			dataSource.ValueKey = "Value";
 			dataSource.ItemSource = array;
+			// << datasource-feed-object-cs
+
+			// >> datasource-text-cs
+			dataSource.FormatText ((NSObject item, TKDataSourceGroup group) => {
+				DSItem dsItem = (DSItem)item;
+				return new NSString(string.Format("{0} has {1} points", dsItem.Name, dsItem.Value));
+			});
+			// << datasource-text-cs
 
 			var tableView = new UITableView (this.View.Bounds);
 			tableView.DataSource = dataSource;
 			this.View.AddSubview (tableView);
 		}
 	}
+	// << datasource-descriptor-cs
 }
 

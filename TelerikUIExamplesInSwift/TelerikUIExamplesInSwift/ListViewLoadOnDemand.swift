@@ -38,8 +38,15 @@ class ListViewLoadOnDemand: TKExamplesExampleViewController, TKListViewDataSourc
         listView.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
         listView.dataSource = self
         listView.delegate = self
+        
+        // >> listview-buffer-swift
         listView.loadOnDemandBufferSize = 5
+        // << listview-buffer-swift
+        
+        // >> listview-load-on-demand-swift
         listView.loadOnDemandMode = TKListViewLoadOnDemandMode.Manual
+        // << listview-load-on-demand-swift
+        
         listView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10)
         self.view.addSubview(listView)
         listView.registerClass(CustomCardListViewCell.classForCoder(), forCellWithReuseIdentifier:"cell")
@@ -76,6 +83,7 @@ class ListViewLoadOnDemand: TKExamplesExampleViewController, TKListViewDataSourc
         return lastRetrievedDataIndex
     }
     
+    // >> listview-load-on-demand-deque-swift
     func listView(listView: TKListView, cellForItemAtIndexPath indexPath: NSIndexPath) -> TKListViewCell? {
         
         var cell = listView.dequeueLoadOnDemandCellForIndexPath(indexPath)
@@ -94,9 +102,11 @@ class ListViewLoadOnDemand: TKExamplesExampleViewController, TKListViewDataSourc
 
         return cell
     }
+    // << listview-load-on-demand-deque-swift
     
 // MARK: TKListViewDelegate
     
+    // >> listview-should-load-swift
     func listView(listView: TKListView, shouldLoadMoreDataAtIndexPath indexPath: NSIndexPath) -> Bool {
        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
         self.lastRetrievedDataIndex = min(self.names.items.count, self.lastRetrievedDataIndex + 10)
@@ -114,4 +124,5 @@ class ListViewLoadOnDemand: TKExamplesExampleViewController, TKListViewDataSourc
         
         return true
     }
+    // << listview-should-load-swift
 }

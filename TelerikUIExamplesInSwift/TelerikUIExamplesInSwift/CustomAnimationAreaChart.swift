@@ -27,7 +27,7 @@ class CustomAnimationAreaChart: TKExamplesExampleViewController, TKChartDelegate
         }
         
         let areaSeries = TKChartAreaSeries(items: points)
-        areaSeries.selectionMode = TKChartSeriesSelectionMode.Series
+        areaSeries.selection = TKChartSeriesSelection.Series
         chart.addSeries(areaSeries)
         
         UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()

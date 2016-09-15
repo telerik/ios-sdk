@@ -48,8 +48,18 @@
     _alert.style.cornerRadius = 0;
     _alert.style.showAnimation = TKAlertAnimationSlideFromTop;
     _alert.style.dismissAnimation = TKAlertAnimationSlideFromTop;
+    
+    // >> alert-bg
     _alert.style.backgroundStyle = TKAlertBackgroundStyleNone;
+    // << alert-bg
+    
+    // >> alert-dismiss
     _alert.dismissMode = TKAlertDismissModeTap;
+    // << alert-dismiss
+    
+    // >> alert-layout
+    _alert.actionsLayout = TKAlertActionsLayoutVertical;
+    // << alert-layout
 }
 
 #pragma mark - TKListViewDelegate

@@ -29,7 +29,11 @@ class ListViewPullToRefresh: TKExamplesExampleViewController, TKListViewDataSour
         listView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         listView.dataSource = self
         listView.delegate = self
+        
+        // >> listview-pull-to-refresh-swift
         listView.allowsPullToRefresh = true
+        // << listview-pull-to-refresh-swift
+        
         listView.pullToRefreshTreshold = 70
         listView.pullToRefreshView.backgroundColor = UIColor.blueColor()
         listView.pullToRefreshView.activityIndicator.color = UIColor.whiteColor()
@@ -94,6 +98,7 @@ class ListViewPullToRefresh: TKExamplesExampleViewController, TKListViewDataSour
         listView.pullToRefreshView.alpha = min(offset/listView.pullToRefreshTreshold, 1.0)
     }
     
+    // >> listview-should-refresh-swift
     func listViewShouldRefreshOnPull(listView: TKListView) -> Bool {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
@@ -115,4 +120,5 @@ class ListViewPullToRefresh: TKExamplesExampleViewController, TKListViewDataSour
         })
         return true
     }
+    // << listview-should-refresh-swift
 }

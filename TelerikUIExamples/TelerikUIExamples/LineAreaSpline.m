@@ -30,6 +30,7 @@
     [super viewDidLoad];
     
     _chart = [[TKChart alloc] initWithFrame:self.view.bounds];
+    _chart.seriesSelectionMode = TKChartSelectionModeSingle;
     _chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_chart];
     
@@ -70,7 +71,7 @@
                 series = [[TKChartSplineAreaSeries alloc] initWithItems:array];
                 break;
         }
-        series.selectionMode = TKChartSeriesSelectionModeSeries;
+        
         [_chart addSeries:series];
     }
 

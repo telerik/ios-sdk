@@ -36,12 +36,14 @@
     
     _lowValues = @[@33, @29, @55, @21, @10, @39, @40, @11];
     _highValues = @[@47, @61, @64, @40, @33, @90, @87, @69];
+    
     [self rangeColumnSelected];
 }
 
 - (void)rangeColumnSelected
 {
     [_chart removeAllData];
+    
     NSMutableArray *dataPoints = [[NSMutableArray alloc] init];
     for (int i = 0; i < 8; i++) {
         [dataPoints addObject:[TKChartRangeDataPoint dataPointWithX:@(i) low:_lowValues[i] high:_highValues[i]]];
@@ -49,16 +51,17 @@
     
     TKChartRangeColumnSeries *series = [[TKChartRangeColumnSeries alloc] initWithItems:dataPoints];
     series.style.paletteMode = TKChartSeriesStylePaletteModeUseItemIndex;
-    series.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    series.selection = TKChartSeriesSelectionDataPoint;
     
     [_chart addSeries:series];
+    
     [_chart reloadData];
 }
 
 - (void)rangeBarSelected
 {
     [_chart removeAllData];
-    
+
     NSMutableArray *array = [[NSMutableArray alloc] init];
     for (int i = 0; i<8; i++) {
         [array addObject:[TKChartRangeDataPoint dataPointWithY:@(i) low:_lowValues[i] high:_highValues[i]]];
@@ -66,8 +69,9 @@
     
     TKChartRangeBarSeries *series = [[TKChartRangeBarSeries alloc] initWithItems:array];
     series.style.paletteMode = TKChartSeriesStylePaletteModeUseItemIndex;
-    series.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    series.selection = TKChartSeriesSelectionDataPoint;
     [_chart addSeries:series];
+
     [_chart reloadData];
 }
 

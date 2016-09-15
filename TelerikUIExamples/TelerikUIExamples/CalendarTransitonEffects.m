@@ -70,11 +70,19 @@
     self.calendarView.allowPinchZoom = NO;
     [_contentView addSubview:self.calendarView];
     
+// >> transitions-monthpresenter
     TKCalendarMonthPresenter *presenter = (TKCalendarMonthPresenter*)self.calendarView.presenter;
     presenter.transitionMode = TKCalendarTransitionModeFlip;
+// << transitions-monthpresenter
+// >> transitions-transitionvertical
+    presenter.transitionIsVertical = NO;
+// << transitions-transitionvertical
     presenter.delegate = self;
     presenter.headerIsSticky = YES;
     presenter.contentView.backgroundColor = _colors[_colorIndex];
+// >> transitions-transitionduration
+    presenter.transitionDuration = 2;
+// << transitions-transitionduration
     _transitionMode = TKCalendarTransitionModeFlip;
 }
 
@@ -97,7 +105,9 @@
 
 - (void)nextTouched:(id)sender
 {
+// >> navigation-navigateforward
     [_calendarView navigateForward:YES];
+// << navigation-navigateforward
 }
 
 - (void)selectFlipEffect
@@ -134,11 +144,11 @@
 {
     _calendarView.viewMode = TKCalendarViewModeMonth;
     TKCalendarMonthPresenter *presenter = (TKCalendarMonthPresenter*)_calendarView.presenter;
+    presenter.transitionMode = transitionMode;
     presenter.contentView.backgroundColor = _colors[_colorIndex];
     presenter.delegate = self;
     presenter.headerIsSticky = YES;
-    presenter.transitionIsVertical = isVertical;
-    presenter.transitionMode = transitionMode;
+
     _transitionMode = transitionMode;
 }
 

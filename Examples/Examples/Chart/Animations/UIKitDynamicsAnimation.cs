@@ -49,7 +49,7 @@ namespace Examples
 				TKChartVisualPoint point1 = points1 [4];
 				originalLocation = point1.Center;
 			}
-
+			// >> chart-anim-gravity-cs
 			animator = new UIDynamicAnimator (chart.PlotView);
 			TKChartVisualPoint[] points = chart.VisualPointsForSeries (chart.Series [0]);
 			TKChartVisualPoint point = points [4];
@@ -77,6 +77,7 @@ namespace Examples
 			animator.AddBehavior(dynamic);
 			animator.AddBehavior(gravity);
 			animator.AddBehavior(collision);
+			// << chart-anim-gravity-cs
 		}
 
 		public void reloadChart(object sender, EventArgs e)
@@ -92,7 +93,7 @@ namespace Examples
 
 			TKChartLineSeries lineSeries = new TKChartLineSeries (points.ToArray());
 			float shapeSize = UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone ? 14 : 17;
-			lineSeries.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			lineSeries.Selection = TKChartSeriesSelection.DataPoint;
 			lineSeries.Style.PointShape = new TKPredefinedShape (TKShapeType.Rhombus, new SizeF (shapeSize, shapeSize));
 			chart.AddSeries (lineSeries);
 			chart.YAxis.Style.LabelStyle.TextHidden = true;

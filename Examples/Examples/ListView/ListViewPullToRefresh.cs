@@ -38,7 +38,11 @@ namespace Examples
 			listView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			listView.DataSource = this.listViewDataSource;
 			listView.Delegate = this.listViewDelegate;
+
+			// >> listview-pull-to-refresh-cs
 			listView.AllowsPullToRefresh = true;
+			// << listview-pull-to-refresh-cs
+
 			listView.PullToRefreshTreshold = 70;
 			listView.PullToRefreshView.BackgroundColor = UIColor.Blue;
 			listView.PullToRefreshView.ActivityIndicator.Color = UIColor.White;
@@ -112,6 +116,7 @@ namespace Examples
 				listView.PullToRefreshView.Alpha = (float)Math.Min (offset / listView.PullToRefreshTreshold, 1.0f);
 			}
 
+			// >> listview-should-refresh-cs
 			public override bool ListViewShouldRefreshOnPull (TKListView listView)
 			{
 				DispatchQueue.DefaultGlobalQueue.DispatchAsync (() => {
@@ -128,6 +133,7 @@ namespace Examples
 
 				return true;
 			}
+			// << listview-should-refresh-cs
 		}
 	}
 }

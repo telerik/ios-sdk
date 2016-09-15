@@ -32,7 +32,10 @@
     listView.selectionBehavior = TKListViewSelectionBehaviorPress;
     [self.view addSubview:listView];
     
+    // >> listview-layout
     TKListViewLinearLayout *layout = (TKListViewLinearLayout*)listView.layout;
+    // << listview-layout
+    
     layout.itemSize = CGSizeMake(300, 44);
     layout.itemSpacing = 0;
     layout.headerReferenceSize = CGSizeMake(100, 44);

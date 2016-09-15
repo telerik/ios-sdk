@@ -29,6 +29,7 @@
     [_chart addAxis:gdpInPoundsYAxis];
     _chart.yAxis = gdpInPoundsYAxis;
     
+    // >> chart-axis-position
     TKChartDateTimeAxis *periodXAxis = [[TKChartDateTimeAxis alloc] init];
     periodXAxis.majorTickIntervalUnit = TKChartDateTimeAxisIntervalUnitYears;
     periodXAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnitYears;
@@ -44,6 +45,7 @@
     gdpInvestmentYAxis.style.majorTickStyle.ticksHidden = NO;
     gdpInvestmentYAxis.style.lineHidden = NO;
     [_chart addAxis:gdpInvestmentYAxis];
+    // << chart-axis-position
     
     TKChartNumericAxis *gdpGrowthUpAnnualChangeYAxis = [[TKChartNumericAxis alloc] initWithMinimum:@(-6) andMaximum:@4];
     gdpGrowthUpAnnualChangeYAxis.majorTickInterval = @1;
@@ -76,7 +78,7 @@
     TKChartColumnSeries *gdpInPoundsSeries = [[TKChartColumnSeries alloc] initWithItems:gdpInPounds];
     gdpInPoundsSeries.xAxis = periodXAxis;
     gdpInPoundsSeries.yAxis = gdpInPoundsYAxis;
-    gdpInPoundsSeries.selectionMode = TKChartSeriesSelectionModeSeries;
+    gdpInPoundsSeries.selection = TKChartSeriesSelectionSeries;
     [_chart addSeries:gdpInPoundsSeries];
     
     NSArray *gdpGrowthUpAnnual = @[[[TKChartDataPoint alloc] initWithX:date2001 Y:@4],
@@ -91,7 +93,7 @@
     gdpGrowthUpSeries.style.pointShape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeCircle andSize:CGSizeMake(shapeSize, shapeSize)];
     gdpGrowthUpSeries.xAxis = periodXAxis;
     gdpGrowthUpSeries.yAxis = gdpGrowthUpAnnualChangeYAxis;
-    gdpGrowthUpSeries.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    gdpGrowthUpSeries.selection = TKChartSeriesSelectionDataPoint;
     gdpGrowthUpSeries.style.shapeMode = TKChartSeriesStyleShapeModeAlwaysShow;
     
     [_chart addSeries:gdpGrowthUpSeries];
@@ -106,7 +108,7 @@
     grossAnualSavingsSeries.style.pointShape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeCircle andSize:CGSizeMake(shapeSize, shapeSize)];
     grossAnualSavingsSeries.xAxis = periodXAxis;
     grossAnualSavingsSeries.yAxis = grossNationalSavingsAnnualGrowthUpYAxis;
-    grossAnualSavingsSeries.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    grossAnualSavingsSeries.selection = TKChartSeriesSelectionDataPoint;
     grossAnualSavingsSeries.style.shapeMode = TKChartSeriesStyleShapeModeAlwaysShow;
     [_chart addSeries:grossAnualSavingsSeries];
     
@@ -121,7 +123,7 @@
     gdpInvestmentSeries.style.pointShape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeCircle andSize:CGSizeMake(shapeSize, shapeSize)];
     gdpInvestmentSeries.xAxis = periodXAxis;
     gdpInvestmentSeries.yAxis = gdpInvestmentYAxis;
-    gdpInvestmentSeries.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    gdpInvestmentSeries.selection = TKChartSeriesSelectionDataPoint;
     gdpInvestmentSeries.style.shapeMode = TKChartSeriesStyleShapeModeAlwaysShow;
     [_chart addSeries:gdpInvestmentSeries];
     
@@ -159,8 +161,11 @@
     }
     
     series.yAxis.style.majorTickStyle.ticksFill = series.yAxis.style.lineStroke.fill;
+    
+    // >> chart-tick-style-clipping
     series.yAxis.style.majorTickStyle.maxTickClippingMode = TKChartAxisClippingModeVisible;
     series.yAxis.style.majorTickStyle.minTickClippingMode = TKChartAxisClippingModeVisible;
+    // << chart-tick-style-clipping
     
     if([series.yAxis.style.majorTickStyle.ticksFill isKindOfClass:[TKSolidFill class]]) {
         TKSolidFill *solidFill = (TKSolidFill*)series.yAxis.style.majorTickStyle.ticksFill;

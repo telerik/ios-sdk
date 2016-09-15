@@ -7,6 +7,7 @@
 
 import UIKit
 
+// >> datasource-descriptor-swift
 class DataSourceDescriptorsAPI: TKExamplesExampleViewController {
 
     let dataSource = TKDataSource()
@@ -21,6 +22,7 @@ class DataSourceDescriptorsAPI: TKExamplesExampleViewController {
         self.dataSource.addSortDescriptor(TKDataSourceSortDescriptor(property: "name", ascending: true))
         self.dataSource.addGroupDescriptor(TKDataSourceGroupDescriptor(property: "group"))
         
+        // >> datasource-feed-object-swift
         var items = [DSItem]()
         
         items.append(DSItem(name: "John", value: 22, group: "one"))
@@ -33,6 +35,14 @@ class DataSourceDescriptorsAPI: TKExamplesExampleViewController {
         self.dataSource.displayKey = "name"
         self.dataSource.valueKey = "value"
         self.dataSource.itemSource = items
+        // << datasource-feed-object-swift
+        
+        // >> datasource-text-swift
+        dataSource.formatText { (item, group) -> String! in
+            let dsItem = item as! DSItem
+            return "\(dsItem.name) has \(dsItem.value) points"
+        }
+        // << datasource-text-swift
         
         let tableView = UITableView(frame: self.view.bounds)
         tableView.dataSource = self.dataSource
@@ -45,3 +55,4 @@ class DataSourceDescriptorsAPI: TKExamplesExampleViewController {
         // Dispose of any resources that can be recreated.
     }
 }
+// << datasource-descriptor-swift

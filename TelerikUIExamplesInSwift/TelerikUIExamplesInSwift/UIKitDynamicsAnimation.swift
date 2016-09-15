@@ -77,6 +77,7 @@ class UIKitDynamicsAnimation: TKExamplesExampleViewController, TKChartDelegate
     //MARK: - Methods
     
     func applyGravity() {
+        // >> chart-anim-gravity-swift
         animator = UIDynamicAnimator(referenceView: chart.plotView)
         if let points = chart.visualPointsForSeries(chart.series[0]) {
 
@@ -104,6 +105,7 @@ class UIKitDynamicsAnimation: TKExamplesExampleViewController, TKChartDelegate
             animator!.addBehavior(dynamic)
             animator!.addBehavior(gravity)
             animator!.addBehavior(collision)
+            // << chart-anim-gravity-swift
         }
     }
     
@@ -116,7 +118,7 @@ class UIKitDynamicsAnimation: TKExamplesExampleViewController, TKChartDelegate
         }
         let lineSeries = TKChartLineSeries(items: points)
         let shapeSize = CGFloat(UIDevice.currentDevice().userInterfaceIdiom == .Phone ? 14 : 17)
-        lineSeries.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        lineSeries.selection = TKChartSeriesSelection.DataPoint
         lineSeries.style.pointShape = TKPredefinedShape(type: TKShapeType.Rhombus, andSize: CGSizeMake(shapeSize, shapeSize))
         lineSeries.style.shapeMode = TKChartSeriesStyleShapeMode.AlwaysShow
         chart.addSeries(lineSeries)

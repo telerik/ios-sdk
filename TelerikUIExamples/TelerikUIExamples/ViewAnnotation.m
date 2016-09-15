@@ -39,11 +39,13 @@
     }
 
     // add a view annotation
+    // >> chart-layer-annotation
     UIImage *image = [UIImage imageNamed:@"logo"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     imageView.bounds = CGRectMake(0, 0, image.size.width, image.size.height);
     imageView.alpha = 0.7;
     [_chart addAnnotation:[[TKChartViewAnnotation alloc] initWithView:imageView X:@550 Y:@90 forSeries:_chart.series[0]]];
+    // << chart-layer-annotation
 }
 
 - (void)didReceiveMemoryWarning

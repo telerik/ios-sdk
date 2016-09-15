@@ -37,10 +37,23 @@
         [array addObject:[[TKChartDataPoint alloc] initWithX:months[i] Y:values[i]]];
     }
     TKChartLineSeries *series = [[TKChartLineSeries alloc] initWithItems:array];
+    
+    // >> chart-point-shape
     series.style.pointShape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeCircle andSize:CGSizeMake(10, 10)];
+    // << chart-point-shape
+    
+    // >> chart-point-pallete
+    TKChartPaletteItem *paletteItem = [[TKChartPaletteItem alloc] init];
+    paletteItem.fill = [TKSolidFill solidFillWithColor:[UIColor redColor]];
+    TKChartPalette *palette = [[TKChartPalette alloc] init];
+    [palette addPaletteItem:paletteItem];
+    series.style.shapePalette = palette;
+    // << chart-point-pallete
+    
     [_chart addSeries:series];
     
     // Add two balloon annotations
+    // >> chart-balloon-annotation
     NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     paragraphStyle.alignment = NSTextAlignmentCenter;
     NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:@"Important milestone:\n $55000"
@@ -48,11 +61,13 @@
                                                                                                      NSParagraphStyleAttributeName:paragraphStyle }];
     [attributedText addAttribute:NSForegroundColorAttributeName value:[UIColor yellowColor] range:NSMakeRange(22, 6)];
     
+    
     TKChartBalloonAnnotation *balloon = [[TKChartBalloonAnnotation alloc] initWithX:@"Mar" Y:@55 forSeries:series];
     balloon.attributedText = attributedText;
     balloon.style.distanceFromPoint = 20;
     balloon.style.arrowSize = CGSizeMake(10, 10);
     [_chart addAnnotation:balloon];
+    // << chart-balloon-annotation
     
     balloon = [[TKChartBalloonAnnotation alloc] initWithText:@"The lowest value:\n $30000" X:@"Apr" Y:@30 forSeries:series];
     balloon.style.verticalAlign = TKChartBalloonVerticalAlignmentBottom;

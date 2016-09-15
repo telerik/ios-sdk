@@ -38,23 +38,29 @@ class StackedAreaChart: TKExamplesExampleViewController {
         
         var stackInfo: TKChartStackInfo?
         if(self.selectedOption == 0) {
+            // >> chart-stack-area-swift
             stackInfo = TKChartStackInfo(ID: 1, withStackMode: TKChartStackMode.Stack)
+            // << chart-stack-area-swift
         }
         else if (self.selectedOption == 1)
         {
+            // >> chart-stack-area-100-swift
             stackInfo = TKChartStackInfo(ID: 1, withStackMode: TKChartStackMode.Stack100)
+            // << chart-stack-area-100-swift
         }
         
+        // >> chart-stack-area-swift
         for _ in 0..<3 {
             var array = [TKChartDataPoint]()
             for i in 0..<8 {
                 array.append(TKChartDataPoint(x: i+1, y: Int(arc4random() % (100))))
             }
             let series = TKChartAreaSeries(items: array)
-            series.selectionMode = TKChartSeriesSelectionMode.Series
+            series.selection = TKChartSeriesSelection.Series
             series.stackInfo = stackInfo
             chart.addSeries(series)
         }
+        // << chart-stack-area-swift
 
         chart.reloadData()
     }

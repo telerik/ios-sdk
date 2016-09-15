@@ -24,7 +24,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // >> datasource-file
     _photos = [[TKDataSource alloc] initWithDataFromJSONResource:@"PhotosWithNames" ofType:@"json" rootItemKeyPath:@"photos"];
+    // << datasource-file
+    
     _names = [[TKDataSource alloc] initWithDataFromJSONResource:@"PhotosWithNames" ofType:@"json" rootItemKeyPath:@"names"];
     
     TKListView *listView = [[TKListView alloc] initWithFrame:self.view.bounds];

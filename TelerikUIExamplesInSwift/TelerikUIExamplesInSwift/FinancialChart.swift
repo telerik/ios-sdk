@@ -54,7 +54,7 @@ class FinancialChart: TKExamplesExampleViewController {
                 break
         }
     
-        series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        series.selection = TKChartSeriesSelection.DataPoint
         
         let yAxis = TKChartNumericAxis(minimum: 300, andMaximum: 380)
         yAxis.majorTickInterval = 20
@@ -67,17 +67,26 @@ class FinancialChart: TKExamplesExampleViewController {
     
         let xAxis = chart.xAxis as! TKChartDateTimeAxis
         xAxis.minorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Days
+        
+        // >> chart-tick-style-set-swift
         xAxis.style.majorTickStyle.ticksOffset = -3
         xAxis.style.majorTickStyle.ticksHidden = false
         xAxis.style.majorTickStyle.ticksWidth = 1.5
         xAxis.style.majorTickStyle.ticksFill = TKSolidFill(color: UIColor(red: 203/255.0, green: 203/255.0, blue: 203/255.0, alpha: 1.0))
         xAxis.style.majorTickStyle.maxTickClippingMode = TKChartAxisClippingMode.Visible
-    
+        // << chart-tick-style-set-swift
+        
         chart.yAxis!.style.labelStyle.textAlignment = TKChartAxisLabelAlignment(rawValue: TKChartAxisLabelAlignment.Bottom.rawValue | TKChartAxisLabelAlignment.Right.rawValue)
+        
+        // >> chart-zoom-swift
         chart.xAxis!.allowZoom = true
-        chart.xAxis!.allowPan = true
         chart.yAxis!.allowZoom = true
+        // << chart-zoom-swift
+        
+        // >> chart-pan-swift
+        chart.xAxis!.allowPan = true
         chart.yAxis!.allowPan = true
+        // << chart-pan-swift
     }
 
     override func didReceiveMemoryWarning() {

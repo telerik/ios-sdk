@@ -41,8 +41,15 @@ namespace Examples
 			listView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
 			listView.Delegate = this.listViewDelegate;
 			listView.DataSource = this.listViewDataSource;
+
+			// >> listview-buffer-cs
 			listView.LoadOnDemandBufferSize = 5;
+			// << listview-buffer-cs
+
+			// >> listview-load-on-demand-cs
 			listView.LoadOnDemandMode = TKListViewLoadOnDemandMode.Manual;
+			// << listview-load-on-demand-cs
+
 			listView.ContentInset = new UIEdgeInsets (10, 10, 10, 10);
 			this.View.AddSubview (listView);
 			listView.RegisterClassForCell(new ObjCRuntime.Class(typeof(CustomCardListViewCell)), "cell");
@@ -82,6 +89,7 @@ namespace Examples
 				return owner.lastRetrievedDataIndex;
 			}
 
+			// >> listview-load-on-demand-deque-cs
 			public override TKListViewCell CellForItem (TKListView listView, NSIndexPath indexPath)
 			{
 				TKListViewCell cell = listView.DequeueLoadOnDemandCell (indexPath);
@@ -100,8 +108,10 @@ namespace Examples
 
 				return cell;
 			}
+			// << listview-load-on-demand-deque-cs
 		}
 
+		// >> listview-should-load-cs
 		class ListViewDelegate: TKListViewDelegate
 		{
 			ListViewLoadOnDemand owner;
@@ -126,6 +136,7 @@ namespace Examples
 				return true;
 			}
 		}
+		// << listview-should-load-cs
 	}
 }
 

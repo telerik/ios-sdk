@@ -29,7 +29,8 @@ class CustomPointLabelRender: TKExamplesExampleViewController, TKChartDelegate {
         }
         
         let columnSeries = TKChartColumnSeries(items: dataPoints)
-        columnSeries.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        columnSeries.selection = TKChartSeriesSelection.DataPoint
+        
         columnSeries.style.pointLabelStyle.textHidden = false
         columnSeries.style.pointLabelStyle.layoutMode = TKChartPointLabelLayoutMode.Manual
         columnSeries.style.pointLabelStyle.labelOffset = UIOffsetMake(0, -10)
@@ -39,7 +40,7 @@ class CustomPointLabelRender: TKExamplesExampleViewController, TKChartDelegate {
         columnSeries.style.pointLabelStyle.clipMode = TKChartPointLabelClipMode.Visible
         columnSeries.style.pointLabelStyle.textColor = UIColor.whiteColor()
         columnSeries.style.pointLabelStyle.fill = TKSolidFill(color: UIColor(red: 108/255.0, green: 181/255.0, blue: 250/255.0, alpha: 1.0))
-        
+
         chart.addSeries(columnSeries)
         chart.select(TKChartSelectionInfo(series: chart.series[selectedSeriesIndex], dataPointIndex: selectedDataPointIndex))
     }

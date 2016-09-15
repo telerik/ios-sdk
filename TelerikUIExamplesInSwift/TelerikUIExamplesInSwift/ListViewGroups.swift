@@ -24,7 +24,9 @@ class ListViewGroups: TKExamplesExampleViewController {
         listView.selectionBehavior = TKListViewSelectionBehavior.Press
         self.view.addSubview(listView)
         
+        // >> listview-layout-swift
         let layout = listView.layout as! TKListViewLinearLayout
+        // << listview-layout-swift
         
         layout.itemSize = CGSizeMake(300, 44)
         layout.itemSpacing = 0

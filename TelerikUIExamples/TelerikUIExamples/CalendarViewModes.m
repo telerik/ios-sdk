@@ -57,9 +57,16 @@
     self.calendarView.calendar = calendar;
     self.calendarView.minDate = minDate;
     self.calendarView.maxDate = maxDate;
+// >> view-modes-pinchzoom
     self.calendarView.allowPinchZoom = NO;
+// << view-modes-pinchzoom    
     
     [self.calendarView navigateToDate:date animated:NO];
+    
+// >> view-modes-presenter
+    TKCalendarYearPresenter *presenter = (TKCalendarYearPresenter*)self.calendarView.presenter;
+    presenter.columns = 3;
+// << view-modes-presenter
 }
 
 - (void)viewDidLayoutSubviews
@@ -81,36 +88,49 @@
 
 - (void)selectYear
 {
+// >> getting-started-viewmodeyear
     self.calendarView.viewMode = TKCalendarViewModeYear;
+// << getting-started-viewmodeyear    
 }
 
 - (void)selectMonth
 {
+// >> view-modes-month
     self.calendarView.viewMode = TKCalendarViewModeMonth;
+// << view-modes-month
 }
 
 - (void)selectMonthNames
 {
+// >> view-modes-monthnames
     self.calendarView.viewMode = TKCalendarViewModeMonthNames;
+// << view-modes-monthnames    
 }
 
 - (void)selectYearNumbers
 {
+// >> view-modes-yearnumber
     self.calendarView.viewMode = TKCalendarViewModeYearNumbers;
+// << view-modes-yearnumber    
 }
 
 - (void)selectFlow
 {
+// >> view-modes-flow
     self.calendarView.viewMode = TKCalendarViewModeFlow;
+// << view-modes-flow    
 }
 
 - (void)selectWeekView
 {
+// >> view-modes-week
     self.calendarView.viewMode = TKCalendarViewModeWeek;
+// << view-modes-week
 }
 
 #pragma mark TKCalendarDelegate
 
+// >> view-modes-changeviewmode
 - (void)calendar:(TKCalendar *)calendar didChangedViewModeFrom:(TKCalendarViewMode)previousViewMode to:(TKCalendarViewMode)viewMode
 {
     if (viewMode == TKCalendarViewModeWeek || previousViewMode == TKCalendarViewModeWeek) {
@@ -119,5 +139,8 @@
     
     self.selectedOption = (int)viewMode;
 }
+// << view-modes-changeviewmode
+
+
 
 @end

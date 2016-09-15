@@ -43,7 +43,6 @@ namespace Examples
 				}
 
 				TKChartSeries series = null;
-
 				switch (this.SelectedOption)
 				{
 					case 0:
@@ -59,8 +58,11 @@ namespace Examples
 						series = new TKChartSplineAreaSeries (list.ToArray());
 						break;
 				}
-				series.SelectionMode = TKChartSeriesSelectionMode.Series;
 				chart.AddSeries (series);
+
+				// >> chart-selection-cs
+				series.Selection = TKChartSeriesSelection.Series;
+				// << chart-selection-cs
 			}
 		}
 	}

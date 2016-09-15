@@ -28,7 +28,11 @@
     [self addButtonWithTitle:@"Top" target:self selector:@selector(topSideDrawer)];
     [self addButtonWithTitle:@"Bottom" target:self selector:@selector(bottomSideDrawer)];
     
+    // >> drawer-blur
     self.sideDrawer.fill = [TKSolidFill solidFillWithColor:[UIColor grayColor]];
+    self.sideDrawer.style.blurType = TKSideDrawerBlurTypeNone;
+    // << drawer-blur
+    
     self.sideDrawer.transition = TKSideDrawerTransitionTypeReveal;
 }
 
@@ -41,7 +45,9 @@
 - (void)leftSideDrawer
 {
     TKSideDrawer *sideDrawer = self.sideDrawer;
+    // >> drawer-position
     sideDrawer.position = TKSideDrawerPositionLeft;
+    // << drawer-position
     sideDrawer.headerView = [[SideDrawerHeaderView alloc] initWithButton:NO target:nil selector:nil];
     [self showSideDrawer];
 }

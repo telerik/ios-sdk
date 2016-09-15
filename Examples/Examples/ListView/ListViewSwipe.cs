@@ -56,6 +56,7 @@ namespace Examples
 			this.dataSource.ItemSource = mails;
 			this.dataSource.Settings.ListView.CreateCell(delegate (TKListView listView, NSIndexPath indexPath, NSObject item) {
 				TKListViewCell cell = listView.DequeueReusableCell("defaultCell", indexPath) as TKListViewCell;
+				// >> listview-swipe-view-cs
 				if (cell.SwipeBackgroundView.Subviews.Length == 0) {
 					CGSize size = cell.Frame.Size;
 					UIFont font = UIFont.SystemFontOfSize(14);
@@ -89,6 +90,7 @@ namespace Examples
 					bUnread.AddTarget(ButtonTouched, UIControlEvent.TouchUpInside);
 					cell.SwipeBackgroundView.AddSubview(bUnread);
 				}
+				// << listview-swipe-view-cs
 
 				return cell;
 			});
@@ -106,9 +108,19 @@ namespace Examples
 			this.listView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.listView.WeakDataSource = this.dataSource;
 			this.listView.Delegate = this.listViewDelegate;
+
+			// >> listview-swipe-cs
 			this.listView.AllowsCellSwipe = true;
+			// << listview-swipe-cs
+
+			// >> listview-swipe-limits-cs
 			this.listView.CellSwipeLimits = new UIEdgeInsets (0, 60, 0, 180);
+			// << listview-swipe-limits-cs
+
+			// >> listview-swipe-treshold-cs
 			this.listView.CellSwipeTreshold = 30;
+			// << listview-swipe-treshold-cs
+
 			this.View.AddSubview (this.listView);
 
 			TKListViewLinearLayout layout = (TKListViewLinearLayout)this.listView.Layout;
@@ -167,6 +179,7 @@ namespace Examples
 			return attrStr;
 		}
 
+		// >> listview-delegate-cs
 		class ListViewDelegate: TKListViewDelegate 
 		{
 			ListViewSwipe owner;
@@ -186,6 +199,7 @@ namespace Examples
 				Console.WriteLine ("Did swipe cell at index: {0}", indexPath.Row);
 			}
 		}
+		// << listview-delegate-cs
 	}
 }
 

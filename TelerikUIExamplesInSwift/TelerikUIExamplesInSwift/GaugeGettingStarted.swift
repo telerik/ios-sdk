@@ -9,8 +9,10 @@ import UIKit
 
 class GaugeGettingStarted: TKExamplesExampleViewController, TKGaugeDelegate {
     
-    let radialGauge = TKRadialGauge()
+    var radialGauge = TKRadialGauge()
+    // >> linear-gauge-start-swift
     let linearGauge = TKLinearGauge(frame: CGRectMake(0, 0, 150, 0))
+    // << linear-gauge-start-swift
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +23,16 @@ class GaugeGettingStarted: TKExamplesExampleViewController, TKGaugeDelegate {
     
     func setRadialGauge() {
         
+        // >> gauge-radial-swift
+        radialGauge = TKRadialGauge()
         radialGauge.delegate = self
         self.view.addSubview(radialGauge)
+        // << gauge-radial-swift
         
+        // >> gauge-radial-scale-swift
         let scale = TKGaugeRadialScale(minimum: 0, maximum: 6)
         radialGauge.addScale(scale)
+        // << gauge-radial-scale-swift
 
         scale.addIndicator(TKGaugeNeedle(value: 2.3, length: 0.6))
 
@@ -49,17 +56,24 @@ class GaugeGettingStarted: TKExamplesExampleViewController, TKGaugeDelegate {
         
         linearGauge.delegate = self
         linearGauge.orientation = TKLinearGaugeOrientation.Vertical
-        self.view.addSubview(linearGauge)
         
+        // >> linear-gauge-start-swift
+        self.view.addSubview(linearGauge)
+        // << linear-gauge-start-swift
+        
+        // >> linear-gauge-scale-swift
         let scale = TKGaugeLinearScale(minimum: -10, maximum: 40)
         linearGauge.addScale(scale)
+        // << linear-gauge-scale-swift
         
+        // >> gauge-segment-swift
         let segment = TKGaugeSegment(minimum: -10, maximum: 18)
         segment.location = 0.56
         segment.width = 0.05
         segment.width2 = 0.05
         segment.cap = TKGaugeSegmentCap.Round
         scale.addSegment(segment)
+        // << gauge-segment-swift
         
         let colors = [ UIColor(red:0.149, green:0.580, blue:0.776, alpha:1.00),
                        UIColor(red:0.537, green:0.796, blue:0.290, alpha:1.00),

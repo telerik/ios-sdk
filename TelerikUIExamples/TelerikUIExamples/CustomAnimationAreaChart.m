@@ -33,7 +33,7 @@
     }
     
     TKChartAreaSeries *areaSeries = [[TKChartAreaSeries alloc] initWithItems:points];
-    areaSeries.selectionMode = TKChartSeriesSelectionModeSeries;
+    areaSeries.selection = TKChartSeriesSelectionSeries;
     [_chart addSeries:areaSeries];
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];

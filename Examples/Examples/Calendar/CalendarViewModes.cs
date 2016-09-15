@@ -50,7 +50,15 @@ namespace Examples
 			this.CalendarView.Calendar = calendar;
 			this.CalendarView.MinDate = minDate;
 			this.CalendarView.MaxDate = maxDate;
+			// >> view-modes-pinchzoom-cs
+			this.CalendarView.AllowPinchZoom = false;
+			// << view-modes-pinchzoom-cs
 			this.CalendarView.NavigateToDate (date, false);
+
+			// >> view-modes-presenter-cs
+			TKCalendarYearPresenter presenter = (TKCalendarYearPresenter)this.CalendarView.Presenter;
+			presenter.Columns = 3;
+			// << view-modes-presenter-cs
 		}
 
 		public override void ViewDidLayoutSubviews ()
@@ -65,32 +73,44 @@ namespace Examples
 
 		public void SelectYear ()
 		{
+			// >> getting-started-viewmodeyear-cs
 			this.CalendarView.ViewMode = TKCalendarViewMode.Year;
+			// << getting-started-viewmodeyear-cs
 		}
 
 		public void SelectMonth ()
 		{
+			// >> view-modes-month-cs
 			this.CalendarView.ViewMode = TKCalendarViewMode.Month;
+			// << view-modes-month-cs
 		}
 
 		public void SelectMonthNames ()
 		{
+			// >> view-modes-monthnames-cs
 			this.CalendarView.ViewMode = TKCalendarViewMode.MonthNames;
+			// << view-modes-monthnames-cs
 		}
 
 		public void SelectYearNumbers ()
 		{
+			// >> view-modes-yearnumber-cs
 			this.CalendarView.ViewMode = TKCalendarViewMode.YearNumbers;
+			// << view-modes-yearnumber-cs
 		}
 
 		public void SelectFlow ()
 		{
+			// >> view-modes-flow-cs
 			this.CalendarView.ViewMode = TKCalendarViewMode.Flow;
+			// << view-modes-flow-cs
 		}
 
 		public void SelectWeekView ()
 		{
+			// >> view-modes-week-cs
 			this.CalendarView.ViewMode = TKCalendarViewMode.Week;
+			// << view-modes-week-cs
 		}
 
 		class CalendarDelegate : TKCalendarDelegate
@@ -100,13 +120,14 @@ namespace Examples
 			{
 				this.main = main;
 			}
-
+			// >> view-modes-changeviewmode-cs
 			public override void DidChangedViewModeFrom (TKCalendar calendar, TKCalendarViewMode previousViewMode, TKCalendarViewMode viewMode)
 			{
 				if (viewMode == TKCalendarViewMode.Week || previousViewMode == TKCalendarViewMode.Week) {
 					this.main.View.SetNeedsLayout ();
 				}
 			}
+			// << view-modes-changeviewmode-cs
 		}
 	}
 

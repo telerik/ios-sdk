@@ -59,7 +59,7 @@ class BindWithCustomObject: TKExamplesExampleViewController {
         let stackInfo = TKChartStackInfo(ID: 1, withStackMode: TKChartStackMode.Stack)
         for i in 0..<chart.series.count {
             let series = chart.series[i] 
-            series.selectionMode = TKChartSeriesSelectionMode.Series
+            series.selection = TKChartSeriesSelection.Series
             series.stackInfo = stackInfo
         }
         

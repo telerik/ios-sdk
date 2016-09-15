@@ -26,8 +26,12 @@ class NegativeValues: TKExamplesExampleViewController {
         
         let xAxis = TKChartNumericAxis(minimum:0, andMaximum: 9)
         xAxis.position = TKChartAxisPosition.Bottom
+        
+        // >> chart-interval-set-swift
         xAxis.majorTickInterval = 1
         xAxis.minorTickInterval = 1
+        // << chart-interval-set-swift
+        
         xAxis.style.labelStyle.firstLabelTextAlignment = TKChartAxisLabelAlignment.Right
         chart.xAxis = xAxis
         
@@ -37,15 +41,23 @@ class NegativeValues: TKExamplesExampleViewController {
         yAxis.minorTickInterval = 1
         yAxis.offset = 0
         yAxis.baseline = 0
+        
+        // >> chart-fitmode-swift
         yAxis.style.labelStyle.fitMode = TKChartAxisLabelFitMode.Rotate
+        // << chart-fitmode-swift
+        
         yAxis.style.labelStyle.firstLabelTextAlignment = TKChartAxisLabelAlignment.Left
+        
+        
+        // >> chart-line-stroke-swift
         yAxis.style.lineStroke = TKStroke(color:UIColor(white:0.85, alpha:1.0), width:2)
+        // << chart-line-stroke-swift
         chart.yAxis = yAxis
         
         let series = TKChartSplineAreaSeries(items:dataPoints)
         let shapeSize = CGFloat(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone ? 10 :17)
         series.style.pointShape = TKPredefinedShape(type:TKShapeType.Circle, andSize: CGSizeMake(shapeSize, shapeSize))
-        series.selectionMode = TKChartSeriesSelectionMode.Series
+        series.selection = TKChartSeriesSelection.Series
         chart.addSeries(series)
     }
     

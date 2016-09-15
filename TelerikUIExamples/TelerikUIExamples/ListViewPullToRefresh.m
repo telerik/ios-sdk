@@ -39,7 +39,11 @@
     listView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     listView.dataSource = self;
     listView.delegate = self;
+    
+    // >> listview-pull-to-refresh
     listView.allowsPullToRefresh = YES;
+    // << listview-pull-to-refresh
+    
     listView.pullToRefreshTreshold = 70;
     listView.pullToRefreshView.backgroundColor = [UIColor blueColor];
     listView.pullToRefreshView.activityIndicator.color = [UIColor whiteColor];
@@ -108,6 +112,7 @@
     listView.pullToRefreshView.alpha = MIN(offset/listView.pullToRefreshTreshold, 1.0);
 }
 
+// >> listview-should-refresh
 - (BOOL)listViewShouldRefreshOnPull:(TKListView *)listView
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
@@ -133,5 +138,6 @@
     
     return YES;
 }
+// << listview-should-refresh
 
 @end

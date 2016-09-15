@@ -83,23 +83,28 @@ namespace Examples
 			{
 				this.main = main;
 			}
-
+			// >> selection-didselectdate-cs
 			public override void DidSelectDate (TKCalendar calendar, NSDate date)
 			{
 				Console.WriteLine (String.Format ("{0}", date));
 			}
+			// << selection-didselectdate-cs
 
+			// >> selection-didselecteddate-cs
 			public override void DidDeselectedDate (TKCalendar calendar, NSDate date)
 			{
 				Console.WriteLine (String.Format ("{0}", date));
 			}
+			// << selection-didselecteddate-cs
 
+			// >> selection-shouldselectdate-cs
 			public override bool ShouldSelectDate (TKCalendar calendar, NSDate date)
 			{
 				Console.WriteLine (String.Format ("Trying to select the unselectable {0}", date));
 
 				return !TKCalendar.IsDate (main.UnselectableDate, date, NSCalendarUnit.Year | NSCalendarUnit.Month | NSCalendarUnit.Day, main.CalendarView.Calendar);
 			}
+			// << selection-shouldselectdate-cs
 
 			public override void UpdateVisualsForCell (TKCalendar calendar, TKCalendarCell cell)
 			{

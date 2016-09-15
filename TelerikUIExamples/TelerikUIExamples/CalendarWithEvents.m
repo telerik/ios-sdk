@@ -47,8 +47,10 @@ static NSString* const cellID = @"cell";
     self.calendarView.calendar = calendar;
     self.calendarView.dataSource = self;
     self.calendarView.delegate = self;
+// >> navigation-minmaxdate
     self.calendarView.minDate = minDate;
     self.calendarView.maxDate = maxDate;
+// << navigation-minmaxdate    
     self.calendarView.allowPinchZoom = YES;
     
     TKCalendarMonthPresenter *presenter = (TKCalendarMonthPresenter*)self.calendarView.presenter;
@@ -57,7 +59,9 @@ static NSString* const cellID = @"cell";
     
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         presenter.weekNumbersHidden = YES;
+ // >> customizations-ipad
         self.calendarView.theme = [TKCalendarIPadTheme new];
+ // << customizations-ipad
         [self.calendarView.presenter update:YES];
     }
     else {
@@ -168,6 +172,7 @@ static NSString* const cellID = @"cell";
 
 #pragma mark TKCalendarDataSource
 
+// >> populating-with-data-event
 - (NSArray *)calendar:(TKCalendar *)calendar eventsForDate:(NSDate *)date
 {
     NSDateComponents *components = [self.calendarView.calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:date];
@@ -178,6 +183,7 @@ static NSString* const cellID = @"cell";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(startDate <= %@) AND (endDate >= %@)", endDate, date];
     return [self.events filteredArrayUsingPredicate:predicate];
 }
+// << populating-with-data-event
 
 #pragma mark TKCalendarDelegate
 

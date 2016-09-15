@@ -50,7 +50,7 @@
     TKChartStackInfo *stackInfo = [[TKChartStackInfo alloc] initWithID:@(1) withStackMode:TKChartStackModeStack];
     for (int i =0; i<_chart.series.count; i++) {
         TKChartSeries *series = _chart.series[i];
-        series.selectionMode = TKChartSeriesSelectionModeSeries;
+        series.selection = TKChartSeriesSelectionSeries;
         series.stackInfo = stackInfo;
     }
     

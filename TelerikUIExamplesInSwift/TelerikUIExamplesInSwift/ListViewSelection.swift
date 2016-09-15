@@ -39,11 +39,20 @@ class ListViewSelection: TKExamplesExampleViewController, TKListViewDelegate {
         self.listView.registerClass(TKListViewCell.self, forCellWithReuseIdentifier:"cell")
         self.listView.delegate = self
         self.listView.dataSource = self.dataSource
+        
+        // >> listview-selection-behavior-swift
         self.listView.selectionBehavior = TKListViewSelectionBehavior.Press
+        // << listview-selection-behavior-swift
+        
+        // >> listview-multiple-selection-swift
         self.listView.allowsMultipleSelection = true
+        // << listview-multiple-selection-swift
+        
         self.view.addSubview(self.listView)
         
+        // >> listview-selection-programatically-swift
         self.listView.selectItemAtIndexPath(NSIndexPath(forItem: 1, inSection: 0), animated: false, scrollPosition: UICollectionViewScrollPosition.None)
+        // << listview-selection-programatically-swift
         
         let layout = listView.layout as! TKListViewLinearLayout
         layout.itemAlignment = TKListViewItemAlignment.Stretch
@@ -66,11 +75,15 @@ class ListViewSelection: TKExamplesExampleViewController, TKListViewDelegate {
     }
     
     func selectionOnHoldSelected() {
+        // >> listview-selection-behavior-long-swift
         self.listView.selectionBehavior = TKListViewSelectionBehavior.LongPress
+        // << listview-selection-behavior-long-swift
     }
     
     func noSelectionSelected() {
+        // >> listview-selection-behavior-none-swift
         self.listView.selectionBehavior = TKListViewSelectionBehavior.None
+        // << listview-selection-behavior-none-swift
         self.label.text = ""
         listView.clearSelectedItems()
     }
@@ -98,6 +111,7 @@ class ListViewSelection: TKExamplesExampleViewController, TKListViewDelegate {
         print("Did unhighlight item at row\(indexPath.row)")
     }
     
+    // >> listview-respond-swift
     func listView(listView: TKListView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         label.text = "Selected \(dataSource.items[indexPath.row])"
         print("Did select item at row\(indexPath.row)")
@@ -109,4 +123,6 @@ class ListViewSelection: TKExamplesExampleViewController, TKListViewDelegate {
     func listView(listView: TKListView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         print("Did deselect item at row\(indexPath.row)")
     }
+    
+    // << listview-respond-swift
 }

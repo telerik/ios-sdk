@@ -35,6 +35,7 @@ class ColumnAndBarChart: TKExamplesExampleViewController {
     func columnSelected() {
         chart.removeAllData()
         
+        // >> chart-column-swift
         var items = [TKChartDataPoint]()
         for i in 0..<8 {
             items.append(TKChartDataPoint(x:(i+1), y:Int(arc4random()%100)))
@@ -42,15 +43,22 @@ class ColumnAndBarChart: TKExamplesExampleViewController {
         
         let series = TKChartColumnSeries(items:items)
         series.style.paletteMode = TKChartSeriesStylePaletteMode.UseItemIndex
-        series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        series.selection = TKChartSeriesSelection.DataPoint
+        
+        // >> chart-width-cl-swift
+        series.maxColumnWidth = 50
+        series.minColumnWidth = 20
+        // << chart-width-cl-swift
+        
         chart.addSeries(series)
+        // << chart-column-swift
         
         chart.reloadData()
     }
     
     func barSelected() {
         chart.removeAllData()
-        
+        // >> chart-bar-swift
         var items = [TKChartDataPoint]()
         for i in 0..<8 {
             items.append(TKChartDataPoint(x:Int(arc4random()%100), y:(i+1)))
@@ -58,9 +66,9 @@ class ColumnAndBarChart: TKExamplesExampleViewController {
         
         let series = TKChartBarSeries(items:items)
         series.style.paletteMode = TKChartSeriesStylePaletteMode.UseItemIndex
-        series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        series.selection = TKChartSeriesSelection.DataPoint
         chart.addSeries(series)
-
+        // << chart-bar-swift
         chart.reloadData()
     }
     

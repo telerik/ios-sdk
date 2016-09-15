@@ -10,14 +10,17 @@ import Foundation
 class CalendarEventKitDataBinding: TKExamplesExampleViewController {
     
     let calendarView = TKCalendar()
-    let dataSource = TKCalendarEventKitDataSource()
+    var dataSource = TKCalendarEventKitDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.dataSource = TKCalendarEventKitDataSource()
+// >> populating-with-data-kitdatasource-swift
         self.calendarView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.FlexibleWidth.rawValue | UIViewAutoresizing.FlexibleHeight.rawValue)
         self.calendarView.dataSource = self.dataSource
         self.view.addSubview(self.calendarView)
+// << populating-with-data-kitdatasource-swift
     }
     
     override func viewDidLayoutSubviews() {

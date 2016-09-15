@@ -58,17 +58,25 @@ class ListViewUpdate: TKExamplesExampleViewController, TKListViewDelegate {
     func addTouched() {
         self.addItem()
         let indexPath = NSIndexPath(forItem: self.items.count-1, inSection: 0)
+        
+        // >> listview-insert-item-swift
         self.listView.insertItemsAtIndexPaths([ indexPath ])
+        // << listview-insert-item-swift
+        
         self.listView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: .CenteredVertically)
     }
     
     func removeTouched() {
-        let selectedItems = self.listView.indexPathsForSelectedItems!
-        if selectedItems.count > 0 {
-            let indexPath = selectedItems[0] as! NSIndexPath
+        let selectedItemsPaths = self.listView.indexPathsForSelectedItems!
+        if selectedItemsPaths.count > 0 {
+            let indexPath = selectedItemsPaths[0] as! NSIndexPath
             self.items.removeAtIndex(indexPath.row)
             self.dataSource.itemSource = self.items
-            self.listView.deleteItemsAtIndexPaths(selectedItems)
+            
+            // >> listview-delete-item-swift
+            self.listView.deleteItemsAtIndexPaths(selectedItemsPaths)
+            // << listview-delete-item-swift
+            
             if (indexPath.row < self.items.count) {
                 self.listView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: .CenteredVertically)
             }

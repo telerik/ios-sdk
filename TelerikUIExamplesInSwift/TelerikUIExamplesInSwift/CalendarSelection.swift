@@ -81,18 +81,24 @@ class CalendarSelection: TKExamplesExampleViewController, TKCalendarDelegate {
     
 //MARK: - TKCalendarDelegate
     
+// >> selection-didselectdate-swift
     func calendar(calenadr:TKCalendar, didSelectDate date: NSDate) {
         print("selected: %@", date)
     }
+// << selection-didselectdate-swift
     
+// >> selection-didselecteddate-swift
     func calendar(calenadr:TKCalendar, didDeselectedDate date: NSDate) {
         print("deselected: %@", date)
     }
+// << selection-didselecteddate-swift
     
+// >> selection-shouldselectdate-swift
     func calendar(calenadr:TKCalendar, shouldSelectDate date: NSDate)->Bool {
         print("Trying to select the unselectable: %@", date)
         return !TKCalendar.isDate(self.unselectable!, equalToDate: date, withComponents:[.Year, .Month, .Day], withCalendar: calendarView.calendar)
     }
+// << selection-shouldselectdate-swift
     
     func calendar(calendar: TKCalendar, updateVisualsForCell cell: TKCalendarCell) {
         if cell.isKindOfClass(TKCalendarMonthTitleCell.self) {

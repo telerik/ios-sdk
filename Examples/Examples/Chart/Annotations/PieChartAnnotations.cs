@@ -30,7 +30,7 @@ namespace Examples
 			array.Add(new TKChartDataPoint(new NSNumber(12.5), null, "Personal\nCare"));
 
 			var series = new TKChartPieSeries(array.ToArray());
-			series.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			series.Selection = TKChartSeriesSelection.DataPoint;
 			series.ExpandRadius = (nfloat)1.04;
 			series.RotationAngle = (nfloat)(-(Math.PI/2.0f + Math.PI/4.0f));
 			series.RadiusInset = 50;

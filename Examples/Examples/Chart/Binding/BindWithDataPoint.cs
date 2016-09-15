@@ -30,7 +30,7 @@ namespace Examples
 			}
 
 			TKChartColumnSeries columnSeries = new TKChartColumnSeries (data.ToArray ());
-			columnSeries.SelectionMode = TKChartSeriesSelectionMode.Series;
+			columnSeries.Selection = TKChartSeriesSelection.Series;
 			chart.AddSeries (columnSeries);
 		}
 

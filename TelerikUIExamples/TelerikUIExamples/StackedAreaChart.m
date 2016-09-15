@@ -29,6 +29,7 @@
     [super viewDidLoad];
 	
     _chart = [[TKChart alloc] initWithFrame:self.view.bounds];
+    _chart.seriesSelectionMode = TKChartSelectionModeSingle;
     _chart.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_chart];
     
@@ -42,12 +43,16 @@
     TKChartStackInfo *stackInfo = nil;
     
     if (self.selectedOption == 0) {
+        // >> chart-stack-area
         stackInfo = [[TKChartStackInfo alloc] initWithID:@(1) withStackMode:TKChartStackModeStack];
+        // << chart-stack-area
     }
     else if (self.selectedOption == 1) {
+        // >> chart-stack-area-100
         stackInfo = [[TKChartStackInfo alloc] initWithID:@(1) withStackMode:TKChartStackModeStack100];
+        // << chart-stack-area-100
     }
-    
+    // >> chart-stack-area
     for (int i = 0; i<3; i++) {
         NSMutableArray *array = [[NSMutableArray alloc] init];
         for (int i = 0; i<8; i++) {
@@ -55,10 +60,10 @@
         }
         
         TKChartSeries *series = [[TKChartAreaSeries alloc] initWithItems:array];
-        series.selectionMode = TKChartSeriesSelectionModeSeries;
         series.stackInfo = stackInfo;
         [_chart addSeries:series];
     }
+    // << chart-stack-area
     
     [_chart reloadData];
 }

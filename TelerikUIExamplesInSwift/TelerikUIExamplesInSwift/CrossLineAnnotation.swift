@@ -40,7 +40,10 @@ class CrossLineAnnotation: TKExamplesExampleViewController {
         }
         
         // Add a cross line annotation
+        
+        // >> chart-cross-annotation-swift
         chart.addAnnotation(TKChartCrossLineAnnotation(x: 900, y: 60, forSeries: chart.series[0]))
+        // << chart-cross-annotation-swift
     }
     
     override func didReceiveMemoryWarning() {

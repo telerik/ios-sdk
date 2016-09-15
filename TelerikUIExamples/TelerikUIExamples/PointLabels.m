@@ -90,8 +90,11 @@
 {
     [_chart removeAllData];
     TKChartBarSeries *barSeries = [[TKChartBarSeries alloc] initWithItems:_barData];
+    
+    // >> chart-labels-overview
     barSeries.style.pointLabelStyle.textHidden = NO;
     barSeries.style.pointLabelStyle.labelOffset = UIOffsetMake(15, 0);
+    // << chart-labels-overview
     
     [_chart addSeries:barSeries];
     [_chart reloadData];
@@ -114,6 +117,7 @@
     TKChartLineSeries *lineSeries = [[TKChartLineSeries alloc] initWithItems:_lineData];
     lineSeries.style.pointLabelStyle.textHidden = NO;
     lineSeries.style.pointLabelStyle.labelOffset = UIOffsetMake(0, 15);
+    
     lineSeries.style.pointLabelStyle.font = [UIFont systemFontOfSize:9];
     
     [_chart addSeries:lineSeries];

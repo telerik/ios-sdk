@@ -21,6 +21,7 @@ namespace Examples
 
 			Random r = new Random ();
 			for (int i = 0; i < 2; i++) {
+				// >> chart-scatter-cs
 				List<TKChartDataPoint> list = new List<TKChartDataPoint> ();
 				for (int j = 0; j < 20; j++) {
 
@@ -28,11 +29,12 @@ namespace Examples
 				}
 
 				TKChartScatterSeries series = new TKChartScatterSeries (list.ToArray());
+				// << chart-scatter-cs
 				series.Title = string.Format ("Series: {0}", i + 1);
 				if (2 == i) {
-					series.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+					series.Selection = TKChartSeriesSelection.DataPoint;
 				} else {
-					series.SelectionMode = TKChartSeriesSelectionMode.Series;
+					series.Selection = TKChartSeriesSelection.Series;
 				}
 				series.Style.PaletteMode = TKChartSeriesStylePaletteMode.UseItemIndex;
 				series.MarginForHitDetection = 300;

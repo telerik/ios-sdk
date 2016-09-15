@@ -18,7 +18,7 @@ namespace Examples
 			TKChart chart = new TKChart (this.View.Bounds);
 			chart.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.View.AddSubview (chart);
-
+			// >> chart-bubble-cs
 			Random r = new Random ();
 			for (int i = 0; i < 2; i++) {
 				List<TKChartBubbleDataPoint> list = new List<TKChartBubbleDataPoint> ();
@@ -27,13 +27,14 @@ namespace Examples
 				}
 
 				TKChartBubbleSeries series = new TKChartBubbleSeries (list.ToArray());
+				// << chart-bubble-cs
 				series.Title = string.Format("Series {0}", i+1);
 				series.Scale = 1.5;
 				series.MarginForHitDetection = 2f;
 				if (i == 0) {
-					series.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+					series.Selection = TKChartSeriesSelection.DataPoint;
 				} else {
-					series.SelectionMode = TKChartSeriesSelectionMode.Series;
+					series.Selection = TKChartSeriesSelection.Series;
 				}
 				chart.AddSeries (series);
 			}

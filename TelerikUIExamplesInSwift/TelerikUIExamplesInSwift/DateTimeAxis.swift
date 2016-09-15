@@ -30,16 +30,23 @@ class DateTimeAxis:TKExamplesExampleViewController {
         }
         
         let series = TKChartSplineAreaSeries(items:array)
-        series.selectionMode = TKChartSeriesSelectionMode.Series
+        series.selection = TKChartSeriesSelection.Series
         
         dateTimeComponents.month = 1
         let minDate = calendar.dateFromComponents(dateTimeComponents)!
         dateTimeComponents.month = 6
         let maxDate = calendar.dateFromComponents(dateTimeComponents)!
     
+        // >> chart-axis-datetime-swift
         let xAxis = TKChartDateTimeAxis(minimumDate: minDate, andMaximumDate: maxDate)
         xAxis.majorTickIntervalUnit = TKChartDateTimeAxisIntervalUnit.Months
         xAxis.majorTickInterval = 1
+        // << chart-axis-datetime-swift
+        
+        // >> chart-category-plot-onticks-swift
+        xAxis.setPlotMode(TKChartAxisPlotMode.OnTicks)
+        // << chart-category-plot-onticks-swift
+        
         chart.xAxis = xAxis
         
         chart.addSeries(series)

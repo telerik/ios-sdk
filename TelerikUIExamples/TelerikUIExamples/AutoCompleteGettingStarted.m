@@ -70,8 +70,13 @@
         return token;
     }];
     
+    // >> autocmp-completion
     _dataSource.settings.autocomplete.completionMode = TKAutoCompleteCompletionModeContains;
+    // << autocmp-completion
+    
+    // >> autocmp-suggest-mode
     _autocomplete.suggestMode = TKAutoCompleteSuggestModeSuggest;
+    // << autocmp-suggest-mode
     _autocomplete.dataSource = _dataSource;
     _autocomplete.textField.placeholder = @"Choose country";
     [_autocomplete.closeButton setImage:[UIImage imageNamed:@"clear.png"] forState:UIControlStateNormal];

@@ -76,8 +76,11 @@ class PointLabels: TKExamplesExampleViewController, TKChartDelegate {
     func barSeries() {
         chart.removeAllData()
         let barSeries = TKChartBarSeries(items: barData)
+        
+        // >> chart-labels-overview-swift
         barSeries.style.pointLabelStyle.textHidden = false
         barSeries.style.pointLabelStyle.labelOffset = UIOffsetMake(15, 0)
+        // << chart-labels-overview-swift
         
         chart.addSeries(barSeries)
         chart.reloadData()

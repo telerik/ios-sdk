@@ -15,9 +15,9 @@ class ChartDataSource : NSObject, TKChartDataSource {
     
     func seriesForChart(chart: TKChart, atIndex index: UInt) -> TKChartSeries {
         let series = index == 2 ? TKChartSplineSeries() : TKChartLineSeries()
-        series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        series.selection = TKChartSeriesSelection.DataPoint
         series.style.pointShape = TKPredefinedShape(type: TKShapeType.Circle, andSize: CGSizeMake(10, 10))
-        series.selectionMode = TKChartSeriesSelectionMode.Series
+        series.selection = TKChartSeriesSelection.Series
         series.title = "Series \(index + 1)"
         return series
     }

@@ -71,8 +71,10 @@ namespace Examples
 			this.CalendarView.Calendar = calendar;
 			this.CalendarView.Delegate = calendarDelegate;
 			this.CalendarView.DataSource = calendarDataSource;
+			// >> navigation-minmaxdate-cs
 			this.CalendarView.MinDate = minDate;
 			this.CalendarView.MaxDate = maxDate;
+			// << navigation-minmaxdate-cs
 			this.CalendarView.AllowPinchZoom = true;
 
 			TKCalendarMonthPresenter presenter = (TKCalendarMonthPresenter)this.CalendarView.Presenter;
@@ -81,7 +83,9 @@ namespace Examples
 
 			if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) {
 				presenter.WeekNumbersHidden = true;
+				// >> customizations-ipad-cs
 				this.CalendarView.Theme = new TKCalendarIPadTheme ();
+				// << customizations-ipad-cs
 				presenter.Update (true);
 			} else {
 				presenter.WeekNumbersHidden = false;
@@ -240,7 +244,7 @@ namespace Examples
 			{
 				this.main = main;
 			}
-
+			// >> populating-with-data-event-cs
 			public override TKCalendarEventProtocol[] EventsForDate (TKCalendar calendar, NSDate date)
 			{
 				NSDateComponents components = calendar.Calendar.Components (NSCalendarUnit.Year | NSCalendarUnit.Month | NSCalendarUnit.Day, date);
@@ -259,6 +263,7 @@ namespace Examples
 
 				return filteredEvents.ToArray ();
 			}
+			// << populating-with-data-event-cs
 		}
 	}
 }

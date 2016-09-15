@@ -8,6 +8,7 @@ using TelerikUI;
 
 namespace Examples
 {
+	// >> datasource-gettingstarted-full-cs
 	[Register("DataSourceGettingStarted")]
 	public class DataSourceGettingStarted: XamarinExampleViewController
 	{
@@ -17,9 +18,12 @@ namespace Examples
 		{
 			base.ViewDidLoad ();
 
+			// >> datasource-getting-started-cs
 			dataSource = new TKDataSource (ArrayWithObjects(new object [] { 10, 5, 12, 7, 44 }), null);
+			// << datasource-getting-started-cs
 
-			// filter all values less or equal to 3
+			// >> datasource-data-shaping-cs
+			// filter all values less or equal to 5
 			dataSource.Filter ((NSObject item) => {
 				return ((NSNumber)item).NIntValue > 5;
 			});
@@ -49,8 +53,11 @@ namespace Examples
 					return item;
 				return value;
 			});
+			// << datasource-data-shaping-cs
+
 			Console.WriteLine ("the max value is: {0}", ((NSNumber)maxValue).NIntValue);
 
+			// >> datasource-print-cs
 			// output everything to the console
 			dataSource.Enumerate ((NSObject item) => {
 				if (item.IsKindOfClass(new ObjCRuntime.Class(typeof(TKDataSourceGroup)))) {
@@ -61,11 +68,15 @@ namespace Examples
 					Console.WriteLine("{0}", ((NSNumber)item).NIntValue);
 				}
 			});
+			// << datasource-print-cs
 
+			// >> datasource-tableview-cs
 			// bind with a table view
 			var tableView = new UITableView (this.View.Bounds);
 			tableView.DataSource = dataSource;
 			this.View.AddSubview (tableView);
+			// << datasource-tableview-cs
+
 		}
 
 		NSObject[] ArrayWithObjects(object[] objects)
@@ -77,5 +88,6 @@ namespace Examples
 			return array.ToArray();
 		}
 	}
+	// << datasource-gettingstarted-full-cs
 }
 

@@ -94,16 +94,21 @@
 
 #pragma mark TKCalendarDelegate
 
+// >> selection-didselectdate
 - (void)calendar:(TKCalendar *)calendar didSelectDate:(NSDate *)date
 {
     NSLog(@"selected: %@", date);
 }
+// << selection-didselectdate
 
+// >> selection-didselecteddate
 - (void)calendar:(TKCalendar *)calendar didDeselectedDate:(NSDate *)date
 {
     NSLog(@"deselected: %@", date);
 }
+// << selection-didselecteddate
 
+// >> selection-shouldselectdate
 - (BOOL)calendar:(TKCalendar *)calendar shouldSelectDate:(NSDate *)date
 {
     NSLog(@"Trying to select the unselectable: %@", date);
@@ -113,6 +118,7 @@
                 withComponents:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay
                   withCalendar:_calendarView.calendar];
 }
+// << selection-shouldselectdate
 
 - (void)calendar:(TKCalendar *)calendar updateVisualsForCell:(TKCalendarCell *)cell
 {

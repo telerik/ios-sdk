@@ -44,7 +44,9 @@ namespace Examples
 		public void SelectRussian ()
 		{
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Gregorian);
+			// >> localization-localeproperty-cs
 			this.CalendarView.Locale = new NSLocale ("ru_RU");
+			// << localization-localeproperty-cs
 			this.CalendarView.ViewMode = TKCalendarViewMode.Month;
 			((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (false);
 		}
@@ -67,7 +69,9 @@ namespace Examples
 
 		public void SelectChinese ()
 		{
+			// >> localization-chinesecalendar-cs
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Chinese);
+			// << localization-chinesecalendar-cs
 			this.CalendarView.Locale = new NSLocale ("zh_Hans_SG");
 			this.CalendarView.ViewMode = TKCalendarViewMode.Month;
 			((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (false);
@@ -78,7 +82,9 @@ namespace Examples
 			this.CalendarView.Calendar = new NSCalendar (NSCalendarType.Islamic);
 			this.CalendarView.Locale = new NSLocale ("ar-QA");
 			this.CalendarView.ViewMode = TKCalendarViewMode.Month;
+			// >> localization-update-cs
 			((TKCalendarMonthPresenter)this.CalendarView.Presenter).Update (false);
+			// << localization-update-cs
 		}
 	}
 }

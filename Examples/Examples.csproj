@@ -9,6 +9,8 @@
     <RootNamespace>Examples</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>ExamplesDemo</AssemblyName>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,10 +22,9 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchLink>None</MtouchLink>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>true</MtouchDebug>
     <MtouchArch>i386, x86_64</MtouchArch>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: Adrian Gulyashki (8RAGLUB9J7)</CodesignKey>
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchProfiling>true</MtouchProfiling>
   </PropertyGroup>
@@ -52,8 +53,6 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <IpaPackageName>
     </IpaPackageName>
-    <MtouchI18n>
-    </MtouchI18n>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -115,6 +114,89 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
+    <Compile Include="Examples\Calendar\CalendarWithEvents.cs" />
+    <Compile Include="Examples\Calendar\CalendarTransitionEffects.cs" />
+    <Compile Include="Examples\Calendar\CalendarSelection.cs" />
+    <Compile Include="Examples\Calendar\iOS7StyleCalendar.cs" />
+    <Compile Include="Examples\Calendar\CalendarViewModes.cs" />
+    <Compile Include="Examples\Calendar\CalendarCustomization.cs" />
+    <Compile Include="Examples\Calendar\CustomCell.cs" />
+    <Compile Include="Examples\Calendar\CalendarEventKitDataBinding.cs" />
+    <Compile Include="Examples\Calendar\LocalizedCalendar.cs" />
+    <Compile Include="Examples\Feedback\FeedbackExampleController.cs" />
+    <Compile Include="Examples\Feedback\FeedbackExampleController.designer.cs">
+      <DependentUpon>FeedbackExampleController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\SideDrawer\GettingStartedExample\SideDrawerGettingStarted.cs" />
+    <Compile Include="Examples\SideDrawer\TransitionsExample\SideDrawerTransitions.cs" />
+    <Compile Include="Examples\SideDrawer\PositionsExample\SideDrawerPositions.cs" />
+    <Compile Include="Examples\SideDrawer\CustomContentExample\SideDrawerCustomContent.cs" />
+    <Compile Include="Examples\SideDrawer\CustomTransitionExample\SideDrawerCustomTransition.cs" />
+    <Compile Include="Examples\DataSource\DataSourceGettingStarted.cs" />
+    <Compile Include="Examples\DataSource\DataSourceDescriptorsAPI.cs" />
+    <Compile Include="Examples\DataSource\DataSourceUIBindings.cs" />
+    <Compile Include="Examples\DataSource\DataSourceWithWebService.cs" />
+    <Compile Include="Examples\DataSource\DSItem.cs" />
+    <Compile Include="Examples\DataSource\DSCollectionViewCell.cs" />
+    <Compile Include="Examples\SideDrawer\SideDrawerHeader.cs" />
+    <Compile Include="Examples\ListView\ListViewSelection.cs" />
+    <Compile Include="Examples\ListView\ListViewAnimations.cs" />
+    <Compile Include="Examples\ListView\ListViewLoadOnDemand.cs" />
+    <Compile Include="Examples\ListView\ListViewPullToRefresh.cs" />
+    <Compile Include="Examples\ListView\ListViewReorder.cs" />
+    <Compile Include="Examples\ListView\ListViewSwipe.cs" />
+    <Compile Include="Examples\ListView\ListViewGroups.cs" />
+    <Compile Include="Examples\ListView\ListViewGettingStarted.cs" />
+    <Compile Include="Examples\ListView\CustomCells\ImageWithTextListViewCell.cs" />
+    <Compile Include="Examples\ListView\ListViewLayout.cs" />
+    <Compile Include="Examples\ListView\CustomCells\SimpleListViewCell.cs" />
+    <Compile Include="Examples\ListView\LoremIpsumGenerator.cs" />
+    <Compile Include="Examples\ListView\CustomCells\CustomCardListViewCell.cs" />
+    <Compile Include="Examples\SideDrawer\CustomTransitionExample\MyTransition.cs" />
+    <Compile Include="Examples\ListView\CustomCells\CustomListCell.cs" />
+    <Compile Include="Examples\ListView\CustomCells\AnimationListCell.cs" />
+    <Compile Include="Examples\Alert\AlertGettingStarted.cs" />
+    <Compile Include="Examples\Alert\AlertAnimations.cs" />
+    <Compile Include="Examples\Alert\AlertNotifications.cs" />
+    <Compile Include="Examples\Alert\AlertCustomView.cs" />
+    <Compile Include="Examples\Alert\AlertSettings.cs" />
+    <Compile Include="Examples\Alert\Classes\AlertCustomContentView.cs" />
+    <Compile Include="Examples\Alert\Classes\Settings.cs" />
+    <Compile Include="Examples\Alert\Classes\UIButton_Circle.cs" />
+    <Compile Include="Examples\DataForm\DataFormGettingStarted.cs" />
+    <Compile Include="Examples\DataForm\DataFormReadOnly.cs" />
+    <Compile Include="Examples\DataForm\DataFormCustomization.cs" />
+    <Compile Include="Examples\DataForm\DataFormValidation.cs" />
+    <Compile Include="Examples\DataForm\Classes\PersonalInfo.cs" />
+    <Compile Include="Examples\DataForm\Classes\CallEditor.cs" />
+    <Compile Include="Examples\DataForm\Classes\CardInfo.cs" />
+    <Compile Include="Examples\DataForm\Classes\RegistrationInfo.cs" />
+    <Compile Include="Examples\DataForm\Classes\ReservationForm.cs" />
+    <Compile Include="Examples\DataForm\Classes\EmployeeInfo.cs" />
+    <Compile Include="Examples\Gauges\GaugeCustomization.cs" />
+    <Compile Include="Examples\Gauges\GaugeInteraction.cs" />
+    <Compile Include="Examples\AutoComplete\AutoCompleteGettingStarted.cs" />
+    <Compile Include="Examples\AutoComplete\AutoCompleteTokens.cs" />
+    <Compile Include="Examples\AutoComplete\PersonListViewCell.cs" />
+    <Compile Include="Examples\DataForm\DataFormCollapsibleGroups.cs" />
+    <Compile Include="Examples\SideDrawer\MultipleSideDrawers\MultipleSideDrawers.cs" />
+    <Compile Include="Examples\DataForm\DataFormJSONSupport.cs" />
+    <Compile Include="Examples\ListView\CustomCells\ListViewVariableSizeCell.cs" />
+    <Compile Include="Examples\ListView\ListViewUpdate.cs" />
+    <Compile Include="Examples\ListView\ListViewPerformance.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Examples\Alert\AlertCustomize.cs" />
+    <Compile Include="Examples\Calendar\CalendarInlineEvents.cs" />
+    <Compile Include="Examples\AutoComplete\AutoCompleteCustomization.cs" />
+    <Compile Include="Examples\DataForm\DataFormLabelAlignment.cs" />
+    <Compile Include="Examples\Gauges\GaugeGettingStarted.cs" />
+    <Compile Include="Examples\Gauges\GaugeAnimations.cs" />
+    <Compile Include="Examples\Gauges\GaugeScales.cs" />
+    <Compile Include="Examples\Gauges\GaugeRanges.cs" />
+    <Compile Include="Examples\ListView\ListViewVariableHeight.cs" />
+    <Compile Include="Examples\AutoComplete\AutoCompleteLoadData.cs" />
+    <Compile Include="XamarinExampleViewController.cs" />
+    <Compile Include="Examples\ListView\DataSourceItem.cs" />
     <Compile Include="Examples\Chart\ChartTypes\ColumnAndBarChart.cs" />
     <Compile Include="Examples\Chart\ChartTypes\LineAreaSpline.cs" />
     <Compile Include="Examples\Chart\ChartTypes\ScatterChart.cs" />
@@ -151,112 +233,52 @@
     <Compile Include="Examples\Chart\PointLabels\CustomLabelRender\SelectedPointLabel.cs" />
     <Compile Include="Examples\Chart\PointLabels\CustomLabelRender\MyPointLabelRender.cs" />
     <Compile Include="Examples\Chart\PointLabels\CustomLabelRender\CustomPointLabelRender.cs" />
-    <Compile Include="Examples\Calendar\CalendarWithEvents.cs" />
-    <Compile Include="Examples\Calendar\CalendarTransitionEffects.cs" />
-    <Compile Include="Examples\Calendar\CalendarSelection.cs" />
-    <Compile Include="Examples\Calendar\iOS7StyleCalendar.cs" />
-    <Compile Include="Examples\Calendar\CalendarViewModes.cs" />
-    <Compile Include="Examples\Calendar\CalendarCustomization.cs" />
-    <Compile Include="Examples\Calendar\CustomCell.cs" />
-    <Compile Include="Examples\Calendar\CalendarEventKitDataBinding.cs" />
-    <Compile Include="Examples\Calendar\LocalizedCalendar.cs" />
     <Compile Include="Examples\Chart\LiveData.cs" />
-    <Compile Include="Examples\Feedback\FeedbackExampleController.cs" />
-    <Compile Include="Examples\Feedback\FeedbackExampleController.designer.cs">
-      <DependentUpon>FeedbackExampleController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Examples\Chart\PanZoom.cs" />
     <Compile Include="Examples\Chart\Customize.cs" />
-    <Compile Include="Examples\SideDrawer\GettingStartedExample\SideDrawerGettingStarted.cs" />
-    <Compile Include="Examples\SideDrawer\TransitionsExample\SideDrawerTransitions.cs" />
-    <Compile Include="Examples\SideDrawer\PositionsExample\SideDrawerPositions.cs" />
-    <Compile Include="Examples\SideDrawer\CustomContentExample\SideDrawerCustomContent.cs" />
-    <Compile Include="Examples\SideDrawer\CustomTransitionExample\SideDrawerCustomTransition.cs" />
-    <Compile Include="Examples\DataSource\DataSourceGettingStarted.cs" />
-    <Compile Include="Examples\DataSource\DataSourceDescriptorsAPI.cs" />
-    <Compile Include="Examples\DataSource\DataSourceUIBindings.cs" />
-    <Compile Include="Examples\DataSource\DataSourceWithWebService.cs" />
-    <Compile Include="Examples\DataSource\DSItem.cs" />
-    <Compile Include="Examples\DataSource\DSCollectionViewCell.cs" />
-    <Compile Include="Examples\SideDrawer\SideDrawerHeader.cs" />
-    <Compile Include="Examples\ListView\ListViewSelection.cs" />
-    <Compile Include="Examples\ListView\ListViewAnimations.cs" />
-    <Compile Include="Examples\ListView\ListViewLoadOnDemand.cs" />
-    <Compile Include="Examples\ListView\ListViewGroups.cs" />
-    <Compile Include="Examples\ListView\ListViewPullToRefresh.cs" />
-    <Compile Include="Examples\ListView\ListViewReorder.cs" />
-    <Compile Include="Examples\ListView\ListViewSwipe.cs" />
-    <Compile Include="Examples\ListView\ListViewGettingStarted.cs" />
-    <Compile Include="Examples\ListView\CustomCells\ImageWithTextListViewCell.cs" />
-    <Compile Include="Examples\ListView\ListViewLayout.cs" />
-    <Compile Include="Examples\ListView\CustomCells\SimpleListViewCell.cs" />
-    <Compile Include="Examples\ListView\LoremIpsumGenerator.cs" />
-    <Compile Include="Examples\ListView\CustomCells\CustomCardListViewCell.cs" />
-    <Compile Include="Examples\SideDrawer\CustomTransitionExample\MyTransition.cs" />
-    <Compile Include="Examples\ListView\CustomCells\CustomListCell.cs" />
-    <Compile Include="Examples\ListView\CustomCells\AnimationListCell.cs" />
-    <Compile Include="Examples\Alert\AlertGettingStarted.cs" />
-    <Compile Include="Examples\Alert\AlertAnimations.cs" />
-    <Compile Include="Examples\Alert\AlertNotifications.cs" />
-    <Compile Include="Examples\Alert\AlertCustomView.cs" />
-    <Compile Include="Examples\Alert\AlertSettings.cs" />
-    <Compile Include="Examples\Alert\Classes\AlertCustomContentView.cs" />
-    <Compile Include="Examples\Alert\Classes\Settings.cs" />
-    <Compile Include="Examples\Alert\Classes\UIButton_Circle.cs" />
-    <Compile Include="Examples\DataForm\DataFormGettingStarted.cs" />
-    <Compile Include="Examples\DataForm\DataFormReadOnly.cs" />
-    <Compile Include="Examples\DataForm\DataFormCustomization.cs" />
-    <Compile Include="Examples\DataForm\DataFormValidation.cs" />
     <Compile Include="Examples\Chart\AxisTypes\LogarithmicAxis.cs" />
     <Compile Include="Examples\Chart\AxisTypes\DateTimeCategoryAxis.cs" />
-    <Compile Include="Examples\DataForm\Classes\PersonalInfo.cs" />
-    <Compile Include="Examples\DataForm\Classes\CallEditor.cs" />
-    <Compile Include="Examples\DataForm\Classes\CardInfo.cs" />
-    <Compile Include="Examples\DataForm\Classes\RegistrationInfo.cs" />
-    <Compile Include="Examples\DataForm\Classes\ReservationForm.cs" />
-    <Compile Include="Examples\DataForm\Classes\EmployeeInfo.cs" />
-    <Compile Include="Examples\Gauges\GaugeCustomization.cs" />
-    <Compile Include="Examples\Gauges\GaugeInteraction.cs" />
-    <Compile Include="Examples\AutoComplete\AutoCompleteGettingStarted.cs" />
-    <Compile Include="Examples\AutoComplete\AutoCompleteTokens.cs" />
-    <Compile Include="Examples\AutoComplete\PersonListViewCell.cs" />
     <Compile Include="Examples\Chart\AxisTypes\CustomAxis.cs" />
-    <Compile Include="Examples\DataForm\DataFormCollapsibleGroups.cs" />
-    <Compile Include="Examples\SideDrawer\MultipleSideDrawers\MultipleSideDrawers.cs" />
     <Compile Include="Examples\Chart\ChartTypes\GapsLineSplineAreaChart.cs" />
-    <Compile Include="Examples\DataForm\DataFormJSONSupport.cs" />
-    <Compile Include="Examples\ListView\CustomCells\ListViewVariableSizeCell.cs" />
-    <Compile Include="Examples\ListView\ListViewUpdate.cs" />
-    <Compile Include="Examples\ListView\ListViewPerformance.cs" />
     <Compile Include="Examples\Chart\Annotations\PieChartAnnotations.cs" />
-    <Compile Include="AppDelegate.cs" />
-    <Compile Include="Examples\Alert\AlertCustomize.cs" />
-    <Compile Include="Examples\Calendar\CalendarInlineEvents.cs" />
     <Compile Include="Examples\Chart\ChartTypes\IndicatorsChart.cs" />
-    <Compile Include="Examples\AutoComplete\AutoCompleteCustomization.cs" />
     <Compile Include="Examples\Chart\ChartTypes\RangeBarColumnChart.cs" />
-    <Compile Include="Examples\DataForm\DataFormLabelAlignment.cs" />
-    <Compile Include="Examples\Gauges\GaugeGettingStarted.cs" />
-    <Compile Include="Examples\Gauges\GaugeAnimations.cs" />
-    <Compile Include="Examples\Gauges\GaugeScales.cs" />
-    <Compile Include="Examples\Gauges\GaugeRanges.cs" />
-    <Compile Include="Examples\ListView\ListViewVariableHeight.cs" />
-    <Compile Include="Examples\AutoComplete\AutoCompleteLoadData.cs" />
-    <Compile Include="XamarinExampleViewController.cs" />
+    <Compile Include="Examples\DataForm\Documentation Snippets\DataFormDocsGroupLayouts.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsGridCustomization.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsLegend.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsPopulatingWithData.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsSelection.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsStructure.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsCustomDrawing.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsBarSeries.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsCandleStick.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsIndicators.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsLineSeries.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsOhlc.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsPie.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsRangeColumn.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsScatter.cs" />
+    <Compile Include="Examples\ListView\Documentation Snippets\ListViewDocsGroups.cs" />
+    <Compile Include="Examples\ListView\Documentation Snippets\ListViewDocsGroupsDelegate.cs" />
+    <Compile Include="Examples\ListView\Documentation Snippets\ListViewDocsSetupDataSource.cs" />
+    <Compile Include="Examples\SideDrawer\Documentation Snippets\SideDrawerDocsSetup.cs" />
+    <Compile Include="Examples\DataSource\Documentation Snippets\DataSourceDocsAuth.cs" />
+    <Compile Include="Examples\DataSource\Documentation Snippets\DataSourceDocsDictionary.cs" />
+    <Compile Include="Examples\DataSource\Documentation Snippets\DataSourceDocsQueries.cs" />
+    <Compile Include="Examples\DataSource\Documentation Snippets\DataSourceDocsUIBinding.cs" />
+    <Compile Include="Examples\ListView\Documentation Snippets\ListViewBasicSetup.cs" />
+    <Compile Include="Examples\AutoComplete\Documentation Snippets\AutoCompleteBasicSetup.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsSplineSeries.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsSplineAreaSeries.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsAreaSeries.cs" />
+    <Compile Include="Examples\Chart\Documentation Snippets\ChartDocsDonut.cs" />
+    <Compile Include="Examples\Calendar\DocumentationSnippets\CalendarDocsSimpleCustomization.cs" />
+    <Compile Include="Examples\Calendar\DocumentationSnippets\CalendarDocsWithSimpleEvent.cs" />
+    <Compile Include="Examples\Calendar\DocumentationSnippets\DocsCustomCell.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Examples\" />
-    <Folder Include="Examples\Chart\" />
-    <Folder Include="Examples\Chart\Annotations\" />
-    <Folder Include="Examples\Chart\Binding\" />
-    <Folder Include="Examples\Chart\ChartTypes\" />
-    <Folder Include="Examples\Chart\AxisTypes\" />
-    <Folder Include="Examples\Chart\StackedCharts\" />
-    <Folder Include="Examples\Chart\Animations\" />
-    <Folder Include="Examples\Chart\PointLabels\" />
-    <Folder Include="Examples\Chart\PointLabels\CustomPointLabel\" />
-    <Folder Include="Examples\Chart\PointLabels\CustomLabelRender\" />
     <Folder Include="Examples\Calendar\" />
     <Folder Include="Examples\Feedback\" />
     <Folder Include="Examples\SideDrawer\" />
@@ -275,6 +297,24 @@
     <Folder Include="Examples\Gauges\" />
     <Folder Include="Examples\AutoComplete\" />
     <Folder Include="Examples\SideDrawer\MultipleSideDrawers\" />
+    <Folder Include="Examples\Chart\" />
+    <Folder Include="Examples\Chart\Annotations\" />
+    <Folder Include="Examples\Chart\Binding\" />
+    <Folder Include="Examples\Chart\ChartTypes\" />
+    <Folder Include="Examples\Chart\AxisTypes\" />
+    <Folder Include="Examples\Chart\StackedCharts\" />
+    <Folder Include="Examples\Chart\Animations\" />
+    <Folder Include="Examples\Chart\PointLabels\" />
+    <Folder Include="Examples\Chart\PointLabels\CustomPointLabel\" />
+    <Folder Include="Examples\Chart\PointLabels\CustomLabelRender\" />
+    <Folder Include="Examples\Chart\New Folder\" />
+    <Folder Include="Examples\DataForm\Documentation Snippets\" />
+    <Folder Include="Examples\Chart\Documentation Snippets\" />
+    <Folder Include="Examples\ListView\Documentation Snippets\" />
+    <Folder Include="Examples\SideDrawer\Documentation Snippets\" />
+    <Folder Include="Examples\DataSource\Documentation Snippets\" />
+    <Folder Include="Examples\AutoComplete\Documentation Snippets\" />
+    <Folder Include="Examples\Calendar\DocumentationSnippets\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Examples\Feedback\FeedbackExampleController.xib" />
@@ -386,9 +426,9 @@
     <ImageAsset Include="Images.xcassets\Flags\vatican-flag.imageset\Contents.json" />
     <ImageAsset Include="Images.xcassets\Flags\vatican-flag.imageset\VA-1.png" />
     <ImageAsset Include="Images.xcassets\Flags\vatican-flag.imageset\VA.png" />
-    <ImageAsset Include="Images.xcassets\Flags\ moldova-flag.imageset\Contents.json" />
-    <ImageAsset Include="Images.xcassets\Flags\ moldova-flag.imageset\MD-1.png" />
-    <ImageAsset Include="Images.xcassets\Flags\ moldova-flag.imageset\MD.png" />
+    <ImageAsset Include="Images.xcassets\Flags\moldova-flag.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\Flags\moldova-flag.imageset\MD-1.png" />
+    <ImageAsset Include="Images.xcassets\Flags\moldova-flag.imageset\MD.png" />
     <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\Contents.json" />
     <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\black-iphone4S-portrait.png" />
     <ImageAsset Include="Images.xcassets\LaunchImage.launchimage\black-iphone6-portrait.png" />

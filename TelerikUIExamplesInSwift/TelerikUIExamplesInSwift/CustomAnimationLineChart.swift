@@ -44,7 +44,7 @@ class CustomAnimationLineChart: TKExamplesExampleViewController, TKChartDelegate
         let shapeSize = CGFloat(UIDevice.currentDevice().userInterfaceIdiom == .Phone ? 14 : 17)
         lineSeries.style.pointShape = TKPredefinedShape(type: TKShapeType.Circle, andSize: CGSizeMake(shapeSize, shapeSize))
         lineSeries.style.shapeMode = TKChartSeriesStyleShapeMode.AlwaysShow
-        lineSeries.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        lineSeries.selection = TKChartSeriesSelection.DataPoint
         chart.addSeries(lineSeries)
     }
     
@@ -67,6 +67,7 @@ class CustomAnimationLineChart: TKExamplesExampleViewController, TKChartDelegate
     
     //MARK: - TKChartDelegate
     
+    // >> chart-anim-line-swift
     func chart(chart: TKChart, animationForSeries series: TKChartSeries, withState state: TKChartSeriesRenderState, inRect rect: CGRect) -> CAAnimation? {
         var duration = 0.0
         var animations = [CAAnimation]()
@@ -114,4 +115,5 @@ class CustomAnimationLineChart: TKExamplesExampleViewController, TKChartDelegate
         
         return group
     }
+    // << chart-anim-line-swift
 }

@@ -37,7 +37,12 @@ class LogarithmicAxis: TKExamplesExampleViewController {
             return series
         }
         
-        chart.yAxis = TKChartLogarithmicAxis()
+        // >> chart-axis-logarithmic-swift
+        let yAxis = TKChartLogarithmicAxis()
+        yAxis.logarithmBase = 2
+        chart.yAxis = yAxis
+        // << chart-axis-logarithmic-swift
+        
         chart.dataSource = datasource
     }
 }

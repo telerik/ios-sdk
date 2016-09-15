@@ -13,23 +13,30 @@ namespace Examples
 	[Register("PieDonut")]
 	public class PieDonut: XamarinExampleViewController
 	{
-		TKChart pieChart;
+		TKChart chart;
 		TKChart donutChart;
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
-			pieChart = new TKChart ();
+			chart = new TKChart ();
 			donutChart = new TKChart ();
 
 			CGRect bounds = this.View.Bounds;
-			pieChart.Frame = new CGRect(this.View.Bounds.X, this.View.Bounds.Y, this.View.Bounds.Width - 10, this.View.Bounds.Height / 2 - 10);
-			pieChart.AutoresizingMask = ~UIViewAutoresizing.None;
-			pieChart.AllowAnimations = true;
-			pieChart.Legend.Hidden = false;
-			pieChart.Legend.Style.Position = TKChartLegendPosition.Right;
-			this.View.AddSubview (pieChart);
+			chart.Frame = new CGRect(this.View.Bounds.X, this.View.Bounds.Y, this.View.Bounds.Width - 10, this.View.Bounds.Height / 2 - 10);
+			chart.AutoresizingMask = ~UIViewAutoresizing.None;
+			chart.AllowAnimations = true;
+
+			// >> chart-legend-cs
+			chart.Legend.Hidden = false;
+			// << chart-legend-cs
+
+			// >> chart-legend-position-cs
+			chart.Legend.Style.Position = TKChartLegendPosition.Right;
+			// << chart-legend-position-cs
+
+			this.View.AddSubview (chart);
 
 			donutChart.Frame = new CGRect(this.View.Bounds.X, this.View.Bounds.Y + this.View.Bounds.Height/2, this.View.Bounds.Width - 10, this.View.Bounds.Height / 2 - 10);
 			donutChart.AutoresizingMask = ~UIViewAutoresizing.None;
@@ -46,14 +53,14 @@ namespace Examples
 			list.Add (new TKChartDataPoint(new NSNumber(8), null, "Oracle"));
 
 			TKChartPieSeries series = new TKChartPieSeries (list.ToArray());
-			series.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			series.Selection = TKChartSeriesSelection.DataPoint;
 			series.SelectionAngle = -Math.PI / 2.0;
 			series.ExpandRadius = 1.2f;
 			series.LabelDisplayMode = TKChartPieSeriesLabelDisplayMode.Inside;
-			pieChart.AddSeries (series);
+			chart.AddSeries (series);
 
 			TKChartDonutSeries donutSeries = new TKChartDonutSeries (list.ToArray ());
-			donutSeries.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			donutSeries.Selection = TKChartSeriesSelection.DataPoint;
 			donutSeries.InnerRadius = 0.6f;
 			donutSeries.ExpandRadius = 1.1f;
 			donutSeries.LabelDisplayMode = TKChartPieSeriesLabelDisplayMode.Inside;
@@ -63,7 +70,7 @@ namespace Examples
 		public override void ViewDidAppear (bool animated)
 		{
 			base.ViewDidAppear (animated);
-			pieChart.Select (new TKChartSelectionInfo (pieChart.Series [0], 0));
+			chart.Select (new TKChartSelectionInfo (chart.Series [0], 0));
 		}
 	}
 }

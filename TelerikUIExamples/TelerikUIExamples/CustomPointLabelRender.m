@@ -34,7 +34,8 @@
     }
     
     TKChartColumnSeries *columnSeries = [[TKChartColumnSeries alloc] initWithItems:dataPoints];
-    columnSeries.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    columnSeries.selection = TKChartSeriesSelectionDataPoint;
+
     columnSeries.style.pointLabelStyle.textHidden = NO;
     columnSeries.style.pointLabelStyle.layoutMode = TKChartPointLabelLayoutModeManual;
     columnSeries.style.pointLabelStyle.labelOffset = UIOffsetMake(0, -10);

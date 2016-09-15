@@ -42,7 +42,7 @@ namespace Examples
 			float shapeSize = UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone ? 14 : 17;
 			lineSeries.Style.PointShape = new TKPredefinedShape (TKShapeType.Circle, new SizeF (shapeSize, shapeSize));
 			lineSeries.Style.ShapeMode = TKChartSeriesStyleShapeMode.AlwaysShow;
-			lineSeries.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			lineSeries.Selection = TKChartSeriesSelection.DataPoint;
 			chart.AddSeries (lineSeries);
 		}
 			
@@ -61,7 +61,7 @@ namespace Examples
 		class ChartDelegate: TKChartDelegate
 		{
 			public bool Grow { get; set; }
-
+			// >> chart-anim-line-cs
 			public override CAAnimation AnimationForSeries (TKChart chart, TKChartSeries series, TKChartSeriesRenderState state, CGRect rect)
 			{
 				double duration = 0;
@@ -117,6 +117,7 @@ namespace Examples
 			
 				return group;
 			}
+			// << chart-anim-line-cs
 		}
 	}
 }

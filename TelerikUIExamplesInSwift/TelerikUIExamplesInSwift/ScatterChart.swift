@@ -19,6 +19,7 @@ class ScatterChart: TKExamplesExampleViewController {
         self.view.addSubview(chart)
         
         for i in 0..<2 {
+            // >> chart-scatter-swift
             var points  = [TKChartDataPoint]()
             for _ in 0..<20 {
                 let randomX = Int(arc4random()%1450)
@@ -26,12 +27,13 @@ class ScatterChart: TKExamplesExampleViewController {
                 points.append(TKChartDataPoint(x:randomX, y:randomY))
             }
             let series = TKChartScatterSeries(items:points)
+            // << chart-scatter-swift
             series.title = String(format:"Series % d", (i+1))
             if(2==i){
-                series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+                series.selection = TKChartSeriesSelection.DataPoint
             }
             else{
-                series.selectionMode = TKChartSeriesSelectionMode.Series
+                series.selection = TKChartSeriesSelection.Series
             }
             series.style.paletteMode = TKChartSeriesStylePaletteMode.UseItemIndex
             series.marginForHitDetection = 300

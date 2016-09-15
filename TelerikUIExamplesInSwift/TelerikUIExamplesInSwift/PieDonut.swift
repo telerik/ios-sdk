@@ -9,7 +9,7 @@ import Foundation
 
 class PieDonut:TKExamplesExampleViewController {
     
-    let pieChart = TKChart()
+    let chart = TKChart()
     let donutChart = TKChart()
     
     override func viewDidLoad() {
@@ -17,12 +17,19 @@ class PieDonut:TKExamplesExampleViewController {
         
         let bounds = self.view.bounds
         
-        pieChart.frame = CGRectInset(CGRectMake(bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height / 2), 10, 10)
-        pieChart.autoresizingMask = UIViewAutoresizing(rawValue:~UIViewAutoresizing.None.rawValue)
-        pieChart.allowAnimations = true
-        pieChart.legend.hidden = false
-        pieChart.legend.style.position = TKChartLegendPosition.Right
-        self.view.addSubview(pieChart)
+        chart.frame = CGRectInset(CGRectMake(bounds.origin.x, bounds.origin.y, bounds.size.width, bounds.size.height / 2), 10, 10)
+        chart.autoresizingMask = UIViewAutoresizing(rawValue:~UIViewAutoresizing.None.rawValue)
+        chart.allowAnimations = true
+        
+        // >> chart-legend-swift
+        chart.legend.hidden = false
+        // << chart-legend-swift
+        
+        // >> chart-legend-position-swift
+        chart.legend.style.position = TKChartLegendPosition.Right
+        // << chart-legend-position-swift
+        
+        self.view.addSubview(chart)
         
         donutChart.frame = CGRectInset(CGRectMake(bounds.origin.x, bounds.origin.y + bounds.size.height / 2, bounds.size.width, bounds.size.height / 2), 10, 10)
         donutChart.autoresizingMask = UIViewAutoresizing(rawValue:~UIViewAutoresizing.None.rawValue)
@@ -39,13 +46,13 @@ class PieDonut:TKExamplesExampleViewController {
             TKChartDataPoint(name: "Oracle", value: 8) ]
         
         let series = TKChartPieSeries(items:array)
-        series.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        series.selection = TKChartSeriesSelection.DataPoint
         series.selectionAngle = -M_PI_2
         series.expandRadius = 1.2
-        pieChart.addSeries(series)
-                
+        chart.addSeries(series)
+        
         let donutSeries = TKChartDonutSeries(items:array)
-        donutSeries.selectionMode = TKChartSeriesSelectionMode.DataPoint
+        donutSeries.selection = TKChartSeriesSelection.DataPoint
         donutSeries.innerRadius = 0.6
         donutSeries.expandRadius = 1.1
         donutChart.addSeries(donutSeries)
@@ -54,7 +61,7 @@ class PieDonut:TKExamplesExampleViewController {
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
-        pieChart.select(TKChartSelectionInfo(series:pieChart.series[0], dataPointIndex: 0))
+        chart.select(TKChartSelectionInfo(series:chart.series[0], dataPointIndex: 0))
     }
     
     override func didReceiveMemoryWarning() {

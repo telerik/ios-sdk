@@ -89,16 +89,19 @@
 
 - (void)linearLayoutSelected
 {
+    // >> listview-linear
     TKListViewLinearLayout *layout = [TKListViewLinearLayout new];
     layout.itemSize = CGSizeMake(200, 200);
     layout.headerReferenceSize = CGSizeMake(100, 30);
     layout.itemSpacing = 1;
     layout.scrollDirection = _scrollDirection;
    _listView.layout = layout;
+    // << listview-linear
 }
 
 - (void)gridLayoutSelected
 {
+    // >> listview-grid
     TKListViewGridLayout *layout = [TKListViewGridLayout new];
     layout.itemSize = CGSizeMake(200, 100);
     layout.headerReferenceSize = CGSizeMake(100, 30);
@@ -107,10 +110,12 @@
     layout.lineSpacing = 1;
     layout.scrollDirection = _scrollDirection;
     _listView.layout = layout;
+    // << listview-grid
 }
 
 - (void)staggeredLayoutSelected
 {
+    // >> listview-staggered
     TKListViewStaggeredLayout *layout = [TKListViewStaggeredLayout new];
     layout.delegate = self;
     layout.itemSize = CGSizeMake(200, 100);
@@ -121,6 +126,7 @@
     layout.scrollDirection = _scrollDirection;
     layout.alignLastLine = YES;
     _listView.layout = layout;
+    // << listview-staggered
 }
 
 - (void)flowLayoutSelected
@@ -147,6 +153,7 @@
     _scrollDirection = TKListViewScrollDirectionHorizontal;
 }
 
+// >> listview-staggered-size
 - (CGSize)listView:(TKListView *)listView layout:(TKListViewLinearLayout *)layout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (layout.scrollDirection == TKListViewScrollDirectionVertical) {
@@ -156,5 +163,6 @@
         return CGSizeMake([_sizes[indexPath.row] floatValue], 100);
     }
 }
+// << listview-staggered-size
 
 @end

@@ -44,8 +44,13 @@ namespace Examples
 			layout.ItemSpacing = 20;
 			listView.Layout = layout;
 
+			// >> autocmp-display-mode-cs
 			this.Autocomplete.DisplayMode = TKAutoCompleteDisplayMode.Tokens;
+			// << autocmp-display-mode-cs
+
+			// >> autocmp-layout-mode-cs
 			this.Autocomplete.LayoutMode = TKAutoCompleteLayoutMode.Wrap;
+			// << autocmp-layout-mode-cs
 			this.Autocomplete.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 			this.Autocomplete.MaximumWrapHeight = 150;
 			this.Autocomplete.WeakDataSource = this.Datasource;
@@ -81,6 +86,7 @@ namespace Examples
 		}
 	}
 
+	// >> autocmp-token-custom-cs
 	class AutoCompleteTokensDelegate : TKAutoCompleteDelegate
 	{
 		public override TKAutoCompleteTokenView ViewForToken(TKAutoCompleteTextView autocomplete, TKAutoCompleteToken token)
@@ -92,5 +98,6 @@ namespace Examples
 			return tokenView;
 		}
 	}
+	// << autocmp-token-custom-cs
 }
 

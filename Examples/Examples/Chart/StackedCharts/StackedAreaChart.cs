@@ -35,10 +35,15 @@ namespace Examples
 			TKChartStackInfo stackInfo = null;
 
 			if (this.SelectedOption == 0) 
+			// >> chart-stack-area-cs
 				stackInfo = new TKChartStackInfo (new NSNumber (1), TKChartStackMode.Stack);
+			// << chart-stack-area-cs
 			else if (this.SelectedOption == 1)
+			// >> chart-stack-area-100-cs
 				stackInfo = new TKChartStackInfo (new NSNumber (1), TKChartStackMode.Stack100);
+			// << chart-stack-area-100-cs
 
+			// >> chart-stack-area-cs
 			Random r = new Random ();
 			for (int i = 0; i < 3; i++) {
 				List<TKChartDataPoint> list = new List<TKChartDataPoint> ();
@@ -46,10 +51,11 @@ namespace Examples
 					list.Add(new TKChartDataPoint(new NSNumber(j+1), new NSNumber(r.Next() % 100)));
 				}
 				TKChartAreaSeries series = new TKChartAreaSeries (list.ToArray());
-				series.SelectionMode = TKChartSeriesSelectionMode.Series;
+				series.Selection = TKChartSeriesSelection.Series;
 				series.StackInfo = stackInfo;
 				chart.AddSeries (series);
 			}
+			// << chart-stack-area-cs
 		}
 	}
 }

@@ -16,7 +16,7 @@
                                                                { "title": "Getting Started", "exampleClass": "AutoCompleteGettingStarted" },
                                                                { "title": "Customization", "exampleClass": "AutoCompleteCustomization" },
                                                                { "title": "Tokens", "exampleClass": "AutoCompleteTokens" },
-                                                               { "title": "Load Data", "exampleClass": "AutoCompleteLoadData" },
+                                                               { "title": "Load Data", "exampleClass": "AutoCompleteLoadData" }
                                                                ] },
 
         { "title": "Calendar", "examples": [
@@ -28,7 +28,7 @@
                                             { "title": "Customization", "exampleClass": "CalendarCustomization" },
                                             { "title": "EventKit data binding", "exampleClass": "CalendarEventKitDataBinding" },
                                             { "title": "Localized calendar", "exampleClass": "LocalizedCalendar" },
-                                            { "title": "Inline events", "exampleClass": "CalendarInlineEvents" },
+                                            { "title": "Inline events", "exampleClass": "CalendarInlineEvents" }
                                             ] },
 
         { "title": "Chart", "examples": [
@@ -105,7 +105,7 @@
                                               { "title": "Getting started", "exampleClass": "DataSourceGettingStarted" },
                                               { "title": "Descriptors API", "exampleClass": "DataSourceDescriptorsAPI" },
                                               { "title": "Bind with UI controls", "exampleClass": "DataSourceUIBindings" },
-                                              { "title": "Consume web service", "exampleClass": "DataSourceWithWebService" },
+                                              { "title": "Consume web service", "exampleClass": "DataSourceWithWebService" }
                                               ] },
 
         { "title": "Gauges", "examples": [
@@ -129,8 +129,8 @@
                                             { "title": "Pull to refresh", "exampleClass": "ListViewPullToRefresh" },
                                             { "title": "Variable item height", "exampleClass": "ListViewVariableHeight" },
                                             { "title": "Performance", "exampleClass": "ListViewPerformance" },
-                                            { "title": "Add/Remove/Update items", "exampleClass": "ListViewUpdate" },
-                                            ] },
+                                            { "title": "Add/Remove/Update items", "exampleClass": "ListViewUpdate" }
+]},
 
         { "title": "SideDrawer", "examples": [
                                               { "title": "Getting Started", "exampleClass": "SideDrawerGettingStarted" },

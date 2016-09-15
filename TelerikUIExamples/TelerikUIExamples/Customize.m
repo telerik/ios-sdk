@@ -33,19 +33,24 @@
     }
     
     TKChartColumnSeries *columnSeries = [[TKChartColumnSeries alloc] initWithItems:array];
-    columnSeries.selectionMode = TKChartSeriesSelectionModeSeries;
+    columnSeries.selection = TKChartSeriesSelectionSeries;
     [_chart addSeries:columnSeries];
 
     TKChartAreaSeries *areaSeries = [[TKChartAreaSeries alloc] initWithItems:array2];
     areaSeries.style.pointShape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeStar andSize:CGSizeMake(20, 20)];
     areaSeries.style.shapeMode = TKChartSeriesStyleShapeModeAlwaysShow;
-    areaSeries.selectionMode = TKChartSeriesSelectionModeSeries;
+    areaSeries.selection = TKChartSeriesSelectionSeries;
     [_chart addSeries:areaSeries];
     
+    // >> chart-label-style
     _chart.yAxis.style.labelStyle.font = [UIFont systemFontOfSize:18];
     _chart.yAxis.style.labelStyle.textColor = [UIColor blackColor];
+    // << chart-label-style
     
+    // >> chart-customize-axis
     _chart.xAxis.style.labelStyle.font = [UIFont systemFontOfSize:18];
+    // << chart-customize-axis
+    
     _chart.xAxis.style.labelStyle.textColor = [UIColor blackColor];
     
     _chart.gridStyle.horizontalAlternateFill = [[TKSolidFill alloc] initWithColor:[UIColor colorWithWhite:0.9 alpha:0.8]];

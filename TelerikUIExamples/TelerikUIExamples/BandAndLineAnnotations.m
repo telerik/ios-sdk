@@ -39,18 +39,25 @@
     }
     
     // Add some gtid line annotations
+    // >> chart-line-annotation
     [_chart addAnnotation:[[TKChartGridLineAnnotation alloc] initWithValue:@80
                                                                    forAxis:_chart.yAxis
                                                                 withStroke:[TKStroke strokeWithColor:[UIColor redColor] width:0.5]]];
-
+    // << chart-line-annotation
+    
+    // >> chart-add-annotation
     [_chart addAnnotation:[[TKChartGridLineAnnotation alloc] initWithValue:@600 forAxis:_chart.xAxis]];
+    // << chart-add-annotation
     
     // Add two band annotations
     UIColor *color = [UIColor colorWithRed:1. green:0. blue:0. alpha:0.4];
+    
+    // >> chart-plot-annotation
     [_chart addAnnotation:[[TKChartBandAnnotation alloc] initWithRange:[[TKRange alloc] initWithMinimum:@10 andMaximum:@40]
                                                                forAxis:_chart.yAxis
                                                               withFill:[TKSolidFill solidFillWithColor:color]
                                                             withStroke:nil]];
+    // << chart-plot-annotation
     
     TKChartBandAnnotation *a = [[TKChartBandAnnotation alloc] initWithRange:[[TKRange alloc] initWithMinimum:@900 andMaximum:@1500] forAxis:_chart.xAxis];
     a.style.fill = [TKSolidFill solidFillWithColor:[UIColor colorWithRed:0. green:1. blue:0. alpha:0.3]];

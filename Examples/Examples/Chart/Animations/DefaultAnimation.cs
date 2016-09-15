@@ -56,7 +56,7 @@ namespace Examples
 			}
 
 			TKChartAreaSeries areaSeries = new TKChartAreaSeries (list.ToArray());
-			areaSeries.SelectionMode = TKChartSeriesSelectionMode.Series;
+			areaSeries.Selection = TKChartSeriesSelection.Series;
 			chart.AddSeries (areaSeries);
 		}
 
@@ -71,7 +71,7 @@ namespace Examples
 			list.Add (new TKChartDataPoint(new NSNumber(5), null, "IBM"));
 			list.Add (new TKChartDataPoint(new NSNumber(8), null, "Oracle"));
 			TKChartPieSeries series = new TKChartPieSeries (list.ToArray());
-			series.SelectionMode = TKChartSeriesSelectionMode.DataPoint;
+			series.Selection = TKChartSeriesSelection.DataPoint;
 			chart.AddSeries (series);
 		}
 
@@ -86,7 +86,7 @@ namespace Examples
 			}
 
 			TKChartScatterSeries scatterSeries = new TKChartScatterSeries (list.ToArray());
-			scatterSeries.SelectionMode = TKChartSeriesSelectionMode.Series;
+			scatterSeries.Selection = TKChartSeriesSelection.Series;
 			chart.AddSeries (scatterSeries);
 		}
 
@@ -101,7 +101,7 @@ namespace Examples
 			}
 
 			TKChartBarSeries barSeries = new TKChartBarSeries (list.ToArray());
-			barSeries.SelectionMode = TKChartSeriesSelectionMode.Series;
+			barSeries.Selection = TKChartSeriesSelection.Series;
 			chart.AddSeries (barSeries);
 		}
 
@@ -116,7 +116,7 @@ namespace Examples
 			}
 
 			TKChartColumnSeries columnSeries = new TKChartColumnSeries (list.ToArray());
-			columnSeries.SelectionMode = TKChartSeriesSelectionMode.Series;
+			columnSeries.Selection = TKChartSeriesSelection.Series;
 			chart.AddSeries (columnSeries);
 		}
 	}

@@ -26,10 +26,12 @@ namespace Examples
 			base.ViewDidLoad ();
 
 			this.DataSource = new TKCalendarEventKitDataSource ();
+			// >> populating-with-data-kitdatasource-cs
 			this.CalendarView = new TKCalendar (this.View.Bounds);
 			this.CalendarView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 			this.CalendarView.DataSource = this.DataSource;
 			this.View.AddSubview (this.CalendarView);
+			// << populating-with-data-kitdatasource-cs
 
 			NSDate date = NSDate.Now;
 			NSDateComponents components = new NSDateComponents ();

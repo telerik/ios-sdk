@@ -18,7 +18,10 @@
     self.sideDrawer.headerView = [[SideDrawerHeaderView alloc] initWithButton:NO target:nil selector:nil];
     self.sideDrawer.fill = [TKSolidFill solidFillWithColor:[UIColor grayColor]];
     self.sideDrawer.width = 200;
+    
+    // >> drawer-transition-manager
     self.sideDrawer.transitionManager = [[MyTransition alloc] initWithSideDrawer:sideDrawer];
+    // << drawer-transition-manager
 }
 
 - (UIView *)sideDrawerHeader

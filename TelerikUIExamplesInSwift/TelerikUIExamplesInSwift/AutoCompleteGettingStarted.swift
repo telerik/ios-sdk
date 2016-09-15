@@ -51,7 +51,10 @@ class AutoCompleteGettingStarted: TKExamplesExampleViewController{
             token.image = UIImage(named: (item.valueForKey("flag") as? String)!)
             return token
         }
+        
+        // >> autocmp-completion-swift
         datasource.settings.autocomplete.completionMode = TKAutoCompleteCompletionMode.Contains
+        // << autocmp-completion-swift
         autocomplete.dataSource = datasource
         autocomplete.textField.placeholder = "Choose country"
         let btnImage = UIImage(named: "clear")
@@ -79,7 +82,11 @@ class AutoCompleteGettingStarted: TKExamplesExampleViewController{
     func containsSelected()
     {
         datasource.settings.autocomplete.completionMode = TKAutoCompleteCompletionMode.Contains;
+        
+        // >> autocmp-suggest-mode-swift
         autocomplete.suggestMode = TKAutoCompleteSuggestMode.Suggest
+        // << autocmp-suggest-mode-swift
+        
         self.setSelectedOption(2, inSection: 1)
         autocomplete.resetAutocomplete()
     }

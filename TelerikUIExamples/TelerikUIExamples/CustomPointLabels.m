@@ -37,8 +37,9 @@
         [dataPoints1 addObject:point1];
     }
     
+    // >> chart-pointlabels
     TKChartLineSeries *lineSeries = [[TKChartLineSeries alloc] initWithItems:dataPoints];
-    lineSeries.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    lineSeries.selection = TKChartSeriesSelectionDataPoint;
     lineSeries.style.pointShape = [TKPredefinedShape shapeWithType:TKShapeTypeCircle andSize:CGSizeMake(8, 8)];
     lineSeries.style.pointLabelStyle.textHidden = NO;
     lineSeries.style.pointLabelStyle.layoutMode = TKChartPointLabelLayoutModeManual;
@@ -49,9 +50,10 @@
     lineSeries.style.pointLabelStyle.textColor = [UIColor whiteColor];
     lineSeries.style.pointLabelStyle.fill = [TKSolidFill solidFillWithColor:[UIColor colorWithRed:108/255.0 green:181/255.0 blue:250/255.0 alpha:1.0]];
     lineSeries.style.pointLabelStyle.clipMode = TKChartPointLabelClipModeHidden;
+    // << chart-pointlabels
     
     TKChartLineSeries *lineSeries1 = [[TKChartLineSeries alloc] initWithItems:dataPoints1];
-    lineSeries1.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    lineSeries1.selection = TKChartSeriesSelectionDataPoint;
     lineSeries1.style.pointShape = [TKPredefinedShape shapeWithType:TKShapeTypeCircle andSize:CGSizeMake(8, 8)];
     lineSeries1.style.pointLabelStyle.textHidden = NO;
     lineSeries1.style.pointLabelStyle.layoutMode = TKChartPointLabelLayoutModeManual;
@@ -71,6 +73,7 @@
     [_chart addSeries:lineSeries1];
 }
 
+// >> chart-custom-label
 - (TKChartPointLabel *)chart:(TKChart *)chart labelForDataPoint:(id<TKChartData>)dataPoint property:(NSString *)propertyName inSeries:(TKChartSeries *)series atIndex:(NSUInteger)dataIndex
 {
     if (series.index == _selectedSeriesIndex && dataIndex == _selectedDataPointIndex) {
@@ -79,6 +82,7 @@
     
     return [[TKChartPointLabel alloc] initWithPoint:dataPoint series:series text:[NSString stringWithFormat:@"%@", dataPoint.dataYValue]];
 }
+// << chart-custom-label
 
 - (TKChartPaletteItem *)chart:(TKChart *)chart paletteItemForPoint:(NSUInteger)index inSeries:(TKChartSeries *)series
 {

@@ -19,8 +19,10 @@ namespace Examples
 			sideDrawer.Width = 200;
 			sideDrawer.Fill = new TKSolidFill (UIColor.Gray);
 			sideDrawer.HeaderView = new SideDrawerHeader(false, this, new Selector("DismissSideDrawer"));
+			// >> drawer-transition-manager-cs
 			MyTransition transition = new MyTransition (sideDrawer);
 			sideDrawer.TransitionManager = transition;
+			// << drawer-transition-manager-cs
 		}
 	}
 }

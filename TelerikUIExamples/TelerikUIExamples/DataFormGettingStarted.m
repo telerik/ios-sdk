@@ -14,6 +14,7 @@
     PersonalInfo *_personalInfo;
 }
 
+// >> dataform-ctrl-setup
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -23,7 +24,6 @@
     self.dataForm.backgroundColor = [UIColor colorWithRed:0.937 green:0.937 blue:0.960 alpha:1.0];
 
     _dataSource = [[TKDataFormEntityDataSource alloc] initWithObject:_personalInfo];
-    
     _dataSource[@"password"].hintText = @"Ask every time";
     _dataSource[@"password"].editorClass = [TKDataFormPasswordEditor class];
     
@@ -37,9 +37,11 @@
     self.dataForm.commitMode = TKDataFormCommitModeOnLostFocus;
     self.dataForm.groupSpacing = 20;
 }
+// << dataform-ctrl-setup
 
 #pragma mark TKDataFormDelegate
 
+// >> dataform-delegate
 - (void)dataForm:(TKDataForm *)dataForm updateEditor:(TKDataFormEditor *)editor forProperty:(TKEntityProperty *)property
 {
     TKGridLayoutCellDefinition *feedbackDef = [editor.gridLayout definitionForView:editor.feedbackLabel];
@@ -51,10 +53,12 @@
         [editor.gridLayout setWidth:0 forColumn:[textLabelDef.column integerValue]];
     }
 }
+// << dataform-delegate
 
-- (void)dataForm:(TKDataForm *)dataForm updateGroupView:(TKEntityPropertyGroupView *)groupView forGroupAtIndex:(NSUInteger)groupIndex
-{
-    groupView.titleView.hidden = YES;
+- (void)dataForm:(TKDataForm *)dataForm updateGroupView:(TKEntityPropertyGroupView *)groupView forGroupAtIndex:(NSUInteger)groupIndex {
+    if (groupIndex == 1) {
+        groupView.editorsContainer.layout = [[TKGridLayout alloc] init];
+    }
 }
 
 @end

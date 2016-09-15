@@ -43,6 +43,7 @@ class StackedColumnChart : TKExamplesExampleViewController {
            stackInfo = TKChartStackInfo(ID: 1, withStackMode: self.selectedOption == 0 ? TKChartStackMode.Stack : TKChartStackMode.Stack100)
         }
         
+        // >> chart-column-cls-swift
         for i in 0..<4 {
             var points = [TKChartDataPoint]()
             for j in 1..<8 {
@@ -51,10 +52,10 @@ class StackedColumnChart : TKExamplesExampleViewController {
             let series = TKChartColumnSeries(items: points)
             series.title = "Series \(i)"
             series.stackInfo = stackInfo
-            series.selectionMode = TKChartSeriesSelectionMode.Series
+            series.selection = TKChartSeriesSelection.Series
             chart.addSeries(series)
         }
-        
+        // << chart-column-cls-swift
         chart.reloadData()
     }
    

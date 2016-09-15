@@ -21,9 +21,8 @@
 - (TKChartSeries *)seriesForChart:(TKChart *)chart atIndex:(NSUInteger)index
 {
     TKChartLineSeries *series = index == 2 ? [[TKChartSplineSeries alloc] init]: [[TKChartLineSeries alloc] init];
-    series.selectionMode = TKChartSeriesSelectionModeDataPoint;
     series.style.pointShape = [[TKPredefinedShape alloc] initWithType:TKShapeTypeCircle andSize:CGSizeMake(10, 10)];
-    series.selectionMode = TKChartSeriesSelectionModeSeries;
+    series.selection = TKChartSeriesSelectionSeries;
     series.title = [NSString stringWithFormat:@"Series %u", (int)index+1];
     return series;
 }

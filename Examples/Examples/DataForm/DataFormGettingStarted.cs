@@ -6,13 +6,16 @@ using UIKit;
 
 namespace Examples
 {	
-	[Register("DataFormGettingStarted")]	
+	[Register("DataFormGettingStarted")]
+	// >> dataform-ctrl-cs
 	public class DataFormGettingStarted : TKDataFormViewController
 	{
+	// << dataform-ctrl-cs
 		TKDataFormEntityDataSourceHelper dataSource;
 		GettingStartedDataFormDelegate dataFormDelegate;
 		PersonalInfo personalInfo;
 
+		// >> dataform-ctrl-setup-cs
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad ();
@@ -42,10 +45,12 @@ namespace Examples
 			this.DataForm.Delegate = this.dataFormDelegate;
 			this.DataForm.WeakDataSource = this.dataSource.NativeObject;
 		}
+		// << dataform-ctrl-setup-cs
 	}
 
 	class GettingStartedDataFormDelegate : TKDataFormDelegate
 	{
+		// >> dataform-delegate-cs
 		public override void UpdateEditor (TKDataForm dataForm, TKDataFormEditor editor, TKEntityProperty property)
 		{
 			TKGridLayoutCellDefinition feedbackDef = editor.GridLayout.DefinitionForView (editor.FeedbackLabel);
@@ -61,6 +66,10 @@ namespace Examples
 				property.HintText = "Required";
 			}
 		}
+		// << dataform-delegate-cs
+	// >> dataform-ctrl-cs
 	}
+	// << dataform-ctrl-cs
 }
+
 

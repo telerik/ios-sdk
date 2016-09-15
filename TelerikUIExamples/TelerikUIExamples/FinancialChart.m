@@ -55,7 +55,7 @@
             break;
     }
     
-    series.selectionMode = TKChartSeriesSelectionModeDataPoint;
+    series.selection = TKChartSeriesSelectionDataPoint;
     
     TKChartNumericAxis *yAxis = [[TKChartNumericAxis alloc] initWithMinimum:@300 andMaximum:@380];
     yAxis.majorTickInterval = @20;
@@ -72,11 +72,16 @@
     xAxis.style.majorTickStyle.maxTickClippingMode = TKChartAxisClippingModeVisible;
 
     financialChart.yAxis.style.labelStyle.textAlignment = TKChartAxisLabelAlignmentBottom | TKChartAxisLabelAlignmentRight;
-
+    
+    // >> chart-zoom
     financialChart.xAxis.allowZoom = YES;
-    financialChart.xAxis.allowPan = YES;
     financialChart.yAxis.allowZoom = YES;
+    // << chart-zoom
+    
+    // >> chart-pan
+    financialChart.xAxis.allowPan = YES;
     financialChart.yAxis.allowPan = YES;
+    // << chart-pan
 }
 
 @end
