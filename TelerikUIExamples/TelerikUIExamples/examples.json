@@ -99,9 +99,6 @@
                                                   { "title": "Alignment", "exampleClass": "DataFormLabelAlignment" },
                                                   { "title": "Collapsible Groups", "exampleClass": "DataFormCollapsibleGroups" },
                                                   { "title": "JSON Support", "exampleClass": "DataFormJSONSupport" },
-                                                  { "title": "Editors", "examples": [
-                                                           { "title": "AutoComplete", "exampleClass": "DataFormEditorsAutoComplete" },
-                                                         ] },
                                                   ] },
 
         { "title": "DataSource", "examples": [

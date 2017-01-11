@@ -58,10 +58,6 @@
 		7A56815419374195005FEC6D /* StockDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A56815319374195005FEC6D /* StockDataPoint.m */; };
 		7ABD7167180C1841009C726F /* DowJonesData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 7ABD7166180C1841009C726F /* DowJonesData.csv */; };
 		7AC1895019791AC400F13E8B /* dto.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AC1894F19791AC400F13E8B /* dto.json */; };
-		8827233B1E0C072A0076CC2F /* libTelerikUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 882723361E0C07140076CC2F /* libTelerikUI.a */; };
-		88C63B741E0C08040053FB3D /* libTelerikAppFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C63B6A1E0C07FD0053FB3D /* libTelerikAppFeedback.a */; };
-		88C63B7B1E0C178C0053FB3D /* DataFormEditorsAutoComplete.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C63B7A1E0C178C0053FB3D /* DataFormEditorsAutoComplete.m */; };
-		88C63B7E1E0C2B410053FB3D /* Booking.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C63B7D1E0C2B410053FB3D /* Booking.m */; };
 		8D69A2E11A91F544008315D1 /* ListViewSwipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D69A2E01A91F544008315D1 /* ListViewSwipe.m */; };
 		8D6F5B741A8509A8008A8EF2 /* ListViewSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F5B731A8509A8008A8EF2 /* ListViewSelection.m */; };
 		8D6F5B7A1A8615E2008A8EF2 /* ListViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F5B791A8615E2008A8EF2 /* ListViewAnimations.m */; };
@@ -141,6 +137,7 @@
 		FE5F963F1A93933100E70AF2 /* ListViewGettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F963E1A93933100E70AF2 /* ListViewGettingStarted.m */; };
 		FE666F871BFF564400B1D561 /* ListViewPerformance.m in Sources */ = {isa = PBXBuildFile; fileRef = FE666F861BFF564400B1D561 /* ListViewPerformance.m */; };
 		FE7131B8192FA4E400B9C231 /* CalendarTransitonEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7131B7192FA4E400B9C231 /* CalendarTransitonEffects.m */; };
+		FE77380419ED5E44009F5C34 /* libTelerikAppFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */; };
 		FE8701831941E2A700AC1D05 /* CalendarCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701821941E2A700AC1D05 /* CalendarCustomization.m */; };
 		FE8701D119420E4000AC1D05 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701D019420E4000AC1D05 /* CustomCell.m */; };
 		FE8701D91942141400AC1D05 /* CalendarEventKitDataBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8701D81942141400AC1D05 /* CalendarEventKitDataBinding.m */; };
@@ -178,6 +175,7 @@
 		FEE269D7180708B900E52C37 /* StackedColumnChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D6180708B900E52C37 /* StackedColumnChart.m */; };
 		FEE269DA180708CD00E52C37 /* StackedAreaChart.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE269D9180708CD00E52C37 /* StackedAreaChart.m */; };
 		FEE389581C1887970032440B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE389571C1887970032440B /* Images.xcassets */; };
+		FEE8E7911887DF6E009D373B /* libTelerikUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE8E7901887DF6E009D373B /* libTelerikUI.a */; };
 		FEE948FC1BF36723000DA8CE /* ListViewVariableHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE948FB1BF36723000DA8CE /* ListViewVariableHeight.m */; };
 		FEE948FF1BF36771000DA8CE /* ListViewDynamicHeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE948FE1BF36771000DA8CE /* ListViewDynamicHeightCell.m */; };
 		FEEAEBD318080A7600D75A5C /* DefaultAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBD218080A7600D75A5C /* DefaultAnimation.m */; };
@@ -189,51 +187,6 @@
 		FEEAEBE61808162600D75A5C /* BindWithDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBE51808162600D75A5C /* BindWithDelegate.m */; };
 		FEEAEBE918081E5400D75A5C /* Customize.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEAEBE818081E5400D75A5C /* Customize.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		882723351E0C07140076CC2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8827232D1E0C07140076CC2F /* TelerikUI.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 016D295E17785EF100408814;
-			remoteInfo = TelerikUI;
-		};
-		882723371E0C07140076CC2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8827232D1E0C07140076CC2F /* TelerikUI.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FEE0591318A90E45001BBC52;
-			remoteInfo = "TelerikUI Tests";
-		};
-		882723391E0C07140076CC2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8827232D1E0C07140076CC2F /* TelerikUI.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FED41EC91AB1860A002E53FA;
-			remoteInfo = TelerikUIEmbedded;
-		};
-		88C63B691E0C07FD0053FB3D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88C63B621E0C07FD0053FB3D /* AppFeedback.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FE457A5519ED4818009F5ECC;
-			remoteInfo = AppFeedback;
-		};
-		88C63B6B1E0C07FD0053FB3D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88C63B621E0C07FD0053FB3D /* AppFeedback.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FE457A6019ED4819009F5ECC;
-			remoteInfo = AppFeedbackTests;
-		};
-		88C63B6D1E0C07FD0053FB3D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88C63B621E0C07FD0053FB3D /* AppFeedback.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FED420E11AB1C156002E53FA;
-			remoteInfo = AppFeedbackEmbedded;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		011334FF18151E47008E6477 /* CustomAnimationAreaChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimationAreaChart.h; sourceTree = "<group>"; };
@@ -331,12 +284,6 @@
 		7A56815319374195005FEC6D /* StockDataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockDataPoint.m; sourceTree = "<group>"; };
 		7ABD7166180C1841009C726F /* DowJonesData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DowJonesData.csv; sourceTree = "<group>"; };
 		7AC1894F19791AC400F13E8B /* dto.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dto.json; sourceTree = "<group>"; };
-		8827232D1E0C07140076CC2F /* TelerikUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TelerikUI.xcodeproj; path = "../../ios-controls/TelerikUI/TelerikUI.xcodeproj"; sourceTree = "<group>"; };
-		88C63B621E0C07FD0053FB3D /* AppFeedback.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppFeedback.xcodeproj; path = "../../ios-controls/TelerikUI/AppFeedback/AppFeedback.xcodeproj"; sourceTree = "<group>"; };
-		88C63B791E0C178C0053FB3D /* DataFormEditorsAutoComplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFormEditorsAutoComplete.h; sourceTree = "<group>"; };
-		88C63B7A1E0C178C0053FB3D /* DataFormEditorsAutoComplete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFormEditorsAutoComplete.m; sourceTree = "<group>"; };
-		88C63B7C1E0C2B410053FB3D /* Booking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Booking.h; sourceTree = "<group>"; };
-		88C63B7D1E0C2B410053FB3D /* Booking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Booking.m; sourceTree = "<group>"; };
 		8D69A2DF1A91F544008315D1 /* ListViewSwipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewSwipe.h; sourceTree = "<group>"; };
 		8D69A2E01A91F544008315D1 /* ListViewSwipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewSwipe.m; sourceTree = "<group>"; };
 		8D6F5B721A8509A8008A8EF2 /* ListViewSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewSelection.h; sourceTree = "<group>"; };
@@ -487,6 +434,7 @@
 		FE666F861BFF564400B1D561 /* ListViewPerformance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewPerformance.m; sourceTree = "<group>"; };
 		FE7131B6192FA4E400B9C231 /* CalendarTransitionEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTransitionEffects.h; sourceTree = "<group>"; };
 		FE7131B7192FA4E400B9C231 /* CalendarTransitonEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTransitonEffects.m; sourceTree = "<group>"; };
+		FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikAppFeedback.a; path = "../AppFeedback/build/Debug-iphoneos/libTelerikAppFeedback.a"; sourceTree = "<group>"; };
 		FE8701811941E2A700AC1D05 /* CalendarCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CalendarCustomization.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FE8701821941E2A700AC1D05 /* CalendarCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarCustomization.m; sourceTree = "<group>"; };
 		FE8701CF19420E4000AC1D05 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
@@ -561,6 +509,7 @@
 		FEE269D8180708CD00E52C37 /* StackedAreaChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackedAreaChart.h; sourceTree = "<group>"; };
 		FEE269D9180708CD00E52C37 /* StackedAreaChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackedAreaChart.m; sourceTree = "<group>"; };
 		FEE389571C1887970032440B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../Images.xcassets; sourceTree = "<group>"; };
+		FEE8E7901887DF6E009D373B /* libTelerikUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTelerikUI.a; path = "../../../../../Library/Developer/Xcode/DerivedData/TelerikUI-dwzcvftbvbwddjbzzdyodshibupb/Build/Products/Debug-iphoneos/libTelerikUI.a"; sourceTree = "<group>"; };
 		FEE948FA1BF36723000DA8CE /* ListViewVariableHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewVariableHeight.h; sourceTree = "<group>"; };
 		FEE948FB1BF36723000DA8CE /* ListViewVariableHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewVariableHeight.m; sourceTree = "<group>"; };
 		FEE948FD1BF36771000DA8CE /* ListViewDynamicHeightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewDynamicHeightCell.h; sourceTree = "<group>"; };
@@ -588,8 +537,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88C63B741E0C08040053FB3D /* libTelerikAppFeedback.a in Frameworks */,
-				8827233B1E0C072A0076CC2F /* libTelerikUI.a in Frameworks */,
+				FE77380419ED5E44009F5C34 /* libTelerikAppFeedback.a in Frameworks */,
+				FEE8E7911887DF6E009D373B /* libTelerikUI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,7 +688,6 @@
 		19D7E3201B0F6A7000235365 /* DataForm */ = {
 			isa = PBXGroup;
 			children = (
-				88C63B751E0C15BF0053FB3D /* Editors */,
 				F6BB478F1D04C6F70044A7F3 /* Documentation Snippets */,
 				19A59AA71BE7AC21009B23F7 /* JSONSupport */,
 				1977F8C01B285AF20024ECB2 /* GettingStarted */,
@@ -832,37 +780,6 @@
 				1BC90EE61BAC357600A5B6DC /* GaugeRanges.m */,
 			);
 			name = Gauges;
-			sourceTree = "<group>";
-		};
-		8827232E1E0C07140076CC2F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				882723361E0C07140076CC2F /* libTelerikUI.a */,
-				882723381E0C07140076CC2F /* TelerikUI Tests.xctest */,
-				8827233A1E0C07140076CC2F /* TelerikUI.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		88C63B631E0C07FD0053FB3D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				88C63B6A1E0C07FD0053FB3D /* libTelerikAppFeedback.a */,
-				88C63B6C1E0C07FD0053FB3D /* AppFeedbackTests.xctest */,
-				88C63B6E1E0C07FD0053FB3D /* TelerikAppFeedback.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		88C63B751E0C15BF0053FB3D /* Editors */ = {
-			isa = PBXGroup;
-			children = (
-				88C63B791E0C178C0053FB3D /* DataFormEditorsAutoComplete.h */,
-				88C63B7A1E0C178C0053FB3D /* DataFormEditorsAutoComplete.m */,
-				88C63B7C1E0C2B410053FB3D /* Booking.h */,
-				88C63B7D1E0C2B410053FB3D /* Booking.m */,
-			);
-			name = Editors;
 			sourceTree = "<group>";
 		};
 		8D6F5B6E1A84F195008A8EF2 /* ListView */ = {
@@ -1172,11 +1089,9 @@
 		FEE2696E1806DBA300E52C37 = {
 			isa = PBXGroup;
 			children = (
-				88C63B621E0C07FD0053FB3D /* AppFeedback.xcodeproj */,
 				FEE269801806DBA300E52C37 /* TelerikUIExamples */,
 				FEE269791806DBA300E52C37 /* Frameworks */,
 				FEE269781806DBA300E52C37 /* Products */,
-				8827232D1E0C07140076CC2F /* TelerikUI.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1191,6 +1106,8 @@
 		FEE269791806DBA300E52C37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE77380319ED5E44009F5C34 /* libTelerikAppFeedback.a */,
+				FEE8E7901887DF6E009D373B /* libTelerikUI.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1381,7 +1298,7 @@
 				ORGANIZATIONNAME = Telerik;
 				TargetAttributes = {
 					FEE269761806DBA300E52C37 = {
-						DevelopmentTeam = W7TGC3P93K;
+						DevelopmentTeam = BJN5LM2FDB;
 					};
 				};
 			};
@@ -1396,67 +1313,12 @@
 			mainGroup = FEE2696E1806DBA300E52C37;
 			productRefGroup = FEE269781806DBA300E52C37 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 88C63B631E0C07FD0053FB3D /* Products */;
-					ProjectRef = 88C63B621E0C07FD0053FB3D /* AppFeedback.xcodeproj */;
-				},
-				{
-					ProductGroup = 8827232E1E0C07140076CC2F /* Products */;
-					ProjectRef = 8827232D1E0C07140076CC2F /* TelerikUI.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				FEE269761806DBA300E52C37 /* TelerikUIExamples */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		882723361E0C07140076CC2F /* libTelerikUI.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libTelerikUI.a;
-			remoteRef = 882723351E0C07140076CC2F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		882723381E0C07140076CC2F /* TelerikUI Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "TelerikUI Tests.xctest";
-			remoteRef = 882723371E0C07140076CC2F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8827233A1E0C07140076CC2F /* TelerikUI.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = TelerikUI.framework;
-			remoteRef = 882723391E0C07140076CC2F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		88C63B6A1E0C07FD0053FB3D /* libTelerikAppFeedback.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libTelerikAppFeedback.a;
-			remoteRef = 88C63B691E0C07FD0053FB3D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		88C63B6C1E0C07FD0053FB3D /* AppFeedbackTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AppFeedbackTests.xctest;
-			remoteRef = 88C63B6B1E0C07FD0053FB3D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		88C63B6E1E0C07FD0053FB3D /* TelerikAppFeedback.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = TelerikAppFeedback.framework;
-			remoteRef = 88C63B6D1E0C07FD0053FB3D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FEE269751806DBA300E52C37 /* Resources */ = {
@@ -1573,7 +1435,6 @@
 				19E9055D19BF391800A325D8 /* MyPointLabel.m in Sources */,
 				F62E9B321CFC8213007FB3AC /* ListViewBasicSetup.m in Sources */,
 				19B26F8A1A7A6B4D0081FEB1 /* SideDrawerGettingStarted.m in Sources */,
-				88C63B7B1E0C178C0053FB3D /* DataFormEditorsAutoComplete.m in Sources */,
 				F6F51A721B8DB9820065E055 /* LogarithmicAxis.m in Sources */,
 				F6BB47631D039EB20044A7F3 /* ChartDocsCustomDrawing.m in Sources */,
 				F6BB474F1D030CB00044A7F3 /* ChartDocsLegend.m in Sources */,
@@ -1610,7 +1471,6 @@
 				F62E9B4B1CFEFFFD007FB3AC /* ListViewDocsSetupDataSource.m in Sources */,
 				FE0FD7C11C1728C900728DED /* AlertSettingsInfo.m in Sources */,
 				FEAC73041C05EEA80030A924 /* PieChartAnnotations.m in Sources */,
-				88C63B7E1E0C2B410053FB3D /* Booking.m in Sources */,
 				D00CDC9D1CFED8FF001A7ADB /* CalendarDocsWithSimpleEvent.m in Sources */,
 				FE8A36E518A401590081EECA /* MyAnnotation.m in Sources */,
 				1BA376D11BA9BAB000FA48A7 /* GaugeScales.m in Sources */,
@@ -1755,7 +1615,6 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = W7TGC3P93K;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1770,7 +1629,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wno-nullability-completeness";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = Telerik.TelerikUIExamples12345;
+				PRODUCT_BUNDLE_IDENTIFIER = Telerik.TelerikUIExamples1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -1784,7 +1643,6 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = W7TGC3P93K;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1799,7 +1657,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wno-nullability-completeness";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = Telerik.TelerikUIExamples12345;
+				PRODUCT_BUNDLE_IDENTIFIER = Telerik.TelerikUIExamples1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
